@@ -33,11 +33,11 @@
     NSString *rightStationName;
     BOOL serachingForLeftStationName;
     BOOL serachingForRightStationName;
-    CDStruct_ffe6b7c1 leftStationSearchTilePos;
-    CDStruct_ffe6b7c1 rightStationSearchTilePos;
-    CDStruct_ffe6b7c1 leftStationGoalPos;
-    CDStruct_ffe6b7c1 rightStationGoalPos;
-    CDStruct_ffe6b7c1 stationGoalPos;
+    intpair leftStationSearchTilePos;
+    intpair rightStationSearchTilePos;
+    intpair leftStationGoalPos;
+    intpair rightStationGoalPos;
+    intpair stationGoalPos;
     BOOL stopAtGoalPos;
     BOOL stopped;
     BOOL needsToUpdateChoiceUI;
@@ -48,10 +48,10 @@
 - (int)maxNumberOfRiders;
 - (void)removeRider:(id)arg1;
 - (BOOL)isEngine;
-- (BOOL)tapIsWithinBodyRadius:(struct Vector2)arg1;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setNeedsRemoved:(BOOL)arg1;
-- (struct Vector2)fuelUIPos;
+- (Vector2)fuelUIPos;
 - (BOOL)requiresFuel;
 - (BOOL)canDismissFuelUI;
 - (void)addToFuelForItem:(int)arg1;
@@ -64,11 +64,11 @@
 - (id)actionTitle;
 - (void)setWorkbenchChoiceUIOption:(int)arg1;
 - (int)itemType;
-- (void)setTargetVelocity:(struct Vector2)arg1;
+- (void)setTargetVelocity:(Vector2)arg1;
 - (union _GLKMatrix4)riderBodyMatrixForBlockhead:(id)arg1 cameraX:(float)arg2;
-- (struct Vector)riderPosForBlockhead:(id)arg1;
-- (struct Vector2)cameraPosForBlockhead:(id)arg1;
-- (struct Vector2)renderPos;
+- (Vector)riderPosForBlockhead:(id)arg1;
+- (Vector2)cameraPosForBlockhead:(id)arg1;
+- (Vector2)renderPos;
 - (void)draw:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3 cameraMinXWorld:(int)arg4 cameraMaxXWorld:(int)arg5 cameraMinYWorld:(int)arg6 cameraMaxYWorld:(int)arg7;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)updateSearchForStations;
@@ -78,7 +78,7 @@
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 saveDict:(id)arg5 placedByClient:(id)arg6;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 saveDict:(id)arg5 placedByClient:(id)arg6;
 - (int)objectType;
 - (void)loadDerivedStuff;
 

@@ -4,6 +4,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
+#import "MJMath.h"
+
 //! FIXME: Bad macro hack
 #ifndef BOOL
 #define BOOL bool
@@ -18,8 +20,8 @@
     World *world;
     DynamicWorld *dynamicWorld;
     struct MacroTile *macroTileOwner;
-    CDStruct_ffe6b7c1 pos;
-    struct Vector2 floatPos;
+    intpair pos;
+    Vector2 floatPos;
     CPCache *cache;
     NSString *ownerID;
     unsigned long long uniqueID;
@@ -37,14 +39,14 @@
 @property BOOL updateNeedsToBeSent; // @synthesize updateNeedsToBeSent;
 @property BOOL needsRemoved; // @synthesize needsRemoved;
 @property(readonly) unsigned long long uniqueID; // @synthesize uniqueID;
-@property(readonly) struct Vector2 floatPos; // @synthesize floatPos;
-@property(readonly) CDStruct_ffe6b7c1 pos; // @synthesize pos;
+@property(readonly) Vector2 floatPos; // @synthesize floatPos;
+@property(readonly) intpair pos; // @synthesize pos;
 - (id).cxx_construct;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (struct Vector2)renderPos;
+- (Vector2)renderPos;
 - (id)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline;
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1 yPos:(int)arg2;
 - (BOOL)canBeRemovedByBlockhead:(id)arg1;
@@ -54,10 +56,10 @@
 - (BOOL)occupiesNormalContents;
 - (BOOL)occupiesForegroundContents;
 - (BOOL)needsNetDataToBeSent;
-- (struct Vector)getLightRGB;
+- (Vector)getLightRGB;
 - (BOOL)isUplight;
 - (BOOL)isDownlight;
-- (struct Vector)lightPos;
+- (Vector)lightPos;
 - (void)blockheadsLoaded;
 - (void)blockheadUnloaded:(id)arg1;
 - (int)addLightGlowQuadData:(float *)arg1 fromIndex:(int)arg2;
@@ -70,15 +72,15 @@
 - (int)lightGlowQuadCount;
 - (int)addDrawItemQuadData:(float *)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawItemQuadCount;
-- (int)addForegroundDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(CDStruct_ffe6b7c1)arg3;
-- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(CDStruct_ffe6b7c1)arg3;
-- (int)staticGeometryForegroundDrawQuadCountForMacroPos:(CDStruct_ffe6b7c1)arg1;
-- (int)staticGeometryDrawQuadCountForMacroPos:(CDStruct_ffe6b7c1)arg1;
+- (int)addForegroundDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(intpair)arg3;
+- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(intpair)arg3;
+- (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)arg1;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
 - (int)addDrawCubeDataTrans:(float *)arg1 fromIndex:(int)arg2;
 - (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCountTrans;
 - (int)staticGeometryDrawCubeCount;
-- (void)setFloatPosAndUpdatePosition:(struct Vector2)arg1;
+- (void)setFloatPosAndUpdatePosition:(Vector2)arg1;
 - (BOOL)shouldAddToMacroBlock;
 - (void)remoteCreationDataUpdate:(id)arg1;
 - (void)remoteUpdate:(id)arg1;
@@ -89,7 +91,7 @@
 - (BOOL)shouldSaveEveryChangeInPosition;
 - (void)worldChanged:(vector_07678c45 *)arg1;
 - (BOOL)requiresPhysicalBlock;
-- (void)updatePosition:(CDStruct_ffe6b7c1)arg1;
+- (void)updatePosition:(intpair)arg1;
 - (void)draw:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3 cameraMinXWorld:(int)arg4 cameraMaxXWorld:(int)arg5 cameraMinYWorld:(int)arg6 cameraMaxYWorld:(int)arg7;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (struct DynamicObjectNetData)dynamicObjectNetData;
@@ -97,8 +99,8 @@
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 type:(int)arg5 saveDict:(id)arg6 placedByClient:(id)arg7;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 type:(int)arg5 saveDict:(id)arg6 placedByClient:(id)arg7;
 - (int)objectType;
 - (void)removeFromMacroBlock;
 - (BOOL)initDerivedStuff:(BOOL)arg1 loadPhysicalBlockIfNeeded:(BOOL)arg2;

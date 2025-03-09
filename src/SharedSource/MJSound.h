@@ -4,6 +4,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
+#import "Vector2.h"
+
 //! FIXME: Bad hack
 #ifndef BOOL
 #define BOOL bool
@@ -38,7 +40,7 @@
     BOOL playing;
     float multiSoundPlayBackFrequency;
     BOOL hasMultiSoundPlayBackFrequency;
-    struct Vector2 position;
+    Vector2 position;
     BOOL isThreeDee;
 }
 
@@ -46,8 +48,8 @@
 @property BOOL hasMultiSoundPlayBackFrequency; // @synthesize hasMultiSoundPlayBackFrequency;
 - (id).cxx_construct;
 - (BOOL)randomNumberWithinMultiPlaybackFrequency;
-- (void)playAtPosition:(struct Vector2)arg1;
-- (void)setPosition:(struct Vector2)arg1;
+- (void)playAtPosition:(Vector2)arg1;
+- (void)setPosition:(Vector2)arg1;
 - (void)setPlaybackFrequencyInMultiSound:(float)arg1;
 - (BOOL)paused;
 - (id)sound;

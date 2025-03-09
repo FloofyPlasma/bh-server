@@ -32,8 +32,8 @@
 - (int)staticGeometryDodoEggCount;
 - (int)addDrawItemQuadData:(float *)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawItemQuadCount;
-- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(CDStruct_ffe6b7c1)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(CDStruct_ffe6b7c1)arg1;
+- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(intpair)arg3;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
 - (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCount;
 - (id)sellTitle;
@@ -67,7 +67,7 @@
 - (id)updateNetDataForClient:(id)arg1;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 item:(id)arg5 flipped:(BOOL)arg6 saveDict:(id)arg7 placedByClient:(id)arg8 clientName:(id)arg9;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 item:(id)arg5 flipped:(BOOL)arg6 saveDict:(id)arg7 placedByClient:(id)arg8 clientName:(id)arg9;
 - (void)initSubDerivedItems;
 - (void)initSlotsWithSaveDict:(id)arg1;
 - (int)objectType;

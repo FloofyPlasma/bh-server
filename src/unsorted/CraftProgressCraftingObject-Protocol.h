@@ -13,7 +13,7 @@
 - (void)hurryCompletion:(int)arg1;
 - (void)abortCraft;
 - (BOOL)isDoubleHeight;
-- (struct Vector2)floatPos;
+- (Vector2)floatPos;
 - (NSString *)titleForCraftProgressUI;
 
 @optional

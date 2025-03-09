@@ -48,7 +48,7 @@
 @property(readonly) NSArray *whiteList; // @synthesize whiteList;
 @property(readonly) NSArray *blackList; // @synthesize blackList;
 @property(readonly) NSArray *recentPlayers; // @synthesize recentPlayers;
-- (void)doRepairForTileAtPos:(CDStruct_ffe6b7c1)arg1;
+- (void)doRepairForTileAtPos:(intpair)arg1;
 - (BOOL)finishBulkTransaction;
 - (void)startBulkTransaction;
 - (void)sendPortalChestAcknowledgementIfNeededForClient:(id)arg1;

@@ -9,7 +9,7 @@
 @class NSString;
 
 @protocol AddFuelObject <NSObject>
-- (struct Vector2)fuelUIPos;
+- (Vector2)fuelUIPos;
 - (BOOL)canDismissFuelUI;
 - (void)addToFuelForItem:(int)arg1;
 - (int *)fuelItems;

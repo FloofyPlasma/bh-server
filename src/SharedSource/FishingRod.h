@@ -18,10 +18,10 @@
     World *world;
     Blockhead *blockhead;
     BOOL casting;
-    struct vector<Vector2, std::__1::allocator<Vector2>> lineLocations;
-    struct Vector2 hookVelocity;
-    struct Vector2 hookPos;
-    struct Vector2 nextRealInHookPos;
+    Vector<Vector2, std::__1::allocator<Vector2>> lineLocations;
+    Vector2 hookVelocity;
+    Vector2 hookPos;
+    Vector2 nextRealInHookPos;
     BOOL isInCastingAnimation;
     float castAnimationProgress;
     BOOL hookInAir;
@@ -39,7 +39,7 @@
 }
 
 @property(readonly) Blockhead *blockhead; // @synthesize blockhead;
-@property struct Vector2 hookPos; // @synthesize hookPos;
+@property Vector2 hookPos; // @synthesize hookPos;
 @property BOOL castingRight; // @synthesize castingRight;
 @property BOOL hookInAir; // @synthesize hookInAir;
 @property float castAnimationProgress; // @synthesize castAnimationProgress;
@@ -50,12 +50,12 @@
 - (void)setPaused:(BOOL)arg1;
 - (id)hookedFish;
 - (void)setHookedFish:(id)arg1;
-- (struct Vector2)hookedFishDirection;
+- (Vector2)hookedFishDirection;
 - (void)draw:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3 cameraMinXWorld:(int)arg4 cameraMaxXWorld:(int)arg5 cameraMinYWorld:(int)arg6 cameraMaxYWorld:(int)arg7;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)directionalSwipe:(struct Vector2)arg1;
+- (void)directionalSwipe:(Vector2)arg1;
 - (BOOL)isCasting;
-- (struct Vector2)cameraPos;
+- (Vector2)cameraPos;
 @property BOOL valid;
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1 blockhead:(id)arg2 cache:(id)arg3;

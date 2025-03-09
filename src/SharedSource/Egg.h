@@ -35,7 +35,7 @@
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
 - (int)objectType;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 saveDict:(id)arg5;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 saveDict:(id)arg5;
 - (void)initSubDerivedItems;
 
 @end

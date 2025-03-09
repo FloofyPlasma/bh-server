@@ -9,7 +9,7 @@
 @interface ElevatorShaft : DynamicObject
 {
     int itemType;
-    CDStruct_ffe6b7c1 lastKnownMotorPos;
+    intpair lastKnownMotorPos;
     BOOL opening;
     float openTimer;
     float *savedDrawBuffer;
@@ -18,7 +18,7 @@
     BOOL solidTile;
 }
 
-@property(readonly) CDStruct_ffe6b7c1 lastKnownMotorPos; // @synthesize lastKnownMotorPos;
+@property(readonly) intpair lastKnownMotorPos; // @synthesize lastKnownMotorPos;
 - (BOOL)occupiesNormalContents;
 - (BOOL)isPaintable;
 - (void)paint:(unsigned short)arg1;
@@ -30,8 +30,8 @@
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
 - (int)staticGeometryDrawCubeCount;
-- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(CDStruct_ffe6b7c1)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(CDStruct_ffe6b7c1)arg1;
+- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(intpair)arg3;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
 - (void)worldChanged:(vector_07678c45 *)arg1;
 - (void)draw:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3 cameraMinXWorld:(int)arg4 cameraMaxXWorld:(int)arg5 cameraMinYWorld:(int)arg6 cameraMaxYWorld:(int)arg7;
 - (void)dealloc;
@@ -41,7 +41,7 @@
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 type:(int)arg5 saveDict:(id)arg6 placedByClient:(id)arg7;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 type:(int)arg5 saveDict:(id)arg6 placedByClient:(id)arg7;
 - (int)objectType;
 - (void)initSubDerivedItems;
 

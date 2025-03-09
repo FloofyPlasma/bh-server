@@ -16,8 +16,8 @@
     unsigned short colorGenes;
     unsigned short mixGenes;
     unsigned short mateColorGenes;
-    struct Vector topColor;
-    struct Vector bottomColor;
+    Vector topColor;
+    Vector bottomColor;
     Shader *shader;
     CPTexture2D *texture;
     float randomRotation;
@@ -30,11 +30,11 @@
 - (unsigned short)mixGenesVariation;
 - (BOOL)canBreed;
 - (void)removeFromMacroBlock;
-- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(CDStruct_ffe6b7c1)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(CDStruct_ffe6b7c1)arg1;
+- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(intpair)arg3;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
 - (int)droppedItemType;
 - (int)numberOfOccupiedTilesAbove;
-- (int)tileHarvested:(CDStruct_ffe6b7c1)arg1 removeBlockhead:(id)arg2 correctToolMultiplier:(int)arg3;
+- (int)tileHarvested:(intpair)arg1 removeBlockhead:(id)arg2 correctToolMultiplier:(int)arg3;
 - (BOOL)isRequiredSoilType:(int)arg1;
 - (int)plantType;
 - (BOOL)tileIsKindOfSelf:(struct Tile *)arg1;
@@ -45,7 +45,7 @@
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4 treeDensityNoiseFunction:(id)arg5 seasonOffsetNoiseFunction:(id)arg6;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 maxAgeGene:(unsigned short)arg5 growthRateGene:(unsigned short)arg6 treeDensityNoiseFunction:(id)arg7 seasonOffsetNoiseFunction:(id)arg8 adultPlant:(BOOL)arg9;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 maxAgeGene:(unsigned short)arg5 growthRateGene:(unsigned short)arg6 treeDensityNoiseFunction:(id)arg7 seasonOffsetNoiseFunction:(id)arg8 adultPlant:(BOOL)arg9;
 - (void)initSubDerivedItems;
 - (int)objectType;
 

@@ -31,9 +31,9 @@
 - (BOOL)isUplight;
 - (BOOL)isDownlight;
 - (int)lightGlowQuadCount;
-- (struct Vector)lightPos;
-- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(CDStruct_ffe6b7c1)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(CDStruct_ffe6b7c1)arg1;
+- (Vector)lightPos;
+- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(intpair)arg3;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
 - (int)renderImageIndex;
 - (void)setNeedsRemoved:(BOOL)arg1;
 - (void)worldChanged:(vector_07678c45 *)arg1;
@@ -53,8 +53,8 @@
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
 - (int)objectType;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 type:(int)arg5 dataA:(unsigned short)arg6 dataB:(unsigned short)arg7 saveDict:(id)arg8 placedByClient:(id)arg9;
-- (struct Vector)getLightRGB;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 type:(int)arg5 dataA:(unsigned short)arg6 dataB:(unsigned short)arg7 saveDict:(id)arg8 placedByClient:(id)arg9;
+- (Vector)getLightRGB;
 - (void)initSubDerivedItems;
 
 @end

@@ -32,7 +32,7 @@
     int savedBlockheadIndex;
     float bobTimer;
     BOOL falling;
-    CDStruct_ffe6b7c1 remoteGoalPos;
+    intpair remoteGoalPos;
     float remoteSendControlEventTimer;
 }
 
@@ -43,24 +43,24 @@
 - (int)rideDirection;
 - (BOOL)jumpsOnSwipe;
 - (void)setNeedsRemoved:(BOOL)arg1;
-- (BOOL)tapIsWithinBodyRadius:(struct Vector2)arg1;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
 - (BOOL)isDoubleHeight;
 - (id)actionTitle;
 - (void)worldChanged:(vector_07678c45 *)arg1;
-- (struct Vector2)cameraPosForBlockhead:(id)arg1;
+- (Vector2)cameraPosForBlockhead:(id)arg1;
 - (float)riderBodyZRotation;
 - (float)riderBodyYRotationForBlockhead:(id)arg1;
 - (void)swipeUpGesture;
 - (void)removeRider:(id)arg1;
 - (void)addRider:(id)arg1;
 - (BOOL)riderDPadShouldGiveDiscreteValues;
-- (void)setTargetVelocity:(struct Vector2)arg1;
-- (struct Vector)riderPosForBlockhead:(id)arg1;
-- (struct Vector2)renderPos;
+- (void)setTargetVelocity:(Vector2)arg1;
+- (Vector)riderPosForBlockhead:(id)arg1;
+- (Vector2)renderPos;
 - (unsigned short)maxHealth;
 - (void)draw:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3 cameraMinXWorld:(int)arg4 cameraMaxXWorld:(int)arg5 cameraMinYWorld:(int)arg6 cameraMaxYWorld:(int)arg7;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)updatePosition:(CDStruct_ffe6b7c1)arg1;
+- (void)updatePosition:(intpair)arg1;
 - (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
 - (void)remoteUpdate:(id)arg1;
 - (void)dealloc;
@@ -70,7 +70,7 @@
 - (void)blockheadsLoaded;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 saveDict:(id)arg5 placedByClient:(id)arg6;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 saveDict:(id)arg5 placedByClient:(id)arg6;
 - (int)objectType;
 - (int)freeblockCreationItemType;
 - (void)loadDerivedStuff;

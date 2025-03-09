@@ -31,7 +31,7 @@
     int *rockHeights;
     BOOL hasDistanceOrderedFoodTypes;
     int distanceOrderedFoodTypes[31];
-    struct vector<ClientMacroBlockRequest, std::__1::allocator<ClientMacroBlockRequest>> queuedBlockRequests;
+    Vector<ClientMacroBlockRequest, std::__1::allocator<ClientMacroBlockRequest>> queuedBlockRequests;
     struct map<int, ClientMacroBlockRequest, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, ClientMacroBlockRequest>>> sentBlockRequests;
     NSMutableDictionary *blockRequestDates;
     int xFrequencyMultiplier;
@@ -40,8 +40,8 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (float)sandFractionForPos:(CDStruct_ffe6b7c1)arg1 height:(int)arg2 highRes:(BOOL)arg3;
-- (float)sandFractionForPos:(CDStruct_ffe6b7c1)arg1 highRes:(BOOL)arg2;
+- (float)sandFractionForPos:(intpair)arg1 height:(int)arg2 highRes:(BOOL)arg3;
+- (float)sandFractionForPos:(intpair)arg1 highRes:(BOOL)arg2;
 - (void)initialDataRecievedFromServer:(id)arg1;
 - (void)lightBlockDataRecievedFromServer:(id)arg1;
 - (void)blockDataRecievedFromServer:(id)arg1;
@@ -50,8 +50,8 @@
 - (BOOL)waitingForFoodTypes;
 - (BOOL)waitingForBlocks;
 - (int *)distanceOrderedFoodTypes;
-- (void)loadPhysicalBlock:(struct PhysicalBlock *)arg1 atPos:(CDStruct_ffe6b7c1)arg2 withTilesData:(id)arg3 lightData:(id)arg4 extraDataDict:(id)arg5;
-- (void)requestBlockFromServerAtPos:(CDStruct_ffe6b7c1)arg1 createIfNotCreated:(BOOL)arg2;
+- (void)loadPhysicalBlock:(struct PhysicalBlock *)arg1 atPos:(intpair)arg2 withTilesData:(id)arg3 lightData:(id)arg4 extraDataDict:(id)arg5;
+- (void)requestBlockFromServerAtPos:(intpair)arg1 createIfNotCreated:(BOOL)arg2;
 - (int)waitingForBlocksCount;
 - (int)unmodifiedGroundLevelForX:(int)arg1;
 - (void)getRockAndDirtHeightforX:(int)arg1 rockHeight:(int *)arg2 dirtHeight:(int *)arg3;
@@ -62,7 +62,7 @@
 - (BOOL)shouldBeCrystalBlockAtX:(int)arg1 y:(int)arg2;
 - (void)dealloc;
 - (void)deleteTimers;
-- (id)initWithWorld:(id)arg1 client:(id)arg2 saveID:(id)arg3 randomSeed:(int)arg4 cameraPos:(CDStruct_ffe6b7c1)arg5;
+- (id)initWithWorld:(id)arg1 client:(id)arg2 saveID:(id)arg3 randomSeed:(int)arg4 cameraPos:(intpair)arg5;
 
 @end
 

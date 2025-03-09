@@ -14,11 +14,11 @@
 - (BOOL)canCrawl;
 - (BOOL)waitingForPath;
 - (void)setNoLongerWaitingForPath;
-- (void)setWaitingForPathToPos:(CDStruct_ffe6b7c1)arg1;
+- (void)setWaitingForPathToPos:(intpair)arg1;
 - (void)setPath:(NSArray *)arg1 type:(int)arg2 goalInteraction:(int)arg3 extraData:(NSDictionary *)arg4;
 - (NSDictionary *)infoForPathRecalculation;
-- (CDStruct_ffe6b7c1)nextPos;
+- (intpair)nextPos;
 - (int)currentTraverseToKeyFrame;
-- (BOOL)tileIsLitForSelf:(struct Tile *)arg1 atPos:(CDStruct_ffe6b7c1)arg2;
+- (BOOL)tileIsLitForSelf:(struct Tile *)arg1 atPos:(intpair)arg2;
 @end
 

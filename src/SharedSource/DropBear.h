@@ -29,8 +29,8 @@
     float walkTimer;
     float walkSpeed;
     float travelFraction;
-    CDStruct_ffe6b7c1 fromSquare;
-    CDStruct_ffe6b7c1 toSquare;
+    intpair fromSquare;
+    intpair toSquare;
     float provokeMeter;
     float courageMeter;
     BOOL dropping;
@@ -38,15 +38,15 @@
     BOOL attacking;
     float attackFraction;
     Blockhead *attackBlockhead;
-    struct Vector2 attackOffset;
-    CDStruct_ffe6b7c1 attackPos;
+    Vector2 attackOffset;
+    intpair attackPos;
     BOOL onGround;
-    CDStruct_ffe6b7c1 dropPos;
+    intpair dropPos;
     int goalTreeDirection;
     BOOL shouldSaveWhenTreeFound;
     float drownTimer;
     int currentNetQueueSize;
-    CDStruct_ffe6b7c1 nextToSquare[4];
+    intpair nextToSquare[4];
     float nextWalkSpeed[4];
     char nextOnGround[4];
 }
@@ -59,10 +59,10 @@
 - (void)reactToBeingFed;
 - (void)blockheadUnloaded:(id)arg1;
 - (void)worldChanged:(vector_07678c45 *)arg1;
-- (struct Vector2)renderPos;
+- (Vector2)renderPos;
 - (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
 - (void)reactToBeingHit;
-- (BOOL)tapIsWithinBodyRadius:(struct Vector2)arg1;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
 - (unsigned short)maxHealth;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)draw:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3 cameraMinXWorld:(int)arg4 cameraMaxXWorld:(int)arg5 cameraMinYWorld:(int)arg6 cameraMaxYWorld:(int)arg7;
@@ -77,7 +77,7 @@
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 saveDict:(id)arg5 isAdult:(BOOL)arg6 wasPlaced:(BOOL)arg7 placedByClient:(id)arg8;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 saveDict:(id)arg5 isAdult:(BOOL)arg6 wasPlaced:(BOOL)arg7 placedByClient:(id)arg8;
 - (void)loadDerivedStuff;
 - (int)getNamesArrayCount;
 - (id *)getNamesArray;

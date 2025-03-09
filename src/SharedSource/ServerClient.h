@@ -56,7 +56,7 @@
 - (void).cxx_destruct;
 @property BOOL connected;
 - (void)saveLightBlockIndices;
-- (id)getAndRemoveAllRecieptDataForMacroPos:(CDStruct_ffe6b7c1)arg1 world:(id)arg2;
+- (id)getAndRemoveAllRecieptDataForMacroPos:(intpair)arg1 world:(id)arg2;
 - (void)addFillRequest:(unsigned int)arg1;
 - (void)sendAllObjectData;
 - (void)addRemovalObjectDataToSend:(id)arg1 ofType:(unsigned char)arg2 objectID:(unsigned long long)arg3;

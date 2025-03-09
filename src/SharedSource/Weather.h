@@ -62,13 +62,13 @@
 
 @property float windMovement; // @synthesize windMovement;
 - (float)windStrength;
-- (struct Vector)cloudColorForWeatherFraction:(float)arg1 timeOfDayFraction:(float)arg2 isBackground:(BOOL)arg3;
+- (Vector)cloudColorForWeatherFraction:(float)arg1 timeOfDayFraction:(float)arg2 isBackground:(BOOL)arg3;
 - (void)setSoundPaused:(BOOL)arg1;
-- (void)renderWithMatrix:(union _GLKMatrix4)arg1 pinchScale:(float)arg2 withDayColor:(struct Vector)arg3 rainFraction:(float)arg4 snowFraction:(float)arg5 snowLevel:(float)arg6;
-- (void)renderCloudWithMatrix:(union _GLKMatrix4)arg1 translation:(struct Vector2)arg2 dt:(float)arg3 weatherFraction:(float)arg4 futureWeatherFraction:(float)arg5 timeOfDayFraction:(float)arg6;
+- (void)renderWithMatrix:(union _GLKMatrix4)arg1 pinchScale:(float)arg2 withDayColor:(Vector)arg3 rainFraction:(float)arg4 snowFraction:(float)arg5 snowLevel:(float)arg6;
+- (void)renderCloudWithMatrix:(union _GLKMatrix4)arg1 translation:(Vector2)arg2 dt:(float)arg3 weatherFraction:(float)arg4 futureWeatherFraction:(float)arg5 timeOfDayFraction:(float)arg6;
 - (void)updateCloudsWithTranslation:(float)arg1;
-- (void)updateRainSoundWithRainFraction:(float)arg1 undergroundMix:(float)arg2 position:(struct Vector2)arg3;
-- (void)updateBirdSoundWithBirdFraction:(float)arg1 dayNightMix:(float)arg2 undergroundMix:(float)arg3 dt:(float)arg4 playPosition:(struct Vector2)arg5;
+- (void)updateRainSoundWithRainFraction:(float)arg1 undergroundMix:(float)arg2 position:(Vector2)arg3;
+- (void)updateBirdSoundWithBirdFraction:(float)arg1 dayNightMix:(float)arg2 undergroundMix:(float)arg3 dt:(float)arg4 playPosition:(Vector2)arg5;
 - (void)update:(float)arg1 rainFraction:(float)arg2 snowFraction:(float)arg3;
 - (void)dealloc;
 - (void)loadCricketSounds;

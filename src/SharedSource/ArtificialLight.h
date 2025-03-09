@@ -15,7 +15,7 @@
     int maxBlue;
     int maxHeat;
     int radius;
-    CDStruct_ffe6b7c1 contributionGridOrigin;
+    intpair contributionGridOrigin;
     int diameter;
     int lightDirection;
     DynamicObject *parentObject;
@@ -27,8 +27,8 @@
 - (void)dealloc;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4 parentObject:(id)arg5;
-- (struct Vector)lightColor;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 parentObject:(id)arg5 colorR:(int)arg6 colorG:(int)arg7 colorB:(int)arg8 heat:(int)arg9 radius:(int)arg10 lightDirection:(int)arg11;
+- (Vector)lightColor;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 parentObject:(id)arg5 colorR:(int)arg6 colorG:(int)arg7 colorB:(int)arg8 heat:(int)arg9 radius:(int)arg10 lightDirection:(int)arg11;
 - (int)objectType;
 - (void)removeFromTiles;
 - (void)addToTiles;

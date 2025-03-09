@@ -59,8 +59,8 @@
 - (BOOL)shouldAddFallenFruits;
 - (int)fruitItemType;
 - (BOOL)isGrowingInCompost;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 maxHeight:(short)arg5 growthRate:(short)arg6 treeDensityNoiseFunction:(id)arg7 seasonOffsetNoiseFunction:(id)arg8 adultTree:(BOOL)arg9 adultMaxAge:(float)arg10;
-- (id)initStaticTreeWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 treeDensityNoiseFunction:(id)arg5 seasonOffsetNoiseFunction:(id)arg6;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 maxHeight:(short)arg5 growthRate:(short)arg6 treeDensityNoiseFunction:(id)arg7 seasonOffsetNoiseFunction:(id)arg8 adultTree:(BOOL)arg9 adultMaxAge:(float)arg10;
+- (id)initStaticTreeWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 treeDensityNoiseFunction:(id)arg5 seasonOffsetNoiseFunction:(id)arg6;
 - (void)removeFromMacroBlock;
 
 @end

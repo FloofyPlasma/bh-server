@@ -15,7 +15,7 @@
 }
 
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1 yPos:(int)arg2;
-- (struct Vector)lightPos;
+- (Vector)lightPos;
 - (int)lightGlowQuadCount;
 - (void)setNeedsRemoved:(BOOL)arg1;
 - (void)worldChanged:(vector_07678c45 *)arg1;
@@ -23,8 +23,8 @@
 - (void)dealloc;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 tile:(struct Tile *)arg5;
-- (struct Vector)getLightRGB;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 tile:(struct Tile *)arg5;
+- (Vector)getLightRGB;
 - (int)objectType;
 - (void)initSubDerivedItems;
 

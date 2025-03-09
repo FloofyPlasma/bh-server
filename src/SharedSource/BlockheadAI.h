@@ -17,12 +17,12 @@
 {
     Blockhead *blockhead;
     World *world;
-    CDStruct_ffe6b7c1 foundTilePos[16];
+    intpair foundTilePos[16];
     char foundTile[16];
-    CDStruct_ffe6b7c1 previousActionTiles[32];
+    intpair previousActionTiles[32];
     int previousActionCount;
     float inactivityTimer;
-    CDStruct_ffe6b7c1 goalDigTile;
+    intpair goalDigTile;
     int currentSearchLevel;
     int currentSearchLevelCount;
     BOOL lastFrameHadActions;
@@ -38,7 +38,7 @@
 
 - (void)noPathToAction;
 - (void)update:(float)arg1 isSimulation:(BOOL)arg2;
-- (BOOL)testTileAtPos:(CDStruct_ffe6b7c1)arg1;
+- (BOOL)testTileAtPos:(intpair)arg1;
 - (void)dealloc;
 - (id)initWithBlockhead:(id)arg1 world:(id)arg2;
 

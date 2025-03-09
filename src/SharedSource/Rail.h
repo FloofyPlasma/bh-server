@@ -32,7 +32,7 @@
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 type:(int)arg5 ownedByStation:(BOOL)arg6;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 type:(int)arg5 ownedByStation:(BOOL)arg6;
 - (int)objectType;
 - (void)initSubDerivedItems;
 - (void)updateRailConfiguration;

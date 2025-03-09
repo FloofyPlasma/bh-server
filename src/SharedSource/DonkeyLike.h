@@ -26,7 +26,7 @@
     float prevRotation;
     float walkTimer;
     float yOffset;
-    struct Vector2 backPos;
+    Vector2 backPos;
     float targetXSpeed;
     float actualXSpeed;
     int goalX;
@@ -54,9 +54,9 @@
     float munchMotionTimer;
     float munchMotionRandomSpeed;
     float munchMotionRandomSpeedChangeTimer;
-    struct Vector bodyColor;
+    Vector bodyColor;
     _Bool useColoredShader;
-    CDStruct_ffe6b7c1 remoteStopPos;
+    intpair remoteStopPos;
     BOOL lastSendContainedMovement;
 }
 
@@ -75,24 +75,24 @@
 - (int)rideDirection;
 - (BOOL)jumpsOnSwipe;
 - (void)worldChanged:(vector_07678c45 *)arg1;
-- (struct Vector2)cameraPosForBlockhead:(id)arg1;
+- (Vector2)cameraPosForBlockhead:(id)arg1;
 - (float)riderBodyZRotationForBlockhead:(id)arg1;
 - (float)riderBodyYRotationForBlockhead:(id)arg1;
 - (void)swipeUpGesture;
 - (void)removeRider:(id)arg1;
 - (void)addRider:(id)arg1;
 - (float)maxVelocity;
-- (void)setTargetVelocity:(struct Vector2)arg1;
-- (struct Vector)riderPosForBlockhead:(id)arg1;
-- (struct Vector2)renderPos;
+- (void)setTargetVelocity:(Vector2)arg1;
+- (Vector)riderPosForBlockhead:(id)arg1;
+- (Vector2)renderPos;
 - (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
 - (void)reactToBeingHit;
 - (void)die:(id)arg1;
-- (BOOL)tapIsWithinBodyRadius:(struct Vector2)arg1;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
 - (unsigned short)maxHealth;
 - (void)drawSubClassStuff:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3;
 - (void)draw:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3 cameraMinXWorld:(int)arg4 cameraMaxXWorld:(int)arg5 cameraMinYWorld:(int)arg6 cameraMaxYWorld:(int)arg7;
-- (void)setupMatrices:(struct Vector2)arg1 dt:(float)arg2;
+- (void)setupMatrices:(Vector2)arg1 dt:(float)arg2;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
 - (void)remoteCreationDataUpdate:(id)arg1;
@@ -106,7 +106,7 @@
 - (struct DonkeyLikeCreationNetData)donkeyLikeCreationNetDataForClient:(id)arg1;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 saveDict:(id)arg5 isAdult:(BOOL)arg6 wasPlaced:(BOOL)arg7 placedByClient:(id)arg8;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 saveDict:(id)arg5 isAdult:(BOOL)arg6 wasPlaced:(BOOL)arg7 placedByClient:(id)arg8;
 - (int)foodPlantType;
 - (void)loadDerivedStuff;
 

@@ -18,7 +18,7 @@
 - (int)minAllowedTemperature;
 - (int)seedItemType;
 - (float)maxAgeBase;
-- (struct Vector)lightColor;
+- (Vector)lightColor;
 - (float)lightFactor;
 - (BOOL)emitsLight;
 - (int)objectType;

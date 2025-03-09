@@ -14,7 +14,7 @@
     NSString *currentTipText;
     float timeoutTimer;
     double timeLastSecondBlockheadTipDisplayed;
-    struct Vector tipColor;
+    Vector tipColor;
     NSString *tutorialTipText;
 }
 
@@ -23,10 +23,10 @@
 - (void)displaySecondBlockheadTipIfGoodTime;
 - (void)updateTipForBlockhead:(id)arg1 severityLevel:(int)arg2;
 - (void)setTutorialTipText:(id)arg1;
-- (struct Vector)tipColor;
+- (Vector)tipColor;
 - (id)currentTip;
 - (void)update:(float)arg1;
-- (void)displayTip:(id)arg1 withTimeOut:(float)arg2 displayEvenIfDisabled:(BOOL)arg3 tipColor:(struct Vector)arg4;
+- (void)displayTip:(id)arg1 withTimeOut:(float)arg2 displayEvenIfDisabled:(BOOL)arg3 tipColor:(Vector)arg4;
 - (void)reset;
 - (void)setWorld:(id)arg1;
 

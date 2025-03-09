@@ -35,7 +35,7 @@
 - (BOOL)canBeMilkedByBlockhead:(id)arg1;
 - (BOOL)jumps;
 - (void)drawSubClassStuff:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3;
-- (void)setupMatrices:(struct Vector2)arg1 dt:(float)arg2;
+- (void)setupMatrices:(Vector2)arg1 dt:(float)arg2;
 - (unsigned long long)creationDataStructSize;
 - (void)remoteCreationDataUpdate:(id)arg1;
 - (void)remoteUpdate:(id)arg1;
@@ -46,7 +46,7 @@
 - (id)getSaveDict;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 saveDict:(id)arg5 isAdult:(BOOL)arg6 wasPlaced:(BOOL)arg7 placedByClient:(id)arg8;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 saveDict:(id)arg5 isAdult:(BOOL)arg6 wasPlaced:(BOOL)arg7 placedByClient:(id)arg8;
 - (void)dealloc;
 - (unsigned short)maxHealth;
 - (void)loadDerivedStuff;

@@ -30,7 +30,7 @@
     double latestPingForLoopTime;
     id fadeOutCompleteTarget;
     SEL fadeOutCompleteAction;
-    struct Vector2 listenerPos;
+    Vector2 listenerPos;
     BOOL requiresRecord;
     BOOL loopMP3s;
     BOOL alSuspended;
@@ -79,8 +79,8 @@
 - (void)update:(float)arg1;
 - (void)becomeActive;
 - (void)resignActive;
-- (struct Vector2)listenerPos;
-- (void)setListenerPosition:(struct Vector2)arg1 zoom:(float)arg2;
+- (Vector2)listenerPos;
+- (void)setListenerPosition:(Vector2)arg1 zoom:(float)arg2;
 - (float)soundVolume;
 - (float)musicVolume;
 - (void)setMusicVolume:(float)arg1;

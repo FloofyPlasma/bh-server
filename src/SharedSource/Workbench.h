@@ -85,7 +85,7 @@
 - (BOOL)canBeUsedInExpertModeWhenNotOwned;
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1 yPos:(int)arg2;
 - (BOOL)occupiesNormalContents;
-- (struct Vector)lightPos;
+- (Vector)lightPos;
 - (int)lightGlowQuadCount;
 - (void)blockheadUnloaded:(id)arg1;
 - (void)removeFromMacroBlock;
@@ -93,9 +93,9 @@
 - (BOOL)rendersDynamicObjectQuad;
 - (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCount;
-- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(CDStruct_ffe6b7c1)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(CDStruct_ffe6b7c1)arg1;
-- (struct Vector2)fuelUIPos;
+- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(intpair)arg3;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
+- (Vector2)fuelUIPos;
 - (int)destroyItemType;
 - (BOOL)canDismissFuelUI;
 - (void)setPaused:(BOOL)arg1;
@@ -151,9 +151,9 @@
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 type:(int)arg5 flipped:(BOOL)arg6 saveDict:(id)arg7 placedByClient:(id)arg8 clientName:(id)arg9;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 type:(int)arg5 flipped:(BOOL)arg6 saveDict:(id)arg7 placedByClient:(id)arg8 clientName:(id)arg9;
 - (void)updatePortalLight;
-- (struct Vector)getLightRGB;
+- (Vector)getLightRGB;
 - (void)initSubDerivedItems;
 - (void)initLevelStuff;
 - (int)objectType;

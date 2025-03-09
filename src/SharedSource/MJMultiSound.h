@@ -49,9 +49,9 @@
 - (void)setLegacyVolume:(float)arg1;
 - (void)setLooping:(BOOL)arg1;
 - (void)stopAll;
-- (void)playAtPosition:(struct Vector2)arg1 afterDelay:(double)arg2;
+- (void)playAtPosition:(Vector2)arg1 afterDelay:(double)arg2;
 - (void)playDelayedSoundWithDict:(id)arg1;
-- (void)playAtPosition:(struct Vector2)arg1;
+- (void)playAtPosition:(Vector2)arg1;
 - (void)stopLoopingSound;
 - (void)playAfterDelay:(double)arg1;
 - (void)backgroundThreadPlayWithDelay:(id)arg1;

@@ -20,9 +20,9 @@
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)removeFromMacroBlock;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4;
-- (BOOL)takeAnyWaterFromTileAtPos:(CDStruct_ffe6b7c1)arg1 tile:(struct Tile *)arg2;
-- (void)subtractWater:(int)arg1 fromOtherTile:(struct Tile *)arg2 atPos:(CDStruct_ffe6b7c1)arg3;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4;
+- (BOOL)takeAnyWaterFromTileAtPos:(intpair)arg1 tile:(struct Tile *)arg2;
+- (void)subtractWater:(int)arg1 fromOtherTile:(struct Tile *)arg2 atPos:(intpair)arg3;
 - (int)objectType;
 
 @end

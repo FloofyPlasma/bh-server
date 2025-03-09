@@ -4,6 +4,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
+#import "MJMath.h"
+
 //! FIXME: Bad macro hack.
 #ifndef BOOL
 #define BOOL bool
@@ -18,7 +20,7 @@
     BOOL inProgress;
     BOOL complete;
     BOOL isAI;
-    CDStruct_ffe6b7c1 goalTilePos;
+    intpair goalTilePos;
     InventoryItem *interactionItem;
     short interactionItemIndex;
     short interactionItemSubIndex;
@@ -46,13 +48,13 @@
 @property short interactionItemIndex; // @synthesize interactionItemIndex;
 @property(retain) InventoryItem *interactionItem; // @synthesize interactionItem;
 @property(retain) NSDictionary *inventoryChange; // @synthesize inventoryChange;
-@property CDStruct_ffe6b7c1 goalTilePos; // @synthesize goalTilePos;
+@property intpair goalTilePos; // @synthesize goalTilePos;
 @property BOOL complete; // @synthesize complete;
 @property BOOL inProgress; // @synthesize inProgress;
 - (void)dealloc;
 - (id)getSaveDict;
 - (id)initWithSaveDict:(id)arg1 inventoryItems:(id)arg2;
-- (id)initWithGoalPos:(CDStruct_ffe6b7c1)arg1 goalInteraction:(int)arg2 pathType:(int)arg3 interactionItem:(id)arg4 itemIndex:(short)arg5 itemSubIndex:(short)arg6 interactionObjectID:(unsigned long long)arg7 craftableItemObject:(id)arg8 craftCountOrExtraData:(short)arg9 isAI:(BOOL)arg10 inventoryChange:(id)arg11;
+- (id)initWithGoalPos:(intpair)arg1 goalInteraction:(int)arg2 pathType:(int)arg3 interactionItem:(id)arg4 itemIndex:(short)arg5 itemSubIndex:(short)arg6 interactionObjectID:(unsigned long long)arg7 craftableItemObject:(id)arg8 craftCountOrExtraData:(short)arg9 isAI:(BOOL)arg10 inventoryChange:(id)arg11;
 
 @end
 

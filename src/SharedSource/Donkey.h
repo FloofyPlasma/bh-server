@@ -36,7 +36,7 @@
 - (int)generateBreedForChild;
 - (void)createItemDropsForDeath;
 - (void)drawSubClassStuff:(float)arg1 projectionMatrix:(union _GLKMatrix4)arg2 modelViewMatrix:(union _GLKMatrix4)arg3;
-- (void)setupMatrices:(struct Vector2)arg1 dt:(float)arg2;
+- (void)setupMatrices:(Vector2)arg1 dt:(float)arg2;
 - (float)maxVelocity;
 - (BOOL)galloping;
 - (BOOL)canJumpMultipleTilesWhileFlying;

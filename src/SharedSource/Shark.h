@@ -28,8 +28,8 @@
     DrawCube *tailFinTopCube;
     DrawCube *tailFinBottomCube;
     int movementDirection;
-    CDStruct_ffe6b7c1 fromSquare;
-    CDStruct_ffe6b7c1 toSquare;
+    intpair fromSquare;
+    intpair toSquare;
     float travelFraction;
     float randomTimeBetweenDirectionChanges;
     float bodyRotation;
@@ -40,7 +40,7 @@
     float walkSpeed;
     float bobTimer;
     float xOffset;
-    struct Vector2 namePosition;
+    Vector2 namePosition;
     float drownTimer;
     float bubbleEmitTimer;
     float fallVelocity;
@@ -54,8 +54,8 @@
     BOOL isOnAirAboveSolidGround;
     Blockhead *attackBlockhead;
     BOOL nearbyBlockhead;
-    struct Vector2 riderTargetVelocity;
-    CDStruct_ffe6b7c1 remoteGoalSquare;
+    Vector2 riderTargetVelocity;
+    intpair remoteGoalSquare;
     float remoteWalkSpeed;
     int remoteMovementDirection;
 }
@@ -69,18 +69,18 @@
 - (void)removeRider:(id)arg1;
 - (void)addRider:(id)arg1;
 - (int)rideDirection;
-- (void)setTargetVelocity:(struct Vector2)arg1;
+- (void)setTargetVelocity:(Vector2)arg1;
 - (float)riderBodyYRotationForBlockhead:(id)arg1;
-- (struct Vector2)cameraPosForBlockhead:(id)arg1;
-- (struct Vector)riderPosForBlockhead:(id)arg1;
-- (struct Vector2)namePos;
+- (Vector2)cameraPosForBlockhead:(id)arg1;
+- (Vector)riderPosForBlockhead:(id)arg1;
+- (Vector2)namePos;
 - (void)reactToBeingFed;
 - (void)blockheadUnloaded:(id)arg1;
-- (struct Vector2)center;
-- (struct Vector2)renderPos;
+- (Vector2)center;
+- (Vector2)renderPos;
 - (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
 - (void)reactToBeingHit;
-- (BOOL)tapIsWithinBodyRadius:(struct Vector2)arg1;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
 - (unsigned short)maxHealth;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)isUnderLocalControl;
@@ -97,7 +97,7 @@
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 saveDict:(id)arg5 isAdult:(BOOL)arg6 wasPlaced:(BOOL)arg7 placedByClient:(id)arg8;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 saveDict:(id)arg5 isAdult:(BOOL)arg6 wasPlaced:(BOOL)arg7 placedByClient:(id)arg8;
 - (void)loadDerivedStuff;
 - (id)cantBeCapturedTipStringForBlockhead:(id)arg1 withItemType:(int)arg2;
 - (BOOL)canBeCapturedByBlockhead:(id)arg1 withItemType:(int)arg2;

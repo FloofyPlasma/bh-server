@@ -37,7 +37,7 @@
     int paintColor;
 }
 
-+ (id)creationNetDataForFreeblockAtPosition:(CDStruct_ffe6b7c1)arg1 ofType:(int)arg2 dataA:(unsigned short)arg3 dataB:(unsigned short)arg4 subItems:(id)arg5 dynamicObjectSaveDict:(id)arg6 hovers:(BOOL)arg7 priorityBlockhead:(id)arg8 soundType:(int)arg9 creationSoundPlayTime:(float)arg10;
++ (id)creationNetDataForFreeblockAtPosition:(intpair)arg1 ofType:(int)arg2 dataA:(unsigned short)arg3 dataB:(unsigned short)arg4 subItems:(id)arg5 dynamicObjectSaveDict:(id)arg6 hovers:(BOOL)arg7 priorityBlockhead:(id)arg8 soundType:(int)arg9 creationSoundPlayTime:(float)arg10;
 @property int soundType; // @synthesize soundType;
 @property float creationSoundPlayTime; // @synthesize creationSoundPlayTime;
 @property BOOL hovers; // @synthesize hovers;
@@ -62,8 +62,8 @@
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4 avoidFreeblockDupeObjectIds:(list_2eb5f697 *)arg5;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4;
-- (void)updatePosition:(CDStruct_ffe6b7c1)arg1;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 ofType:(int)arg4 dataA:(unsigned short)arg5 dataB:(unsigned short)arg6 subItems:(id)arg7 dynamicObjectSaveDict:(id)arg8 cache:(id)arg9 hovers:(BOOL)arg10 priorityBlockhead:(id)arg11;
+- (void)updatePosition:(intpair)arg1;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 ofType:(int)arg4 dataA:(unsigned short)arg5 dataB:(unsigned short)arg6 subItems:(id)arg7 dynamicObjectSaveDict:(id)arg8 cache:(id)arg9 hovers:(BOOL)arg10 priorityBlockhead:(id)arg11;
 - (int)objectType;
 - (void)initSubDerivedObjects;
 

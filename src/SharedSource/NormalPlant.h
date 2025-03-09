@@ -23,11 +23,11 @@
 @property float availableFood; // @synthesize availableFood;
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1 yPos:(int)arg2;
 - (void)removeFromMacroBlock;
-- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(CDStruct_ffe6b7c1)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(CDStruct_ffe6b7c1)arg1;
+- (int)addDrawQuadData:(float *)arg1 fromIndex:(int)arg2 forMacroPos:(intpair)arg3;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
 - (int)droppedItemType;
 - (int)numberOfOccupiedTilesAbove;
-- (int)tileHarvested:(CDStruct_ffe6b7c1)arg1 removeBlockhead:(id)arg2 correctToolMultiplier:(int)arg3;
+- (int)tileHarvested:(intpair)arg1 removeBlockhead:(id)arg2 correctToolMultiplier:(int)arg3;
 - (BOOL)tileIsKindOfSelf:(struct Tile *)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (int)addLightGlowQuadData:(float *)arg1 fromIndex:(int)arg2;
@@ -39,9 +39,9 @@
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 cache:(id)arg3 netData:(id)arg4;
 - (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 saveDict:(id)arg3 cache:(id)arg4 treeDensityNoiseFunction:(id)arg5 seasonOffsetNoiseFunction:(id)arg6;
-- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(CDStruct_ffe6b7c1)arg3 cache:(id)arg4 maxAgeGene:(unsigned short)arg5 growthRateGene:(unsigned short)arg6 treeDensityNoiseFunction:(id)arg7 seasonOffsetNoiseFunction:(id)arg8 adultPlant:(BOOL)arg9;
+- (id)initWithWorld:(id)arg1 dynamicWorld:(id)arg2 atPosition:(intpair)arg3 cache:(id)arg4 maxAgeGene:(unsigned short)arg5 growthRateGene:(unsigned short)arg6 treeDensityNoiseFunction:(id)arg7 seasonOffsetNoiseFunction:(id)arg8 adultPlant:(BOOL)arg9;
 - (void)initSubDerivedItems;
-- (struct Vector)lightColor;
+- (Vector)lightColor;
 - (float)lightFactor;
 - (BOOL)emitsLight;
 - (int)npcSpawnType;

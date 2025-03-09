@@ -21,11 +21,11 @@
 - (void)removeRider:(Blockhead *)arg1;
 - (void)addRider:(Blockhead *)arg1;
 - (int)rideDirection;
-- (void)setTargetVelocity:(struct Vector2)arg1;
+- (void)setTargetVelocity:(Vector2)arg1;
 - (float)riderBodyYRotationForBlockhead:(Blockhead *)arg1;
-- (struct Vector2)renderPos;
-- (struct Vector2)cameraPosForBlockhead:(Blockhead *)arg1;
-- (struct Vector)riderPosForBlockhead:(Blockhead *)arg1;
+- (Vector2)renderPos;
+- (Vector2)cameraPosForBlockhead:(Blockhead *)arg1;
+- (Vector)riderPosForBlockhead:(Blockhead *)arg1;
 
 @optional
 - (BOOL)riderRidesWithArmsDown;
