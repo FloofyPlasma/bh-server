@@ -4,9 +4,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! FIXME: Bad macro hack
+#ifndef BOOL
+#define BOOL bool
+#endif
 
-@interface WorldHelper : NSObject
+//! #import <objc/NSObject.h>
+
+@interface WorldHelper //! : NSObject
 {
 }
 

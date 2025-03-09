@@ -4,14 +4,19 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! FIXME: Bad macro hack
+#ifndef BOOL
+#define BOOL bool
+#endif
+
+//! #import <objc/NSObject.h>
 
 #import "BHMatchDelegate-Protocol.h"
 
 @class BHMatch, GKVoiceChat, NSArray, NSMutableArray, NSMutableDictionary;
 @protocol BHNetNodeDelegate;
 
-@interface BHNetNode : NSObject <BHMatchDelegate>
+@interface BHNetNode //! : NSObject <BHMatchDelegate>
 {
     NSObject<BHNetNodeDelegate> *delegate;
     BHMatch *match;

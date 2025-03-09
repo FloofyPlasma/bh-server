@@ -4,11 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! #import <objc/NSObject.h>
 
 @class NSString, World;
 
-@interface TipManager : NSObject
+@interface TipManager //! : NSObject
 {
     World *world;
     NSString *currentTipText;

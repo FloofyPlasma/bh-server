@@ -4,11 +4,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! FIXME: Bad macro hack
+#ifndef BOOL
+#define BOOL bool
+#endif
+
+//! #import <objc/NSObject.h>
 
 @class NSString;
 
-@interface DatabaseEnvironment : NSObject
+@interface DatabaseEnvironment //! : NSObject
 {
     struct MDB_env *env;
     struct MDB_txn *bulkTransaction;

@@ -4,9 +4,9 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! #import <objc/NSObject.h>
 
-@interface CraftableItemObject : NSObject
+@interface CraftableItemObject //! : NSObject
 {
     struct CraftableItem craftableItem;
 }

@@ -4,13 +4,18 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! FIXME: Bad macro hack
+#ifndef BOOL
+#define BOOL bool
+#endif
+
+//! #import <objc/NSObject.h>
 
 #import "GameControllerDelegate-Protocol.h"
 
 @class GameController, NSFileHandle, NSString;
 
-@interface CommandLineDelegate : NSObject <GameControllerDelegate>
+@interface CommandLineDelegate //! : NSObject <GameControllerDelegate>
 {
     GameController *gameController;
     NSFileHandle *stdinHandle;

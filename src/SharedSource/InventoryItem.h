@@ -4,11 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! #import <objc/NSObject.h>
 
 @class NSArray, NSDictionary;
 
-@interface InventoryItem : NSObject
+@interface InventoryItem //! : NSObject
 {
     int itemType;
     unsigned short dataA;

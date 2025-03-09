@@ -4,11 +4,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! #import <objc/NSObject.h>
 
 @class CPCache, CPTexture2D, Shader, World;
 
-@interface ProjectileManager : NSObject
+@interface ProjectileManager //! : NSObject
 {
     World *world;
     CPCache *cache;

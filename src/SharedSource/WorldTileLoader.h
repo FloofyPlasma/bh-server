@@ -4,11 +4,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! FIXME: Bad macro hack
+#ifndef BOOL
+#define BOOL bool
+#endif
+
+//! #import <objc/NSObject.h>
 
 @class Database, DatabaseEnvironment, NSString, NoiseFunction, World;
 
-@interface WorldTileLoader : NSObject
+@interface WorldTileLoader //! : NSObject
 {
     World *world;
     unsigned int randomSeed;

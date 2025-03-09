@@ -4,11 +4,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! FIXME: Bad macro hack
+#ifndef BOOL
+#define BOOL bool
+#endif
+
+//! #import <objc/NSObject.h>
 
 @class CPCache, CPTexture2D, FNImageData, MJMultiSound, MJSound, NoiseFunction, Shader, World;
 
-@interface Weather : NSObject
+@interface Weather //! : NSObject
 {
     CPCache *cache;
     World *world;

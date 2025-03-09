@@ -4,12 +4,17 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! FIXME: Bad macro hack
+#ifndef BOOL
+#define BOOL bool
+#endif
+
+//! #import <objc/NSObject.h>
 
 @class BHClient, BHServer, CPCache, CPTexture2D, ClientTileLoader, CloudInterface, Database, DatabaseConvertor, DatabaseEnvironment, DynamicWorld, FNImageData, NSData, NSDate, NSDictionary, NSIndexSet, NSMutableArray, NSMutableData, NSMutableDictionary, NSMutableIndexSet, NSOperationQueue, NSString, NSTimer, NSURLConnection, NoiseFunction, OwnershipAreaRenderer, PathCreator, PortalChestManager, ProjectileManager, Shader, Tutorial, UIManager, Weather, WorldTileLoader;
 @protocol WorldDelegate;
 
-@interface World : NSObject
+@interface World //! : NSObject
 {
     id <WorldDelegate> delegate;
     int worldWidthMacro;

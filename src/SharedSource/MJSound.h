@@ -4,11 +4,16 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+//! FIXME: Bad hack
+#ifndef BOOL
+#define BOOL bool
+#endif
+
+//! #import <objc/NSObject.h>
 
 @class NSString;
 
-@interface MJSound : NSObject
+@interface MJSound //! : NSObject
 {
     void *_data;
     int _localFormat;
