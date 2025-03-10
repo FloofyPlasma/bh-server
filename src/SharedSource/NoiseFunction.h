@@ -15,7 +15,7 @@
 @interface NoiseFunction //! : NSObject
 {
   BOOL _tileable;
-  struct NoiseFunctionStruct *_structPtr;
+  struct NoiseFunctionStruct* _structPtr;
 }
 
 - (void)dealloc;

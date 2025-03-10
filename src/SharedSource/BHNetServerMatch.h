@@ -13,20 +13,20 @@
 
 @interface BHNetServerMatch : BHMatch <NSNetServiceDelegate> {
   unsigned short serverPort;
-  NSNetService *reliableServerService;
-  struct __CFSocket *reliableServerListeningSocket;
-  struct _ENetHost *enetServer;
-  NSMutableDictionary *connections;
-  NSMutableDictionary *persistentIdsToEnetIds;
-  NSMutableDictionary *enetIdsToPersistentIds;
-  NSMutableArray *playerInfos;
-  NSString *userName;
-  NSString *worldName;
-  NSString *ownerName;
-  NSString *cloudSalt;
+  NSNetService* reliableServerService;
+  struct __CFSocket* reliableServerListeningSocket;
+  struct _ENetHost* enetServer;
+  NSMutableDictionary* connections;
+  NSMutableDictionary* persistentIdsToEnetIds;
+  NSMutableDictionary* enetIdsToPersistentIds;
+  NSMutableArray* playerInfos;
+  NSString* userName;
+  NSString* worldName;
+  NSString* ownerName;
+  NSString* cloudSalt;
   unsigned short portToUse;
   BOOL hasLocalPLayer;
-  NSTimer *pollTimer;
+  NSTimer* pollTimer;
   float noCreditBootTimer;
   double credit;
   double pollTimerLastTime;
@@ -48,7 +48,7 @@
 - (BOOL)sendData:(id)arg1
        toPlayers:(id)arg2
     withDataMode:(long long)arg3
-           error:(id *)arg4;
+           error:(id*)arg4;
 - (BOOL)isCloudMatch;
 - (id)cloudSalt;
 - (id)ownerName;
@@ -75,9 +75,9 @@
 - (void)setPrivacyByString:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end

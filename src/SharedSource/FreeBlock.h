@@ -18,20 +18,20 @@
   float fallSpeed;
   float rotation;
   double creationTime;
-  DrawCube *blockCube;
+  DrawCube* blockCube;
   int lightR;
   int lightG;
   int lightB;
   int heat;
   int lightRadius;
-  NSMutableArray *subItems;
+  NSMutableArray* subItems;
   float xVelocity;
   float xVelocityWater;
   float yVelocity;
   float xOffset;
   float yOffset;
-  Blockhead *priorityBlockhead;
-  NSDictionary *dynamicObjectSaveDict;
+  Blockhead* priorityBlockhead;
+  NSDictionary* dynamicObjectSaveDict;
   float creationSoundPlayTime;
   int soundType;
   int paintColor;
@@ -47,17 +47,17 @@
                           priorityBlockhead:(id)arg8
                                   soundType:(int)arg9
                       creationSoundPlayTime:(float)arg10;
-@property int soundType;               // @synthesize soundType;
+@property int soundType; // @synthesize soundType;
 @property float creationSoundPlayTime; // @synthesize creationSoundPlayTime;
-@property BOOL hovers;                 // @synthesize hovers;
-@property(readonly)
-    NSDictionary *dynamicObjectSaveDict; // @synthesize dynamicObjectSaveDict;
-@property(readonly)
-    Blockhead *priorityBlockhead;      // @synthesize priorityBlockhead;
-@property(readonly) NSArray *subItems; // @synthesize subItems;
-@property unsigned short dataB;        // @synthesize dataB;
-@property unsigned short dataA;        // @synthesize dataA;
-@property int itemType;                // @synthesize itemType;
+@property BOOL hovers; // @synthesize hovers;
+@property (readonly)
+    NSDictionary* dynamicObjectSaveDict; // @synthesize dynamicObjectSaveDict;
+@property (readonly)
+    Blockhead* priorityBlockhead; // @synthesize priorityBlockhead;
+@property (readonly) NSArray* subItems; // @synthesize subItems;
+@property unsigned short dataB; // @synthesize dataB;
+@property unsigned short dataA; // @synthesize dataA;
+@property int itemType; // @synthesize itemType;
 - (BOOL)shouldSaveEveryChangeInPosition;
 - (void)priorityBlockheadCannotPickup;
 - (BOOL)falling;
@@ -80,7 +80,7 @@
                    dynamicWorld:(id)arg2
                           cache:(id)arg3
                         netData:(id)arg4
-    avoidFreeblockDupeObjectIds:(list_2eb5f697 *)arg5;
+    avoidFreeblockDupeObjectIds:(list_2eb5f697*)arg5;
 - (id)initWithWorld:(id)arg1
        dynamicWorld:(id)arg2
               cache:(id)arg3

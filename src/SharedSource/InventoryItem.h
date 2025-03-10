@@ -14,19 +14,19 @@
   int itemType;
   unsigned short dataA;
   unsigned short dataB;
-  NSArray *subItems;
+  NSArray* subItems;
   unsigned char selectedSubItemIndex;
-  NSDictionary *dynamicObjectSaveDict;
+  NSDictionary* dynamicObjectSaveDict;
 }
 
-@property(readonly)
-    NSDictionary *dynamicObjectSaveDict; // @synthesize dynamicObjectSaveDict;
-@property unsigned short dataB;          // @synthesize dataB;
-@property unsigned short dataA;          // @synthesize dataA;
+@property (readonly)
+    NSDictionary* dynamicObjectSaveDict; // @synthesize dynamicObjectSaveDict;
+@property unsigned short dataB; // @synthesize dataB;
+@property unsigned short dataA; // @synthesize dataA;
 @property unsigned char
-    selectedSubItemIndex;              // @synthesize selectedSubItemIndex;
-@property(readonly) NSArray *subItems; // @synthesize subItems;
-@property(readonly) int itemType;      // @synthesize itemType;
+    selectedSubItemIndex; // @synthesize selectedSubItemIndex;
+@property (readonly) NSArray* subItems; // @synthesize subItems;
+@property (readonly) int itemType; // @synthesize itemType;
 - (id)subItemSlotDataAtIndex:(int)arg1;
 - (void)updateSubItemSlot:(id)arg1 atIndex:(int)arg2;
 - (id)saveData;

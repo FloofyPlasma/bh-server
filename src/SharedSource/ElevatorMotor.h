@@ -27,9 +27,9 @@
 - (BOOL)hasRequiredPower;
 - (BOOL)isStorageDevice;
 - (void)removeFromMacroBlock;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCount;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
@@ -66,9 +66,9 @@
 - (void)initSubDerivedItems;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end

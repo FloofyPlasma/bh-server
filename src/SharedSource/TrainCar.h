@@ -14,12 +14,12 @@
 
 @interface TrainCar
     : DynamicObject <RidableDynamicObject, TapChoiceDynamicObject> {
-  Shader *shader;
-  Shader *worldObjectShader;
-  CPTexture2D *tileTexture;
-  CPTexture2D *tileDestructTexture;
-  CPTexture2D *itemTexture;
-  Blockhead *riders[2];
+  Shader* shader;
+  Shader* worldObjectShader;
+  CPTexture2D* tileTexture;
+  CPTexture2D* tileDestructTexture;
+  CPTexture2D* itemTexture;
+  Blockhead* riders[2];
   int savedBlockheadIndex[2];
   float rotationAnimationTimer;
   Vector2 leftWheelPos;
@@ -31,14 +31,14 @@
   unsigned long long remoteLeftCarID;
   unsigned long long remoteRightCarID;
   unsigned long long remoteEngineCarID;
-  TrainCar *rightCar;
-  TrainCar *leftCar;
-  TrainCar *engineCar;
+  TrainCar* rightCar;
+  TrainCar* leftCar;
+  TrainCar* engineCar;
   BOOL engineIsRight;
   intpair leftWheelTilePos;
   intpair rightWheelTilePos;
-  Rail *leftWheelRail;
-  Rail *rightWheelRail;
+  Rail* leftWheelRail;
+  Rail* rightWheelRail;
 }
 
 - (id).cxx_construct;
@@ -71,7 +71,7 @@
 - (int)freeblockCreationItemType;
 - (BOOL)isDoubleHeight;
 - (id)actionTitle;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (Vector2)cameraPosForBlockhead:(id)arg1;
 - (float)riderBodyYRotationForBlockhead:(id)arg1;
 - (void)swipeUpGesture;
@@ -119,10 +119,10 @@
 - (void)loadDerivedStuff;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
 @property BOOL needsToUpdateChoiceUI;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 @end

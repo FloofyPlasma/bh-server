@@ -10,12 +10,12 @@
 @class NSString;
 
 @interface BlockheadCraftableItemObject : CraftableItemObject {
-  NSString *name;
+  NSString* name;
   struct BlockheadSkinOptions skinOptions;
 }
 
 @property struct BlockheadSkinOptions skinOptions; // @synthesize skinOptions;
-@property(retain) NSString *name;                  // @synthesize name;
+@property (retain) NSString* name; // @synthesize name;
 - (void)dealloc;
 - (id)getSaveDict;
 - (id)initWithSaveDict:(id)arg1;

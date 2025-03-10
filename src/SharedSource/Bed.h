@@ -12,13 +12,13 @@
 @interface Bed : InteractionObject {
   int itemType;
   unsigned short beddingColor;
-  CPTexture2D *tileDestructTexture;
-  DrawCube *pillowDrawCube;
-  DrawCube *beddingDrawCube;
-  Shader *cubeShader;
+  CPTexture2D* tileDestructTexture;
+  DrawCube* pillowDrawCube;
+  DrawCube* beddingDrawCube;
+  Shader* cubeShader;
 }
 
-@property(readonly) int itemType; // @synthesize itemType;
+@property (readonly) int itemType; // @synthesize itemType;
 - (BOOL)occupiesNormalContents;
 - (BOOL)isPaintable;
 - (void)paint:(unsigned short)arg1;
@@ -32,8 +32,8 @@
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (void)worldContentsChanged:(vector_07678c45 *)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldContentsChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
      modelViewMatrix:(union _GLKMatrix4)arg3

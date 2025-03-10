@@ -8,8 +8,8 @@
 #import "DynamicObject.h"
 
 @interface ArtificialLight : DynamicObject {
-  short *contributionGrid;
-  char *addedGrid;
+  short* contributionGrid;
+  char* addedGrid;
   int maxRed;
   int maxGreen;
   int maxBlue;
@@ -18,12 +18,12 @@
   intpair contributionGridOrigin;
   int diameter;
   int lightDirection;
-  DynamicObject *parentObject;
+  DynamicObject* parentObject;
 }
 
 - (void)addContributionForPhysicalBlockLoadedAtXPos:(int)arg1 yPos:(int)arg2;
 - (void)removeFromMacroBlock;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)dealloc;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1
@@ -46,6 +46,6 @@
 - (int)objectType;
 - (void)removeFromTiles;
 - (void)addToTiles;
-- (void)recursivelyUpdateLightWithList:(list_0ac58641 *)arg1;
+- (void)recursivelyUpdateLightWithList:(list_0ac58641*)arg1;
 
 @end

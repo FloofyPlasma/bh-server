@@ -15,11 +15,11 @@
 - (BOOL)occupiesForegroundContents;
 - (void)paint:(unsigned short)arg1;
 - (void)removeFromMacroBlock;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;

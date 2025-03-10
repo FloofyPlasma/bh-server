@@ -16,10 +16,10 @@
 
 - (BOOL)occupiesForegroundContents;
 - (void)removeFromMacroBlock;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCount;
 - (int)currentConfiguration;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;

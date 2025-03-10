@@ -8,33 +8,33 @@
 @class Blockhead, Database, DatabaseEnvironment, NSDictionary, NSString;
 
 @protocol WorldDelegate
-- (void)viewServerWelcomeMessage:(NSString *)arg1
-                     customRules:(NSDictionary *)arg2
+- (void)viewServerWelcomeMessage:(NSString*)arg1
+                     customRules:(NSDictionary*)arg2
                        allowEdit:(BOOL)arg3;
-- (void)showDieConfirmationForBlockhead:(Blockhead *)arg1;
+- (void)showDieConfirmationForBlockhead:(Blockhead*)arg1;
 - (void)pinchZoomToScale:(float)arg1;
 - (void)hideChatView;
 - (void)showChatUI;
-- (void)fileWriteFailed:(NSString *)arg1;
+- (void)fileWriteFailed:(NSString*)arg1;
 - (void)showBlockheadAvailablePrompt:(int)arg1;
-- (BOOL)showDoubleTimePromptIfGoodTime:(NSString *)arg1;
+- (BOOL)showDoubleTimePromptIfGoodTime:(NSString*)arg1;
 - (void)instructionsButtonTapped;
 - (void)achievementsButtonTapped;
-- (NSString *)messageForAchivementWithIdentifier:(NSString *)arg1;
-- (NSDictionary *)getDefaultGameSaveForWorldWithID:(NSString *)arg1;
+- (NSString*)messageForAchivementWithIdentifier:(NSString*)arg1;
+- (NSDictionary*)getDefaultGameSaveForWorldWithID:(NSString*)arg1;
 - (void)updateiCloudRecentConnectionList;
 - (BOOL)secondaryTouchCancelled;
 - (void)presentSavedToCameraRollAlert;
 - (void)render:(float)arg1;
 - (void)startIncentivizedVideo;
 - (BOOL)hasRewardedVideoAvailable;
-- (DatabaseEnvironment *)appDatabaseEnvironment;
-- (Database *)appDatabase;
+- (DatabaseEnvironment*)appDatabaseEnvironment;
+- (Database*)appDatabase;
 - (void)iapStarted;
 - (void)exitWorld;
 - (void)startCameraZoomForTeaserRecord;
 - (void)setPaused:(BOOL)arg1;
 - (void)connectionToServerOK;
 - (void)connectionToServerLostShouldRetry:(BOOL)arg1;
-- (void)showWelcomeBackPopupWithMessage:(NSString *)arg1;
+- (void)showWelcomeBackPopupWithMessage:(NSString*)arg1;
 @end

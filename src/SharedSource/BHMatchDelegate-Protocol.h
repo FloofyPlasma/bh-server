@@ -11,17 +11,17 @@
 
 @optional
 - (void)bootAllClientsDueToNoCredit;
-- (void)updatePlayerList:(NSArray *)arg1;
-- (void)infoArrived:(NSMutableDictionary *)arg1 forPlayer:(NSString *)arg2;
-- (BOOL)match:(BHMatch *)arg1 shouldReinvitePlayer:(NSString *)arg2;
-- (void)match:(BHMatch *)arg1
-            player:(NSString *)arg2
+- (void)updatePlayerList:(NSArray*)arg1;
+- (void)infoArrived:(NSMutableDictionary*)arg1 forPlayer:(NSString*)arg2;
+- (BOOL)match:(BHMatch*)arg1 shouldReinvitePlayer:(NSString*)arg2;
+- (void)match:(BHMatch*)arg1
+            player:(NSString*)arg2
     didChangeState:(long long)arg3;
-- (void)match:(BHMatch *)arg1
-    didReceiveData:(NSData *)arg2
-        fromPlayer:(NSString *)arg3;
-- (void)match:(BHMatch *)arg1 didFailWithError:(NSError *)arg2;
-- (void)match:(BHMatch *)arg1
-    connectionWithPlayerFailed:(NSString *)arg2
-                     withError:(NSError *)arg3;
+- (void)match:(BHMatch*)arg1
+    didReceiveData:(NSData*)arg2
+        fromPlayer:(NSString*)arg3;
+- (void)match:(BHMatch*)arg1 didFailWithError:(NSError*)arg2;
+- (void)match:(BHMatch*)arg1
+    connectionWithPlayerFailed:(NSString*)arg2
+                     withError:(NSError*)arg3;
 @end

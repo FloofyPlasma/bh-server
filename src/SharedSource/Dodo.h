@@ -10,19 +10,19 @@
 @class CPTexture2D, DrawCube, Shader;
 
 @interface Dodo : NPC {
-  Shader *shader;
-  Shader *nonStandardBodyShader;
-  CPTexture2D *bodyTexture;
-  CPTexture2D *neckTexture;
-  CPTexture2D *headTexture;
-  CPTexture2D *legTexture;
-  CPTexture2D *footTexture;
-  CPTexture2D *breedWingTexture;
-  DrawCube *bodyCube;
-  DrawCube *neckCube;
-  DrawCube *headCube;
-  DrawCube *legCube;
-  DrawCube *footCube;
+  Shader* shader;
+  Shader* nonStandardBodyShader;
+  CPTexture2D* bodyTexture;
+  CPTexture2D* neckTexture;
+  CPTexture2D* headTexture;
+  CPTexture2D* legTexture;
+  CPTexture2D* footTexture;
+  CPTexture2D* breedWingTexture;
+  DrawCube* bodyCube;
+  DrawCube* neckCube;
+  DrawCube* headCube;
+  DrawCube* legCube;
+  DrawCube* footCube;
   int movementDirection;
   int jumpAndCluckState;
   intpair fromSquare;
@@ -110,7 +110,7 @@
      placedByClient:(id)arg8;
 - (void)loadDerivedStuff;
 - (int)getNamesArrayCount;
-- (id *)getNamesArray;
+- (id*)getNamesArray;
 - (int)captureRequiredItemType;
 - (int)capturedItemType;
 - (int)foodItemType;

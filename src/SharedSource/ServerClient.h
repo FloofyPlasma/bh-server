@@ -17,54 +17,51 @@
 
 @interface ServerClient //! : NSObject
 {
-  NSString *clientID;
-  BHServer *server;
-  NSMutableIndexSet *requestedBlockIndices;
+  NSString* clientID;
+  BHServer* server;
+  NSMutableIndexSet* requestedBlockIndices;
   struct map<
       unsigned int, unsigned char, std::__1::less<unsigned int>,
       std::__1::allocator<std::__1::pair<const unsigned int, unsigned char>>>
       requestedBlockRequestTypes;
-  NSMutableIndexSet *wiredBlocks;
-  NSMutableIndexSet *wiredDynamicObjects;
-  NSMutableDictionary *creationArraysToSend;
-  NSMutableDictionary *updateArraysToSend;
-  NSMutableDictionary *creationDataUpdateArraysToSend;
-  NSMutableDictionary *updateUnreliableArraysToSend;
-  NSMutableDictionary *removalArraysToSend;
+  NSMutableIndexSet* wiredBlocks;
+  NSMutableIndexSet* wiredDynamicObjects;
+  NSMutableDictionary* creationArraysToSend;
+  NSMutableDictionary* updateArraysToSend;
+  NSMutableDictionary* creationDataUpdateArraysToSend;
+  NSMutableDictionary* updateUnreliableArraysToSend;
+  NSMutableDictionary* removalArraysToSend;
   BOOL requestsHeartBeat;
   BOOL hasEverRequestedHeartbeat;
   float timeSinceLastHeartbeatRequest;
   int lightBlockIndex;
-  NSMutableArray *fillIndices;
-  map_183b77d1 *worldIndicesContainingTamedAnimals;
+  NSMutableArray* fillIndices;
+  map_183b77d1* worldIndicesContainingTamedAnimals;
   BOOL paused;
   BOOL connected;
   BOOL isAdmin;
-  NSMutableIndexSet *foundItemsList;
-  NSMutableIndexSet *allLightBlockIndices;
-  Database *lightBlockDatabase;
+  NSMutableIndexSet* foundItemsList;
+  NSMutableIndexSet* allLightBlockIndices;
+  Database* lightBlockDatabase;
 }
 
-@property(readonly) NSMutableIndexSet
-    *allLightBlockIndices; // @synthesize allLightBlockIndices;
-@property(readonly)
-    NSMutableIndexSet *foundItemsList; // @synthesize foundItemsList;
-@property map_183b77d1
-    *worldIndicesContainingTamedAnimals; // @synthesize
-                                         // worldIndicesContainingTamedAnimals;
-@property(readonly) int lightBlockIndex; // @synthesize lightBlockIndex;
+@property (readonly) NSMutableIndexSet* allLightBlockIndices; // @synthesize allLightBlockIndices;
+@property (readonly)
+    NSMutableIndexSet* foundItemsList; // @synthesize foundItemsList;
+@property map_183b77d1* worldIndicesContainingTamedAnimals; // @synthesize
+                                                            // worldIndicesContainingTamedAnimals;
+@property (readonly) int lightBlockIndex; // @synthesize lightBlockIndex;
 @property float
     timeSinceLastHeartbeatRequest; // @synthesize timeSinceLastHeartbeatRequest;
 @property BOOL
-    hasEverRequestedHeartbeat;    // @synthesize hasEverRequestedHeartbeat;
+    hasEverRequestedHeartbeat; // @synthesize hasEverRequestedHeartbeat;
 @property BOOL requestsHeartBeat; // @synthesize requestsHeartBeat;
-@property(readonly)
-    NSMutableIndexSet *wiredDynamicObjects; // @synthesize wiredDynamicObjects;
-@property BOOL isAdmin;                     // @synthesize isAdmin;
-@property(readonly) NSString *clientID;     // @synthesize clientID;
-@property BOOL paused;                      // @synthesize paused;
-@property(readonly) NSMutableIndexSet
-    *requestedBlockIndices; // @synthesize requestedBlockIndices;
+@property (readonly)
+    NSMutableIndexSet* wiredDynamicObjects; // @synthesize wiredDynamicObjects;
+@property BOOL isAdmin; // @synthesize isAdmin;
+@property (readonly) NSString* clientID; // @synthesize clientID;
+@property BOOL paused; // @synthesize paused;
+@property (readonly) NSMutableIndexSet* requestedBlockIndices; // @synthesize requestedBlockIndices;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property BOOL connected;

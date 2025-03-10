@@ -19,40 +19,40 @@
 @interface Blockhead
     : DynamicObject <PathUserDynamicObject, HarmableDynamicObject> {
   struct BlockheadState state;
-  NSString *clientID;
-  NSString *clientName;
-  MJTextView *netTextView;
-  BlockheadAI *blockheadAI;
-  Shader *shader;
-  Shader *renderShader;
-  Shader *faceShader;
-  Shader *hairShader;
-  Shader *bodyShader;
-  Shader *clothingShader;
-  CPTexture2D *headTexture;
-  CPTexture2D *headHairTexture;
-  DrawCube *headCube;
-  DrawCube *hairCubeA;
-  DrawCube *hairCubeB;
-  CPTexture2D *bodyTexture;
-  DrawCube *bodyCube;
-  CPTexture2D *armTexture;
-  DrawCube *armCube;
-  CPTexture2D *legTexture;
-  DrawCube *legCube;
-  CPTexture2D *hatTexture;
-  DrawCube *hatCube;
-  DrawCube *hatRimCube;
-  DrawCube *hatPomPomCubes[4];
-  CPTexture2D *shoesTexture;
-  DrawCube *shoesCube;
-  DrawCube *shoesToeCube;
-  CPTexture2D *pantsTexture;
-  DrawCube *pantsCube;
-  CPTexture2D *shirtBodyTexture;
-  DrawCube *shirtBodyCube;
-  CPTexture2D *shirtArmTexture;
-  DrawCube *shirtArmCube;
+  NSString* clientID;
+  NSString* clientName;
+  MJTextView* netTextView;
+  BlockheadAI* blockheadAI;
+  Shader* shader;
+  Shader* renderShader;
+  Shader* faceShader;
+  Shader* hairShader;
+  Shader* bodyShader;
+  Shader* clothingShader;
+  CPTexture2D* headTexture;
+  CPTexture2D* headHairTexture;
+  DrawCube* headCube;
+  DrawCube* hairCubeA;
+  DrawCube* hairCubeB;
+  CPTexture2D* bodyTexture;
+  DrawCube* bodyCube;
+  CPTexture2D* armTexture;
+  DrawCube* armCube;
+  CPTexture2D* legTexture;
+  DrawCube* legCube;
+  CPTexture2D* hatTexture;
+  DrawCube* hatCube;
+  DrawCube* hatRimCube;
+  DrawCube* hatPomPomCubes[4];
+  CPTexture2D* shoesTexture;
+  DrawCube* shoesCube;
+  DrawCube* shoesToeCube;
+  CPTexture2D* pantsTexture;
+  DrawCube* pantsCube;
+  CPTexture2D* shirtBodyTexture;
+  DrawCube* shirtBodyCube;
+  CPTexture2D* shirtArmTexture;
+  DrawCube* shirtArmCube;
   unsigned short hatItemType;
   unsigned short shirtItemType;
   unsigned short pantsItemType;
@@ -65,17 +65,17 @@
   Vector shirtItemColor;
   Vector pantsItemColor;
   Vector shoesItemColor;
-  DrawCube *jetpackCubes[4];
-  CPTexture2D *jetTextures[3];
-  MJSound *jetSound;
-  DrawCube *itemDrawCube;
-  CPTexture2D *itemsTexture;
+  DrawCube* jetpackCubes[4];
+  CPTexture2D* jetTextures[3];
+  MJSound* jetSound;
+  DrawCube* itemDrawCube;
+  CPTexture2D* itemsTexture;
   int currentItemForCube;
   int currentLevelForCube;
-  CPTexture2D *actionSquareTexture;
-  Shader *goalBoxGlyphShader;
-  Shader *actionSquareShader;
-  CPTexture2D *cogTextures[2];
+  CPTexture2D* actionSquareTexture;
+  Shader* goalBoxGlyphShader;
+  Shader* actionSquareShader;
+  CPTexture2D* cogTextures[2];
   float walkTimer;
   float bodyRotation;
   float bodyZRotation;
@@ -84,7 +84,7 @@
   float headXRotation;
   float lastYPosForArmMovement;
   float lastArmExtraRotation;
-  NSMutableArray *path;
+  NSMutableArray* path;
   float travelSpeed;
   int traverseType;
   int traverseFromKeyFrame;
@@ -96,24 +96,24 @@
   intpair nextToSquare;
   intpair finalGoalSquare;
   BOOL loadRequiresRecalculation;
-  struct Tile *fromTile;
-  struct Tile *toTile;
+  struct Tile* fromTile;
+  struct Tile* toTile;
   BOOL lastPathWasFalling;
   BOOL lastPathWasMoveOnly;
-  struct Tile *interactingTile;
-  InventoryItem *interactionItem;
+  struct Tile* interactingTile;
+  InventoryItem* interactionItem;
   int interactionItemIndex;
   int interactionItemSubIndex;
-  Workbench *interactionWorkbench;
-  InteractionObject *interactionObject;
-  DynamicObject<HarmableDynamicObject> *tappedNPC;
+  Workbench* interactionWorkbench;
+  InteractionObject* interactionObject;
+  DynamicObject<HarmableDynamicObject>* tappedNPC;
   BOOL chasingNPC;
   intpair lastKnownNPCPosition;
-  DynamicObject<RidableDynamicObject> *tappedRideObject;
+  DynamicObject<RidableDynamicObject>* tappedRideObject;
   BOOL chasingRideObject;
   intpair lastKnownRideObjectPosition;
-  DynamicObject<RidableDynamicObject> *rideObject;
-  FishingRod *fishingRod;
+  DynamicObject<RidableDynamicObject>* rideObject;
+  FishingRod* fishingRod;
   float currentTemperature;
   float damageDelayTimer;
   float travelFraction;
@@ -121,7 +121,7 @@
   float soundTimer;
   float cogTimer;
   int selectedToolIndex;
-  NSMutableArray *inventoryItems;
+  NSMutableArray* inventoryItems;
   BOOL pathNeedsRecalculated;
   BOOL pathRecalculationIsFallPath;
   BOOL debugBOOL;
@@ -132,7 +132,7 @@
   int lightRadius;
   BOOL ignoringFreeblocksDueToDrop;
   intpair ignoringFreeblocksDueToDropLocation;
-  NSString *name;
+  NSString* name;
   float idleTimer;
   float randomIdleWait;
   float randomAnimationValueA;
@@ -158,7 +158,7 @@
   BOOL useItem;
   BOOL usingItem;
   BOOL footstepPingPong;
-  NSMutableArray *saveItemSlotsArray;
+  NSMutableArray* saveItemSlotsArray;
   Vector2 renderPos;
   char inventoryChangedThisFrameSlots[8];
   char subInventoryChangedThisFrameSlots[8][4];
@@ -169,11 +169,11 @@
   BOOL underwater;
   BOOL drowningInSpace;
   unsigned char localGatherProgress;
-  NSMutableDictionary *unconfirmedPickups;
-  NSMutableIndexSet *thisFramePickupRequests;
-  NSDictionary *pathExtraData;
+  NSMutableDictionary* unconfirmedPickups;
+  NSMutableIndexSet* thisFramePickupRequests;
+  NSDictionary* pathExtraData;
   int viewRadius;
-  NSMutableArray *actionQueue;
+  NSMutableArray* actionQueue;
   float nextActionDelay;
   BOOL needsHarmFlash;
   BOOL paused;
@@ -194,15 +194,15 @@
   float controlledByServerInactivityTimeout;
   float controlledByServerSanityCheckTimeout;
   int controlledByServerCrystalDiscrepency;
-  NSString *clientSaveDir;
-  NSDictionary *interactionObjectDictToRestoreWhenObjectLoaded;
+  NSString* clientSaveDir;
+  NSDictionary* interactionObjectDictToRestoreWhenObjectLoaded;
   int prevGoalRotationType;
   float netRotationDelayTimer;
   Vector<unsigned short, std::__1::allocator<unsigned short>>
       expectedCraftItems;
   BOOL visible;
   BOOL onScreenForDPad;
-  MJSound *regenerationSound;
+  MJSound* regenerationSound;
   int tipType;
   int elevatorPowerUseCounter;
   BOOL isInJetPackFreeFlightMode;
@@ -242,32 +242,32 @@
   Vector2 lastDPadTotalDistanceSmoothed;
 }
 
-@property(readonly)
+@property (readonly)
     struct TradeMission currentTradeMission; // @synthesize currentTradeMission;
-@property(readonly) NSArray *actionQueue;    // @synthesize actionQueue;
-@property int tipType;                       // @synthesize tipType;
-@property(readonly) BOOL
+@property (readonly) NSArray* actionQueue; // @synthesize actionQueue;
+@property int tipType; // @synthesize tipType;
+@property (readonly) BOOL
     cancelSimulateDueToCollapse; // @synthesize cancelSimulateDueToCollapse;
-@property(readonly) float currentTemperature; // @synthesize currentTemperature;
+@property (readonly) float currentTemperature; // @synthesize currentTemperature;
 @property BOOL
     isClientBlockheadBeingControlledByServer; // @synthesize
                                               // isClientBlockheadBeingControlledByServer;
-@property(readonly) BOOL
+@property (readonly) BOOL
     isCurrentlyActiveBlockheadAccordingToNetData; // @synthesize
                                                   // isCurrentlyActiveBlockheadAccordingToNetData;
-@property(readonly)
-    DynamicObject<RidableDynamicObject> *rideObject; // @synthesize rideObject;
-@property BOOL needsHarmFlash;             // @synthesize needsHarmFlash;
-@property(readonly) int viewRadius;        // @synthesize viewRadius;
-@property(retain) NSString *clientSaveDir; // @synthesize clientSaveDir;
-@property(retain) NSString *clientName;    // @synthesize clientName;
-@property(retain) NSString *clientID;      // @synthesize clientID;
-@property(readonly)
-    NSArray *saveItemSlotsArray;       // @synthesize saveItemSlotsArray;
-@property(readonly) Vector2 renderPos; // @synthesize renderPos;
-@property BOOL pathNeedsRecalculated;  // @synthesize pathNeedsRecalculated;
-@property(readonly) NSString *name;    // @synthesize name;
-@property(readonly) intpair nextPos;   // @synthesize nextPos=toSquare;
+@property (readonly)
+    DynamicObject<RidableDynamicObject>* rideObject; // @synthesize rideObject;
+@property BOOL needsHarmFlash; // @synthesize needsHarmFlash;
+@property (readonly) int viewRadius; // @synthesize viewRadius;
+@property (retain) NSString* clientSaveDir; // @synthesize clientSaveDir;
+@property (retain) NSString* clientName; // @synthesize clientName;
+@property (retain) NSString* clientID; // @synthesize clientID;
+@property (readonly)
+    NSArray* saveItemSlotsArray; // @synthesize saveItemSlotsArray;
+@property (readonly) Vector2 renderPos; // @synthesize renderPos;
+@property BOOL pathNeedsRecalculated; // @synthesize pathNeedsRecalculated;
+@property (readonly) NSString* name; // @synthesize name;
+@property (readonly) intpair nextPos; // @synthesize nextPos=toSquare;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)customizeBlockheadUIShouldHaveOKButton;
@@ -351,7 +351,7 @@
                  goalInteraction:(int)arg3
            craftCountOrExtraData:(short)arg4;
 - (void)remotePickupRequestResponse:(BOOL)arg1
-                          uniqueIDs:(unsigned long long *)arg2
+                          uniqueIDs:(unsigned long long*)arg2
                               count:(int)arg3;
 - (void)removeInventoryItemIdenticalTo:(id)arg1;
 - (BOOL)canUseDynamicObject:(id)arg1;
@@ -392,8 +392,8 @@
 - (id)currentItemSlot;
 - (BOOL)requiresPhysicalBlock;
 - (void)craftItemFinished:(BOOL)arg1 atWorkbench:(id)arg2;
-- (void)worldContentsChanged:(vector_07678c45 *)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldContentsChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (int)moveInventoryItemsFromArray:(id)arg1
                          fromIndex:(int)arg2
                       fromSubIndex:(int)arg3
@@ -437,7 +437,7 @@
 - (int)placableLightForAIItemType;
 - (intpair)sowableItemForAIItemIndex;
 - (int)sowableItemForAIItemType;
-- (intpair)itemIndexWithGoodInteractionTypeForTile:(struct Tile *)arg1;
+- (intpair)itemIndexWithGoodInteractionTypeForTile:(struct Tile*)arg1;
 - (void)subtractCash:(int)arg1;
 - (int)totalCash;
 - (intpair)inventoryLocationOfFirstInstanceOfItemType:(int)arg1;
@@ -448,7 +448,7 @@
                                      includeActions:(BOOL)arg3;
 - (id)inventoryItems;
 - (BOOL)pickupFreeblockIfPossible:(id)arg1
-                           inTile:(struct Tile *)arg2
+                           inTile:(struct Tile*)arg2
                       intentional:(BOOL)arg3;
 - (int)addItemToInventory:(id)arg1
                     flash:(BOOL)arg2
@@ -504,8 +504,8 @@
 - (void)drawForButtonProjectionMatrix:(union _GLKMatrix4)arg1
                       modelViewMatrix:(union _GLKMatrix4)arg2;
 - (void)sufferDamage:(float)arg1 isSimulation:(BOOL)arg2 recoil:(BOOL)arg3;
-- (void)pickUpItemIfPossibleInTile:(struct Tile *)arg1 atPos:(intpair)arg2;
-- (id)pickupItemForTile:(struct Tile *)arg1 astPos:(intpair)arg2;
+- (void)pickUpItemIfPossibleInTile:(struct Tile*)arg1 atPos:(intpair)arg2;
+- (id)pickupItemForTile:(struct Tile*)arg1 astPos:(intpair)arg2;
 - (void)prepareInventoryForSaving;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)setNeedsRemoved:(BOOL)arg1;
@@ -524,12 +524,12 @@
 - (BOOL)canSleepOnSpot;
 - (BOOL)canCollapse;
 - (struct FreeBlockCreationCount)freeBlockCreationCountForTile:
-                                     (struct Tile *)arg1
+                                     (struct Tile*)arg1
                                                       withItem:(id)arg2;
 - (int)freeBlockBonusCreationCount;
 - (void)stopInteracting;
 - (void)startInteractingWithTileAtIndex:(int)arg1
-                                   tile:(struct Tile *)arg2
+                                   tile:(struct Tile*)arg2
                         interactionType:(int)arg3;
 - (void)pickupDynamicObject:(id)arg1;
 - (void)stopRiding;
@@ -551,26 +551,26 @@
 - (BOOL)willBeAddingFuelAtWorkbench:(id)arg1;
 - (BOOL)willBeCraftingAtWorkbench:(id)arg1;
 - (void)updatePosition:(intpair)arg1;
-- (int)currentInteractionTypeForTile:(struct Tile *)arg1
+- (int)currentInteractionTypeForTile:(struct Tile*)arg1
                                atPos:(intpair)arg2
-    pickupRejectedDueToInventoryFull:(char *)arg3
+    pickupRejectedDueToInventoryFull:(char*)arg3
                       includeActions:(BOOL)arg4
                            faceIndex:(int)arg5
                allowProtectedActions:(BOOL)arg6;
 - (int)currentInteractionType;
 - (int)currentInteractionIsGoodOrBad;
-- (BOOL)canDigBackWallforTile:(struct Tile *)arg1
+- (BOOL)canDigBackWallforTile:(struct Tile*)arg1
                         atPos:(intpair)arg2
                      withItem:(id)arg3
                includeActions:(BOOL)arg4;
-- (int)interactionTypeForTile:(struct Tile *)arg1
+- (int)interactionTypeForTile:(struct Tile*)arg1
                                atPos:(intpair)arg2
                                 item:(id)arg3
-    pickupRejectedDueToInventoryFull:(char *)arg4
+    pickupRejectedDueToInventoryFull:(char*)arg4
                       includeActions:(BOOL)arg5
                            faceIndex:(int)arg6
                allowProtectedActions:(BOOL)arg7;
-- (BOOL)tileIsLitForSelf:(struct Tile *)arg1 atPos:(intpair)arg2;
+- (BOOL)tileIsLitForSelf:(struct Tile*)arg1 atPos:(intpair)arg2;
 - (int)goalInteractionForNPCChaseForNPC:(id)arg1 withItemType:(int)arg2;
 - (void)dealloc;
 - (id)getSaveDictIncludingWorkbenchOrInterationObject:(BOOL)arg1;
@@ -621,9 +621,9 @@
 - (float)health;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end

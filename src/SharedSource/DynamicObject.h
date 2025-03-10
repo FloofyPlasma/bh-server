@@ -18,13 +18,13 @@
 
 @interface DynamicObject //! : NSObject
 {
-  World *world;
-  DynamicWorld *dynamicWorld;
-  struct MacroTile *macroTileOwner;
+  World* world;
+  DynamicWorld* dynamicWorld;
+  struct MacroTile* macroTileOwner;
   intpair pos;
   Vector2 floatPos;
-  CPCache *cache;
-  NSString *ownerID;
+  CPCache* cache;
+  NSString* ownerID;
   unsigned long long uniqueID;
   BOOL needsRemoved;
   BOOL updateNeedsToBeSent;
@@ -33,18 +33,18 @@
   BOOL isNet;
 }
 
-@property(readonly)
-    struct MacroTile *macroTileOwner; // @synthesize macroTileOwner;
-@property(readonly) BOOL isNet;       // @synthesize isNet;
+@property (readonly)
+    struct MacroTile* macroTileOwner; // @synthesize macroTileOwner;
+@property (readonly) BOOL isNet; // @synthesize isNet;
 @property BOOL
     unreliableUpdateNeedsToBeSent; // @synthesize unreliableUpdateNeedsToBeSent;
 @property BOOL
-    creationDataNeedsToBeSent;      // @synthesize creationDataNeedsToBeSent;
+    creationDataNeedsToBeSent; // @synthesize creationDataNeedsToBeSent;
 @property BOOL updateNeedsToBeSent; // @synthesize updateNeedsToBeSent;
-@property BOOL needsRemoved;        // @synthesize needsRemoved;
-@property(readonly) unsigned long long uniqueID; // @synthesize uniqueID;
-@property(readonly) Vector2 floatPos;            // @synthesize floatPos;
-@property(readonly) intpair pos;                 // @synthesize pos;
+@property BOOL needsRemoved; // @synthesize needsRemoved;
+@property (readonly) unsigned long long uniqueID; // @synthesize uniqueID;
+@property (readonly) Vector2 floatPos; // @synthesize floatPos;
+@property (readonly) intpair pos; // @synthesize pos;
 - (id).cxx_construct;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
@@ -67,26 +67,26 @@
 - (Vector)lightPos;
 - (void)blockheadsLoaded;
 - (void)blockheadUnloaded:(id)arg1;
-- (int)addLightGlowQuadData:(float *)arg1 fromIndex:(int)arg2;
-- (int)addDodoEggDrawQuadData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addLightGlowQuadData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDodoEggDrawQuadData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDodoEggCount;
-- (int)addCylinderDataTrans:(float *)arg1 fromIndex:(int)arg2;
+- (int)addCylinderDataTrans:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryCylinderCountTrans;
-- (int)addCylinderData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addCylinderData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryCylinderCount;
 - (int)lightGlowQuadCount;
-- (int)addDrawItemQuadData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawItemQuadData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawItemQuadCount;
-- (int)addForegroundDrawQuadData:(float *)arg1
+- (int)addForegroundDrawQuadData:(float*)arg1
                        fromIndex:(int)arg2
                      forMacroPos:(intpair)arg3;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)arg1;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)addDrawCubeDataTrans:(float *)arg1 fromIndex:(int)arg2;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeDataTrans:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCountTrans;
 - (int)staticGeometryDrawCubeCount;
 - (void)setFloatPosAndUpdatePosition:(Vector2)arg1;
@@ -95,10 +95,10 @@
 - (void)remoteUpdate:(id)arg1;
 - (id)updateNetDataForClient:(id)arg1;
 - (id)creationNetDataForClient:(id)arg1;
-- (void)waterContentChanged:(vector_07678c45 *)arg1;
-- (void)worldContentsChanged:(vector_07678c45 *)arg1;
+- (void)waterContentChanged:(vector_07678c45*)arg1;
+- (void)worldContentsChanged:(vector_07678c45*)arg1;
 - (BOOL)shouldSaveEveryChangeInPosition;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (BOOL)requiresPhysicalBlock;
 - (void)updatePosition:(intpair)arg1;
 - (void)draw:(float)arg1

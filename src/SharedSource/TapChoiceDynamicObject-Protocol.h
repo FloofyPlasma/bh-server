@@ -10,16 +10,16 @@
 @class Blockhead, NSString;
 
 @protocol TapChoiceDynamicObject <NSObject>
-- (BOOL)canBeRemovedByBlockhead:(Blockhead *)arg1;
+- (BOOL)canBeRemovedByBlockhead:(Blockhead*)arg1;
 - (BOOL)isDoubleHeight;
-- (NSString *)actionTitle;
+- (NSString*)actionTitle;
 
 @optional
 @property BOOL needsToUpdateChoiceUI;
 - (BOOL)secondChoiceIsBlue;
 - (BOOL)removeIsRed;
 - (void)setWorkbenchChoiceUIOption:(int)arg1;
-- (NSString *)thirdOptionTitle;
-- (NSString *)secondOptionTitle;
-- (NSString *)removeTitle;
+- (NSString*)thirdOptionTitle;
+- (NSString*)secondOptionTitle;
+- (NSString*)removeTitle;
 @end

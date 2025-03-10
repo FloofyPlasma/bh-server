@@ -12,16 +12,16 @@
 @interface FireObject : DynamicObject {
   float burnTimer;
   float spreadTimers[4];
-  ArtificialLight *light;
-  Shader *shader;
-  CPTexture2D *texture;
+  ArtificialLight* light;
+  Shader* shader;
+  CPTexture2D* texture;
   int animationLoopIndex;
   float animationLoopTimer;
 }
 
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
                                                               yPos:(int)arg2;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
      modelViewMatrix:(union _GLKMatrix4)arg3

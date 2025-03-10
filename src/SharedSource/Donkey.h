@@ -10,16 +10,16 @@
 @class CPTexture2D, DrawCube;
 
 @interface Donkey : DonkeyLike {
-  CPTexture2D *earTexture;
-  DrawCube *earCube;
+  CPTexture2D* earTexture;
+  DrawCube* earCube;
   union _GLKMatrix4 leftEarMatrix;
   union _GLKMatrix4 rightEarMatrix;
-  CPTexture2D *hornTexture;
-  DrawCube *hornCube;
+  CPTexture2D* hornTexture;
+  DrawCube* hornCube;
   union _GLKMatrix4 hornMatrix;
-  DrawCube *tailCubeA;
-  DrawCube *tailCubeB;
-  DrawCube *tailCubeC;
+  DrawCube* tailCubeA;
+  DrawCube* tailCubeB;
+  DrawCube* tailCubeC;
   union _GLKMatrix4 tailMatrixA;
   union _GLKMatrix4 tailMatrixB;
   union _GLKMatrix4 tailMatrixC;
@@ -48,7 +48,7 @@
 - (void)loadDerivedStuff;
 - (unsigned long long)creationDataStructSize;
 - (int)getNamesArrayCount;
-- (id *)getNamesArray;
+- (id*)getNamesArray;
 - (int)captureRequiredItemType;
 - (int)capturedItemType;
 - (int)foodItemType;

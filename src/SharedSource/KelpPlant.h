@@ -14,14 +14,14 @@
   float waveTimer;
   float growthTimer;
   float availableFood;
-  float *savedDrawBuffers[2];
+  float* savedDrawBuffers[2];
   int savedDrawBufferIndexes[2];
   int numberOfOccupiedTilesAbove;
 }
 
 @property float availableFood; // @synthesize availableFood;
 - (void)removeFromMacroBlock;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
@@ -34,7 +34,7 @@
 - (int)gatherProgressForTile:(intpair)arg1;
 - (BOOL)isRequiredSoilType:(int)arg1;
 - (int)plantType;
-- (BOOL)tileIsKindOfSelf:(struct Tile *)arg1;
+- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
      modelViewMatrix:(union _GLKMatrix4)arg3

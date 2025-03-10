@@ -16,8 +16,8 @@
 
 @interface BlockheadAI //! : NSObject
 {
-  Blockhead *blockhead;
-  World *world;
+  Blockhead* blockhead;
+  World* world;
   intpair foundTilePos[16];
   char foundTile[16];
   intpair previousActionTiles[32];
@@ -31,7 +31,7 @@
   int sowableItem;
   float randomInactivityTimer;
   BOOL onlyMoveThisTime;
-  NoiseFunction *moveDirectionNoiseFunction;
+  NoiseFunction* moveDirectionNoiseFunction;
   float moveDirection;
   float timeElapsed;
   float mustSleepTimer;

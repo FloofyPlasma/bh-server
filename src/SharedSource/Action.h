@@ -14,8 +14,7 @@
 
 //! #import <objc/NSObject.h>
 
-@class CraftableItemObject, DrawCube, InventoryItem, NSDictionary,
-    NSMutableDictionary;
+@class CraftableItemObject, DrawCube, InventoryItem, NSDictionary, NSMutableDictionary;
 
 @interface Action //! : NSObject
 {
@@ -23,53 +22,49 @@
   BOOL complete;
   BOOL isAI;
   intpair goalTilePos;
-  InventoryItem *interactionItem;
+  InventoryItem* interactionItem;
   short interactionItemIndex;
   short interactionItemSubIndex;
   int goalInteraction;
   int pathType;
   unsigned long long interactionObjectID;
-  CraftableItemObject *craftableItemObject;
+  CraftableItemObject* craftableItemObject;
   short craftCountOrExtraData;
-  DrawCube *blockCube;
+  DrawCube* blockCube;
   struct InteractionTestResult interactionTestResult;
-  NSDictionary *inventoryChange;
+  NSDictionary* inventoryChange;
   float animationTimer;
 }
 
-@property struct InteractionTestResult
-    interactionTestResult;             // @synthesize interactionTestResult;
-@property(retain) DrawCube *blockCube; // @synthesize blockCube;
+@property struct InteractionTestResult interactionTestResult; // @synthesize interactionTestResult;
+@property (retain) DrawCube* blockCube; // @synthesize blockCube;
 @property short craftCountOrExtraData; // @synthesize craftCountOrExtraData;
-@property(retain) CraftableItemObject
-    *craftableItemObject;       // @synthesize craftableItemObject;
+@property (retain) CraftableItemObject* craftableItemObject; // @synthesize craftableItemObject;
 @property float animationTimer; // @synthesize animationTimer;
-@property BOOL isAI;            // @synthesize isAI;
-@property int pathType;         // @synthesize pathType;
-@property int goalInteraction;  // @synthesize goalInteraction;
-@property unsigned long long
-    interactionObjectID;                 // @synthesize interactionObjectID;
+@property BOOL isAI; // @synthesize isAI;
+@property int pathType; // @synthesize pathType;
+@property int goalInteraction; // @synthesize goalInteraction;
+@property unsigned long long interactionObjectID; // @synthesize interactionObjectID;
 @property short interactionItemSubIndex; // @synthesize interactionItemSubIndex;
-@property short interactionItemIndex;    // @synthesize interactionItemIndex;
-@property(retain)
-    InventoryItem *interactionItem;              // @synthesize interactionItem;
-@property(retain) NSDictionary *inventoryChange; // @synthesize inventoryChange;
-@property intpair goalTilePos;                   // @synthesize goalTilePos;
-@property BOOL complete;                         // @synthesize complete;
-@property BOOL inProgress;                       // @synthesize inProgress;
+@property short interactionItemIndex; // @synthesize interactionItemIndex;
+@property (retain) InventoryItem* interactionItem; // @synthesize interactionItem;
+@property (retain) NSDictionary* inventoryChange; // @synthesize inventoryChange;
+@property intpair goalTilePos; // @synthesize goalTilePos;
+@property BOOL complete; // @synthesize complete;
+@property BOOL inProgress; // @synthesize inProgress;
 - (void)dealloc;
-- (NSMutableDictionary *)getSaveDict;
-- (Action *)initWithSaveDict:(id)arg1 inventoryItems:(id)arg2;
-- (Action *)initWithGoalPos:(intpair)arg1
-            goalInteraction:(int)arg2
-                   pathType:(int)arg3
-            interactionItem:(id)arg4
-                  itemIndex:(short)arg5
-               itemSubIndex:(short)arg6
-        interactionObjectID:(unsigned long long)arg7
-        craftableItemObject:(id)arg8
-      craftCountOrExtraData:(short)arg9
-                       isAI:(BOOL)arg10
-            inventoryChange:(id)arg11;
+- (NSMutableDictionary*)getSaveDict;
+- (Action*)initWithSaveDict:(id)arg1 inventoryItems:(id)arg2;
+- (Action*)initWithGoalPos:(intpair)arg1
+           goalInteraction:(int)arg2
+                  pathType:(int)arg3
+           interactionItem:(id)arg4
+                 itemIndex:(short)arg5
+              itemSubIndex:(short)arg6
+       interactionObjectID:(unsigned long long)arg7
+       craftableItemObject:(id)arg8
+     craftCountOrExtraData:(short)arg9
+                      isAI:(BOOL)arg10
+           inventoryChange:(id)arg11;
 
 @end

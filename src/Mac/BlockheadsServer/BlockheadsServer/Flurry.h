@@ -13,4 +13,3 @@
 + (void)logEvent:(id)arg1 withParameters:(id)arg2;
 
 @end
-

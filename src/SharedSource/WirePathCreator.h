@@ -11,21 +11,21 @@
 
 @interface WirePathCreator //! : NSObject
 {
-  World *world;
-  NSMutableIndexSet *openList;
-  NSMutableIndexSet *closedList;
+  World* world;
+  NSMutableIndexSet* openList;
+  NSMutableIndexSet* closedList;
   int startIndex;
-  struct WirePathTileProperties *derivedTilePropertiesArray;
+  struct WirePathTileProperties* derivedTilePropertiesArray;
   int derivedTileCount;
   struct map<int, int, std::__1::less<int>,
-             std::__1::allocator<std::__1::pair<const int, int>>>
+      std::__1::allocator<std::__1::pair<const int, int>>>
       derivedTileIndices;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (int)findAndSubtractAllPowerUpTo:(unsigned short)arg1 forUser:(id)arg2;
-- (struct WirePathTileProperties *)tileDerivedPropertiesAtWorldIndex:(int)arg1;
+- (struct WirePathTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1;
 

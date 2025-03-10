@@ -16,15 +16,15 @@
 
 @interface MJSoundManager //! : NSObject
 {
-  NSMutableDictionary *loadedSounds;
-  NSMutableDictionary *loadedMultiSounds;
-  NSMutableArray *loadedSoundsArray;
-  NSMutableDictionary *externalMultiSounds;
-  NSArray *appActivePausedSounds;
+  NSMutableDictionary* loadedSounds;
+  NSMutableDictionary* loadedMultiSounds;
+  NSMutableArray* loadedSoundsArray;
+  NSMutableDictionary* externalMultiSounds;
+  NSArray* appActivePausedSounds;
   BOOL otherAudioWasPaying;
   BOOL silentSwitchWasOnDuringLaunch;
   double stopMP3time;
-  NSURL *playingURL;
+  NSURL* playingURL;
   float soundVolume;
   float musicVolume;
   float pingForLoopDelayTimer;
@@ -37,9 +37,9 @@
   BOOL alSuspended;
   BOOL dontPlayAnySounds;
   int worldWidthMacro;
-  NSString *lastPlayedMP3Path;
+  NSString* lastPlayedMP3Path;
   BOOL stopOnFadeOut;
-  NSString *queuedMP3Path;
+  NSString* queuedMP3Path;
   BOOL fadingOut;
   BOOL fadingIn;
   BOOL fadingToHalf;
@@ -47,9 +47,9 @@
 }
 
 + (id)instance;
-@property(readonly)
-    NSString *lastPlayedMP3Path;  // @synthesize lastPlayedMP3Path;
-@property int worldWidthMacro;    // @synthesize worldWidthMacro;
+@property (readonly)
+    NSString* lastPlayedMP3Path; // @synthesize lastPlayedMP3Path;
+@property int worldWidthMacro; // @synthesize worldWidthMacro;
 @property BOOL dontPlayAnySounds; // @synthesize dontPlayAnySounds;
 @property BOOL
     silentSwitchWasOnDuringLaunch; // @synthesize silentSwitchWasOnDuringLaunch;

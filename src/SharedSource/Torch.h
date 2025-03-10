@@ -10,7 +10,7 @@
 @class ArtificialLight;
 
 @interface Torch : DynamicObject {
-  ArtificialLight *light;
+  ArtificialLight* light;
   int connectionType;
   int itemType;
   int animationLoopIndex;
@@ -20,7 +20,7 @@
   BOOL chandelier;
   unsigned short dataA;
   unsigned short dataB;
-  float *savedDrawBuffer;
+  float* savedDrawBuffer;
   int savedDrawBufferIndex;
 }
 
@@ -33,15 +33,15 @@
 - (BOOL)isDownlight;
 - (int)lightGlowQuadCount;
 - (Vector)lightPos;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
 - (int)renderImageIndex;
 - (void)setNeedsRemoved:(BOOL)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
-- (void)worldContentsChanged:(vector_07678c45 *)arg1;
-- (void)waterContentChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldContentsChanged:(vector_07678c45*)arg1;
+- (void)waterContentChanged:(vector_07678c45*)arg1;
 - (void)remoteUpdate:(id)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2

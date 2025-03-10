@@ -10,18 +10,18 @@
 @class CPTexture2D, DrawCube, MJMultiSound, Shader;
 
 @interface DonkeyLike : NPC {
-  Shader *shader;
-  CPTexture2D *bodyTexture;
-  CPTexture2D *neckTexture;
-  CPTexture2D *headTexture;
-  CPTexture2D *legTexture;
-  DrawCube *bodyCube;
-  DrawCube *neckCube;
-  DrawCube *headCube;
-  DrawCube *legCube;
-  MJMultiSound *babySound;
-  MJMultiSound *adultSound;
-  MJMultiSound *deathSound;
+  Shader* shader;
+  CPTexture2D* bodyTexture;
+  CPTexture2D* neckTexture;
+  CPTexture2D* headTexture;
+  CPTexture2D* legTexture;
+  DrawCube* bodyCube;
+  DrawCube* neckCube;
+  DrawCube* headCube;
+  DrawCube* legCube;
+  MJMultiSound* babySound;
+  MJMultiSound* adultSound;
+  MJMultiSound* deathSound;
   float bodyRotation;
   float prevRotation;
   float walkTimer;
@@ -74,7 +74,7 @@
 - (BOOL)requiresFuel;
 - (int)rideDirection;
 - (BOOL)jumpsOnSwipe;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (Vector2)cameraPosForBlockhead:(id)arg1;
 - (float)riderBodyZRotationForBlockhead:(id)arg1;
 - (float)riderBodyYRotationForBlockhead:(id)arg1;

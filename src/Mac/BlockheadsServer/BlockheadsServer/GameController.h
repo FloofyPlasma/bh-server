@@ -15,28 +15,29 @@
 #import "WorldDelegate-Protocol.h"
 
 @class BHServer, CPCache, Database, DatabaseEnvironment, NSMutableArray, NSString, NSTimer, World;
-@protocol GameControllerDelegate, NSObject;
+@protocol GameControllerDelegate
+, NSObject;
 
 @interface GameController //! : NSObject <BHNetNodeDelegate, WorldDelegate>
 {
-    World *world;
-    BHServer *bhServer;
-    NSString *worldName;
-    CPCache *cache;
-    NSTimer *updateTimer;
-    double lastTime;
-    float accumulator;
-    BOOL needsToExitWorld;
-    struct WindowInfo windowInfo;
-    id <GameControllerDelegate> appDelegate;
-    NSString *port;
-    NSString *saveID;
-    NSMutableArray *chatMessages;
-    id <NSObject> appNapPreventionActivity;
-    BOOL hasHadConnectedClients;
-    Database *appDatabase;
-    DatabaseEnvironment *appDatabaseEnvironment;
-    BOOL noExit;
+  World* world;
+  BHServer* bhServer;
+  NSString* worldName;
+  CPCache* cache;
+  NSTimer* updateTimer;
+  double lastTime;
+  float accumulator;
+  BOOL needsToExitWorld;
+  struct WindowInfo windowInfo;
+  id<GameControllerDelegate> appDelegate;
+  NSString* port;
+  NSString* saveID;
+  NSMutableArray* chatMessages;
+  id<NSObject> appNapPreventionActivity;
+  BOOL hasHadConnectedClients;
+  Database* appDatabase;
+  DatabaseEnvironment* appDatabaseEnvironment;
+  BOOL noExit;
 }
 
 - (id)appDatabaseEnvironment;
@@ -107,10 +108,9 @@
 - (id)initWithWorldNamed:(id)arg1 saveID:(id)arg2 appDelegate:(id)arg3 port:(id)arg4 maxPlayers:(int)arg5 saveDelay:(int)arg6 worldWidthMacro:(int)arg7 credit:(int)arg8 cloudSalt:(id)arg9 ownerName:(id)arg10 privacy:(id)arg11 convertToCustomRules:(BOOL)arg12 expertMode:(BOOL)arg13 appDatabase:(id)arg14 appDatabaseEnvironment:(id)arg15 noExit:(BOOL)arg16;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end
-

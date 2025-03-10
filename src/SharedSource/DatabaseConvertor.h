@@ -16,32 +16,32 @@
 
 @interface DatabaseConvertor //! : NSObject
 {
-  World *world;
-  Database *worldDatabase;
-  Database *dynamicObjectDatabase;
-  Database *blockDatabase;
-  Database *lightBlockDatabase;
-  Database *serverDatabase;
-  NSString *worldDir;
-  NSString *blocksDir;
-  NSMutableArray *mainDirContentsToCheck;
-  NSMutableArray *worldBlockDirsToCheck;
-  NSMutableArray *filesToRemove;
-  NSMutableArray *lightBlockFilesToRemove;
-  NSMutableArray *lightBlockFiles;
-  NSMutableArray *serverFiles;
+  World* world;
+  Database* worldDatabase;
+  Database* dynamicObjectDatabase;
+  Database* blockDatabase;
+  Database* lightBlockDatabase;
+  Database* serverDatabase;
+  NSString* worldDir;
+  NSString* blocksDir;
+  NSMutableArray* mainDirContentsToCheck;
+  NSMutableArray* worldBlockDirsToCheck;
+  NSMutableArray* filesToRemove;
+  NSMutableArray* lightBlockFilesToRemove;
+  NSMutableArray* lightBlockFiles;
+  NSMutableArray* serverFiles;
   BOOL worldMigrationComplete;
   BOOL lightBlockMigrationComplete;
   BOOL serverMigrationComplete;
   BOOL backgroundLightBlockMigrationInProgress;
-  NSDictionary *lightBlockMainThreadOperation;
+  NSDictionary* lightBlockMainThreadOperation;
 }
 
-@property(readonly)
+@property (readonly)
     BOOL serverMigrationComplete; // @synthesize serverMigrationComplete;
-@property(readonly) BOOL
+@property (readonly) BOOL
     lightBlockMigrationComplete; // @synthesize lightBlockMigrationComplete;
-@property(readonly)
+@property (readonly)
     BOOL worldMigrationComplete; // @synthesize worldMigrationComplete;
 - (BOOL)migrationComplete;
 - (void)removeLightBlockFiles;

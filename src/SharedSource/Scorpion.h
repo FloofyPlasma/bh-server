@@ -10,16 +10,16 @@
 @class Blockhead, CPTexture2D, DrawCube, Shader;
 
 @interface Scorpion : NPC {
-  Shader *shader;
-  CPTexture2D *bodyTexture;
-  CPTexture2D *legTexture;
-  DrawCube *bodyCube;
-  DrawCube *tailCubeA;
-  DrawCube *tailCubeB;
-  DrawCube *tailCubeC;
-  DrawCube *tailCubeD;
-  DrawCube *legCube;
-  DrawCube *armCube;
+  Shader* shader;
+  CPTexture2D* bodyTexture;
+  CPTexture2D* legTexture;
+  DrawCube* bodyCube;
+  DrawCube* tailCubeA;
+  DrawCube* tailCubeB;
+  DrawCube* tailCubeC;
+  DrawCube* tailCubeD;
+  DrawCube* legCube;
+  DrawCube* armCube;
   int movementDirection;
   intpair fromSquare;
   intpair toSquare;
@@ -34,7 +34,7 @@
   float zRotation;
   float multiplierA;
   float multiplierB;
-  Blockhead *attackBlockhead;
+  Blockhead* attackBlockhead;
   float attackDelay;
   BOOL biting;
   float biteTimer;
@@ -103,7 +103,7 @@
      placedByClient:(id)arg8;
 - (void)loadDerivedStuff;
 - (int)getNamesArrayCount;
-- (id *)getNamesArray;
+- (id*)getNamesArray;
 - (int)captureRequiredItemType;
 - (int)capturedItemType;
 - (int)foodItemType;

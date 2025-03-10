@@ -10,23 +10,23 @@
 @class Blockhead, CPTexture2D, DrawCube, Shader;
 
 @interface Shark : NPC {
-  Shader *shader;
-  CPTexture2D *bodyFrontTexture;
-  CPTexture2D *bodyBackTexture;
-  CPTexture2D *headTopTexture;
-  CPTexture2D *headBottomTexture;
-  CPTexture2D *topFinTexture;
-  CPTexture2D *sideFinTexture;
-  CPTexture2D *tailFinTopTexture;
-  CPTexture2D *tailFinBottomTexture;
-  DrawCube *bodyFrontCube;
-  DrawCube *bodyBackCube;
-  DrawCube *headTopCube;
-  DrawCube *headBottomCube;
-  DrawCube *topFinCube;
-  DrawCube *sideFinCube;
-  DrawCube *tailFinTopCube;
-  DrawCube *tailFinBottomCube;
+  Shader* shader;
+  CPTexture2D* bodyFrontTexture;
+  CPTexture2D* bodyBackTexture;
+  CPTexture2D* headTopTexture;
+  CPTexture2D* headBottomTexture;
+  CPTexture2D* topFinTexture;
+  CPTexture2D* sideFinTexture;
+  CPTexture2D* tailFinTopTexture;
+  CPTexture2D* tailFinBottomTexture;
+  DrawCube* bodyFrontCube;
+  DrawCube* bodyBackCube;
+  DrawCube* headTopCube;
+  DrawCube* headBottomCube;
+  DrawCube* topFinCube;
+  DrawCube* sideFinCube;
+  DrawCube* tailFinTopCube;
+  DrawCube* tailFinBottomCube;
   int movementDirection;
   intpair fromSquare;
   intpair toSquare;
@@ -52,7 +52,7 @@
   BOOL hasHarmedBlockhead;
   BOOL lastTryCouldntMove;
   BOOL isOnAirAboveSolidGround;
-  Blockhead *attackBlockhead;
+  Blockhead* attackBlockhead;
   BOOL nearbyBlockhead;
   Vector2 riderTargetVelocity;
   intpair remoteGoalSquare;
@@ -123,7 +123,7 @@
 - (int)captureRequiredItemType;
 - (int)capturedItemType;
 - (int)getNamesArrayCount;
-- (id *)getNamesArray;
+- (id*)getNamesArray;
 - (int)foodItemType;
 - (id)speciesName;
 - (float)minFullness;

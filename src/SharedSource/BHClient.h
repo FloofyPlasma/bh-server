@@ -10,17 +10,17 @@
 @class ClientTileLoader, NSMutableDictionary, NSString, World;
 
 @interface BHClient : BHNetNode {
-  NSMutableDictionary *cachedPlayerImages;
-  ClientTileLoader *clientTileLoader;
-  World *world;
-  NSString *gameServerID;
-  NSString *joinPassword;
-  NSString *serverOwnerName;
+  NSMutableDictionary* cachedPlayerImages;
+  ClientTileLoader* clientTileLoader;
+  World* world;
+  NSString* gameServerID;
+  NSString* joinPassword;
+  NSString* serverOwnerName;
 }
 
-@property(readonly) NSString *serverOwnerName; // @synthesize serverOwnerName;
-@property(readonly) NSString *joinPassword;    // @synthesize joinPassword;
-@property(readonly) NSString *gameServerID;    // @synthesize gameServerID;
+@property (readonly) NSString* serverOwnerName; // @synthesize serverOwnerName;
+@property (readonly) NSString* joinPassword; // @synthesize joinPassword;
+@property (readonly) NSString* gameServerID; // @synthesize gameServerID;
 - (id)serverPlayerID;
 - (id)port;
 - (id)host;

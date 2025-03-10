@@ -18,19 +18,19 @@
   unsigned short mateColorGenes;
   Vector topColor;
   Vector bottomColor;
-  Shader *shader;
-  CPTexture2D *texture;
+  Shader* shader;
+  CPTexture2D* texture;
   float randomRotation;
 }
 
 @property unsigned short colorGenes; // @synthesize colorGenes;
-@property float availableFood;       // @synthesize availableFood;
+@property float availableFood; // @synthesize availableFood;
 - (id).cxx_construct;
 - (unsigned short)colorGenesVariation;
 - (unsigned short)mixGenesVariation;
 - (BOOL)canBreed;
 - (void)removeFromMacroBlock;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
@@ -41,7 +41,7 @@
     correctToolMultiplier:(int)arg3;
 - (BOOL)isRequiredSoilType:(int)arg1;
 - (int)plantType;
-- (BOOL)tileIsKindOfSelf:(struct Tile *)arg1;
+- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
      modelViewMatrix:(union _GLKMatrix4)arg3

@@ -18,12 +18,12 @@
 @interface BHMatch //! : NSObject
 {
   id<BHMatchDelegate> delegate;
-  NSString *host;
-  NSString *port;
+  NSString* host;
+  NSString* port;
 }
 
-@property(readonly) NSString *port; // @synthesize port;
-@property(readonly) NSString *host; // @synthesize host;
+@property (readonly) NSString* port; // @synthesize port;
+@property (readonly) NSString* host; // @synthesize host;
 - (id)cloudSalt;
 - (id)ownerName;
 - (BOOL)owned;
@@ -43,7 +43,7 @@
 - (BOOL)sendData:(id)arg1
        toPlayers:(id)arg2
     withDataMode:(long long)arg3
-           error:(id *)arg4;
+           error:(id*)arg4;
 - (unsigned long long)expectedPlayerCount;
 - (id)voiceChatWithName:(id)arg1;
 - (void)disconnect;

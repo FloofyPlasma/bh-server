@@ -11,11 +11,11 @@
 
 @interface ProjectileManager //! : NSObject
 {
-  World *world;
-  CPCache *cache;
-  CPTexture2D *texture;
-  Shader *shader;
-  Vector<Projectile *, std::__1::allocator<Projectile *>> projectiles;
+  World* world;
+  CPCache* cache;
+  CPTexture2D* texture;
+  Shader* shader;
+  Vector<Projectile*, std::__1::allocator<Projectile*>> projectiles;
 }
 
 - (id).cxx_construct;

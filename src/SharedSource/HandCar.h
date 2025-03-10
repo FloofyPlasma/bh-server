@@ -10,13 +10,13 @@
 @class DrawCube, MJMultiSound;
 
 @interface HandCar : TrainCar {
-  DrawCube *platformCube;
-  DrawCube *poleCube;
-  DrawCube *pivotCube;
-  DrawCube *handleCube;
+  DrawCube* platformCube;
+  DrawCube* poleCube;
+  DrawCube* pivotCube;
+  DrawCube* handleCube;
   float externalXAcceleration;
   float riderAnimationTimer;
-  MJMultiSound *railSound;
+  MJMultiSound* railSound;
   BOOL trackingAir;
   Vector2 airTrackStartPos;
 }

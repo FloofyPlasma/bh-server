@@ -10,17 +10,17 @@
 @class NSDictionary;
 
 @interface Egg : DynamicObject {
-  NSDictionary *genesDict;
+  NSDictionary* genesDict;
   unsigned short breed;
   float hatchTimer;
 }
 
-@property(readonly) float hatchTimer; // @synthesize hatchTimer;
+@property (readonly) float hatchTimer; // @synthesize hatchTimer;
 - (BOOL)occupiesForegroundContents;
 - (void)removeFromMacroBlock;
-- (int)addDodoEggDrawQuadData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDodoEggDrawQuadData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDodoEggCount;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)hatch:(BOOL)arg1;
 - (void)dealloc;

@@ -10,11 +10,11 @@
 @class DrawCube;
 
 @interface PassengerCar : TrainCar {
-  DrawCube *platformCube;
-  DrawCube *poleCube;
-  DrawCube *longWallCube;
-  DrawCube *shortWallCube;
-  DrawCube *roofCube;
+  DrawCube* platformCube;
+  DrawCube* poleCube;
+  DrawCube* longWallCube;
+  DrawCube* shortWallCube;
+  DrawCube* roofCube;
 }
 
 - (void)addRider:(id)arg1;

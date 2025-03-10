@@ -10,7 +10,7 @@
 @class NSMutableArray;
 
 @interface Chest : InteractionObject {
-  NSMutableArray *inventoryItems;
+  NSMutableArray* inventoryItems;
   BOOL inventoryChanged;
   int chestType;
   BOOL inventoryNeedsToBeSentWithUpdate;
@@ -18,7 +18,7 @@
   unsigned short shelfItemDataBs[4];
 }
 
-@property(readonly) BOOL inventoryChanged; // @synthesize inventoryChanged;
+@property (readonly) BOOL inventoryChanged; // @synthesize inventoryChanged;
 - (BOOL)removeItemIfAvailable:(int)arg1;
 - (BOOL)occupiesNormalContents;
 - (id)inventoryItems;
@@ -26,15 +26,15 @@
 - (BOOL)isPaintable;
 - (void)paint:(unsigned short)arg1;
 - (int)interactionRenderItemType;
-- (int)addDodoEggDrawQuadData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDodoEggDrawQuadData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDodoEggCount;
-- (int)addDrawItemQuadData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawItemQuadData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawItemQuadCount;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (void)startInteractionWithBlockhead:(id)arg1;
 - (int)staticGeometryDrawCubeCount;
 - (void)removeFromMacroBlock;
@@ -51,15 +51,15 @@
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (void)worldContentsChanged:(vector_07678c45 *)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldContentsChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)contentsDidChange;
 - (int)moveInventoryItemsFromArray:(id)arg1 toIndex:(int)arg2 count:(int)arg3;
 - (int)moveInventoryItemsFromArray:(id)arg1
                            toIndex:(int)arg2
                              count:(int)arg3
-                   assignedIndexes:(set_7b7d70f4 *)arg4;
+                   assignedIndexes:(set_7b7d70f4*)arg4;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
      modelViewMatrix:(union _GLKMatrix4)arg3

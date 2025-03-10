@@ -14,11 +14,11 @@
 @class Blockhead, MJTextView, NSMutableDictionary, NSString, Shader;
 
 @interface NPC : DynamicObject <HarmableDynamicObject, TapChoiceDynamicObject,
-                                RidableDynamicObject> {
+                     RidableDynamicObject> {
   unsigned short damage;
   BOOL dead;
   BOOL visible;
-  Blockhead *killBlockhead;
+  Blockhead* killBlockhead;
   unsigned short hitForce;
   float fullness;
   float tameCooldownTimer;
@@ -26,19 +26,19 @@
   float layTimer;
   float layCooldownTimer;
   float age;
-  NSString *name;
+  NSString* name;
   unsigned short breed;
   unsigned short mateBreed;
   BOOL hasBred;
   BOOL hasBeenFedByBlockheadOrChest;
-  NSMutableDictionary *tameCountsByClientID;
-  NSString *tamedClientID;
-  Blockhead *comingToInspectBlockhead;
-  Blockhead *inspectingBlockhead;
-  MJTextView *nameTextView;
-  Shader *progressShader;
+  NSMutableDictionary* tameCountsByClientID;
+  NSString* tamedClientID;
+  Blockhead* comingToInspectBlockhead;
+  Blockhead* inspectingBlockhead;
+  MJTextView* nameTextView;
+  Shader* progressShader;
   BOOL beingControlled;
-  Blockhead *rider;
+  Blockhead* rider;
   int savedBlockheadIndex;
   float remoteSendControlEventTimer;
   float randomHarmFromHungerTimer;
@@ -58,7 +58,7 @@
 }
 
 @property unsigned short breed; // @synthesize breed;
-@property float age;            // @synthesize age;
+@property float age; // @synthesize age;
 - (void)updatePosition:(intpair)arg1;
 - (BOOL)shouldSaveEveryChangeInPosition;
 - (id)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline;
@@ -105,7 +105,7 @@
 - (void)successfulTame;
 - (id)breedString;
 - (int)getNamesArrayCount;
-- (id *)getNamesArray;
+- (id*)getNamesArray;
 - (void)generateNewName;
 - (BOOL)secondChoiceIsBlue;
 - (BOOL)removeIsRed;
@@ -182,10 +182,10 @@
 - (int)npcType;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
 @property BOOL needsToUpdateChoiceUI;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 @end

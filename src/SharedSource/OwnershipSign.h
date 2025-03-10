@@ -10,8 +10,8 @@
 @class NSString;
 
 @interface OwnershipSign : Sign {
-  NSString *landOwnerID;
-  NSString *landOwnerName;
+  NSString* landOwnerID;
+  NSString* landOwnerName;
   int widthRadius;
   int heightRadius;
 }

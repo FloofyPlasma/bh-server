@@ -16,31 +16,31 @@
 
 @interface BHNetClientMatch
     : BHMatch <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-  NSNetServiceBrowser *browser;
-  NSMutableDictionary *domainBrowsers;
-  NSMutableArray *domains;
-  NSMutableArray *clientServicesWaiting;
-  struct _ENetHost *enetClient;
-  struct _ENetPeer *enetPeer;
-  NSString *remotePeerID;
-  NSString *userName;
+  NSNetServiceBrowser* browser;
+  NSMutableDictionary* domainBrowsers;
+  NSMutableArray* domains;
+  NSMutableArray* clientServicesWaiting;
+  struct _ENetHost* enetClient;
+  struct _ENetPeer* enetPeer;
+  NSString* remotePeerID;
+  NSString* userName;
   id photo;
-  NSString *cloudKey;
-  NSDictionary *myPlayerInfo;
-  NSMutableDictionary *playerInfos;
+  NSString* cloudKey;
+  NSDictionary* myPlayerInfo;
+  NSMutableDictionary* playerInfos;
   id<BHNetClientSearchDelegate> searchDelegate;
-  NSTimer *pollTimer;
-  NSMutableArray *foundHosts;
+  NSTimer* pollTimer;
+  NSMutableArray* foundHosts;
   BOOL searching;
   BOOL paused;
   BOOL isLocal;
 }
 
-@property(readonly) NSString *cloudKey; // @synthesize cloudKey;
-@property(readonly) BOOL isLocal;       // @synthesize isLocal;
-@property(readonly) id photo;           // @synthesize photo;
-@property(readonly) NSString *userName; // @synthesize userName;
-@property BOOL searching;               // @synthesize searching;
+@property (readonly) NSString* cloudKey; // @synthesize cloudKey;
+@property (readonly) BOOL isLocal; // @synthesize isLocal;
+@property (readonly) id photo; // @synthesize photo;
+@property (readonly) NSString* userName; // @synthesize userName;
+@property BOOL searching; // @synthesize searching;
 - (BOOL)isCloudMatch;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)sendPlayerInformationToServer:(id)arg1 password:(id)arg2;
@@ -54,7 +54,7 @@
 - (BOOL)sendData:(id)arg1
        toPlayers:(id)arg2
     withDataMode:(long long)arg3
-           error:(id *)arg4;
+           error:(id*)arg4;
 - (id)localPlayerName;
 - (id)localPlayerID;
 - (id)playerIDs;
@@ -72,9 +72,9 @@
                     cloudKey:(id)arg6;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end

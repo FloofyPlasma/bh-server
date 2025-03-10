@@ -8,14 +8,14 @@
 #import <objc/NSObject.h>
 
 @interface DrawCube : NSObject {
-  float *vertices;
-  float *texCoords;
-  float *normals;
+  float* vertices;
+  float* texCoords;
+  float* normals;
   BOOL multitexture;
   BOOL luminous;
 }
 
-+ (void)fillCylinderBuffer:(float *)arg1
++ (void)fillCylinderBuffer:(float*)arg1
                  fromIndex:(int)arg2
                     matrix:(union _GLKMatrix4)arg3
                     radius:(float)arg4
@@ -34,7 +34,7 @@
                macroWorldX:(int)arg17
                macroWorldY:(int)arg18
                 paintColor:(Vector)arg19;
-+ (void)fillBuffer:(float *)arg1
++ (void)fillBuffer:(float*)arg1
          fromIndex:(int)arg2
             matrix:(union _GLKMatrix4)arg3
              width:(float)arg4
@@ -54,7 +54,7 @@
        macroWorldX:(int)arg18
        macroWorldY:(int)arg19
         paintColor:(Vector)arg20;
-+ (void)fillBuffer:(float *)arg1
++ (void)fillBuffer:(float*)arg1
          fromIndex:(int)arg2
             matrix:(union _GLKMatrix4)arg3
              width:(float)arg4
@@ -74,7 +74,7 @@
        macroWorldX:(int)arg18
        macroWorldY:(int)arg19;
 + (void)fillBufferForBlockOfType:(int)arg1
-                          buffer:(float *)arg2
+                          buffer:(float*)arg2
                        fromIndex:(int)arg3
                      macroWorldX:(int)arg4
                      macroWorldY:(int)arg5

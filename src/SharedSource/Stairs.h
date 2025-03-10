@@ -12,22 +12,22 @@
   int currentConfiguration;
   unsigned short paintColor;
   float iceMeltTimer;
-  float *savedDrawBuffer;
+  float* savedDrawBuffer;
   int savedDrawBufferIndex;
   int animationIndex;
 }
 
-@property(readonly) int itemType; // @synthesize itemType;
+@property (readonly) int itemType; // @synthesize itemType;
 - (BOOL)occupiesNormalContents;
 - (void)paint:(unsigned short)arg1;
 - (void)removeFromMacroBlock;
-- (int)addDrawCubeDataTrans:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeDataTrans:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCountTrans;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCount;
-- (int)addDrawCubeDataLocal:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeDataLocal:(float*)arg1 fromIndex:(int)arg2;
 - (int)imageIndex;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;

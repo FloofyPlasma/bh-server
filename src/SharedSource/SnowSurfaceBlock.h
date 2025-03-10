@@ -12,18 +12,18 @@
 @interface SnowSurfaceBlock : DynamicObject {
   float temperature;
   float partialContent;
-  NSMutableDictionary *saveDictCached;
+  NSMutableDictionary* saveDictCached;
   float rainRandomTimer;
 }
 
 @property float partialContent; // @synthesize partialContent;
 - (void)setNeedsRemoved:(BOOL)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (BOOL)removeIfFloating;
 - (void)removeAllSnow;
-- (void)updateSnowContent:(BOOL)arg1 tile:(struct Tile *)arg2;
-- (void)updateGroundFrozen:(struct Tile *)arg1 tile:(struct Tile *)arg2;
-- (void)spreadGrass:(struct Tile *)arg1 tile:(struct Tile *)arg2;
+- (void)updateSnowContent:(BOOL)arg1 tile:(struct Tile*)arg2;
+- (void)updateGroundFrozen:(struct Tile*)arg1 tile:(struct Tile*)arg2;
+- (void)spreadGrass:(struct Tile*)arg1 tile:(struct Tile*)arg2;
 - (void)updateRain:(float)arg1 dt:(float)arg2;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)updateInTimeSinceSaved;

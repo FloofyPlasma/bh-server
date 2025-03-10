@@ -27,7 +27,7 @@
   int worldWidthMacro;
   BOOL supportsGyro;
   BOOL isObservingMotionEvents;
-  NSTimer *motionUpdateTimer;
+  NSTimer* motionUpdateTimer;
   BOOL calibrating;
   BOOL hasCalibrated;
   Vector longTermAveragedAcceleration;
@@ -42,68 +42,68 @@
   int dynamicWorldFailedToLoadWaitCountTimer;
   BOOL loadComplete;
   intpair startPortalPos;
-  struct WindowInfo *windowInfo;
-  Weather *weather;
+  struct WindowInfo* windowInfo;
+  Weather* weather;
   struct CustomRules customRules;
-  NSMutableDictionary *customRulesDict;
+  NSMutableDictionary* customRulesDict;
   BOOL expertMode;
-  Tutorial *tutorial;
-  CloudInterface *cloudInterface;
-  UIManager *uiManager;
+  Tutorial* tutorial;
+  CloudInterface* cloudInterface;
+  UIManager* uiManager;
   int loadedVersion;
   union _GLKMatrix4 tapProjectionMatrix;
   union _GLKMatrix4 tapModelviewMatrix;
   int tapViewport[4];
   double pinchScale;
-  CPCache *cache;
-  struct MacroTile *macroTiles;
-  DynamicWorld *dynamicWorld;
-  WorldTileLoader *worldTileLoader;
-  PathCreator *pathCreator;
-  NSMutableArray *pathQueue;
+  CPCache* cache;
+  struct MacroTile* macroTiles;
+  DynamicWorld* dynamicWorld;
+  WorldTileLoader* worldTileLoader;
+  PathCreator* pathCreator;
+  NSMutableArray* pathQueue;
   unsigned int randomSeed;
-  NSString *saveID;
-  NSString *worldName;
-  NSString *hostPort;
-  NSString *maxPlayers;
-  NSDate *creationDate;
+  NSString* saveID;
+  NSString* worldName;
+  NSString* hostPort;
+  NSString* maxPlayers;
+  NSDate* creationDate;
   unordered_set_8b255eaf usedPhysicalBlocks;
   unordered_set_8b255eaf freePhysicalBlocks;
-  NSMutableIndexSet *freeClientLightBlockIndices;
-  struct DrawBlock *drawBlocks;
+  NSMutableIndexSet* freeClientLightBlockIndices;
+  struct DrawBlock* drawBlocks;
   int numDrawBlocks;
   int updateGeometryDrawBlockIndex;
   float updateGeometryDrawBlockTimer;
-  NSMutableIndexSet *tileButtonIndices;
-  CPTexture2D *tileMapTexture;
-  CPTexture2D *skyTexture;
-  CPTexture2D *groundColorTexture;
-  CPTexture2D *buttonTexture;
-  CPTexture2D *sunTexture;
-  CPTexture2D *moonTexture;
-  CPTexture2D *itemsTexture;
-  CPTexture2D *itemNormalsTexture;
-  CPTexture2D *lightTexture;
-  CPTexture2D *repairBoxTexture;
-  CPTexture2D *tileDestructTexture;
-  Shader *skyShader;
-  Shader *blockShader;
-  Shader *blockTransparentShader;
-  Shader *buttonShader;
-  Shader *standardObjectColoredShader;
-  Shader *standardObjectShader;
-  Shader *blackTileShader;
-  Shader *blackCubeShader;
-  Shader *starShader;
-  Shader *staticDrawCubeShader;
-  Shader *dodoEggShader;
-  Shader *lightsShader;
+  NSMutableIndexSet* tileButtonIndices;
+  CPTexture2D* tileMapTexture;
+  CPTexture2D* skyTexture;
+  CPTexture2D* groundColorTexture;
+  CPTexture2D* buttonTexture;
+  CPTexture2D* sunTexture;
+  CPTexture2D* moonTexture;
+  CPTexture2D* itemsTexture;
+  CPTexture2D* itemNormalsTexture;
+  CPTexture2D* lightTexture;
+  CPTexture2D* repairBoxTexture;
+  CPTexture2D* tileDestructTexture;
+  Shader* skyShader;
+  Shader* blockShader;
+  Shader* blockTransparentShader;
+  Shader* buttonShader;
+  Shader* standardObjectColoredShader;
+  Shader* standardObjectShader;
+  Shader* blackTileShader;
+  Shader* blackCubeShader;
+  Shader* starShader;
+  Shader* staticDrawCubeShader;
+  Shader* dodoEggShader;
+  Shader* lightsShader;
   Vector2 roundedTranslation;
   Vector2 accurateTranslation;
   Vector2 translationGoal;
   BOOL translatingToGoal;
   double worldTime;
-  NoiseFunction *weatherNoiseFunction;
+  NoiseFunction* weatherNoiseFunction;
   Vector sunDirection;
   union _GLKVector3 relativeSunDirection;
   union _GLKMatrix4 sunMvpMatrix;
@@ -112,9 +112,9 @@
   float timeOfDayFraction;
   float backgroundYOffset;
   Vector dayColor;
-  FNImageData *dayColorImageData;
-  FNImageData *dayColorCloudyImageData;
-  FNImageData *skyPixelData;
+  FNImageData* dayColorImageData;
+  FNImageData* dayColorCloudyImageData;
+  FNImageData* skyPixelData;
   float weatherFraction;
   float rainFraction;
   float rainFractionNotIncludingSnow;
@@ -125,19 +125,19 @@
   float saveCount;
   float noRainTimer;
   float mapUpdateTimer;
-  int *distanceOrderedFoodTypes;
-  NSDictionary *multiplayerLoadDict;
-  NSMutableDictionary *serverClients;
-  BHClient *client;
-  BHServer *server;
+  int* distanceOrderedFoodTypes;
+  NSDictionary* multiplayerLoadDict;
+  NSMutableDictionary* serverClients;
+  BHClient* client;
+  BHServer* server;
   BOOL connectionToServerLost;
-  ClientTileLoader *clientTileLoader;
+  ClientTileLoader* clientTileLoader;
   BOOL initialNetDataRequestSent;
-  NSMutableArray *dynamicObjectIDRequestInfoDicts;
-  NSMutableDictionary *initialCreateObjects;
-  NSMutableDictionary *initialUpdateObjects;
-  NSMutableDictionary *initialCreationDataUpdateObjects;
-  NSMutableDictionary *initialRemoveObjects;
+  NSMutableArray* dynamicObjectIDRequestInfoDicts;
+  NSMutableDictionary* initialCreateObjects;
+  NSMutableDictionary* initialUpdateObjects;
+  NSMutableDictionary* initialCreationDataUpdateObjects;
+  NSMutableDictionary* initialRemoveObjects;
   float sendHeartbeatRequestTimer;
   float clientLastGotHeartbeatCounter;
   int waterAnimationIndex;
@@ -159,9 +159,9 @@
   int hideUIType;
   BOOL doubleTimeUnlocked;
   BOOL needsToDoPortalScreenshot;
-  NSData *portalScreenshotData;
+  NSData* portalScreenshotData;
   BOOL hasJustTakenPhoto;
-  NSMutableIndexSet *circumNavigateBooleans;
+  NSMutableIndexSet* circumNavigateBooleans;
   BOOL serverReportsAllPaused;
   double lastMusicPlayTime;
   int frameCounter;
@@ -171,46 +171,46 @@
   float totalTimeToSimulate;
   float simulationProgress;
   BOOL isSimulating;
-  NSMutableDictionary *simulationEvents;
-  NSMutableDictionary *awayClientSimulationEvents;
-  NSString *netEventsMessageToDisplayOnceLoaded;
+  NSMutableDictionary* simulationEvents;
+  NSMutableDictionary* awayClientSimulationEvents;
+  NSString* netEventsMessageToDisplayOnceLoaded;
   BOOL saveNextUpdate;
   int finalSaveCompletionCount;
   intpair highestPoint;
   int dynamicWorldLoadFailCount;
   int showBlockheadAvailablePromptBlockheadWithCorrrectFoodIndex;
-  NSMutableIndexSet *clientTCMinedIndices;
-  FNImageData *mapPixelData;
-  NSOperationQueue *saveQueue;
-  struct map<int, unsigned char *, std::__1::less<int>,
-             std::__1::allocator<std::__1::pair<const int, unsigned char *>>>
+  NSMutableIndexSet* clientTCMinedIndices;
+  FNImageData* mapPixelData;
+  NSOperationQueue* saveQueue;
+  struct map<int, unsigned char*, std::__1::less<int>,
+      std::__1::allocator<std::__1::pair<const int, unsigned char*>>>
       latestMapData;
-  ProjectileManager *projectileManager;
+  ProjectileManager* projectileManager;
   BOOL isOwner;
   BOOL isAdmin;
   BOOL isMod;
   int cloudMode;
   int saveDelay;
-  NSURLConnection *sendPricesConnection;
-  NSMutableData *sendPricesRecieveData;
-  NSURLConnection *getPricesConnection;
-  NSMutableData *getPricesRecieveData;
-  NSDictionary *globalPrices;
-  NSMutableDictionary *worldPriceMultipliers;
-  NSMutableDictionary *unsentMultiplayerTradeTransactions;
-  NSMutableDictionary *unsentGlobalTradeTransactions;
+  NSURLConnection* sendPricesConnection;
+  NSMutableData* sendPricesRecieveData;
+  NSURLConnection* getPricesConnection;
+  NSMutableData* getPricesRecieveData;
+  NSDictionary* globalPrices;
+  NSMutableDictionary* worldPriceMultipliers;
+  NSMutableDictionary* unsentMultiplayerTradeTransactions;
+  NSMutableDictionary* unsentGlobalTradeTransactions;
   float sendTradeTransactionTimer;
   float multiplayerServerSendTradeTransactionTimer;
   BOOL isHeadingTowardsMIdday;
   BOOL hasPlayedDyingSong;
   float pauseIdleTimer;
   BOOL pvpEnabled;
-  NSString *welcomeMessage;
+  NSString* welcomeMessage;
   int portalLevel;
   int serverMinorVersion;
-  NSMutableArray *mutedPlayers;
-  NSString *serverPassword;
-  NSString *clientPassword;
+  NSMutableArray* mutedPlayers;
+  NSString* serverPassword;
+  NSString* clientPassword;
   unsigned long long serverPrivacySetting;
   float clientsideCredit;
   float clientAddedCreditTimer;
@@ -220,11 +220,11 @@
   float clientSideCreditWarningDelay;
   BOOL saveDisabled;
   float smoothedCameraZOffset;
-  NSMutableDictionary *ownershipSignPositions;
+  NSMutableDictionary* ownershipSignPositions;
   BOOL ownershipSignPositionsNeedSaving;
-  OwnershipAreaRenderer *ownershipAreaRenderer;
-  PortalChestManager *portalChestManager;
-  NSMutableDictionary *zoomPlayerCycleCounts;
+  OwnershipAreaRenderer* ownershipAreaRenderer;
+  PortalChestManager* portalChestManager;
+  NSMutableDictionary* zoomPlayerCycleCounts;
   BOOL clientZoomRequestSent;
   BOOL followingBlockhead;
   Vector2 touchStartTranslation;
@@ -232,73 +232,72 @@
   Vector2 lastDistanceTravelledThisDPadMovement;
   BOOL dpadControl;
   BOOL dpadDirectControlDisabled;
-  NSMutableIndexSet *foundItemsList;
+  NSMutableIndexSet* foundItemsList;
   BOOL foundItemsListNeedsToBeSentToServer;
   int saveCounter;
   int lightblockSaveCounter;
-  DatabaseEnvironment *databaseEnvironment;
-  Database *mainDatabase;
-  Database *dynamicObjectDatabase;
-  Database *blockDatabase;
-  DatabaseConvertor *databaseConvertor;
+  DatabaseEnvironment* databaseEnvironment;
+  Database* mainDatabase;
+  Database* dynamicObjectDatabase;
+  Database* blockDatabase;
+  DatabaseConvertor* databaseConvertor;
   BOOL hasFinishedDatabaseMigrationTo17;
   BOOL repairMode;
   BOOL renderRepairModeConfirm;
   intpair repairModeConfirmPos;
 }
 
-@property(readonly) NSIndexSet *foundItemsList; // @synthesize foundItemsList;
-@property(readonly) UIManager *uiManager;       // @synthesize uiManager;
-@property(readonly) BOOL hasJustTakenPhoto;  // @synthesize hasJustTakenPhoto;
-@property(readonly) int waterAnimationIndex; // @synthesize waterAnimationIndex;
-@property(readonly) int slowAnimationIndex;  // @synthesize slowAnimationIndex;
-@property BOOL saveDisabled;                 // @synthesize saveDisabled;
-@property CloudInterface *cloudInterface;    // @synthesize cloudInterface;
-@property(readonly)
+@property (readonly) NSIndexSet* foundItemsList; // @synthesize foundItemsList;
+@property (readonly) UIManager* uiManager; // @synthesize uiManager;
+@property (readonly) BOOL hasJustTakenPhoto; // @synthesize hasJustTakenPhoto;
+@property (readonly) int waterAnimationIndex; // @synthesize waterAnimationIndex;
+@property (readonly) int slowAnimationIndex; // @synthesize slowAnimationIndex;
+@property BOOL saveDisabled; // @synthesize saveDisabled;
+@property CloudInterface* cloudInterface; // @synthesize cloudInterface;
+@property (readonly)
     BOOL isHeadingTowardsMIdday; // @synthesize isHeadingTowardsMIdday;
-@property(readonly)
-    Vector2 roundedTranslation;          // @synthesize roundedTranslation;
-@property(readonly) BOOL dragInProgress; // @synthesize dragInProgress;
-@property double pinchScale;             // @synthesize pinchScale;
-@property(readonly) Tutorial *tutorial;  // @synthesize tutorial;
-@property BOOL followingBlockhead;       // @synthesize followingBlockhead;
-@property(readonly)
-    PortalChestManager *portalChestManager; // @synthesize portalChestManager;
-@property(readonly) int serverMinorVersion; // @synthesize serverMinorVersion;
-@property(readonly) NSMutableDictionary
-    *worldPriceMultipliers; // @synthesize worldPriceMultipliers;
-@property(readonly) NSDictionary *globalPrices; // @synthesize globalPrices;
-@property int cloudMode;                        // @synthesize cloudMode;
-@property BOOL isOwner;                         // @synthesize isOwner;
-@property BOOL isMod;                           // @synthesize isMod;
-@property BOOL isAdmin;                         // @synthesize isAdmin;
-@property(readonly) NSString *worldName;        // @synthesize worldName;
-@property(readonly) BOOL doubleTimeUnlocked; // @synthesize doubleTimeUnlocked;
-@property(readonly) BOOL fastForward;        // @synthesize fastForward;
-@property(readonly) BHClient *client;        // @synthesize client;
-@property(readonly) BHServer *server;        // @synthesize server;
-@property(readonly)
-    NSMutableDictionary *serverClients;     // @synthesize serverClients;
-@property(readonly) intpair startPortalPos; // @synthesize startPortalPos;
-@property(readonly) struct WindowInfo *windowInfo; // @synthesize windowInfo;
-@property(readonly)
-    int incrementalLoadCount;          // @synthesize incrementalLoadCount;
-@property(readonly) BOOL loadComplete; // @synthesize loadComplete;
-@property BOOL translatingToGoal;      // @synthesize translatingToGoal;
-@property(readonly) Vector dayColor;   // @synthesize dayColor;
-@property(readonly) float
+@property (readonly)
+    Vector2 roundedTranslation; // @synthesize roundedTranslation;
+@property (readonly) BOOL dragInProgress; // @synthesize dragInProgress;
+@property double pinchScale; // @synthesize pinchScale;
+@property (readonly) Tutorial* tutorial; // @synthesize tutorial;
+@property BOOL followingBlockhead; // @synthesize followingBlockhead;
+@property (readonly)
+    PortalChestManager* portalChestManager; // @synthesize portalChestManager;
+@property (readonly) int serverMinorVersion; // @synthesize serverMinorVersion;
+@property (readonly) NSMutableDictionary* worldPriceMultipliers; // @synthesize worldPriceMultipliers;
+@property (readonly) NSDictionary* globalPrices; // @synthesize globalPrices;
+@property int cloudMode; // @synthesize cloudMode;
+@property BOOL isOwner; // @synthesize isOwner;
+@property BOOL isMod; // @synthesize isMod;
+@property BOOL isAdmin; // @synthesize isAdmin;
+@property (readonly) NSString* worldName; // @synthesize worldName;
+@property (readonly) BOOL doubleTimeUnlocked; // @synthesize doubleTimeUnlocked;
+@property (readonly) BOOL fastForward; // @synthesize fastForward;
+@property (readonly) BHClient* client; // @synthesize client;
+@property (readonly) BHServer* server; // @synthesize server;
+@property (readonly)
+    NSMutableDictionary* serverClients; // @synthesize serverClients;
+@property (readonly) intpair startPortalPos; // @synthesize startPortalPos;
+@property (readonly) struct WindowInfo* windowInfo; // @synthesize windowInfo;
+@property (readonly)
+    int incrementalLoadCount; // @synthesize incrementalLoadCount;
+@property (readonly) BOOL loadComplete; // @synthesize loadComplete;
+@property BOOL translatingToGoal; // @synthesize translatingToGoal;
+@property (readonly) Vector dayColor; // @synthesize dayColor;
+@property (readonly) float
     rainFractionNotIncludingSnow; // @synthesize rainFractionNotIncludingSnow;
-@property(readonly) float rainFraction;      // @synthesize rainFraction;
-@property(readonly) float weatherFraction;   // @synthesize weatherFraction;
-@property(readonly) float timeOfDayFraction; // @synthesize timeOfDayFraction;
-@property(readonly) Vector sunDirection;     // @synthesize sunDirection;
-@property(readonly) double worldTime;        // @synthesize worldTime;
-@property(readonly) unsigned int randomSeed; // @synthesize randomSeed;
-@property(readonly) NSString *saveID;        // @synthesize saveID;
-@property(readonly) DynamicWorld *dynamicWorld;   // @synthesize dynamicWorld;
-@property(readonly) struct MacroTile *macroTiles; // @synthesize macroTiles;
-@property(readonly) BOOL expertMode;              // @synthesize expertMode;
-@property(readonly) int worldWidthMacro; // @synthesize worldWidthMacro;
+@property (readonly) float rainFraction; // @synthesize rainFraction;
+@property (readonly) float weatherFraction; // @synthesize weatherFraction;
+@property (readonly) float timeOfDayFraction; // @synthesize timeOfDayFraction;
+@property (readonly) Vector sunDirection; // @synthesize sunDirection;
+@property (readonly) double worldTime; // @synthesize worldTime;
+@property (readonly) unsigned int randomSeed; // @synthesize randomSeed;
+@property (readonly) NSString* saveID; // @synthesize saveID;
+@property (readonly) DynamicWorld* dynamicWorld; // @synthesize dynamicWorld;
+@property (readonly) struct MacroTile* macroTiles; // @synthesize macroTiles;
+@property (readonly) BOOL expertMode; // @synthesize expertMode;
+@property (readonly) int worldWidthMacro; // @synthesize worldWidthMacro;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)appDatabase;
@@ -307,7 +306,7 @@
 - (void)archiveLightBlocksForClient:(id)arg1;
 - (BOOL)hasFinishedDatabaseMigrationTo17;
 - (void)doPortalShotNextFrame;
-- (unordered_set_8b255eaf *)usedPhysicalBlocks;
+- (unordered_set_8b255eaf*)usedPhysicalBlocks;
 - (BOOL)finishBulkDatabaseUpdate;
 - (void)startBulkDatabaseUpdate;
 - (void)blockheadFilesReturnedFromServer:(id)arg1;
@@ -415,8 +414,8 @@
 - (BOOL)mapVisible;
 - (BOOL)tileIsLitForClient:(id)arg1
                      atPos:(intpair)arg2
-                      tile:(struct Tile *)arg3;
-- (void)updatePhysicalBlockToLatestVersion:(struct PhysicalBlock *)arg1;
+                      tile:(struct Tile*)arg3;
+- (void)updatePhysicalBlockToLatestVersion:(struct PhysicalBlock*)arg1;
 - (void)playersChanged;
 - (BOOL)isControllingBlockheadsForClientPlayer:(id)arg1;
 - (int)currentTotalBlockheadCountIncludingNet;
@@ -455,9 +454,9 @@
 - (void)startIncentivizedVideo;
 - (void)iapStarted;
 - (void)waterMovedFrom:(intpair)arg1
-              fromTile:(struct Tile *)arg2
+              fromTile:(struct Tile*)arg2
                     to:(intpair)arg3
-                toTile:(struct Tile *)arg4
+                toTile:(struct Tile*)arg4
                 amount:(int)arg5;
 - (void)abortInProgressPathIfForBlockhead:(id)arg1;
 - (Vector)currentTipColor;
@@ -484,7 +483,7 @@
 - (void)updateIdleTimerDisabled;
 - (void)stopFollowingOrTranslatingToGoal;
 - (BOOL)worldUIDragging;
-- (int *)distanceOrderedFoodTypes;
+- (int*)distanceOrderedFoodTypes;
 - (void)addFuelTappedAtInteractionObject:(id)arg1 withBlockhead:(id)arg2;
 - (void)removeDynamicObjectTappedAtDynamicObject:(id)arg1
                                    withBlockhead:(id)arg2;
@@ -513,7 +512,7 @@
 - (void)fullyLoadIfNeededAroundPos:(intpair)arg1
              clientLightBlockIndex:(int)arg2
                       forBlockhead:(id)arg3;
-- (void)fullyLoadAndUpdateIfNeededForMacroBlock:(struct MacroTile *)arg1
+- (void)fullyLoadAndUpdateIfNeededForMacroBlock:(struct MacroTile*)arg1
                                    includingPos:(intpair)arg2
                           clientLightBlockIndex:(int)arg3
                                    forBlockhead:(id)arg4;
@@ -521,25 +520,25 @@
 - (void)pauseResumeButtonTapped;
 - (void)pauseButtonTapped;
 - (void)timeCrystalButtonTapped;
-- (void)setWindowInfo:(struct WindowInfo *)arg1;
-- (void)loadPhysicalBlockForMacroTile:(struct MacroTile *)arg1
+- (void)setWindowInfo:(struct WindowInfo*)arg1;
+- (void)loadPhysicalBlockForMacroTile:(struct MacroTile*)arg1
                                   atX:(int)arg2
                                     y:(int)arg3
                 loadSurroundingBlocks:(BOOL)arg4
                    createIfNotCreated:(BOOL)arg5;
-- (struct PhysicalBlock *)physicalBlockToLoadByClientTileLoaderForMacroTile:
-    (struct MacroTile *)arg1;
+- (struct PhysicalBlock*)physicalBlockToLoadByClientTileLoaderForMacroTile:
+    (struct MacroTile*)arg1;
 - (void)saveLightBlockForClientLightBlockIndex:(int)arg1
-                                 physicalBlock:(struct PhysicalBlock *)arg2
+                                 physicalBlock:(struct PhysicalBlock*)arg2
                                        sendNow:(BOOL)arg3;
 - (void)loadLightBlockForClientLightBlockIndex:(int)arg1
-                             intoPhysicalBlock:(struct PhysicalBlock *)arg2;
+                             intoPhysicalBlock:(struct PhysicalBlock*)arg2;
 - (void)loadDynamicObjectsIfNotAlreadyLoadedForMacroTile:
-            (struct MacroTile *)arg1
+            (struct MacroTile*)arg1
                                     includeSurfaceBlocks:(BOOL)arg2;
-- (void)decommisionBlock:(struct MacroTile *)arg1
+- (void)decommisionBlock:(struct MacroTile*)arg1
     blockToSavePhyscialBlock:(BOOL)arg2;
-- (BOOL)savePhysicalBlockForMacroTile:(struct MacroTile *)arg1
+- (BOOL)savePhysicalBlockForMacroTile:(struct MacroTile*)arg1
                          sendReliably:(BOOL)arg2
                              dontSend:(BOOL)arg3
               onlySaveIfClientsNeedIt:(BOOL)arg4;
@@ -555,7 +554,7 @@
 - (void)resetPauseIdleTimer;
 - (void)pauseUpdates;
 - (void)scrollToTap:(struct CGPoint)arg1;
-- (void)queueBlockheadAIActionToTile:(struct Tile *)arg1
+- (void)queueBlockheadAIActionToTile:(struct Tile*)arg1
                                atPos:(intpair)arg2
                         forBlockhead:(id)arg3;
 - (void)cancelAllActionsAtPos:(intpair)arg1
@@ -580,18 +579,18 @@
                       atWorldTime:(double)arg2
                ignoreSandFraction:(BOOL)arg3;
 - (float)getWeatherFractionForPos:(intpair)arg1 atWorldTime:(double)arg2;
-- (void)removePaintAtTile:(struct Tile *)arg1
+- (void)removePaintAtTile:(struct Tile*)arg1
                     atPos:(intpair)arg2
                 faceIndex:(unsigned char)arg3
            paintBlockhead:(id)arg4;
-- (void)paintTile:(struct Tile *)arg1
+- (void)paintTile:(struct Tile*)arg1
              atPos:(intpair)arg2
         colorIndex:(unsigned short)arg3
          faceIndex:(unsigned char)arg4
     paintBlockhead:(id)arg5;
 - (void)remoteGatherRequest:(id)arg1;
-- (void)sendGatherNotificationForTile:(struct Tile *)arg1 atPos:(intpair)arg2;
-- (void)fillTile:(struct Tile *)arg1
+- (void)sendGatherNotificationForTile:(struct Tile*)arg1 atPos:(intpair)arg2;
+- (void)fillTile:(struct Tile*)arg1
                  atPos:(intpair)arg2
               withType:(int)arg3
                  dataA:(unsigned short)arg4
@@ -600,7 +599,7 @@
               saveDict:(id)arg7
      placedByBlockhead:(id)arg8
     placedByClientName:(id)arg9;
-- (void)fillTile:(struct Tile *)arg1
+- (void)fillTile:(struct Tile*)arg1
                  atPos:(intpair)arg2
               withType:(int)arg3
                  dataA:(unsigned short)arg4
@@ -608,7 +607,7 @@
         placedByClient:(id)arg6
               saveDict:(id)arg7
     placedByClientName:(id)arg8;
-- (void)fillTile:(struct Tile *)arg1 atPos:(intpair)arg2 withType:(int)arg3;
+- (void)fillTile:(struct Tile*)arg1 atPos:(intpair)arg2 withType:(int)arg3;
 - (void)remotePaintRequest:(id)arg1 fromClient:(id)arg2;
 - (unsigned int)remoteFillRequest:(id)arg1 placedByClient:(id)arg2;
 - (id)placeInteractionObjectWithItem:(id)arg1
@@ -654,7 +653,7 @@
                            removeBlockhead:(id)arg5;
 - (unsigned int)remoteRemoveRequest:(id)arg1 fromClient:(id)arg2;
 - (unsigned int)remoteRemoveBackWallRequest:(id)arg1 fromClient:(id)arg2;
-- (void)removeAnyBackgroundContentsForTile:(struct Tile *)arg1
+- (void)removeAnyBackgroundContentsForTile:(struct Tile*)arg1
                                      atPos:(intpair)arg2
                            removeBlockhead:(id)arg3;
 - (void)decommisionAllBlocksBlockToSavePhyscialBlock:(BOOL)arg1;
@@ -678,7 +677,7 @@
 - (void)dealloc;
 - (void)deleteTimers;
 - (void)setServer:(id)arg1;
-- (id)initWithWindowInfo:(struct WindowInfo *)arg1
+- (id)initWithWindowInfo:(struct WindowInfo*)arg1
                    cache:(id)arg2
                 delegate:(id)arg3
                   saveID:(id)arg4

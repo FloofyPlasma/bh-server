@@ -17,35 +17,35 @@
 
 @interface Weather //! : NSObject
 {
-  CPCache *cache;
-  World *world;
-  float *snowPoints;
-  float *rainPoints;
-  float *cloudPoints;
+  CPCache* cache;
+  World* world;
+  float* snowPoints;
+  float* rainPoints;
+  float* cloudPoints;
   int cloudQuadCount;
   struct Cloud clouds[16];
-  CPTexture2D *cloudTextures[6];
-  NoiseFunction *cloudNoiseFunction;
+  CPTexture2D* cloudTextures[6];
+  NoiseFunction* cloudNoiseFunction;
   BOOL cloudsLoadedAsHD;
   float timeElapsed;
   float timeElapsedCloud;
-  float *randomNumbers;
+  float* randomNumbers;
   int snowRandomNumberIndex;
   int rainRandomNumberIndex;
   int recalcRandomIndex;
   unsigned int rainXOffset;
   unsigned int rainYOffset;
   unsigned int rainZOffset;
-  struct WindowInfo *windowInfo;
-  Shader *snowShader;
-  Shader *rainShader;
-  Shader *cloudShader;
-  MJSound *lightRainSound;
-  MJSound *heavyRainSound;
-  MJSound *undergroundSound;
-  MJSound *windSound;
-  MJMultiSound *birdsSound[14];
-  MJMultiSound *cricketSound[10];
+  struct WindowInfo* windowInfo;
+  Shader* snowShader;
+  Shader* rainShader;
+  Shader* cloudShader;
+  MJSound* lightRainSound;
+  MJSound* heavyRainSound;
+  MJSound* undergroundSound;
+  MJSound* windSound;
+  MJMultiSound* birdsSound[14];
+  MJMultiSound* cricketSound[10];
   float desiredOceanSoundLevel;
   float desiredBirdSoundLevel;
   BOOL soundPaused;
@@ -56,10 +56,10 @@
   BOOL cloudGoingRight;
   float cloudDirectionChangeTimer;
   float windMovement;
-  FNImageData *cloudColorForegroundImageData;
-  FNImageData *cloudColorForegroundCloudyImageData;
-  FNImageData *cloudColorBackgroundImageData;
-  FNImageData *cloudColorBackgroundCloudyImageData;
+  FNImageData* cloudColorForegroundImageData;
+  FNImageData* cloudColorForegroundCloudyImageData;
+  FNImageData* cloudColorBackgroundImageData;
+  FNImageData* cloudColorBackgroundCloudyImageData;
 }
 
 @property float windMovement; // @synthesize windMovement;

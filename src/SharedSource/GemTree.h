@@ -13,14 +13,14 @@
 }
 
 - (BOOL)isStaticTree;
-- (BOOL)tileIsKindOfSelf:(struct Tile *)arg1;
+- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
 - (int)gemItemType;
 - (int)treeType;
 - (void)recursivelyAddOwnedTile:(intpair)arg1
-                    toPositions:(unordered_set_22babbde *)arg2;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+                    toPositions:(unordered_set_22babbde*)arg2;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)makeTileDead:(struct Tile *)arg1;
+- (void)makeTileDead:(struct Tile*)arg1;
 - (int)trunkBushContentsType;
 - (int)trunkContentsType;
 - (int)bushContentsType;

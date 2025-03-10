@@ -13,24 +13,24 @@
 
 @interface Painting : DynamicObject <TapChoiceDynamicObject> {
   int itemType;
-  NSData *imageData;
-  NSString *ownerName;
-  Shader *shader;
-  CPTexture2D *texture;
+  NSData* imageData;
+  NSString* ownerName;
+  Shader* shader;
+  CPTexture2D* texture;
   BOOL textureLoadedIsHD;
   BOOL hiddenDueToServerBan;
   BOOL hidden;
   BOOL hasVerifiedImageData;
 }
 
-@property(readonly) NSString *ownerName; // @synthesize ownerName;
-@property(readonly) NSData *imageData;   // @synthesize imageData;
-@property int itemType;                  // @synthesize itemType;
+@property (readonly) NSString* ownerName; // @synthesize ownerName;
+@property (readonly) NSData* imageData; // @synthesize imageData;
+@property int itemType; // @synthesize itemType;
 - (BOOL)occupiesForegroundContents;
 - (BOOL)isDoubleHeight;
 - (id)actionTitle;
 - (void)removeFromMacroBlock;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
@@ -72,10 +72,10 @@
 - (void)userMuteChanged:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
 @property BOOL needsToUpdateChoiceUI;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 @end

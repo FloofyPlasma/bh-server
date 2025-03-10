@@ -16,8 +16,8 @@
 
 @interface FishingRod //! : NSObject
 {
-  World *world;
-  Blockhead *blockhead;
+  World* world;
+  Blockhead* blockhead;
   BOOL casting;
   Vector<Vector2, std::__1::allocator<Vector2>> lineLocations;
   Vector2 hookVelocity;
@@ -27,24 +27,24 @@
   float castAnimationProgress;
   BOOL hookInAir;
   BOOL castingRight;
-  Shader *shader;
-  Shader *hookShader;
-  CPTexture2D *itemsTexture;
-  ClownFish *hookedFish;
-  MJSound *reelInSound;
+  Shader* shader;
+  Shader* hookShader;
+  CPTexture2D* itemsTexture;
+  ClownFish* hookedFish;
+  MJSound* reelInSound;
   float realInFraction;
-  float *verts;
+  float* verts;
   BOOL valid;
   BOOL done;
   BOOL isNet;
 }
 
-@property(readonly) Blockhead *blockhead; // @synthesize blockhead;
-@property Vector2 hookPos;                // @synthesize hookPos;
-@property BOOL castingRight;              // @synthesize castingRight;
-@property BOOL hookInAir;                 // @synthesize hookInAir;
-@property float castAnimationProgress;    // @synthesize castAnimationProgress;
-@property BOOL isInCastingAnimation;      // @synthesize isInCastingAnimation;
+@property (readonly) Blockhead* blockhead; // @synthesize blockhead;
+@property Vector2 hookPos; // @synthesize hookPos;
+@property BOOL castingRight; // @synthesize castingRight;
+@property BOOL hookInAir; // @synthesize hookInAir;
+@property float castAnimationProgress; // @synthesize castAnimationProgress;
+@property BOOL isInCastingAnimation; // @synthesize isInCastingAnimation;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)blockheadUnloaded:(id)arg1;

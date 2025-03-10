@@ -12,8 +12,8 @@
 @interface Plant : DynamicObject {
   unsigned short maxAgeGene;
   unsigned short growthRateGene;
-  NoiseFunction *treeDensityNoiseFunction;
-  NoiseFunction *seasonOffsetNoiseFunction;
+  NoiseFunction* treeDensityNoiseFunction;
+  NoiseFunction* seasonOffsetNoiseFunction;
   int seasonOffset;
   float age;
   BOOL frozen;
@@ -31,7 +31,7 @@
 - (BOOL)canBreed;
 - (void)setNeedsRemoved:(BOOL)arg1;
 - (void)clearAllTileContents;
-- (BOOL)tileIsKindOfSelf:(struct Tile *)arg1;
+- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
 - (int)droppedItemType;
 - (BOOL)isFlowering;
 - (unsigned short)growthRateGeneVariation;
@@ -46,7 +46,7 @@
 - (BOOL)isRequiredSoilType:(int)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)isGrowingInCompost;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)setFlowering:(BOOL)arg1;
 - (void)remoteUpdate:(id)arg1;
 - (id)creationNetDataForClient:(id)arg1;

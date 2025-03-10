@@ -12,29 +12,29 @@
   intpair lastKnownMotorPos;
   BOOL opening;
   float openTimer;
-  float *savedDrawBuffer;
+  float* savedDrawBuffer;
   int savedDrawBufferIndex;
   unsigned short paintColor;
   BOOL solidTile;
 }
 
-@property(readonly) intpair lastKnownMotorPos; // @synthesize lastKnownMotorPos;
+@property (readonly) intpair lastKnownMotorPos; // @synthesize lastKnownMotorPos;
 - (BOOL)occupiesNormalContents;
 - (BOOL)isPaintable;
 - (void)paint:(unsigned short)arg1;
 - (void)removeFromMacroBlock;
 - (void)open;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
 - (int)staticGeometryDrawCubeCount;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
      modelViewMatrix:(union _GLKMatrix4)arg3

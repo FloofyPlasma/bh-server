@@ -10,33 +10,33 @@
 @class BitmapString, NSMutableArray, NSString, Shader;
 
 @interface TradingPost : InteractionObject {
-  NSMutableArray *sellSlot;
+  NSMutableArray* sellSlot;
   int coinCount;
   int priceTier;
-  NSString *sellerClientName;
-  Shader *usageShader;
-  BitmapString *bitmapString;
+  NSString* sellerClientName;
+  Shader* usageShader;
+  BitmapString* bitmapString;
   BOOL needsToUpdateBitmapString;
   BOOL inventoryNeedsToBeSentWithUpdate;
   BOOL blackText;
 }
 
-@property int coinCount;                      // @synthesize coinCount;
-@property(readonly) NSMutableArray *sellSlot; // @synthesize sellSlot;
+@property int coinCount; // @synthesize coinCount;
+@property (readonly) NSMutableArray* sellSlot; // @synthesize sellSlot;
 - (BOOL)occupiesNormalContents;
 - (BOOL)isPaintable;
 - (void)paint:(unsigned short)arg1;
 - (int)interactionRenderItemType;
 - (void)removeFromMacroBlock;
-- (int)addDodoEggDrawQuadData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDodoEggDrawQuadData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDodoEggCount;
-- (int)addDrawItemQuadData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawItemQuadData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawItemQuadCount;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCount;
 - (id)sellTitle;
 - (void)buyButtonTappedWithQuantity:(int)arg1;
@@ -54,8 +54,8 @@
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (void)worldContentsChanged:(vector_07678c45 *)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldContentsChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)updateBitmapString;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)contentsDidChange;

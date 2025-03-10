@@ -19,17 +19,17 @@
 
 @interface BHNetNode //! : NSObject <BHMatchDelegate>
 {
-  NSObject<BHNetNodeDelegate> *delegate;
-  BHMatch *match;
-  GKVoiceChat *voiceChat;
-  NSMutableArray *livePlayerInfos;
-  NSMutableDictionary *playerInfosForAllPlayersByID;
+  NSObject<BHNetNodeDelegate>* delegate;
+  BHMatch* match;
+  GKVoiceChat* voiceChat;
+  NSMutableArray* livePlayerInfos;
+  NSMutableDictionary* playerInfosForAllPlayersByID;
   long long netNodeType;
 }
 
-@property(readonly) long long netNodeType;    // @synthesize netNodeType;
-@property(readonly) BHMatch *match;           // @synthesize match;
-@property(readonly) NSArray *livePlayerInfos; // @synthesize livePlayerInfos;
+@property (readonly) long long netNodeType; // @synthesize netNodeType;
+@property (readonly) BHMatch* match; // @synthesize match;
+@property (readonly) NSArray* livePlayerInfos; // @synthesize livePlayerInfos;
 - (void)notifyPlayersChanged;
 - (BOOL)audioChatSupported;
 - (id)localPlayerName;

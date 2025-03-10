@@ -10,15 +10,15 @@
 @class CPTexture2D, DrawCube;
 
 @interface Yak : DonkeyLike {
-  CPTexture2D *hornTexture;
-  CPTexture2D *bodyTextureShaved;
-  CPTexture2D *bodyTextureHairy;
-  CPTexture2D *legsTextureShaved;
-  CPTexture2D *legsTextureHairy;
-  DrawCube *bodyCubeHairy;
-  DrawCube *bodyCubeShaved;
-  DrawCube *hornCubeA;
-  DrawCube *hornCubeB;
+  CPTexture2D* hornTexture;
+  CPTexture2D* bodyTextureShaved;
+  CPTexture2D* bodyTextureHairy;
+  CPTexture2D* legsTextureShaved;
+  CPTexture2D* legsTextureHairy;
+  DrawCube* bodyCubeHairy;
+  DrawCube* bodyCubeShaved;
+  DrawCube* hornCubeA;
+  DrawCube* hornCubeB;
   union _GLKMatrix4 leftHornMatrixA;
   union _GLKMatrix4 rightHornMatrixA;
   union _GLKMatrix4 leftHornMatrixB;

@@ -10,25 +10,25 @@
 @class ArtificialLight, MJSound, NSDictionary, NSMutableDictionary;
 
 @interface TradePortal : InteractionObject {
-  ArtificialLight *light;
+  ArtificialLight* light;
   float animationLoopTimer;
   int animationLoopIndex;
-  MJSound *sound;
+  MJSound* sound;
   BOOL paused;
-  float *savedDrawBuffer;
+  float* savedDrawBuffer;
   int savedDrawBufferIndex;
-  NSMutableDictionary *localPriceOffsets;
+  NSMutableDictionary* localPriceOffsets;
   int level;
   BOOL isSellInteraction;
   BOOL isMissionInteraction;
 }
 
-@property(readonly)
-    BOOL isMissionInteraction;              // @synthesize isMissionInteraction;
-@property(readonly) BOOL isSellInteraction; // @synthesize isSellInteraction;
-@property(readonly) int level;              // @synthesize level;
-@property(readonly)
-    NSDictionary *localPriceOffsets; // @synthesize localPriceOffsets;
+@property (readonly)
+    BOOL isMissionInteraction; // @synthesize isMissionInteraction;
+@property (readonly) BOOL isSellInteraction; // @synthesize isSellInteraction;
+@property (readonly) int level; // @synthesize level;
+@property (readonly)
+    NSDictionary* localPriceOffsets; // @synthesize localPriceOffsets;
 - (BOOL)canBeUsedInExpertModeWhenNotOwned;
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
                                                               yPos:(int)arg2;
@@ -47,7 +47,7 @@
 - (void)upgradeToNextLevel;
 - (void)removeFromMacroBlock;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawCubeCount;
@@ -69,8 +69,8 @@
 - (int)freeblockCreationItemType;
 - (void)setNeedsRemoved:(BOOL)arg1;
 - (BOOL)isDoubleHeight;
-- (void)worldContentsChanged:(vector_07678c45 *)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldContentsChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
      modelViewMatrix:(union _GLKMatrix4)arg3

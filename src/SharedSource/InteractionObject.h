@@ -13,24 +13,24 @@
 @protocol ProxyObjectOwner;
 
 @interface InteractionObject : DynamicObject <TapChoiceDynamicObject> {
-  Blockhead *currentBlockhead;
-  Shader *shader;
-  CPTexture2D *texture;
+  Blockhead* currentBlockhead;
+  Shader* shader;
+  CPTexture2D* texture;
   BOOL isInUse;
   BOOL flipped;
   unsigned long long remoteBlockheadInUseUniqueID;
   int savedBlockheadIndex;
-  NSString *ownerName;
+  NSString* ownerName;
   unsigned short paintColor;
-  DynamicObject<ProxyObjectOwner> *proxyObjectOwner;
+  DynamicObject<ProxyObjectOwner>* proxyObjectOwner;
   BOOL needsToBeRemovedWhenInteractionEnds;
 }
 
-@property(readonly) NSString *ownerName; // @synthesize ownerName;
-@property(readonly) BOOL flipped;        // @synthesize flipped;
-@property(readonly) BOOL isInUse;        // @synthesize isInUse;
-@property(readonly)
-    Blockhead *currentBlockhead; // @synthesize currentBlockhead;
+@property (readonly) NSString* ownerName; // @synthesize ownerName;
+@property (readonly) BOOL flipped; // @synthesize flipped;
+@property (readonly) BOOL isInUse; // @synthesize isInUse;
+@property (readonly)
+    Blockhead* currentBlockhead; // @synthesize currentBlockhead;
 - (void)paint:(unsigned short)arg1;
 - (BOOL)isPaintable;
 - (void)blockheadUnloaded:(id)arg1;
@@ -80,10 +80,10 @@
 - (int)objectType;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
 @property BOOL needsToUpdateChoiceUI;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 @end

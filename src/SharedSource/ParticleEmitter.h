@@ -16,28 +16,28 @@
 
 @interface ParticleEmitter //! : NSObject
 {
-  World *world;
-  struct Particle *particles;
-  NoiseFunction *noiseFunction;
-  NSMutableIndexSet *freeIndices;
-  NSMutableIndexSet *takenIndices;
-  float *glData;
-  Shader *shader;
+  World* world;
+  struct Particle* particles;
+  NoiseFunction* noiseFunction;
+  NSMutableIndexSet* freeIndices;
+  NSMutableIndexSet* takenIndices;
+  float* glData;
+  Shader* shader;
   int cameraMinXWorld;
   int cameraMaxXWorld;
   int cameraMinYWorld;
   int cameraMaxYWorld;
-  struct ElectrictyParticle *electrictyParticles;
-  NSMutableIndexSet *electrictyFreeIndices;
-  NSMutableIndexSet *electrictyTakenIndices;
-  float *electrictyGlData;
-  struct BonusParticle *bonusParticles;
-  NSMutableIndexSet *bonusFreeIndices;
-  NSMutableIndexSet *bonusTakenIndices;
-  float *bonusGlData;
-  unsigned short *bonusGlIndices;
-  Shader *bonusShader;
-  CPTexture2D *bonusTexture;
+  struct ElectrictyParticle* electrictyParticles;
+  NSMutableIndexSet* electrictyFreeIndices;
+  NSMutableIndexSet* electrictyTakenIndices;
+  float* electrictyGlData;
+  struct BonusParticle* bonusParticles;
+  NSMutableIndexSet* bonusFreeIndices;
+  NSMutableIndexSet* bonusTakenIndices;
+  float* bonusGlData;
+  unsigned short* bonusGlIndices;
+  Shader* bonusShader;
+  CPTexture2D* bonusTexture;
   float bonusDelay;
   BOOL stopAllParticles;
   int worldWidthMacro;
@@ -45,7 +45,7 @@
 }
 
 + (id)instance;
-@property int worldWidthMacro;   // @synthesize worldWidthMacro;
+@property int worldWidthMacro; // @synthesize worldWidthMacro;
 @property BOOL stopAllParticles; // @synthesize stopAllParticles;
 - (void)renderAndUpdate:(float)arg1
              pinchScale:(float)arg2

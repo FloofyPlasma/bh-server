@@ -12,25 +12,25 @@
 @class DrawCube, MJSound, NSString;
 
 @interface SteamTrain : TrainCar <AddFuelObject> {
-  DrawCube *boilerCube;
-  DrawCube *wheelRodCube;
-  DrawCube *frontGrillCube;
-  DrawCube *driverCabCube;
-  DrawCube *chimneyCube;
-  DrawCube *backWallCube;
-  DrawCube *roofCube;
-  DrawCube *roofPoleCube;
-  DrawCube *doorCube;
-  MJSound *steamSound;
-  MJSound *railSound;
+  DrawCube* boilerCube;
+  DrawCube* wheelRodCube;
+  DrawCube* frontGrillCube;
+  DrawCube* driverCabCube;
+  DrawCube* chimneyCube;
+  DrawCube* backWallCube;
+  DrawCube* roofCube;
+  DrawCube* roofPoleCube;
+  DrawCube* doorCube;
+  MJSound* steamSound;
+  MJSound* railSound;
   BOOL goingRight;
   float bigWheelRotationTimer;
   float fuelFraction;
   float fuelCounter;
   BOOL hasFuel;
   BOOL sendWhistle;
-  NSString *leftStationName;
-  NSString *rightStationName;
+  NSString* leftStationName;
+  NSString* rightStationName;
   BOOL serachingForLeftStationName;
   BOOL serachingForRightStationName;
   intpair leftStationSearchTilePos;
@@ -56,7 +56,7 @@
 - (BOOL)canDismissFuelUI;
 - (void)addToFuelForItem:(int)arg1;
 - (void)updateHasFuel;
-- (int *)fuelItems;
+- (int*)fuelItems;
 - (int)fuelItemCount;
 - (int)fuelCount;
 - (id)title;
@@ -100,9 +100,9 @@
 - (void)loadDerivedStuff;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end

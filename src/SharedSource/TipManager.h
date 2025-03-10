@@ -11,12 +11,12 @@
 
 @interface TipManager //! : NSObject
 {
-  World *world;
-  NSString *currentTipText;
+  World* world;
+  NSString* currentTipText;
   float timeoutTimer;
   double timeLastSecondBlockheadTipDisplayed;
   Vector tipColor;
-  NSString *tutorialTipText;
+  NSString* tutorialTipText;
 }
 
 + (id)instance;

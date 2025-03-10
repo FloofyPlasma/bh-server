@@ -15,17 +15,17 @@
 - (void)abortCraft;
 - (BOOL)isDoubleHeight;
 - (Vector2)floatPos;
-- (NSString *)titleForCraftProgressUI;
+- (NSString*)titleForCraftProgressUI;
 
 @optional
 - (void)craftProgressUICompleteButtonTapped;
 - (BOOL)craftProgressUIRequiresCollectButtonWhenCompleted;
 - (void)addToFuelForItem:(int)arg1;
-- (int *)fuelTypes;
+- (int*)fuelTypes;
 - (int)fuelCount;
 - (int)fuelTypesCount;
 - (unsigned short)availableElectricity;
 - (BOOL)requiresElectricty;
 - (BOOL)requiresFuel;
-- (NSString *)upgradeNameForCraftProgressUI;
+- (NSString*)upgradeNameForCraftProgressUI;
 @end

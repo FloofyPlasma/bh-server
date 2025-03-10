@@ -12,20 +12,20 @@
 @class BitmapString, CPTexture2D, DrawCube, NSString, Shader;
 
 @interface TrainStation : InteractionObject <SignTextDynamicObject> {
-  Shader *cubeShader;
-  Shader *signShader;
-  CPTexture2D *tileDestructTexture;
-  DrawCube *platformBlock;
-  DrawCube *poleDrawCube;
-  BitmapString *bitmapString;
+  Shader* cubeShader;
+  Shader* signShader;
+  CPTexture2D* tileDestructTexture;
+  DrawCube* platformBlock;
+  DrawCube* poleDrawCube;
+  BitmapString* bitmapString;
   BOOL needsToUpdateBitmapString;
-  NSString *text;
+  NSString* text;
 }
 
 - (BOOL)occupiesNormalContents;
 - (int)interactionRenderItemType;
 - (BOOL)canBeUsedByBlockhead:(id)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (int)destroyItemType;
 - (BOOL)requiresSingleLineTextEditing;
 - (id)text;
@@ -73,9 +73,9 @@
 - (int)objectType;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end

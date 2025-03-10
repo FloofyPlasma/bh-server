@@ -18,7 +18,7 @@
 
 @interface MJSound //! : NSObject
 {
-  void *_data;
+  void* _data;
   int _localFormat;
   unsigned int _format;
   unsigned int _frequency;
@@ -29,7 +29,7 @@
   BOOL _paused;
   float _volume;
   float _volumeMultipier;
-  NSString *_file;
+  NSString* _file;
   BOOL _bufferValid;
   BOOL _sourceValid;
   BOOL _inUse;

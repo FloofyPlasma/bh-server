@@ -13,14 +13,14 @@
 @class Blockhead, CPTexture2D, DrawCube, NSString, Shader;
 
 @interface Boat : DynamicObject <RidableDynamicObject, TapChoiceDynamicObject> {
-  Shader *shader;
-  CPTexture2D *texture;
-  CPTexture2D *sailTexture;
-  DrawCube *frontBackCube;
-  DrawCube *sideCube;
-  DrawCube *bottomCube;
-  DrawCube *mastCube;
-  DrawCube *sailCube;
+  Shader* shader;
+  CPTexture2D* texture;
+  CPTexture2D* sailTexture;
+  DrawCube* frontBackCube;
+  DrawCube* sideCube;
+  DrawCube* bottomCube;
+  DrawCube* mastCube;
+  DrawCube* sailCube;
   float bodyRotation;
   float prevRotation;
   int goalRotationType;
@@ -28,7 +28,7 @@
   float actualXSpeed;
   float ySpeed;
   BOOL beingControlled;
-  Blockhead *rider;
+  Blockhead* rider;
   int savedBlockheadIndex;
   float bobTimer;
   BOOL falling;
@@ -46,7 +46,7 @@
 - (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
 - (BOOL)isDoubleHeight;
 - (id)actionTitle;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (Vector2)cameraPosForBlockhead:(id)arg1;
 - (float)riderBodyZRotation;
 - (float)riderBodyYRotationForBlockhead:(id)arg1;
@@ -93,10 +93,10 @@
 - (void)loadDerivedStuff;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
 @property BOOL needsToUpdateChoiceUI;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 @end

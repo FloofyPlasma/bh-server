@@ -16,8 +16,8 @@
   int maxHeightReached;
   float growthCounter;
   float growthRate;
-  NoiseFunction *treeDensityNoiseFunction;
-  NoiseFunction *seasonOffsetNoiseFunction;
+  NoiseFunction* treeDensityNoiseFunction;
+  NoiseFunction* seasonOffsetNoiseFunction;
   int treeSeasonOffset;
   int maxHeight;
   float maxAge;
@@ -26,7 +26,7 @@
   BOOL dead;
   double timeDied;
   float removeCheckCount;
-  struct TreeFruit *treeFruits;
+  struct TreeFruit* treeFruits;
   int fruitCount;
   float noLightDieTimer;
 }
@@ -43,12 +43,12 @@
 - (void)killAllOwnedTilesAboveY:(int)arg1;
 - (void)checkIfDeadTilesNeedRemoved;
 - (void)killAllOwnedTiles;
-- (void)makeTileDead:(struct Tile *)arg1;
-- (BOOL)tileIsKindOfSelf:(struct Tile *)arg1;
+- (void)makeTileDead:(struct Tile*)arg1;
+- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
 - (void)updateGrowth:(BOOL)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)incrementHeight;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (id)getSaveDict;
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1

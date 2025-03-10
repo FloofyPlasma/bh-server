@@ -10,20 +10,20 @@
 @class Blockhead, CPTexture2D, DrawCube, Shader;
 
 @interface DropBear : NPC {
-  Shader *shader;
-  CPTexture2D *bodyFrontTexture;
-  CPTexture2D *bodyBackTexture;
-  CPTexture2D *headTexture;
-  CPTexture2D *legTexture;
-  CPTexture2D *eyeTexture;
-  CPTexture2D *snoutTexture;
-  DrawCube *frontBodyCube;
-  DrawCube *backBodyCube;
-  DrawCube *headCube;
-  DrawCube *snoutCube;
-  DrawCube *eyeCube;
-  DrawCube *legCube;
-  DrawCube *armCube;
+  Shader* shader;
+  CPTexture2D* bodyFrontTexture;
+  CPTexture2D* bodyBackTexture;
+  CPTexture2D* headTexture;
+  CPTexture2D* legTexture;
+  CPTexture2D* eyeTexture;
+  CPTexture2D* snoutTexture;
+  DrawCube* frontBodyCube;
+  DrawCube* backBodyCube;
+  DrawCube* headCube;
+  DrawCube* snoutCube;
+  DrawCube* eyeCube;
+  DrawCube* legCube;
+  DrawCube* armCube;
   float bodyRotation;
   int goalRotationType;
   float walkTimer;
@@ -37,7 +37,7 @@
   float dropSpeed;
   BOOL attacking;
   float attackFraction;
-  Blockhead *attackBlockhead;
+  Blockhead* attackBlockhead;
   Vector2 attackOffset;
   intpair attackPos;
   BOOL onGround;
@@ -58,7 +58,7 @@
 - (void)successfulTame;
 - (void)reactToBeingFed;
 - (void)blockheadUnloaded:(id)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (Vector2)renderPos;
 - (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
 - (void)reactToBeingHit;
@@ -99,7 +99,7 @@
      placedByClient:(id)arg8;
 - (void)loadDerivedStuff;
 - (int)getNamesArrayCount;
-- (id *)getNamesArray;
+- (id*)getNamesArray;
 - (int)captureRequiredItemType;
 - (int)capturedItemType;
 - (int)foodItemType;

@@ -18,57 +18,57 @@
 
 @interface DynamicWorld //! : NSObject
 {
-  World *world;
-  WorldTileLoader *worldTileLoader;
-  ClientTileLoader *clientTileLoader;
-  BHServer *server;
-  BHClient *client;
-  NSDictionary *serverClients;
-  Database *appDatabase;
-  Database *worldDatabase;
-  Database *dynamicObjectDatabase;
-  NSString *worldSaveDirectory;
-  NSMutableArray *blockheads;
-  NSMutableArray *netBlockheads;
-  NSMutableArray *netBlockheadsWithDisconnectedClients;
-  NSMutableDictionary *clientBlockheadInventoriesToSave;
-  struct map<unsigned long long, DynamicObject *,
-             std::__1::less<unsigned long long>,
-             std::__1::allocator<
-                 std::__1::pair<const unsigned long long, DynamicObject *>>>
+  World* world;
+  WorldTileLoader* worldTileLoader;
+  ClientTileLoader* clientTileLoader;
+  BHServer* server;
+  BHClient* client;
+  NSDictionary* serverClients;
+  Database* appDatabase;
+  Database* worldDatabase;
+  Database* dynamicObjectDatabase;
+  NSString* worldSaveDirectory;
+  NSMutableArray* blockheads;
+  NSMutableArray* netBlockheads;
+  NSMutableArray* netBlockheadsWithDisconnectedClients;
+  NSMutableDictionary* clientBlockheadInventoriesToSave;
+  struct map<unsigned long long, DynamicObject*,
+      std::__1::less<unsigned long long>,
+      std::__1::allocator<
+          std::__1::pair<const unsigned long long, DynamicObject*>>>
       dynamicObjects[65];
-  struct map<unsigned long long, DynamicObject *,
-             std::__1::less<unsigned long long>,
-             std::__1::allocator<
-                 std::__1::pair<const unsigned long long, DynamicObject *>>>
+  struct map<unsigned long long, DynamicObject*,
+      std::__1::less<unsigned long long>,
+      std::__1::allocator<
+          std::__1::pair<const unsigned long long, DynamicObject*>>>
       dynamicObjectsToAdd[65];
-  struct map<unsigned long long, DynamicObject *,
-             std::__1::less<unsigned long long>,
-             std::__1::allocator<
-                 std::__1::pair<const unsigned long long, DynamicObject *>>>
+  struct map<unsigned long long, DynamicObject*,
+      std::__1::less<unsigned long long>,
+      std::__1::allocator<
+          std::__1::pair<const unsigned long long, DynamicObject*>>>
       dynamicObjectsByWorldPosIndex[65];
   struct map<unsigned long long,
-             std::__1::set<DynamicObject *, std::__1::less<DynamicObject *>,
-                           std::__1::allocator<DynamicObject *>>,
-             std::__1::less<unsigned long long>,
-             std::__1::allocator<std::__1::pair<
-                 const unsigned long long,
-                 std::__1::set<DynamicObject *, std::__1::less<DynamicObject *>,
-                               std::__1::allocator<DynamicObject *>>>>>
+      std::__1::set<DynamicObject*, std::__1::less<DynamicObject*>,
+          std::__1::allocator<DynamicObject*>>,
+      std::__1::less<unsigned long long>,
+      std::__1::allocator<std::__1::pair<
+          const unsigned long long,
+          std::__1::set<DynamicObject*, std::__1::less<DynamicObject*>,
+              std::__1::allocator<DynamicObject*>>>>>
       freeBlocksByPosition;
   struct unordered_set<unsigned long long, std::__1::hash<unsigned long long>,
-                       std::__1::equal_to<unsigned long long>,
-                       std::__1::allocator<unsigned long long>>
+      std::__1::equal_to<unsigned long long>,
+      std::__1::allocator<unsigned long long>>
       currentlyAddingGlowBlocks;
   struct unordered_set<unsigned long long, std::__1::hash<unsigned long long>,
-                       std::__1::equal_to<unsigned long long>,
-                       std::__1::allocator<unsigned long long>>
+      std::__1::equal_to<unsigned long long>,
+      std::__1::allocator<unsigned long long>>
       currentlyAddingObjectIDs[65];
   struct unordered_set<unsigned int, std::__1::hash<unsigned int>,
-                       std::__1::equal_to<unsigned int>,
-                       std::__1::allocator<unsigned int>>
+      std::__1::equal_to<unsigned int>,
+      std::__1::allocator<unsigned int>>
       currentlyLoadingMacroBlocks[65];
-  Vector<DynamicObject *, std::__1::allocator<DynamicObject *>>
+  Vector<DynamicObject*, std::__1::allocator<DynamicObject*>>
       partialUpdateOrderedObjects[65];
   int partialUpdateCurrentIndex[65];
   vector_07678c45 worldChangedPositions;
@@ -81,21 +81,21 @@
   vector_07678c45 worldPartialContentChangedPositions;
   vector_07678c45 dynamicWorldChangedMacroPositions[65];
   vector_07678c45 worldChangedMacroPositions;
-  NSMutableIndexSet *portalPositions;
-  CPCache *cache;
-  NoiseFunction *treeDensityNoiseFunction;
-  NoiseFunction *seasonOffsetNoiseFunction;
+  NSMutableIndexSet* portalPositions;
+  CPCache* cache;
+  NoiseFunction* treeDensityNoiseFunction;
+  NoiseFunction* seasonOffsetNoiseFunction;
   unsigned long long dynamicObjectIDCount;
   int activeBlockheadIndex;
   float freeBlockSoundDelay;
   BOOL hasLoadedBlockheads;
   BOOL hasRecievedInitialDynamicObjectsDataFromServer;
   BOOL workbenchHasBeenCrafted;
-  NSMutableDictionary *netCreateDynamicObjects[65];
-  NSMutableArray *netUpdateDynamicObjects[65];
-  NSMutableArray *netUpdateCreationDataDynamicObjects[65];
-  NSMutableArray *netRemoveDynamicObjects[65];
-  NSMutableArray *clientFreeblockArrayToSend;
+  NSMutableDictionary* netCreateDynamicObjects[65];
+  NSMutableArray* netUpdateDynamicObjects[65];
+  NSMutableArray* netUpdateCreationDataDynamicObjects[65];
+  NSMutableArray* netRemoveDynamicObjects[65];
+  NSMutableArray* clientFreeblockArrayToSend;
   unsigned short randomNumbers[512];
   int randomIndex;
   int animalSaveCounter;
@@ -103,15 +103,15 @@
   int sendLightCounter;
   int saveToDiskCounter;
   int worldChangedSimulateCounter;
-  NSMutableDictionary *versionOneToTwoConversionList;
-  NSMutableArray *disconnectedClientsSaveDirNames;
-  NSMutableDictionary *disconnectedClientsCachedSaveDictsNotDone;
+  NSMutableDictionary* versionOneToTwoConversionList;
+  NSMutableArray* disconnectedClientsSaveDirNames;
+  NSMutableDictionary* disconnectedClientsCachedSaveDictsNotDone;
   int sendUnreliableCounter;
   Vector clientTreeLifeFraction;
-  WirePathCreator *wirePathCreator;
-  NSMutableDictionary *liveServerClientBlockheadInventories;
+  WirePathCreator* wirePathCreator;
+  NSMutableDictionary* liveServerClientBlockheadInventories;
   list_2eb5f697 avoidFreeblockDupeObjectIds;
-  NSMutableDictionary *poleItemTakenTimes;
+  NSMutableDictionary* poleItemTakenTimes;
   float poleItemRestoreRecheckTimer;
   float poleItemRestoreAddTimer;
 }
@@ -148,12 +148,12 @@
                                  toClient:(id)arg2;
 - (void)requestPaintingDataForPainting:(id)arg1;
 - (void)blockheadWillBeUnloaded:(id)arg1;
-- (void)reloadLightGlowQuadsForMacroTile:(struct MacroTile *)arg1;
-- (void)reloadDynamicObjectItemQuadsForMacroTile:(struct MacroTile *)arg1;
-- (void)reloadDynamicObjectQuadsForMacroTile:(struct MacroTile *)arg1;
-- (void)reloadDodoEggQuadsForMacroTile:(struct MacroTile *)arg1;
-- (void)reloadDynamicObjectStaticCylindersForMacroTile:(struct MacroTile *)arg1;
-- (void)reloadDynamicObjectStaticGemometryForMacroTile:(struct MacroTile *)arg1;
+- (void)reloadLightGlowQuadsForMacroTile:(struct MacroTile*)arg1;
+- (void)reloadDynamicObjectItemQuadsForMacroTile:(struct MacroTile*)arg1;
+- (void)reloadDynamicObjectQuadsForMacroTile:(struct MacroTile*)arg1;
+- (void)reloadDodoEggQuadsForMacroTile:(struct MacroTile*)arg1;
+- (void)reloadDynamicObjectStaticCylindersForMacroTile:(struct MacroTile*)arg1;
+- (void)reloadDynamicObjectStaticGemometryForMacroTile:(struct MacroTile*)arg1;
 - (void)railOrStationNameChanged;
 - (id)pathUsers;
 - (int)findAndSubtractAllPowerUpTo:(unsigned short)arg1 forUser:(id)arg2;
@@ -175,7 +175,7 @@
 - (void)clientConnected:(id)arg1;
 - (void)remotePickupRequestReply:(id)arg1;
 - (id)blockheadWithUniqueID:(unsigned long long)arg1;
-- (void)clientPickupRequest:(unsigned long long *)arg1
+- (void)clientPickupRequest:(unsigned long long*)arg1
                          count:(int)arg2
                       clientID:(id)arg3
     blockheadRequesterUniqueID:(unsigned long long)arg4;
@@ -191,7 +191,7 @@
 - (BOOL)teleportBlockhead:(id)arg1 toWorkbench:(id)arg2;
 - (id)gatherBlockAtPos:(intpair)arg1;
 - (void)loadGatherBlockAtPos:(intpair)arg1;
-- (void)loadGlowBlockIfNeededAtPos:(intpair)arg1 tile:(struct Tile *)arg2;
+- (void)loadGlowBlockIfNeededAtPos:(intpair)arg1 tile:(struct Tile*)arg2;
 - (id)blockheadAtPos:(intpair)arg1;
 - (BOOL)blockheadOccupiesTileAtPos:(intpair)arg1 ignoreBlockhead:(id)arg2;
 - (id)npcCloseEnoughToBreedWithNPC:(id)arg1;
@@ -300,7 +300,7 @@
 - (id)removeEggAtPos:(intpair)arg1;
 - (void)addEggAtPos:(intpair)arg1 saveDict:(id)arg2;
 - (id)eggAtPos:(intpair)arg1;
-- (void)createTreasureChestOrTrollAtTile:(struct Tile *)arg1
+- (void)createTreasureChestOrTrollAtTile:(struct Tile*)arg1
                                    atPos:(intpair)arg2
                                loadTroll:(BOOL)arg3
                             loadTreasure:(BOOL)arg4;
@@ -368,12 +368,12 @@
 - (void)worldContentsChangedAtPos:(intpair)arg1;
 - (void)worldChangedAtPos:(intpair)arg1 sendReliably:(BOOL)arg2;
 - (void)createBackgroundContentFreeBlockAtPosition:(intpair)arg1
-                                           forTile:(struct Tile *)arg2
+                                           forTile:(struct Tile*)arg2
                                    removeBlockhead:(id)arg3;
 - (id)freeblockWithUniqueID:(unsigned long long)arg1;
 - (void)createFreeBlockAtPosition:(intpair)arg1
             forForegroundContents:(BOOL)arg2
-                          forTile:(struct Tile *)arg3
+                          forTile:(struct Tile*)arg3
                 priorityBlockhead:(id)arg4;
 - (void)playTimeCrystalReceivedSoundAtPos:(intpair)arg1;
 - (void)createFreeBlockAtPosition:(intpair)arg1
@@ -454,16 +454,16 @@
                 forObjectsOfType:(int)arg2
                       fromClient:(id)arg3;
 - (void)remoteCreate:(id)arg1 forObjectsOfType:(int)arg2 clientID:(id)arg3;
-- (void)loadDynamicObjectsForMacroTile:(struct MacroTile *)arg1
+- (void)loadDynamicObjectsForMacroTile:(struct MacroTile*)arg1
                   includeSurfaceBlocks:(BOOL)arg2;
 - (void)loadClientOwnedDynamicObjectsForClient:(id)arg1
-                                 physicalBlock:(struct PhysicalBlock *)arg2;
+                                 physicalBlock:(struct PhysicalBlock*)arg2;
 - (void)loadDynamicObjectsOfType:(int)arg1
                         fromData:(id)arg2
-                   physicalBlock:(struct PhysicalBlock *)arg3
-                    loadedPortal:(char *)arg4
+                   physicalBlock:(struct PhysicalBlock*)arg3
+                    loadedPortal:(char*)arg4
                    clientOwnedID:(id)arg5;
-- (void)saveDynamicObjectsForMacroTile:(struct MacroTile *)arg1
+- (void)saveDynamicObjectsForMacroTile:(struct MacroTile*)arg1
                             objectType:(int)arg2
                                   xPos:(int)arg3
                                   yPos:(int)arg4;
@@ -473,7 +473,7 @@
 - (void)removePortalFromListAtPos:(intpair)arg1;
 - (void)saveBlockheadInventory:(id)arg1;
 - (void)saveBlockheads;
-- (void)removeDynamicObjectsForMacroTile:(struct MacroTile *)arg1;
+- (void)removeDynamicObjectsForMacroTile:(struct MacroTile*)arg1;
 - (id)initialDynamicObjectsNetDataForMacroTileIndex:(int)arg1
                                       wireForClient:(id)arg2;
 - (void)saveAndSendOnlyBlocksThatNeedToBeSent;

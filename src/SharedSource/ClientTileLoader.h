@@ -16,20 +16,20 @@
 
 @interface ClientTileLoader //! : NSObject
 {
-  World *world;
-  BHClient *client;
-  NSString *saveID;
-  NSString *blockDirectory;
-  NoiseFunction *heightNoiseFunctionA;
-  NoiseFunction *heightNoiseFunctionB;
-  NoiseFunction *sandNoiseFunction;
-  NoiseFunction *faultNoiseFunction;
-  NoiseFunction *caveNoiseFunctionA;
-  NoiseFunction *caveNoiseFunctionB;
-  NoiseFunction *flintDensityNoiseFunction;
-  NoiseFunction *flintDensityNoiseFunctionLegacy;
-  int *dirtHeights;
-  int *rockHeights;
+  World* world;
+  BHClient* client;
+  NSString* saveID;
+  NSString* blockDirectory;
+  NoiseFunction* heightNoiseFunctionA;
+  NoiseFunction* heightNoiseFunctionB;
+  NoiseFunction* sandNoiseFunction;
+  NoiseFunction* faultNoiseFunction;
+  NoiseFunction* caveNoiseFunctionA;
+  NoiseFunction* caveNoiseFunctionB;
+  NoiseFunction* flintDensityNoiseFunction;
+  NoiseFunction* flintDensityNoiseFunctionLegacy;
+  int* dirtHeights;
+  int* rockHeights;
   BOOL hasDistanceOrderedFoodTypes;
   int distanceOrderedFoodTypes[31];
   Vector<ClientMacroBlockRequest, std::__1::allocator<ClientMacroBlockRequest>>
@@ -38,7 +38,7 @@
       int, ClientMacroBlockRequest, std::__1::less<int>,
       std::__1::allocator<std::__1::pair<const int, ClientMacroBlockRequest>>>
       sentBlockRequests;
-  NSMutableDictionary *blockRequestDates;
+  NSMutableDictionary* blockRequestDates;
   int xFrequencyMultiplier;
   float yHeightDivider;
 }
@@ -54,8 +54,8 @@
 - (void)blockDataNotLoadedOnServer:(unsigned int)arg1;
 - (BOOL)waitingForFoodTypes;
 - (BOOL)waitingForBlocks;
-- (int *)distanceOrderedFoodTypes;
-- (void)loadPhysicalBlock:(struct PhysicalBlock *)arg1
+- (int*)distanceOrderedFoodTypes;
+- (void)loadPhysicalBlock:(struct PhysicalBlock*)arg1
                     atPos:(intpair)arg2
             withTilesData:(id)arg3
                 lightData:(id)arg4
@@ -64,14 +64,14 @@
 - (int)waitingForBlocksCount;
 - (int)unmodifiedGroundLevelForX:(int)arg1;
 - (void)getRockAndDirtHeightforX:(int)arg1
-                      rockHeight:(int *)arg2
-                      dirtHeight:(int *)arg3;
+                      rockHeight:(int*)arg2
+                      dirtHeight:(int*)arg3;
 - (BOOL)isCaveForX:(int)arg1 y:(int)arg2 faultOffset:(int)arg3;
 - (int)faultOffsetForX:(int)arg1 y:(int)arg2;
 - (int)maxOfRockAndDirtHeightForX:(int)arg1;
 - (void)getInitialRockAndDirtHeightforX:(int)arg1
-                             rockHeight:(float *)arg2
-                             dirtHeight:(float *)arg3;
+                             rockHeight:(float*)arg2
+                             dirtHeight:(float*)arg3;
 - (BOOL)shouldBeCrystalBlockAtX:(int)arg1 y:(int)arg2;
 - (void)dealloc;
 - (void)deleteTimers;

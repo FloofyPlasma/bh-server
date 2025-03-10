@@ -12,16 +12,16 @@
 @class BitmapString, CPTexture2D, NSString;
 
 @interface Sign : InteractionObject <SignTextDynamicObject> {
-  NSString *text;
-  BitmapString *bitmapString;
-  CPTexture2D *tileDestructTexture;
+  NSString* text;
+  BitmapString* bitmapString;
+  CPTexture2D* tileDestructTexture;
   long long connectionType;
   long long offsetType;
   BOOL blackText;
 }
 
-@property(readonly) long long connectionType; // @synthesize connectionType;
-@property(readonly) long long offsetType;     // @synthesize offsetType;
+@property (readonly) long long connectionType; // @synthesize connectionType;
+@property (readonly) long long offsetType; // @synthesize offsetType;
 - (BOOL)occupiesForegroundContents;
 - (BOOL)isPaintable;
 - (void)paint:(unsigned short)arg1;
@@ -39,7 +39,7 @@
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
      modelViewMatrix:(union _GLKMatrix4)arg3
@@ -82,9 +82,9 @@
 - (int)objectType;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end

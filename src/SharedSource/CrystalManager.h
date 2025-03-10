@@ -17,16 +17,16 @@
 
 @interface CrystalManager //! : NSObject
 {
-  NSOperationQueue *saveQueue;
+  NSOperationQueue* saveQueue;
   int crystalCount;
-  NSString *amountString;
+  NSString* amountString;
   id<CrystalManagerWatcher> countWatcher;
   BOOL needsSave;
 }
 
 + (id)instance;
-@property(readonly) NSString *amountString;       // @synthesize amountString;
-@property(readonly) BOOL needsSave;               // @synthesize needsSave;
+@property (readonly) NSString* amountString; // @synthesize amountString;
+@property (readonly) BOOL needsSave; // @synthesize needsSave;
 @property id<CrystalManagerWatcher> countWatcher; // @synthesize countWatcher;
 - (id)iCloudServerRejoinID;
 - (id)iCloudID;

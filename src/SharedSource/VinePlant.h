@@ -18,7 +18,7 @@
 
 @property float availableFood; // @synthesize availableFood;
 - (void)removeFromMacroBlock;
-- (int)addForegroundDrawQuadData:(float *)arg1
+- (int)addForegroundDrawQuadData:(float*)arg1
                        fromIndex:(int)arg2
                      forMacroPos:(intpair)arg3;
 - (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)arg1;
@@ -32,7 +32,7 @@
 - (int)gatherProgressForTile:(intpair)arg1;
 - (BOOL)isRequiredSoilType:(int)arg1;
 - (int)plantType;
-- (BOOL)tileIsKindOfSelf:(struct Tile *)arg1;
+- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
 - (void)dieOfOldAge;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)isGrowingInCompost;

@@ -10,12 +10,12 @@
 @class NSData;
 
 @interface PaintingCraftableItemObject : CraftableItemObject {
-  NSData *imageData;
-  NSData *outputImageData;
+  NSData* imageData;
+  NSData* outputImageData;
 }
 
-@property(retain) NSData *outputImageData; // @synthesize outputImageData;
-@property(retain) NSData *imageData;       // @synthesize imageData;
+@property (retain) NSData* outputImageData; // @synthesize outputImageData;
+@property (retain) NSData* imageData; // @synthesize imageData;
 - (id)freeBlockCreationItemSaveDict;
 - (void)dealloc;
 - (id)getSaveDict;

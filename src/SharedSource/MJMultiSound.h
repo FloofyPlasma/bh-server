@@ -16,28 +16,28 @@
 
 @interface MJMultiSound //! : NSObject
 {
-  NSMutableArray *_sounds;
-  NSString *_fileName;
+  NSMutableArray* _sounds;
+  NSString* _fileName;
   unsigned int _maxPlaybacks;
   BOOL _looping;
   float _volume;
   float _volumeMultipier;
   float _pitch;
   float _basePitch;
-  NSArray *_fileNames;
+  NSArray* _fileNames;
   unsigned int soundIndex;
   double lastPlayTime;
   BOOL randomPitchOffset;
   BOOL incrementalPitchOffset;
   float lastPitch;
   double loopLength;
-  MJSound *loopingSound;
-  NSOperationQueue *playDelayQueue;
+  MJSound* loopingSound;
+  NSOperationQueue* playDelayQueue;
 }
 
 @property BOOL incrementalPitchOffset; // @synthesize incrementalPitchOffset;
-@property BOOL randomPitchOffset;      // @synthesize randomPitchOffset;
-@property double lastPlayTime;         // @synthesize lastPlayTime;
+@property BOOL randomPitchOffset; // @synthesize randomPitchOffset;
+@property double lastPlayTime; // @synthesize lastPlayTime;
 - (void)setLoopLength:(double)arg1;
 - (void)preLoad:(unsigned int)arg1;
 - (void)setPlaybackFrequencyOfSoundAtIndex:(unsigned int)arg1

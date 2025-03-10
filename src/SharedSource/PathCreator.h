@@ -18,42 +18,42 @@
 
 @interface PathCreator //! : NSObject
 {
-  World *world;
-  DynamicObject<PathUserDynamicObject> *pathUser;
+  World* world;
+  DynamicObject<PathUserDynamicObject>* pathUser;
   int goalX;
   int goalY;
   int goalInteraction;
   int pathType;
-  NSDictionary *extraData;
-  NSMutableIndexSet *openList;
-  NSMutableIndexSet *closedList;
+  NSDictionary* extraData;
+  NSMutableIndexSet* openList;
+  NSMutableIndexSet* closedList;
   int closestDistance;
   int startIndex;
   BOOL inProgress;
-  NSArray *path;
+  NSArray* path;
   BOOL hasPath;
   BOOL hasPathToBelowTile;
   BOOL firstTileCheckDone;
   BOOL allowsWaterTiles;
-  NSMutableSet *arrayPathsToRelease;
-  struct DerivedTileProperties *derivedTilePropertiesArray;
+  NSMutableSet* arrayPathsToRelease;
+  struct DerivedTileProperties* derivedTilePropertiesArray;
   int derivedTileCount;
   struct map<int, int, std::__1::less<int>,
-             std::__1::allocator<std::__1::pair<const int, int>>>
+      std::__1::allocator<std::__1::pair<const int, int>>>
       derivedTileIndices;
   vector_07678c45 elevatorBlacklist;
 }
 
-@property(readonly) NSDictionary *extraData; // @synthesize extraData;
-@property BOOL hasPath;                      // @synthesize hasPath;
-@property(readonly) int pathType;            // @synthesize pathType;
-@property(readonly) int goalInteraction;     // @synthesize goalInteraction;
-@property(readonly) int goalY;               // @synthesize goalY;
-@property(readonly) int goalX;               // @synthesize goalX;
-@property(readonly)
-    DynamicObject<PathUserDynamicObject> *pathUser; // @synthesize pathUser;
-@property(readonly) BOOL inProgress;                // @synthesize inProgress;
-@property(readonly) NSArray *path;                  // @synthesize path;
+@property (readonly) NSDictionary* extraData; // @synthesize extraData;
+@property BOOL hasPath; // @synthesize hasPath;
+@property (readonly) int pathType; // @synthesize pathType;
+@property (readonly) int goalInteraction; // @synthesize goalInteraction;
+@property (readonly) int goalY; // @synthesize goalY;
+@property (readonly) int goalX; // @synthesize goalX;
+@property (readonly)
+    DynamicObject<PathUserDynamicObject>* pathUser; // @synthesize pathUser;
+@property (readonly) BOOL inProgress; // @synthesize inProgress;
+@property (readonly) NSArray* path; // @synthesize path;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)abortPath;
@@ -61,7 +61,7 @@
 - (id)calculateFallPath;
 - (void)calculatePath;
 - (void)updatePath;
-- (struct DerivedTileProperties *)tileDerivedPropertiesAtWorldIndex:(int)arg1;
+- (struct DerivedTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1;
 

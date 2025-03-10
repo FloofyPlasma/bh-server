@@ -10,7 +10,7 @@
 @class ArtificialLight;
 
 @interface GlowBlock : DynamicObject {
-  ArtificialLight *light;
+  ArtificialLight* light;
   int tileType;
 }
 
@@ -19,7 +19,7 @@
 - (Vector)lightPos;
 - (int)lightGlowQuadCount;
 - (void)setNeedsRemoved:(BOOL)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)removeFromMacroBlock;
 - (void)dealloc;
 - (id)getSaveDict;
@@ -31,7 +31,7 @@
        dynamicWorld:(id)arg2
          atPosition:(intpair)arg3
               cache:(id)arg4
-               tile:(struct Tile *)arg5;
+               tile:(struct Tile*)arg5;
 - (Vector)getLightRGB;
 - (int)objectType;
 - (void)initSubDerivedItems;

@@ -5,8 +5,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import "Vector2.h"
 #import "NSObject-Protocol.h"
+#import "Vector2.h"
 
 @class NSString;
 
@@ -14,8 +14,8 @@
 - (Vector2)fuelUIPos;
 - (BOOL)canDismissFuelUI;
 - (void)addToFuelForItem:(int)arg1;
-- (int *)fuelItems;
+- (int*)fuelItems;
 - (int)fuelItemCount;
 - (int)fuelCount;
-- (NSString *)title;
+- (NSString*)title;
 @end

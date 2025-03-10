@@ -15,26 +15,26 @@
   float openCloseTransition;
   int itemType;
   BOOL blocked;
-  NSString *ironPlaceClientID;
-  float *savedDrawBuffer;
+  NSString* ironPlaceClientID;
+  float* savedDrawBuffer;
   int savedDrawBufferIndex;
 }
 
 - (BOOL)occupiesNormalContents;
 - (BOOL)occupiesBackgroundContents;
 - (void)removeFromMacroBlock;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCount;
 - (BOOL)canBeUsedByBlockhead:(id)arg1;
 - (int)itemType;
 - (void)setNeedsRemoved:(BOOL)arg1;
 - (BOOL)isOpen;
 - (void)setOpen:(BOOL)arg1 direction:(int)arg2;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;

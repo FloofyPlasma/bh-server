@@ -10,13 +10,13 @@
 @class CPTexture2D, DrawCube, FishingRod, Shader;
 
 @interface ClownFish : NPC {
-  Shader *shader;
-  CPTexture2D *bodyTexture;
-  CPTexture2D *tailTexture;
-  CPTexture2D *sideFinTexture;
-  DrawCube *bodyCube;
-  DrawCube *tailCube;
-  DrawCube *sideFinCube;
+  Shader* shader;
+  CPTexture2D* bodyTexture;
+  CPTexture2D* tailTexture;
+  CPTexture2D* sideFinTexture;
+  DrawCube* bodyCube;
+  DrawCube* tailCube;
+  DrawCube* sideFinCube;
   int movementDirection;
   intpair fromSquare;
   intpair toSquare;
@@ -36,7 +36,7 @@
   BOOL falling;
   BOOL isOnAirAboveSolidGround;
   BOOL lastTryCouldntMove;
-  FishingRod *hookedFishingRod;
+  FishingRod* hookedFishingRod;
   int currentNetQueueSize;
   intpair nextToSquare[4];
   float nextWalkSpeed[4];
@@ -93,7 +93,7 @@
 - (int)captureRequiredItemType;
 - (int)capturedItemType;
 - (int)getNamesArrayCount;
-- (id *)getNamesArray;
+- (id*)getNamesArray;
 - (int)foodItemType;
 - (id)speciesName;
 - (float)maxAge;

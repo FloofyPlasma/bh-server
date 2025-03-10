@@ -14,23 +14,23 @@
 
 @interface CaveTroll : NPC <PathUserDynamicObject> {
   struct CaveTrollState state;
-  Shader *shader;
-  Shader *renderShader;
-  CPTexture2D *headTexture;
-  DrawCube *headCube;
-  CPTexture2D *bodyTexture;
-  DrawCube *bodyCube;
-  CPTexture2D *armTexture;
-  DrawCube *armCube;
-  CPTexture2D *legTexture;
-  DrawCube *legCube;
+  Shader* shader;
+  Shader* renderShader;
+  CPTexture2D* headTexture;
+  DrawCube* headCube;
+  CPTexture2D* bodyTexture;
+  DrawCube* bodyCube;
+  CPTexture2D* armTexture;
+  DrawCube* armCube;
+  CPTexture2D* legTexture;
+  DrawCube* legCube;
   float walkTimer;
   float bodyRotation;
   float bodyZRotation;
   float bodyTwistRotation;
   float headXRotation;
   float headYRotation;
-  NSMutableArray *path;
+  NSMutableArray* path;
   float travelSpeed;
   int traverseType;
   int traverseFromKeyFrame;
@@ -42,12 +42,12 @@
   intpair defendSquare;
   BOOL returnToDefense;
   BOOL cannotReturn;
-  struct Tile *fromTile;
-  struct Tile *toTile;
+  struct Tile* fromTile;
+  struct Tile* toTile;
   BOOL lastPathWasFalling;
   BOOL lastPathWasMoveOnly;
-  struct Tile *interactingTile;
-  Blockhead *tappedNPC;
+  struct Tile* interactingTile;
+  Blockhead* tappedNPC;
   BOOL chasingNPC;
   intpair lastKnownNPCPosition;
   float travelFraction;
@@ -72,12 +72,12 @@
   intpair waitingPathGoalPos;
   BOOL footstepPingPong;
   Vector2 renderPos;
-  NSDictionary *pathExtraData;
+  NSDictionary* pathExtraData;
   float recoilTimer;
   float recoilDirection;
   int prevGoalRotationType;
   float randomAIWait;
-  Blockhead *waitingBeforeRetaliationBlockhead;
+  Blockhead* waitingBeforeRetaliationBlockhead;
   BOOL wasLit;
   Vector2 riderTargetVelocity;
   Vector riderPosition;
@@ -100,7 +100,7 @@
 @property int
     selectedToolIndex; // @synthesize selectedToolIndex=_selectedToolIndex;
 @property BOOL pathNeedsRecalculated; // @synthesize pathNeedsRecalculated;
-@property(readonly) intpair nextPos;  // @synthesize nextPos=toSquare;
+@property (readonly) intpair nextPos; // @synthesize nextPos=toSquare;
 - (id).cxx_construct;
 - (BOOL)riderDPadShouldGiveDiscreteValues;
 - (BOOL)suffersDamageAtHighTemperatures;
@@ -123,7 +123,7 @@
 - (void)blockheadUnloaded:(id)arg1;
 - (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
 - (void)reactToBeingHit;
-@property(readonly) Vector2 renderPos; // @synthesize renderPos;
+@property (readonly) Vector2 renderPos; // @synthesize renderPos;
 - (BOOL)canCrawl;
 - (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
 - (unsigned short)maxHealth;
@@ -133,8 +133,8 @@
 - (void)setNoLongerWaitingForPath;
 - (void)setWaitingForPathToPos:(intpair)arg1;
 - (id)infoForPathRecalculation;
-- (void)worldContentsChanged:(vector_07678c45 *)arg1;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldContentsChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (void)setPath:(id)arg1
                type:(int)arg2
     goalInteraction:(int)arg3
@@ -154,14 +154,14 @@
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)controlIsLocal;
 - (void)die:(id)arg1;
-- (BOOL)tileIsLitForSelf:(struct Tile *)arg1 atPos:(intpair)arg2;
+- (BOOL)tileIsLitForSelf:(struct Tile*)arg1 atPos:(intpair)arg2;
 - (void)updateGatherSpeedAndAnimationForCurrentInterationAndItem;
 - (void)remoteCreationDataUpdate:(id)arg1;
 - (void)remoteUpdate:(id)arg1;
 - (void)doRemoteUpdate:(struct CaveTrollUpdateData)arg1;
 - (void)stopInteracting;
 - (void)startInteractingWithTileAtIndex:(int)arg1
-                                   tile:(struct Tile *)arg2
+                                   tile:(struct Tile*)arg2
                         interactionType:(int)arg3;
 - (int)currentTraverseToKeyFrame;
 - (BOOL)isHeadingForSquare:(intpair)arg1;
@@ -192,7 +192,7 @@
 - (void)initSubDerivedStuffStuff;
 - (int)captureRequiredItemType;
 - (int)getNamesArrayCount;
-- (id *)getNamesArray;
+- (id*)getNamesArray;
 - (int)foodItemType;
 - (id)speciesName;
 - (BOOL)diesOfLowFullness;
@@ -201,9 +201,9 @@
 - (int)currentAnimationType;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end

@@ -15,22 +15,22 @@
     CraftableItemObject, MJSound, NSMutableArray, NSString, Shader;
 
 @interface Workbench : InteractionObject <AddFuelObject, PowerUser,
-                                          CraftProgressCraftingObject> {
-  ArtificialLight *light;
-  Shader *worldObjectShader;
-  Blockhead *currentFuelBlockhead;
+                           CraftProgressCraftingObject> {
+  ArtificialLight* light;
+  Shader* worldObjectShader;
+  Blockhead* currentFuelBlockhead;
   BOOL isInUseFuel;
   int savedBlockheadIndexFuel;
   int type;
   int numberOfCraftableItems;
   int numberOfCraftableItemsUpToCurrentLevel;
-  struct CraftableItem **craftableItems;
+  struct CraftableItem** craftableItems;
   int selectedIndex;
-  NSMutableArray *sourceItems[8];
+  NSMutableArray* sourceItems[8];
   float xScroll;
   int level;
-  CraftableItemObject *craftingItemObject;
-  CraftProgressUI *craftProgressUI;
+  CraftableItemObject* craftingItemObject;
+  CraftProgressUI* craftProgressUI;
   float craftProgressCount;
   float hurryTimer;
   float hurrySeconds;
@@ -54,36 +54,36 @@
   unsigned long long remoteFuelBlockheadInUseUniqueID;
   float particleCreateTimerSteamEngine;
   float particleCreateTimerRefinery;
-  MJSound *sound;
+  MJSound* sound;
   BOOL paused;
-  float *savedDrawBuffer;
+  float* savedDrawBuffer;
   int savedDrawBufferIndex;
   int lastRenderedIndicatorFractionRounded;
   BOOL lastRenderDisplayedInUse;
   BOOL lastRenderDisplayedHadFuel;
-  Shader *paintingShader;
-  CPTexture2D *paintingTexture;
+  Shader* paintingShader;
+  CPTexture2D* paintingTexture;
   float timeSinceFoundElectricty;
 }
 
-@property float xScroll;                    // @synthesize xScroll;
-@property CraftProgressUI *craftProgressUI; // @synthesize craftProgressUI;
-@property(readonly) int countLeft;          // @synthesize countLeft;
-@property(readonly) int count;              // @synthesize count;
-@property(readonly)
-    CraftableItemObject *craftingItemObject; // @synthesize craftingItemObject;
-@property int selectedIndex;                 // @synthesize selectedIndex;
-@property(readonly) int level;               // @synthesize level;
-@property(readonly) int type;                // @synthesize type;
-@property(readonly) int
+@property float xScroll; // @synthesize xScroll;
+@property CraftProgressUI* craftProgressUI; // @synthesize craftProgressUI;
+@property (readonly) int countLeft; // @synthesize countLeft;
+@property (readonly) int count; // @synthesize count;
+@property (readonly)
+    CraftableItemObject* craftingItemObject; // @synthesize craftingItemObject;
+@property int selectedIndex; // @synthesize selectedIndex;
+@property (readonly) int level; // @synthesize level;
+@property (readonly) int type; // @synthesize type;
+@property (readonly) int
     numberOfCraftableItemsUpToCurrentLevel; // @synthesize
                                             // numberOfCraftableItemsUpToCurrentLevel;
-@property(readonly)
+@property (readonly)
     int numberOfCraftableItems; // @synthesize numberOfCraftableItems;
 - (int)hurryCostForCraftTimeRemaining:(int)arg1 totalCraftTime:(int)arg2;
 - (id)upgradeNameForCraftProgressUI;
 - (id)titleForCraftProgressUI;
-- (int *)fuelTypes;
+- (int*)fuelTypes;
 - (int)fuelTypesCount;
 - (id)upgradeName;
 - (BOOL)requiresElectricty;
@@ -98,9 +98,9 @@
 - (void)removeFromMacroBlock;
 - (BOOL)rendersDynamicObjectCubes;
 - (BOOL)rendersDynamicObjectQuad;
-- (int)addDrawCubeData:(float *)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
 - (int)staticGeometryDrawCubeCount;
-- (int)addDrawQuadData:(float *)arg1
+- (int)addDrawQuadData:(float*)arg1
              fromIndex:(int)arg2
            forMacroPos:(intpair)arg3;
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
@@ -113,7 +113,7 @@
 - (BOOL)generatesElectricity;
 - (BOOL)isStorageDevice;
 - (void)addToFuelForItem:(int)arg1;
-- (int *)fuelItems;
+- (int*)fuelItems;
 - (int)fuelItemCount;
 - (id)actionTitle;
 - (BOOL)subtractElectricty:(unsigned short)arg1;
@@ -135,14 +135,14 @@
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (void)worldChanged:(vector_07678c45 *)arg1;
+- (void)worldChanged:(vector_07678c45*)arg1;
 - (BOOL)requiresHumanInteraction;
 - (void)startManagingFuelWithBlockhead:(id)arg1;
 - (BOOL)craftItem:(id)arg1
       withBlockhead:(id)arg2
     craftProgressUI:(id)arg3
               count:(int)arg4;
-- (struct CraftableItem **)craftableItems;
+- (struct CraftableItem**)craftableItems;
 - (id)title;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2
@@ -191,9 +191,9 @@
 - (int)objectType;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString* debugDescription;
+@property (readonly, copy) NSString* description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 @end
