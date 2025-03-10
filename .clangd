@@ -1,0 +1,8 @@
+CompileFlags:
+    Add:
+    - "-Isrc/Linux/blockheads"
+    - "-Isrc/Linux/GLKit"
+    - "-Isrc/Mac/BlockheadsServer/BlockheadsServer"
+    - "-Isrc/Mac/BlockheadsServer/blockheads_server"
+    - "-Isrc/SharedSource"
+   
