@@ -54,8 +54,7 @@
     DynamicObject<PathUserDynamicObject>* pathUser; // @synthesize pathUser;
 @property (readonly) BOOL inProgress; // @synthesize inProgress;
 @property (readonly) NSArray* path; // @synthesize path;
-- (id).cxx_construct;
-- (void).cxx_destruct;
+
 - (void)abortPath;
 - (void)createPathWithDict:(id)arg1;
 - (id)calculateFallPath;

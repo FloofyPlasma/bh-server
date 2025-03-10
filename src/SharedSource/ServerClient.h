@@ -62,8 +62,7 @@
 @property (readonly) NSString* clientID; // @synthesize clientID;
 @property BOOL paused; // @synthesize paused;
 @property (readonly) NSMutableIndexSet* requestedBlockIndices; // @synthesize requestedBlockIndices;
-- (id).cxx_construct;
-- (void).cxx_destruct;
+
 @property BOOL connected;
 - (void)saveLightBlockIndices;
 - (id)getAndRemoveAllRecieptDataForMacroPos:(intpair)arg1 world:(id)arg2;

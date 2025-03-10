@@ -45,7 +45,6 @@
 @property (readonly) unsigned long long uniqueID; // @synthesize uniqueID;
 @property (readonly) Vector2 floatPos; // @synthesize floatPos;
 @property (readonly) intpair pos; // @synthesize pos;
-- (id).cxx_construct;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;

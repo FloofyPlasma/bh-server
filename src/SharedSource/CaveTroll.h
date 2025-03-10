@@ -101,7 +101,6 @@
     selectedToolIndex; // @synthesize selectedToolIndex=_selectedToolIndex;
 @property BOOL pathNeedsRecalculated; // @synthesize pathNeedsRecalculated;
 @property (readonly) intpair nextPos; // @synthesize nextPos=toSquare;
-- (id).cxx_construct;
 - (BOOL)riderDPadShouldGiveDiscreteValues;
 - (BOOL)suffersDamageAtHighTemperatures;
 - (BOOL)riderDPadShouldAllowUpDown;

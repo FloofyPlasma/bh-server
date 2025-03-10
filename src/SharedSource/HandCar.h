@@ -21,7 +21,6 @@
   Vector2 airTrackStartPos;
 }
 
-- (id).cxx_construct;
 - (BOOL)connectsToOtherCars;
 - (void)removeRider:(id)arg1;
 - (int)maxNumberOfRiders;

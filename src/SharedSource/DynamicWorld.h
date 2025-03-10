@@ -116,8 +116,6 @@
   float poleItemRestoreAddTimer;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)freeblockPositionChanged:(id)arg1 oldPos:(intpair)arg2;
 - (void)loadDebugChestAtPos:(intpair)arg1 chest:(id)arg2;
 - (void)doRepairForTileAtPos:(intpair)arg1;

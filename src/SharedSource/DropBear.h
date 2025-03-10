@@ -51,7 +51,6 @@
   char nextOnGround[4];
 }
 
-- (id).cxx_construct;
 - (BOOL)ridableWhenTamed;
 - (id)cantBeCapturedTipStringForBlockhead:(id)arg1 withItemType:(int)arg2;
 - (BOOL)canBeCapturedByBlockhead:(id)arg1 withItemType:(int)arg2;

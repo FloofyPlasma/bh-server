@@ -20,7 +20,6 @@
 }
 
 + (id)instance;
-- (id).cxx_construct;
 - (void)displaySecondBlockheadTipIfGoodTime;
 - (void)updateTipForBlockhead:(id)arg1 severityLevel:(int)arg2;
 - (void)setTutorialTipText:(id)arg1;

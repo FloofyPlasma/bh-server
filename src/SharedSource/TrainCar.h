@@ -41,7 +41,6 @@
   Rail* rightWheelRail;
 }
 
-- (id).cxx_construct;
 - (BOOL)riderDPadShouldAllowUpDown;
 - (BOOL)connectsToOtherCars;
 - (void)cleanup;

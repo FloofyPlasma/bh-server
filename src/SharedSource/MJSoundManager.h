@@ -53,7 +53,7 @@
 @property BOOL dontPlayAnySounds; // @synthesize dontPlayAnySounds;
 @property BOOL
     silentSwitchWasOnDuringLaunch; // @synthesize silentSwitchWasOnDuringLaunch;
-- (id).cxx_construct;
+
 - (void)registerExternalMultiSound:(id)arg1 forKey:(id)arg2;
 - (void)setLoopMP3s:(BOOL)arg1;
 - (void)setRequiresRecord:(BOOL)arg1;

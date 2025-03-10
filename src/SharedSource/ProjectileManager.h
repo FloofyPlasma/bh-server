@@ -18,8 +18,7 @@
   Vector<Projectile*, std::__1::allocator<Projectile*>> projectiles;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
+
 - (void)fireProjectileFrom:(Vector2)arg1
                         to:(Vector2)arg2
                         at:(id)arg3

@@ -45,8 +45,6 @@
 @property BOOL hookInAir; // @synthesize hookInAir;
 @property float castAnimationProgress; // @synthesize castAnimationProgress;
 @property BOOL isInCastingAnimation; // @synthesize isInCastingAnimation;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)blockheadUnloaded:(id)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (id)hookedFish;

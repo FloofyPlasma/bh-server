@@ -298,8 +298,6 @@
 @property (readonly) struct MacroTile* macroTiles; // @synthesize macroTiles;
 @property (readonly) BOOL expertMode; // @synthesize expertMode;
 @property (readonly) int worldWidthMacro; // @synthesize worldWidthMacro;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)appDatabase;
 @property BOOL repairMode;
 - (void)doRepairForTileAtPos:(intpair)arg1;

@@ -49,8 +49,7 @@
     multiSoundPlayBackFrequency; // @synthesize multiSoundPlayBackFrequency;
 @property BOOL
     hasMultiSoundPlayBackFrequency; // @synthesize
-                                    // hasMultiSoundPlayBackFrequency;
-- (id).cxx_construct;
+
 - (BOOL)randomNumberWithinMultiPlaybackFrequency;
 - (void)playAtPosition:(Vector2)arg1;
 - (void)setPosition:(Vector2)arg1;

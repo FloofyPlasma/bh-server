@@ -268,8 +268,6 @@
 @property BOOL pathNeedsRecalculated; // @synthesize pathNeedsRecalculated;
 @property (readonly) NSString* name; // @synthesize name;
 @property (readonly) intpair nextPos; // @synthesize nextPos=toSquare;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)customizeBlockheadUIShouldHaveOKButton;
 - (void)customizationComplete:(struct BlockheadSkinOptions)arg1;
 - (void)customizationChanged:(struct BlockheadSkinOptions)arg1;

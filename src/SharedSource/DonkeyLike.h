@@ -60,7 +60,6 @@
   BOOL lastSendContainedMovement;
 }
 
-- (id).cxx_construct;
 - (BOOL)galloping;
 - (id)cantBeCapturedTipStringForBlockhead:(id)arg1 withItemType:(int)arg2;
 - (BOOL)canBeCapturedByBlockhead:(id)arg1 withItemType:(int)arg2;

@@ -43,8 +43,6 @@
   float yHeightDivider;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (float)sandFractionForPos:(intpair)arg1 height:(int)arg2 highRes:(BOOL)arg3;
 - (float)sandFractionForPos:(intpair)arg1 highRes:(BOOL)arg2;
 - (void)initialDataRecievedFromServer:(id)arg1;

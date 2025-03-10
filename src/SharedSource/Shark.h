@@ -60,7 +60,6 @@
   int remoteMovementDirection;
 }
 
-- (id).cxx_construct;
 - (BOOL)riderDPadShouldAllowUpDown;
 - (BOOL)riderRidesWithArmsDown;
 - (BOOL)jumpsOnSwipe;

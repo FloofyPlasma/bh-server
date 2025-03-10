@@ -25,7 +25,6 @@
 
 @property unsigned short colorGenes; // @synthesize colorGenes;
 @property float availableFood; // @synthesize availableFood;
-- (id).cxx_construct;
 - (unsigned short)colorGenesVariation;
 - (unsigned short)mixGenesVariation;
 - (BOOL)canBreed;

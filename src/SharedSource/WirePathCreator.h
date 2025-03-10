@@ -22,8 +22,6 @@
       derivedTileIndices;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)findAndSubtractAllPowerUpTo:(unsigned short)arg1 forUser:(id)arg2;
 - (struct WirePathTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
 - (void)dealloc;
