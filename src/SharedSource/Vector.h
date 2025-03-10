@@ -57,4 +57,3 @@ public:
             _vector[3] / val};
   }
 };
-

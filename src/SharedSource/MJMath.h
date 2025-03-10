@@ -100,7 +100,8 @@ void quickSort(float *numbers, unsigned int array_size,
 float simpleSmoothStep(float x) { return x * x * (3.0f - x * 2.0f); }
 
 //? This is pure speculation and I'm honestly not sure how accurate it is.
-//* I believe this is an implementation of https://en.wikipedia.org/wiki/Smoothstep.
+//* I believe this is an implementation of
+//https://en.wikipedia.org/wiki/Smoothstep.
 float smoothStep(float a, float b, float x) {
   if (a <= x) {
     if (x < b) {

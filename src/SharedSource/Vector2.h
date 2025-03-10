@@ -37,4 +37,3 @@ public:
 
   Vector2 operator/(float val) { return {_vector[0] / val, _vector[1] / val}; }
 };
-
