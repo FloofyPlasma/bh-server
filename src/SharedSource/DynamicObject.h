@@ -7,7 +7,7 @@
 
 #include <vector>
 
-#import <Foundation/NSObject.h>
+#import <Foundation/Foundation.h>
 
 #import "MJMath.h"
 

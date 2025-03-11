@@ -5,7 +5,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <Foundation/Foundation.h>
 
 @class CPCache, CPTexture2D, FNImageData, MJMultiSound, MJSound, NoiseFunction,
     Shader, World;
