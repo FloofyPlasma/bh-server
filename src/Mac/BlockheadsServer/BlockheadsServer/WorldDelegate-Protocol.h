@@ -5,6 +5,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
+#import <Foundation/Foundation.h>
+
 @class Blockhead, Database, DatabaseEnvironment, NSDictionary, NSString;
 
 @protocol WorldDelegate
