@@ -5,10 +5,67 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
+#import <Foundation/Foundation.h>
 
 #import "MJMath.h"
 #import "Vector.h"
+
+struct DrawBlock {
+  int xPos;
+  int yPos;
+};
+
+struct Tile {
+  uint8_t typeIndex;
+  uint8_t backWallTypeIndex;
+  uint8_t zoneTypeIndex;
+  uint8_t contents;
+  uint8_t partialContentLeft;
+  uint8_t gatherProgress;
+  uint8_t light;
+  uint8_t sunLight;
+  uint8_t seasonOffset;
+  uint8_t exploredFraction;
+  uint8_t terrainSlowFactor;
+  uint8_t foregroundContents;
+  uint8_t backgroundContents;
+  uint16_t artificialLightR;
+  uint16_t artificialLightG;
+  uint16_t artificialLightB;
+  int16_t artificialHeat;
+  uint8_t onFire;
+  uint32_t dynamicObjectOwnerOld;
+  uint16_t paintFront;
+  uint16_t paintTop;
+  uint16_t paintRight;
+  uint16_t paintLeft;
+  uint16_t paintBot;
+  uint64_t dynamicObjectOwner;
+  uint16_t padding[8];
+};
+
+struct PhysicalBlock {
+  int xPos;
+  int yPos;
+  Tile* tiles;
+  BOOL valid;
+  uint8_t version;
+  NSTimeInterval lastRequiredTime;
+  uint32_t updateIndex;
+  uint32_t lightBlockUpdateIndex;
+  u_int8_t* clientLightBlocks[32];
+  u_int8_t clientExplored[32];
+};
+
+struct MacroTile {
+  uint8_t unexplored;
+  uint8_t dirty;
+  uint8_t dynamicObjectsLoaded;
+  PhysicalBlock* physicalBlock;
+  DrawBlock* drawBlock;
+  NSMutableArray* dynamicObjects;
+  float timePhysicalBlockCreated;
+};
 
 @class BHClient, BHServer, CPCache, CPTexture2D, ClientTileLoader,
     CloudInterface, Database, DatabaseConvertor, DatabaseEnvironment,
