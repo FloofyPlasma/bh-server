@@ -967,7 +967,7 @@ CustomRules defaultCustomRules(BOOL expertMode)
     returnValue.spawnItemCounts[i] = 1;
     returnValue.spawnItemTypes[i] = 2;
   }
-  
+
   returnValue.happiness = 1;
   returnValue.tradePortals = 0;
   returnValue.clothingDecay = 2;
@@ -1032,15 +1032,20 @@ NSString* getCreditTimeString(float seconds)
 
 BOOL interactionTypeDisallowedOnProtectedTiles(InteractionType type)
 {
-  return type == INTERACTION_DIG
-      || type == INTERACTION_PLACE_ITEM
-      || type == INTERACTION_PLACE_SOLID_BLOCK
-      || type == INTERACTION_SOW
-      || type == INTERACTION_PICKUP
-      || type == INTERACTION_BURN
-      || type == INTERACTION_FILL_BUCKET
-      || type == INTERACTION_PAINT
-      || type == INTERACTION_STRIP_PAINT
-      || type == INTERACTION_DIG_FOREGROUND
-      || type == INTERACTION_DIG_BACK_WALL;
+  switch (type) {
+  case INTERACTION_DIG:
+  case INTERACTION_PLACE_ITEM:
+  case INTERACTION_PLACE_SOLID_BLOCK:
+  case INTERACTION_SOW:
+  case INTERACTION_PICKUP:
+  case INTERACTION_BURN:
+  case INTERACTION_FILL_BUCKET:
+  case INTERACTION_PAINT:
+  case INTERACTION_STRIP_PAINT:
+  case INTERACTION_DIG_FOREGROUND:
+  case INTERACTION_DIG_BACK_WALL:
+    return YES;
+  default:
+    return NO;
+  }
 }
