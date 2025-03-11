@@ -5,7 +5,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! #import <objc/NSObject.h>
+#import <Foundation/NSObject.h>
 
 #include <cstdint>
 
@@ -444,7 +444,7 @@ enum ItemType : uint32_t
 };
 
 
-@interface InventoryItem //! : NSObject
+@interface InventoryItem : NSObject
 {
   int itemType;
   unsigned short dataA;

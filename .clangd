@@ -1,8 +1,9 @@
 CompileFlags:
-    Add:
+  Add:
     - "-Isrc/Linux/blockheads"
     - "-Isrc/Linux/GLKit"
     - "-Isrc/Mac/BlockheadsServer/BlockheadsServer"
     - "-Isrc/Mac/BlockheadsServer/blockheads_server"
     - "-Isrc/SharedSource"
     - "-fobjc-nonfragile-abi"
+    - "-D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH" # Windows specific I think (fixes stupid intelesense issues)

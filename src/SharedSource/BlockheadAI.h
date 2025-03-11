@@ -5,16 +5,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
-
-//! #import <objc/NSObject.h>
+#import <Foundation/NSObject.h>
 
 @class Blockhead, NoiseFunction, World;
 
-@interface BlockheadAI //! : NSObject
+@interface BlockheadAI : NSObject
 {
   Blockhead* blockhead;
   World* world;

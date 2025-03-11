@@ -5,12 +5,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
+#import <Foundation/NSObject.h>
 
-//! #import <objc/NSObject.h>
+#import "MJMath.h"
+#import "Vector.h"
 
 @class BHClient, BHServer, CPCache, CPTexture2D, ClientTileLoader,
     CloudInterface, Database, DatabaseConvertor, DatabaseEnvironment,
@@ -21,8 +19,7 @@
     Shader, Tutorial, UIManager, Weather, WorldTileLoader;
 @protocol WorldDelegate;
 
-@interface World //! : NSObject
-{
+@interface World : NSObject {
   id<WorldDelegate> delegate;
   int worldWidthMacro;
   BOOL supportsGyro;

@@ -5,16 +5,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
-
-//! #import <objc/NSObject.h>
+#import <Foundation/NSObject.h>
 
 @class DatabaseEnvironment, NSString;
 
-@interface Database //! : NSObject
+@interface Database : NSObject
 {
   DatabaseEnvironment* databaseEnvironment;
   struct MDB_env* env;

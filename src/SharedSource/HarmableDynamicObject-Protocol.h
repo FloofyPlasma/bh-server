@@ -5,9 +5,9 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import "NSObject-Protocol.h"
-#import "Vector2.h"
+#import <Foundation/NSObject.h>
 
+#import "Vector2.h"
 
 @class Blockhead;
 

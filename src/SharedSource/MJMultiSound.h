@@ -5,16 +5,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
-
-//! #import <objc/NSObject.h>
+#import <Foundation/NSObject.h>
 
 @class MJSound, NSArray, NSMutableArray, NSOperationQueue, NSString;
 
-@interface MJMultiSound //! : NSObject
+@interface MJMultiSound : NSObject
 {
   NSMutableArray* _sounds;
   NSString* _fileName;

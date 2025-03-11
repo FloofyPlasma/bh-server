@@ -2,6 +2,22 @@
 
 @implementation Action
 
+@synthesize interactionTestResult;
+@synthesize blockCube;
+@synthesize craftCountOrExtraData;
+@synthesize animationTimer;
+@synthesize isAI;
+@synthesize pathType;
+@synthesize goalInteraction;
+@synthesize interactionObjectID;
+@synthesize interactionItemSubIndex;
+@synthesize interactionItemIndex;
+@synthesize interactionItem;
+@synthesize inventoryChange;
+@synthesize goalTilePos;
+@synthesize complete;
+@synthesize inProgress;
+
 - (void)dealloc
 {
   [self->interactionItem autorelease];
@@ -17,21 +33,11 @@
 {
 }
 
-- (Action*)initWithSaveDict:(id)arg1 inventoryItems:(id)arg2
+- (Action*)initWithSaveDict:(NSDictionary*)saveDict inventoryItems:(NSArray*)inventoryItems
 {
 }
 
-- (Action*)initWithGoalPos:(intpair)arg1
-           goalInteraction:(int)arg2
-                  pathType:(int)arg3
-           interactionItem:(id)arg4
-                 itemIndex:(short)arg5
-              itemSubIndex:(short)arg6
-       interactionObjectID:(unsigned long long)arg7
-       craftableItemObject:(id)arg8
-     craftCountOrExtraData:(short)arg9
-                      isAI:(bool)arg10
-           inventoryChange:(id)arg11
+- (Action*)initWithGoalPos:(intpair)goalTilePos_ goalInteraction:(int)goalInteraction_ pathType:(int)pathType_ interactionItem:(InventoryItem*)interactionItem_ itemIndex:(uint16_t)interactionItemIndex_ itemSubIndex:(uint16_t)interactionSubItemIndex_ interactionObjectID:(uint64_t)interactionObjectID_ craftableItemObject:(CraftableItemObject*)craftableItemObject_ craftCountOrExtraData:(uint16_t)craftCountOrExtraData_ isAI:(bool)isAI_ inventoryChange:(NSDictionary*)inventoryChange_
 {
 }
 

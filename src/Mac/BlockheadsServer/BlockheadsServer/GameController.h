@@ -4,12 +4,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
-
-//! #import <objc/NSObject.h>
+#import <Foundation/NSObject.h>
 
 #import "BHNetNodeDelegate-Protocol.h"
 #import "WorldDelegate-Protocol.h"
@@ -18,7 +13,7 @@
 @protocol GameControllerDelegate
 , NSObject;
 
-@interface GameController //! : NSObject <BHNetNodeDelegate, WorldDelegate>
+@interface GameController : NSObject <BHNetNodeDelegate, WorldDelegate>
 {
   World* world;
   BHServer* bhServer;

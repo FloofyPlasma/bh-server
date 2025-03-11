@@ -5,16 +5,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
-
-//! #import <objc/NSObject.h>
+#import <Foundation/NSObject.h>
 
 @class Blockhead, CPTexture2D, ClownFish, MJSound, Shader, World;
 
-@interface FishingRod //! : NSObject
+@interface FishingRod : NSObject
 {
   World* world;
   Blockhead* blockhead;

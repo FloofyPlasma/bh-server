@@ -5,17 +5,14 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
+#import <Foundation/NSObject.h>
 
-//! #import <objc/NSObject.h>
+#import "MJMath.h"
 
 @class BHServer, Database, NSMutableArray, NSMutableDictionary,
     NSMutableIndexSet, NSString;
 
-@interface ServerClient //! : NSObject
+@interface ServerClient : NSObject
 {
   NSString* clientID;
   BHServer* server;

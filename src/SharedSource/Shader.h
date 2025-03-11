@@ -5,16 +5,10 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
-
-//! #import <objc/NSObject.h>
-
+#import <Foundation/NSObject.h>
 @class NSArray;
 
-@interface Shader //! : NSObject
+@interface Shader : NSObject
 {
   unsigned int program;
   NSArray* uniformLocations;

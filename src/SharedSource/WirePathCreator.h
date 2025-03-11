@@ -5,11 +5,11 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! #import <objc/NSObject.h>
+#import <Foundation/NSObject.h>
 
 @class NSMutableIndexSet, World;
 
-@interface WirePathCreator //! : NSObject
+@interface WirePathCreator : NSObject
 {
   World* world;
   NSMutableIndexSet* openList;

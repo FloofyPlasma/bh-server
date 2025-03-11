@@ -5,14 +5,9 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-//! FIXME: Bad macro hack
-#ifndef BOOL
-#define BOOL bool
-#endif
+#import <Foundation/NSObject.h>
 
-//! #import <objc/NSObject.h>
-
-@interface NoiseFunction //! : NSObject
+@interface NoiseFunction : NSObject
 {
   BOOL _tileable;
   struct NoiseFunctionStruct* _structPtr;
