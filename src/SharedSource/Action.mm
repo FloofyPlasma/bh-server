@@ -1,11 +1,11 @@
 #import "Action.h"
-#include "MJMath.h"
 
 @implementation Action
 
 @synthesize interactionTestResult;
 @synthesize blockCube;
 @synthesize craftCountOrExtraData;
+@synthesize craftableItemObject;
 @synthesize animationTimer;
 @synthesize isAI;
 @synthesize pathType;
@@ -64,6 +64,24 @@
 
 - (Action*)initWithGoalPos:(intpair)goalTilePos_ goalInteraction:(int)goalInteraction_ pathType:(int)pathType_ interactionItem:(InventoryItem*)interactionItem_ itemIndex:(uint16_t)interactionItemIndex_ itemSubIndex:(uint16_t)interactionSubItemIndex_ interactionObjectID:(uint64_t)interactionObjectID_ craftableItemObject:(CraftableItemObject*)craftableItemObject_ craftCountOrExtraData:(uint16_t)craftCountOrExtraData_ isAI:(bool)isAI_ inventoryChange:(NSDictionary*)inventoryChange_
 {
+  self = [super init];
+
+  //? Honestly not sure how this could fail lol...
+  if (self != NULL) {
+    self->goalTilePos = goalTilePos_;
+    self->goalInteraction = goalInteraction_;
+    self->pathType = pathType_;
+    self->interactionItem = [interactionItem_ retain];
+    self->interactionItemIndex = interactionItemIndex_;
+    self->interactionItemSubIndex = interactionSubItemIndex_;
+    self->interactionObjectID = interactionObjectID_;
+    self->craftableItemObject = [craftableItemObject_ retain];
+    self->craftCountOrExtraData = craftCountOrExtraData_;
+    self->isAI = isAI_;
+    self->inventoryChange = [inventoryChange_ retain];
+  }
+
+  return self;
 }
 
 @end
