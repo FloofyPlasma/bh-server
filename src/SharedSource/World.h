@@ -6,7 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKit.h>
 
+#include "GameConstants.h"
 #import "MJMath.h"
 #import "Vector.h"
 
@@ -98,15 +100,15 @@ struct MacroTile {
   intpair startPortalPos;
   struct WindowInfo* windowInfo;
   Weather* weather;
-  struct CustomRules customRules;
+  CustomRules customRules;
   NSMutableDictionary* customRulesDict;
   BOOL expertMode;
   Tutorial* tutorial;
   CloudInterface* cloudInterface;
   UIManager* uiManager;
   int loadedVersion;
-  union _GLKMatrix4 tapProjectionMatrix;
-  union _GLKMatrix4 tapModelviewMatrix;
+  _GLKMatrix4 tapProjectionMatrix;
+  _GLKMatrix4 tapModelviewMatrix;
   int tapViewport[4];
   double pinchScale;
   CPCache* cache;
@@ -121,8 +123,8 @@ struct MacroTile {
   NSString* hostPort;
   NSString* maxPlayers;
   NSDate* creationDate;
-  unordered_set_8b255eaf usedPhysicalBlocks;
-  unordered_set_8b255eaf freePhysicalBlocks;
+  std::unordered_set<PhysicalBlock> usedPhysicalBlocks;
+  std::unordered_set<PhysicalBlock> freePhysicalBlocks;
   NSMutableIndexSet* freeClientLightBlockIndices;
   struct DrawBlock* drawBlocks;
   int numDrawBlocks;
@@ -159,10 +161,10 @@ struct MacroTile {
   double worldTime;
   NoiseFunction* weatherNoiseFunction;
   Vector sunDirection;
-  union _GLKVector3 relativeSunDirection;
-  union _GLKMatrix4 sunMvpMatrix;
-  union _GLKMatrix4 moonMvpMatrix;
-  union _GLKMatrix4 starsMvpMatrix;
+  _GLKVector3 relativeSunDirection;
+  _GLKMatrix4 sunMvpMatrix;
+  _GLKMatrix4 moonMvpMatrix;
+  _GLKMatrix4 starsMvpMatrix;
   float timeOfDayFraction;
   float backgroundYOffset;
   Vector dayColor;
@@ -358,7 +360,7 @@ struct MacroTile {
 - (void)archiveLightBlocksForClient:(id)arg1;
 - (BOOL)hasFinishedDatabaseMigrationTo17;
 - (void)doPortalShotNextFrame;
-- (unordered_set_8b255eaf*)usedPhysicalBlocks;
+- (std::unordered_set<PhysicalBlock>*)usedPhysicalBlocks;
 - (BOOL)finishBulkDatabaseUpdate;
 - (void)startBulkDatabaseUpdate;
 - (void)blockheadFilesReturnedFromServer:(id)arg1;
@@ -614,7 +616,7 @@ struct MacroTile {
 - (void)zoomUIToOnscreen:(Vector2)arg1 dimensions:(Vector2)arg2;
 - (void)render:(float)arg1
              cameraZ:(float)arg2
-    projectionMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(_GLKMatrix4)arg3
           pinchScale:(float)arg4;
 - (Vector)lightPositionLeft;
 - (Vector)lightPositionRight;
@@ -623,7 +625,7 @@ struct MacroTile {
 - (void)preRenderUpdate:(float)arg1
              fastSlowDT:(float)arg2
                 cameraZ:(float)arg3
-       projectionMatrix:(union _GLKMatrix4)arg4;
+       projectionMatrix:(_GLKMatrix4)arg4;
 - (Vector)dayColorForPosition:(intpair)arg1;
 - (float)getDayNightFractionForX:(float)arg1 atWorldTime:(double)arg2;
 - (float)getWeatherFractionForPos:(intpair)arg1;

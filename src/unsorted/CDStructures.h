@@ -1068,7 +1068,7 @@ typedef struct unordered_set<PhysicalBlock *, std::__1::hash<PhysicalBlock *>, s
             float __value_;
         } __p3_;
     } __table_;
-} unordered_set_8b255eaf;
+} std::unordered_set<PhysicalBlock>;
 
 typedef struct unordered_set<int, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<int>> {
     struct __hash_table<int, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<int>> {
