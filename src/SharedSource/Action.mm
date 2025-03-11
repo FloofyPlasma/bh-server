@@ -72,8 +72,8 @@
     //! TODO: Finish this section, it does something with self->animationTimer.
 
     [self->interactionItem retain];
-    self->goalInteraction = [[saveDict objectForKey:@"goalInteraction"] intValue];
-    self->pathType = [[saveDict objectForKey:@"pathType"] intValue];
+    self->goalInteraction = (InteractionType)[[saveDict objectForKey:@"goalInteraction"] intValue];
+    self->pathType = (PathType)[[saveDict objectForKey:@"pathType"] intValue];
     self->interactionObjectID = [[saveDict objectForKey:@"interactionObjectID"] unsignedLongLongValue];
 
     //! TODO: Finish this section, it does something ith self->craftableItemObject.
@@ -86,11 +86,10 @@
   return self;
 }
 
-- (Action*)initWithGoalPos:(intpair)goalTilePos_ goalInteraction:(int)goalInteraction_ pathType:(int)pathType_ interactionItem:(InventoryItem*)interactionItem_ itemIndex:(uint16_t)interactionItemIndex_ itemSubIndex:(uint16_t)interactionSubItemIndex_ interactionObjectID:(uint64_t)interactionObjectID_ craftableItemObject:(CraftableItemObject*)craftableItemObject_ craftCountOrExtraData:(uint16_t)craftCountOrExtraData_ isAI:(bool)isAI_ inventoryChange:(NSDictionary*)inventoryChange_
+- (Action*)initWithGoalPos:(intpair)goalTilePos_ goalInteraction:(InteractionType)goalInteraction_ pathType:(PathType)pathType_ interactionItem:(InventoryItem*)interactionItem_ itemIndex:(uint16_t)interactionItemIndex_ itemSubIndex:(uint16_t)interactionSubItemIndex_ interactionObjectID:(uint64_t)interactionObjectID_ craftableItemObject:(CraftableItemObject*)craftableItemObject_ craftCountOrExtraData:(uint16_t)craftCountOrExtraData_ isAI:(bool)isAI_ inventoryChange:(NSDictionary*)inventoryChange_
 {
   self = [super init];
 
-  //? Honestly not sure how this could fail lol...
   if (self != NULL) {
     self->goalTilePos = goalTilePos_;
     self->goalInteraction = goalInteraction_;

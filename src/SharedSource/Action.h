@@ -8,12 +8,12 @@
 #import <Foundation/Foundation.h>
 
 #import "Blockhead.h"
+#include "GameConstants.h"
 #import "MJMath.h"
 
 @class CraftableItemObject, DrawCube, InventoryItem, NSDictionary, NSMutableDictionary;
 
-@interface Action : NSObject
-{
+@interface Action : NSObject {
   BOOL inProgress;
   BOOL complete;
   BOOL isAI;
@@ -21,8 +21,8 @@
   InventoryItem* interactionItem;
   uint16_t interactionItemIndex;
   uint16_t interactionItemSubIndex;
-  int goalInteraction;
-  int pathType;
+  InteractionType goalInteraction;
+  PathType pathType;
   uint64_t interactionObjectID;
   CraftableItemObject* craftableItemObject;
   uint16_t craftCountOrExtraData;
@@ -32,29 +32,29 @@
   float animationTimer;
 }
 
-@property InteractionTestResult interactionTestResult; // @synthesize interactionTestResult;
-@property (retain) DrawCube* blockCube; // @synthesize blockCube;
-@property uint16_t craftCountOrExtraData; // @synthesize craftCountOrExtraData;
-@property (retain) CraftableItemObject* craftableItemObject; // @synthesize craftableItemObject;
-@property float animationTimer; // @synthesize animationTimer;
-@property BOOL isAI; // @synthesize isAI;
-@property int pathType; // @synthesize pathType;  //* PathType
-@property int goalInteraction; // @synthesize goalInteraction; //* InteractionType
-@property uint64_t interactionObjectID; // @synthesize interactionObjectID;
-@property uint16_t interactionItemSubIndex; // @synthesize interactionItemSubIndex;
-@property uint16_t interactionItemIndex; // @synthesize interactionItemIndex;
-@property (retain) InventoryItem* interactionItem; // @synthesize interactionItem;
-@property (retain) NSDictionary* inventoryChange; // @synthesize inventoryChange;
-@property intpair goalTilePos; // @synthesize goalTilePos;
-@property BOOL complete; // @synthesize complete;
-@property BOOL inProgress; // @synthesize inProgress;
+@property InteractionTestResult interactionTestResult;
+@property (retain) DrawCube* blockCube;
+@property uint16_t craftCountOrExtraData;
+@property (retain) CraftableItemObject* craftableItemObject;
+@property float animationTimer;
+@property BOOL isAI;
+@property PathType pathType;
+@property InteractionType goalInteraction;
+@property uint64_t interactionObjectID;
+@property uint16_t interactionItemSubIndex;
+@property uint16_t interactionItemIndex;
+@property (retain) InventoryItem* interactionItem;
+@property (retain) NSDictionary* inventoryChange;
+@property intpair goalTilePos;
+@property BOOL complete;
+@property BOOL inProgress;
 
 - (void)dealloc;
 - (NSMutableDictionary*)getSaveDict;
 - (Action*)initWithSaveDict:(NSDictionary*)saveDict inventoryItems:(NSArray*)inventoryItems;
 - (Action*)initWithGoalPos:(intpair)goalTilePos_
-           goalInteraction:(int)goalInteraction_ //* InteractionType
-                  pathType:(int)pathType_ //* PathType
+           goalInteraction:(InteractionType)goalInteraction_
+                  pathType:(PathType)pathType_
            interactionItem:(InventoryItem*)interactionItem_
                  itemIndex:(uint16_t)interactionItemIndex_
               itemSubIndex:(uint16_t)interactionSubItemIndex_
