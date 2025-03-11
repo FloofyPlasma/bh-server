@@ -1,4 +1,5 @@
 #import "Action.h"
+#include "MJMath.h"
 
 @implementation Action
 
@@ -25,12 +26,36 @@
   [self->blockCube autorelease];
   [self->inventoryChange autorelease];
 
-  //* Add this when NSObject is implemented.
-  // [super dealloc];
+  [super dealloc];
 }
 
+//* I belive this is correct, but it's all speculation.
 - (NSMutableDictionary*)getSaveDict
 {
+  NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
+  [dictionary setObject:[NSNumber numberWithBool:self->inProgress] forKey:@"inProgress"];
+  [dictionary setObject:[NSNumber numberWithBool:self->isAI] forKey:@"isAI"];
+  [dictionary setObject:[NSNumber numberWithInt:self->goalTilePos.x] forKey:@"goalTilePos.x"];
+  [dictionary setObject:[NSNumber numberWithInt:self->goalTilePos.y] forKey:@"goalTilePos.y"];
+  [dictionary setObject:[NSNumber numberWithInt:self->interactionItemIndex] forKey:@"interactionItemIndex"];
+  [dictionary setObject:[NSNumber numberWithInt:self->interactionItemSubIndex] forKey:@"interactionItemSubIndex"];
+  [dictionary setObject:[NSNumber numberWithInt:self->interactionItem.itemType] forKey:@"interactionItemType"];
+  [dictionary setObject:[NSNumber numberWithInt:self->goalInteraction] forKey:@"goalInteraction"];
+  [dictionary setObject:[NSNumber numberWithInt:self->pathType] forKey:@"pathType"];
+  [dictionary setObject:[NSNumber numberWithUnsignedLong:self->interactionObjectID] forKey:@"interactionObjectID"];
+
+  if (self->inventoryChange != NULL) {
+    [dictionary setObject:self->inventoryChange forKey:@"inventoryChange"];
+  }
+
+  if ([self->craftableItemObject getSaveDict] != NULL) {
+    [dictionary setObject:[self->craftableItemObject getSaveDict] forKey:@"craftableItemObject"];
+  }
+
+  [dictionary setObject:[NSNumber numberWithUnsignedInt:self->craftCountOrExtraData] forKey:@"craftCountOrExtraData"];
+  [dictionary setObject:[NSData dataWithBytes:&self->interactionTestResult length:12] forKey:@"interactionTestResult"];
+
+  return dictionary;
 }
 
 - (Action*)initWithSaveDict:(NSDictionary*)saveDict inventoryItems:(NSArray*)inventoryItems
