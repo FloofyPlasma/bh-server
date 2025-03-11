@@ -27,6 +27,13 @@ set(SOURCE_FILES src/Mac/BlockheadsServer/blockheads_server/main.mm)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
+include_directories(
+    src/Linux
+    src/Linux/blockheads
+    src/Mac/BlockheadsServer/blockheads_server
+    src/Mac/blockheadsServer/BlockheadsServer
+    src/SharedSource)
+
 if(WIN32)
     target_compile_options(${PROJECT_NAME} PRIVATE
         -fobjc-runtime=gnustep-2.0
