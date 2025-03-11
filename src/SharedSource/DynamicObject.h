@@ -5,24 +5,23 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
+#import <Foundation/Foundation.h>
 #include <vector>
 
-#import <Foundation/Foundation.h>
-
 #import "MJMath.h"
+#import "World.h"
 
 @class CPCache, DynamicWorld, NSString, World;
 
-@interface DynamicObject : NSObject
-{
+@interface DynamicObject : NSObject {
   World* world;
   DynamicWorld* dynamicWorld;
-  struct MacroTile* macroTileOwner;
+  MacroTile* macroTileOwner;
   intpair pos;
   Vector2 floatPos;
   CPCache* cache;
   NSString* ownerID;
-  unsigned long long uniqueID;
+  uint64_t uniqueID;
   BOOL needsRemoved;
   BOOL updateNeedsToBeSent;
   BOOL creationDataNeedsToBeSent;
@@ -31,7 +30,7 @@
 }
 
 @property (readonly)
-    struct MacroTile* macroTileOwner; // @synthesize macroTileOwner;
+    MacroTile* macroTileOwner; // @synthesize macroTileOwner;
 @property (readonly) BOOL isNet; // @synthesize isNet;
 @property BOOL
     unreliableUpdateNeedsToBeSent; // @synthesize unreliableUpdateNeedsToBeSent;
@@ -39,9 +38,10 @@
     creationDataNeedsToBeSent; // @synthesize creationDataNeedsToBeSent;
 @property BOOL updateNeedsToBeSent; // @synthesize updateNeedsToBeSent;
 @property BOOL needsRemoved; // @synthesize needsRemoved;
-@property (readonly) unsigned long long uniqueID; // @synthesize uniqueID;
+@property (readonly) uint64_t uniqueID; // @synthesize uniqueID;
 @property (readonly) Vector2 floatPos; // @synthesize floatPos;
 @property (readonly) intpair pos; // @synthesize pos;
+
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
