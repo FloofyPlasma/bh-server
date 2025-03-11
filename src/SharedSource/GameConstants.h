@@ -937,10 +937,6 @@ struct WindowInfo {
   float paddingBottom;
 };
 
-CustomRules customRulesFromDict(NSDictionary* incomingDict, BOOL expertMode)
-{
-}
-
 CustomRules defaultCustomRules(BOOL expertMode)
 {
   CustomRules returnValue = CustomRules();
@@ -990,12 +986,22 @@ CustomRules defaultCustomRules(BOOL expertMode)
   return returnValue;
 }
 
+CustomRules customRulesFromDict(NSDictionary* incomingDict, BOOL expertMode)
+{
+  //! TODO: Ghidra doesn't like this...
+  return defaultCustomRules(expertMode);
+}
+
 void GENERATE_CUSTOM_RULE_GAME_OPTIONS(void)
 {
+  //! TODO: Ghidra doesn't like this...
+  //* I believe it is setting a global variable somwhere...
 }
 
 void GENERATE_CUSTOM_RULE_WORLD_GEN_OPTIONS(void)
 {
+  //! TODO: Ghidra doesn't like this...
+  //* I believe it is setting a global variable somwhere...
 }
 
 NSString* getCreditTimeString(float seconds)
