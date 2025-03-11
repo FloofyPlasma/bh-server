@@ -25,7 +25,7 @@
 - (BOOL)occupiesNormalContents;
 - (int)interactionRenderItemType;
 - (BOOL)canBeUsedByBlockhead:(id)arg1;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (int)destroyItemType;
 - (BOOL)requiresSingleLineTextEditing;
 - (id)text;

@@ -18,7 +18,7 @@
 
 @property float partialContent; // @synthesize partialContent;
 - (void)setNeedsRemoved:(BOOL)arg1;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (BOOL)removeIfFloating;
 - (void)removeAllSnow;
 - (void)updateSnowContent:(BOOL)arg1 tile:(struct Tile*)arg2;

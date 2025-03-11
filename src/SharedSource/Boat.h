@@ -46,7 +46,7 @@
 - (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
 - (BOOL)isDoubleHeight;
 - (id)actionTitle;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (Vector2)cameraPosForBlockhead:(id)arg1;
 - (float)riderBodyZRotation;
 - (float)riderBodyYRotationForBlockhead:(id)arg1;

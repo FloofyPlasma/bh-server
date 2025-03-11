@@ -23,7 +23,7 @@
 
 - (void)addContributionForPhysicalBlockLoadedAtXPos:(int)arg1 yPos:(int)arg2;
 - (void)removeFromMacroBlock;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (void)dealloc;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1

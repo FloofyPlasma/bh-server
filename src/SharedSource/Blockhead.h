@@ -399,8 +399,8 @@ struct InteractionTestResult {
 - (id)currentItemSlot;
 - (BOOL)requiresPhysicalBlock;
 - (void)craftItemFinished:(BOOL)arg1 atWorkbench:(id)arg2;
-- (void)worldContentsChanged:(vector_07678c45*)arg1;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (int)moveInventoryItemsFromArray:(id)arg1
                          fromIndex:(int)arg2
                       fromSubIndex:(int)arg3

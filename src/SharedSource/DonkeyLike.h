@@ -73,7 +73,7 @@
 - (BOOL)requiresFuel;
 - (int)rideDirection;
 - (BOOL)jumpsOnSwipe;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (Vector2)cameraPosForBlockhead:(id)arg1;
 - (float)riderBodyZRotationForBlockhead:(id)arg1;
 - (float)riderBodyYRotationForBlockhead:(id)arg1;

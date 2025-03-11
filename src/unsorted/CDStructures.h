@@ -1099,7 +1099,7 @@ typedef struct vector<intpair, std::__1::allocator<intpair>> {
     struct __compressed_pair<intpair *, std::__1::allocator<intpair>> {
         CDStruct_183601bc *__value_;
     } __end_cap_;
-} vector_07678c45;
+} std::vector<intpair>;
 
 #pragma mark Named Unions
 

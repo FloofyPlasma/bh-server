@@ -46,7 +46,7 @@
 - (BOOL)isRequiredSoilType:(int)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)isGrowingInCompost;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (void)setFlowering:(BOOL)arg1;
 - (void)remoteUpdate:(id)arg1;
 - (id)creationNetDataForClient:(id)arg1;

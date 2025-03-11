@@ -57,7 +57,7 @@
 - (void)successfulTame;
 - (void)reactToBeingFed;
 - (void)blockheadUnloaded:(id)arg1;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (Vector2)renderPos;
 - (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
 - (void)reactToBeingHit;

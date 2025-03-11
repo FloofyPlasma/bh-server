@@ -5,6 +5,8 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
+#include <vector>
+
 #import <Foundation/NSObject.h>
 
 #import "MJMath.h"
@@ -89,10 +91,10 @@
 - (void)remoteUpdate:(id)arg1;
 - (id)updateNetDataForClient:(id)arg1;
 - (id)creationNetDataForClient:(id)arg1;
-- (void)waterContentChanged:(vector_07678c45*)arg1;
-- (void)worldContentsChanged:(vector_07678c45*)arg1;
+- (void)waterContentChanged:(std::vector<intpair>*)arg1;
+- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
 - (BOOL)shouldSaveEveryChangeInPosition;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (BOOL)requiresPhysicalBlock;
 - (void)updatePosition:(intpair)arg1;
 - (void)draw:(float)arg1

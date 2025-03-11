@@ -132,8 +132,8 @@
 - (void)setNoLongerWaitingForPath;
 - (void)setWaitingForPathToPos:(intpair)arg1;
 - (id)infoForPathRecalculation;
-- (void)worldContentsChanged:(vector_07678c45*)arg1;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (void)setPath:(id)arg1
                type:(int)arg2
     goalInteraction:(int)arg3

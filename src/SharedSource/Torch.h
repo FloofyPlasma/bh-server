@@ -39,9 +39,9 @@
 - (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
 - (int)renderImageIndex;
 - (void)setNeedsRemoved:(BOOL)arg1;
-- (void)worldChanged:(vector_07678c45*)arg1;
-- (void)worldContentsChanged:(vector_07678c45*)arg1;
-- (void)waterContentChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
+- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
+- (void)waterContentChanged:(std::vector<intpair>*)arg1;
 - (void)remoteUpdate:(id)arg1;
 - (void)draw:(float)arg1
     projectionMatrix:(union _GLKMatrix4)arg2

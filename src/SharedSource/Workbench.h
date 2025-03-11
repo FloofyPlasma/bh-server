@@ -135,7 +135,7 @@
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (BOOL)requiresHumanInteraction;
 - (void)startManagingFuelWithBlockhead:(id)arg1;
 - (BOOL)craftItem:(id)arg1

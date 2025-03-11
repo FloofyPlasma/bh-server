@@ -51,8 +51,8 @@
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (void)worldContentsChanged:(vector_07678c45*)arg1;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)contentsDidChange;
 - (int)moveInventoryItemsFromArray:(id)arg1 toIndex:(int)arg2 count:(int)arg3;

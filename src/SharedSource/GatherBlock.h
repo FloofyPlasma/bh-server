@@ -12,7 +12,7 @@
   int lastKnownGatherValue;
 }
 
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1

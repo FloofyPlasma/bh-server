@@ -33,7 +33,7 @@
 - (int)staticGeometryDrawCubeCount;
 - (int)staticGeometryDrawCubeCountLocal;
 - (int)imageIndex;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;

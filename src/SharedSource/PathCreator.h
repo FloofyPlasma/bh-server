@@ -36,7 +36,7 @@
   struct map<int, int, std::__1::less<int>,
       std::__1::allocator<std::__1::pair<const int, int>>>
       derivedTileIndices;
-  vector_07678c45 elevatorBlacklist;
+  std::vector<intpair> elevatorBlacklist;
 }
 
 @property (readonly) NSDictionary* extraData; // @synthesize extraData;

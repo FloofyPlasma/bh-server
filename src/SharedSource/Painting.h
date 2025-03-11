@@ -30,7 +30,7 @@
 - (BOOL)isDoubleHeight;
 - (id)actionTitle;
 - (void)removeFromMacroBlock;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;

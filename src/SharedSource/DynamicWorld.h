@@ -66,16 +66,16 @@
   Vector<DynamicObject*, std::__1::allocator<DynamicObject*>>
       partialUpdateOrderedObjects[65];
   int partialUpdateCurrentIndex[65];
-  vector_07678c45 worldChangedPositions;
-  vector_07678c45 worldChangedSendUnreliablyMacroPositions;
-  vector_07678c45 snowChangedMacroPositions;
-  vector_07678c45 worldChangedDontSendMacroPositions;
-  vector_07678c45 lightChangedSendUnreliablyMacroPositionsSingleClient[32];
-  vector_07678c45 waterChangedPositions;
-  vector_07678c45 worldContentsChangedPositions;
-  vector_07678c45 worldPartialContentChangedPositions;
-  vector_07678c45 dynamicWorldChangedMacroPositions[65];
-  vector_07678c45 worldChangedMacroPositions;
+  std::vector<intpair> worldChangedPositions;
+  std::vector<intpair> worldChangedSendUnreliablyMacroPositions;
+  std::vector<intpair> snowChangedMacroPositions;
+  std::vector<intpair> worldChangedDontSendMacroPositions;
+  std::vector<intpair> lightChangedSendUnreliablyMacroPositionsSingleClient[32];
+  std::vector<intpair> waterChangedPositions;
+  std::vector<intpair> worldContentsChangedPositions;
+  std::vector<intpair> worldPartialContentChangedPositions;
+  std::vector<intpair> dynamicWorldChangedMacroPositions[65];
+  std::vector<intpair> worldChangedMacroPositions;
   NSMutableIndexSet* portalPositions;
   CPCache* cache;
   NoiseFunction* treeDensityNoiseFunction;

@@ -34,7 +34,7 @@
 - (void)setNeedsRemoved:(BOOL)arg1;
 - (BOOL)isOpen;
 - (void)setOpen:(BOOL)arg1 direction:(int)arg2;
-- (void)worldChanged:(vector_07678c45*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)arg1;
 - (unsigned short)freeBlockCreationDataB;
 - (unsigned short)freeBlockCreationDataA;
 - (id)freeBlockCreationSaveDict;
