@@ -5,4 +5,4 @@ CompileFlags:
     - "-Isrc/Mac/BlockheadsServer/BlockheadsServer"
     - "-Isrc/Mac/BlockheadsServer/blockheads_server"
     - "-Isrc/SharedSource"
-   
+    - "-fobjc-nonfragile-abi"
