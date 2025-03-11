@@ -5,16 +5,25 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import "DynamicObject.h"
+#include <cstdint>
 
+#import "DynamicObject.h"
 #import "HarmableDynamicObject-Protocol.h"
+#import "InventoryItem.h"
 #import "PathUserDynamicObject-Protocol.h"
 
 @class BlockheadAI, CPTexture2D, DrawCube, FishingRod, InteractionObject,
-    InventoryItem, MJSound, MJTextView, NSArray, NSDictionary, NSMutableArray,
+    MJSound, MJTextView, NSArray, NSDictionary, NSMutableArray,
     NSMutableDictionary, NSMutableIndexSet, NSString, Shader, Workbench;
 @protocol HarmableDynamicObject
 , RidableDynamicObject;
+
+struct InteractionTestResult {
+  int goodOrBad;
+  ItemType renderItemType;
+  uint16_t renderItemDataA;
+  uint16_t renderItemDataB;
+};
 
 @interface Blockhead
     : DynamicObject <PathUserDynamicObject, HarmableDynamicObject> {
