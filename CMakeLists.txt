@@ -28,7 +28,7 @@ set(SOURCE_FILES src/Mac/BlockheadsServer/blockheads_server/main.mm)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 include_directories(
-    src/Linux
+    src/Linux/GLKit
     src/Linux/blockheads
     src/Mac/BlockheadsServer/blockheads_server
     src/Mac/blockheadsServer/BlockheadsServer
