@@ -10,5 +10,5 @@
 @class DynamicObject;
 
 @protocol ProxyObjectOwner <NSObject>
-- (void)childNeedsSaving:(DynamicObject*)arg1;
+- (void)childNeedsSaving:(DynamicObject*)child;
 @end
