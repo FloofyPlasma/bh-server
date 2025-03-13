@@ -6,10 +6,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Flurry : NSObject
-{
+@interface Flurry : NSObject {
 }
 
-+ (void)logEvent:(id)arg1 withParameters:(id)arg2;
++ (void)logEvent:(NSString*)event withParameters:(NSDictionary*)articleParams;
 
 @end
