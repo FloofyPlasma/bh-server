@@ -1,11 +1,10 @@
-#include <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
 
 int main()
 {
-    @autoreleasepool
-    {
-        NSLog(@"Hello, world!");
-    }
+  @autoreleasepool {
+    NSLog(@"Hello, world!");
+  }
 
-    return 0;
+  return 0;
 }
