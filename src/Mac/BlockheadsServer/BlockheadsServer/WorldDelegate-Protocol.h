@@ -10,24 +10,24 @@
 @class Blockhead, Database, DatabaseEnvironment, NSDictionary, NSString;
 
 @protocol WorldDelegate
-- (void)viewServerWelcomeMessage:(NSString*)arg1
-                     customRules:(NSDictionary*)arg2
-                       allowEdit:(BOOL)arg3;
-- (void)showDieConfirmationForBlockhead:(Blockhead*)arg1;
-- (void)pinchZoomToScale:(float)arg1;
+- (void)viewServerWelcomeMessage:(NSString*)message
+                     customRules:(NSDictionary*)customRulesToUse
+                       allowEdit:(BOOL)allowEdit;
+- (void)showDieConfirmationForBlockhead:(Blockhead*)dieBlockhead;
+- (void)pinchZoomToScale:(float)scale;
 - (void)hideChatView;
 - (void)showChatUI;
-- (void)fileWriteFailed:(NSString*)arg1;
-- (void)showBlockheadAvailablePrompt:(int)arg1;
-- (BOOL)showDoubleTimePromptIfGoodTime:(NSString*)arg1;
+- (void)fileWriteFailed:(NSString*)savePath;
+- (void)showBlockheadAvailablePrompt:(int)nextBlockheadIndex;
+- (BOOL)showDoubleTimePromptIfGoodTime:(NSString*)priceString;
 - (void)instructionsButtonTapped;
 - (void)achievementsButtonTapped;
-- (NSString*)messageForAchivementWithIdentifier:(NSString*)arg1;
-- (NSDictionary*)getDefaultGameSaveForWorldWithID:(NSString*)arg1;
+- (NSString*)messageForAchivementWithIdentifier:(NSString*)identifier;
+- (NSDictionary*)getDefaultGameSaveForWorldWithID:(NSString*)saveID;
 - (void)updateiCloudRecentConnectionList;
 - (BOOL)secondaryTouchCancelled;
 - (void)presentSavedToCameraRollAlert;
-- (void)render:(float)arg1;
+- (void)render:(float)dt;
 - (void)startIncentivizedVideo;
 - (BOOL)hasRewardedVideoAvailable;
 - (DatabaseEnvironment*)appDatabaseEnvironment;
@@ -35,8 +35,8 @@
 - (void)iapStarted;
 - (void)exitWorld;
 - (void)startCameraZoomForTeaserRecord;
-- (void)setPaused:(BOOL)arg1;
+- (void)setPaused:(BOOL)paused;
 - (void)connectionToServerOK;
-- (void)connectionToServerLostShouldRetry:(BOOL)arg1;
-- (void)showWelcomeBackPopupWithMessage:(NSString*)arg1;
+- (void)connectionToServerLostShouldRetry:(BOOL)shouldRetry;
+- (void)showWelcomeBackPopupWithMessage:(NSString*)simulationEventsMessage;
 @end
