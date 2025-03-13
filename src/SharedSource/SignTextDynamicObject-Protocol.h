@@ -5,7 +5,7 @@
 //  Copyright (C) 1997-2019 Steve Nygard.
 //
 
-#import "NSObject-Protocol.h"
+#import <Foundation/Foundation.h>
 
 @class NSString;
 
