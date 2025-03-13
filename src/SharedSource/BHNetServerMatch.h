@@ -7,7 +7,7 @@
 
 #import "BHMatch.h"
 
-#import "NSNetServiceDelegate-Protocol.h"
+// #import "NSNetServiceDelegate-Protocol.h"
 
 @class NSMutableArray, NSMutableDictionary, NSNetService, NSString, NSTimer;
 
@@ -73,11 +73,5 @@
          ownerName:(id)arg8
            privacy:(id)arg9;
 - (void)setPrivacyByString:(id)arg1;
-
-// Remaining properties
-@property (readonly, copy) NSString* debugDescription;
-@property (readonly, copy) NSString* description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
 
 @end

@@ -6,18 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#include <vector>
 #import <GLKit/GLKMathTypes.h>
+#include <map>
 #include <unordered_set>
 
 #import "GameConstants.h"
 #import "MJMath.h"
 #import "Vector.h"
 
-struct BlockheadDamageNetRequest
-{
-    uint64_t blockheadID;
-    Float32 damage;
-    uint8_t recoil;
+struct BlockheadDamageNetRequest {
+  uint64_t blockheadID;
+  Float32 damage;
+  uint8_t recoil;
 };
 
 struct DrawBlock {
@@ -25,95 +26,85 @@ struct DrawBlock {
   int yPos;
 };
 
-struct ElectricityParticleHeader
-{
-    uint16_t size;
-    uint16_t pathCount;
-    uint8_t padding[4];
+struct ElectricityParticleHeader {
+  uint16_t size;
+  uint16_t pathCount;
+  uint8_t padding[4];
 };
 
-struct FillNetRequest
-{
-    uint32_t posX;
-    uint32_t posY;
-    uint16_t type;
-    uint16_t dataA;
-    uint16_t dataB;
-    uint8_t zIndex;
-    uint8_t padding[1];
+struct FillNetRequest {
+  uint32_t posX;
+  uint32_t posY;
+  uint16_t type;
+  uint16_t dataA;
+  uint16_t dataB;
+  uint8_t zIndex;
+  uint8_t padding[1];
 };
 
-struct GatherNetRequest
-{
-    uint32_t posX;
-    uint32_t posY;
-    uint8_t gatherProgress;
-    uint8_t padding[7];
+struct GatherNetRequest {
+  uint32_t posX;
+  uint32_t posY;
+  uint8_t gatherProgress;
+  uint8_t padding[7];
 };
 
-struct PaintNetRequest
-{
-    uint64_t paintBlockheadID;
-    uint32_t posX;
-    uint32_t posY;
-    uint16_t colorIndex;
-    uint8_t faceIndex;
-    uint8_t padding[5];
+struct PaintNetRequest {
+  uint64_t paintBlockheadID;
+  uint32_t posX;
+  uint32_t posY;
+  uint16_t colorIndex;
+  uint8_t faceIndex;
+  uint8_t padding[5];
 };
 
-struct PlaceInteractionObjectNetRequest
-{
-    uint32_t posX;
-    uint32_t posY;
+struct PlaceInteractionObjectNetRequest {
+  uint32_t posX;
+  uint32_t posY;
 };
 
-struct PlaceWorkbenchNetRequest
-{
-    uint32_t posX;
-    uint32_t posY;
-    uint8_t workbenchType;
-    uint8_t padding[7];
+struct PlaceWorkbenchNetRequest {
+  uint32_t posX;
+  uint32_t posY;
+  uint8_t workbenchType;
+  uint8_t padding[7];
 };
 
-struct ProjectileNetRequest
-{
-    Float32 fromPosX;
-    Float32 fromPosY;
-    Float32 toPosX;
-    Float32 toPosY;
-    uint16_t itemType;
+struct ProjectileNetRequest {
+  Float32 fromPosX;
+  Float32 fromPosY;
+  Float32 toPosX;
+  Float32 toPosY;
+  uint16_t itemType;
 };
 
-struct RemoveBackWallNetRequest
-{
-    uint64_t removeBlockheadID;
-    uint32_t posX;
-    uint32_t posY;
+struct RemoveBackWallNetRequest {
+  uint64_t removeBlockheadID;
+  uint32_t posX;
+  uint32_t posY;
 };
 
-struct RemoveNetRequest
-{
-    uint64_t removeBlockheadID;
-    uint32_t posX;
-    uint32_t posY;
-    uint8_t createContentsFreeblockCount;
-    uint8_t createForegroundContentsFreeblockCount;
-    uint8_t isWaterRemoval;
-    uint8_t onlyRemoveContents;
-    uint8_t onlyRemoveForegroundContents;
-    uint8_t zIndex;
-    uint8_t padding[2];
+struct RemoveNetRequest {
+  uint64_t removeBlockheadID;
+  uint32_t posX;
+  uint32_t posY;
+  uint8_t createContentsFreeblockCount;
+  uint8_t createForegroundContentsFreeblockCount;
+  uint8_t isWaterRemoval;
+  uint8_t onlyRemoveContents;
+  uint8_t onlyRemoveForegroundContents;
+  uint8_t zIndex;
+  uint8_t padding[2];
 };
 
-struct WorldHeartbeat
-{
-    Float32 worldTime;
-    Float32 noRainTimer;
-    BOOL fastForward;
-    BOOL localPaused;
-    BOOL allPaused;
-    BOOL pvpDisabled;
-    Float32 credit;
+struct WorldHeartbeat {
+  Float32 worldTime;
+  Float32 noRainTimer;
+  BOOL fastForward;
+  BOOL localPaused;
+  BOOL allPaused;
+  BOOL pvpDisabled;
+  Float32 credit;
 };
 
 struct Tile {
@@ -260,10 +251,10 @@ struct MacroTile {
   double worldTime;
   NoiseFunction* weatherNoiseFunction;
   Vector sunDirection;
-  _GLKVector3 relativeSunDirection;
-  _GLKMatrix4 sunMvpMatrix;
-  _GLKMatrix4 moonMvpMatrix;
-  _GLKMatrix4 starsMvpMatrix;
+  GLKVector3 relativeSunDirection;
+  GLKMatrix4 sunMvpMatrix;
+  GLKMatrix4 moonMvpMatrix;
+  GLKMatrix4 starsMvpMatrix;
   float timeOfDayFraction;
   float backgroundYOffset;
   Vector dayColor;
@@ -337,9 +328,7 @@ struct MacroTile {
   NSMutableIndexSet* clientTCMinedIndices;
   FNImageData* mapPixelData;
   NSOperationQueue* saveQueue;
-  struct map<int, unsigned char*, std::__1::less<int>,
-      std::__1::allocator<std::__1::pair<const int, unsigned char*>>>
-      latestMapData;
+  std::map<int, unsigned char*> latestMapData;
   ProjectileManager* projectileManager;
   BOOL isOwner;
   BOOL isAdmin;
@@ -551,7 +540,7 @@ struct MacroTile {
 - (void)setPVPEnabled:(BOOL)arg1 displayNotifciation:(BOOL)arg2;
 - (void)sendAndDisplayAirTimeTipWithDistance:(float)arg1;
 - (void)electricityPathDataRecieved:(id)arg1 fromClient:(id)arg2;
-- (void)sendNetDataForElectricityParticlePathIfRequired:(vector_4ecf5f14)arg1
+- (void)sendNetDataForElectricityParticlePathIfRequired:(std::vector<ElectricityParticleHeader>)arg1
                                                    size:(float)arg2
                                            ignoreClient:(id)arg3;
 - (void)remoteBlockheadDamageRequest:(id)arg1 requestedByClientName:(id)arg2;
