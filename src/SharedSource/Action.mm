@@ -1,4 +1,5 @@
 #import "Action.h"
+#import "CraftableItemObject.h"
 
 @implementation Action
 
@@ -19,15 +20,6 @@
 @synthesize complete;
 @synthesize inProgress;
 
-- (void)dealloc
-{
-  [self->interactionItem autorelease];
-  [self->craftableItemObject autorelease];
-  [self->blockCube autorelease];
-  [self->inventoryChange autorelease];
-
-  [super dealloc];
-}
 
 //* I belive this is correct, but it's all speculation.
 - (NSMutableDictionary*)getSaveDict
@@ -71,7 +63,6 @@
 
     //! TODO: Finish this section, it does something with self->animationTimer.
 
-    [self->interactionItem retain];
     self->goalInteraction = (InteractionType)[[saveDict objectForKey:@"goalInteraction"] intValue];
     self->pathType = (PathType)[[saveDict objectForKey:@"pathType"] intValue];
     self->interactionObjectID = [[saveDict objectForKey:@"interactionObjectID"] unsignedLongLongValue];
@@ -79,14 +70,14 @@
     //! TODO: Finish this section, it does something ith self->craftableItemObject.
 
     self->craftCountOrExtraData = [[saveDict objectForKey:@"craftCountOrExtraData"] unsignedLongValue];
-    self->inventoryChange = [[saveDict objectForKey:@"inventoryChange"] retain];
+    self->inventoryChange = [saveDict objectForKey:@"inventoryChange"];
     [[saveDict objectForKey:@"interactionTestResult"] getBytes:&self->interactionTestResult length:12];
   }
 
   return self;
 }
 
-- (Action*)initWithGoalPos:(intpair)goalTilePos_ goalInteraction:(InteractionType)goalInteraction_ pathType:(PathType)pathType_ interactionItem:(InventoryItem*)interactionItem_ itemIndex:(uint16_t)interactionItemIndex_ itemSubIndex:(uint16_t)interactionSubItemIndex_ interactionObjectID:(uint64_t)interactionObjectID_ craftableItemObject:(CraftableItemObject*)craftableItemObject_ craftCountOrExtraData:(uint16_t)craftCountOrExtraData_ isAI:(bool)isAI_ inventoryChange:(NSDictionary*)inventoryChange_
+- (Action*)initWithGoalPos:(intpair)goalTilePos_ goalInteraction:(InteractionType)goalInteraction_ pathType:(PathType)pathType_ interactionItem:(InventoryItem*)interactionItem_ itemIndex:(uint16_t)interactionItemIndex_ itemSubIndex:(uint16_t)interactionSubItemIndex_ interactionObjectID:(uint64_t)interactionObjectID_ craftableItemObject:(CraftableItemObject*)craftableItemObject_ craftCountOrExtraData:(uint16_t)craftCountOrExtraData_ isAI:(BOOL)isAI_ inventoryChange:(NSDictionary*)inventoryChange_
 {
   self = [super init];
 
@@ -94,14 +85,14 @@
     self->goalTilePos = goalTilePos_;
     self->goalInteraction = goalInteraction_;
     self->pathType = pathType_;
-    self->interactionItem = [interactionItem_ retain];
+    self->interactionItem = interactionItem_;
     self->interactionItemIndex = interactionItemIndex_;
     self->interactionItemSubIndex = interactionSubItemIndex_;
     self->interactionObjectID = interactionObjectID_;
-    self->craftableItemObject = [craftableItemObject_ retain];
+    self->craftableItemObject = craftableItemObject_;
     self->craftCountOrExtraData = craftCountOrExtraData_;
     self->isAI = isAI_;
-    self->inventoryChange = [inventoryChange_ retain];
+    self->inventoryChange = inventoryChange_;
   }
 
   return self;

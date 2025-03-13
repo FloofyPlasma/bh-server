@@ -49,7 +49,6 @@
 @property BOOL complete;
 @property BOOL inProgress;
 
-- (void)dealloc;
 - (NSMutableDictionary*)getSaveDict;
 - (Action*)initWithSaveDict:(NSDictionary*)saveDict inventoryItems:(NSArray*)inventoryItems;
 - (Action*)initWithGoalPos:(intpair)goalTilePos_
