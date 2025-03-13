@@ -7,10 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MJMath.h"
+
 @class Blockhead, NoiseFunction, World;
 
-@interface BlockheadAI : NSObject
-{
+@interface BlockheadAI : NSObject {
   Blockhead* blockhead;
   World* world;
   intpair foundTilePos[16];
@@ -33,9 +34,8 @@
 }
 
 - (void)noPathToAction;
-- (void)update:(float)arg1 isSimulation:(BOOL)arg2;
-- (BOOL)testTileAtPos:(intpair)arg1;
-- (void)dealloc;
-- (id)initWithBlockhead:(id)arg1 world:(id)arg2;
+- (void)update:(float)dt isSimulation:(BOOL)isSimulation;
+- (BOOL)testTileAtPos:(intpair)pos;
+- (BlockheadAI*)initWithBlockhead:(Blockhead*)blockhead_ world:(World*)world_;
 
 @end
