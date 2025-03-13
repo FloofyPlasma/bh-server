@@ -11,6 +11,6 @@
 
 @protocol SignTextDynamicObject <NSObject>
 - (BOOL)requiresSingleLineTextEditing;
-- (void)setText:(NSString*)arg1;
+- (void)setText:(NSString*)newText;
 - (NSString*)text;
 @end
