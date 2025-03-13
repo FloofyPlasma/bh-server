@@ -10,8 +10,7 @@
 @class NSOperationQueue, NSString;
 @protocol CrystalManagerWatcher;
 
-@interface CrystalManager : NSObject
-{
+@interface CrystalManager : NSObject {
   NSOperationQueue* saveQueue;
   int crystalCount;
   NSString* amountString;
@@ -19,17 +18,19 @@
   BOOL needsSave;
 }
 
-+ (id)instance;
 @property (readonly) NSString* amountString; // @synthesize amountString;
 @property (readonly) BOOL needsSave; // @synthesize needsSave;
-@property id<CrystalManagerWatcher> countWatcher; // @synthesize countWatcher;
-- (id)iCloudServerRejoinID;
-- (id)iCloudID;
-- (void)modify:(int)arg1 modifyString:(id)arg2;
+//! TODO: WHAT ARE YOU MYSTERIOUS ID???
+@property id<CrystalManagerWatcher> countWatcher; // @synthesize countWatcher; 
+
++ (CrystalManager*)instance;
+- (NSString*)iCloudServerRejoinID;
+- (NSString*)iCloudID;
+- (void)modify:(int)count modifyString:(NSString*)modifyString;
 - (void)save;
 - (void)commitSaveIfNeeded;
 - (int)amount;
 - (void)loadFromSave;
-- (id)init;
+- (CrystalManager*)init;
 
 @end
