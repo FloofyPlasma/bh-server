@@ -13,9 +13,107 @@
 #import "MJMath.h"
 #import "Vector.h"
 
+struct BlockheadDamageNetRequest
+{
+    uint64_t blockheadID;
+    Float32 damage;
+    uint8_t recoil;
+};
+
 struct DrawBlock {
   int xPos;
   int yPos;
+};
+
+struct ElectricityParticleHeader
+{
+    uint16_t size;
+    uint16_t pathCount;
+    uint8_t padding[4];
+};
+
+struct FillNetRequest
+{
+    uint32_t posX;
+    uint32_t posY;
+    uint16_t type;
+    uint16_t dataA;
+    uint16_t dataB;
+    uint8_t zIndex;
+    uint8_t padding[1];
+};
+
+struct GatherNetRequest
+{
+    uint32_t posX;
+    uint32_t posY;
+    uint8_t gatherProgress;
+    uint8_t padding[7];
+};
+
+struct PaintNetRequest
+{
+    uint64_t paintBlockheadID;
+    uint32_t posX;
+    uint32_t posY;
+    uint16_t colorIndex;
+    uint8_t faceIndex;
+    uint8_t padding[5];
+};
+
+struct PlaceInteractionObjectNetRequest
+{
+    uint32_t posX;
+    uint32_t posY;
+};
+
+struct PlaceWorkbenchNetRequest
+{
+    uint32_t posX;
+    uint32_t posY;
+    uint8_t workbenchType;
+    uint8_t padding[7];
+};
+
+struct ProjectileNetRequest
+{
+    Float32 fromPosX;
+    Float32 fromPosY;
+    Float32 toPosX;
+    Float32 toPosY;
+    uint16_t itemType;
+};
+
+struct RemoveBackWallNetRequest
+{
+    uint64_t removeBlockheadID;
+    uint32_t posX;
+    uint32_t posY;
+};
+
+struct RemoveNetRequest
+{
+    uint64_t removeBlockheadID;
+    uint32_t posX;
+    uint32_t posY;
+    uint8_t createContentsFreeblockCount;
+    uint8_t createForegroundContentsFreeblockCount;
+    uint8_t isWaterRemoval;
+    uint8_t onlyRemoveContents;
+    uint8_t onlyRemoveForegroundContents;
+    uint8_t zIndex;
+    uint8_t padding[2];
+};
+
+struct WorldHeartbeat
+{
+    Float32 worldTime;
+    Float32 noRainTimer;
+    BOOL fastForward;
+    BOOL localPaused;
+    BOOL allPaused;
+    BOOL pvpDisabled;
+    Float32 credit;
 };
 
 struct Tile {
@@ -56,8 +154,8 @@ struct PhysicalBlock {
   NSTimeInterval lastRequiredTime;
   uint32_t updateIndex;
   uint32_t lightBlockUpdateIndex;
-  u_int8_t* clientLightBlocks[32];
-  u_int8_t clientExplored[32];
+  uint8_t* clientLightBlocks[32];
+  uint8_t clientExplored[32];
 };
 
 struct MacroTile {
