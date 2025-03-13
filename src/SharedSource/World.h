@@ -7,8 +7,9 @@
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
+#include <unordered_set>
 
-#include "GameConstants.h"
+#import "GameConstants.h"
 #import "MJMath.h"
 #import "Vector.h"
 
