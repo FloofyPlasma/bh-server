@@ -1,6 +1,11 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+
+struct FireCreationNetData
+{
+    DynamicObjectNetData dynamicObjectNetData;
+};
 
 @class ArtificialLight, CPTexture2D, Shader;
 

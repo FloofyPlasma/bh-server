@@ -1,13 +1,12 @@
-
-
 #import <Foundation/Foundation.h>
-#include <vector>
 #import <GLKit/GLKMathTypes.h>
 #include <map>
 #include <unordered_set>
+#include <vector>
 
 #import "GameConstants.h"
 #import "MJMath.h"
+#import "ParticleEmitter.h"
 #import "Vector.h"
 
 struct BlockheadDamageNetRequest {
@@ -154,13 +153,7 @@ struct MacroTile {
   float timePhysicalBlockCreated;
 };
 
-@class BHClient, BHServer, CPCache, CPTexture2D, ClientTileLoader,
-    CloudInterface, Database, DatabaseConvertor, DatabaseEnvironment,
-    DynamicWorld, FNImageData, NSData, NSDate, NSDictionary, NSIndexSet,
-    NSMutableArray, NSMutableData, NSMutableDictionary, NSMutableIndexSet,
-    NSOperationQueue, NSString, NSTimer, NSURLConnection, NoiseFunction,
-    OwnershipAreaRenderer, PathCreator, PortalChestManager, ProjectileManager,
-    Shader, Tutorial, UIManager, Weather, WorldTileLoader;
+@class BHClient, BHServer, CPCache, CPTexture2D, ClientTileLoader, CloudInterface, Database, DatabaseConvertor, DatabaseEnvironment, DynamicWorld, FNImageData, NoiseFunction, OwnershipAreaRenderer, PathCreator, PortalChestManager, ProjectileManager, Shader, Tutorial, UIManager, Weather, WorldTileLoader;
 @protocol WorldDelegate;
 
 @interface World : NSObject {
@@ -535,7 +528,7 @@ struct MacroTile {
 - (void)setPVPEnabled:(BOOL)arg1 displayNotifciation:(BOOL)arg2;
 - (void)sendAndDisplayAirTimeTipWithDistance:(float)arg1;
 - (void)electricityPathDataRecieved:(id)arg1 fromClient:(id)arg2;
-- (void)sendNetDataForElectricityParticlePathIfRequired:(std::vector<ElectricityParticleHeader>)arg1
+- (void)sendNetDataForElectricityParticlePathIfRequired:(std::vector<ElectricityParticlePathIndex>)arg1
                                                    size:(float)arg2
                                            ignoreClient:(id)arg3;
 - (void)remoteBlockheadDamageRequest:(id)arg1 requestedByClientName:(id)arg2;

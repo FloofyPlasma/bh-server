@@ -1,6 +1,23 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+
+enum StairsConfiguration {
+  STAIRS_UNDEFINED = 0x0,
+  STAIRS_HIGH_RIGHT_SOLID = 0x1,
+  STAIRS_HIGH_LEFT_SOLID = 0x2,
+  STAIRS_HIGH_RIGHT_FLOATING = 0x3,
+  STAIRS_HIGH_LEFT_FLOATING = 0x4,
+};
+
+struct StairsCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  uint8_t configuration;
+  uint8_t paddingA;
+  uint16_t paintColor;
+  uint8_t padding[2];
+};
 
 @interface Stairs : DynamicObject {
   int itemType;

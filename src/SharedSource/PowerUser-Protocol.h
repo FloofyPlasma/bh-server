@@ -1,6 +1,4 @@
-
-
-#import "NSObject-Protocol.h"
+#import <Foundation/Foundation.h>
 
 @protocol PowerUser <NSObject>
 - (BOOL)isStorageDevice;

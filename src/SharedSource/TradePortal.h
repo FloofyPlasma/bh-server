@@ -1,8 +1,14 @@
-
+#import <Foundation/Foundation.h>
 
 #import "InteractionObject.h"
 
-@class ArtificialLight, MJSound, NSDictionary, NSMutableDictionary;
+struct TradePortalNetData {
+  InteractionObjectCreationNetData interactionObjectCreationNetData;
+  uint8_t level;
+  uint8_t padding[7];
+};
+
+@class ArtificialLight, MJSound;
 
 @interface TradePortal : InteractionObject {
   ArtificialLight* light;

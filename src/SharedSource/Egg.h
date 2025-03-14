@@ -1,8 +1,13 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
-@class NSDictionary;
+struct EggCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t breed;
+  uint16_t hatchTimer;
+  uint8_t padding[4];
+};
 
 @interface Egg : DynamicObject {
   NSDictionary* genesDict;

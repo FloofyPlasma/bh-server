@@ -1,5 +1,3 @@
-
-
 #import <Foundation/NSData.h>
 
 @interface NSData (CompressionMethods)

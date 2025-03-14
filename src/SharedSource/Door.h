@@ -1,8 +1,14 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
-@class NSString;
+struct DoorCreationNetData
+{
+    DynamicObjectNetData dynamicObjectNetData;
+    uint16_t itemType;
+    uint8_t blocked;
+    uint8_t padding[5];
+};
 
 @interface Door : DynamicObject {
   BOOL open;

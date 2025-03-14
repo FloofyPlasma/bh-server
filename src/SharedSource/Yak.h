@@ -1,6 +1,18 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DonkeyLike.h"
+
+struct YakUpdateNetData {
+  DonkeyLikeUpdateNetData donkeyLikeUpdateNetData;
+  int16_t milk;
+  int16_t hair;
+  uint8_t padding[4];
+};
+
+struct YakCreationNetData {
+  DonkeyLikeCreationNetData donkeyLikeCreationNetData;
+  YakUpdateNetData yakUpdateNetData;
+};
 
 @class CPTexture2D, DrawCube;
 

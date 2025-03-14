@@ -1,10 +1,17 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
-
 #import "PowerUser-Protocol.h"
 
-@class NSString;
+struct ElevatorMotorCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  uint16_t availableElectricity;
+  uint16_t minY;
+  uint16_t maxY;
+  uint16_t clientPowerUsage;
+  uint8_t padding[6];
+};
 
 @interface ElevatorMotor : DynamicObject <PowerUser> {
   int itemType;

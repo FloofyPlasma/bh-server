@@ -1,6 +1,21 @@
-
+#import <Foundation/Foundation.h>
 
 #import "NPC.h"
+
+struct DodoUpdateNetData {
+  NPCUpdateNetData npcUpdateNetData;
+  uint32_t toSquareX;
+  uint32_t toSquareY;
+  int16_t walkSpeed;
+  int8_t movementDirection;
+  int8_t jumpAndCluck;
+  int8_t padding[3];
+};
+
+struct DodoCreationNetData {
+  NPCCreationNetData npcCreationNetData;
+  DodoUpdateNetData dodoUpdateNetData;
+};
 
 @class CPTexture2D, DrawCube, Shader;
 

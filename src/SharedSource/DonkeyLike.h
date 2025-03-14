@@ -1,6 +1,20 @@
-
+#import <Foundation/Foundation.h>
 
 #import "NPC.h"
+
+struct DonkeyLikeUpdateNetData {
+  NPCUpdateNetData npcUpdateNetData;
+  int16_t targetXSpeed;
+  int16_t walkSpeed;
+  int16_t randomGoalRotation;
+  uint8_t jumpActionSendValue;
+  uint8_t padding;
+};
+
+struct DonkeyLikeCreationNetData {
+  NPCCreationNetData npcCreationNetData;
+  DonkeyLikeUpdateNetData donkeyLikeUpdateNetData;
+};
 
 @class CPTexture2D, DrawCube, MJMultiSound, Shader;
 

@@ -1,10 +1,15 @@
-
+#import <Foundation/Foundation.h>
 
 #import "TrainCar.h"
 
 #import "ProxyObjectOwner-Protocol.h"
 
-@class Chest, DrawCube, NSString;
+struct FreightCarCreationNetData
+{
+    TrainCarCreationNetData trainCarCreationNetData;
+};
+
+@class Chest, DrawCube;
 
 @interface FreightCar : TrainCar <ProxyObjectOwner> {
   DrawCube* platformCube;

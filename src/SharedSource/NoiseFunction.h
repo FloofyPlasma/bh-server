@@ -1,11 +1,22 @@
-
-
 #import <Foundation/Foundation.h>
 
-@interface NoiseFunction : NSObject
-{
+struct NoiseFunctionStruct {
+  int p[2050];
+  double g3[2050][3];
+  double g2[2050][2];
+  int frequencyX;
+  int frequencyY;
+  int frequencyZ;
+  double amplitude;
+  double persistance;
+  BOOL tilingX;
+  BOOL tilingY;
+  BOOL loop;
+};
+
+@interface NoiseFunction : NSObject {
   BOOL _tileable;
-  struct NoiseFunctionStruct* _structPtr;
+  NoiseFunctionStruct* _structPtr;
 }
 
 - (void)dealloc;

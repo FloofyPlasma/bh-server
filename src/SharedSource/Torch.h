@@ -1,6 +1,15 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+
+struct TorchCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  uint16_t dataA;
+  uint16_t dataB;
+  int8_t connectionType;
+  uint8_t padding;
+};
 
 @class ArtificialLight;
 

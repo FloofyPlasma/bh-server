@@ -1,8 +1,15 @@
-
+#import <Foundation/Foundation.h>
 
 #import "InteractionObject.h"
 
-@class BitmapString, NSMutableArray, NSString, Shader;
+struct TradingPostNetData {
+  InteractionObjectCreationNetData interactionObjectCreationNetData;
+  uint32_t cointCount;
+  uint16_t priceTier;
+  uint8_t padding[2];
+};
+
+@class BitmapString, Shader;
 
 @interface TradingPost : InteractionObject {
   NSMutableArray* sellSlot;

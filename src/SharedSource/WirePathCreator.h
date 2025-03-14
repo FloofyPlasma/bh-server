@@ -1,8 +1,13 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class NSMutableIndexSet, World;
+struct WirePathTileProperties
+{
+    int F;
+    int G;
+    int parentIndex;
+};
+
+@class World;
 
 @interface WirePathCreator : NSObject
 {

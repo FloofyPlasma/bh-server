@@ -1,10 +1,21 @@
-
+#import <Foundation/Foundation.h>
 
 #import "InteractionObject.h"
 
 #import "SignTextDynamicObject-Protocol.h"
 
-@class BitmapString, CPTexture2D, NSString;
+typedef NSInteger SignConnectionType;
+typedef NSInteger SignOffsetType;
+
+struct SignCreationNetData
+{
+    InteractionObjectCreationNetData interactionObjectCreationNetData;
+    uint8_t connectionType;
+    uint8_t offsetType;
+    uint8_t padding[6];
+};
+
+@class BitmapString, CPTexture2D;
 
 @interface Sign : InteractionObject <SignTextDynamicObject> {
   NSString* text;

@@ -1,6 +1,16 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+
+struct ElevatorShaftCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint32_t lastKnownMotorPosX;
+  uint32_t lastKnownMotorPosY;
+  uint16_t itemType;
+  uint16_t paintColor;
+  uint8_t solidTile;
+  uint8_t padding[3];
+};
 
 @interface ElevatorShaft : DynamicObject {
   int itemType;

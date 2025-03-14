@@ -1,6 +1,12 @@
-
-
 #import "DynamicObject.h"
+
+#import <list>
+
+enum LightDirectionType {
+  LIGHT_DIRECTION_ALL = 0x0,
+  LIGHT_DIRECTION_DOWN = 0x1,
+  LIGHT_DIRECTION_UP = 0x2,
+};
 
 @interface ArtificialLight : DynamicObject {
   short* contributionGrid;
@@ -41,6 +47,6 @@
 - (int)objectType;
 - (void)removeFromTiles;
 - (void)addToTiles;
-- (void)recursivelyUpdateLightWithList:(list_0ac58641*)arg1;
+- (void)recursivelyUpdateLightWithList:(std::list<unsigned int>*)arg1;
 
 @end

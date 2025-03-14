@@ -1,10 +1,15 @@
-
+#import <Foundation/Foundation.h>
 
 #import "InteractionObject.h"
 
 #import "SignTextDynamicObject-Protocol.h"
 
-@class BitmapString, CPTexture2D, DrawCube, NSString, Shader;
+struct TrainStationCreationNetData
+{
+    InteractionObjectCreationNetData interactionObjectCreationNetData;
+};
+
+@class BitmapString, CPTexture2D, DrawCube, Shader;
 
 @interface TrainStation : InteractionObject <SignTextDynamicObject> {
   Shader* cubeShader;

@@ -1,12 +1,18 @@
-
-
 #import <Foundation/Foundation.h>
 #include <vector>
 
 #import "MJMath.h"
 #import "World.h"
 
-@class CPCache, DynamicWorld, NSString, World;
+struct DynamicObjectNetData {
+  uint64_t uniqueID;
+  uint32_t posX;
+  uint32_t posY;
+  uint8_t needsRemoved;
+  uint8_t padding[7];
+};
+
+@class CPCache, DynamicWorld, World;
 
 @interface DynamicObject : NSObject {
   World* world;

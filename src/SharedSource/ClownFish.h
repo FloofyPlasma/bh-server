@@ -1,6 +1,20 @@
-
+#import <Foundation/Foundation.h>
 
 #import "NPC.h"
+
+struct ClownFishUpdateNetData {
+  NPCUpdateNetData npcUpdateNetData;
+  uint32_t toSquareX;
+  uint32_t toSquareY;
+  int16_t walkSpeed;
+  int8_t movementDirection;
+  int8_t padding[5];
+};
+
+struct ClownFishCreationNetData {
+  NPCCreationNetData npcCreationNetData;
+  ClownFishUpdateNetData clownFishUpdateNetData;
+};
 
 @class CPTexture2D, DrawCube, FishingRod, Shader;
 

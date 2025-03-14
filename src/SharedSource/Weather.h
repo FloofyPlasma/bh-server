@@ -1,19 +1,28 @@
-
-
 #import <Foundation/Foundation.h>
+
+#import "Vector.h"
+#import "Vector2.h"
+
+struct Cloud {
+  float x;
+  float y;
+  float z;
+  float zFraction;
+  float scale;
+  int type;
+};
 
 @class CPCache, CPTexture2D, FNImageData, MJMultiSound, MJSound, NoiseFunction,
     Shader, World;
 
-@interface Weather : NSObject
-{
+@interface Weather : NSObject {
   CPCache* cache;
   World* world;
   float* snowPoints;
   float* rainPoints;
   float* cloudPoints;
   int cloudQuadCount;
-  struct Cloud clouds[16];
+  Cloud clouds[16];
   CPTexture2D* cloudTextures[6];
   NoiseFunction* cloudNoiseFunction;
   BOOL cloudsLoadedAsHD;

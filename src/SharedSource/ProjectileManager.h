@@ -1,20 +1,31 @@
-
-
 #import <Foundation/Foundation.h>
+#import <vector>
 
+#import "Blockhead.h"
+#import "DynamicObject.h"
+#import "InventoryItem.h"
 #import "Vector2.h"
+
+
+struct Projectile {
+  DynamicObject* atObject;
+  Blockhead* firer;
+  ItemType itemType;
+  Vector2 pos;
+  Vector2 toPos;
+  Vector2 normal;
+  float distanceLeft;
+};
 
 @class CPCache, CPTexture2D, Shader, World;
 
-@interface ProjectileManager : NSObject
-{
+@interface ProjectileManager : NSObject {
   World* world;
   CPCache* cache;
   CPTexture2D* texture;
   Shader* shader;
-  Vector<Projectile*, std::__1::allocator<Projectile*>> projectiles;
+  std::vector<Projectile*> projectiles;
 }
-
 
 - (void)fireProjectileFrom:(Vector2)arg1
                         to:(Vector2)arg2

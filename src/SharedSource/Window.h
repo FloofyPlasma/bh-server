@@ -1,6 +1,12 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+
+struct WindowCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  int8_t padding[6];
+};
 
 @interface Window : DynamicObject {
   int itemType;

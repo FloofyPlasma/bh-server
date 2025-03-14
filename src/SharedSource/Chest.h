@@ -1,6 +1,24 @@
-
+#import <Foundation/Foundation.h>
 
 #import "InteractionObject.h"
+
+enum ChestType {
+  CHEST_STANDARD = 0x0,
+  CHEST_SAFE = 0x1,
+  CHEST_SHELF = 0x2,
+  CHEST_GOLD = 0x3,
+  CHEST_PORTAL = 0x4,
+  CHEST_DISPLAY_CABINET = 0x5,
+  CHEST_FEEDER = 0x6,
+};
+
+struct ChestNetData {
+  InteractionObjectCreationNetData interactionobjectCreationNetData;
+  uint16_t renderItems[4];
+  uint16_t renderItemDatabs[4];
+  uint8_t chestType;
+  uint8_t padding[7];
+};
 
 @class NSMutableArray;
 

@@ -1,6 +1,31 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+
+enum PlantType {
+  PLANT_NOTHING = 0x0,
+  PLANT_FLAX = 0x1,
+  PLANT_SUNFLOWER = 0x2,
+  PLANT_CORN = 0x3,
+  PLANT_CARROT = 0x4,
+  PLANT_CHILLI = 0x5,
+  PLANT_KELP = 0x6,
+  PLANT_VINE = 0x7,
+  PLANT_TULIP = 0x8,
+  PLANT_WHEAT = 0x9,
+  PLANT_TOMATO = 0xA,
+};
+
+struct PlantCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t age;
+  uint16_t displayGeneDataA;
+  uint16_t displayGeneDataB;
+  uint16_t displayGeneDataC;
+  int16_t extraData;
+  uint8_t flowering;
+  uint8_t padding[5];
+};
 
 @class NoiseFunction;
 

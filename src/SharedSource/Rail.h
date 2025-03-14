@@ -1,6 +1,25 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+
+enum RailConfiguration {
+  RAIL_UNDEFINED = 0x0,
+  RAIL_FLAT = 0x1,
+  RAIL_DIAGONAL_UP_LEFT = 0x2,
+  RAIL_DIAGONAL_HALF_UP_LEFT_BOT = 0x3,
+  RAIL_DIAGONAL_HALF_UP_LEFT_TOP = 0x4,
+  RAIL_DIAGONAL_UP_RIGHT = 0x5,
+  RAIL_DIAGONAL_HALF_UP_RIGHT_BOT = 0x6,
+  RAIL_DIAGONAL_HALF_UP_RIGHT_TOP = 0x7,
+  RAIL_DIAGONAL_HALF_FLAT = 0x8,
+};
+
+struct RailCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  uint8_t configuration;
+  uint8_t padding[5];
+};
 
 @interface Rail : DynamicObject {
   int itemType;

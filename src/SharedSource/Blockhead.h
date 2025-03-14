@@ -1,17 +1,190 @@
+#import <Foundation/Foundation.h>
 
-
-#include <cstdint>
-
+#import "BlockheadSkinHelpers.h"
 #import "DynamicObject.h"
 #import "HarmableDynamicObject-Protocol.h"
 #import "InventoryItem.h"
+#import "MJMath.h"
 #import "PathUserDynamicObject-Protocol.h"
+#import "RidableDynamicObject-Protocol.h"
+#import "Vector.h"
+#import "Vector2.h"
 
 @class BlockheadAI, CPTexture2D, DrawCube, FishingRod, InteractionObject,
-    MJSound, MJTextView, NSArray, NSDictionary, NSMutableArray,
-    NSMutableDictionary, NSMutableIndexSet, NSString, Shader, Workbench;
-@protocol HarmableDynamicObject
-, RidableDynamicObject;
+    MJSound, MJTextView, Shader, Workbench;
+
+enum BlockheadAnimationType {
+  VA_STAND = 0x0,
+  VA_WALK = 0x1,
+  VA_STAND_TO_HANG_JUMP = 0x2,
+  VA_HANG_TO_STAND_JUMP = 0x3,
+  VA_CLIMB = 0x4,
+  VA_SWIM = 0x5,
+  VA_CRAWL = 0x6,
+  VA_HANG = 0x7,
+  VA_HANG_FALL_BALANCE = 0x8,
+  VA_CROUCH_UP = 0x9,
+  VA_CROUCH_DOWN = 0xA,
+  VA_CROUCH_CRAWL_UP = 0xB,
+  VA_CROUCH_CRAWL_DOWN = 0xC,
+  VA_MONKEY_SWING = 0xD,
+  VA_MONKEY_HANG = 0xE,
+  VA_STAND_TO_HANG_DOUBLE_JUMP = 0xF,
+  VA_STAND_TO_MONKEY_HANG_JUMP = 0x10,
+  VA_MONKEY_HANG_TO_STAND_JUMP = 0x11,
+  VA_CLIMB_DOWN_TO_MONKEY_SWING = 0x12,
+  VA_MONKEY_SWING_UP_TO_CLIMB = 0x13,
+  VA_HANG_TO_MONKEY_SWING_DIAGONAL_JUMP_UP = 0x14,
+  VA_MONKEY_SWING_TO_HANG_DIAGONAL_JUMP_DOWN = 0x15,
+  VA_HANG_TO_HANG_JUMP = 0x16,
+  VA_LIE = 0x17,
+  VA_BOB = 0x18,
+  VA_FALL = 0x19,
+  VA_JUMP_OVER_GAP = 0x1A,
+  VA_RIDE = 0x1B,
+  VA_RIDE_HANDCAR = 0x1C,
+  VA_RIDE_LOCOMOTIVE = 0x1D,
+  VA_RIDE_PASSENGER_CAR = 0x1E,
+  VA_RIDE_ELEVATOR = 0x1F,
+  VA_FLY_JETPACK = 0x20,
+  VA_RIDE_ARMS_DOWN = 0x21,
+};
+
+enum BlockheadSubAnimationType {
+  VSA_NONE = 0x0,
+  VSA_DIG = 0x1,
+  VSA_CRAFT = 0x2,
+  VSA_STAB = 0x3,
+  VSA_LOOK_LEFT_RIGHT_UP = 0x4,
+  VSA_LIE_ON_BED = 0x5,
+  VSA_LIE_ON_GROUND = 0x6,
+  VSA_MEDITATING = 0x7,
+  VSA_FIRE_ARROW = 0x8,
+};
+
+enum BlockheadUnableToWorkReason {
+  WBBH_ABLE = 0x0,
+  WBBH_TIRED = 0x1,
+  WBBH_STARVING = 0x2,
+};
+
+struct BlockheadUpdateData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint32_t fromSquareX;
+  uint32_t fromSquareY;
+  uint32_t toSquareX;
+  uint32_t toSquareY;
+  uint32_t interactingSquareX;
+  uint32_t interactingSquareY;
+  uint8_t traverseType;
+  uint8_t traverseFromKeyFrame;
+  uint8_t traverseToKeyFrame;
+  uint8_t happiness;
+  uint16_t interactionItemType;
+  uint16_t terrainDifficulty;
+  uint8_t interacting;
+  uint8_t dead;
+  uint8_t paused;
+  uint8_t interactionType;
+  uint8_t isCurrentlyActive;
+  uint8_t animationType;
+  uint8_t subAnimationType;
+  uint8_t health;
+  int32_t fishingRodCastX;
+  int32_t fishingRodCastY;
+  uint64_t rideObjectID;
+  uint64_t interactionObjectID;
+  uint64_t interactionWorkbenchID;
+  uint64_t fishingRodFishUniqueID;
+  uint8_t heat;
+  uint8_t hasCoffeeEnergy;
+  uint8_t isOffline;
+  uint8_t regenerating;
+  uint8_t isInJetPackFreeFlightMode;
+  uint8_t zIndex;
+  uint8_t onTradeMission;
+  uint8_t padding[1];
+};
+
+struct BlockheadCreationData {
+  DynamicObjectNetData dynamicObjectNetData;
+  BlockheadSkinOptions skinOptions;
+  uint16_t hatItemType;
+  uint16_t pantsItemType;
+  uint16_t shirtItemType;
+  uint16_t shoesItemType;
+  uint16_t hatColor;
+  uint16_t pantsColor;
+  uint16_t shirtColor;
+  uint16_t shoesColor;
+  uint16_t viewRadius;
+  uint8_t happiness;
+  uint8_t dead;
+  uint8_t animationType;
+  uint8_t subAnimationType;
+  uint8_t traverseFromKeyFrame;
+  uint8_t traverseToKeyFrame;
+  uint8_t regenerating;
+  uint8_t onTradeMission;
+  uint8_t padding[2];
+};
+
+struct FreeBlockCreationCount {
+  int count;
+  int bonusMultiplier;
+  Vector bonusColor;
+};
+
+struct PickupAcceptRejectHeader {
+  uint8_t type;
+  uint8_t accepted;
+  uint8_t padding[6];
+  uint64_t blockheadUniqueID;
+};
+
+struct BlockheadPreviewDataNew {
+  BlockheadSkinOptions skinOptions;
+  uint16_t hatItemType;
+  uint16_t pantsItemType;
+  uint16_t shirtItemType;
+  uint16_t shoesItemType;
+  uint16_t hatColor;
+  uint16_t pantsColor;
+  uint16_t shirtColor;
+  uint16_t shoesColor;
+  uint8_t happiness;
+  uint8_t dead;
+  uint8_t _padding[2];
+};
+
+struct BlockheadState {
+  BOOL interacting;
+  InteractionType interactionType;
+  InteractionType goalInteractionTypeWhileWalking;
+  intpair interactingSquare;
+  float interactionTimer;
+  float gatherSpeed;
+  float gatherTimer;
+  float health;
+  float happiness;
+  float fullness;
+  float energy;
+  float meditationProgress;
+  float drownFraction;
+  float environment;
+  float environmentTemperature;
+  float environmentExposure;
+  float environmentLight;
+  float heat;
+  BlockheadAnimationType animationType;
+  BlockheadSubAnimationType subAnimationType;
+  float coffeeEnergyTimer;
+  float foodPauseTimer;
+  float death;
+  BOOL regenerating;
+  float regenerationProgress;
+  BOOL onTradeMission;
+};
 
 struct InteractionTestResult {
   int goodOrBad;
@@ -202,8 +375,7 @@ struct InteractionTestResult {
   NSDictionary* interactionObjectDictToRestoreWhenObjectLoaded;
   int prevGoalRotationType;
   float netRotationDelayTimer;
-  Vector<unsigned short, std::__1::allocator<unsigned short>>
-      expectedCraftItems;
+  std::vector<short> expectedCraftItems;
   BOOL visible;
   BOOL onScreenForDPad;
   MJSound* regenerationSound;
@@ -621,11 +793,5 @@ struct InteractionTestResult {
 - (float)happiness;
 - (float)death;
 - (float)health;
-
-// Remaining properties
-@property (readonly, copy) NSString* debugDescription;
-@property (readonly, copy) NSString* description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
 
 @end

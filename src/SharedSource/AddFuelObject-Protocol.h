@@ -1,9 +1,6 @@
+#import<Foundation/Foundation.h>
 
-
-#import "NSObject-Protocol.h"
 #import "Vector2.h"
-
-@class NSString;
 
 @protocol AddFuelObject <NSObject>
 - (Vector2)fuelUIPos;

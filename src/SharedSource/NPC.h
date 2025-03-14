@@ -1,4 +1,4 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
@@ -6,7 +6,63 @@
 #import "RidableDynamicObject-Protocol.h"
 #import "TapChoiceDynamicObject-Protocol.h"
 
-@class Blockhead, MJTextView, NSMutableDictionary, NSString, Shader;
+enum NetNPCInteractionType {
+  NET_NPC_INTERACTION_UNDEFINED = 0x0,
+  NET_NPC_INTERACTION_FEED = 0x1,
+  NET_NPC_INTERACTION_SET_FREE = 0x2,
+  NET_NPC_INTERACTION_CAPTURE = 0x3,
+  NET_NPC_INTERACTION_HARVEST_MILK = 0x4,
+  NET_NPC_INTERACTION_HARVEST_SHAVE = 0x5,
+};
+
+enum NetNPCTameType {
+  NPC_NOT_TAMED = 0x0,
+  NPC_TAMED_BY_THIS_CLIENT = 0x1,
+  NPC_TAMED_BY_OTHER_CLIENT = 0x2,
+};
+
+enum NPCType {
+  NPC_NOTHING = 0x0,
+  NPC_DODO = 0x1,
+  NPC_DROPBEAR = 0x2,
+  NPC_DONKEY = 0x3,
+  NPC_CLOWNFISH = 0x4,
+  NPC_SHARK = 0x5,
+  NPC_CAVETROLL = 0x6,
+  NPC_SCORPION = 0x7,
+  NPC_YAK = 0x8,
+};
+
+enum SendState {
+  SEND_STATE_NONE = 0x0,
+  SEND_STATE_SEND = 0x1,
+  SEND_STATE_SENT = 0x2,
+};
+
+struct NPCCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint64_t killBlockheadID;
+  uint64_t riderID;
+  uint64_t interactBlockheadID;
+  uint16_t damage;
+  uint16_t hitForce;
+  uint8_t dead;
+  uint8_t breed;
+  uint8_t successfulFeedOrTame;
+  uint8_t tameType;
+  int16_t fullness;
+  int16_t age;
+  uint16_t interactionItemType;
+  int16_t tameCooldownTimer;
+  uint8_t interactionType;
+  uint8_t padding[7];
+};
+
+struct NPCUpdateNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+};
+
+@class Blockhead, MJTextView, Shader;
 
 @interface NPC : DynamicObject <HarmableDynamicObject, TapChoiceDynamicObject,
                      RidableDynamicObject> {

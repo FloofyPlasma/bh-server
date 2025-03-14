@@ -1,6 +1,23 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+
+enum ColumnConfiguration {
+  COLUMN_UNDEFINED = 0x0,
+  COLUMN_NO_PLINTH = 0x1,
+  COLUMN_PLINTH_BELOW = 0x2,
+  COLUMN_PLINTH_ABOVE = 0x3,
+  COLUMN_PLINTH_ABOVE_AND_BELOW = 0x4,
+};
+
+struct ColumnCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  uint8_t configuration;
+  uint8_t paddingA;
+  uint16_t paintColor;
+  uint8_t padding[2];
+};
 
 @interface Column : DynamicObject {
   int itemType;

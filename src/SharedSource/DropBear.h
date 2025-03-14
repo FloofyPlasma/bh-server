@@ -1,6 +1,21 @@
-
+#import <Foundation/Foundation.h>
 
 #import "NPC.h"
+
+struct DropBearUpdateNetData {
+  NPCUpdateNetData npcUpdateNetData;
+  uint32_t toSquareX;
+  uint32_t toSquareY;
+  int16_t walkSpeed;
+  uint8_t dropping;
+  uint8_t onGround;
+  uint8_t padding[4];
+};
+
+struct DropBearCreationNetData {
+  NPCCreationNetData npcCreationNetData;
+  DropBearUpdateNetData dropBearUpdateNetData;
+};
 
 @class Blockhead, CPTexture2D, DrawCube, Shader;
 

@@ -1,6 +1,11 @@
-
+#import <Foundation/Foundation.h>
 
 #import "TrainCar.h"
+
+struct PassengerCarCreationNetData
+{
+    TrainCarCreationNetData trainCarCreationNetData;
+};
 
 @class DrawCube;
 

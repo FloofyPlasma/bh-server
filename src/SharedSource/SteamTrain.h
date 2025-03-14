@@ -1,10 +1,26 @@
-
+#import <Foundation/Foundation.h>
 
 #import "TrainCar.h"
 
 #import "AddFuelObject-Protocol.h"
 
-@class DrawCube, MJSound, NSString;
+struct SteamTrainCreationNetData {
+  TrainCarCreationNetData trainCarCreationNetData;
+  int16_t fuelFraction;
+  uint8_t hasFuel;
+  uint8_t whistle;
+  uint8_t goingRight;
+  uint8_t stopped;
+  uint8_t padding[2];
+  uint32_t leftTrainPosX;
+  uint32_t leftTrainPosY;
+  uint32_t rightTrainPosX;
+  uint32_t rightTrainPosY;
+  uint32_t stopAtGoalPosX;
+  uint32_t stopAtGoalPosY;
+};
+
+@class DrawCube, MJSound;
 
 @interface SteamTrain : TrainCar <AddFuelObject> {
   DrawCube* boilerCube;

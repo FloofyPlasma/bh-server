@@ -1,8 +1,34 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
-@class Blockhead, DrawCube, NSArray, NSDictionary, NSMutableArray;
+struct FreeblockUpdateNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint64_t priorityBlockheadUinqueID;
+  int16_t fallSpeed;
+  int16_t xVelocity;
+  int16_t yVelocity;
+  uint8_t hovers;
+  uint8_t padding;
+};
+
+struct FreeblockCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint64_t priorityBlockheadUinqueID;
+  uint16_t itemType;
+  uint16_t dataA;
+  uint16_t dataB;
+  int16_t fallSpeed;
+  int16_t xVelocity;
+  int16_t yVelocity;
+  Float32 creationSoundPlayTime;
+  uint8_t soundType;
+  uint8_t hovers;
+  uint8_t hasExtraData;
+  uint8_t padding[5];
+};
+
+@class Blockhead, DrawCube;
 
 @interface FreeBlock : DynamicObject {
   int itemType;

@@ -1,6 +1,11 @@
-
-
 #import "InteractionObject.h"
+
+struct BedNetData {
+  InteractionObjectCreationNetData interactionObjectCreationNetData;
+  uint16_t itemType;
+  uint16_t beddingColor;
+  uint8_t padding[4];
+};
 
 @class CPTexture2D, DrawCube, Shader;
 

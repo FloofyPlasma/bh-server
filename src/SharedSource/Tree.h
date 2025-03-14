@@ -1,6 +1,31 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
+#import "MJMath.h"
+
+enum TreeType {
+  TREE_NOTHING = 0x0,
+  TREE_APPLE = 0x1,
+  TREE_MANGO = 0x2,
+  TREE_MAPLE = 0x3,
+  TREE_PINE = 0x4,
+  TREE_CACTUS = 0x5,
+  TREE_COCONUT = 0x6,
+  TREE_ORANGE = 0x7,
+  TREE_CHERRY = 0x8,
+  TREE_COFFEE = 0x9,
+  TREE_LIME = 0xA,
+  TREE_GEM_AMETHYST = 0xB,
+  TREE_GEM_SAPPHIRE = 0xC,
+  TREE_GEM_EMERALD = 0xD,
+  TREE_GEM_RUBY = 0xE,
+  TREE_GEM_DIAMOND = 0xF,
+};
+
+struct TreeFruit {
+  intpair pos;
+  BOOL hasCreatedFreeBlockThisSeason;
+};
 
 @class NoiseFunction;
 

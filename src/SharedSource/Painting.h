@@ -1,10 +1,16 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
 #import "TapChoiceDynamicObject-Protocol.h"
 
-@class CPTexture2D, NSData, NSString, Shader;
+struct PaintingCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  uint8_t padding[6];
+};
+
+@class CPTexture2D, Shader;
 
 @interface Painting : DynamicObject <TapChoiceDynamicObject> {
   int itemType;

@@ -1,9 +1,15 @@
-
-
 #import "DynamicObject.h"
 
 #import "RidableDynamicObject-Protocol.h"
 #import "TapChoiceDynamicObject-Protocol.h"
+
+struct BoatCreationNetData
+{
+    DynamicObjectNetData dynamicObjectNetData;
+    uint64_t riderID;
+    int16_t actualXSpeed;
+    uint8_t padding[6];
+};
 
 @class Blockhead, CPTexture2D, DrawCube, NSString, Shader;
 

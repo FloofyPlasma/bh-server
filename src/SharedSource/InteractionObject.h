@@ -1,11 +1,23 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
 #import "TapChoiceDynamicObject-Protocol.h"
+#import "ProxyObjectOwner-Protocol.h"
 
-@class Blockhead, CPTexture2D, NSString, Shader;
-@protocol ProxyObjectOwner;
+typedef uint16_t InteractionObjectType;
+
+struct InteractionObjectCreationNetData {
+    DynamicObjectNetData dynamicObjectNetData;
+    uint64_t isInUseBlockheadUniqueID;
+    uint16_t interactionObjectType;
+    uint8_t isInUse;
+    uint8_t flipped;
+    uint16_t paintColor;
+    uint8_t padding[2];
+};
+
+@class Blockhead, CPTexture2D, Shader;
 
 @interface InteractionObject : DynamicObject <TapChoiceDynamicObject> {
   Blockhead* currentBlockhead;

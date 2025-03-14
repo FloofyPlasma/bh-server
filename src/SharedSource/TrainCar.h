@@ -1,11 +1,31 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
 #import "RidableDynamicObject-Protocol.h"
 #import "TapChoiceDynamicObject-Protocol.h"
 
-@class Blockhead, CPTexture2D, NSString, Rail, Shader;
+struct TrainCarCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint64_t rider0ID;
+  uint64_t rider1ID;
+  uint64_t leftCarID;
+  uint64_t rightCarID;
+  uint64_t engineCarID;
+  Float32 leftWheelPosX;
+  Float32 leftWheelPosY;
+  Float32 leftWheelVelX;
+  Float32 leftWheelVelY;
+  Float32 rightWheelPosX;
+  Float32 rightWheelPosY;
+  Float32 rightWheelVelX;
+  Float32 rightWheelVelY;
+  Float32 visualVelocityX;
+  uint8_t engineIsRight;
+  uint8_t padding[3];
+};
+
+@class Blockhead, CPTexture2D, Rail, Shader;
 
 @interface TrainCar
     : DynamicObject <RidableDynamicObject, TapChoiceDynamicObject> {

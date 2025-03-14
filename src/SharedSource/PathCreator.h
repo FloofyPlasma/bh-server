@@ -1,13 +1,31 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class DynamicObject, NSArray, NSDictionary, NSMutableIndexSet, NSMutableSet,
-    World;
-@protocol PathUserDynamicObject;
+#import "PathUserDynamicObject-Protocol.h"
+#import "GameConstants.h"
 
-@interface PathCreator : NSObject
+struct DerivedTileProperties {
+  int F;
+  int G;
+  int H;
+  int parentIndex;
+  int terrainDifficulty;
+  TileTraverseType traverseTpe;
+  TileTraverseKeyFrameType traversToKeyFrmae;
+  BOOL unplaceable;
+  NSArray* path;
+};
+
+struct PathTestResult
 {
+    TileTraverseType traverseType;
+    TileTraverseKeyFrameType traverseToKeyFrame;
+    int terrainDifficulty;
+    BOOL failedDueToNoTile;
+};
+
+@class DynamicObject, World;
+
+@interface PathCreator : NSObject {
   World* world;
   DynamicObject<PathUserDynamicObject>* pathUser;
   int goalX;

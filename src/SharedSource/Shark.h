@@ -1,6 +1,23 @@
-
+#import <Foundation/Foundation.h>
 
 #import "NPC.h"
+
+struct SharkUpdateNetData {
+  NPCUpdateNetData npcUpdateNetData;
+  uint32_t toSquareX;
+  uint32_t toSquareY;
+  int16_t walkSpeed;
+  uint16_t age;
+  int8_t movementDirection;
+  int8_t clearQueue;
+  uint8_t padding[2];
+};
+
+struct SharkCreationNetData {
+  NPCCreationNetData npcCreationNetData;
+  SharkUpdateNetData sharkUpdateNetData;
+  uint64_t attackBlockhead;
+};
 
 @class Blockhead, CPTexture2D, DrawCube, Shader;
 

@@ -1,4 +1,4 @@
-
+#import <Foundation/Foundation.h>
 
 #import "InteractionObject.h"
 
@@ -6,8 +6,19 @@
 #import "CraftProgressCraftingObject-Protocol.h"
 #import "PowerUser-Protocol.h"
 
+struct WorkbenchNetData {
+  InteractionObjectCreationNetData interactionObjectCreationNetData;
+  uint64_t isInUseFuelBlockheadUniqueID;
+  int16_t fuelFraction;
+  uint8_t type;
+  uint8_t level;
+  uint8_t hasFuel;
+  uint8_t isInUseFuel;
+  uint16_t availableElectricity;
+};
+
 @class ArtificialLight, Blockhead, CPTexture2D, CraftProgressUI,
-    CraftableItemObject, MJSound, NSMutableArray, NSString, Shader;
+    CraftableItemObject, MJSound, Shader;
 
 @interface Workbench : InteractionObject <AddFuelObject, PowerUser,
                            CraftProgressCraftingObject> {

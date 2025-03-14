@@ -1,6 +1,10 @@
-
+#import <Foundation/Foundation.h>
 
 #import "TrainCar.h"
+
+struct HandCarCreationNetData {
+    TrainCarCreationNetData trainCarCreationNetData;
+};
 
 @class DrawCube, MJMultiSound;
 

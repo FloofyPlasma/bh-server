@@ -1,6 +1,24 @@
-
+#import <Foundation/Foundation.h>
 
 #import "NPC.h"
+
+struct ScorpionUpdateNetData {
+  NPCUpdateNetData npcUpdateNetData;
+  uint32_t toSquareX;
+  uint32_t toSquareY;
+  int16_t walkSpeed;
+  int8_t movementDirection;
+  uint8_t clearQueue;
+  int8_t padding[4];
+};
+
+struct ScorpionCreationNetData {
+  NPCCreationNetData npcCreationNetData;
+  ScorpionUpdateNetData scorpionUpdateNetData;
+  uint64_t attackBLockhead;
+  uint8_t attackIsSplitting;
+  uint8_t padding[7];
+};
 
 @class Blockhead, CPTexture2D, DrawCube, Shader;
 

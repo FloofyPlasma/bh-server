@@ -1,9 +1,16 @@
-
+#import <Foundation/Foundation.h>
 
 #import "BHNetNode.h"
+#import "MJMath.h"
 
-@class Database, DatabaseEnvironment, NSArray, NSMutableArray,
-    NSMutableDictionary, NSMutableSet, NSString, World;
+enum ListType {
+  LIST_TYPE_BLACKLIST = 0x0,
+  LIST_TYPE_WHITELIST = 0x1,
+  LIST_TYPE_ADMIN = 0x2,
+  LIST_TYPE_MOD = 0x3,
+};
+
+@class Database, DatabaseEnvironment, World;
 
 @interface BHServer : BHNetNode {
   World* world;
