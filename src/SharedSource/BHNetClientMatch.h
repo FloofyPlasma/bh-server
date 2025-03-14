@@ -7,9 +7,6 @@
 
 #import "BHMatch.h"
 
-#import "NSNetServiceBrowserDelegate-Protocol.h"
-#import "NSNetServiceDelegate-Protocol.h"
-
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSNetServiceBrowser,
     NSString, NSTimer;
 @protocol BHNetClientSearchDelegate;
