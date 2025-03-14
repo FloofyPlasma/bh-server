@@ -7,11 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class NSString;
-@protocol BHMatchDelegate;
+#import "BHMatchDelegate-Protocol.h"
+#import "BHNetConstants.h"
 
-@interface BHMatch : NSObject
-{
+@interface BHMatch : NSObject {
   id<BHMatchDelegate> delegate;
   NSString* host;
   NSString* port;
@@ -19,32 +18,33 @@
 
 @property (readonly) NSString* port; // @synthesize port;
 @property (readonly) NSString* host; // @synthesize host;
-- (id)cloudSalt;
-- (id)ownerName;
+
+- (NSString*)cloudSalt;
+- (NSString*)ownerName;
 - (BOOL)owned;
 - (BOOL)isCloudMatch;
-- (void)disconnectPlayer:(id)arg1;
-- (void)removeClient:(id)arg1;
-- (id)connectedPlayerIDs;
+- (void)disconnectPlayer:(NSString*)playerID;
+- (void)removeClient:(NSString*)clientID;
+- (NSArray*)connectedPlayerIDs;
 - (BOOL)usesGameCenterPlayerInformation;
 - (BOOL)requiresPlayerAuthentication;
 - (BOOL)audioChatSupported;
-- (id)persistentIDForNetID:(id)arg1;
-- (void)updatedPlayerListRecievedFromServer:(id)arg1;
-- (void)sendPlayerInformationToServer:(id)arg1 password:(id)arg2;
-- (void)clientApprovedWithInfo:(id)arg1;
-- (id)clientPlayerInformationRecieved:(id)arg1 fromPeer:(id)arg2;
-- (id)loadInfoForPlayer:(id)arg1;
-- (BOOL)sendData:(id)arg1
-       toPlayers:(id)arg2
-    withDataMode:(long long)arg3
-           error:(id*)arg4;
-- (unsigned long long)expectedPlayerCount;
-- (id)voiceChatWithName:(id)arg1;
+- (NSString*)persistentIDForNetID:(NSString*)netID;
+- (void)updatedPlayerListRecievedFromServer:(NSData*)data;
+- (void)sendPlayerInformationToServer:(NSString*)serverID password:(NSString*)password;
+- (void)clientApprovedWithInfo:(NSMutableDictionary*)dictionary;
+- (NSMutableDictionary*)clientPlayerInformationRecieved:(NSDictionary*)clientDict fromPeer:(NSString*)enetOrPlayerID;
+- (NSMutableDictionary*)loadInfoForPlayer:(NSString*)playerID;
+- (BOOL)sendData:(NSData*)data
+       toPlayers:(NSArray*)playerIDs
+    withDataMode:(BHMatchSendDataMode)mode
+           error:(NSError**)error;
+- (NSUInteger)expectedPlayerCount;
+- (id)voiceChatWithName:(NSString*)name;
 - (void)disconnect;
-- (void)setDelegate:(id)arg1;
-- (id)playerIDs;
-- (id)localPlayerName;
-- (id)localPlayerID;
+- (void)setDelegate:(id<BHMatchDelegate>)delegate_;
+- (NSArray*)playerIDs;
+- (NSString*)localPlayerName;
+- (NSString*)localPlayerID;
 
 @end
