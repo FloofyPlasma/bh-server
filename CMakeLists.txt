@@ -32,7 +32,11 @@ if(WIN32)
     )
 endif()
 
-set(SOURCE_FILES src/Mac/BlockheadsServer/blockheads_server/main.mm)
+set(SOURCE_FILES 
+    src/Mac/BlockheadsServer/blockheads_server/main.mm
+    src/SharedSource/BHNetNode.mm
+    src/SharedSource/BHMatch.mm
+    )
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
