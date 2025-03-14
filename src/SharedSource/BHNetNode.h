@@ -1,49 +1,48 @@
-
-
 #import <Foundation/Foundation.h>
 
 #import "BHMatchDelegate-Protocol.h"
+#import "BHNetConstants.h"
+#import "BHNetNodeDelegate-Protocol.h"
 
-@class BHMatch, GKVoiceChat, NSArray, NSMutableArray, NSMutableDictionary;
-@protocol BHNetNodeDelegate;
+@class BHMatch, GKVoiceChat;
 
-@interface BHNetNode : NSObject <BHMatchDelegate>
-{
+typedef NSInteger BHNetNodeType;
+
+@interface BHNetNode : NSObject <BHMatchDelegate> {
   NSObject<BHNetNodeDelegate>* delegate;
   BHMatch* match;
   GKVoiceChat* voiceChat;
   NSMutableArray* livePlayerInfos;
   NSMutableDictionary* playerInfosForAllPlayersByID;
-  long long netNodeType;
+  BHNetNodeType netNodeType;
 }
 
-@property (readonly) long long netNodeType; // @synthesize netNodeType;
+@property (readonly) BHNetNodeType netNodeType; // @synthesize netNodeType;
 @property (readonly) BHMatch* match; // @synthesize match;
 @property (readonly) NSArray* livePlayerInfos; // @synthesize livePlayerInfos;
+
 - (void)notifyPlayersChanged;
 - (BOOL)audioChatSupported;
-- (id)localPlayerName;
-- (id)localPlayerID;
-- (void)sendChatMessage:(id)arg1
-    displayNotification:(BOOL)arg2
-          sendToClients:(id)arg3;
-- (void)sendChatMessage:(id)arg1 sendToClients:(id)arg2;
+- (NSString*)localPlayerName;
+- (NSString*)localPlayerID;
+- (void)sendChatMessage:(NSString*)messageText displayNotification:(BOOL)displayNotification sendToClients:(NSArray*)clientsToSend;
+- (void)sendChatMessage:(NSString*)messageText sendToClients:(NSArray*)clientsToSend;
 - (BOOL)voiceChatActive;
-- (void)match:(id)arg1 didFailWithError:(id)arg2;
+- (void)match:(BHMatch*)match didFailWithError:(NSError*)error;
 - (void)endVoiceChat;
 - (void)toggleAudioSessionActive;
 - (void)startVoiceChat;
-- (void)match:(id)arg1 didReceiveData:(id)arg2 fromPlayer:(id)arg3;
-- (void)match:(id)arg1 connectionWithPlayerFailed:(id)arg2 withError:(id)arg3;
-- (void)match:(id)arg1 player:(id)arg2 didChangeState:(long long)arg3;
-- (id)serverPlayerID;
-- (id)playerInfoForPeerID:(id)arg1;
+- (void)match:(BHMatch*)match didReceiveData:(NSData*)data fromPlayer:(NSString*)peerID;
+- (void)match:(BHMatch*)match connectionWithPlayerFailed:(NSString*)playerID withError:(NSError*)error;
+- (void)match:(BHMatch*)match player:(NSString*)playerID didChangeState:(BHPlayerConnectionState)state;
+- (NSString*)serverPlayerID;
+- (NSDictionary*)playerInfoForPeerID:(NSString*)peerID;
 - (void)cleanup;
 - (void)purgeChatPicCache;
-- (void)updatePlayerList:(id)arg1;
-- (void)infoArrived:(id)arg1 forPlayer:(id)arg2;
-- (BOOL)loadInfoForPlayer:(id)arg1;
-- (void)updateMatch:(id)arg1;
-- (id)initWithDelegate:(id)arg1 match:(id)arg2 netNodeType:(long long)arg3;
+- (void)updatePlayerList:(NSArray*)playerListIncoming;
+- (void)infoArrived:(NSMutableDictionary*)dict forPlayer:(NSString*)playerID;
+- (BOOL)loadInfoForPlayer:(NSString*)playerID;
+- (void)updateMatch:(BHMatch*)match_;
+- (BHNetNode*)initWithDelegate:(NSObject<BHNetNodeDelegate>*)delegate_ match:(BHMatch*)match_ netNodeType:(BHNetNodeType)netNodeType_;
 
 @end
