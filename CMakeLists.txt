@@ -116,3 +116,5 @@ elseif(APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fobjc-runtime=macosx")
 
 endif()
+
+include_directories(${enet_SOURCE_DIR}/include)
