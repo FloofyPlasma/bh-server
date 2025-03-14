@@ -1,7 +1,16 @@
 cmake_minimum_required(VERSION 3.29)
+include(FetchContent)
 project(BlockheadsServer)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+FetchContent_Declare(
+    enet
+    GIT_REPOSITORY https://github.com/lsalzman/enet.git
+    GIT_TAG v1.3.18
+)
+
+FetchContent_MakeAvailable(enet)
 
 if(WIN32)
     set(GNUSTEP_ROOT "C:/GNUstep") # Bad hard code!!11
@@ -52,6 +61,7 @@ if(WIN32)
         gnustep-base
         objc
         dispatch
+        enet
     )
 
     set(CMAKE_CXX_COMPILER "clang++")
