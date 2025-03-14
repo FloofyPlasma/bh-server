@@ -26,10 +26,4 @@
 - (id)initWithNewWorldName:(id)arg1 loadName:(id)arg2 worldID:(id)arg3 port:(id)arg4 maxPlayers:(int)arg5 renameFromName:(id)arg6 renameToName:(id)arg7 deleteWorldName:(id)arg8 listWorlds:(BOOL)arg9 forceDelete:(BOOL)arg10 saveDelay:(int)arg11 widthMultiplier:(int)arg12 credit:(int)arg13 cloudSalt:(id)arg14 ownerName:(id)arg15 privacy:(id)arg16 customRulesJSON:(id)arg17 convertToCustomRules:(BOOL)arg18 expertMode:(BOOL)arg19 noExit:(BOOL)arg20;
 - (void)commandTyped:(id)arg1;
 
-// Remaining properties
-@property (readonly, copy) NSString* debugDescription;
-@property (readonly, copy) NSString* description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
-
 @end
