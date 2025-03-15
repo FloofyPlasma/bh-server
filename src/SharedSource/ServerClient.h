@@ -1,11 +1,9 @@
-
-
 #import <Foundation/Foundation.h>
 
 #import "MJMath.h"
+#import "World.h"
 
-@class BHServer, Database, NSMutableArray, NSMutableDictionary,
-    NSMutableIndexSet, NSString;
+@class BHServer, Database;
 
 @interface ServerClient : NSObject
 {
@@ -79,7 +77,7 @@
 - (void)removeBlockRequest:(int)arg1;
 - (BOOL)blockIsRequested:(int)arg1;
 - (BOOL)blockIsWired:(int)arg1;
-- (void)requestForBlock:(struct ClientMacroBlockRequest)arg1;
+- (void)requestForBlock:(ClientMacroBlockRequest)arg1;
 - (void)dealloc;
 - (void)clientReconnected;
 - (id)initWithClientID:(id)arg1

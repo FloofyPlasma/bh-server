@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
 
+#import "GameConstants.h"
 #import "Vector.h"
 #import "Vector2.h"
 
@@ -35,7 +37,7 @@ struct Cloud {
   unsigned int rainXOffset;
   unsigned int rainYOffset;
   unsigned int rainZOffset;
-  struct WindowInfo* windowInfo;
+  WindowInfo* windowInfo;
   Shader* snowShader;
   Shader* rainShader;
   Shader* cloudShader;
@@ -67,13 +69,13 @@ struct Cloud {
                      timeOfDayFraction:(float)arg2
                           isBackground:(BOOL)arg3;
 - (void)setSoundPaused:(BOOL)arg1;
-- (void)renderWithMatrix:(union _GLKMatrix4)arg1
+- (void)renderWithMatrix:(GLKMatrix4)arg1
               pinchScale:(float)arg2
             withDayColor:(Vector)arg3
             rainFraction:(float)arg4
             snowFraction:(float)arg5
                snowLevel:(float)arg6;
-- (void)renderCloudWithMatrix:(union _GLKMatrix4)arg1
+- (void)renderCloudWithMatrix:(GLKMatrix4)arg1
                   translation:(Vector2)arg2
                            dt:(float)arg3
               weatherFraction:(float)arg4

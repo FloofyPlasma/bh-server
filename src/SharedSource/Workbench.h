@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+#import "CraftableItemObject.h"
 #import "InteractionObject.h"
 
 #import "AddFuelObject-Protocol.h"
@@ -30,7 +31,7 @@ struct WorkbenchNetData {
   int type;
   int numberOfCraftableItems;
   int numberOfCraftableItemsUpToCurrentLevel;
-  struct CraftableItem** craftableItems;
+  CraftableItem** craftableItems;
   int selectedIndex;
   NSMutableArray* sourceItems[8];
   float xScroll;
@@ -151,8 +152,8 @@ struct WorkbenchNetData {
 - (struct CraftableItem**)craftableItems;
 - (id)title;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6

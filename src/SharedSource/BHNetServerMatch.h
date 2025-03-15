@@ -1,16 +1,14 @@
+#import <Foundation/Foundation.h>
 
+#import <enet/enet.h>
 
 #import "BHMatch.h"
-
-// #import "NSNetServiceDelegate-Protocol.h"
-
-@class NSMutableArray, NSMutableDictionary, NSNetService, NSString, NSTimer;
 
 @interface BHNetServerMatch : BHMatch <NSNetServiceDelegate> {
   unsigned short serverPort;
   NSNetService* reliableServerService;
-  struct __CFSocket* reliableServerListeningSocket;
-  struct _ENetHost* enetServer;
+  __CFSocket* reliableServerListeningSocket;
+  ENetHost* enetServer;
   NSMutableDictionary* connections;
   NSMutableDictionary* persistentIdsToEnetIds;
   NSMutableDictionary* enetIdsToPersistentIds;

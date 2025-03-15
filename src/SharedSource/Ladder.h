@@ -28,8 +28,8 @@ struct LadderCreationNetData
 - (id)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6

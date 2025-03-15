@@ -46,7 +46,7 @@ struct TreeFruit {
   BOOL dead;
   double timeDied;
   float removeCheckCount;
-  struct TreeFruit* treeFruits;
+  TreeFruit* treeFruits;
   int fruitCount;
   float noLightDieTimer;
 }
@@ -63,8 +63,8 @@ struct TreeFruit {
 - (void)killAllOwnedTilesAboveY:(int)arg1;
 - (void)checkIfDeadTilesNeedRemoved;
 - (void)killAllOwnedTiles;
-- (void)makeTileDead:(struct Tile*)arg1;
-- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
+- (void)makeTileDead:(Tile*)arg1;
+- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
 - (void)updateGrowth:(BOOL)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)incrementHeight;

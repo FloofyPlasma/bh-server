@@ -1,21 +1,19 @@
 #import <Foundation/Foundation.h>
 
-struct WirePathTileProperties
-{
-    int F;
-    int G;
-    int parentIndex;
+struct WirePathTileProperties {
+  int F;
+  int G;
+  int parentIndex;
 };
 
 @class World;
 
-@interface WirePathCreator : NSObject
-{
+@interface WirePathCreator : NSObject {
   World* world;
   NSMutableIndexSet* openList;
   NSMutableIndexSet* closedList;
   int startIndex;
-  struct WirePathTileProperties* derivedTilePropertiesArray;
+  WirePathTileProperties* derivedTilePropertiesArray;
   int derivedTileCount;
   struct map<int, int, std::__1::less<int>,
       std::__1::allocator<std::__1::pair<const int, int>>>
@@ -23,7 +21,7 @@ struct WirePathTileProperties
 }
 
 - (int)findAndSubtractAllPowerUpTo:(unsigned short)arg1 forUser:(id)arg2;
-- (struct WirePathTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
+- (WirePathTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1;
 

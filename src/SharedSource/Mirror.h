@@ -30,8 +30,8 @@ struct MirrorNetData
 - (void)worldContentsChanged:(std::vector<intpair>*)arg1;
 - (void)worldChanged:(std::vector<intpair>*)arg1;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6

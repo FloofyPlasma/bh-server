@@ -1,10 +1,6 @@
-
-
 #import <Foundation/Foundation.h>
 
 #import "Vector2.h"
-
-@class NSString;
 
 @interface MJSound : NSObject
 {

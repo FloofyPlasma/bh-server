@@ -26,10 +26,10 @@ struct YakCreationNetData {
   DrawCube* bodyCubeShaved;
   DrawCube* hornCubeA;
   DrawCube* hornCubeB;
-  union _GLKMatrix4 leftHornMatrixA;
-  union _GLKMatrix4 rightHornMatrixA;
-  union _GLKMatrix4 leftHornMatrixB;
-  union _GLKMatrix4 rightHornMatrixB;
+  GLKMatrix4 leftHornMatrixA;
+  GLKMatrix4 rightHornMatrixA;
+  GLKMatrix4 leftHornMatrixB;
+  GLKMatrix4 rightHornMatrixB;
   float milk;
   float hair;
 }
@@ -42,16 +42,16 @@ struct YakCreationNetData {
 - (BOOL)canBeMilkedByBlockhead:(id)arg1;
 - (BOOL)jumps;
 - (void)drawSubClassStuff:(float)arg1
-         projectionMatrix:(union _GLKMatrix4)arg2
-          modelViewMatrix:(union _GLKMatrix4)arg3;
+         projectionMatrix:(GLKMatrix4)arg2
+          modelViewMatrix:(GLKMatrix4)arg3;
 - (void)setupMatrices:(Vector2)arg1 dt:(float)arg2;
 - (unsigned long long)creationDataStructSize;
 - (void)remoteCreationDataUpdate:(id)arg1;
 - (void)remoteUpdate:(id)arg1;
-- (void)doYakRemoteUpdate:(struct YakUpdateNetData)arg1;
+- (void)doYakRemoteUpdate:(YakUpdateNetData)arg1;
 - (id)updateNetDataForClient:(id)arg1;
 - (id)creationNetDataForClient:(id)arg1;
-- (struct YakUpdateNetData)yakUpdateNetDataForClient:(id)arg1;
+- (YakUpdateNetData)yakUpdateNetDataForClient:(id)arg1;
 - (id)getSaveDict;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (id)initWithWorld:(id)arg1

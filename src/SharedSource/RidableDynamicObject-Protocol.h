@@ -1,6 +1,5 @@
-
-
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
 
 #import "Vector.h"
 #import "Vector2.h"
@@ -30,6 +29,6 @@
 @optional
 - (BOOL)riderRidesWithArmsDown;
 - (float)riderAnimationTimer;
-- (union _GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)arg1
+- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)arg1
                                          cameraX:(float)arg2;
 @end

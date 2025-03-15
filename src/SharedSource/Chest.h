@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
 
 #import "InteractionObject.h"
 
@@ -74,8 +75,8 @@ struct ChestNetData {
                              count:(int)arg3
                    assignedIndexes:(set_7b7d70f4*)arg4;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6

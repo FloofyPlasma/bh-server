@@ -27,13 +27,13 @@ struct HandCarCreationNetData {
 - (int)itemType;
 - (float)riderAnimationTimer;
 - (void)setTargetVelocity:(Vector2)arg1;
-- (union _GLKMatrix4)riderBodyMatrixForBlockhead:(id)arg1 cameraX:(float)arg2;
+- (GLKMatrix4)riderBodyMatrixForBlockhead:(id)arg1 cameraX:(float)arg2;
 - (Vector)riderPosForBlockhead:(id)arg1;
 - (Vector2)cameraPosForBlockhead:(id)arg1;
 - (Vector2)renderPos;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6

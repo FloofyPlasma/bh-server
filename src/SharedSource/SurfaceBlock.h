@@ -1,4 +1,4 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
@@ -22,9 +22,9 @@
        dynamicWorld:(id)arg2
          atPosition:(intpair)arg3
               cache:(id)arg4;
-- (BOOL)takeAnyWaterFromTileAtPos:(intpair)arg1 tile:(struct Tile*)arg2;
+- (BOOL)takeAnyWaterFromTileAtPos:(intpair)arg1 tile:(Tile*)arg2;
 - (void)subtractWater:(int)arg1
-        fromOtherTile:(struct Tile*)arg2
+        fromOtherTile:(Tile*)arg2
                 atPos:(intpair)arg3;
 - (int)objectType;
 

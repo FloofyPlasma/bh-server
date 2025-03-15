@@ -1,8 +1,8 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class MJSound, NSArray, NSMutableArray, NSOperationQueue, NSString;
+#import "Vector2.h"
+
+@class MJSound;
 
 @interface MJMultiSound : NSObject
 {

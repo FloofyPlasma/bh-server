@@ -1,5 +1,3 @@
-
-
 #import <Foundation/NSIndexSet.h>
 
 @interface NSIndexSet (SerializationMethods)

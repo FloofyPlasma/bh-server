@@ -1,7 +1,4 @@
-
-
 #import <Foundation/Foundation.h>
-@class NSArray;
 
 @interface Shader : NSObject
 {

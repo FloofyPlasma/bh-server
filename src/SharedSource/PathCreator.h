@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
+#import <vector>
 
-#import "PathUserDynamicObject-Protocol.h"
 #import "GameConstants.h"
+#import "PathUserDynamicObject-Protocol.h"
 
 struct DerivedTileProperties {
   int F;
@@ -15,12 +16,11 @@ struct DerivedTileProperties {
   NSArray* path;
 };
 
-struct PathTestResult
-{
-    TileTraverseType traverseType;
-    TileTraverseKeyFrameType traverseToKeyFrame;
-    int terrainDifficulty;
-    BOOL failedDueToNoTile;
+struct PathTestResult {
+  TileTraverseType traverseType;
+  TileTraverseKeyFrameType traverseToKeyFrame;
+  int terrainDifficulty;
+  BOOL failedDueToNoTile;
 };
 
 @class DynamicObject, World;
@@ -44,7 +44,7 @@ struct PathTestResult
   BOOL firstTileCheckDone;
   BOOL allowsWaterTiles;
   NSMutableSet* arrayPathsToRelease;
-  struct DerivedTileProperties* derivedTilePropertiesArray;
+  DerivedTileProperties* derivedTilePropertiesArray;
   int derivedTileCount;
   struct map<int, int, std::__1::less<int>,
       std::__1::allocator<std::__1::pair<const int, int>>>
@@ -68,7 +68,7 @@ struct PathTestResult
 - (id)calculateFallPath;
 - (void)calculatePath;
 - (void)updatePath;
-- (struct DerivedTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
+- (DerivedTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
 - (void)dealloc;
 - (id)initWithWorld:(id)arg1;
 

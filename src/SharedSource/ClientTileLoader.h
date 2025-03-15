@@ -1,8 +1,9 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class BHClient, NSMutableDictionary, NSString, NoiseFunction, World;
+#import "MJMath.h"
+#import "World.h"
+
+@class BHClient, NoiseFunction;
 
 @interface ClientTileLoader : NSObject
 {
@@ -43,7 +44,7 @@
 - (BOOL)waitingForFoodTypes;
 - (BOOL)waitingForBlocks;
 - (int*)distanceOrderedFoodTypes;
-- (void)loadPhysicalBlock:(struct PhysicalBlock*)arg1
+- (void)loadPhysicalBlock:(PhysicalBlock*)arg1
                     atPos:(intpair)arg2
             withTilesData:(id)arg3
                 lightData:(id)arg4

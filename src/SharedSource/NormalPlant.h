@@ -1,4 +1,4 @@
-
+#import <Foundation/Foundation.h>
 
 #import "Plant.h"
 
@@ -28,7 +28,7 @@
 - (int)tileHarvested:(intpair)arg1
           removeBlockhead:(id)arg2
     correctToolMultiplier:(int)arg3;
-- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
+- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (int)addLightGlowQuadData:(float*)arg1 fromIndex:(int)arg2;
 - (int)lightGlowQuadCount;

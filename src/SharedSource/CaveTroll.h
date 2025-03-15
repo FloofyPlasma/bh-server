@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
 
 #import "GameConstants.h"
 #import "NPC.h"
@@ -115,11 +116,11 @@ struct CaveTrollCreationData {
   intpair defendSquare;
   BOOL returnToDefense;
   BOOL cannotReturn;
-  struct Tile* fromTile;
-  struct Tile* toTile;
+  Tile* fromTile;
+  Tile* toTile;
   BOOL lastPathWasFalling;
   BOOL lastPathWasMoveOnly;
-  struct Tile* interactingTile;
+  Tile* interactingTile;
   Blockhead* tappedNPC;
   BOOL chasingNPC;
   intpair lastKnownNPCPosition;
@@ -132,12 +133,12 @@ struct CaveTrollCreationData {
   float randomAnimationValueA;
   float randomAnimationValueB;
   float randomAnimationValueC;
-  union _GLKMatrix4 mbodyMatrix;
-  union _GLKMatrix4 mheadMatrix;
-  union _GLKMatrix4 mleftArmMatrix;
-  union _GLKMatrix4 mrightArmMatrix;
-  union _GLKMatrix4 mleftLegMatrix;
-  union _GLKMatrix4 mrightLegMatrix;
+  GLKMatrix4 mbodyMatrix;
+  GLKMatrix4 mheadMatrix;
+  GLKMatrix4 mleftArmMatrix;
+  GLKMatrix4 mrightArmMatrix;
+  GLKMatrix4 mleftLegMatrix;
+  GLKMatrix4 mrightLegMatrix;
   Vector lightColor;
   Vector daylightColor;
   Vector artificialLightColor;
@@ -212,8 +213,8 @@ struct CaveTrollCreationData {
     goalInteraction:(int)arg3
           extraData:(id)arg4;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6
@@ -226,14 +227,14 @@ struct CaveTrollCreationData {
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)controlIsLocal;
 - (void)die:(id)arg1;
-- (BOOL)tileIsLitForSelf:(struct Tile*)arg1 atPos:(intpair)arg2;
+- (BOOL)tileIsLitForSelf:(Tile*)arg1 atPos:(intpair)arg2;
 - (void)updateGatherSpeedAndAnimationForCurrentInterationAndItem;
 - (void)remoteCreationDataUpdate:(id)arg1;
 - (void)remoteUpdate:(id)arg1;
-- (void)doRemoteUpdate:(struct CaveTrollUpdateData)arg1;
+- (void)doRemoteUpdate:(CaveTrollUpdateData)arg1;
 - (void)stopInteracting;
 - (void)startInteractingWithTileAtIndex:(int)arg1
-                                   tile:(struct Tile*)arg2
+                                   tile:(Tile*)arg2
                         interactionType:(int)arg3;
 - (int)currentTraverseToKeyFrame;
 - (BOOL)isHeadingForSquare:(intpair)arg1;
@@ -243,7 +244,7 @@ struct CaveTrollCreationData {
 - (unsigned long long)creationDataStructSize;
 - (id)updateNetDataForClient:(id)arg1;
 - (id)creationNetDataForClient:(id)arg1;
-- (struct CaveTrollUpdateData)caveTrollUpdateDataForClient:(id)arg1;
+- (CaveTrollUpdateData)caveTrollUpdateDataForClient:(id)arg1;
 - (id)initWithWorld:(id)arg1
        dynamicWorld:(id)arg2
               cache:(id)arg3
@@ -271,6 +272,5 @@ struct CaveTrollCreationData {
 - (BOOL)diesOfOldAge;
 - (float)maxAge;
 - (int)currentAnimationType;
-
 
 @end

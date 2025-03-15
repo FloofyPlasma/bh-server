@@ -83,20 +83,20 @@ struct ScorpionCreationNetData {
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)die:(id)arg1;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6
      cameraMaxYWorld:(int)arg7;
 - (void)remoteUpdate:(id)arg1;
-- (void)doRemoteUpdate:(struct ScorpionUpdateNetData)arg1;
+- (void)doRemoteUpdate:(ScorpionUpdateNetData)arg1;
 - (void)remoteCreationDataUpdate:(id)arg1;
 - (unsigned long long)creationDataStructSize;
 - (void)dealloc;
 - (id)updateNetDataForClient:(id)arg1;
 - (id)creationNetDataForClient:(id)arg1;
-- (struct ScorpionUpdateNetData)scorpionUpdateNetDataForClient:(id)arg1;
+- (ScorpionUpdateNetData)scorpionUpdateNetDataForClient:(id)arg1;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1
        dynamicWorld:(id)arg2

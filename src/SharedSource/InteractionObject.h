@@ -64,7 +64,7 @@ struct InteractionObjectCreationNetData {
 - (void)dealloc;
 - (id)creationNetDataForClient:(id)arg1;
 - (id)updateNetDataForClient:(id)arg1;
-- (struct InteractionObjectCreationNetData)interactionObjectCreationNetData;
+- (InteractionObjectCreationNetData)interactionObjectCreationNetData;
 - (id)getSaveDict;
 - (void)blockheadsLoaded;
 - (id)initWithWorld:(id)arg1

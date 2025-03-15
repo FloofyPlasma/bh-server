@@ -97,20 +97,20 @@ struct SharkCreationNetData {
 - (BOOL)isUnderLocalControl;
 - (void)die:(id)arg1;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6
      cameraMaxYWorld:(int)arg7;
 - (void)remoteUpdate:(id)arg1;
-- (void)doRemoteUpdate:(struct SharkUpdateNetData)arg1;
+- (void)doRemoteUpdate:(SharkUpdateNetData)arg1;
 - (void)remoteCreationDataUpdate:(id)arg1;
 - (void)dealloc;
 - (id)updateNetDataForClient:(id)arg1;
 - (unsigned long long)creationDataStructSize;
 - (id)creationNetDataForClient:(id)arg1;
-- (struct SharkUpdateNetData)sharkUpdateNetDataForClient:(id)arg1;
+- (SharkUpdateNetData)sharkUpdateNetDataForClient:(id)arg1;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1
        dynamicWorld:(id)arg2

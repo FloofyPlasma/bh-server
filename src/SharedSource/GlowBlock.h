@@ -1,4 +1,4 @@
-
+#import <Foundation/Foundation.h>
 
 #import "DynamicObject.h"
 
@@ -26,7 +26,7 @@
        dynamicWorld:(id)arg2
          atPosition:(intpair)arg3
               cache:(id)arg4
-               tile:(struct Tile*)arg5;
+               tile:(Tile*)arg5;
 - (Vector)getLightRGB;
 - (int)objectType;
 - (void)initSubDerivedItems;

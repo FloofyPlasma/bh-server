@@ -1,8 +1,7 @@
-
-
 #import <Foundation/Foundation.h>
 
 #import "MJMath.h"
+#import "World.h"
 
 @class NSArray, NSDictionary;
 
@@ -20,5 +19,5 @@
 - (NSDictionary*)infoForPathRecalculation;
 - (intpair)nextPos;
 - (int)currentTraverseToKeyFrame;
-- (BOOL)tileIsLitForSelf:(struct Tile*)arg1 atPos:(intpair)arg2;
+- (BOOL)tileIsLitForSelf:(Tile*)arg1 atPos:(intpair)arg2;
 @end

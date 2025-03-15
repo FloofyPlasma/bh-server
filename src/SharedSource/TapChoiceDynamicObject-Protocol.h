@@ -1,8 +1,6 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class Blockhead, NSString;
+@class Blockhead;
 
 @protocol TapChoiceDynamicObject <NSObject>
 - (BOOL)canBeRemovedByBlockhead:(Blockhead*)blockhead;

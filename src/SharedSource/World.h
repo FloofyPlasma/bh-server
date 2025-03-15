@@ -176,7 +176,7 @@ struct MacroTile {
   int dynamicWorldFailedToLoadWaitCountTimer;
   BOOL loadComplete;
   intpair startPortalPos;
-  struct WindowInfo* windowInfo;
+  WindowInfo* windowInfo;
   Weather* weather;
   CustomRules customRules;
   NSMutableDictionary* customRulesDict;
@@ -185,12 +185,12 @@ struct MacroTile {
   CloudInterface* cloudInterface;
   UIManager* uiManager;
   int loadedVersion;
-  _GLKMatrix4 tapProjectionMatrix;
-  _GLKMatrix4 tapModelviewMatrix;
+  GLKMatrix4 tapProjectionMatrix;
+  GLKMatrix4 tapModelviewMatrix;
   int tapViewport[4];
   double pinchScale;
   CPCache* cache;
-  struct MacroTile* macroTiles;
+  MacroTile* macroTiles;
   DynamicWorld* dynamicWorld;
   WorldTileLoader* worldTileLoader;
   PathCreator* pathCreator;
@@ -204,7 +204,7 @@ struct MacroTile {
   std::unordered_set<PhysicalBlock> usedPhysicalBlocks;
   std::unordered_set<PhysicalBlock> freePhysicalBlocks;
   NSMutableIndexSet* freeClientLightBlockIndices;
-  struct DrawBlock* drawBlocks;
+  DrawBlock* drawBlocks;
   int numDrawBlocks;
   int updateGeometryDrawBlockIndex;
   float updateGeometryDrawBlockTimer;
@@ -457,14 +457,14 @@ struct MacroTile {
 - (float)sandFractionForPos:(intpair)arg1;
 - (void)sendUpdatedCustomSlots;
 - (void)sendUpdatedSunColor;
-- (void)setSunColorRule:(struct MJColor)arg1;
+- (void)setSunColorRule:(MJColor)arg1;
 - (void)setCustomSlotAtIndex:(int)arg1 toItemType:(int)arg2 count:(int)arg3;
 - (void)customRuleDictRecievedFromNet:(id)arg1;
 - (void)setCustomRule:(id)arg1 forOptionNamed:(id)arg2;
 - (void)customRulesChanged;
 - (id)customRuleForOptionNamed:(id)arg1;
 - (id)customRulesDict;
-- (struct CustomRules)customRules;
+- (CustomRules)customRules;
 - (BOOL)renderingTeaserFrames;
 - (void)displayOwnershipAreas;
 - (BOOL)tileIsProtectedAtPos:(intpair)arg1 againstBlockhead:(id)arg2;
@@ -544,8 +544,8 @@ struct MacroTile {
 - (BOOL)mapVisible;
 - (BOOL)tileIsLitForClient:(id)arg1
                      atPos:(intpair)arg2
-                      tile:(struct Tile*)arg3;
-- (void)updatePhysicalBlockToLatestVersion:(struct PhysicalBlock*)arg1;
+                      tile:(Tile*)arg3;
+- (void)updatePhysicalBlockToLatestVersion:(PhysicalBlock*)arg1;
 - (void)playersChanged;
 - (BOOL)isControllingBlockheadsForClientPlayer:(id)arg1;
 - (int)currentTotalBlockheadCountIncludingNet;
@@ -584,9 +584,9 @@ struct MacroTile {
 - (void)startIncentivizedVideo;
 - (void)iapStarted;
 - (void)waterMovedFrom:(intpair)arg1
-              fromTile:(struct Tile*)arg2
+              fromTile:(Tile*)arg2
                     to:(intpair)arg3
-                toTile:(struct Tile*)arg4
+                toTile:(Tile*)arg4
                 amount:(int)arg5;
 - (void)abortInProgressPathIfForBlockhead:(id)arg1;
 - (Vector)currentTipColor;
@@ -642,7 +642,7 @@ struct MacroTile {
 - (void)fullyLoadIfNeededAroundPos:(intpair)arg1
              clientLightBlockIndex:(int)arg2
                       forBlockhead:(id)arg3;
-- (void)fullyLoadAndUpdateIfNeededForMacroBlock:(struct MacroTile*)arg1
+- (void)fullyLoadAndUpdateIfNeededForMacroBlock:(MacroTile*)arg1
                                    includingPos:(intpair)arg2
                           clientLightBlockIndex:(int)arg3
                                    forBlockhead:(id)arg4;
@@ -650,41 +650,41 @@ struct MacroTile {
 - (void)pauseResumeButtonTapped;
 - (void)pauseButtonTapped;
 - (void)timeCrystalButtonTapped;
-- (void)setWindowInfo:(struct WindowInfo*)arg1;
-- (void)loadPhysicalBlockForMacroTile:(struct MacroTile*)arg1
+- (void)setWindowInfo:(WindowInfo*)arg1;
+- (void)loadPhysicalBlockForMacroTile:(MacroTile*)arg1
                                   atX:(int)arg2
                                     y:(int)arg3
                 loadSurroundingBlocks:(BOOL)arg4
                    createIfNotCreated:(BOOL)arg5;
-- (struct PhysicalBlock*)physicalBlockToLoadByClientTileLoaderForMacroTile:
-    (struct MacroTile*)arg1;
+- (PhysicalBlock*)physicalBlockToLoadByClientTileLoaderForMacroTile:
+    (MacroTile*)arg1;
 - (void)saveLightBlockForClientLightBlockIndex:(int)arg1
-                                 physicalBlock:(struct PhysicalBlock*)arg2
+                                 physicalBlock:(PhysicalBlock*)arg2
                                        sendNow:(BOOL)arg3;
 - (void)loadLightBlockForClientLightBlockIndex:(int)arg1
-                             intoPhysicalBlock:(struct PhysicalBlock*)arg2;
+                             intoPhysicalBlock:(PhysicalBlock*)arg2;
 - (void)loadDynamicObjectsIfNotAlreadyLoadedForMacroTile:
-            (struct MacroTile*)arg1
+            (MacroTile*)arg1
                                     includeSurfaceBlocks:(BOOL)arg2;
-- (void)decommisionBlock:(struct MacroTile*)arg1
+- (void)decommisionBlock:(MacroTile*)arg1
     blockToSavePhyscialBlock:(BOOL)arg2;
-- (BOOL)savePhysicalBlockForMacroTile:(struct MacroTile*)arg1
+- (BOOL)savePhysicalBlockForMacroTile:(MacroTile*)arg1
                          sendReliably:(BOOL)arg2
                              dontSend:(BOOL)arg3
               onlySaveIfClientsNeedIt:(BOOL)arg4;
 - (int)unmodifiedGroundLevelForX:(int)arg1;
 - (void)swipeGesture;
-- (void)endTouch:(struct CGPoint)arg1 index:(int)arg2;
-- (void)cancelTouch:(struct CGPoint)arg1 index:(int)arg2;
-- (void)doEndTouch:(struct CGPoint)arg1 wasCancelled:(BOOL)arg2 index:(int)arg3;
-- (void)moveTouch:(struct CGPoint)arg1 index:(int)arg2;
-- (BOOL)startTouch:(struct CGPoint)arg1 tapCount:(int)arg2 index:(int)arg3;
-- (BOOL)touchIsInUI:(struct CGPoint)arg1;
-- (void)tap:(struct CGPoint)arg1;
+- (void)endTouch:(CGPoint)arg1 index:(int)arg2;
+- (void)cancelTouch:(CGPoint)arg1 index:(int)arg2;
+- (void)doEndTouch:(CGPoint)arg1 wasCancelled:(BOOL)arg2 index:(int)arg3;
+- (void)moveTouch:(CGPoint)arg1 index:(int)arg2;
+- (BOOL)startTouch:(CGPoint)arg1 tapCount:(int)arg2 index:(int)arg3;
+- (BOOL)touchIsInUI:(CGPoint)arg1;
+- (void)tap:(CGPoint)arg1;
 - (void)resetPauseIdleTimer;
 - (void)pauseUpdates;
-- (void)scrollToTap:(struct CGPoint)arg1;
-- (void)queueBlockheadAIActionToTile:(struct Tile*)arg1
+- (void)scrollToTap:(CGPoint)arg1;
+- (void)queueBlockheadAIActionToTile:(Tile*)arg1
                                atPos:(intpair)arg2
                         forBlockhead:(id)arg3;
 - (void)cancelAllActionsAtPos:(intpair)arg1
@@ -692,7 +692,7 @@ struct MacroTile {
 - (void)zoomUIToOnscreen:(Vector2)arg1 dimensions:(Vector2)arg2;
 - (void)render:(float)arg1
              cameraZ:(float)arg2
-    projectionMatrix:(_GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg3
           pinchScale:(float)arg4;
 - (Vector)lightPositionLeft;
 - (Vector)lightPositionRight;
@@ -701,7 +701,7 @@ struct MacroTile {
 - (void)preRenderUpdate:(float)arg1
              fastSlowDT:(float)arg2
                 cameraZ:(float)arg3
-       projectionMatrix:(_GLKMatrix4)arg4;
+       projectionMatrix:(GLKMatrix4)arg4;
 - (Vector)dayColorForPosition:(intpair)arg1;
 - (float)getDayNightFractionForX:(float)arg1 atWorldTime:(double)arg2;
 - (float)getWeatherFractionForPos:(intpair)arg1;
@@ -709,18 +709,18 @@ struct MacroTile {
                       atWorldTime:(double)arg2
                ignoreSandFraction:(BOOL)arg3;
 - (float)getWeatherFractionForPos:(intpair)arg1 atWorldTime:(double)arg2;
-- (void)removePaintAtTile:(struct Tile*)arg1
+- (void)removePaintAtTile:(Tile*)arg1
                     atPos:(intpair)arg2
                 faceIndex:(unsigned char)arg3
            paintBlockhead:(id)arg4;
-- (void)paintTile:(struct Tile*)arg1
+- (void)paintTile:(Tile*)arg1
              atPos:(intpair)arg2
         colorIndex:(unsigned short)arg3
          faceIndex:(unsigned char)arg4
     paintBlockhead:(id)arg5;
 - (void)remoteGatherRequest:(id)arg1;
-- (void)sendGatherNotificationForTile:(struct Tile*)arg1 atPos:(intpair)arg2;
-- (void)fillTile:(struct Tile*)arg1
+- (void)sendGatherNotificationForTile:(Tile*)arg1 atPos:(intpair)arg2;
+- (void)fillTile:(Tile*)arg1
                  atPos:(intpair)arg2
               withType:(int)arg3
                  dataA:(unsigned short)arg4
@@ -729,7 +729,7 @@ struct MacroTile {
               saveDict:(id)arg7
      placedByBlockhead:(id)arg8
     placedByClientName:(id)arg9;
-- (void)fillTile:(struct Tile*)arg1
+- (void)fillTile:(Tile*)arg1
                  atPos:(intpair)arg2
               withType:(int)arg3
                  dataA:(unsigned short)arg4
@@ -737,7 +737,7 @@ struct MacroTile {
         placedByClient:(id)arg6
               saveDict:(id)arg7
     placedByClientName:(id)arg8;
-- (void)fillTile:(struct Tile*)arg1 atPos:(intpair)arg2 withType:(int)arg3;
+- (void)fillTile:(Tile*)arg1 atPos:(intpair)arg2 withType:(int)arg3;
 - (void)remotePaintRequest:(id)arg1 fromClient:(id)arg2;
 - (unsigned int)remoteFillRequest:(id)arg1 placedByClient:(id)arg2;
 - (id)placeInteractionObjectWithItem:(id)arg1
@@ -783,7 +783,7 @@ struct MacroTile {
                            removeBlockhead:(id)arg5;
 - (unsigned int)remoteRemoveRequest:(id)arg1 fromClient:(id)arg2;
 - (unsigned int)remoteRemoveBackWallRequest:(id)arg1 fromClient:(id)arg2;
-- (void)removeAnyBackgroundContentsForTile:(struct Tile*)arg1
+- (void)removeAnyBackgroundContentsForTile:(Tile*)arg1
                                      atPos:(intpair)arg2
                            removeBlockhead:(id)arg3;
 - (void)decommisionAllBlocksBlockToSavePhyscialBlock:(BOOL)arg1;
@@ -807,7 +807,7 @@ struct MacroTile {
 - (void)dealloc;
 - (void)deleteTimers;
 - (void)setServer:(id)arg1;
-- (id)initWithWindowInfo:(struct WindowInfo*)arg1
+- (id)initWithWindowInfo:(WindowInfo*)arg1
                    cache:(id)arg2
                 delegate:(id)arg3
                   saveID:(id)arg4

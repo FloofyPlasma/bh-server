@@ -1,4 +1,4 @@
-
+#import <Foundation/Foundation.h>
 
 #import "Plant.h"
 
@@ -27,11 +27,11 @@
 - (int)gatherProgressForTile:(intpair)arg1;
 - (BOOL)isRequiredSoilType:(int)arg1;
 - (int)plantType;
-- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
+- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
 - (void)dieOfOldAge;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)isGrowingInCompost;
-- (struct PlantCreationNetData)plantCreationNetData;
+- (PlantCreationNetData)plantCreationNetData;
 - (void)dealloc;
 - (void)remoteUpdate:(id)arg1;
 - (id)getSaveDict;

@@ -1,8 +1,6 @@
+#import <Foundation/Foundation.h>
 
-
-#import "NSObject-Protocol.h"
-
-@class GameController, NSDictionary;
+@class GameController;
 
 @protocol GameControllerDelegate <NSObject>
 - (void)clearChat;

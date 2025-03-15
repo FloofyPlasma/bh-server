@@ -1,5 +1,3 @@
-
-
 #import "Tree.h"
 
 @interface AppleTree : Tree {

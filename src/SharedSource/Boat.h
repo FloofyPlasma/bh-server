@@ -1,4 +1,7 @@
+#import <Foundation/Foundation.h>
+
 #import "DynamicObject.h"
+#import <GLKit/GLKMathTypes.h>
 
 #import "RidableDynamicObject-Protocol.h"
 #import "TapChoiceDynamicObject-Protocol.h"
@@ -11,7 +14,7 @@ struct BoatCreationNetData
     uint8_t padding[6];
 };
 
-@class Blockhead, CPTexture2D, DrawCube, NSString, Shader;
+@class Blockhead, CPTexture2D, DrawCube, Shader;
 
 @interface Boat : DynamicObject <RidableDynamicObject, TapChoiceDynamicObject> {
   Shader* shader;
@@ -60,8 +63,8 @@ struct BoatCreationNetData
 - (Vector2)renderPos;
 - (unsigned short)maxHealth;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6

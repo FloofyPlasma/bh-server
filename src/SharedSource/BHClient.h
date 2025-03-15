@@ -1,5 +1,3 @@
-
-
 #import "BHNetNode.h"
 
 @class ClientTileLoader, NSMutableDictionary, NSString, World;

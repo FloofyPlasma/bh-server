@@ -1,13 +1,13 @@
-
+#import <Foundation/Foundation.h>
 
 #import "Tree.h"
 
 @interface OrangeTree : Tree {
 }
 
-- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
+- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
 - (int)treeType;
-- (void)makeTileDead:(struct Tile*)arg1;
+- (void)makeTileDead:(Tile*)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)updateGrowth:(BOOL)arg1;
 - (id)getSaveDict;

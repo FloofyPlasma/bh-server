@@ -1,12 +1,11 @@
+#import <Foundation/Foundation.h>
 
-
+#include "BlockheadSkinHelpers.h"
 #import "CraftableItemObject.h"
-
-@class NSString;
 
 @interface BlockheadCraftableItemObject : CraftableItemObject {
   NSString* name;
-  struct BlockheadSkinOptions skinOptions;
+  BlockheadSkinOptions skinOptions;
 }
 
 @property struct BlockheadSkinOptions skinOptions; // @synthesize skinOptions;

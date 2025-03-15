@@ -145,8 +145,8 @@ struct NPCUpdateNetData {
 - (BOOL)tamed;
 - (void)changeName:(id)arg1;
 - (id)name;
-- (void)drawName:(union _GLKMatrix4)arg1
-    modelViewMatrix:(union _GLKMatrix4)arg2
+- (void)drawName:(GLKMatrix4)arg1
+    modelViewMatrix:(GLKMatrix4)arg2
          pinchScale:(float)arg3
     cameraMinXWorld:(int)arg4
     cameraMaxXWorld:(int)arg5

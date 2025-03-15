@@ -1,4 +1,4 @@
-
+#import <Foundation/Foundation.h>
 
 #import "Plant.h"
 
@@ -29,10 +29,10 @@
 - (int)gatherProgressForTile:(intpair)arg1;
 - (BOOL)isRequiredSoilType:(int)arg1;
 - (int)plantType;
-- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
+- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6
@@ -41,7 +41,7 @@
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)remoteUpdate:(id)arg1;
 - (void)dealloc;
-- (struct PlantCreationNetData)plantCreationNetData;
+- (PlantCreationNetData)plantCreationNetData;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1
        dynamicWorld:(id)arg2

@@ -1,14 +1,14 @@
-
+#import <Foundation/Foundation.h>
 
 #import "Tree.h"
 
 @interface CherryTree : Tree {
 }
 
-- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
+- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
 - (int)treeType;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)makeTileDead:(struct Tile*)arg1;
+- (void)makeTileDead:(Tile*)arg1;
 - (void)updateGrowth:(BOOL)arg1;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1

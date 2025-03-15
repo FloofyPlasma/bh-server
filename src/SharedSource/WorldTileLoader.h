@@ -1,10 +1,9 @@
-
-
 #import <Foundation/Foundation.h>
 
 #import "MJMath.h"
+#import "World.h"
 
-@class Database, DatabaseEnvironment, NSString, NoiseFunction, World;
+@class Database, DatabaseEnvironment, NoiseFunction, World;
 
 @interface WorldTileLoader : NSObject
 {
@@ -60,32 +59,32 @@
 - (void)startBulkLightBlockTransaction;
 - (void)saveLightBlockForClientLightBlockIndex:(int)arg1
                                       clientID:(id)arg2
-                                 physicalBlock:(struct PhysicalBlock*)arg3
+                                 physicalBlock:(PhysicalBlock*)arg3
                                        sendNow:(BOOL)arg4;
-- (BOOL)sendLightBlockToClientWithoutSavingForBlock:(struct PhysicalBlock*)arg1
+- (BOOL)sendLightBlockToClientWithoutSavingForBlock:(PhysicalBlock*)arg1
                                                 pos:(intpair)arg2
                                        sendToClient:(id)arg3
                                              server:(id)arg4;
 - (void)loadLightBlockForClientLightBlockIndex:(int)arg1
                                       clientID:(id)arg2
-                             intoPhysicalBlock:(struct PhysicalBlock*)arg3;
+                             intoPhysicalBlock:(PhysicalBlock*)arg3;
 - (void)archiveLightBlocksForClient:(id)arg1;
 - (void)unarchiveLightBlocksForClient:(id)arg1;
-- (void)updatePhysicalBlockToLatestVersion:(struct PhysicalBlock*)arg1;
+- (void)updatePhysicalBlockToLatestVersion:(PhysicalBlock*)arg1;
 - (int*)distanceOrderedFoodTypes;
 - (intpair)findBestStartPosition;
-- (void)loadPhysicalBlock:(struct PhysicalBlock*)arg1
+- (void)loadPhysicalBlock:(PhysicalBlock*)arg1
                    atXPos:(int)arg2
                      yPos:(int)arg3
        createIfNotCreated:(BOOL)arg4;
-- (void)placeGemsInCaveForPhysicalBlock:(struct PhysicalBlock*)arg1
+- (void)placeGemsInCaveForPhysicalBlock:(PhysicalBlock*)arg1
                               tileIndex:(int)arg2
                                  worldX:(int)arg3
                                  worldY:(int)arg4
                      floatingIslandType:(int)arg5;
-- (void)recursivelyFlowOutDirtFromTile:(struct Tile*)arg1 atPos:(intpair)arg2;
-- (void)recursivelyFlowOutWaterFromTile:(struct Tile*)arg1 atPos:(intpair)arg2;
-- (void)fillDirtTile:(struct Tile*)arg1
+- (void)recursivelyFlowOutDirtFromTile:(Tile*)arg1 atPos:(intpair)arg2;
+- (void)recursivelyFlowOutWaterFromTile:(Tile*)arg1 atPos:(intpair)arg2;
+- (void)fillDirtTile:(Tile*)arg1
             worldPos:(intpair)arg2
      worldDirtHeight:(int)arg3
           parentType:(int)arg4;
@@ -94,12 +93,12 @@
 - (BOOL)isDesertForPos:(intpair)arg1 height:(int)arg2;
 - (float)sandFractionForPos:(intpair)arg1 height:(int)arg2 highRes:(BOOL)arg3;
 - (float)sandFractionForPos:(intpair)arg1 highRes:(BOOL)arg2;
-- (void)savePhysicalBlock:(struct PhysicalBlock*)arg1
-                macroTile:(struct MacroTile*)arg2
+- (void)savePhysicalBlock:(PhysicalBlock*)arg1
+                macroTile:(MacroTile*)arg2
             sendToClients:(id)arg3
                    server:(id)arg4
              sendReliably:(BOOL)arg5;
-- (BOOL)sendBlockToClientWithoutSavingForBlock:(struct PhysicalBlock*)arg1
+- (BOOL)sendBlockToClientWithoutSavingForBlock:(PhysicalBlock*)arg1
                                            pos:(intpair)arg2
                                   sendToClient:(id)arg3
                                         server:(id)arg4

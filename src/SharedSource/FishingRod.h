@@ -1,11 +1,10 @@
-
-
 #import <Foundation/Foundation.h>
+
+#import "MJMath.h"
 
 @class Blockhead, CPTexture2D, ClownFish, MJSound, Shader, World;
 
-@interface FishingRod : NSObject
-{
+@interface FishingRod : NSObject {
   World* world;
   Blockhead* blockhead;
   BOOL casting;
@@ -41,8 +40,8 @@
 - (void)setHookedFish:(id)arg1;
 - (Vector2)hookedFishDirection;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6

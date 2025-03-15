@@ -1,5 +1,3 @@
-
-
 #import <Foundation/NSString.h>
 
 @interface NSString (MD5Addition)

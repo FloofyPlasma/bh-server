@@ -1,11 +1,8 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, NSURL;
+#import "Vector2.h"
 
-@interface MJSoundManager : NSObject
-{
+@interface MJSoundManager : NSObject {
   NSMutableDictionary* loadedSounds;
   NSMutableDictionary* loadedMultiSounds;
   NSMutableArray* loadedSoundsArray;

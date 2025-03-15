@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
 
 #import "NPC.h"
 
@@ -65,8 +66,8 @@ struct ClownFishCreationNetData {
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)die:(id)arg1;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6
@@ -74,11 +75,11 @@ struct ClownFishCreationNetData {
 - (unsigned long long)creationDataStructSize;
 - (void)remoteCreationDataUpdate:(id)arg1;
 - (void)remoteUpdate:(id)arg1;
-- (void)doRemoteUpdate:(struct ClownFishUpdateNetData)arg1;
+- (void)doRemoteUpdate:(ClownFishUpdateNetData)arg1;
 - (void)dealloc;
 - (id)updateNetDataForClient:(id)arg1;
 - (id)creationNetDataForClient:(id)arg1;
-- (struct ClownFishUpdateNetData)clownFishUpdateNetDataForClient:(id)arg1;
+- (ClownFishUpdateNetData)clownFishUpdateNetDataForClient:(id)arg1;
 - (id)getSaveDict;
 - (id)initWithWorld:(id)arg1
        dynamicWorld:(id)arg2

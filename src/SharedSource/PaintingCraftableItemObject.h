@@ -1,4 +1,4 @@
-
+#import <Foundation/Foundation.h>
 
 #import "CraftableItemObject.h"
 
@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (id)getSaveDict;
 - (id)initWithSaveDict:(id)arg1;
-- (id)initWithCraftableItem:(struct CraftableItem)arg1
+- (id)initWithCraftableItem:(CraftableItem)arg1
                   imageData:(id)arg2
             outputImageData:(id)arg3;
 

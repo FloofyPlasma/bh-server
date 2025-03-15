@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
 #import <vector>
 
 #import "MJMath.h"
 #import "Vector.h"
-
 
 enum ParticleGravityType {
   GRAVITY_NONE = 0x0,
@@ -91,8 +91,8 @@ struct Particle {
 @property BOOL stopAllParticles; // @synthesize stopAllParticles;
 - (void)renderAndUpdate:(float)arg1
              pinchScale:(float)arg2
-       projectionMatrix:(union _GLKMatrix4)arg3
-        modelViewMatrix:(union _GLKMatrix4)arg4
+       projectionMatrix:(GLKMatrix4)arg3
+        modelViewMatrix:(GLKMatrix4)arg4
         cameraMinXWorld:(int)arg5
         cameraMaxXWorld:(int)arg6
         cameraMinYWorld:(int)arg7

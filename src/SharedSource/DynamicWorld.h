@@ -1,13 +1,8 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class BHClient, BHServer, CPCache, ClientTileLoader, Database, NSDictionary,
-    NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString,
-    NoiseFunction, WirePathCreator, World, WorldTileLoader;
+@class BHClient, BHServer, CPCache, ClientTileLoader, Database, NoiseFunction, WirePathCreator, World, WorldTileLoader;
 
-@interface DynamicWorld : NSObject
-{
+@interface DynamicWorld : NSObject {
   World* world;
   WorldTileLoader* worldTileLoader;
   ClientTileLoader* clientTileLoader;
@@ -136,12 +131,12 @@
                                  toClient:(id)arg2;
 - (void)requestPaintingDataForPainting:(id)arg1;
 - (void)blockheadWillBeUnloaded:(id)arg1;
-- (void)reloadLightGlowQuadsForMacroTile:(struct MacroTile*)arg1;
-- (void)reloadDynamicObjectItemQuadsForMacroTile:(struct MacroTile*)arg1;
-- (void)reloadDynamicObjectQuadsForMacroTile:(struct MacroTile*)arg1;
-- (void)reloadDodoEggQuadsForMacroTile:(struct MacroTile*)arg1;
-- (void)reloadDynamicObjectStaticCylindersForMacroTile:(struct MacroTile*)arg1;
-- (void)reloadDynamicObjectStaticGemometryForMacroTile:(struct MacroTile*)arg1;
+- (void)reloadLightGlowQuadsForMacroTile:(MacroTile*)arg1;
+- (void)reloadDynamicObjectItemQuadsForMacroTile:(MacroTile*)arg1;
+- (void)reloadDynamicObjectQuadsForMacroTile:(MacroTile*)arg1;
+- (void)reloadDodoEggQuadsForMacroTile:(MacroTile*)arg1;
+- (void)reloadDynamicObjectStaticCylindersForMacroTile:(MacroTile*)arg1;
+- (void)reloadDynamicObjectStaticGemometryForMacroTile:(MacroTile*)arg1;
 - (void)railOrStationNameChanged;
 - (id)pathUsers;
 - (int)findAndSubtractAllPowerUpTo:(unsigned short)arg1 forUser:(id)arg2;
@@ -179,7 +174,7 @@
 - (BOOL)teleportBlockhead:(id)arg1 toWorkbench:(id)arg2;
 - (id)gatherBlockAtPos:(intpair)arg1;
 - (void)loadGatherBlockAtPos:(intpair)arg1;
-- (void)loadGlowBlockIfNeededAtPos:(intpair)arg1 tile:(struct Tile*)arg2;
+- (void)loadGlowBlockIfNeededAtPos:(intpair)arg1 tile:(Tile*)arg2;
 - (id)blockheadAtPos:(intpair)arg1;
 - (BOOL)blockheadOccupiesTileAtPos:(intpair)arg1 ignoreBlockhead:(id)arg2;
 - (id)npcCloseEnoughToBreedWithNPC:(id)arg1;
@@ -288,7 +283,7 @@
 - (id)removeEggAtPos:(intpair)arg1;
 - (void)addEggAtPos:(intpair)arg1 saveDict:(id)arg2;
 - (id)eggAtPos:(intpair)arg1;
-- (void)createTreasureChestOrTrollAtTile:(struct Tile*)arg1
+- (void)createTreasureChestOrTrollAtTile:(Tile*)arg1
                                    atPos:(intpair)arg2
                                loadTroll:(BOOL)arg3
                             loadTreasure:(BOOL)arg4;
@@ -356,12 +351,12 @@
 - (void)worldContentsChangedAtPos:(intpair)arg1;
 - (void)worldChangedAtPos:(intpair)arg1 sendReliably:(BOOL)arg2;
 - (void)createBackgroundContentFreeBlockAtPosition:(intpair)arg1
-                                           forTile:(struct Tile*)arg2
+                                           forTile:(Tile*)arg2
                                    removeBlockhead:(id)arg3;
 - (id)freeblockWithUniqueID:(unsigned long long)arg1;
 - (void)createFreeBlockAtPosition:(intpair)arg1
             forForegroundContents:(BOOL)arg2
-                          forTile:(struct Tile*)arg3
+                          forTile:(Tile*)arg3
                 priorityBlockhead:(id)arg4;
 - (void)playTimeCrystalReceivedSoundAtPos:(intpair)arg1;
 - (void)createFreeBlockAtPosition:(intpair)arg1
@@ -374,8 +369,8 @@
                         playSound:(int)arg8
                 priorityBlockhead:(id)arg9;
 - (void)drawNames:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
           pinchScale:(float)arg4
      cameraMinXWorld:(int)arg5
      cameraMaxXWorld:(int)arg6
@@ -383,40 +378,40 @@
      cameraMaxYWorld:(int)arg8
       drawLocalNames:(BOOL)arg9;
 - (void)drawBlockheadBoxes:(float)arg1
-          projectionMatrix:(union _GLKMatrix4)arg2
-           modelViewMatrix:(union _GLKMatrix4)arg3
+          projectionMatrix:(GLKMatrix4)arg2
+           modelViewMatrix:(GLKMatrix4)arg3
                 pinchScale:(float)arg4
            cameraMinXWorld:(int)arg5
            cameraMaxXWorld:(int)arg6
            cameraMinYWorld:(int)arg7
            cameraMaxYWorld:(int)arg8;
 - (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
+    projectionMatrix:(GLKMatrix4)arg2
+     modelViewMatrix:(GLKMatrix4)arg3
      cameraMinXWorld:(int)arg4
      cameraMaxXWorld:(int)arg5
      cameraMinYWorld:(int)arg6
      cameraMaxYWorld:(int)arg7
           hideUIType:(int)arg8;
 - (void)drawFreeBlocks:(float)arg1
-      projectionMatrix:(union _GLKMatrix4)arg2
-       modelViewMatrix:(union _GLKMatrix4)arg3
+      projectionMatrix:(GLKMatrix4)arg2
+       modelViewMatrix:(GLKMatrix4)arg3
        cameraMinXWorld:(int)arg4
        cameraMaxXWorld:(int)arg5
        cameraMinYWorld:(int)arg6
        cameraMaxYWorld:(int)arg7
             hideUIType:(int)arg8;
 - (void)drawInFrontOfBlocksObjects:(float)arg1
-                  projectionMatrix:(union _GLKMatrix4)arg2
-                   modelViewMatrix:(union _GLKMatrix4)arg3
+                  projectionMatrix:(GLKMatrix4)arg2
+                   modelViewMatrix:(GLKMatrix4)arg3
                    cameraMinXWorld:(int)arg4
                    cameraMaxXWorld:(int)arg5
                    cameraMinYWorld:(int)arg6
                    cameraMaxYWorld:(int)arg7
                         hideUIType:(int)arg8;
 - (void)drawOpaqueObjects:(float)arg1
-         projectionMatrix:(union _GLKMatrix4)arg2
-          modelViewMatrix:(union _GLKMatrix4)arg3
+         projectionMatrix:(GLKMatrix4)arg2
+          modelViewMatrix:(GLKMatrix4)arg3
           cameraMinXWorld:(int)arg4
           cameraMaxXWorld:(int)arg5
           cameraMinYWorld:(int)arg6
@@ -442,16 +437,16 @@
                 forObjectsOfType:(int)arg2
                       fromClient:(id)arg3;
 - (void)remoteCreate:(id)arg1 forObjectsOfType:(int)arg2 clientID:(id)arg3;
-- (void)loadDynamicObjectsForMacroTile:(struct MacroTile*)arg1
+- (void)loadDynamicObjectsForMacroTile:(MacroTile*)arg1
                   includeSurfaceBlocks:(BOOL)arg2;
 - (void)loadClientOwnedDynamicObjectsForClient:(id)arg1
-                                 physicalBlock:(struct PhysicalBlock*)arg2;
+                                 physicalBlock:(PhysicalBlock*)arg2;
 - (void)loadDynamicObjectsOfType:(int)arg1
                         fromData:(id)arg2
-                   physicalBlock:(struct PhysicalBlock*)arg3
+                   physicalBlock:(PhysicalBlock*)arg3
                     loadedPortal:(char*)arg4
                    clientOwnedID:(id)arg5;
-- (void)saveDynamicObjectsForMacroTile:(struct MacroTile*)arg1
+- (void)saveDynamicObjectsForMacroTile:(MacroTile*)arg1
                             objectType:(int)arg2
                                   xPos:(int)arg3
                                   yPos:(int)arg4;
@@ -461,7 +456,7 @@
 - (void)removePortalFromListAtPos:(intpair)arg1;
 - (void)saveBlockheadInventory:(id)arg1;
 - (void)saveBlockheads;
-- (void)removeDynamicObjectsForMacroTile:(struct MacroTile*)arg1;
+- (void)removeDynamicObjectsForMacroTile:(MacroTile*)arg1;
 - (id)initialDynamicObjectsNetDataForMacroTileIndex:(int)arg1
                                       wireForClient:(id)arg2;
 - (void)saveAndSendOnlyBlocksThatNeedToBeSent;
