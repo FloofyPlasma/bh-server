@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+#import "BHNetConstants.h"
 #import "BHNetNode.h"
 #import "MJMath.h"
 
@@ -51,76 +52,75 @@ enum ListType {
 @property (readonly) NSArray* whiteList; // @synthesize whiteList;
 @property (readonly) NSArray* blackList; // @synthesize blackList;
 @property (readonly) NSArray* recentPlayers; // @synthesize recentPlayers;
-- (void)doRepairForTileAtPos:(intpair)arg1;
+- (void)doRepairForTileAtPos:(intpair)pos;
 - (BOOL)finishBulkTransaction;
 - (void)startBulkTransaction;
-- (void)sendPortalChestAcknowledgementIfNeededForClient:(id)arg1;
-- (id)getRecentPlayerNamesForOwnershipSign;
+- (void)sendPortalChestAcknowledgementIfNeededForClient:(NSString*)clientID;
+- (NSArray*)getRecentPlayerNamesForOwnershipSign;
 - (void)sendPlayerChangedNotifcationToDelegate;
 - (BOOL)isWaitingForMultiPartCommandResponse;
-- (id)privacyString;
-- (id)serverPlayerID;
-- (id)playerNameForPlayerWithIDIncludingOldPlayers:(id)arg1;
-- (void)updateCredit:(float)arg1;
+- (NSString*)privacyString;
+- (NSString*)serverPlayerID;
+- (NSString*)playerNameForPlayerWithIDIncludingOldPlayers:(NSString*)playerID;
+- (void)updateCredit:(float)dt;
 - (float)credit;
 - (BOOL)isCloudMatch;
-- (id)getDebugLog;
-- (void)handleCommand:(id)arg1 issueClient:(id)arg2;
-- (id)removeCurseWordsFromBlockheadName:(id)arg1;
-- (id)replaceCurseWordsForMessage:(id)arg1 client:(id)arg2;
-- (id)modifyListForPlayerOrIP:(id)arg1
-                      isAdded:(BOOL)arg2
-                     listType:(int)arg3
-                      banUDID:(BOOL)arg4;
-- (id)modifyListForPlayerOrIP:(id)arg1 isAdded:(BOOL)arg2 listType:(int)arg3;
-- (void)clearList:(int)arg1;
+- (NSString*)getDebugLog;
+- (void)handleCommand:(NSString*)command issueClient:(NSString*)issueClient;
+- (NSString*)removeCurseWordsFromBlockheadName:(NSString*)blockheadName;
+- (NSString*)replaceCurseWordsForMessage:(NSString*)message client:(NSString*)playerID;
+- (NSString*)modifyListForPlayerOrIP:(NSString*)nameOrIP
+                             isAdded:(BOOL)isAdded
+                            listType:(ListType)listType
+                             banUDID:(BOOL)banUDID;
+- (NSString*)modifyListForPlayerOrIP:(NSString*)nameOrIP isAdded:(BOOL)isAdded listType:(ListType)listType;
+- (void)clearList:(ListType)listType;
 - (void)reloadLists;
 - (void)delayedSendUpdatedPlayerListToClients;
 - (void)sendUpdatedPlayerListToClients;
-- (void)sendInitialPlayerListToClient:(id)arg1;
-- (id)playerListToSendIncludingPhotosForClients:(id)arg1 sendClient:(id)arg2;
-- (void)clientFinishedAwaySimulation:(id)arg1;
-- (void)sendChatMessage:(id)arg1
-    displayNotification:(BOOL)arg2
-          sendToClients:(id)arg3;
-- (BOOL)match:(id)arg1 shouldReinvitePlayer:(id)arg2;
-- (void)sendNetworkData:(id)arg1 toPeers:(id)arg2 reliable:(BOOL)arg3;
-- (void)match:(id)arg1 didReceiveData:(id)arg2 fromPlayer:(id)arg3;
-- (BOOL)playerIsConnectedWithInfo:(id)arg1;
+- (void)sendInitialPlayerListToClient:(NSString*)sendClient;
+- (NSArray*)playerListToSendIncludingPhotosForClients:(NSArray*)includingClients sendClient:(NSString*)sendClient;
+- (void)clientFinishedAwaySimulation:(NSString*)clientID;
+- (void)sendChatMessage:(NSString*)messageText
+    displayNotification:(BOOL)displayNotification
+          sendToClients:(NSArray*)clientsToSend;
+- (BOOL)match:(BHMatch*)match shouldReinvitePlayer:(NSString*)playerID;
+- (void)sendNetworkData:(NSData*)netData toPeers:(NSArray*)peers reliable:(BOOL)reliable;
+- (void)match:(BHMatch*)match_ didReceiveData:(NSData*)data fromPlayer:(NSString*)peer;
+- (BOOL)playerIsConnectedWithInfo:(NSDictionary*)playerInfo;
 - (void)updatePlayers;
-- (void)updatePlayer:(id)arg1;
-- (BOOL)playerIsModWithAlias:(id)arg1;
-- (BOOL)playerIsAdminWithAlias:(id)arg1;
-- (BOOL)playerIsAdminWithID:(id)arg1;
-- (BOOL)playerIsCloudWideInvisibleAdminWithAlias:(id)arg1;
-- (BOOL)playerIsCloudWideAdminWithAlias:(id)arg1;
-- (BOOL)playerIsOwnerWithAlias:(id)arg1;
-- (BOOL)playerIsWhiteListedWithInfo:(id)arg1;
-- (BOOL)playerIsBannedWithID:(id)arg1;
-- (id)savedPlayerInfoDataForPlayer:(id)arg1;
-- (BOOL)playerIsBlackListedWithInfo:(id)arg1;
-- (void)infoArrived:(id)arg1 forPlayer:(id)arg2;
-- (void)fullPlayerInformationNowAvailableForPlayer:(id)arg1;
+- (void)updatePlayer:(NSString*)clientID;
+- (BOOL)playerIsModWithAlias:(NSString*)alias;
+- (BOOL)playerIsAdminWithAlias:(NSString*)alias;
+- (BOOL)playerIsAdminWithID:(NSString*)playerID;
+- (BOOL)playerIsCloudWideInvisibleAdminWithAlias:(NSString*)alias;
+- (BOOL)playerIsCloudWideAdminWithAlias:(NSString*)alias;
+- (BOOL)playerIsOwnerWithAlias:(NSString*)alias;
+- (BOOL)playerIsWhiteListedWithInfo:(NSDictionary*)playerInfo;
+- (BOOL)playerIsBannedWithID:(NSString*)playerID;
+- (NSData*)savedPlayerInfoDataForPlayer:(NSString*)playerID;
+- (BOOL)playerIsBlackListedWithInfo:(NSDictionary*)playerInfo;
+- (void)infoArrived:(NSMutableDictionary*)dict forPlayer:(NSString*)playerID;
+- (void)fullPlayerInformationNowAvailableForPlayer:(NSString*)playerID;
 - (BOOL)full;
-- (void)match:(id)arg1 player:(id)arg2 didChangeState:(long long)arg3;
-- (void)addPlayerDictToAllPlayersEver:(id)arg1;
-- (void)match:(id)arg1 connectionWithPlayerFailed:(id)arg2 withError:(id)arg3;
+- (void)match:(BHMatch*)match_ player:(NSString*)playerID didChangeState:(BHPlayerConnectionState)state;
+- (void)addPlayerDictToAllPlayersEver:(NSDictionary*)playerDict;
+- (void)match:(BHMatch*)match connectionWithPlayerFailed:(NSString*)playerID withError:(NSError*)error;
 - (void)cleanup;
-- (void)match:(id)arg1 didFailWithError:(id)arg2;
-- (void)setWorld:(id)arg1;
-- (void)dealloc;
+- (void)match:(BHMatch*)match didFailWithError:(NSError*)error;
+- (void)setWorld:(World*)world_;
 - (void)saveResetList;
 - (void)saveAllPlayersArray;
-- (void)bootPlayerNamed:(id)arg1 wasBan:(BOOL)arg2;
+- (void)bootPlayerNamed:(NSString*)playerName wasBan:(BOOL)wasBan;
 - (void)bootAllClientsDueToNoCredit;
-- (void)delayedDisconnectPlayerDueToNoCreditWithID:(id)arg1;
-- (void)bootPlayer:(id)arg1 wasBan:(BOOL)arg2;
-- (void)delayedDisconnectPlayerDueToKickWithID:(id)arg1;
-- (void)clientDisconnected:(id)arg1 wasKick:(BOOL)arg2;
-- (id)initWithDelegate:(id)arg1
-                 match:(id)arg2
-           netNodeType:(long long)arg3
-                saveID:(id)arg4
-            maxPlayers:(int)arg5;
+- (void)delayedDisconnectPlayerDueToNoCreditWithID:(NSString*)playerID;
+- (void)bootPlayer:(NSString*)playerID wasBan:(BOOL)wasBan;
+- (void)delayedDisconnectPlayerDueToKickWithID:(NSString*)playerID;
+- (void)clientDisconnected:(NSString*)playerID wasKick:(BOOL)wasKick;
+- (BHServer*)initWithDelegate:(id)delegate_ //* TODO: Figure out what this delegate is...
+                 match:(BHMatch*)match_
+           netNodeType:(BHNetNodeType)netNodeType_
+                saveID:(NSString*)saveID_
+            maxPlayers:(int)maxPlayers_;
 
 @end

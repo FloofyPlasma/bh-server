@@ -1,7 +1,7 @@
 #import "BHMatch.h"
 
-@class NSDictionary, NSMutableArray, NSMutableDictionary, NSNetServiceBrowser,
-    NSString, NSTimer;
+#import <enet/enet.h>
+
 @protocol BHNetClientSearchDelegate;
 
 @interface BHNetClientMatch
@@ -10,8 +10,8 @@
   NSMutableDictionary* domainBrowsers;
   NSMutableArray* domains;
   NSMutableArray* clientServicesWaiting;
-  struct _ENetHost* enetClient;
-  struct _ENetPeer* enetPeer;
+  ENetHost* enetClient;
+  ENetPeer* enetPeer;
   NSString* remotePeerID;
   NSString* userName;
   id photo;
@@ -60,6 +60,5 @@
                     userName:(id)arg4
                    userPhoto:(id)arg5
                     cloudKey:(id)arg6;
-
 
 @end
