@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKMathTypes.h>
-#include <map>
-#include <unordered_set>
-#include <vector>
+#import <map>
+#import <unordered_set>
+#import <vector>
 
 #import "GameConstants.h"
 #import "MJMath.h"

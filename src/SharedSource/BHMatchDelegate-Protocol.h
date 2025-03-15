@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#include "BHNetConstants.h"
+#import "BHNetConstants.h"
 
 @class BHMatch;
 

@@ -1,4 +1,4 @@
-#include <cmath>
+#import <cmath>
 
 class Vector {
   public:

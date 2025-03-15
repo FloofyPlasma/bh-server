@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#include "BlockheadSkinHelpers.h"
+#import "BlockheadSkinHelpers.h"
 #import "CraftableItemObject.h"
 
 @interface BlockheadCraftableItemObject : CraftableItemObject {

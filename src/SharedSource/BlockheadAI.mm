@@ -1,6 +1,6 @@
 #import "BlockheadAI.h"
-#include "MJMath.h"
-#include <cstdlib>
+#import "MJMath.h"
+#import <cstdlib>
 
 #import "Blockhead.h"
 #import "NoiseFunction.h"

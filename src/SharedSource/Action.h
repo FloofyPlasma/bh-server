@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Blockhead.h"
-#include "GameConstants.h"
+#import "GameConstants.h"
 #import "MJMath.h"
 
 @class CraftableItemObject, DrawCube, InventoryItem, NSDictionary, NSMutableDictionary;
