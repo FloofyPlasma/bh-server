@@ -109,8 +109,8 @@ struct Particle {
                    scale:(float)arg6
                   center:(Vector)arg7
           connectionGoal:(Vector)arg8;
-- (void)doAddElectricityParticleWithPath:(vector_4ecf5f14)arg1 size:(float)arg2;
-- (void)addElectricityParticleWithPath:(vector_4ecf5f14)arg1 size:(float)arg2;
+- (void)doAddElectricityParticleWithPath:(std::vector<ElectricityParticlePathIndex>*)arg1 size:(float)arg2;
+- (void)addElectricityParticleWithPath:(std::vector<ElectricityParticlePathIndex>*)arg1 size:(float)arg2;
 - (void)addParticleAtPos:(Vector)arg1
                 velocity:(Vector)arg2
                    color:(Vector)arg3
