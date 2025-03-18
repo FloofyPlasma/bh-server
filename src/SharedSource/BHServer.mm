@@ -637,38 +637,38 @@
 
 - (void)bootPlayerNamed:(NSString*)playerName wasBan:(BOOL)wasBan
 {
-    // TODO
+  // TODO
 }
 
 - (void)bootAllClientsDueToNoCredit
 {
-    // TODO
+  // TODO
 }
 
 - (void)delayedDisconnectPlayerDueToNoCreditWithID:(NSString*)playerID
 {
-    // TODO
+  // TODO
 }
 
 - (void)bootPlayer:(NSString*)playerID wasBan:(BOOL)wasBan
 {
-   // TODO 
+  // TODO
 }
 
 - (void)delayedDisconnectPlayerDueToKickWithID:(NSString*)playerID
 {
-    // TODO
+  // TODO
 }
 
 - (void)clientDisconnected:(NSString*)playerID wasKick:(BOOL)wasKick
 {
-    [self->world clientDisconnected:playerID wasKick:wasKick];
-    [self->repairSet removeObject:playerID];
+  [self->world clientDisconnected:playerID wasKick:wasKick];
+  [self->repairSet removeObject:playerID];
 }
 
 - (BHServer*)initWithDelegate:(id)delegate_ match:(BHMatch*)match_ netNodeType:(BHNetNodeType)netNodeType_ saveID:(NSString*)saveID_ maxPlayers:(int)maxPlayers_
 {
-    // TODO
+  // TODO
 }
 
 @end
