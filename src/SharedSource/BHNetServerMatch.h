@@ -3,6 +3,7 @@
 #import <enet/enet.h>
 
 #import "BHMatch.h"
+#import "BHNetConstants.h"
 
 @interface BHNetServerMatch : BHMatch <NSNetServiceDelegate> {
   unsigned short serverPort;
@@ -23,10 +24,10 @@
   float noCreditBootTimer;
   double credit;
   double pollTimerLastTime;
-  unsigned long long privacy;
+  BHNetPrivacy privacy;
 }
 
-@property unsigned long long privacy; // @synthesize privacy;
+@property BHNetPrivacy privacy; // @synthesize privacy;
 - (BOOL)requiresPlayerAuthentication;
 - (id)persistentIDForNetID:(id)arg1;
 - (void)netServiceDidResolveAddress:(id)arg1;
