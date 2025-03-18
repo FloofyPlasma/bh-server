@@ -1,16 +1,16 @@
-
-
 #import <Foundation/Foundation.h>
+
+#import "CraftableItem.h"
 
 @interface CraftableItemObject : NSObject
 {
-  struct CraftableItem craftableItem;
+  CraftableItem craftableItem;
 }
 
-@property struct CraftableItem craftableItem; // @synthesize craftableItem;
+@property CraftableItem craftableItem; // @synthesize craftableItem;
 - (id)freeBlockCreationItemSaveDict;
 - (id)getSaveDict;
 - (id)initWithSaveDict:(id)arg1;
-- (id)initWithCraftableItem:(struct CraftableItem)arg1;
+- (id)initWithCraftableItem:(CraftableItem)arg1;
 
 @end
