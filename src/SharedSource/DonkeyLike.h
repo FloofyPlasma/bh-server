@@ -64,7 +64,7 @@ struct DonkeyLikeCreationNetData {
   float munchMotionRandomSpeed;
   float munchMotionRandomSpeedChangeTimer;
   Vector bodyColor;
-  _Bool useColoredShader;
+  BOOL useColoredShader;
   intpair remoteStopPos;
   BOOL lastSendContainedMovement;
 }

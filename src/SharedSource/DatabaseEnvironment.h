@@ -1,8 +1,4 @@
-
-
 #import <Foundation/Foundation.h>
-
-@class NSString;
 
 @interface DatabaseEnvironment : NSObject
 {
