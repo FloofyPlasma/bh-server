@@ -16,8 +16,31 @@ if(WIN32)
     set(GNUSTEP_ROOT "C:/GNUstep") # Bad hard code!!11
 elseif(APPLE)
     message(STATUS "Building for macOS with native Objective-C runtime.")
-elseif(UNIX)
-    message(FATAL "Building on Linux is currently not supported. Add it in a PR if you manage to get it working :)")
+elseif(UNIX AND NOT APPLE)
+    message(WARNING "Support for Linux is currently in beta, and isn't stable yet. Use at your own risk.")
+
+   find_program(GNUSTEP_CONFIG_EXECUTABLE gnustep-config)
+
+    if(NOT GNUSTEP_CONFIG_EXECUTABLE)
+        message(FATAL_ERROR "gnustep-config not found. Please install GNUstep development packages.")
+    endif()
+
+    # Get compiler flags, libs, from gnustep-config
+    execute_process(
+        COMMAND ${GNUSTEP_CONFIG_EXECUTABLE} --objc-flags
+        OUTPUT_VARIABLE GNUSTEP_OBJC_FLAGS
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+
+    execute_process(
+        COMMAND ${GNUSTEP_CONFIG_EXECUTABLE} --base-libs
+        OUTPUT_VARIABLE GNUSTEP_BASE_LIBS
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+
+    string(REPLACE " " ";" GNUSTEP_OBJC_FLAGS_LIST "${GNUSTEP_OBJC_FLAGS}")
+
+    include_directories(${GNUSTEP_BASE_INCLUDES})
 endif()
 
 if(WIN32)
@@ -68,9 +91,6 @@ if(WIN32)
         enet
     )
 
-    set(CMAKE_CXX_COMPILER "clang++")
-    set(CMAKE_C_COMPILER "clang")
-
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fobjc-runtime=gnustep-2.0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fobjc-runtime=gnustep-2.0")
 
@@ -118,7 +138,19 @@ elseif(APPLE)
 
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fobjc-runtime=macosx")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fobjc-runtime=macosx")
+elseif(LINUX)
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        ${GNUSTEP_OBJC_FLAGS_LIST}
+    )
 
+    target_link_libraries(${PROJECT_NAME}
+        ${GNUSTEP_BASE_LIBS}
+        objc
+        dispatch
+        enet
+    )
+    set(CMAKE_C_COMPILER clang)
+    set(CMAKE_CXX_COMPILER clang++)
 endif()
 
 include_directories(${enet_SOURCE_DIR}/include)
