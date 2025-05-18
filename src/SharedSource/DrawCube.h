@@ -1,6 +1,6 @@
+#import <Foundation/Foundation.h>
 
-
-#import <objc/NSObject.h>
+#import "MJMath.h"
 
 @interface DrawCube : NSObject {
   float* vertices;

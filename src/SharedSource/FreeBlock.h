@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import <list>
+
 #import "DynamicObject.h"
 
 struct FreeblockUpdateNetData {
@@ -101,7 +103,7 @@ struct FreeblockCreationNetData {
                    dynamicWorld:(id)arg2
                           cache:(id)arg3
                         netData:(id)arg4
-    avoidFreeblockDupeObjectIds:(list_2eb5f697*)arg5;
+    avoidFreeblockDupeObjectIds:(std::list<unsigned long long>*)arg5;
 - (id)initWithWorld:(id)arg1
        dynamicWorld:(id)arg2
               cache:(id)arg3

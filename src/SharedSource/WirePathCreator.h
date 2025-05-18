@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import <map>
+
 struct WirePathTileProperties {
   int F;
   int G;
@@ -15,9 +17,7 @@ struct WirePathTileProperties {
   int startIndex;
   WirePathTileProperties* derivedTilePropertiesArray;
   int derivedTileCount;
-  struct map<int, int, std::__1::less<int>,
-      std::__1::allocator<std::__1::pair<const int, int>>>
-      derivedTileIndices;
+  std::map<int, int> derivedTileIndices;
 }
 
 - (int)findAndSubtractAllPowerUpTo:(unsigned short)arg1 forUser:(id)arg2;

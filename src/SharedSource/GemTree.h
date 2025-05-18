@@ -12,7 +12,7 @@
 - (int)gemItemType;
 - (int)treeType;
 - (void)recursivelyAddOwnedTile:(intpair)arg1
-                    toPositions:(unordered_set_22babbde*)arg2;
+                    toPositions:(std::unordered_set<int>*)arg2;
 - (void)worldChanged:(std::vector<intpair>*)arg1;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (void)makeTileDead:(Tile*)arg1;

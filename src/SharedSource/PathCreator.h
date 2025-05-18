@@ -46,9 +46,7 @@ struct PathTestResult {
   NSMutableSet* arrayPathsToRelease;
   DerivedTileProperties* derivedTilePropertiesArray;
   int derivedTileCount;
-  struct map<int, int, std::__1::less<int>,
-      std::__1::allocator<std::__1::pair<const int, int>>>
-      derivedTileIndices;
+  std::map<int, int> derivedTileIndices;
   std::vector<intpair> elevatorBlacklist;
 }
 

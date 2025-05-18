@@ -1,5 +1,3 @@
-
-
 #import <Foundation/Foundation.h>
 
 @class Blockhead, Database, DatabaseEnvironment, NSDictionary, NSString;

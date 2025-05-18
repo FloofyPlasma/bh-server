@@ -23,11 +23,10 @@
   int* rockHeights;
   BOOL hasDistanceOrderedFoodTypes;
   int distanceOrderedFoodTypes[31];
-  Vector<ClientMacroBlockRequest, std::__1::allocator<ClientMacroBlockRequest>>
+  std::vector<ClientMacroBlockRequest>
       queuedBlockRequests;
-  struct map<
-      int, ClientMacroBlockRequest, std::__1::less<int>,
-      std::__1::allocator<std::__1::pair<const int, ClientMacroBlockRequest>>>
+  std::map<
+      int, ClientMacroBlockRequest>
       sentBlockRequests;
   NSMutableDictionary* blockRequestDates;
   int xFrequencyMultiplier;

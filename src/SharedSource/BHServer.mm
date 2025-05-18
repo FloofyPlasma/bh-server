@@ -1,10 +1,10 @@
 #import "BHServer.h"
-#include "Foundation/NSDictionary.h"
-#include "Foundation/NSFileManager.h"
-#include "Foundation/NSPathUtilities.h"
-#include "Foundation/NSPropertyList.h"
-#include "Foundation/NSString.h"
-#include <cstddef>
+#import "Foundation/NSDictionary.h"
+#import "Foundation/NSFileManager.h"
+#import "Foundation/NSPathUtilities.h"
+#import "Foundation/NSPropertyList.h"
+#import "Foundation/NSString.h"
+#import <cstddef>
 
 #import "BHNetServerMatch.h"
 #import "Database.h"

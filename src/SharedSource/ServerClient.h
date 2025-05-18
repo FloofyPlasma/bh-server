@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import <set>
+
 #import "MJMath.h"
 #import "World.h"
 
@@ -10,10 +12,7 @@
   NSString* clientID;
   BHServer* server;
   NSMutableIndexSet* requestedBlockIndices;
-  struct map<
-      unsigned int, unsigned char, std::__1::less<unsigned int>,
-      std::__1::allocator<std::__1::pair<const unsigned int, unsigned char>>>
-      requestedBlockRequestTypes;
+  std::map<unsigned int, unsigned char> requestedBlockRequestTypes;
   NSMutableIndexSet* wiredBlocks;
   NSMutableIndexSet* wiredDynamicObjects;
   NSMutableDictionary* creationArraysToSend;
@@ -26,7 +25,7 @@
   float timeSinceLastHeartbeatRequest;
   int lightBlockIndex;
   NSMutableArray* fillIndices;
-  map_183b77d1* worldIndicesContainingTamedAnimals;
+  std::map<unsigned int, std::set<unsigned int>*>* worldIndicesContainingTamedAnimals;
   BOOL paused;
   BOOL connected;
   BOOL isAdmin;
@@ -38,7 +37,7 @@
 @property (readonly) NSMutableIndexSet* allLightBlockIndices; // @synthesize allLightBlockIndices;
 @property (readonly)
     NSMutableIndexSet* foundItemsList; // @synthesize foundItemsList;
-@property map_183b77d1* worldIndicesContainingTamedAnimals; // @synthesize
+@property std::map<unsigned int, std::set<unsigned int>*>* worldIndicesContainingTamedAnimals; // @synthesize
                                                             // worldIndicesContainingTamedAnimals;
 @property (readonly) int lightBlockIndex; // @synthesize lightBlockIndex;
 @property float

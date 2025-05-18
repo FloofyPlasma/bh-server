@@ -1,6 +1,15 @@
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
 
-@class BHClient, BHServer, CPCache, ClientTileLoader, Database, NoiseFunction, WirePathCreator, World, WorldTileLoader;
+#import <list>
+#import <map>
+#import <set>
+#import <unordered_set>
+#import <vector>
+
+#import "MJMath.h"
+
+@class BHClient, BHServer, CPCache, ClientTileLoader, Database, NoiseFunction, WirePathCreator, World, WorldTileLoader, DynamicObject, MacroTile, Tile, PhysicalBlock;
 
 @interface DynamicWorld : NSObject {
   World* world;
@@ -17,43 +26,21 @@
   NSMutableArray* netBlockheads;
   NSMutableArray* netBlockheadsWithDisconnectedClients;
   NSMutableDictionary* clientBlockheadInventoriesToSave;
-  struct map<unsigned long long, DynamicObject*,
-      std::__1::less<unsigned long long>,
-      std::__1::allocator<
-          std::__1::pair<const unsigned long long, DynamicObject*>>>
+  std::map<unsigned long long, DynamicObject*>
       dynamicObjects[65];
-  struct map<unsigned long long, DynamicObject*,
-      std::__1::less<unsigned long long>,
-      std::__1::allocator<
-          std::__1::pair<const unsigned long long, DynamicObject*>>>
+  std::map<unsigned long long, DynamicObject*>
       dynamicObjectsToAdd[65];
-  struct map<unsigned long long, DynamicObject*,
-      std::__1::less<unsigned long long>,
-      std::__1::allocator<
-          std::__1::pair<const unsigned long long, DynamicObject*>>>
+  std::map<unsigned long long, DynamicObject*>
       dynamicObjectsByWorldPosIndex[65];
-  struct map<unsigned long long,
-      std::__1::set<DynamicObject*, std::__1::less<DynamicObject*>,
-          std::__1::allocator<DynamicObject*>>,
-      std::__1::less<unsigned long long>,
-      std::__1::allocator<std::__1::pair<
-          const unsigned long long,
-          std::__1::set<DynamicObject*, std::__1::less<DynamicObject*>,
-              std::__1::allocator<DynamicObject*>>>>>
+  std::map<unsigned long long, std::set<DynamicObject*>>
       freeBlocksByPosition;
-  struct unordered_set<unsigned long long, std::__1::hash<unsigned long long>,
-      std::__1::equal_to<unsigned long long>,
-      std::__1::allocator<unsigned long long>>
+std::unordered_set<unsigned long long>
       currentlyAddingGlowBlocks;
-  struct unordered_set<unsigned long long, std::__1::hash<unsigned long long>,
-      std::__1::equal_to<unsigned long long>,
-      std::__1::allocator<unsigned long long>>
+std::unordered_set<unsigned long long>
       currentlyAddingObjectIDs[65];
-  struct unordered_set<unsigned int, std::__1::hash<unsigned int>,
-      std::__1::equal_to<unsigned int>,
-      std::__1::allocator<unsigned int>>
+std::unordered_set<unsigned int>
       currentlyLoadingMacroBlocks[65];
-  Vector<DynamicObject*, std::__1::allocator<DynamicObject*>>
+  std::vector<DynamicObject*>
       partialUpdateOrderedObjects[65];
   int partialUpdateCurrentIndex[65];
   std::vector<intpair> worldChangedPositions;
@@ -95,7 +82,7 @@
   Vector clientTreeLifeFraction;
   WirePathCreator* wirePathCreator;
   NSMutableDictionary* liveServerClientBlockheadInventories;
-  list_2eb5f697 avoidFreeblockDupeObjectIds;
+  std::list<unsigned long long> avoidFreeblockDupeObjectIds;
   NSMutableDictionary* poleItemTakenTimes;
   float poleItemRestoreRecheckTimer;
   float poleItemRestoreAddTimer;

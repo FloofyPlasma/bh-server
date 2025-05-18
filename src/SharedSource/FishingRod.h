@@ -1,4 +1,7 @@
 #import <Foundation/Foundation.h>
+#import <GLKit/GLKMathTypes.h>
+
+#import <vector>
 
 #import "MJMath.h"
 
@@ -8,7 +11,7 @@
   World* world;
   Blockhead* blockhead;
   BOOL casting;
-  Vector<Vector2, std::__1::allocator<Vector2>> lineLocations;
+  std::vector<Vector2> lineLocations;
   Vector2 hookVelocity;
   Vector2 hookPos;
   Vector2 nextRealInHookPos;

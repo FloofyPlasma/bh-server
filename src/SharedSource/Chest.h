@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKMathTypes.h>
 
+#import <set>
+
 #import "InteractionObject.h"
 
 enum ChestType {
@@ -73,7 +75,7 @@ struct ChestNetData {
 - (int)moveInventoryItemsFromArray:(id)arg1
                            toIndex:(int)arg2
                              count:(int)arg3
-                   assignedIndexes:(set_7b7d70f4*)arg4;
+                   assignedIndexes:(std::set<int>*)arg4;
 - (void)draw:(float)arg1
     projectionMatrix:(GLKMatrix4)arg2
      modelViewMatrix:(GLKMatrix4)arg3

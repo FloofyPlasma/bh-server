@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <CoreFoundation/CoreFoundation.h>
 
 #import <enet/enet.h>
 
