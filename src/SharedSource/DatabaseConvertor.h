@@ -4,8 +4,7 @@
 
 @class Database, NSDictionary, NSMutableArray, NSString, World;
 
-@interface DatabaseConvertor : NSObject
-{
+@interface DatabaseConvertor : NSObject {
   World* world;
   Database* worldDatabase;
   Database* dynamicObjectDatabase;

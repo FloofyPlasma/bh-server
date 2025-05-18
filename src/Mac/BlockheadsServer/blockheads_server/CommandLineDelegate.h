@@ -4,8 +4,7 @@
 
 @class GameController, NSFileHandle, NSString;
 
-@interface CommandLineDelegate : NSObject <GameControllerDelegate>
-{
+@interface CommandLineDelegate : NSObject <GameControllerDelegate> {
   GameController* gameController;
   NSFileHandle* stdinHandle;
 }

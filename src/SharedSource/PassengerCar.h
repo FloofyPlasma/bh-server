@@ -2,9 +2,8 @@
 
 #import "TrainCar.h"
 
-struct PassengerCarCreationNetData
-{
-    TrainCarCreationNetData trainCarCreationNetData;
+struct PassengerCarCreationNetData {
+  TrainCarCreationNetData trainCarCreationNetData;
 };
 
 @class DrawCube;

@@ -2,12 +2,11 @@
 
 #import "DynamicObject.h"
 
-struct LadderCreationNetData
-{
-    DynamicObjectNetData dynamicObjectNetData;
-    uint16_t itemType;
-    uint16_t paintColor;
-    uint8_t padding[4];
+struct LadderCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  uint16_t paintColor;
+  uint8_t padding[4];
 };
 
 @interface Ladder : DynamicObject {

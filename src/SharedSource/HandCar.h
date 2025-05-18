@@ -3,7 +3,7 @@
 #import "TrainCar.h"
 
 struct HandCarCreationNetData {
-    TrainCarCreationNetData trainCarCreationNetData;
+  TrainCarCreationNetData trainCarCreationNetData;
 };
 
 @class DrawCube, MJMultiSound;

@@ -2,12 +2,11 @@
 
 #import "DynamicObject.h"
 
-struct DoorCreationNetData
-{
-    DynamicObjectNetData dynamicObjectNetData;
-    uint16_t itemType;
-    uint8_t blocked;
-    uint8_t padding[5];
+struct DoorCreationNetData {
+  DynamicObjectNetData dynamicObjectNetData;
+  uint16_t itemType;
+  uint8_t blocked;
+  uint8_t padding[5];
 };
 
 @interface Door : DynamicObject {

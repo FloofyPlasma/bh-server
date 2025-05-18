@@ -2,19 +2,19 @@
 
 #import "DynamicObject.h"
 
-#import "TapChoiceDynamicObject-Protocol.h"
 #import "ProxyObjectOwner-Protocol.h"
+#import "TapChoiceDynamicObject-Protocol.h"
 
 typedef uint16_t InteractionObjectType;
 
 struct InteractionObjectCreationNetData {
-    DynamicObjectNetData dynamicObjectNetData;
-    uint64_t isInUseBlockheadUniqueID;
-    uint16_t interactionObjectType;
-    uint8_t isInUse;
-    uint8_t flipped;
-    uint16_t paintColor;
-    uint8_t padding[2];
+  DynamicObjectNetData dynamicObjectNetData;
+  uint64_t isInUseBlockheadUniqueID;
+  uint16_t interactionObjectType;
+  uint8_t isInUse;
+  uint8_t flipped;
+  uint16_t paintColor;
+  uint8_t padding[2];
 };
 
 @class Blockhead, CPTexture2D, Shader;

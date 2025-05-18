@@ -1,5 +1,4 @@
-union _GLKMatrix4
-{
+union _GLKMatrix4 {
   struct
   {
     float m00;
@@ -22,8 +21,7 @@ union _GLKMatrix4
   float m[16];
 };
 
-union _GLKVector3
-{
+union _GLKVector3 {
   struct
   {
     float x;
@@ -45,8 +43,7 @@ union _GLKVector3
   float v[3];
 };
 
-union _GLKVector4
-{
+union _GLKVector4 {
   struct
   {
     float x;
@@ -70,7 +67,6 @@ union _GLKVector4
   };
   float v[4];
 };
-
 
 typedef _GLKMatrix4 GLKMatrix4;
 typedef _GLKVector3 GLKVector3;

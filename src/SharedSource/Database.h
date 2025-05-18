@@ -2,8 +2,7 @@
 
 @class DatabaseEnvironment, NSString;
 
-@interface Database : NSObject
-{
+@interface Database : NSObject {
   DatabaseEnvironment* databaseEnvironment;
   struct MDB_env* env;
   unsigned int dbi;

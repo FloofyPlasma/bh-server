@@ -20,7 +20,6 @@
 @synthesize complete;
 @synthesize inProgress;
 
-
 //* I belive this is correct, but it's all speculation.
 - (NSMutableDictionary*)getSaveDict
 {

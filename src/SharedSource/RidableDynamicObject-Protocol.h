@@ -4,7 +4,6 @@
 #import "Vector.h"
 #import "Vector2.h"
 
-
 @class Blockhead, InteractionObject;
 
 @protocol RidableDynamicObject <NSObject>
@@ -30,5 +29,5 @@
 - (BOOL)riderRidesWithArmsDown;
 - (float)riderAnimationTimer;
 - (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)arg1
-                                         cameraX:(float)arg2;
+                                  cameraX:(float)arg2;
 @end

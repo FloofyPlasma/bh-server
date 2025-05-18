@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface Shader : NSObject
-{
+@interface Shader : NSObject {
   unsigned int program;
   NSArray* uniformLocations;
 }

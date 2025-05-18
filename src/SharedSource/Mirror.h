@@ -2,9 +2,8 @@
 
 #import "InteractionObject.h"
 
-struct MirrorNetData
-{
-    InteractionObjectCreationNetData interactionObjectCreationNetData;
+struct MirrorNetData {
+  InteractionObjectCreationNetData interactionObjectCreationNetData;
 };
 
 @interface Mirror : InteractionObject {

@@ -4,8 +4,7 @@
 
 @class MJSound;
 
-@interface MJMultiSound : NSObject
-{
+@interface MJMultiSound : NSObject {
   NSMutableArray* _sounds;
   NSString* _fileName;
   unsigned int _maxPlaybacks;

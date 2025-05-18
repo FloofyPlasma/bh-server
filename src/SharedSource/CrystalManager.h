@@ -16,7 +16,7 @@
 @property (readonly) NSString* amountString; // @synthesize amountString;
 @property (readonly) BOOL needsSave; // @synthesize needsSave;
 //! TODO: WHAT ARE YOU MYSTERIOUS ID???
-@property id<CrystalManagerWatcher> countWatcher; // @synthesize countWatcher; 
+@property id<CrystalManagerWatcher> countWatcher; // @synthesize countWatcher;
 
 + (CrystalManager*)instance;
 - (NSString*)iCloudServerRejoinID;

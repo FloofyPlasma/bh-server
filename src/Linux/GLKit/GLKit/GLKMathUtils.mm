@@ -1,5 +1,5 @@
-#import <Foundation/Foundation.h>
 #import "GLKit/GLKMathTypes.h"
+#import <Foundation/Foundation.h>
 
 GLKVector3 GLKMathProject(GLKVector3 object, GLKMatrix4 model, GLKMatrix4 projection, int* viewport)
 {
@@ -9,6 +9,6 @@ GLKVector3 GLKMathProject(GLKVector3 object, GLKMatrix4 model, GLKMatrix4 projec
 
 GLKVector3 GLKMathUnproject(GLKVector3 window, GLKMatrix4 model, GLKMatrix4 projection, int* viewport, BOOL* success)
 {
-      [NSException raise:NSRangeException
+  [NSException raise:NSRangeException
               format:@"Not implemented."];
 }

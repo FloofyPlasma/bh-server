@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface DatabaseEnvironment : NSObject
-{
+@interface DatabaseEnvironment : NSObject {
   struct MDB_env* env;
   struct MDB_txn* bulkTransaction;
   NSString* environmentDirectoryPath;

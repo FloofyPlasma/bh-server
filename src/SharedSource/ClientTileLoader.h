@@ -5,8 +5,7 @@
 
 @class BHClient, NoiseFunction;
 
-@interface ClientTileLoader : NSObject
-{
+@interface ClientTileLoader : NSObject {
   World* world;
   BHClient* client;
   NSString* saveID;

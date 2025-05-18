@@ -4,9 +4,8 @@
 
 #import "SignTextDynamicObject-Protocol.h"
 
-struct TrainStationCreationNetData
-{
-    InteractionObjectCreationNetData interactionObjectCreationNetData;
+struct TrainStationCreationNetData {
+  InteractionObjectCreationNetData interactionObjectCreationNetData;
 };
 
 @class BitmapString, CPTexture2D, DrawCube, Shader;

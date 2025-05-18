@@ -7,8 +7,7 @@
 
 @class BHServer, Database;
 
-@interface ServerClient : NSObject
-{
+@interface ServerClient : NSObject {
   NSString* clientID;
   BHServer* server;
   NSMutableIndexSet* requestedBlockIndices;
@@ -38,7 +37,7 @@
 @property (readonly)
     NSMutableIndexSet* foundItemsList; // @synthesize foundItemsList;
 @property std::map<unsigned int, std::set<unsigned int>*>* worldIndicesContainingTamedAnimals; // @synthesize
-                                                            // worldIndicesContainingTamedAnimals;
+                                                                                               // worldIndicesContainingTamedAnimals;
 @property (readonly) int lightBlockIndex; // @synthesize lightBlockIndex;
 @property float
     timeSinceLastHeartbeatRequest; // @synthesize timeSinceLastHeartbeatRequest;

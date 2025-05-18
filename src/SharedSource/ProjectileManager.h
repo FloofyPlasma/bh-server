@@ -6,7 +6,6 @@
 #import "InventoryItem.h"
 #import "Vector2.h"
 
-
 struct Projectile {
   DynamicObject* atObject;
   Blockhead* firer;

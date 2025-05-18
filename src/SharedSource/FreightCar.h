@@ -4,9 +4,8 @@
 
 #import "ProxyObjectOwner-Protocol.h"
 
-struct FreightCarCreationNetData
-{
-    TrainCarCreationNetData trainCarCreationNetData;
+struct FreightCarCreationNetData {
+  TrainCarCreationNetData trainCarCreationNetData;
 };
 
 @class Chest, DrawCube;

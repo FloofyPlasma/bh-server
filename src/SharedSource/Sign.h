@@ -7,12 +7,11 @@
 typedef NSInteger SignConnectionType;
 typedef NSInteger SignOffsetType;
 
-struct SignCreationNetData
-{
-    InteractionObjectCreationNetData interactionObjectCreationNetData;
-    uint8_t connectionType;
-    uint8_t offsetType;
-    uint8_t padding[6];
+struct SignCreationNetData {
+  InteractionObjectCreationNetData interactionObjectCreationNetData;
+  uint8_t connectionType;
+  uint8_t offsetType;
+  uint8_t padding[6];
 };
 
 @class BitmapString, CPTexture2D;

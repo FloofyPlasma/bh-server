@@ -2,8 +2,7 @@
 
 #import "Vector2.h"
 
-@interface MJSound : NSObject
-{
+@interface MJSound : NSObject {
   void* _data;
   int _localFormat;
   unsigned int _format;

@@ -5,8 +5,7 @@
 
 @class Database, DatabaseEnvironment, NoiseFunction, World;
 
-@interface WorldTileLoader : NSObject
-{
+@interface WorldTileLoader : NSObject {
   World* world;
   unsigned int randomSeed;
   NSString* blockDirectory;

@@ -1,15 +1,14 @@
 #import <Foundation/Foundation.h>
 
-#import "GameConstants.h"
 #import "BHNetNodeDelegate-Protocol.h"
+#import "GameConstants.h"
 #import "WorldDelegate-Protocol.h"
 
 @class BHServer, CPCache, Database, DatabaseEnvironment, NSMutableArray, NSString, NSTimer, World;
 @protocol GameControllerDelegate
 , NSObject;
 
-@interface GameController : NSObject <BHNetNodeDelegate, WorldDelegate>
-{
+@interface GameController : NSObject <BHNetNodeDelegate, WorldDelegate> {
   World* world;
   BHServer* bhServer;
   NSString* worldName;

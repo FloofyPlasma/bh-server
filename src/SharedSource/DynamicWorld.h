@@ -34,11 +34,11 @@
       dynamicObjectsByWorldPosIndex[65];
   std::map<unsigned long long, std::set<DynamicObject*>>
       freeBlocksByPosition;
-std::unordered_set<unsigned long long>
+  std::unordered_set<unsigned long long>
       currentlyAddingGlowBlocks;
-std::unordered_set<unsigned long long>
+  std::unordered_set<unsigned long long>
       currentlyAddingObjectIDs[65];
-std::unordered_set<unsigned int>
+  std::unordered_set<unsigned int>
       currentlyLoadingMacroBlocks[65];
   std::vector<DynamicObject*>
       partialUpdateOrderedObjects[65];

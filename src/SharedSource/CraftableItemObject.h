@@ -2,8 +2,7 @@
 
 #import "CraftableItem.h"
 
-@interface CraftableItemObject : NSObject
-{
+@interface CraftableItemObject : NSObject {
   CraftableItem craftableItem;
 }
 

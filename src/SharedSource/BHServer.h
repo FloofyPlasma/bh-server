@@ -118,9 +118,9 @@ enum ListType {
 - (void)delayedDisconnectPlayerDueToKickWithID:(NSString*)playerID;
 - (void)clientDisconnected:(NSString*)playerID wasKick:(BOOL)wasKick;
 - (BHServer*)initWithDelegate:(id)delegate_ //* TODO: Figure out what this delegate is...
-                 match:(BHMatch*)match_
-           netNodeType:(BHNetNodeType)netNodeType_
-                saveID:(NSString*)saveID_
-            maxPlayers:(int)maxPlayers_;
+                        match:(BHMatch*)match_
+                  netNodeType:(BHNetNodeType)netNodeType_
+                       saveID:(NSString*)saveID_
+                   maxPlayers:(int)maxPlayers_;
 
 @end

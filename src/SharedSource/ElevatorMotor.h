@@ -67,5 +67,4 @@ struct ElevatorMotorCreationNetData {
 - (int)objectType;
 - (void)initSubDerivedItems;
 
-
 @end
