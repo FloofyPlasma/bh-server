@@ -9,6 +9,12 @@
 #import "ParticleEmitter.h"
 #import "Vector.h"
 
+#ifndef __APPLE__
+#ifndef Float32
+typedef float Float32;
+#endif
+#endif
+
 struct BlockheadDamageNetRequest {
   uint64_t blockheadID;
   Float32 damage;
@@ -201,8 +207,8 @@ struct MacroTile {
   NSString* hostPort;
   NSString* maxPlayers;
   NSDate* creationDate;
-  std::unordered_set<PhysicalBlock> usedPhysicalBlocks;
-  std::unordered_set<PhysicalBlock> freePhysicalBlocks;
+  std::unordered_set<PhysicalBlock*> usedPhysicalBlocks;
+  std::unordered_set<PhysicalBlock*> freePhysicalBlocks;
   NSMutableIndexSet* freeClientLightBlockIndices;
   DrawBlock* drawBlocks;
   int numDrawBlocks;
