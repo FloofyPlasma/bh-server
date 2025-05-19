@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <vector>
 
+#import "DynamicObjectType.h"
+#import "InventoryItem.h"
 #import "MJMath.h"
 #import "World.h"
 
@@ -12,7 +14,7 @@ struct DynamicObjectNetData {
   uint8_t padding[7];
 };
 
-@class CPCache, DynamicWorld, World;
+@class CPCache, DynamicWorld, Blockhead;
 
 @interface DynamicObject : NSObject {
   World* world;
@@ -43,17 +45,17 @@ struct DynamicObjectNetData {
 @property (readonly) Vector2 floatPos; // @synthesize floatPos;
 @property (readonly) intpair pos; // @synthesize pos;
 
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
 - (Vector2)renderPos;
-- (id)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline;
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
-                                                              yPos:(int)arg2;
-- (BOOL)canBeRemovedByBlockhead:(id)arg1;
+- (NSString*)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline;
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX
+                                                              yPos:(int)macroY;
+- (BOOL)canBeRemovedByBlockhead:(Blockhead*)blockhead;
 - (BOOL)mayOnlyBeRemovedByOwner;
-- (id)ownerID;
+- (NSString*)ownerID;
 - (BOOL)occupiesBackgroundContents;
 - (BOOL)occupiesNormalContents;
 - (BOOL)occupiesForegroundContents;
@@ -63,73 +65,73 @@ struct DynamicObjectNetData {
 - (BOOL)isDownlight;
 - (Vector)lightPos;
 - (void)blockheadsLoaded;
-- (void)blockheadUnloaded:(id)arg1;
-- (int)addLightGlowQuadData:(float*)arg1 fromIndex:(int)arg2;
-- (int)addDodoEggDrawQuadData:(float*)arg1 fromIndex:(int)arg2;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
+- (int)addLightGlowQuadData:(float*)buffer fromIndex:(int)index;
+- (int)addDodoEggDrawQuadData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDodoEggCount;
-- (int)addCylinderDataTrans:(float*)arg1 fromIndex:(int)arg2;
+- (int)addCylinderDataTrans:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryCylinderCountTrans;
-- (int)addCylinderData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addCylinderData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryCylinderCount;
 - (int)lightGlowQuadCount;
-- (int)addDrawItemQuadData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawItemQuadData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDrawItemQuadCount;
-- (int)addForegroundDrawQuadData:(float*)arg1
-                       fromIndex:(int)arg2
-                     forMacroPos:(intpair)arg3;
-- (int)addDrawQuadData:(float*)arg1
-             fromIndex:(int)arg2
-           forMacroPos:(intpair)arg3;
-- (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)addDrawCubeDataTrans:(float*)arg1 fromIndex:(int)arg2;
-- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addForegroundDrawQuadData:(float*)buffer
+                       fromIndex:(int)index
+                     forMacroPos:(intpair)macroPos;
+- (int)addDrawQuadData:(float*)buffer
+             fromIndex:(int)index
+           forMacroPos:(intpair)macroPos;
+- (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)macroPos;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos;
+- (int)addDrawCubeDataTrans:(float*)buffer fromIndex:(int)index;
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDrawCubeCountTrans;
 - (int)staticGeometryDrawCubeCount;
-- (void)setFloatPosAndUpdatePosition:(Vector2)arg1;
+- (void)setFloatPosAndUpdatePosition:(Vector2)floatPos_;
 - (BOOL)shouldAddToMacroBlock;
-- (void)remoteCreationDataUpdate:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (void)waterContentChanged:(std::vector<intpair>*)arg1;
-- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
+- (void)remoteUpdate:(NSData*)netData;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (void)waterContentChanged:(std::vector<intpair>*)waterContentChangedPositions;
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions;
 - (BOOL)shouldSaveEveryChangeInPosition;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
 - (BOOL)requiresPhysicalBlock;
-- (void)updatePosition:(intpair)arg1;
-- (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (struct DynamicObjectNetData)dynamicObjectNetData;
-- (id)getSaveDict;
+- (void)updatePosition:(intpair)newPosition;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (DynamicObjectNetData)dynamicObjectNetData;
+- (NSMutableDictionary*)getSaveDict;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               type:(int)arg5
-           saveDict:(id)arg6
-     placedByClient:(id)arg7;
-- (int)objectType;
+- (DynamicObject*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                          cache:(CPCache*)cache_
+                        netData:(NSData*)netData;
+- (DynamicObject*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                       saveDict:(NSDictionary*)saveDict
+                          cache:(CPCache*)cache_;
+- (DynamicObject*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                     atPosition:(intpair)pos
+                          cache:(CPCache*)cache_;
+- (DynamicObject*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                     atPosition:(intpair)pos
+                          cache:(CPCache*)cache_
+                           type:(ItemType)itemType_
+                       saveDict:(NSDictionary*)saveDict
+                 placedByClient:(NSString*)clientId;
+- (DynamicObjectType)objectType;
 - (void)removeFromMacroBlock;
-- (BOOL)initDerivedStuff:(BOOL)arg1 loadPhysicalBlockIfNeeded:(BOOL)arg2;
+- (BOOL)initDerivedStuff:(BOOL)wasSaveLoad loadPhysicalBlockIfNeeded:(BOOL)loadPhysicalBlockIfNeeded;
 
 @end
