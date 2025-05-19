@@ -30,8 +30,8 @@ struct TreeFruit {
 @class NoiseFunction;
 
 @interface Tree : DynamicObject {
-  unsigned short maxHeightGene;
-  unsigned short growthRateGene;
+  uint16_t maxHeightGene;
+  uint16_t growthRateGene;
   int height;
   int maxHeightReached;
   float growthCounter;
@@ -54,8 +54,8 @@ struct TreeFruit {
 - (BOOL)occupiesNormalContents;
 - (BOOL)isStaticTree;
 - (int)height;
-- (unsigned short)growthRateGeneVariation;
-- (unsigned short)maxHeightGeneVariation;
+- (uint16_t)growthRateGeneVariation;
+- (uint16_t)maxHeightGeneVariation;
 - (TreeType)treeType;
 - (BOOL)isRequiredSoilType:(TileType)type;
 - (void)updateAllOwnedTilesToNewIDSize;
@@ -66,40 +66,40 @@ struct TreeFruit {
 - (void)makeTileDead:(Tile*)tile;
 - (BOOL)tileIsKindOfSelf:(Tile*)tile;
 - (void)updateGrowth:(BOOL)addNewBranchBlocks;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (void)incrementHeight;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (id)getSaveDict;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (NSMutableDictionary*)getSaveDict;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                     saveDict:(id)arg3
-                        cache:(id)arg4
-     treeDensityNoiseFunction:(id)arg5
-    seasonOffsetNoiseFunction:(id)arg6;
-- (void)loadSaveDictValues:(id)arg1;
-- (void)growInTimeSinceSaved:(double)arg1;
+- (Tree*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
+- (void)loadSaveDictValues:(NSDictionary*)saveDict;
+- (void)growInTimeSinceSaved:(NSTimeInterval)saveTime;
 - (void)addFallenFruits;
-- (BOOL)fruitShouldFallInSeason:(int)arg1;
+- (BOOL)fruitShouldFallInSeason:(int)season;
 - (BOOL)shouldAddFallenFruits;
-- (int)fruitItemType;
+- (ItemType)fruitItemType;
 - (BOOL)isGrowingInCompost;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                   atPosition:(intpair)arg3
-                        cache:(id)arg4
-                    maxHeight:(short)arg5
-                   growthRate:(short)arg6
-     treeDensityNoiseFunction:(id)arg7
-    seasonOffsetNoiseFunction:(id)arg8
-                    adultTree:(BOOL)arg9
-                  adultMaxAge:(float)arg10;
-- (id)initStaticTreeWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                   atPosition:(intpair)arg3
-                        cache:(id)arg4
-     treeDensityNoiseFunction:(id)arg5
-    seasonOffsetNoiseFunction:(id)arg6;
+- (Tree*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+                    maxHeight:(int16_t)maxHeight_
+                   growthRate:(int16_t)growthRate_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+                    adultTree:(BOOL)adultTree
+                  adultMaxAge:(float)adultMaxAge;
+- (Tree*)initStaticTreeWithWorld:(World*)world_
+                    dynamicWorld:(DynamicWorld*)dynamicWorld_
+                      atPosition:(intpair)pos_
+                           cache:(CPCache*)cache_
+        treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+       seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
 - (void)removeFromMacroBlock;
 
 @end
