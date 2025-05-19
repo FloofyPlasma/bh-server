@@ -9,8 +9,8 @@ enum LightDirectionType {
 };
 
 @interface ArtificialLight : DynamicObject {
-  short* contributionGrid;
-  char* addedGrid;
+  int16_t* contributionGrid;
+  int8_t* addedGrid;
   int maxRed;
   int maxGreen;
   int maxBlue;
@@ -22,31 +22,31 @@ enum LightDirectionType {
   DynamicObject* parentObject;
 }
 
-- (void)addContributionForPhysicalBlockLoadedAtXPos:(int)arg1 yPos:(int)arg2;
+- (void)addContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY;
 - (void)removeFromMacroBlock;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
 - (void)dealloc;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4
-       parentObject:(id)arg5;
+- (NSMutableDictionary*)getSaveDict;
+- (ArtificialLight*)initWithWorld:(World*)world_
+                     dynamicWorld:(DynamicWorld*)dynamicWorld
+                         saveDict:(NSDictionary*)saveDict
+                            cache:(CPCache*)cache_
+                     parentObject:(DynamicObject*)parentObject;
 - (Vector)lightColor;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-       parentObject:(id)arg5
-             colorR:(int)arg6
-             colorG:(int)arg7
-             colorB:(int)arg8
-               heat:(int)arg9
-             radius:(int)arg10
-     lightDirection:(int)arg11;
-- (int)objectType;
+- (ArtificialLight*)initWithWorld:(World*)world_
+                     dynamicWorld:(DynamicWorld*)dynamicWorld
+                       atPosition:(intpair)pos
+                            cache:(CPCache*)cache_
+                     parentObject:(DynamicObject*)parentObject
+                           colorR:(int)colorR_
+                           colorG:(int)colorG_
+                           colorB:(int)colorG_
+                             heat:(int)heat_
+                           radius:(int)heat_
+                   lightDirection:(LightDirectionType)lightDirection;
+- (DynamicObjectType)objectType;
 - (void)removeFromTiles;
 - (void)addToTiles;
-- (void)recursivelyUpdateLightWithList:(std::list<unsigned int>*)arg1;
+- (void)recursivelyUpdateLightWithList:(std::list<unsigned int>*)openList;
 
 @end

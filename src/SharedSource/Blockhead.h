@@ -11,7 +11,7 @@
 #import "Vector2.h"
 
 @class BlockheadAI, CPTexture2D, DrawCube, FishingRod, InteractionObject,
-    MJSound, MJTextView, Shader, Workbench;
+    MJSound, MJTextView, Shader, Workbench, CraftableItemObject, FreeBlock, Action, BlockheadCraftableItemObject;
 
 enum BlockheadAnimationType {
   VA_STAND = 0x0,
@@ -195,7 +195,7 @@ struct InteractionTestResult {
 
 @interface Blockhead
     : DynamicObject <PathUserDynamicObject, HarmableDynamicObject> {
-  struct BlockheadState state;
+  BlockheadState state;
   NSString* clientID;
   NSString* clientName;
   MJTextView* netTextView;
@@ -230,14 +230,14 @@ struct InteractionTestResult {
   DrawCube* shirtBodyCube;
   CPTexture2D* shirtArmTexture;
   DrawCube* shirtArmCube;
-  unsigned short hatItemType;
-  unsigned short shirtItemType;
-  unsigned short pantsItemType;
-  unsigned short shoesItemType;
-  unsigned short hatColorIndex;
-  unsigned short shirtColorIndex;
-  unsigned short pantsColorIndex;
-  unsigned short shoesColorIndex;
+  uint16_t hatItemType;
+  uint16_t shirtItemType;
+  uint16_t pantsItemType;
+  uint16_t shoesItemType;
+  uint16_t hatColorIndex;
+  uint16_t shirtColorIndex;
+  uint16_t pantsColorIndex;
+  uint16_t shoesColorIndex;
   Vector hatItemColor;
   Vector shirtItemColor;
   Vector pantsItemColor;
@@ -273,11 +273,11 @@ struct InteractionTestResult {
   intpair nextToSquare;
   intpair finalGoalSquare;
   BOOL loadRequiresRecalculation;
-  struct Tile* fromTile;
-  struct Tile* toTile;
+  Tile* fromTile;
+  Tile* toTile;
   BOOL lastPathWasFalling;
   BOOL lastPathWasMoveOnly;
-  struct Tile* interactingTile;
+  Tile* interactingTile;
   InventoryItem* interactionItem;
   int interactionItemIndex;
   int interactionItemSubIndex;
@@ -315,16 +315,16 @@ struct InteractionTestResult {
   float randomAnimationValueA;
   float randomAnimationValueB;
   float randomAnimationValueC;
-  struct BlockheadSkinOptions skinOptions;
-  union _GLKMatrix4 mbodyMatrix;
-  union _GLKMatrix4 mheadMatrix;
-  union _GLKMatrix4 mhairMatrix[8];
-  union _GLKMatrix4 mleftArmMatrix;
-  union _GLKMatrix4 mrightArmMatrix;
-  union _GLKMatrix4 mleftLegMatrix;
-  union _GLKMatrix4 mrightLegMatrix;
-  union _GLKMatrix4 mitemMatrix;
-  union _GLKMatrix4 mcubeItemMatrix;
+  BlockheadSkinOptions skinOptions;
+  GLKMatrix4 mbodyMatrix;
+  GLKMatrix4 mheadMatrix;
+  GLKMatrix4 mhairMatrix[8];
+  GLKMatrix4 mleftArmMatrix;
+  GLKMatrix4 mrightArmMatrix;
+  GLKMatrix4 mleftLegMatrix;
+  GLKMatrix4 mrightLegMatrix;
+  GLKMatrix4 mitemMatrix;
+  GLKMatrix4 mcubeItemMatrix;
   Vector lightColor;
   Vector daylightColor;
   Vector artificialLightColor;
@@ -345,7 +345,7 @@ struct InteractionTestResult {
   float gatherTimerLeftOver;
   BOOL underwater;
   BOOL drowningInSpace;
-  unsigned char localGatherProgress;
+  uint8_t localGatherProgress;
   NSMutableDictionary* unconfirmedPickups;
   NSMutableIndexSet* thisFramePickupRequests;
   NSDictionary* pathExtraData;
@@ -364,8 +364,8 @@ struct InteractionTestResult {
   float recoilTimer;
   float recoilDirection;
   BOOL cancelSimulateDueToCollapse;
-  short fishingRodCastX;
-  short fishingRodCastY;
+  int16_t fishingRodCastX;
+  int16_t fishingRodCastY;
   float tinFoilHatParticleCounter;
   BOOL isClientBlockheadBeingControlledByServer;
   float controlledByServerInactivityTimeout;
@@ -375,7 +375,7 @@ struct InteractionTestResult {
   NSDictionary* interactionObjectDictToRestoreWhenObjectLoaded;
   int prevGoalRotationType;
   float netRotationDelayTimer;
-  std::vector<short> expectedCraftItems;
+  std::vector<int16_t> expectedCraftItems;
   BOOL visible;
   BOOL onScreenForDPad;
   MJSound* regenerationSound;
@@ -391,7 +391,7 @@ struct InteractionTestResult {
   float jetFuelUsage;
   float clampedYAccelerationForFuelUsageWhenInFreeFlight;
   int zIndex;
-  struct TradeMission currentTradeMission;
+  TradeMission currentTradeMission;
   int currentNetQueueSize;
   intpair netNextToSquare[4];
   int nextTerrainDifficulty[4];
@@ -408,7 +408,7 @@ struct InteractionTestResult {
   unsigned int waitingForFillResponseIndex;
   float waitingForFillResponseTimer;
   BOOL hasHadRemoteUpdate;
-  unsigned long long remoteClientFishingRodFishUniqueID;
+  uint64_t remoteClientFishingRodFishUniqueID;
   BOOL clientDoubleTimeUnlocked;
   float noRemoteActionTimer;
   BOOL beingControlledByDPad;
@@ -419,7 +419,7 @@ struct InteractionTestResult {
 }
 
 @property (readonly)
-    struct TradeMission currentTradeMission; // @synthesize currentTradeMission;
+    TradeMission currentTradeMission; // @synthesize currentTradeMission;
 @property (readonly) NSArray* actionQueue; // @synthesize actionQueue;
 @property int tipType; // @synthesize tipType;
 @property (readonly) BOOL
@@ -445,27 +445,27 @@ struct InteractionTestResult {
 @property (readonly) NSString* name; // @synthesize name;
 @property (readonly) intpair nextPos; // @synthesize nextPos=toSquare;
 - (BOOL)customizeBlockheadUIShouldHaveOKButton;
-- (void)customizationComplete:(struct BlockheadSkinOptions)arg1;
-- (void)customizationChanged:(struct BlockheadSkinOptions)arg1;
-- (struct BlockheadSkinOptions)skinOptions;
-- (int)hurryCostForCraftTimeRemaining:(int)arg1 totalCraftTime:(int)arg2;
+- (void)customizationComplete:(BlockheadSkinOptions)skinOptions_;
+- (void)customizationChanged:(BlockheadSkinOptions)skinOptions_;
+- (BlockheadSkinOptions)skinOptions;
+- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime;
 - (BOOL)craftProgressUIRequiresCollectButtonWhenCompleted;
 - (void)craftProgressUICompleteButtonTapped;
-- (void)hurryCompletion:(int)arg1;
+- (void)hurryCompletion:(int)hurryCost;
 - (void)abortCraft;
 - (BOOL)isDoubleHeight;
-- (id)titleForCraftProgressUI;
-- (int)unableToWorkReason;
+- (NSString*)titleForCraftProgressUI;
+- (BlockheadUnableToWorkReason)unableToWorkReason;
 - (Vector2)distanceTravelledThisDPadMovementSinceLastRequest;
 - (BOOL)beingControlledByDPad;
 - (BOOL)dpadShouldBeDisplayed;
 - (BOOL)moving;
-- (int)heldItemType;
-- (void)changeName:(id)arg1;
+- (ItemType)heldItemType;
+- (void)changeName:(NSString*)newName;
 - (BOOL)isMale;
 - (float)freeBlockPickupRadius;
 - (BOOL)hasJetPackEquipped;
-- (void)updateJetMotion:(float)arg1;
+- (void)updateJetMotion:(float)dt;
 - (BOOL)isInJetPackFreeFlightMode;
 - (void)freeFlightButtonTapped;
 - (BOOL)jetPackIsLowOnFuel;
@@ -475,72 +475,72 @@ struct InteractionTestResult {
 - (void)updateNameTextView;
 - (void)dieForGood;
 - (BOOL)interacting;
-- (BOOL)willDieIfHitByForce:(int)arg1;
+- (BOOL)willDieIfHitByForce:(int)force;
 - (Vector2)center;
 - (BOOL)isVisible;
-- (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
 - (BOOL)hungerPaused;
 - (BOOL)canCrawl;
-- (void)addExpectedCraftItem:(int)arg1;
-- (id)localNetID;
-- (BOOL)waitingForFillRequestAtPos:(intpair)arg1;
+- (void)addExpectedCraftItem:(ItemType)itemType;
+- (NSString*)localNetID;
+- (BOOL)waitingForFillRequestAtPos:(intpair)pos_;
 - (BOOL)doubleTimeUnlocked;
 - (BOOL)canEnterFreeFlightMode;
-- (BOOL)teleportToPos:(intpair)arg1;
-- (BOOL)canTeleportToPos:(intpair)arg1;
-- (void)addToCrystalDiscrepency:(int)arg1;
+- (BOOL)teleportToPos:(intpair)teleportPos;
+- (BOOL)canTeleportToPos:(intpair)teleportPos;
+- (void)addToCrystalDiscrepency:(int)amountToAdd;
 - (BOOL)canFish;
-- (id)fishingRod;
+- (FishingRod*)fishingRod;
 - (void)stopFishing;
 - (BOOL)isRunByAI;
-- (void)fillReceiptsReturned:(id)arg1;
+- (void)fillReceiptsReturned:(NSArray*)reciepts;
 - (void)stopAllActions;
-- (id)currentTipText;
+- (NSString*)currentTipText;
 @property BOOL paused; // @synthesize paused;
 - (int)actionCount;
 - (BOOL)currentInteractionRequiresHumanInput;
 - (BOOL)hasActions;
-- (BOOL)queueActionWithGoalPos:(intpair)arg1
-               goalInteraction:(int)arg2
-                      pathType:(int)arg3
-           interactionObjectID:(unsigned long long)arg4
-           craftableItemObject:(id)arg5
-         craftCountOrExtraData:(short)arg6
-            disableCancelCheck:(BOOL)arg7
-                          isAI:(BOOL)arg8;
-- (BOOL)queueActionWithGoalPos:(intpair)arg1
-               goalInteraction:(int)arg2
-                      pathType:(int)arg3
-           interactionObjectID:(unsigned long long)arg4
-           craftableItemObject:(id)arg5
-         craftCountOrExtraData:(short)arg6
-                          isAI:(BOOL)arg7;
-- (BOOL)hasCancelableActionAtGoalPos:(intpair)arg1
-           orWithInteractionObjectID:(unsigned long long)arg2
-                     goalInteraction:(int)arg3
-               craftCountOrExtraData:(short)arg4;
-- (BOOL)cancelAnyActionAtGoalPos:(intpair)arg1
-       orWithInteractionObjectID:(unsigned long long)arg2
-                 goalInteraction:(int)arg3
-           craftCountOrExtraData:(short)arg4;
-- (void)remotePickupRequestResponse:(BOOL)arg1
-                          uniqueIDs:(unsigned long long*)arg2
-                              count:(int)arg3;
-- (void)removeInventoryItemIdenticalTo:(id)arg1;
-- (BOOL)canUseDynamicObject:(id)arg1;
+- (BOOL)queueActionWithGoalPos:(intpair)goalPos
+               goalInteraction:(InteractionType)goalInteraction
+                      pathType:(PathType)pathType
+           interactionObjectID:(uint64_t)interactionObjectID
+           craftableItemObject:(CraftableItemObject*)craftableItemObject
+         craftCountOrExtraData:(int16_t)craftCountOrExtraData
+            disableCancelCheck:(BOOL)disableCancelCheck
+                          isAI:(BOOL)isAI;
+- (BOOL)queueActionWithGoalPos:(intpair)goalPos
+               goalInteraction:(InteractionType)goalInteraction
+                      pathType:(PathType)pathType
+           interactionObjectID:(uint64_t)interactionObjectID
+           craftableItemObject:(CraftableItemObject*)craftableItemObject
+         craftCountOrExtraData:(int16_t)craftCountOrExtraData
+                          isAI:(BOOL)isAI;
+- (BOOL)hasCancelableActionAtGoalPos:(intpair)tapPos
+           orWithInteractionObjectID:(uint64_t)interactionObjectID
+                     goalInteraction:(InteractionType)craftCountOrExtraData
+               craftCountOrExtraData:(int16_t)craftCountOrExtraData;
+- (BOOL)cancelAnyActionAtGoalPos:(intpair)tapPos
+       orWithInteractionObjectID:(uint64_t)interactionObjectID
+                 goalInteraction:(InteractionType)craftCountOrExtraData
+           craftCountOrExtraData:(int16_t)craftCountOrExtraData;
+- (void)remotePickupRequestResponse:(BOOL)accepted
+                          uniqueIDs:(uint64_t*)uniqueIDs
+                              count:(int)count;
+- (void)removeInventoryItemIdenticalTo:(InventoryItem*)item;
+- (BOOL)canUseDynamicObject:(DynamicObject*)dynamicObject;
 - (void)stopInteractingWithInteractionObjectsIfNoInteractionObject;
 - (BOOL)requiresSwipeEvents;
 - (BOOL)dpadShouldAllowUpDown;
 - (BOOL)requiresMotionEvents;
-- (void)setRidingObject:(id)arg1;
-- (void)fishingRodCast:(Vector2)arg1;
+- (void)setRidingObject:(DynamicObject*)rideObject_;
+- (void)fishingRodCast:(Vector2)vec;
 - (BOOL)allowsPanning;
 - (float)cameraZOffset;
 - (Vector2)cameraPos;
 - (void)swipeUpGesture;
 - (BOOL)motionShouldBeDiscreteValues;
-- (void)setMotion:(Vector2)arg1;
+- (void)setMotion:(Vector2)motion;
 - (void)regenerateRushed;
 - (void)sleepRushed;
 - (BOOL)falling;
@@ -553,141 +553,142 @@ struct InteractionTestResult {
 - (BOOL)crouching;
 - (BOOL)waitingForPath;
 - (void)setNoLongerWaitingForPath;
-- (void)setWaitingForPathToPos:(intpair)arg1;
+- (void)setWaitingForPathToPos:(intpair)goalPos;
 - (id)infoForPathRecalculation;
 @property int selectedToolIndex;
 - (BOOL)hasInteractionInventoryItemAvailable;
-- (void)removeInteractionItem:(BOOL)arg1;
+- (void)removeInteractionItem:(BOOL)wasUsedUp;
 - (void)removeCurrentItem;
-- (void)removeItem:(id)arg1 index:(int)arg2 wasUsedUp:(BOOL)arg3;
+- (void)removeItem:(InventoryItem*)itemToUse index:(int)index wasUsedUp:(BOOL)wasUsedUp;
 - (int)currentItemSubIndex;
-- (id)currentItem;
+- (InventoryItem*)currentItem;
 - (void)setCurrentItemToItemAtIndex:(intpair)arg1;
-- (id)currentItemSlot;
+- (NSArray*)currentItemSlot;
 - (BOOL)requiresPhysicalBlock;
-- (void)craftItemFinished:(BOOL)arg1 atWorkbench:(id)arg2;
-- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (int)moveInventoryItemsFromArray:(id)arg1
-                         fromIndex:(int)arg2
-                      fromSubIndex:(int)arg3
-                           toIndex:(int)arg4
-                        toSubIndex:(int)arg5
-                             count:(int)arg6
-                        movedItems:(id)arg7;
-- (void)removeInventoryItemsFromIndex:(int)arg1
-                         fromSubIndex:(int)arg2
-                                count:(int)arg3;
-- (int)moveInventoryItemsFromIndex:(int)arg1
-                      fromSubIndex:(int)arg2
-                           toIndex:(int)arg3
-                        toSubIndex:(int)arg4
-                             count:(int)arg5;
-- (void)dropInventoryItemsAtIndex:(int)arg1
-                         subIndex:(int)arg2
-                            count:(int)arg3
-                 ignoreFreeblocks:(BOOL)arg4;
-- (void)setInventoryNeedsSaving:(BOOL)arg1;
+- (void)craftItemFinished:(BOOL)completed atWorkbench:(Workbench*)workbench;
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (int)moveInventoryItemsFromArray:(NSMutableArray*)moveInventoryItemsFromArray
+                         fromIndex:(int)fromIndex
+                      fromSubIndex:(int)fromSubIndex
+                           toIndex:(int)toIndex
+                        toSubIndex:(int)toIndex
+                             count:(int)count
+                        movedItems:(NSMutableArray*)movedItems;
+- (void)removeInventoryItemsFromIndex:(int)fromIndex
+                         fromSubIndex:(int)fromSubIndex
+                                count:(int)count;
+- (int)moveInventoryItemsFromIndex:(int)fromIndex
+                      fromSubIndex:(int)fromSubIndex
+                           toIndex:(int)toIndex
+                        toSubIndex:(int)toIndex
+                             count:(int)count;
+- (void)dropInventoryItemsAtIndex:(int)index
+                         subIndex:(int)fromSubIndex
+                            count:(int)count
+                 ignoreFreeblocks:(BOOL)ignoreFreeblocks;
+- (void)setInventoryNeedsSaving:(BOOL)inventoryNeedsSaving_;
 - (BOOL)inventoryNeedsSaving;
-- (void)inventoryWasChanged:(int)arg1 subIndex:(int)arg2 wasUsage:(BOOL)arg3;
+- (void)inventoryWasChanged:(int)inventoryIndex subIndex:(int)subIndex wasUsage:(BOOL)wasUsage;
 - (void)incrementFuelUsage;
-- (void)incrementDamageOfArmorClothing:(float)arg1;
+- (void)incrementDamageOfArmorClothing:(float)damage;
 - (void)incrementUsageOfIceClothing;
 - (void)incrementUsageOfClothing;
-- (void)incrementUsageOfInteractionItem:(BOOL)arg1;
+- (void)incrementUsageOfInteractionItem:(BOOL)wasAttack;
 - (void)incrementPassiveItemUsage;
-- (void)incrementUsageOfItem:(id)arg1
-                  indexToUse:(int)arg2
-                   wasAttack:(BOOL)arg3
-                  multiplier:(int)arg4;
-- (void)incrementUsageOfItem:(id)arg1 indexToUse:(int)arg2 wasAttack:(BOOL)arg3;
-- (id)subtractItemsFromInventoryOfType:(int)arg1
-                                 count:(int)arg2
-                                 dataB:(int)arg3;
-- (id)subtractItemsFromInventoryOfType:(int)arg1 count:(int)arg2;
-- (void)itemWillBeRemovedFromInventory:(id)arg1;
+- (void)incrementUsageOfItem:(InventoryItem*)itemToUse
+                  indexToUse:(int)indexToUse
+                   wasAttack:(BOOL)wasAttack
+                  multiplier:(int)multiplier;
+- (void)incrementUsageOfItem:(InventoryItem*)itemToUse indexToUse:(int)indexToUse wasAttack:(BOOL)wasAttack;
+- (NSMutableArray*)subtractItemsFromInventoryOfType:(ItemType)type
+                                              count:(int)count
+                                              dataB:(int)dataB;
+- (NSMutableArray*)subtractItemsFromInventoryOfType:(ItemType)type count:(int)count;
+- (void)itemWillBeRemovedFromInventory:(InventoryItem*)inventoryItem;
 - (intpair)mostCommonFoodTypeIndex;
 - (intpair)placableLightForAIItemIndex;
 - (int)placableLightForAIItemType;
 - (intpair)sowableItemForAIItemIndex;
 - (int)sowableItemForAIItemType;
-- (intpair)itemIndexWithGoodInteractionTypeForTile:(struct Tile*)arg1;
-- (void)subtractCash:(int)arg1;
+- (intpair)itemIndexWithGoodInteractionTypeForTile:(Tile*)tile;
+- (void)subtractCash:(int)amount;
 - (int)totalCash;
-- (intpair)inventoryLocationOfFirstInstanceOfItemType:(int)arg1;
-- (float)usageMultiplierForFirstItemOfType:(int)arg1;
-- (int)countOfInventoryItemsOfType:(int)arg1 includeActions:(BOOL)arg2;
-- (int)countOfInventoryItemsWithSpecificDataBOfType:(int)arg1
-                                              dataB:(int)arg2
-                                     includeActions:(BOOL)arg3;
-- (id)inventoryItems;
-- (BOOL)pickupFreeblockIfPossible:(id)arg1
-                           inTile:(struct Tile*)arg2
-                      intentional:(BOOL)arg3;
-- (int)addItemToInventory:(id)arg1
-                    flash:(BOOL)arg2
-         disableWarpCheck:(BOOL)arg3
-           forceSlotIndex:(int)arg4;
-- (int)addItemToInventory:(id)arg1 flash:(BOOL)arg2 disableWarpCheck:(BOOL)arg3;
-- (int)addItemToInventory:(id)arg1 flash:(BOOL)arg2;
-- (int)addItemToInventory:(id)arg1;
-- (BOOL)checkIfCanWarpInSecondBlockheadAfterItemAdded:(int)arg1 dataB:(int)arg2;
-- (int)canPickUpItemOfType:(int)arg1
-                  subItems:(id)arg2
-                     dataA:(unsigned short)arg3
-                     dataB:(unsigned short)arg4;
-- (int)canPickUpItemOfType:(int)arg1 subItems:(id)arg2;
-- (void)setPath:(id)arg1
-               type:(int)arg2
-    goalInteraction:(int)arg3
-          extraData:(id)arg4;
-- (void)drawBoxes:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
-          pinchScale:(float)arg4
-     cameraMinXWorld:(int)arg5
-     cameraMaxXWorld:(int)arg6
-     cameraMinYWorld:(int)arg7
-     cameraMaxYWorld:(int)arg8;
-- (void)drawName:(union _GLKMatrix4)arg1
-    modelViewMatrix:(union _GLKMatrix4)arg2
-         pinchScale:(float)arg3
-    cameraMinXWorld:(int)arg4
-    cameraMaxXWorld:(int)arg5
-    cameraMinYWorld:(int)arg6
-    cameraMaxYWorld:(int)arg7;
-- (void)drawTransparentInventoryItem:(float)arg1
-                    projectionMatrix:(union _GLKMatrix4)arg2
-                     modelViewMatrix:(union _GLKMatrix4)arg3
-                     cameraMinXWorld:(int)arg4
-                     cameraMaxXWorld:(int)arg5
-                     cameraMinYWorld:(int)arg6
-                     cameraMaxYWorld:(int)arg7;
-- (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)preDrawUpdate:(float)arg1
-      cameraMinXWorld:(int)arg2
-      cameraMaxXWorld:(int)arg3
-      cameraMinYWorld:(int)arg4
-      cameraMaxYWorld:(int)arg5;
-- (void)drawForButtonProjectionMatrix:(union _GLKMatrix4)arg1
-                      modelViewMatrix:(union _GLKMatrix4)arg2;
-- (void)sufferDamage:(float)arg1 isSimulation:(BOOL)arg2 recoil:(BOOL)arg3;
-- (void)pickUpItemIfPossibleInTile:(struct Tile*)arg1 atPos:(intpair)arg2;
-- (id)pickupItemForTile:(struct Tile*)arg1 astPos:(intpair)arg2;
+- (intpair)inventoryLocationOfFirstInstanceOfItemType:(ItemType)itemType;
+- (float)usageMultiplierForFirstItemOfType:(ItemType)itemType;
+- (int)countOfInventoryItemsOfType:(ItemType)itemType includeActions:(BOOL)arg2;
+- (int)countOfInventoryItemsWithSpecificDataBOfType:(ItemType)itemType
+                                              dataB:(int)dataB
+                                     includeActions:(BOOL)includeActions;
+- (NSArray*)inventoryItems;
+- (BOOL)pickupFreeblockIfPossible:(FreeBlock*)freeBlock
+                           inTile:(Tile*)intentional
+                      intentional:(BOOL)intentional;
+- (int)addItemToInventory:(InventoryItem*)item
+                    flash:(BOOL)flash
+         disableWarpCheck:(BOOL)forceSlotIndex
+           forceSlotIndex:(int)forceSlotIndex;
+- (int)addItemToInventory:(InventoryItem*)item flash:(BOOL)flash disableWarpCheck:(BOOL)forceSlotIndex;
+- (int)addItemToInventory:(InventoryItem*)item flash:(BOOL)flash;
+- (int)addItemToInventory:(InventoryItem*)item;
+- (BOOL)checkIfCanWarpInSecondBlockheadAfterItemAdded:(ItemType)itemType dataB:(int)dataB;
+- (int)canPickUpItemOfType:(ItemType)itemType
+                  subItems:(NSArray*)subItems
+                     dataA:(uint16_t)dataA
+                     dataB:(uint16_t)dataB;
+- (int)canPickUpItemOfType:(ItemType)itemType subItems:(NSArray*)subItems;
+- (void)setPath:(NSArray*)path_
+               type:(PathType)pathType
+    goalInteraction:(InteractionType)goalInteraction
+          extraData:(NSDictionary*)goalInteraction;
+- (void)drawBoxes:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)projectionMatrix
+          pinchScale:(float)pinchScale
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)argcameraMaxYWorld8;
+- (void)drawName:(GLKMatrix4)projectionMatrix
+    modelViewMatrix:(GLKMatrix4)modelViewMatrix
+         pinchScale:(float)pinchScale
+    cameraMinXWorld:(int)cameraMinXWorld
+    cameraMaxXWorld:(int)cameraMaxXWorld
+    cameraMinYWorld:(int)cameraMinYWorld
+    cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)drawTransparentInventoryItem:(float)dt
+                    projectionMatrix:(GLKMatrix4)projectionMatrix
+                     modelViewMatrix:(GLKMatrix4)projectionMatrix
+                          pinchScale:(float)pinchScale
+                     cameraMinXWorld:(int)cameraMinXWorld
+                     cameraMaxXWorld:(int)cameraMaxXWorld
+                     cameraMinYWorld:(int)cameraMinYWorld
+                     cameraMaxYWorld:(int)argcameraMaxYWorld8;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)preDrawUpdate:(float)dt
+      cameraMinXWorld:(int)cameraMinXWorld
+      cameraMaxXWorld:(int)cameraMaxXWorld
+      cameraMinYWorld:(int)cameraMinYWorld
+      cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)drawForButtonProjectionMatrix:(GLKMatrix4)projectionMatrix
+                      modelViewMatrix:(GLKMatrix4)modelViewMatrix;
+- (void)sufferDamage:(float)damage isSimulation:(BOOL)isSimulation recoil:(BOOL)recoil;
+- (void)pickUpItemIfPossibleInTile:(Tile*)arg1 atPos:(intpair)arg2;
+- (id)pickupItemForTile:(Tile*)arg1 astPos:(intpair)arg2;
 - (void)prepareInventoryForSaving;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)setNeedsRemoved:(BOOL)arg1;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)setNeedsRemoved:(BOOL)needsRemoved_;
 - (BOOL)shouldContinueSimulating;
 - (BOOL)onTradeMission;
 - (BOOL)isIdle;
-- (void)remoteCreationDataUpdate:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
+- (void)remoteUpdate:(NSData*)netData;
 - (void)sleepOnSpotIfPossibleOtherwiseCancelActions;
 - (void)meditateIfPossible;
 - (void)sleepOnSpotIfPossible;
@@ -697,89 +698,88 @@ struct InteractionTestResult {
 - (BOOL)canMeditate;
 - (BOOL)canSleepOnSpot;
 - (BOOL)canCollapse;
-- (struct FreeBlockCreationCount)freeBlockCreationCountForTile:
-                                     (struct Tile*)arg1
-                                                      withItem:(id)arg2;
+- (FreeBlockCreationCount)freeBlockCreationCountForTile:(Tile*)arg1
+                                               withItem:(id)arg2;
 - (int)freeBlockBonusCreationCount;
 - (void)stopInteracting;
-- (void)startInteractingWithTileAtIndex:(int)arg1
-                                   tile:(struct Tile*)arg2
-                        interactionType:(int)arg3;
-- (void)pickupDynamicObject:(id)arg1;
+- (void)startInteractingWithTileAtIndex:(int)tileIndex
+                                   tile:(Tile*)tile
+                        interactionType:(InteractionType)interactionType_;
+- (void)pickupDynamicObject:(DynamicObject*)dynamicObject;
 - (void)stopRiding;
 - (void)updateGatherSpeedAndAnimationForCurrentInterationAndItem;
-- (struct InteractionTestResult)goodOrBadInteractionForAction:(id)arg1;
-- (BOOL)isCorrectToolForBackWallOfType:(int)arg1 forItem:(int)arg2;
+- (InteractionTestResult)goodOrBadInteractionForAction:(Action*)action;
+- (BOOL)isCorrectToolForBackWallOfType:(int)tileType forItem:(ItemType)interactionItemType; // TODO: TileType?
 - (int)currentTraverseToKeyFrame;
-- (BOOL)isHeadingForSquare:(intpair)arg1;
-- (id)interactionObject;
-- (void)setInteractionObject:(id)arg1;
+- (BOOL)isHeadingForSquare:(intpair)sqarePos;
+- (InteractionObject*)interactionObject;
+- (void)setInteractionObject:(InteractionObject*)interactionObject_;
 - (BOOL)isInteractingWithAnyInteractionObject;
 - (BOOL)currentCraftIsOutOfFuel;
 - (float)getCurrentCraftProgress;
-- (id)interactionWorkbench;
-- (void)setInteractionWorkbench:(id)arg1;
+- (Workbench*)interactionWorkbench;
+- (void)setInteractionWorkbench:(Workbench*)workbench_;
 - (BOOL)isAddingFuelToAnyWorkbench;
 - (BOOL)isCraftingAtAnyWorkbench;
-- (BOOL)willBeInteractingWithInteractionObject:(id)arg1;
-- (BOOL)willBeAddingFuelAtWorkbench:(id)arg1;
-- (BOOL)willBeCraftingAtWorkbench:(id)arg1;
-- (void)updatePosition:(intpair)arg1;
-- (int)currentInteractionTypeForTile:(struct Tile*)arg1
-                               atPos:(intpair)arg2
-    pickupRejectedDueToInventoryFull:(char*)arg3
-                      includeActions:(BOOL)arg4
-                           faceIndex:(int)arg5
-               allowProtectedActions:(BOOL)arg6;
+- (BOOL)willBeInteractingWithInteractionObject:(InteractionObject*)interactionObject_;
+- (BOOL)willBeAddingFuelAtWorkbench:(Workbench*)workbench;
+- (BOOL)willBeCraftingAtWorkbench:(Workbench*)workbench;
+- (void)updatePosition:(intpair)newPosition;
+- (int)currentInteractionTypeForTile:(Tile*)tile
+                               atPos:(intpair)atPos
+    pickupRejectedDueToInventoryFull:(BOOL*)pickupRejectedDueToInventoryFull
+                      includeActions:(BOOL)includeActions
+                           faceIndex:(int)faceIndex
+               allowProtectedActions:(BOOL)allowProtectedActions;
 - (int)currentInteractionType;
 - (int)currentInteractionIsGoodOrBad;
-- (BOOL)canDigBackWallforTile:(struct Tile*)arg1
-                        atPos:(intpair)arg2
-                     withItem:(id)arg3
-               includeActions:(BOOL)arg4;
-- (int)interactionTypeForTile:(struct Tile*)arg1
-                               atPos:(intpair)arg2
-                                item:(id)arg3
-    pickupRejectedDueToInventoryFull:(char*)arg4
-                      includeActions:(BOOL)arg5
-                           faceIndex:(int)arg6
-               allowProtectedActions:(BOOL)arg7;
-- (BOOL)tileIsLitForSelf:(struct Tile*)arg1 atPos:(intpair)arg2;
-- (int)goalInteractionForNPCChaseForNPC:(id)arg1 withItemType:(int)arg2;
+- (BOOL)canDigBackWallforTile:(Tile*)tile
+                        atPos:(intpair)tilePos
+                     withItem:(InventoryItem*)item
+               includeActions:(BOOL)includeActions;
+- (int)interactionTypeForTile:(Tile*)tile
+                               atPos:(intpair)tilePos
+                                item:(InventoryItem*)item
+    pickupRejectedDueToInventoryFull:(BOOL*)pickupRejectedDueToInventoryFull
+                      includeActions:(BOOL)includeActions
+                           faceIndex:(int)faceIndex
+               allowProtectedActions:(BOOL)allowProtectedActions;
+- (BOOL)tileIsLitForSelf:(Tile*)tile atPos:(intpair)tilePos;
+- (int)goalInteractionForNPCChaseForNPC:(DynamicObject*)npc withItemType:(ItemType)itemType;
 - (void)dealloc;
-- (id)getSaveDictIncludingWorkbenchOrInterationObject:(BOOL)arg1;
-- (id)getSaveDict;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)previewData;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (void)setupFromNetCreationData:(id)arg1;
+- (NSMutableDictionary*)getSaveDictIncludingWorkbenchOrInterationObject:(BOOL)includeWorkbenchOrInterationObject;
+- (NSMutableDictionary*)getSaveDict;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)previewData;
+- (Blockhead*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                      cache:(CPCache*)cache_
+                    netData:(NSData*)netData;
+- (void)setupFromNetCreationData:(NSData*)netData;
 - (void)updateAnimation;
-- (id)clothingItemAtIndex:(int)arg1;
-- (void)netInteractionObjectWasLoaded:(id)arg1;
-- (id)initWithWorld:(id)arg1
-               dynamicWorld:(id)arg2
-                   saveDict:(id)arg3
-        savedInventorySlots:(id)arg4
-                      cache:(id)arg5
-    repositionOnLoadFailure:(BOOL)arg6
-              clientSaveDir:(id)arg7
-     clientLocallySavedDict:(id)arg8;
-- (id)initWithWorld:(id)arg1
-           dynamicWorld:(id)arg2
-             atPosition:(intpair)arg3
-                  cache:(id)arg4
-        blockheadNumber:(int)arg5
-    craftableItemObject:(id)arg6
-               uniqueID:(unsigned long long)arg7;
-- (int)objectType;
+- (InventoryItem*)clothingItemAtIndex:(int)clothingIndex;
+- (void)netInteractionObjectWasLoaded:(InteractionObject*)interactionObject_;
+- (Blockhead*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                   saveDict:(NSDictionary*)saveDict
+        savedInventorySlots:(NSArray*)savedInventorySlots
+                      cache:(CPCache*)cache_
+    repositionOnLoadFailure:(BOOL)repositionOnLoadFailure
+              clientSaveDir:(NSString*)clientSaveDir_
+     clientLocallySavedDict:(NSDictionary*)clientLocallySavedDict;
+- (Blockhead*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                 atPosition:(intpair)pos
+                      cache:(CPCache*)cache_
+            blockheadNumber:(int)blockheadNumber
+        craftableItemObject:(BlockheadCraftableItemObject*)craftableItemObject
+                   uniqueID:(uint64_t)uniqueID_;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedStuffStuff;
 - (void)updateSkin;
 - (void)updateClothingCubes;
-- (int)currentAnimationType;
+- (BlockheadAnimationType)currentAnimationType;
 - (float)regenerationProgress;
 - (BOOL)hasCoffeeEnergy;
 - (float)drownFraction;

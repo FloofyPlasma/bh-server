@@ -40,66 +40,60 @@ struct BoatCreationNetData {
 }
 
 - (BOOL)riderDPadShouldAllowUpDown;
-- (void)blockheadUnloaded:(id)arg1;
-- (id)actsAsInteractionObject;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
+- (InteractionObject*)actsAsInteractionObject;
 - (BOOL)requiresFuel;
 - (int)rideDirection;
 - (BOOL)jumpsOnSwipe;
-- (void)setNeedsRemoved:(BOOL)arg1;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
+- (void)setNeedsRemoved:(BOOL)needsRemoved_;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
 - (BOOL)isDoubleHeight;
-- (id)actionTitle;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (Vector2)cameraPosForBlockhead:(id)arg1;
+- (NSString*)actionTitle;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead;
 - (float)riderBodyZRotation;
-- (float)riderBodyYRotationForBlockhead:(id)arg1;
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead;
 - (void)swipeUpGesture;
-- (void)removeRider:(id)arg1;
-- (void)addRider:(id)arg1;
+- (void)removeRider:(Blockhead*)rider_;
+- (void)addRider:(Blockhead*)rider_;
 - (BOOL)riderDPadShouldGiveDiscreteValues;
-- (void)setTargetVelocity:(Vector2)arg1;
-- (Vector)riderPosForBlockhead:(id)arg1;
+- (void)setTargetVelocity:(Vector2)targetVelocity;
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead;
 - (Vector2)renderPos;
-- (unsigned short)maxHealth;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)updatePosition:(intpair)arg1;
-- (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
-- (void)remoteUpdate:(id)arg1;
+- (uint16_t)maxHealth;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)updatePosition:(intpair)newPosition;
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType;
+- (void)remoteUpdate:(NSData*)netData;
 - (void)dealloc;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)getSaveDict;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
 - (void)blockheadsLoaded;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-     placedByClient:(id)arg6;
-- (int)objectType;
-- (int)freeblockCreationItemType;
+- (Boat*)initWithWorld:(World*)world_
+          dynamicWorld:(DynamicWorld*)dynamicWorld
+                 cache:(CPCache*)cache_
+               netData:(NSData*)netData;
+- (Boat*)initWithWorld:(World*)world_
+          dynamicWorld:(DynamicWorld*)dynamicWorld
+              saveDict:(NSDictionary*)saveDict
+                 cache:(CPCache*)cache_;
+- (Boat*)initWithWorld:(World*)world_
+          dynamicWorld:(DynamicWorld*)dynamicWorld
+            atPosition:(intpair)pos
+                 cache:(CPCache*)cache_
+                  type:(ItemType)itemType_
+              saveDict:(NSDictionary*)saveDict
+        placedByClient:(NSString*)clientId;
+- (DynamicObjectType)objectType;
+- (ItemType)freeblockCreationItemType;
 - (void)loadDerivedStuff;
-
-// Remaining properties
-@property (readonly, copy) NSString* debugDescription;
-@property (readonly, copy) NSString* description;
-@property (readonly) unsigned long long hash;
-@property BOOL needsToUpdateChoiceUI;
-@property (readonly) Class superclass;
 
 @end

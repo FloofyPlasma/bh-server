@@ -7,7 +7,7 @@
 #import "BHNetConstants.h"
 
 @interface BHNetServerMatch : BHMatch <NSNetServiceDelegate> {
-  unsigned short serverPort;
+  uint16_t serverPort;
   NSNetService* reliableServerService;
   __CFSocket* reliableServerListeningSocket;
   ENetHost* enetServer;
@@ -19,7 +19,7 @@
   NSString* worldName;
   NSString* ownerName;
   NSString* cloudSalt;
-  unsigned short portToUse;
+  uint16_t portToUse;
   BOOL hasLocalPLayer;
   NSTimer* pollTimer;
   float noCreditBootTimer;
@@ -30,43 +30,43 @@
 
 @property BHNetPrivacy privacy; // @synthesize privacy;
 - (BOOL)requiresPlayerAuthentication;
-- (id)persistentIDForNetID:(id)arg1;
-- (void)netServiceDidResolveAddress:(id)arg1;
-- (void)netService:(id)arg1 didNotResolve:(id)arg2;
-- (void)netService:(id)arg1 didNotPublish:(id)arg2;
+- (NSString*)persistentIDForNetID:(NSString*)netID;
+- (void)netServiceDidResolveAddress:(NSNetService*)sender;
+- (void)netService:(NSNetService*)sender didNotResolve:(NSDictionary*)errorDict;
+- (void)netService:(NSNetService*)sender didNotPublish:(NSDictionary*)errorDict;
 - (BOOL)startServer;
-- (void)removeClient:(id)arg1;
+- (void)removeClient:(NSString*)clientID;
 - (void)pollNetEvents;
-- (void)clientApprovedWithInfo:(id)arg1;
-- (id)clientPlayerInformationRecieved:(id)arg1 fromPeer:(id)arg2;
-- (id)loadInfoForPlayer:(id)arg1;
-- (BOOL)sendData:(id)arg1
-       toPlayers:(id)arg2
-    withDataMode:(long long)arg3
-           error:(id*)arg4;
+- (void)clientApprovedWithInfo:(NSMutableDictionary*)dictionary;
+- (NSMutableDictionary*)clientPlayerInformationRecieved:(NSDictionary*)clientDict fromPeer:(NSString*)enetOrPlayerID;
+- (NSMutableDictionary*)loadInfoForPlayer:(NSString*)playerID;
+- (BOOL)sendData:(NSData*)data
+       toPlayers:(NSArray*)playerIDs
+    withDataMode:(BHMatchSendDataMode)mode
+           error:(NSError**)error;
 - (BOOL)isCloudMatch;
-- (id)cloudSalt;
-- (id)ownerName;
-- (id)playerIDs;
-- (id)localPlayerName;
-- (id)localPlayerID;
+- (NSString*)cloudSalt;
+- (NSString*)ownerName;
+- (NSArray*)playerIDs;
+- (NSString*)localPlayerName;
+- (NSString*)localPlayerID;
 - (void)dealloc;
 - (void)disconnect;
-- (void)disconnectPlayer:(id)arg1;
-- (void)setCloudSalt:(id)arg1;
+- (void)disconnectPlayer:(NSString*)playerID;
+- (void)setCloudSalt:(NSString*)newSalt;
 - (BOOL)owned;
-- (void)setOwner:(id)arg1;
+- (void)setOwner:(NSString*)newOwnerName;
 - (float)credit;
-- (void)setCredit:(float)arg1;
-- (id)initWithPort:(id)arg1
-          userName:(id)arg2
-             photo:(id)arg3
-    hasLocalPLayer:(BOOL)arg4
-         worldName:(id)arg5
-            credit:(float)arg6
-         cloudSalt:(id)arg7
-         ownerName:(id)arg8
-           privacy:(id)arg9;
-- (void)setPrivacyByString:(id)arg1;
+- (void)setCredit:(float)newCredit;
+- (id)initWithPort:(NSString*)port_
+          userName:(NSString*)port_
+             photo:(id)photo // TODO: This doesn't have a known type yet
+    hasLocalPLayer:(BOOL)photo
+         worldName:(NSString*)worldName_
+            credit:(float)credit_
+         cloudSalt:(NSString*)credit_
+         ownerName:(NSString*)ownerName_
+           privacy:(NSString*)ownerName_;
+- (void)setPrivacyByString:(NSString*)privacyString;
 
 @end

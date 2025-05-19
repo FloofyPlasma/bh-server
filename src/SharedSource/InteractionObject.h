@@ -25,10 +25,10 @@ struct InteractionObjectCreationNetData {
   CPTexture2D* texture;
   BOOL isInUse;
   BOOL flipped;
-  unsigned long long remoteBlockheadInUseUniqueID;
+  uint64_t remoteBlockheadInUseUniqueID;
   int savedBlockheadIndex;
   NSString* ownerName;
-  unsigned short paintColor;
+  uint16_t paintColor;
   DynamicObject<ProxyObjectOwner>* proxyObjectOwner;
   BOOL needsToBeRemovedWhenInteractionEnds;
 }
@@ -38,59 +38,51 @@ struct InteractionObjectCreationNetData {
 @property (readonly) BOOL isInUse; // @synthesize isInUse;
 @property (readonly)
     Blockhead* currentBlockhead; // @synthesize currentBlockhead;
-- (void)paint:(unsigned short)arg1;
+- (void)paint:(uint16_t)colorIndex;
 - (BOOL)isPaintable;
-- (void)blockheadUnloaded:(id)arg1;
-- (void)setProxyObjectOwner:(id)arg1;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
+- (void)setProxyObjectOwner:(DynamicObject*)proxyObjectOwner_;
 - (BOOL)shouldAddToMacroBlock;
-- (void)setPaused:(BOOL)arg1;
-- (void)blockheadWouldLikeToTakeOwnership:(id)arg1 withSaveDict:(id)arg2;
+- (void)setPaused:(BOOL)paused;
+- (void)blockheadWouldLikeToTakeOwnership:(Blockhead*)blockhead withSaveDict:(NSDictionary*)saveDict;
 - (BOOL)canBeUsedInExpertModeWhenNotOwned;
-- (BOOL)canBeUsedByBlockhead:(id)arg1;
+- (BOOL)canBeUsedByBlockhead:(Blockhead*)blockhead;
 - (BOOL)requiresHumanInteraction;
-- (void)remoteBlockheadRemovedWithID:(unsigned long long)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (id)actionTitle;
-- (id)title;
-- (unsigned short)interactionObjectType;
-- (void)remove:(id)arg1;
-- (int)interactionRenderItemType;
+- (void)remoteBlockheadRemovedWithID:(uint64_t)blockheadID;
+- (void)remoteUpdate:(NSData*)netData;
+- (NSString*)actionTitle;
+- (NSString*)title;
+- (uint16_t)interactionObjectType;
+- (void)remove:(Blockhead*)removeBlockhead;
+- (ItemType)interactionRenderItemType;
 - (BOOL)twoBlocksWide;
-- (int)destroyItemType;
+- (ItemType)destroyItemType;
 - (BOOL)isDoubleHeight;
-- (void)startInteractionWithBlockhead:(id)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (void)startInteractionWithBlockhead:(Blockhead*)blockhead;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (BOOL)requiresPhysicalBlock;
 - (void)dealloc;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
 - (InteractionObjectCreationNetData)interactionObjectCreationNetData;
-- (id)getSaveDict;
+- (NSMutableDictionary*)getSaveDict;
 - (void)blockheadsLoaded;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               item:(id)arg5
-            flipped:(BOOL)arg6
-           saveDict:(id)arg7
-     placedByClient:(id)arg8
-         clientName:(id)arg9;
-- (int)objectType;
-
-// Remaining properties
-@property (readonly, copy) NSString* debugDescription;
-@property (readonly, copy) NSString* description;
-@property (readonly) unsigned long long hash;
-@property BOOL needsToUpdateChoiceUI;
-@property (readonly) Class superclass;
+- (InteractionObject*)initWithWorld:(World*)world_
+                       dynamicWorld:(DynamicWorld*)dynamicWorld
+                              cache:(CPCache*)cache_
+                            netData:(NSData*)netData;
+- (InteractionObject*)initWithWorld:(World*)world_
+                       dynamicWorld:(DynamicWorld*)dynamicWorld
+                           saveDict:(NSDictionary*)saveDict
+                              cache:(CPCache*)cache_;
+- (InteractionObject*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                     atPosition:(intpair)pos
+                          cache:(CPCache*)cache_
+                           type:(ItemType)itemType_
+                       saveDict:(NSDictionary*)saveDict
+                 placedByClient:(NSString*)clientId
+                     clientName:(NSString*)clientName;
+- (DynamicObjectType)objectType;
 
 @end

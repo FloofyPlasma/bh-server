@@ -1,35 +1,37 @@
 #import "Tree.h"
 
+#import "DynamicObjectType.h"
+
 @interface AppleTree : Tree {
   float availableFood;
 }
 
-- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
-- (int)treeType;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)makeTileDead:(struct Tile*)arg1;
-- (void)updateGrowth:(BOOL)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                     saveDict:(id)arg3
-                        cache:(id)arg4
-     treeDensityNoiseFunction:(id)arg5
-    seasonOffsetNoiseFunction:(id)arg6;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                   atPosition:(intpair)arg3
-                        cache:(id)arg4
-                    maxHeight:(short)arg5
-                   growthRate:(short)arg6
-     treeDensityNoiseFunction:(id)arg7
-    seasonOffsetNoiseFunction:(id)arg8
-                    adultTree:(BOOL)arg9
-                  adultMaxAge:(float)arg10;
-- (int)objectType;
+- (BOOL)tileIsKindOfSelf:(Tile*)tile;
+- (TreeType)treeType;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)makeTileDead:(Tile*)tile;
+- (void)updateGrowth:(BOOL)addNewBranchBlocks;
+- (NSMutableDictionary*)getSaveDict;
+- (AppleTree*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
+- (AppleTree*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+                    maxHeight:(int16_t)maxHeight_
+                   growthRate:(int16_t)growthRate_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+                    adultTree:(BOOL)adultTree
+                  adultMaxAge:(float)adultMaxAge;
+- (DynamicObjectType)objectType;
 - (BOOL)fruitShouldFallInSeason:(int)arg1;
-- (int)fruitItemType;
-- (void)setAvailableFood:(float)arg1;
+- (ItemType)fruitItemType;
+- (void)setAvailableFood:(float)food;
 - (float)availableFood;
 
 @end
