@@ -66,11 +66,11 @@ struct NPCUpdateNetData {
 
 @interface NPC : DynamicObject <HarmableDynamicObject, TapChoiceDynamicObject,
                      RidableDynamicObject> {
-  unsigned short damage;
+  uint16_t damage;
   BOOL dead;
   BOOL visible;
   Blockhead* killBlockhead;
-  unsigned short hitForce;
+  uint16_t hitForce;
   float fullness;
   float tameCooldownTimer;
   float mateCooldownTimer;
@@ -78,8 +78,8 @@ struct NPCUpdateNetData {
   float layCooldownTimer;
   float age;
   NSString* name;
-  unsigned short breed;
-  unsigned short mateBreed;
+  uint16_t breed;
+  uint16_t mateBreed;
   BOOL hasBred;
   BOOL hasBeenFedByBlockheadOrChest;
   NSMutableDictionary* tameCountsByClientID;
@@ -96,23 +96,23 @@ struct NPCUpdateNetData {
   float currentTemperature;
   float damageDelayTimer;
   float temperatureCheckTimer;
-  unsigned long long feedBlockheadUniqueIDToSend;
-  unsigned long long setFreeBlockheadUniqueIDToSend;
-  unsigned long long captureBlockheadUniqueIDToSend;
-  unsigned long long harvestBlockheadUniqueIDToSend;
-  unsigned char netTameType;
-  unsigned char harvestTypeToSend;
-  unsigned short interactionItemTypeToSend;
+  uint64_t feedBlockheadUniqueIDToSend;
+  uint64_t setFreeBlockheadUniqueIDToSend;
+  uint64_t captureBlockheadUniqueIDToSend;
+  uint64_t harvestBlockheadUniqueIDToSend;
+  uint8_t netTameType;
+  uint8_t harvestTypeToSend;
+  uint16_t interactionItemTypeToSend;
   int sendSuccessfulTameState;
   int sendSuccessfulFeedState;
   int sendWasHitState;
 }
 
-@property unsigned short breed; // @synthesize breed;
+@property uint16_t breed; // @synthesize breed;
 @property float age; // @synthesize age;
-- (void)updatePosition:(intpair)arg1;
+- (void)updatePosition:(intpair)newPosition;
 - (BOOL)shouldSaveEveryChangeInPosition;
-- (id)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline;
+- (NSString*)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline;
 - (BOOL)ridableWhenTamed;
 - (BOOL)suffersDamageAtHighTemperatures;
 - (BOOL)riderDPadShouldAllowUpDown;
@@ -121,122 +121,114 @@ struct NPCUpdateNetData {
 - (void)checkCurrentPositionForFood;
 - (BOOL)requiresPhysicalBlock;
 - (BOOL)riderDPadShouldGiveDiscreteValues;
-- (void)setTargetVelocity:(Vector2)arg1;
-- (Vector)riderPosForBlockhead:(id)arg1;
+- (void)setTargetVelocity:(Vector2)targetVelocity;
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead;
 - (void)blockheadsLoaded;
-- (id)actsAsInteractionObject;
+- (InteractionObject*)actsAsInteractionObject;
 - (BOOL)requiresFuel;
 - (int)rideDirection;
 - (BOOL)jumpsOnSwipe;
-- (Vector2)cameraPosForBlockhead:(id)arg1;
-- (float)riderBodyZRotationForBlockhead:(id)arg1;
-- (float)riderBodyYRotationForBlockhead:(id)arg1;
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead;
+- (float)riderBodyZRotationForBlockhead:(Blockhead*)blockhead;
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead;
 - (void)swipeUpGesture;
-- (void)removeRider:(id)arg1;
-- (void)addRider:(id)arg1;
-- (BOOL)captureByBlockhead:(id)arg1 withItemType:(int)arg2;
-- (void)setFreeByBlockhead:(id)arg1;
-- (BOOL)mateWithNPC:(id)arg1;
+- (void)removeRider:(Blockhead*)rider_;
+- (void)addRider:(Blockhead*)rider_;
+- (BOOL)captureByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+- (void)setFreeByBlockhead:(Blockhead*)blockhead;
+- (BOOL)mateWithNPC:(NPC*)otherNPC;
 - (BOOL)canMate;
-- (void)blockheadIsComingToInspect:(id)arg1;
-- (void)beginBlockheadInspection:(id)arg1;
+- (void)blockheadIsComingToInspect:(Blockhead*)blockhead;
+- (void)beginBlockheadInspection:(Blockhead*)blockhead;
 - (BOOL)belongsToLocalPlayer;
-- (BOOL)belongsToPlayerWithBlockhead:(id)arg1;
+- (BOOL)belongsToPlayerWithBlockhead:(Blockhead*)blockhead;
 - (BOOL)tamed;
-- (void)changeName:(id)arg1;
-- (id)name;
-- (void)drawName:(GLKMatrix4)arg1
-    modelViewMatrix:(GLKMatrix4)arg2
-         pinchScale:(float)arg3
-    cameraMinXWorld:(int)arg4
-    cameraMaxXWorld:(int)arg5
-    cameraMinYWorld:(int)arg6
-    cameraMaxYWorld:(int)arg7;
-- (BOOL)feedByBlockhead:(id)arg1;
+- (void)changeName:(NSString*)newName;
+- (NSString*)name;
+- (void)drawName:(GLKMatrix4)projectionMatrix
+    modelViewMatrix:(GLKMatrix4)modelViewMatrix
+         pinchScale:(float)pinchScale
+    cameraMinXWorld:(int)cameraMinXWorld
+    cameraMaxXWorld:(int)cameraMaxXWorld
+    cameraMinYWorld:(int)cameraMinYWorld
+    cameraMaxYWorld:(int)cameraMaxYWorld;
+- (BOOL)feedByBlockhead:(Blockhead*)blockhead;
 - (void)successfulTame;
-- (id)breedString;
+- (NSString*)breedString;
 - (int)getNamesArrayCount;
-- (id*)getNamesArray;
+- (NSString**)getNamesArray;
 - (void)generateNewName;
 - (BOOL)secondChoiceIsBlue;
 - (BOOL)removeIsRed;
-- (id)removeTitle;
-- (id)secondOptionTitle;
+- (NSString*)removeTitle;
+- (NSString*)secondOptionTitle;
 - (float)minRidableAge;
-- (BOOL)canBeRemovedByBlockhead:(id)arg1;
+- (BOOL)canBeRemovedByBlockhead:(Blockhead*)blockhead;
 - (BOOL)isDoubleHeight;
-- (id)actionTitle;
-- (id)cantBeCapturedTipStringForBlockhead:(id)arg1 withItemType:(int)arg2;
-- (BOOL)canBeCapturedByBlockhead:(id)arg1 withItemType:(int)arg2;
-- (BOOL)shaveByBlockhead:(id)arg1;
-- (id)cantBeShavedTipStringForBlockhead:(id)arg1;
-- (BOOL)canBeShavedByBlockhead:(id)arg1;
-- (BOOL)milkByBlockhead:(id)arg1;
-- (id)cantBeMilkedTipStringForBlockhead:(id)arg1;
-- (BOOL)canBeMilkedByBlockhead:(id)arg1;
-- (id)cantBeFedTipStringForBlockhead:(id)arg1;
-- (BOOL)canBeFedByBlockhead:(id)arg1;
+- (NSString*)actionTitle;
+- (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+- (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+- (BOOL)shaveByBlockhead:(Blockhead*)blockhead;
+- (NSString*)cantBeShavedTipStringForBlockhead:(Blockhead*)blockhead;
+- (BOOL)canBeShavedByBlockhead:(Blockhead*)blockhead;
+- (BOOL)milkByBlockhead:(Blockhead*)blockhead;
+- (NSString*)cantBeMilkedTipStringForBlockhead:(Blockhead*)blockhead;
+- (BOOL)canBeMilkedByBlockhead:(Blockhead*)blockhead;
+- (NSString*)cantBeFedTipStringForBlockhead:(Blockhead*)blockhead;
+- (BOOL)canBeFedByBlockhead:(Blockhead*)blockhead;
 - (int)captureRequiredItemType;
 - (int)capturedItemType;
 - (int)foodItemType;
-- (id)speciesName;
+- (NSString*)speciesName;
 - (void)inspectionStopped;
-- (void)blockheadUnloaded:(id)arg1;
-- (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType;
 - (BOOL)isVisible;
 - (Vector2)center;
 - (Vector2)renderPos;
-- (BOOL)willDieIfHitByForce:(int)arg1;
-- (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
+- (BOOL)willDieIfHitByForce:(int)force;
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
 - (void)reactToBeingHit;
-- (void)die:(id)arg1;
-- (int)objectType;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
+- (void)die:(Blockhead*)killBlockhead_;
+- (DynamicObjectType)objectType;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
 - (float)fullnessFraction;
 - (float)healthFraction;
-- (unsigned short)maxHealth;
-- (unsigned long long)creationDataStructSize;
-- (void)remoteCreationDataUpdate:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (uint16_t)maxHealth;
+- (uint64_t)creationDataStructSize;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (void)dealloc;
-- (id)getSaveDict;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)appendNPCCreationDataToData:(id)arg1;
-- (struct NPCUpdateNetData)npcUpdateNetDataForClient:(id)arg1;
-- (struct NPCCreationNetData)npcCreationNetDataForClient:(id)arg1;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-            isAdult:(BOOL)arg6
-          wasPlaced:(BOOL)arg7
-     placedByClient:(id)arg8;
+- (NSMutableDictionary*)getSaveDict;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)appendNPCCreationDataToData:(NSData*)subclassData;
+- (NPCUpdateNetData)npcUpdateNetDataForClient:(NSString*)clientIDToSendTo;
+- (NPCCreationNetData)npcCreationNetDataForClient:(NSString*)clientIDToSendTo;
+- (NPC*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld
+                cache:(CPCache*)cache_
+              netData:(NSData*)netData;
+- (NPC*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld
+             saveDict:(NSDictionary*)saveDict
+                cache:(CPCache*)cache_;
+- (NPC*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld
+           atPosition:(intpair)pos
+                cache:(CPCache*)cache_
+                 type:(ItemType)itemType_
+             saveDict:(NSDictionary*)saveDict
+       placedByClient:(NSString*)clientId;
 - (void)createItemDropsForDeath;
 - (void)setBabyCreationStartValues;
 - (void)setAdultCreationStartValues;
-- (void)loadValuesFromSaveDict:(id)arg1;
+- (void)loadValuesFromSaveDict:(NSDictionary*)saveDict;
 - (BOOL)diesOfLowFullness;
 - (float)minFullness;
 - (BOOL)diesOfOldAge;
 - (float)maxAge;
-- (int)npcType;
-
-// Remaining properties
-@property (readonly, copy) NSString* debugDescription;
-@property (readonly, copy) NSString* description;
-@property (readonly) unsigned long long hash;
-@property BOOL needsToUpdateChoiceUI;
-@property (readonly) Class superclass;
+- (NPCType)npcType;
 
 @end
