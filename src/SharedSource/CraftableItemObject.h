@@ -7,9 +7,9 @@
 }
 
 @property CraftableItem craftableItem; // @synthesize craftableItem;
-- (id)freeBlockCreationItemSaveDict;
-- (id)getSaveDict;
-- (id)initWithSaveDict:(id)arg1;
-- (id)initWithCraftableItem:(CraftableItem)arg1;
+- (NSMutableDictionary*)freeBlockCreationItemSaveDict;
+- (NSMutableDictionary*)getSaveDict;
+- (CraftableItemObject*)initWithSaveDict:(NSDictionary*)saveDict;
+- (CraftableItemObject*)initWithCraftableItem:(CraftableItem)craftableItem_;
 
 @end
