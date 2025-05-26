@@ -12,8 +12,8 @@
 - (BOOL)finishBulkTransaction;
 - (BOOL)startBulkTransaction;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1
-      maxDatabases:(int)arg2
-    maxMapSizeInMB:(unsigned long long)arg3;
+- (DatabaseEnvironment*)initWithPath:(NSString*)environmentDirectoryPath_
+                        maxDatabases:(int)maxDatabases
+                      maxMapSizeInMB:(size_t)maxMapSize;
 
 @end
