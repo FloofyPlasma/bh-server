@@ -22,65 +22,65 @@ struct TorchCreationNetData {
   BOOL animates;
   BOOL flatOnSideAndBottom;
   BOOL chandelier;
-  unsigned short dataA;
-  unsigned short dataB;
+  uint16_t dataA;
+  uint16_t dataB;
   float* savedDrawBuffer;
   int savedDrawBufferIndex;
 }
 
-@property unsigned short dataB; // @synthesize dataB;
-@property unsigned short dataA; // @synthesize dataA;
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
-                                                              yPos:(int)arg2;
+@property uint16_t dataB; // @synthesize dataB;
+@property uint16_t dataA; // @synthesize dataA;
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX
+                                                              yPos:(int)macroY;
 - (BOOL)occupiesForegroundContents;
 - (BOOL)isUplight;
 - (BOOL)isDownlight;
 - (int)lightGlowQuadCount;
 - (Vector)lightPos;
-- (int)addDrawQuadData:(float*)arg1
-             fromIndex:(int)arg2
-           forMacroPos:(intpair)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
+- (int)addDrawQuadData:(float*)buffer
+             fromIndex:(int)index
+           forMacroPos:(intpair)macroPos;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos;
 - (int)renderImageIndex;
-- (void)setNeedsRemoved:(BOOL)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
-- (void)waterContentChanged:(std::vector<intpair>*)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions;
+- (void)waterContentChanged:(std::vector<intpair>*)waterContentChangedPositions;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
 - (void)removeFromMacroBlock;
 - (void)dealloc;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
-- (int)objectType;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               type:(int)arg5
-              dataA:(unsigned short)arg6
-              dataB:(unsigned short)arg7
-           saveDict:(id)arg8
-     placedByClient:(id)arg9;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
+- (Torch*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld
+                  cache:(CPCache*)cache_
+                netData:(NSData*)netData;
+- (Torch*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld
+               saveDict:(NSDictionary*)saveDict
+                  cache:(CPCache*)cache_;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
+- (DynamicObjectType)objectType;
+- (Torch*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld_
+             atPosition:(intpair)pos
+                  cache:(CPCache*)cache_
+                   type:(ItemType)itemType_
+                  dataA:(uint16_t)dataA_
+                  dataB:(uint16_t)dataB_
+               saveDict:(NSDictionary*)saveDict
+         placedByClient:(NSString*)clientID;
 - (Vector)getLightRGB;
 - (void)initSubDerivedItems;
 
