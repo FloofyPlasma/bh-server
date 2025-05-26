@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#import "MJMultiSound.h"
+#import "MJSound.h"
 #import "Vector2.h"
 
 @interface MJSoundManager : NSObject {
@@ -33,7 +35,7 @@
   BOOL currentlyActive;
 }
 
-+ (id)instance;
++ (MJSoundManager*)instance;
 @property (readonly)
     NSString* lastPlayedMP3Path; // @synthesize lastPlayedMP3Path;
 @property int worldWidthMacro; // @synthesize worldWidthMacro;
@@ -41,53 +43,53 @@
 @property BOOL
     silentSwitchWasOnDuringLaunch; // @synthesize silentSwitchWasOnDuringLaunch;
 
-- (void)registerExternalMultiSound:(id)arg1 forKey:(id)arg2;
-- (void)setLoopMP3s:(BOOL)arg1;
-- (void)setRequiresRecord:(BOOL)arg1;
+- (void)registerExternalMultiSound:(MJMultiSound*)sound forKey:(MJMultiSound*)key;
+- (void)setLoopMP3s:(BOOL)loopMP3s_;
+- (void)setRequiresRecord:(BOOL)requiresRecord_;
 - (BOOL)safeToPlayMP3s;
-- (double)currentMP3timeToNearestBeat;
-- (double)currentMP3time;
+- (NSTimeInterval)currentMP3timeToNearestBeat;
+- (NSTimeInterval)currentMP3time;
 - (float)getTimeUntilNextBeat;
 - (BOOL)isFadingOut;
 - (void)fadeInMP3Playback;
 - (void)fadeMP3PlaybackToHalf;
-- (void)fadeOutMP3PlaybackWithFinishNotificationObject:(id)arg1
-                                                action:(SEL)arg2;
+- (void)fadeOutMP3PlaybackWithFinishNotificationObject:(id)object
+                                                action:(SEL)action;
 - (void)fadeOutMP3Playback;
 - (void)runFade;
-- (void)mainThreadSetMP3Volume:(id)arg1;
+- (void)mainThreadSetMP3Volume:(NSNumber*)volumeNum;
 - (void)stopMP3Playback;
-- (void)playMP3IfSafe:(id)arg1;
+- (void)playMP3IfSafe:(NSString*)path;
 - (void)setMP3PlaybackToHalf;
-- (void)playMP3IfSafe:(id)arg1 withTimeOffset:(double)arg2;
-- (void)restartMusicAfterActiveEvent:(BOOL)arg1;
+- (void)playMP3IfSafe:(NSString*)path withTimeOffset:(NSTimeInterval)timeOffset;
+- (void)restartMusicAfterActiveEvent:(BOOL)paused;
 - (void)stopMusicForDeactivateEvent;
-- (void)loadMP3IfSafe:(id)arg1 withTimeOffset:(double)arg2;
-- (void)doLoadTrack:(id)arg1;
+- (void)loadMP3IfSafe:(NSString*)path withTimeOffset:(NSTimeInterval)timeOffset;
+- (void)doLoadTrack:(NSURL*)url;
 - (BOOL)isPlayingMP3;
-- (void)fadeOutMP3PlaybackWithFinishNotificationObject:(id)arg1
-                                                action:(SEL)arg2
-                                         stopOnFadeOut:(BOOL)arg3;
-- (void)fadeOutMP3PlaybackWithStop:(BOOL)arg1;
-- (void)update:(float)arg1;
+- (void)fadeOutMP3PlaybackWithFinishNotificationObject:(id)object
+                                                action:(SEL)action
+                                         stopOnFadeOut:(BOOL)stopOnFadeOut_;
+- (void)fadeOutMP3PlaybackWithStop:(BOOL)stopOnFadeOut_;
+- (void)update:(float)dt;
 - (void)becomeActive;
 - (void)resignActive;
 - (Vector2)listenerPos;
-- (void)setListenerPosition:(Vector2)arg1 zoom:(float)arg2;
+- (void)setListenerPosition:(Vector2)listenerPos_ zoom:(float)zoom;
 - (float)soundVolume;
 - (float)musicVolume;
-- (void)setMusicVolume:(float)arg1;
-- (void)setSoundVolume:(float)arg1;
-- (id)externalMultiSoundWithKey:(id)arg1;
-- (id)multiSoundWithSounds:(id)arg1;
-- (id)multiSoundNamed:(id)arg1;
-- (id)soundNamed:(id)arg1;
+- (void)setMusicVolume:(float)volume;
+- (void)setSoundVolume:(float)volume;
+- (MJMultiSound*)externalMultiSoundWithKey:(NSString*)name;
+- (MJMultiSound*)multiSoundWithSounds:(NSArray*)names;
+- (MJMultiSound*)multiSoundNamed:(NSString*)name;
+- (MJSound*)soundNamed:(NSString*)name;
 - (void)dealloc;
 - (void)interuptionEnded;
 - (void)attemptToReinitializeAudio;
 - (void)interruptionBegan;
-- (void)handleInterruption:(id)arg1;
+- (void)handleInterruption:(NSNotification*)notification;
 - (BOOL)reinitialize;
-- (id)initWithMasterVolume:(float)arg1;
+- (MJSoundManager*)initWithMasterVolume:(float)mv;
 
 @end
