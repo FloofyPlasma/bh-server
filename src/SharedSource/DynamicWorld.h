@@ -7,9 +7,15 @@
 #import <unordered_set>
 #import <vector>
 
+#import "DynamicObjectType.h"
+#import "GameConstants.h"
+#import "InventoryItem.h"
 #import "MJMath.h"
+#import "NPC.h"
+#import "Plant.h"
+#import "Tree.h"
 
-@class BHClient, BHServer, CPCache, ClientTileLoader, Database, NoiseFunction, WirePathCreator, World, WorldTileLoader, DynamicObject, MacroTile, Tile, PhysicalBlock;
+@class BHClient, Boat, Chest, FreeBlock, Painting, CraftableItemObject, Workbench, GatherBlock, InteractionObject, Window, Rail, ElevatorMotor, ElevatorShaft, Wire, Stairs, Ladder, Egg, Torch, FireObject, Column, Door, Blockhead, TrainCar, BHServer, CraftProgressUI, CPCache, ClientTileLoader, Database, NoiseFunction, WirePathCreator, World, WorldTileLoader, DynamicObject;
 
 @interface DynamicWorld : NSObject {
   World* world;
@@ -26,19 +32,19 @@
   NSMutableArray* netBlockheads;
   NSMutableArray* netBlockheadsWithDisconnectedClients;
   NSMutableDictionary* clientBlockheadInventoriesToSave;
-  std::map<unsigned long long, DynamicObject*>
+  std::map<uint64_t, DynamicObject*>
       dynamicObjects[65];
-  std::map<unsigned long long, DynamicObject*>
+  std::map<uint64_t, DynamicObject*>
       dynamicObjectsToAdd[65];
-  std::map<unsigned long long, DynamicObject*>
+  std::map<uint64_t, DynamicObject*>
       dynamicObjectsByWorldPosIndex[65];
-  std::map<unsigned long long, std::set<DynamicObject*>>
+  std::map<uint64_t, std::set<DynamicObject*>>
       freeBlocksByPosition;
-  std::unordered_set<unsigned long long>
+  std::unordered_set<uint64_t>
       currentlyAddingGlowBlocks;
-  std::unordered_set<unsigned long long>
+  std::unordered_set<uint64_t>
       currentlyAddingObjectIDs[65];
-  std::unordered_set<unsigned int>
+  std::unordered_set<uint32_t>
       currentlyLoadingMacroBlocks[65];
   std::vector<DynamicObject*>
       partialUpdateOrderedObjects[65];
@@ -57,7 +63,7 @@
   CPCache* cache;
   NoiseFunction* treeDensityNoiseFunction;
   NoiseFunction* seasonOffsetNoiseFunction;
-  unsigned long long dynamicObjectIDCount;
+  uint64_t dynamicObjectIDCount;
   int activeBlockheadIndex;
   float freeBlockSoundDelay;
   BOOL hasLoadedBlockheads;
@@ -68,7 +74,7 @@
   NSMutableArray* netUpdateCreationDataDynamicObjects[65];
   NSMutableArray* netRemoveDynamicObjects[65];
   NSMutableArray* clientFreeblockArrayToSend;
-  unsigned short randomNumbers[512];
+  uint16_t randomNumbers[512];
   int randomIndex;
   int animalSaveCounter;
   int saveUnreliableCounter;
@@ -82,391 +88,391 @@
   Vector clientTreeLifeFraction;
   WirePathCreator* wirePathCreator;
   NSMutableDictionary* liveServerClientBlockheadInventories;
-  std::list<unsigned long long> avoidFreeblockDupeObjectIds;
+  std::list<uint64_t> avoidFreeblockDupeObjectIds;
   NSMutableDictionary* poleItemTakenTimes;
   float poleItemRestoreRecheckTimer;
   float poleItemRestoreAddTimer;
 }
 
-- (void)freeblockPositionChanged:(id)arg1 oldPos:(intpair)arg2;
-- (void)loadDebugChestAtPos:(intpair)arg1 chest:(id)arg2;
-- (void)doRepairForTileAtPos:(intpair)arg1;
-- (void)removeObjectDueToRepair:(id)arg1;
-- (void)clientBlockheadWithID:(unsigned long long)arg1
-                           fromClient:(id)arg2
-    requestsDyamicObjectRemovalWithID:(unsigned long long)arg3;
-- (void)removeDynamicObjectsBelongingToClient:(id)arg1;
-- (void)checkAndRestorePoleItems:(float)arg1;
-- (void)poleItemTaken:(int)arg1;
-- (int)loadedCountOfObjectsOfType:(int)arg1;
+- (void)freeblockPositionChanged:(DynamicObject*)object oldPos:(intpair)oldPos;
+- (void)loadDebugChestAtPos:(intpair)pos chest:(Chest*)chest;
+- (void)doRepairForTileAtPos:(intpair)pos;
+- (void)removeObjectDueToRepair:(DynamicObject*)object;
+- (void)clientBlockheadWithID:(uint64_t)blockheadID
+                           fromClient:(NSString*)clientID
+    requestsDyamicObjectRemovalWithID:(uint64_t)objectID;
+- (void)removeDynamicObjectsBelongingToClient:(NSString*)clientID;
+- (void)checkAndRestorePoleItems:(float)dt;
+- (void)poleItemTaken:(ItemType)poleItemType;
+- (int)loadedCountOfObjectsOfType:(DynamicObjectType)type;
 - (BOOL)hasLightsToAdd;
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
-                                                              yPos:(int)arg2;
-- (void)portalIsBeingRemovedAtPos:(intpair)arg1;
-- (id)blockheads;
-- (void)appendDebugLog:(id)arg1;
-- (id)getOwnerNameForObjectOwnerID:(id)arg1;
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX
+                                                              yPos:(int)macroY;
+- (void)portalIsBeingRemovedAtPos:(intpair)pos;
+- (NSMutableArray*)blockheads;
+- (void)appendDebugLog:(NSMutableString*)log;
+- (NSString*)getOwnerNameForObjectOwnerID:(NSString*)ownerID;
 - (void)playersChanged;
-- (BOOL)playerIsBannedWithID:(id)arg1;
-- (void)userBanChanged:(id)arg1 isBanned:(BOOL)arg2;
-- (void)userMuteChanged:(id)arg1;
-- (void)chestInventoryDataRecievedFromServer:(id)arg1;
-- (void)sendChestInventoryForChest:(id)arg1
-     toClientOwningBlockheadWithID:(unsigned long long)arg2;
-- (void)paintingDataRecievedFromServer:(id)arg1;
-- (void)sendPaintingDataForPaintingWithID:(unsigned long long)arg1
-                                 toClient:(id)arg2;
-- (void)requestPaintingDataForPainting:(id)arg1;
-- (void)blockheadWillBeUnloaded:(id)arg1;
-- (void)reloadLightGlowQuadsForMacroTile:(MacroTile*)arg1;
-- (void)reloadDynamicObjectItemQuadsForMacroTile:(MacroTile*)arg1;
-- (void)reloadDynamicObjectQuadsForMacroTile:(MacroTile*)arg1;
-- (void)reloadDodoEggQuadsForMacroTile:(MacroTile*)arg1;
-- (void)reloadDynamicObjectStaticCylindersForMacroTile:(MacroTile*)arg1;
-- (void)reloadDynamicObjectStaticGemometryForMacroTile:(MacroTile*)arg1;
+- (BOOL)playerIsBannedWithID:(NSString*)playerID;
+- (void)userBanChanged:(NSString*)playerID isBanned:(BOOL)isBanned;
+- (void)userMuteChanged:(NSString*)playerID;
+- (void)chestInventoryDataRecievedFromServer:(NSData*)chestData;
+- (void)sendChestInventoryForChest:(Chest*)chest
+     toClientOwningBlockheadWithID:(uint64_t)remoteBlockheadID;
+- (void)paintingDataRecievedFromServer:(NSData*)paintingData;
+- (void)sendPaintingDataForPaintingWithID:(uint64_t)paintingUniqueID
+                                 toClient:(NSString*)clientID;
+- (void)requestPaintingDataForPainting:(Painting*)painting;
+- (void)blockheadWillBeUnloaded:(Blockhead*)blockhead;
+- (void)reloadLightGlowQuadsForMacroTile:(MacroTile*)macroTile;
+- (void)reloadDynamicObjectItemQuadsForMacroTile:(MacroTile*)macroTile;
+- (void)reloadDynamicObjectQuadsForMacroTile:(MacroTile*)macroTile;
+- (void)reloadDodoEggQuadsForMacroTile:(MacroTile*)macroTile;
+- (void)reloadDynamicObjectStaticCylindersForMacroTile:(MacroTile*)macroTile;
+- (void)reloadDynamicObjectStaticGemometryForMacroTile:(MacroTile*)macroTile;
 - (void)railOrStationNameChanged;
-- (id)pathUsers;
-- (int)findAndSubtractAllPowerUpTo:(unsigned short)arg1 forUser:(id)arg2;
-- (id)portalPositions;
-- (BOOL)isControllingBlockheadsForClientPlayer:(id)arg1;
-- (id)loadClientBlockheadsDataForPlayerID:(id)arg1;
-- (void)clientBlockheadInventoryRecievedForPlayerID:(id)arg1
-                                        blockheadID:(unsigned long long)arg2
-                                               data:(id)arg3;
-- (void)clientBlockheadsRecievedForPlayerID:(id)arg1 data:(id)arg2;
-- (void)newFoundListRecievedFromClient:(id)arg1 list:(id)arg2;
-- (Vector)getTreeLifeFractionForPos:(intpair)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (NSArray*)pathUsers;
+- (int)findAndSubtractAllPowerUpTo:(uint16_t)requiredPower forUser:(DynamicObject*)userObject;
+- (NSIndexSet*)portalPositions;
+- (BOOL)isControllingBlockheadsForClientPlayer:(NSString*)playerID;
+- (NSData*)loadClientBlockheadsDataForPlayerID:(NSString*)playerID;
+- (void)clientBlockheadInventoryRecievedForPlayerID:(NSString*)playerID
+                                        blockheadID:(uint64_t)blockheadID
+                                               data:(NSData*)data;
+- (void)clientBlockheadsRecievedForPlayerID:(NSString*)playerID data:(NSData*)data;
+- (void)newFoundListRecievedFromClient:(NSString*)playerID list:(NSIndexSet*)incoming;
+- (Vector)getTreeLifeFractionForPos:(intpair)pos;
+- (void)setPaused:(BOOL)paused;
 - (void)connectionToServerLost;
-- (id)blockheadWithIDIncludingNet:(unsigned long long)arg1;
-- (id)ridableObjectWithID:(unsigned long long)arg1;
-- (void)clientDisconnected:(id)arg1 simulate:(BOOL)arg2;
-- (void)stopAllBlockheadActionsForClientDueToKick:(id)arg1;
-- (void)clientConnected:(id)arg1;
-- (void)remotePickupRequestReply:(id)arg1;
-- (id)blockheadWithUniqueID:(unsigned long long)arg1;
-- (void)clientPickupRequest:(unsigned long long*)arg1
-                         count:(int)arg2
-                      clientID:(id)arg3
-    blockheadRequesterUniqueID:(unsigned long long)arg4;
-- (id)localAndDisconnectedClientBlockheads;
-- (id)netBlockheads;
-- (id)allBlockheadsIncludingNet;
-- (id)localNetID;
+- (Blockhead*)blockheadWithIDIncludingNet:(uint64_t)uniqueID;
+- (DynamicObject*)ridableObjectWithID:(uint64_t)uniqueID;
+- (void)clientDisconnected:(NSString*)clientID simulate:(BOOL)simulate;
+- (void)stopAllBlockheadActionsForClientDueToKick:(NSString*)clientID;
+- (void)clientConnected:(NSString*)clientID;
+- (void)remotePickupRequestReply:(NSData*)rawData;
+- (Blockhead*)blockheadWithUniqueID:(uint64_t)uniqueID;
+- (void)clientPickupRequest:(uint64_t*)pickupIDs
+                         count:(int)count
+                      clientID:(NSString*)clientID
+    blockheadRequesterUniqueID:(uint64_t)blockheadRequesterUniqueID;
+- (NSArray*)localAndDisconnectedClientBlockheads;
+- (NSArray*)netBlockheads;
+- (NSArray*)allBlockheadsIncludingNet;
+- (NSString*)localNetID;
 - (BOOL)isServer;
 - (BOOL)isClient;
-- (void)loadNewBlockheadAtPos:(intpair)arg1
-          craftableItemObject:(id)arg2
-                     uniqueID:(unsigned long long)arg3;
-- (BOOL)teleportBlockhead:(id)arg1 toWorkbench:(id)arg2;
-- (id)gatherBlockAtPos:(intpair)arg1;
-- (void)loadGatherBlockAtPos:(intpair)arg1;
-- (void)loadGlowBlockIfNeededAtPos:(intpair)arg1 tile:(Tile*)arg2;
-- (id)blockheadAtPos:(intpair)arg1;
-- (BOOL)blockheadOccupiesTileAtPos:(intpair)arg1 ignoreBlockhead:(id)arg2;
-- (id)npcCloseEnoughToBreedWithNPC:(id)arg1;
-- (BOOL)tooManyNPCsToSpawnMoreNearPos:(intpair)arg1;
-- (BOOL)npcExistsAtPos:(intpair)arg1 ignoreNPC:(id)arg2;
-- (id)harmableDynamicObjectWithID:(unsigned long long)arg1;
-- (id)npcWithID:(unsigned long long)arg1;
-- (id)checkForHarmableDynamicObjectUnderTap:(Vector2)arg1
-                      ignoreLocalBlockheads:(BOOL)arg2
-                        ignoreAllBlockheads:(BOOL)arg3;
-- (unsigned long long)getNextDynamicObjectID;
-- (id)freeBlocksAtPos:(intpair)arg1;
-- (BOOL)freeBlocksExistAtPos:(intpair)arg1;
-- (id)removeInteractionObjectAtPos:(intpair)arg1 removeBlockhead:(id)arg2;
-- (id)removeWorkbenchAtPos:(intpair)arg1 removeBlockhead:(id)arg2;
-- (unsigned short)interactionObjectTypeForObjectAtPos:(intpair)arg1;
-- (id)interactionObjectWithID:(unsigned long long)arg1;
-- (id)interactionObjectAtPos:(intpair)arg1;
-- (void)assignCraftProgressUIToLoadedWorkbenches:(id)arg1;
+- (void)loadNewBlockheadAtPos:(intpair)pos
+          craftableItemObject:(CraftableItemObject*)craftableItemObject
+                     uniqueID:(uint64_t)uniqueID;
+- (BOOL)teleportBlockhead:(Blockhead*)blockhead toWorkbench:(Workbench*)workbench;
+- (GatherBlock*)gatherBlockAtPos:(intpair)pos;
+- (void)loadGatherBlockAtPos:(intpair)pos;
+- (void)loadGlowBlockIfNeededAtPos:(intpair)pos tile:(Tile*)tile;
+- (Blockhead*)blockheadAtPos:(intpair)pos;
+- (BOOL)blockheadOccupiesTileAtPos:(intpair)pos ignoreBlockhead:(Blockhead*)ignoreBlockhead;
+- (NPC*)npcCloseEnoughToBreedWithNPC:(NPC*)npc;
+- (BOOL)tooManyNPCsToSpawnMoreNearPos:(intpair)pos;
+- (BOOL)npcExistsAtPos:(intpair)pos ignoreNPC:(NPC*)ignoreNPC;
+- (DynamicObject*)harmableDynamicObjectWithID:(uint64_t)uniqueID;
+- (NPC*)npcWithID:(uint64_t)uniqueID;
+- (DynamicObject*)checkForHarmableDynamicObjectUnderTap:(Vector2)tapPos
+                                  ignoreLocalBlockheads:(BOOL)ignoreLocalBlockheads
+                                    ignoreAllBlockheads:(BOOL)ignoreAllBlockheads;
+- (uint64_t)getNextDynamicObjectID;
+- (NSArray*)freeBlocksAtPos:(intpair)pos;
+- (BOOL)freeBlocksExistAtPos:(intpair)pos;
+- (InteractionObject*)removeInteractionObjectAtPos:(intpair)pos removeBlockhead:(Blockhead*)removeBlockhead;
+- (Workbench*)removeWorkbenchAtPos:(intpair)pos removeBlockhead:(Blockhead*)removeBlockhead;
+- (uint16_t)interactionObjectTypeForObjectAtPos:(intpair)pos;
+- (InteractionObject*)interactionObjectWithID:(uint64_t)uniqueID;
+- (InteractionObject*)interactionObjectAtPos:(intpair)pos;
+- (void)assignCraftProgressUIToLoadedWorkbenches:(CraftProgressUI*)craftProgressUI;
 - (BOOL)workbenchHasBeenCrafted;
-- (id)portal;
-- (id)workbenchAtPos:(intpair)arg1;
-- (id)getPlantAtPos:(intpair)arg1;
-- (id)treeAtPos:(intpair)arg1;
-- (intpair)posOfDoorsOtherBlockAtPos:(intpair)arg1;
-- (void)setDoorAtPos:(intpair)arg1 toOpen:(BOOL)arg2 direction:(int)arg3;
-- (id)trainCarWithID:(unsigned long long)arg1;
-- (id)checkForTrainCarUnderTap:(Vector2)arg1;
-- (void)placeTrainCarAtPos:(intpair)arg1
-                    ofType:(int)arg2
-                  saveDict:(id)arg3
-            placedByClient:(id)arg4;
-- (id)boatWithID:(unsigned long long)arg1;
-- (id)checkForBoatUnderTap:(Vector2)arg1;
-- (void)placeBoatInWaterAtPos:(intpair)arg1
-                     saveDict:(id)arg2
-               placedByClient:(id)arg3;
-- (id)removeDoorAtPos:(intpair)arg1;
-- (BOOL)doorIsOpenAtPos:(intpair)arg1;
-- (BOOL)doorCanBeUsedByPathUser:(id)arg1 atPos:(intpair)arg2;
-- (id)doorAtPos:(intpair)arg1;
+- (Workbench*)portal;
+- (Workbench*)workbenchAtPos:(intpair)pos;
+- (Plant*)getPlantAtPos:(intpair)pos;
+- (Tree*)treeAtPos:(intpair)pos;
+- (intpair)posOfDoorsOtherBlockAtPos:(intpair)pos;
+- (void)setDoorAtPos:(intpair)pos toOpen:(BOOL)open direction:(int)openDirection;
+- (TrainCar*)trainCarWithID:(uint64_t)uniqueID;
+- (TrainCar*)checkForTrainCarUnderTap:(Vector2)tapPos;
+- (void)placeTrainCarAtPos:(intpair)pos
+                    ofType:(ItemType)type
+                  saveDict:(NSDictionary*)saveDict
+            placedByClient:(NSString*)clientID;
+- (Boat*)boatWithID:(uint64_t)uniqueID;
+- (Boat*)checkForBoatUnderTap:(Vector2)tapPos;
+- (void)placeBoatInWaterAtPos:(intpair)pos
+                     saveDict:(NSDictionary*)saveDict_
+               placedByClient:(NSString*)clientID;
+- (Door*)removeDoorAtPos:(intpair)pos;
+- (BOOL)doorIsOpenAtPos:(intpair)pos;
+- (BOOL)doorCanBeUsedByPathUser:(DynamicObject*)pathUser atPos:(intpair)pos;
+- (Door*)doorAtPos:(intpair)pos;
 - (void)addDoorAtPos:(intpair)arg1
               ofType:(int)arg2
             saveDict:(id)arg3
       placedByClient:(id)arg4;
-- (id)removeWindowAtPos:(intpair)arg1;
-- (void)addWindowAtPos:(intpair)arg1
-                ofType:(int)arg2
-              saveDict:(id)arg3
-        placedByClient:(id)arg4;
-- (id)windowAtPos:(intpair)arg1;
-- (id)removeRailAtPos:(intpair)arg1;
-- (id)getRailAtPos:(intpair)arg1;
-- (void)addRailAtPos:(intpair)arg1 ofType:(int)arg2 ownedByStation:(BOOL)arg3;
-- (id)removeElevatorMotorAtPos:(intpair)arg1;
-- (void)addElevatorMotorAtPos:(intpair)arg1
-                       ofType:(int)arg2
-                     saveDict:(id)arg3
-               placedByClient:(id)arg4;
-- (id)elevatorMotorForShaftAtPos:(intpair)arg1;
-- (id)elevatorMotorAtPos:(intpair)arg1;
-- (void)openElevatorAtPos:(intpair)arg1;
-- (id)removeElevatorShaftAtPos:(intpair)arg1;
-- (void)addElevatorShaftAtPos:(intpair)arg1
-                       ofType:(int)arg2
-                     saveDict:(id)arg3
-               placedByClient:(id)arg4;
-- (id)elevatorShaftAtPos:(intpair)arg1;
-- (id)removeWireAtPos:(intpair)arg1;
-- (id)wireAtPos:(intpair)arg1;
-- (void)addWireAtPos:(intpair)arg1
-              ofType:(int)arg2
-            saveDict:(id)arg3
-      placedByClient:(id)arg4;
-- (id)removeStairsAtPos:(intpair)arg1;
-- (void)addStairsAtPos:(intpair)arg1
-                ofType:(int)arg2
-              saveDict:(id)arg3
-        placedByClient:(id)arg4;
-- (id)stairsAtPos:(intpair)arg1;
-- (id)removeColumnAtPos:(intpair)arg1;
-- (void)addColumnAtPos:(intpair)arg1
-                ofType:(int)arg2
-              saveDict:(id)arg3
-        placedByClient:(id)arg4;
-- (id)columnAtPos:(intpair)arg1;
-- (id)removeLadderAtPos:(intpair)arg1;
-- (void)addLadderAtPos:(intpair)arg1
-                ofType:(int)arg2
-              saveDict:(id)arg3
-        placedByClient:(id)arg4;
-- (id)ladderAtPos:(intpair)arg1;
-- (void)addStandardObjectAtPos:(intpair)arg1
-                    objectType:(int)arg2
-                      itemType:(int)arg3
-                      saveDict:(id)arg4
-                placedByClient:(id)arg5;
-- (id)removePaintingAtPos:(intpair)arg1;
-- (void)addPaintingAtPos:(intpair)arg1
-                  ofType:(int)arg2
-                saveDict:(id)arg3
-          placedByClient:(id)arg4
-              clientName:(id)arg5;
-- (id)paintingAtPos:(intpair)arg1;
-- (id)paintingWithID:(unsigned long long)arg1;
-- (id)removeEggAtPos:(intpair)arg1;
-- (void)addEggAtPos:(intpair)arg1 saveDict:(id)arg2;
-- (id)eggAtPos:(intpair)arg1;
-- (void)createTreasureChestOrTrollAtTile:(Tile*)arg1
-                                   atPos:(intpair)arg2
-                               loadTroll:(BOOL)arg3
-                            loadTreasure:(BOOL)arg4;
-- (id)removeTorchAtPos:(intpair)arg1;
-- (void)removeStandardObject:(id)arg1;
-- (id)torchAtPos:(intpair)arg1;
-- (id)objectOfType:(int)arg1 atPos:(intpair)arg2;
-- (void)addTorchAtPos:(intpair)arg1
-               ofType:(int)arg2
-                dataA:(unsigned short)arg3
-                dataB:(unsigned short)arg4
-             saveDict:(id)arg5
-       placedByClient:(id)arg6;
-- (id)placeFireAtPosition:(intpair)arg1;
-- (id)interactionObjectPlacedAtPosition:(intpair)arg1
-                               withItem:(id)arg2
-                                flipped:(BOOL)arg3
-                               saveDict:(id)arg4
-                         placedByClient:(id)arg5
-                             clientName:(id)arg6;
-- (id)workbenchPlacedAtPosition:(intpair)arg1
-                         ofType:(int)arg2
-                       saveDict:(id)arg3
-                 placedByClient:(id)arg4
-                     clientName:(id)arg5;
-- (void)loadPlantAtPosition:(intpair)arg1
-                       type:(int)arg2
-                 maxAgeGene:(short)arg3
-             growthRateGene:(short)arg4
-                      adult:(BOOL)arg5;
-- (BOOL)loadNPCAtPosition:(intpair)arg1
-                     type:(int)arg2
-                 saveDict:(id)arg3
-                  isAdult:(BOOL)arg4
-                wasPlaced:(BOOL)arg5
-           placedByClient:(id)arg6;
-- (void)loadSnowSurfaceBlockAtPos:(intpair)arg1 loadSnow:(BOOL)arg2;
-- (void)loadSurfaceBlockAtPos:(intpair)arg1;
-- (id)loadStandardDynamicObjectOfType:(int)arg1 atPos:(intpair)arg2;
-- (void)loadTreeAtPosition:(intpair)arg1
-                      type:(int)arg2
-                 maxHeight:(short)arg3
-                growthRate:(short)arg4
-                 adultTree:(BOOL)arg5
-               adultMaxAge:(float)arg6;
-- (void)sowTreeOrPlantAtPosition:(intpair)arg1
-                        itemType:(int)arg2
-                       maxHeight:(short)arg3
-                      growthRate:(short)arg4;
-- (void)sowPlantNearParent:(id)arg1;
-- (id)findBreedingPlantNearPlant:(id)arg1;
-- (void)sowTreeNearParent:(id)arg1 adult:(BOOL)arg2 adultMaxAge:(float)arg3;
-- (void)selectedBlockheadChanged:(int)arg1;
+- (Window*)removeWindowAtPos:(intpair)pos;
+- (void)addWindowAtPos:(intpair)pos
+                ofType:(ItemType)type
+              saveDict:(NSDictionary*)saveDict
+        placedByClient:(NSString*)clientID;
+- (Window*)windowAtPos:(intpair)pos;
+- (Rail*)removeRailAtPos:(intpair)pos;
+- (Rail*)getRailAtPos:(intpair)pos;
+- (void)addRailAtPos:(intpair)pos ofType:(ItemType)type ownedByStation:(BOOL)ownedByStation;
+- (ElevatorMotor*)removeElevatorMotorAtPos:(intpair)pos;
+- (void)addElevatorMotorAtPos:(intpair)pos
+                       ofType:(ItemType)type
+                     saveDict:(NSDictionary*)saveDict
+               placedByClient:(NSString*)clientID;
+- (ElevatorMotor*)elevatorMotorForShaftAtPos:(intpair)pos;
+- (ElevatorMotor*)elevatorMotorAtPos:(intpair)pos;
+- (void)openElevatorAtPos:(intpair)pos;
+- (ElevatorShaft*)removeElevatorShaftAtPos:(intpair)pos;
+- (void)addElevatorShaftAtPos:(intpair)pos
+                       ofType:(ItemType)type
+                     saveDict:(NSDictionary*)saveDict
+               placedByClient:(NSString*)clientID;
+- (ElevatorShaft*)elevatorShaftAtPos:(intpair)pos;
+- (Wire*)removeWireAtPos:(intpair)pos;
+- (Wire*)wireAtPos:(intpair)pos;
+- (void)addWireAtPos:(intpair)pos
+              ofType:(ItemType)type
+            saveDict:(NSDictionary*)saveDict
+      placedByClient:(NSString*)clientID;
+- (Stairs*)removeStairsAtPos:(intpair)pos;
+- (void)addStairsAtPos:(intpair)pos
+                ofType:(ItemType)type
+              saveDict:(NSDictionary*)saveDict
+        placedByClient:(NSString*)clientID;
+- (Stairs*)stairsAtPos:(intpair)pos;
+- (Column*)removeColumnAtPos:(intpair)pos;
+- (void)addColumnAtPos:(intpair)pos
+                ofType:(ItemType)type
+              saveDict:(NSDictionary*)saveDict
+        placedByClient:(NSString*)clientID;
+- (Column*)columnAtPos:(intpair)pos;
+- (Ladder*)removeLadderAtPos:(intpair)pos;
+- (void)addLadderAtPos:(intpair)pos
+                ofType:(ItemType)type
+              saveDict:(NSDictionary*)saveDict
+        placedByClient:(NSString*)clientID;
+- (Ladder*)ladderAtPos:(intpair)pos;
+- (void)addStandardObjectAtPos:(intpair)pos
+                    objectType:(ItemType)type
+                      itemType:(DynamicObjectType*)objectType
+                      saveDict:(NSDictionary*)saveDict
+                placedByClient:(NSString*)clientID;
+- (Painting*)removePaintingAtPos:(intpair)pos;
+- (void)addPaintingAtPos:(intpair)pos
+                  ofType:(ItemType)type
+                saveDict:(NSDictionary*)saveDict
+          placedByClient:(NSString*)clientID
+              clientName:(NSString*)clientName;
+- (Painting*)paintingAtPos:(intpair)pos;
+- (Painting*)paintingWithID:(uint64_t)paintingID;
+- (Egg*)removeEggAtPos:(intpair)pos;
+- (void)addEggAtPos:(intpair)pos saveDict:(NSDictionary*)saveDict;
+- (Egg*)eggAtPos:(intpair)pos;
+- (void)createTreasureChestOrTrollAtTile:(Tile*)tile
+                                   atPos:(intpair)pos
+                               loadTroll:(BOOL)loadTroll
+                            loadTreasure:(BOOL)loadTreasure;
+- (Torch*)removeTorchAtPos:(intpair)pos;
+- (void)removeStandardObject:(DynamicObject*)object;
+- (Torch*)torchAtPos:(intpair)pos;
+- (DynamicObject*)objectOfType:(DynamicObjectType)type atPos:(intpair)pos;
+- (void)addTorchAtPos:(intpair)pos
+               ofType:(ItemType)type
+                dataA:(uint16_t)dataA
+                dataB:(uint16_t)dataB
+             saveDict:(NSDictionary*)saveDict
+       placedByClient:(NSString*)clientID;
+- (FireObject*)placeFireAtPosition:(intpair)pos;
+- (id)interactionObjectPlacedAtPosition:(intpair)pos
+                               withItem:(InventoryItem*)item
+                                flipped:(BOOL)flipped
+                               saveDict:(NSDictionary*)saveDict
+                         placedByClient:(NSString*)clientID
+                             clientName:(NSString*)clientName;
+- (Workbench*)workbenchPlacedAtPosition:(intpair)pos
+                                 ofType:(WorkbenchType)type
+                               saveDict:(NSDictionary*)saveDict
+                         placedByClient:(NSString*)clientID
+                             clientName:(NSString*)clientName;
+- (void)loadPlantAtPosition:(intpair)pos
+                       type:(PlantType)plantType
+                 maxAgeGene:(short)maxAgeGene
+             growthRateGene:(short)growthRateGene
+                      adult:(BOOL)adult;
+- (BOOL)loadNPCAtPosition:(intpair)pos
+                     type:(NPCType)npcType
+                 saveDict:(NSDictionary*)saveDict
+                  isAdult:(BOOL)isAdult
+                wasPlaced:(BOOL)wasPlaced
+           placedByClient:(NSString*)clientID;
+- (void)loadSnowSurfaceBlockAtPos:(intpair)pos loadSnow:(BOOL)loadSnow;
+- (void)loadSurfaceBlockAtPos:(intpair)pos;
+- (id)loadStandardDynamicObjectOfType:(int)type atPos:(intpair)pos;
+- (void)loadTreeAtPosition:(intpair)pos
+                      type:(TreeType)treeType
+                 maxHeight:(short)maxHeight
+                growthRate:(short)growthRate
+                 adultTree:(BOOL)adultTree
+               adultMaxAge:(float)adultMaxAge;
+- (void)sowTreeOrPlantAtPosition:(intpair)pos
+                        itemType:(ItemType)itemType
+                       maxHeight:(short)maxHeight
+                      growthRate:(short)growthRate;
+- (void)sowPlantNearParent:(Plant*)parentPlant;
+- (Plant*)findBreedingPlantNearPlant:(Plant*)plant;
+- (void)sowTreeNearParent:(Tree*)parentTree adult:(BOOL)adult adultMaxAge:(float)adultMaxAge;
+- (void)selectedBlockheadChanged:(int)newIndex;
 - (int)activeBlockheadIndex;
-- (id)activeBlockhead;
-- (void)lightChangedAtMacroPos:(intpair)arg1
-                  sendReliably:(BOOL)arg2
-                     sendAtAll:(BOOL)arg3;
-- (void)snowChangedAtMacroPos:(intpair)arg1;
-- (void)lightChangedAtMacroPos:(intpair)arg1 sendReliably:(BOOL)arg2;
-- (void)exploreLightChangedAtMacroPos:(intpair)arg1
-                clientLightBlockIndex:(int)arg2;
-- (void)dynamicWorldChangedAtPos:(intpair)arg1 objectType:(int)arg2;
-- (void)waterChangedAtPos:(intpair)arg1 fullBlock:(BOOL)arg2;
-- (void)worldContentsChangedAtPos:(intpair)arg1;
-- (void)worldChangedAtPos:(intpair)arg1 sendReliably:(BOOL)arg2;
-- (void)createBackgroundContentFreeBlockAtPosition:(intpair)arg1
-                                           forTile:(Tile*)arg2
-                                   removeBlockhead:(id)arg3;
-- (id)freeblockWithUniqueID:(unsigned long long)arg1;
-- (void)createFreeBlockAtPosition:(intpair)arg1
-            forForegroundContents:(BOOL)arg2
-                          forTile:(Tile*)arg3
-                priorityBlockhead:(id)arg4;
-- (void)playTimeCrystalReceivedSoundAtPos:(intpair)arg1;
-- (void)createFreeBlockAtPosition:(intpair)arg1
-                           ofType:(int)arg2
-                            dataA:(unsigned short)arg3
-                            dataB:(unsigned short)arg4
-                         subItems:(id)arg5
-            dynamicObjectSaveDict:(id)arg6
-                           hovers:(BOOL)arg7
-                        playSound:(int)arg8
-                priorityBlockhead:(id)arg9;
-- (void)drawNames:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-          pinchScale:(float)arg4
-     cameraMinXWorld:(int)arg5
-     cameraMaxXWorld:(int)arg6
-     cameraMinYWorld:(int)arg7
-     cameraMaxYWorld:(int)arg8
-      drawLocalNames:(BOOL)arg9;
-- (void)drawBlockheadBoxes:(float)arg1
-          projectionMatrix:(GLKMatrix4)arg2
-           modelViewMatrix:(GLKMatrix4)arg3
-                pinchScale:(float)arg4
-           cameraMinXWorld:(int)arg5
-           cameraMaxXWorld:(int)arg6
-           cameraMinYWorld:(int)arg7
-           cameraMaxYWorld:(int)arg8;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7
-          hideUIType:(int)arg8;
-- (void)drawFreeBlocks:(float)arg1
-      projectionMatrix:(GLKMatrix4)arg2
-       modelViewMatrix:(GLKMatrix4)arg3
-       cameraMinXWorld:(int)arg4
-       cameraMaxXWorld:(int)arg5
-       cameraMinYWorld:(int)arg6
-       cameraMaxYWorld:(int)arg7
-            hideUIType:(int)arg8;
-- (void)drawInFrontOfBlocksObjects:(float)arg1
-                  projectionMatrix:(GLKMatrix4)arg2
-                   modelViewMatrix:(GLKMatrix4)arg3
-                   cameraMinXWorld:(int)arg4
-                   cameraMaxXWorld:(int)arg5
-                   cameraMinYWorld:(int)arg6
-                   cameraMaxYWorld:(int)arg7
-                        hideUIType:(int)arg8;
-- (void)drawOpaqueObjects:(float)arg1
-         projectionMatrix:(GLKMatrix4)arg2
-          modelViewMatrix:(GLKMatrix4)arg3
-          cameraMinXWorld:(int)arg4
-          cameraMaxXWorld:(int)arg5
-          cameraMinYWorld:(int)arg6
-          cameraMaxYWorld:(int)arg7
-               hideUIType:(int)arg8;
-- (void)preDrawUpdate:(float)arg1
-      cameraMinXWorld:(int)arg2
-      cameraMaxXWorld:(int)arg3
-      cameraMinYWorld:(int)arg4
-      cameraMaxYWorld:(int)arg5;
-- (void)createClientFreeblocksWithData:(id)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (Blockhead*)activeBlockhead;
+- (void)lightChangedAtMacroPos:(intpair)macroPos
+                  sendReliably:(BOOL)sendReliably
+                     sendAtAll:(BOOL)sendAtAll;
+- (void)snowChangedAtMacroPos:(intpair)macroPos;
+- (void)lightChangedAtMacroPos:(intpair)macroPos sendReliably:(BOOL)sendReliably;
+- (void)exploreLightChangedAtMacroPos:(intpair)macroPos
+                clientLightBlockIndex:(int)ElevatorMotor;
+- (void)dynamicWorldChangedAtPos:(intpair)posWorld objectType:(DynamicObjectType)objectType;
+- (void)waterChangedAtPos:(intpair)pos fullBlock:(BOOL)fullBlock;
+- (void)worldContentsChangedAtPos:(intpair)pos;
+- (void)worldChangedAtPos:(intpair)pos sendReliably:(BOOL)sendReliably;
+- (void)createBackgroundContentFreeBlockAtPosition:(intpair)position
+                                           forTile:(Tile*)tile
+                                   removeBlockhead:(Blockhead*)removeBlockhead;
+- (FreeBlock*)freeblockWithUniqueID:(uint64_t)uniqueID;
+- (void)createFreeBlockAtPosition:(intpair)position
+            forForegroundContents:(BOOL)foregroundContents
+                          forTile:(Tile*)tile
+                priorityBlockhead:(Blockhead*)priorityBlockhead;
+- (void)playTimeCrystalReceivedSoundAtPos:(intpair)position;
+- (void)createFreeBlockAtPosition:(intpair)position
+                           ofType:(ItemType)itemType
+                            dataA:(uint16_t)dataA
+                            dataB:(uint16_t)dataB
+                         subItems:(NSArray*)subItems
+            dynamicObjectSaveDict:(NSDictionary*)dynamicObjectSaveDict
+                           hovers:(BOOL)hovers
+                        playSound:(int)playSound
+                priorityBlockhead:(Blockhead*)priorityBlockhead;
+- (void)drawNames:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+          pinchScale:(float)pinchScale
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld
+      drawLocalNames:(BOOL)drawLocalNames;
+- (void)drawBlockheadBoxes:(float)dt
+          projectionMatrix:(GLKMatrix4)projectionMatrix
+           modelViewMatrix:(GLKMatrix4)modelViewMatrix
+                pinchScale:(float)pinchScale
+           cameraMinXWorld:(int)cameraMinXWorld
+           cameraMaxXWorld:(int)cameraMaxXWorld
+           cameraMinYWorld:(int)cameraMinYWorld
+           cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld
+          hideUIType:(HideUIType)hideUIType;
+- (void)drawFreeBlocks:(float)dt
+      projectionMatrix:(GLKMatrix4)projectionMatrix
+       modelViewMatrix:(GLKMatrix4)modelViewMatrix
+       cameraMinXWorld:(int)cameraMinXWorld
+       cameraMaxXWorld:(int)cameraMaxXWorld
+       cameraMinYWorld:(int)cameraMinYWorld
+       cameraMaxYWorld:(int)cameraMaxYWorld
+            hideUIType:(HideUIType)hideUIType;
+- (void)drawInFrontOfBlocksObjects:(float)dt
+                  projectionMatrix:(GLKMatrix4)projectionMatrix
+                   modelViewMatrix:(GLKMatrix4)modelViewMatrix
+                   cameraMinXWorld:(int)cameraMinXWorld
+                   cameraMaxXWorld:(int)cameraMaxXWorld
+                   cameraMinYWorld:(int)cameraMinYWorld
+                   cameraMaxYWorld:(int)cameraMaxYWorld
+                        hideUIType:(HideUIType)hideUIType;
+- (void)drawOpaqueObjects:(float)dt
+         projectionMatrix:(GLKMatrix4)projectionMatrix
+          modelViewMatrix:(GLKMatrix4)modelViewMatrix
+          cameraMinXWorld:(int)cameraMinXWorld
+          cameraMaxXWorld:(int)cameraMaxXWorld
+          cameraMinYWorld:(int)cameraMinYWorld
+          cameraMaxYWorld:(int)cameraMaxYWorld
+               hideUIType:(HideUIType)hideUIType;
+- (void)preDrawUpdate:(float)dt
+      cameraMinXWorld:(int)cameraMinXWorld
+      cameraMaxXWorld:(int)cameraMaxXWorld
+      cameraMinYWorld:(int)cameraMinYWorld
+      cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)createClientFreeblocksWithData:(NSData*)netData;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (void)finishSimulating;
 - (void)loadAnyBlockheadsForDisconnectedClients;
-- (BOOL)hasDynamicObjectsToSaveInMacroPos:(intpair)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2;
-- (void)simulate:(float)arg1;
-- (void)sendNetDataIfNeededForObject:(id)arg1 isCreation:(BOOL)arg2;
+- (BOOL)hasDynamicObjectsToSaveInMacroPos:(intpair)macroPos;
+- (void)update:(float)dt accurateDT:(float)accurateDT;
+- (void)simulate:(float)dt;
+- (void)sendNetDataIfNeededForObject:(DynamicObject*)arg1 isCreation:(BOOL)isCreation;
 - (void)updateNetObjects;
-- (void)remoteRemove:(id)arg1 forObjectsOfType:(int)arg2 fromClient:(id)arg3;
-- (void)remoteUpdate:(id)arg1 forObjectsOfType:(int)arg2 fromClient:(id)arg3;
-- (void)remoteCreationDataUpdate:(id)arg1
-                forObjectsOfType:(int)arg2
-                      fromClient:(id)arg3;
-- (void)remoteCreate:(id)arg1 forObjectsOfType:(int)arg2 clientID:(id)arg3;
-- (void)loadDynamicObjectsForMacroTile:(MacroTile*)arg1
-                  includeSurfaceBlocks:(BOOL)arg2;
-- (void)loadClientOwnedDynamicObjectsForClient:(id)arg1
-                                 physicalBlock:(PhysicalBlock*)arg2;
-- (void)loadDynamicObjectsOfType:(int)arg1
-                        fromData:(id)arg2
-                   physicalBlock:(PhysicalBlock*)arg3
-                    loadedPortal:(char*)arg4
-                   clientOwnedID:(id)arg5;
-- (void)saveDynamicObjectsForMacroTile:(MacroTile*)arg1
-                            objectType:(int)arg2
-                                  xPos:(int)arg3
-                                  yPos:(int)arg4;
-- (id)loadLocalInventoryDataForChest:(id)arg1;
-- (void)removeSavedInventoryForChest:(id)arg1;
-- (void)safeRemoveFromDynamicObjectDatabase:(id)arg1;
-- (void)removePortalFromListAtPos:(intpair)arg1;
-- (void)saveBlockheadInventory:(id)arg1;
+- (void)remoteRemove:(NSArray*)removeArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID;
+- (void)remoteUpdate:(NSArray*)updateArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID;
+- (void)remoteCreationDataUpdate:(NSArray*)updateArray
+                forObjectsOfType:(DynamicObjectType)objectType
+                      fromClient:(NSString*)clientID;
+- (void)remoteCreate:(NSArray*)creationArray forObjectsOfType:(DynamicObjectType)objectType clientID:(NSString*)clientID;
+- (void)loadDynamicObjectsForMacroTile:(MacroTile*)macroTile
+                  includeSurfaceBlocks:(BOOL)includeSurfaceBlocks;
+- (void)loadClientOwnedDynamicObjectsForClient:(NSString*)clientID
+                                 physicalBlock:(PhysicalBlock*)physicalBlock;
+- (void)loadDynamicObjectsOfType:(int)objectType
+                        fromData:(NSData*)unCompressedData
+                   physicalBlock:(PhysicalBlock*)physicalBlock
+                    loadedPortal:(BOOL*)loadedPortal
+                   clientOwnedID:(NSString*)clientOwnedID;
+- (void)saveDynamicObjectsForMacroTile:(MacroTile*)macroTile
+                            objectType:(DynamicObjectType)objectType
+                                  xPos:(int)xPos
+                                  yPos:(int)yPos;
+- (NSData*)loadLocalInventoryDataForChest:(Chest*)chest;
+- (void)removeSavedInventoryForChest:(Chest*)chest;
+- (void)safeRemoveFromDynamicObjectDatabase:(NSString*)key;
+- (void)removePortalFromListAtPos:(intpair)pos;
+- (void)saveBlockheadInventory:(Blockhead*)blockhead;
 - (void)saveBlockheads;
-- (void)removeDynamicObjectsForMacroTile:(MacroTile*)arg1;
-- (id)initialDynamicObjectsNetDataForMacroTileIndex:(int)arg1
-                                      wireForClient:(id)arg2;
+- (void)removeDynamicObjectsForMacroTile:(MacroTile*)macroTile;
+- (id)initialDynamicObjectsNetDataForMacroTileIndex:(int)macroTileIndex
+                                      wireForClient:(NSString*)clientToSend;
 - (void)saveAndSendOnlyBlocksThatNeedToBeSent;
-- (void)saveGameWithWorldData:(id)arg1 signOwnershipData:(id)arg2;
+- (void)saveGameWithWorldData:(NSData*)worlSaveData signOwnershipData:(NSData*)signOwnershipData;
 - (void)saveDynamicObjects;
 - (void)sendLightblocksToClients;
-- (BOOL)loadDynamicObjects:(BOOL)arg1
-    repositionBlockheadLoadFailures:(BOOL)arg2;
-- (void)conversionThread:(id)arg1;
-- (void)mainThreadRemoveDirFromConversionList:(id)arg1;
+- (BOOL)loadDynamicObjects:(BOOL)loadSuccessSoFar
+    repositionBlockheadLoadFailures:(BOOL)repositionBlockheadLoadFailures;
+- (void)conversionThread:(NSDictionary*)localVersionOneToTwoConversionList;
+- (void)mainThreadRemoveDirFromConversionList:(NSString*)dirName;
 - (void)dealloc;
-- (void)setServer:(id)arg1 serverClients:(id)arg2;
-- (id)initWithWorld:(id)arg1
-              worldTileLoader:(id)arg2
-             clientTileLoader:(id)arg3
-                       server:(id)arg4
-                       client:(id)arg5
-                serverClients:(id)arg6
-                        cache:(id)arg7
-     treeDensityNoiseFunction:(id)arg8
-    seasonOffsetNoiseFunction:(id)arg9
-                  appDatabase:(id)arg10
-                worldDatabase:(id)arg11
-        dynamicObjectDatabase:(id)arg12;
+- (void)setServer:(BHServer*)server_ serverClients:(NSDictionary*)serverClients_;
+- (DynamicWorld*)initWithWorld:(World*)world_
+               worldTileLoader:(WorldTileLoader*)worldTileLoader_
+              clientTileLoader:(ClientTileLoader*)worldTileLoader_
+                        server:(BHServer*)server_
+                        client:(BHClient*)client_
+                 serverClients:(NSDictionary*)serverClients_
+                         cache:(CPCache*)cache_
+      treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+     seasonOffsetNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+                   appDatabase:(Database*)appDatabase_
+                 worldDatabase:(Database*)worldDatabase_
+         dynamicObjectDatabase:(Database*)dynamicObjectDatabase_;
 
 @end
