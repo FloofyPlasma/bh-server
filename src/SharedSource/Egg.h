@@ -11,41 +11,41 @@ struct EggCreationNetData {
 
 @interface Egg : DynamicObject {
   NSDictionary* genesDict;
-  unsigned short breed;
+  uint16_t breed;
   float hatchTimer;
 }
 
 @property (readonly) float hatchTimer; // @synthesize hatchTimer;
 - (BOOL)occupiesForegroundContents;
 - (void)removeFromMacroBlock;
-- (int)addDodoEggDrawQuadData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDodoEggDrawQuadData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDodoEggCount;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (BOOL)hatch:(BOOL)arg1;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (BOOL)hatch:(BOOL)playSound;
 - (void)dealloc;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (unsigned short)breed;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
-- (int)objectType;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (uint16_t)breed;
+- (NSMutableDictionary*)getSaveDict;
+- (Egg*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld
+                cache:(CPCache*)cache_
+              netData:(NSData*)netData;
+- (Egg*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld
+             saveDict:(NSDictionary*)saveDict
+                cache:(CPCache*)cache_;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
+- (DynamicObjectType)objectType;
+- (Egg*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld
+           atPosition:(intpair)pos
+                cache:(CPCache*)cache_
+             saveDict:(NSDictionary*)saveDict;
 - (void)initSubDerivedItems;
 
 @end
