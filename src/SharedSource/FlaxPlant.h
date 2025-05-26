@@ -5,15 +5,15 @@
 @interface FlaxPlant : NormalPlant {
 }
 
-- (int)renderImageType;
-- (BOOL)isRequiredSoilType:(int)arg1;
-- (int)plantType;
-- (BOOL)canDieSeason:(int)arg1;
-- (BOOL)floweringSeason:(int)arg1;
+- (ImageType)renderImageType;
+- (BOOL)isRequiredSoilType:(int)type;
+- (PlantType)plantType;
+- (BOOL)canDieSeason:(int)season;
+- (BOOL)floweringSeason:(int)season;
 - (int)minAllowedTemperature;
-- (int)folliageItemType;
-- (int)seedItemType;
+- (ItemType)folliageItemType;
+- (ItemType)seedItemType;
 - (float)maxAgeBase;
-- (int)objectType;
+- (DynamicObjectType)objectType;
 
 @end
