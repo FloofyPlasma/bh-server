@@ -1,6 +1,6 @@
 #import <Foundation/NSIndexSet.h>
 
 @interface NSIndexSet (SerializationMethods)
-+ (id)indexSetWithData:(id)arg1;
-- (id)serializedData;
++ (NSData*)indexSetWithData:(NSData*)data; // ? Assuming this type.
+- (NSData*)serializedData;
 @end
