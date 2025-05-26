@@ -7,7 +7,7 @@
 @protocol HarmableDynamicObject <NSObject>
 - (Vector2)center;
 - (BOOL)isVisible;
-- (BOOL)willDieIfHitByForce:(int)arg1;
-- (void)hitWithForce:(int)arg1 blockhead:(Blockhead*)arg2;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
+- (BOOL)willDieIfHitByForce:(int)force;
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
 @end
