@@ -8,36 +8,36 @@
 }
 
 - (BOOL)isStaticTree;
-- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
-- (int)gemItemType;
-- (int)treeType;
-- (void)recursivelyAddOwnedTile:(intpair)arg1
-                    toPositions:(std::unordered_set<int>*)arg2;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)makeTileDead:(Tile*)arg1;
+- (BOOL)tileIsKindOfSelf:(Tile*)tile;
+- (ItemType)gemItemType;
+- (TreeType)treeType;
+- (void)recursivelyAddOwnedTile:(intpair)tilePos
+                    toPositions:(std::unordered_set<int>*)ownedTilePositions;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)makeTileDead:(Tile*)tile;
 - (int)trunkBushContentsType;
 - (int)trunkContentsType;
 - (int)bushContentsType;
-- (void)updateGrowth:(BOOL)arg1;
-- (void)loadSaveDictValues:(id)arg1;
+- (void)updateGrowth:(BOOL)addNewBranchBlocks;
+- (void)loadSaveDictValues:(NSDictionary*)saveDict;
 - (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                     saveDict:(id)arg3
-                        cache:(id)arg4
-     treeDensityNoiseFunction:(id)arg5
-    seasonOffsetNoiseFunction:(id)arg6;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                   atPosition:(intpair)arg3
-                        cache:(id)arg4
-     treeDensityNoiseFunction:(id)arg5
-    seasonOffsetNoiseFunction:(id)arg6
-                  gemTreeType:(int)arg7;
+- (GemTree*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                     saveDict:(NSDictionary*)saveDict
+                        cache:(CPCache*)cache_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
+- (GemTree*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+                  gemTreeType:(TreeType)gemTreeType_;
 - (BOOL)shouldAddFallenFruits;
-- (BOOL)fruitShouldFallInSeason:(int)arg1;
-- (int)fruitItemType;
-- (int)objectType;
+- (BOOL)fruitShouldFallInSeason:(int)season;
+- (ItemType)fruitItemType;
+- (DynamicObjectType)objectType;
 
 @end
