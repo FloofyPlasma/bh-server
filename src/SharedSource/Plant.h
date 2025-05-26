@@ -30,8 +30,8 @@ struct PlantCreationNetData {
 @class NoiseFunction;
 
 @interface Plant : DynamicObject {
-  unsigned short maxAgeGene;
-  unsigned short growthRateGene;
+  uint16_t maxAgeGene;
+  uint16_t growthRateGene;
   NoiseFunction* treeDensityNoiseFunction;
   NoiseFunction* seasonOffsetNoiseFunction;
   int seasonOffset;
@@ -49,51 +49,51 @@ struct PlantCreationNetData {
 - (int)numberOfOccupiedTilesAbove;
 - (BOOL)occupiesForegroundContents;
 - (BOOL)canBreed;
-- (void)setNeedsRemoved:(BOOL)arg1;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
 - (void)clearAllTileContents;
-- (BOOL)tileIsKindOfSelf:(struct Tile*)arg1;
-- (int)droppedItemType;
+- (BOOL)tileIsKindOfSelf:(Tile*)tile;
+- (ItemType)droppedItemType;
 - (BOOL)isFlowering;
-- (unsigned short)growthRateGeneVariation;
-- (unsigned short)maxAgeGeneVariation;
+- (uint16_t)growthRateGeneVariation;
+- (uint16_t)maxAgeGeneVariation;
 - (void)removePlantWithoutCreatingFreeblocks;
-- (void)setGatherProgress:(int)arg1 forTile:(intpair)arg2;
-- (int)tileHarvested:(intpair)arg1
-          removeBlockhead:(id)arg2
-    correctToolMultiplier:(int)arg3;
-- (int)gatherProgressForTile:(intpair)arg1;
+- (void)setGatherProgress:(int)newGatherProgress forTile:(intpair)tilePos;
+- (int)tileHarvested:(intpair)tilePos
+          removeBlockhead:(Blockhead*)removeBlockhead
+    correctToolMultiplier:(int)correctToolMultiplier;
+- (int)gatherProgressForTile:(intpair)tilePos;
 - (int)plantType;
-- (BOOL)isRequiredSoilType:(int)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (BOOL)isRequiredSoilType:(TileType)type;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (BOOL)isGrowingInCompost;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (void)setFlowering:(BOOL)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (struct PlantCreationNetData)plantCreationNetData;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (void)setFlowering:(BOOL)newFlowering;
+- (void)remoteUpdate:(NSData*)netData;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (PlantCreationNetData)plantCreationNetData;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                     saveDict:(id)arg3
-                        cache:(id)arg4
-     treeDensityNoiseFunction:(id)arg5
-    seasonOffsetNoiseFunction:(id)arg6;
-- (void)loadSaveDictValues:(id)arg1;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                   atPosition:(intpair)arg3
-                        cache:(id)arg4
-                   maxAgeGene:(unsigned short)arg5
-               growthRateGene:(unsigned short)arg6
-     treeDensityNoiseFunction:(id)arg7
-    seasonOffsetNoiseFunction:(id)arg8
-                   adultPlant:(BOOL)arg9;
+- (Plant*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld
+                  cache:(CPCache*)cache_
+                netData:(NSData*)netData;
+- (Plant*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld
+                     saveDict:(NSDictionary*)saveDict
+                        cache:(CPCache*)cache_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
+- (void)loadSaveDictValues:(NSDictionary*)saveDict;
+- (Plant*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+                    maxHeight:(int16_t)maxHeight_
+                   growthRate:(int16_t)growthRate_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+                   adultPlant:(BOOL)adultPlant;
 - (void)removeFromMacroBlock;
 
 @end
