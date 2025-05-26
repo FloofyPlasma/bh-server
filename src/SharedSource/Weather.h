@@ -65,35 +65,35 @@ struct Cloud {
 
 @property float windMovement; // @synthesize windMovement;
 - (float)windStrength;
-- (Vector)cloudColorForWeatherFraction:(float)arg1
-                     timeOfDayFraction:(float)arg2
-                          isBackground:(BOOL)arg3;
-- (void)setSoundPaused:(BOOL)arg1;
-- (void)renderWithMatrix:(GLKMatrix4)arg1
-              pinchScale:(float)arg2
-            withDayColor:(Vector)arg3
-            rainFraction:(float)arg4
-            snowFraction:(float)arg5
-               snowLevel:(float)arg6;
-- (void)renderCloudWithMatrix:(GLKMatrix4)arg1
-                  translation:(Vector2)arg2
-                           dt:(float)arg3
-              weatherFraction:(float)arg4
-        futureWeatherFraction:(float)arg5
-            timeOfDayFraction:(float)arg6;
-- (void)updateCloudsWithTranslation:(float)arg1;
-- (void)updateRainSoundWithRainFraction:(float)arg1
-                         undergroundMix:(float)arg2
-                               position:(Vector2)arg3;
-- (void)updateBirdSoundWithBirdFraction:(float)arg1
-                            dayNightMix:(float)arg2
-                         undergroundMix:(float)arg3
-                                     dt:(float)arg4
-                           playPosition:(Vector2)arg5;
-- (void)update:(float)arg1 rainFraction:(float)arg2 snowFraction:(float)arg3;
+- (Vector)cloudColorForWeatherFraction:(float)isBackground
+                     timeOfDayFraction:(float)timeOfDayFraction
+                          isBackground:(BOOL)isBackground;
+- (void)setSoundPaused:(BOOL)soundPaused_;
+- (void)renderWithMatrix:(GLKMatrix4)matrix
+              pinchScale:(float)pinchScale
+            withDayColor:(Vector)dayColor
+            rainFraction:(float)rainFraction
+            snowFraction:(float)snowFraction
+               snowLevel:(float)snowLevel;
+- (void)renderCloudWithMatrix:(GLKMatrix4)matrix
+                  translation:(Vector2)translation
+                           dt:(float)dt
+              weatherFraction:(float)weatherFraction
+        futureWeatherFraction:(float)futureWeatherFraction
+            timeOfDayFraction:(float)timeOfDayFraction;
+- (void)updateCloudsWithTranslation:(float)roundedTranslation;
+- (void)updateRainSoundWithRainFraction:(float)rainFraction
+                         undergroundMix:(float)undergroundMix
+                               position:(Vector2)position;
+- (void)updateBirdSoundWithBirdFraction:(float)birdFraction
+                            dayNightMix:(float)dayNightMix
+                         undergroundMix:(float)undergroundMix
+                                     dt:(float)dt
+                           playPosition:(Vector2)playPosition;
+- (void)update:(float)dt rainFraction:(float)rainFraction snowFraction:(float)snowFraction;
 - (void)dealloc;
 - (void)loadCricketSounds;
 - (void)updateCloudsForLoadOrHDTeturesChange;
-- (id)initWithCache:(id)arg1 world:(id)arg2 worldTime:(float)arg3;
+- (id)initWithCache:(CPCache*)cache_ world:(World*)cache_ worldTime:(float)worldTime;
 
 @end
