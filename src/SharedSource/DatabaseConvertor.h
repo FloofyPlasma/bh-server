@@ -36,17 +36,17 @@
 - (void)removeLightBlockFiles;
 - (void)removeWorldFiles;
 - (void)convertWorld;
-- (void)lightBlockMainThreadOperationReturned:(id)arg1;
+- (void)lightBlockMainThreadOperationReturned:(NSDictionary*)resultDict;
 - (void)convertLightBlocks;
-- (id)safeDataWithContentsOfFile:(id)arg1;
+- (NSData*)safeDataWithContentsOfFile:(NSString*)fileName;
 - (void)getNewServerFiles;
 - (void)getNewLightBlockFiles;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-            worldDatabase:(id)arg2
-    dynamicObjectDatabase:(id)arg3
-            blockDatabase:(id)arg4
-       lightBlockDatabase:(id)arg5
-           serverDatabase:(id)arg6;
+- (DatabaseConvertor*)initWithWorld:(World*)world_
+                      worldDatabase:(Database*)worldDatabase_
+              dynamicObjectDatabase:(Database*)dynamicObjectDatabase_
+                      blockDatabase:(Database*)blockDatabase_
+                 lightBlockDatabase:(Database*)lightBlockDatabase_
+                     serverDatabase:(Database*)lightBlockDatabase_;
 
 @end
