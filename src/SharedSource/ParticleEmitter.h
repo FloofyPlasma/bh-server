@@ -89,43 +89,43 @@ struct Particle {
 + (id)instance;
 @property int worldWidthMacro; // @synthesize worldWidthMacro;
 @property BOOL stopAllParticles; // @synthesize stopAllParticles;
-- (void)renderAndUpdate:(float)arg1
-             pinchScale:(float)arg2
-       projectionMatrix:(GLKMatrix4)arg3
-        modelViewMatrix:(GLKMatrix4)arg4
-        cameraMinXWorld:(int)arg5
-        cameraMaxXWorld:(int)arg6
-        cameraMinYWorld:(int)arg7
-        cameraMaxYWorld:(int)arg8
-           windMovement:(float)arg9;
-- (void)addBonusParticleAtPos:(Vector)arg1
-                        color:(Vector)arg2
-              bonusMultiplier:(int)arg3;
-- (void)addParticleAtPos:(Vector)arg1
-                velocity:(Vector)arg2
-                   color:(Vector)arg3
-             gravityType:(int)arg4
-                    life:(float)arg5
-                   scale:(float)arg6
-                  center:(Vector)arg7
-          connectionGoal:(Vector)arg8;
-- (void)doAddElectricityParticleWithPath:(std::vector<ElectricityParticlePathIndex>*)arg1 size:(float)arg2;
-- (void)addElectricityParticleWithPath:(std::vector<ElectricityParticlePathIndex>*)arg1 size:(float)arg2;
-- (void)addParticleAtPos:(Vector)arg1
-                velocity:(Vector)arg2
-                   color:(Vector)arg3
-             gravityType:(int)arg4
-                    life:(float)arg5
-                   scale:(float)arg6
-                  center:(Vector)arg7;
-- (void)addParticleAtPos:(Vector)arg1
-                velocity:(Vector)arg2
-                   color:(Vector)arg3
-             gravityType:(int)arg4
-                    life:(float)arg5
-                   scale:(float)arg6;
+- (void)renderAndUpdate:(float)dt
+             pinchScale:(float)pinchScale
+       projectionMatrix:(GLKMatrix4)projectionMatrix
+        modelViewMatrix:(GLKMatrix4)modelViewMatrix
+        cameraMinXWorld:(int)cameraMinXWorld_
+        cameraMaxXWorld:(int)cameraMaxXWorld_
+        cameraMinYWorld:(int)cameraMinYWorld_
+        cameraMaxYWorld:(int)cameraMaxYWorld_
+           windMovement:(float)windMovement;
+- (void)addBonusParticleAtPos:(Vector)pos
+                        color:(Vector)color
+              bonusMultiplier:(int)bonusMultiplier;
+- (void)addParticleAtPos:(Vector)dt
+                velocity:(Vector)velocity
+                   color:(Vector)color
+             gravityType:(ParticleGravityType)gravityType
+                    life:(float)life
+                   scale:(float)scale
+                  center:(Vector)center
+          connectionGoal:(Vector)connectionGoal;
+- (void)doAddElectricityParticleWithPath:(std::vector<ElectricityParticlePathIndex>*)arg1 size:(float)size;
+- (void)addElectricityParticleWithPath:(std::vector<ElectricityParticlePathIndex>*)arg1 size:(float)size;
+- (void)addParticleAtPos:(Vector)dt
+                velocity:(Vector)velocity
+                   color:(Vector)color
+             gravityType:(ParticleGravityType)arg4
+                    life:(float)life
+                   scale:(float)scale
+                  center:(Vector)center;
+- (void)addParticleAtPos:(Vector)dt
+                velocity:(Vector)velocity
+                   color:(Vector)color
+             gravityType:(ParticleGravityType)arg4
+                    life:(float)life
+                   scale:(float)scale;
 - (void)reset;
-- (void)setWorld:(id)arg1;
-- (id)init;
+- (void)setWorld:(World*)world_;
+- (ParticleEmitter*)init;
 
 @end
