@@ -19,52 +19,52 @@ struct FreightCarCreationNetData {
 }
 
 @property BOOL needsChestSave; // @synthesize needsChestSave;
-- (void)setNeedsRemoved:(BOOL)arg1;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
 - (BOOL)requiresHumanInteraction;
 - (BOOL)updateNeedsToBeSent;
-- (void)setUpdateNeedsToBeSent:(BOOL)arg1;
+- (void)setUpdateNeedsToBeSent:(BOOL)updateNeedsToBeSent;
 - (void)blockheadsLoaded;
-- (void)childNeedsSaving:(id)arg1;
-- (id)actsAsInteractionObject;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
-- (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
-- (id)actionTitle;
-- (int)itemType;
-- (void)setTargetVelocity:(Vector2)arg1;
+- (void)childNeedsSaving:(DynamicObject*)child;
+- (InteractionObject*)actsAsInteractionObject;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType;
+- (NSString*)actionTitle;
+- (ItemType)itemType;
+- (void)setTargetVelocity:(Vector2)targetVelocity;
 - (Vector2)cameraPos;
 - (Vector2)renderPos;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)remoteUpdate:(id)arg1;
-- (void)updatePosition:(intpair)arg1;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)updatePosition:(intpair)newPosition;
 - (void)dealloc;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)freeBlockCreationSaveDict;
-- (id)getChestSaveDict;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-      chestSaveDict:(id)arg4
-              cache:(id)arg5;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-     placedByClient:(id)arg6;
-- (int)objectType;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (NSDictionary*)getChestSaveDict;
+- (NSMutableDictionary*)getSaveDict;
+- (FreightCar*)initWithWorld:(World*)world_
+                dynamicWorld:(DynamicWorld*)dynamicWorld
+                       cache:(CPCache*)cache_
+                     netData:(NSData*)netData;
+- (FreightCar*)initWithWorld:(World*)world_
+                dynamicWorld:(DynamicWorld*)dynamicWorld
+                    saveDict:(NSDictionary*)saveDict
+               chestSaveDict:(NSDictionary*)chestSaveDict
+                       cache:(CPCache*)cache_;
+- (FreightCar*)initWithWorld:(World*)world_
+                dynamicWorld:(DynamicWorld*)dynamicWorld
+                  atPosition:(intpair)pos
+                       cache:(CPCache*)cache_
+                    saveDict:(NSDictionary*)saveDict
+              placedByClient:(NSString*)clientId;
+- (DynamicObjectType)objectType;
 - (void)loadDerivedStuff;
 
 @end
