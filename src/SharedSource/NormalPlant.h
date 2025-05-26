@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+#import "NPC.h"
 #import "Plant.h"
 
 @class ArtificialLight, CPTexture2D, Shader;
@@ -16,61 +17,61 @@
 }
 
 @property float availableFood; // @synthesize availableFood;
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
-                                                              yPos:(int)arg2;
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX
+                                                              yPos:(int)macroY;
 - (void)removeFromMacroBlock;
-- (int)addDrawQuadData:(float*)arg1
-             fromIndex:(int)arg2
-           forMacroPos:(intpair)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)droppedItemType;
+- (int)addDrawQuadData:(float*)buffer
+             fromIndex:(int)index
+           forMacroPos:(intpair)macroPos;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos;
+- (ItemType)droppedItemType;
 - (int)numberOfOccupiedTilesAbove;
-- (int)tileHarvested:(intpair)arg1
-          removeBlockhead:(id)arg2
-    correctToolMultiplier:(int)arg3;
-- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (int)addLightGlowQuadData:(float*)arg1 fromIndex:(int)arg2;
+- (int)tileHarvested:(intpair)tilePos
+          removeBlockhead:(Blockhead*)removeBlockhead
+    correctToolMultiplier:(int)correctToolMultiplier;
+- (BOOL)tileIsKindOfSelf:(Tile*)tile;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (int)addLightGlowQuadData:(float*)buffer fromIndex:(int)index;
 - (int)lightGlowQuadCount;
-- (void)remoteUpdate:(id)arg1;
-- (void)setFlowering:(BOOL)arg1;
-- (id)getSaveDict;
-- (void)setNeedsRemoved:(BOOL)arg1;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)setFlowering:(BOOL)newFlowering;
+- (NSMutableDictionary*)getSaveDict;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                     saveDict:(id)arg3
-                        cache:(id)arg4
-     treeDensityNoiseFunction:(id)arg5
-    seasonOffsetNoiseFunction:(id)arg6;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                   atPosition:(intpair)arg3
-                        cache:(id)arg4
-                   maxAgeGene:(unsigned short)arg5
-               growthRateGene:(unsigned short)arg6
-     treeDensityNoiseFunction:(id)arg7
-    seasonOffsetNoiseFunction:(id)arg8
-                   adultPlant:(BOOL)arg9;
+- (NormalPlant*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld
+                        cache:(CPCache*)cache_
+                      netData:(NSData*)netData;
+- (NormalPlant*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld
+                     saveDict:(NSDictionary*)saveDict
+                        cache:(CPCache*)cache_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
+- (NormalPlant*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+                maxHeightGene:(int16_t)maxHeight_
+               growthRateGene:(int16_t)growthRate_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+                   adultPlant:(BOOL)adultPlant;
 - (void)initSubDerivedItems;
 - (Vector)lightColor;
 - (float)lightFactor;
 - (BOOL)emitsLight;
-- (int)npcSpawnType;
-- (BOOL)canDieSeason:(int)arg1;
-- (BOOL)floweringSeason:(int)arg1;
+- (NPCType)npcSpawnType;
+- (BOOL)canDieSeason:(int)season;
+- (BOOL)floweringSeason:(int)season;
 - (float)foodToRemoveWhenSpawningNPC;
-- (int)renderImageType;
-- (int)folliageItemType;
-- (int)seedItemType;
+- (ImageType)renderImageType;
+- (ItemType)folliageItemType;
+- (ItemType)seedItemType;
 - (int)minAllowedTemperature;
-- (int)flowerContentsType;
-- (int)contentsType;
+- (TileContents)flowerContentsType;
+- (TileContents)contentsType;
 - (float)maxAgeBase;
-- (int)objectType;
+- (DynamicObjectType)objectType;
 
 @end
