@@ -55,58 +55,58 @@ struct ClownFishCreationNetData {
 
 - (void)reactToBeingFed;
 - (BOOL)ridableWhenTamed;
-- (void)blockheadUnloaded:(id)arg1;
-- (void)remoteBlockheadHookedYou:(id)arg1;
-- (void)setNeedsRemoved:(BOOL)arg1;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
+- (void)remoteBlockheadHookedYou:(Blockhead*)blockhead;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
 - (Vector2)renderPos;
-- (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
 - (void)reactToBeingHit;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
-- (unsigned short)maxHealth;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)die:(id)arg1;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (unsigned long long)creationDataStructSize;
-- (void)remoteCreationDataUpdate:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (void)doRemoteUpdate:(ClownFishUpdateNetData)arg1;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
+- (uint16_t)maxHealth;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)die:(Blockhead*)killBlockhead_;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (uint64_t)creationDataStructSize;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)doRemoteUpdate:(ClownFishUpdateNetData)updateNetData;
 - (void)dealloc;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (ClownFishUpdateNetData)clownFishUpdateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-            isAdult:(BOOL)arg6
-          wasPlaced:(BOOL)arg7
-     placedByClient:(id)arg8;
-- (id)cantBeCapturedTipStringForBlockhead:(id)arg1 withItemType:(int)arg2;
-- (BOOL)canBeCapturedByBlockhead:(id)arg1 withItemType:(int)arg2;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (ClownFishUpdateNetData)clownFishUpdateNetDataForClient:(NSString*)clientIDToSendTo;
+- (NSMutableDictionary*)getSaveDict;
+- (ClownFish*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                      cache:(CPCache*)cache_
+                    netData:(NSData*)netData;
+- (ClownFish*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                   saveDict:(NSDictionary*)saveDict
+                      cache:(CPCache*)cache_;
+- (ClownFish*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld_
+                 atPosition:(intpair)pos_
+                      cache:(CPCache*)cache_
+                   saveDict:(NSDictionary*)saveDict
+                    isAdult:(BOOL)isAdult
+                  wasPlaced:(BOOL)wasPlaced
+             placedByClient:(NSString*)clientId;
+- (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+- (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
 - (void)loadDerivedStuff;
-- (int)captureRequiredItemType;
-- (int)capturedItemType;
+- (ItemType)captureRequiredItemType;
+- (ItemType)capturedItemType;
 - (int)getNamesArrayCount;
-- (id*)getNamesArray;
-- (int)foodItemType;
-- (id)speciesName;
+- (NSString**)getNamesArray;
+- (ItemType)foodItemType;
+- (NSString*)speciesName;
 - (float)maxAge;
-- (int)npcType;
+- (NPCType)npcType;
 
 @end
