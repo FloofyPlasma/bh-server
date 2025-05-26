@@ -180,97 +180,97 @@ struct CaveTrollCreationData {
 - (BOOL)riderDPadShouldAllowUpDown;
 - (BOOL)riderRidesWithArmsDown;
 - (BOOL)jumpsOnSwipe;
-- (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
-- (void)removeRider:(id)arg1;
-- (void)addRider:(id)arg1;
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType;
+- (void)removeRider:(Blockhead*)rider_;
+- (void)addRider:(Blockhead*)rider_;
 - (int)rideDirection;
-- (void)setTargetVelocity:(Vector2)arg1;
-- (float)riderBodyYRotationForBlockhead:(id)arg1;
-- (Vector2)cameraPosForBlockhead:(id)arg1;
-- (Vector)riderPosForBlockhead:(id)arg1;
+- (void)setTargetVelocity:(Vector2)targetVelocity;
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead;
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead;
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead;
 - (void)reactToBeingFed;
 - (Vector2)namePos;
-- (id)cantBeCapturedTipStringForBlockhead:(id)arg1 withItemType:(int)arg2;
-- (BOOL)canBeCapturedByBlockhead:(id)arg1 withItemType:(int)arg2;
+- (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+- (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
 - (BOOL)canFly;
-- (void)blockheadUnloaded:(id)arg1;
-- (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
 - (void)reactToBeingHit;
 @property (readonly) Vector2 renderPos; // @synthesize renderPos;
 - (BOOL)canCrawl;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
-- (unsigned short)maxHealth;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
+- (uint16_t)maxHealth;
 - (BOOL)falling;
 - (BOOL)crouching;
 - (BOOL)waitingForPath;
 - (void)setNoLongerWaitingForPath;
-- (void)setWaitingForPathToPos:(intpair)arg1;
+- (void)setWaitingForPathToPos:(intpair)goalPos;
 - (id)infoForPathRecalculation;
-- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (void)setPath:(id)arg1
-               type:(int)arg2
-    goalInteraction:(int)arg3
-          extraData:(id)arg4;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)preDrawUpdate:(float)arg1
-      cameraMinXWorld:(int)arg2
-      cameraMaxXWorld:(int)arg3
-      cameraMinYWorld:(int)arg4
-      cameraMaxYWorld:(int)arg5;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (void)setPath:(NSArray*)path_
+               type:(PathType)pathType
+    goalInteraction:(InteractionType)goalInteraction
+          extraData:(NSDictionary*)goalInteraction;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)preDrawUpdate:(float)dt
+      cameraMinXWorld:(int)cameraMinXWorld
+      cameraMaxXWorld:(int)cameraMaxXWorld
+      cameraMinYWorld:(int)cameraMinYWorld
+      cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (BOOL)controlIsLocal;
-- (void)die:(id)arg1;
-- (BOOL)tileIsLitForSelf:(Tile*)arg1 atPos:(intpair)arg2;
+- (void)die:(Blockhead*)killBlockhead_;
+- (BOOL)tileIsLitForSelf:(Tile*)tile atPos:(intpair)tilePos;
 - (void)updateGatherSpeedAndAnimationForCurrentInterationAndItem;
-- (void)remoteCreationDataUpdate:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (void)doRemoteUpdate:(CaveTrollUpdateData)arg1;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)doRemoteUpdate:(CaveTrollUpdateData)remoteUpdateData;
 - (void)stopInteracting;
-- (void)startInteractingWithTileAtIndex:(int)arg1
-                                   tile:(Tile*)arg2
-                        interactionType:(int)arg3;
-- (int)currentTraverseToKeyFrame;
-- (BOOL)isHeadingForSquare:(intpair)arg1;
-- (int)currentInteractionType;
+- (void)startInteractingWithTileAtIndex:(int)tileIndex
+                                   tile:(Tile*)tile
+                        interactionType:(InteractionType)interactionType_;
+- (TileTraverseKeyFrameType)currentTraverseToKeyFrame;
+- (BOOL)isHeadingForSquare:(intpair)squarePos;
+- (InteractionType)currentInteractionType;
 - (void)dealloc;
-- (id)getSaveDict;
+- (NSMutableDictionary*)getSaveDict;
 - (unsigned long long)creationDataStructSize;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (CaveTrollUpdateData)caveTrollUpdateDataForClient:(id)arg1;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-            isAdult:(BOOL)arg6
-          wasPlaced:(BOOL)arg7
-     placedByClient:(id)arg8;
-- (int)npcType;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (CaveTrollUpdateData)caveTrollUpdateDataForClient:(NSString*)clientIDToSendTo;
+- (CaveTroll*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                      cache:(CPCache*)cache_
+                    netData:(NSData*)netData;
+- (CaveTroll*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                   saveDict:(NSDictionary*)saveDict
+                      cache:(CPCache*)cache_;
+- (CaveTroll*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld_
+                 atPosition:(intpair)pos_
+                      cache:(CPCache*)cache_
+                   saveDict:(NSDictionary*)saveDict
+                    isAdult:(BOOL)isAdult
+                  wasPlaced:(BOOL)wasPlaced
+             placedByClient:(NSString*)clientId;
+- (NPCType)npcType;
 - (void)initSubDerivedStuffStuff;
-- (int)captureRequiredItemType;
+- (ItemType)captureRequiredItemType;
 - (int)getNamesArrayCount;
-- (id*)getNamesArray;
-- (int)foodItemType;
-- (id)speciesName;
+- (NSString**)getNamesArray;
+- (ItemType)foodItemType;
+- (NSString*)speciesName;
 - (BOOL)diesOfLowFullness;
 - (BOOL)diesOfOldAge;
 - (float)maxAge;
-- (int)currentAnimationType;
+- (CaveTrollAnimationType)currentAnimationType;
 
 @end
