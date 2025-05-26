@@ -26,20 +26,20 @@ struct Projectile {
   std::vector<Projectile*> projectiles;
 }
 
-- (void)fireProjectileFrom:(Vector2)arg1
-                        to:(Vector2)arg2
-                        at:(id)arg3
-              fireItemType:(int)arg4
-                     firer:(id)arg5;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1;
+- (void)fireProjectileFrom:(Vector2)fromPos
+                        to:(Vector2)toPos
+                        at:(DynamicObject*)atObject
+              fireItemType:(ItemType)itemType
+                     firer:(Blockhead*)firer;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1 cache:(id)arg2;
+- (ProjectileManager*)initWithWorld:(World*)world_ cache:(CPCache*)cache_;
 
 @end
