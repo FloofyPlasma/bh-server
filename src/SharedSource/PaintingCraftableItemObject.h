@@ -11,12 +11,12 @@
 
 @property (retain) NSData* outputImageData; // @synthesize outputImageData;
 @property (retain) NSData* imageData; // @synthesize imageData;
-- (id)freeBlockCreationItemSaveDict;
+- (NSMutableDictionary*)freeBlockCreationItemSaveDict;
 - (void)dealloc;
-- (id)getSaveDict;
-- (id)initWithSaveDict:(id)arg1;
-- (id)initWithCraftableItem:(CraftableItem)arg1
-                  imageData:(id)arg2
-            outputImageData:(id)arg3;
+- (NSMutableDictionary*)getSaveDict;
+- (PaintingCraftableItemObject*)initWithSaveDict:(NSDictionary*)saveDict;
+- (PaintingCraftableItemObject*)initWithCraftableItem:(CraftableItem)craftableItem_
+                                            imageData:(NSData*)imageData_
+                                      outputImageData:(NSData*)outputImageData_;
 
 @end
