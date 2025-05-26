@@ -22,7 +22,7 @@ struct StairsCreationNetData {
 @interface Stairs : DynamicObject {
   int itemType;
   int currentConfiguration;
-  unsigned short paintColor;
+  uint16_t paintColor;
   float iceMeltTimer;
   float* savedDrawBuffer;
   int savedDrawBufferIndex;
@@ -31,48 +31,48 @@ struct StairsCreationNetData {
 
 @property (readonly) int itemType; // @synthesize itemType;
 - (BOOL)occupiesNormalContents;
-- (void)paint:(unsigned short)arg1;
+- (void)paint:(uint16_t)colorIndex;
 - (void)removeFromMacroBlock;
-- (int)addDrawCubeDataTrans:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeDataTrans:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDrawCubeCountTrans;
-- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDrawCubeCount;
-- (int)addDrawCubeDataLocal:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeDataLocal:(float*)buffer fromIndex:(int)index;
 - (int)imageIndex;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
 - (void)dealloc;
-- (id)creationNetDataForClient:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               type:(int)arg5
-           saveDict:(id)arg6
-     placedByClient:(id)arg7;
-- (int)objectType;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (void)remoteUpdate:(NSData*)netData;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
+- (Stairs*)initWithWorld:(World*)world_
+            dynamicWorld:(DynamicWorld*)dynamicWorld
+                   cache:(CPCache*)cache_
+                 netData:(NSData*)netData;
+- (Stairs*)initWithWorld:(World*)world_
+            dynamicWorld:(DynamicWorld*)dynamicWorld
+                saveDict:(NSDictionary*)saveDict
+                   cache:(CPCache*)cache_;
+- (Stairs*)initWithWorld:(World*)world_
+            dynamicWorld:(DynamicWorld*)dynamicWorld
+              atPosition:(intpair)pos
+                   cache:(CPCache*)cache_
+                    type:(ItemType)itemType_
+                saveDict:(NSDictionary*)saveDict
+          placedByClient:(NSString*)clientId;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedItems;
 - (void)updateConfiguration;
 - (BOOL)isTransparent;
