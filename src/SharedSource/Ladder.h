@@ -11,48 +11,48 @@ struct LadderCreationNetData {
 
 @interface Ladder : DynamicObject {
   int itemType;
-  unsigned short paintColor;
+  uint16_t paintColor;
 }
 
 - (BOOL)occupiesForegroundContents;
-- (void)paint:(unsigned short)arg1;
+- (void)paint:(uint16_t)colorIndex;
 - (void)removeFromMacroBlock;
-- (int)addDrawQuadData:(float*)arg1
-             fromIndex:(int)arg2
-           forMacroPos:(intpair)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
+- (int)addDrawQuadData:(float*)buffer
+             fromIndex:(int)index
+           forMacroPos:(intpair)macroPos;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
 - (void)dealloc;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               type:(int)arg5
-           saveDict:(id)arg6
-     placedByClient:(id)arg7;
-- (int)objectType;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
+- (Ladder*)initWithWorld:(World*)world_
+            dynamicWorld:(DynamicWorld*)dynamicWorld
+                   cache:(CPCache*)cache_
+                 netData:(NSData*)netData;
+- (Ladder*)initWithWorld:(World*)world_
+            dynamicWorld:(DynamicWorld*)dynamicWorld
+                saveDict:(NSDictionary*)saveDict
+                   cache:(CPCache*)cache_;
+- (Ladder*)initWithWorld:(World*)world_
+            dynamicWorld:(DynamicWorld*)dynamicWorld
+              atPosition:(intpair)pos
+                   cache:(CPCache*)cache_
+                    type:(ItemType)itemType_
+                saveDict:(NSDictionary*)saveDict
+          placedByClient:(NSString*)clientId;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedItems;
 
 @end
