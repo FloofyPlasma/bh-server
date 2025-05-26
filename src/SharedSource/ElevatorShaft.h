@@ -19,55 +19,55 @@ struct ElevatorShaftCreationNetData {
   float openTimer;
   float* savedDrawBuffer;
   int savedDrawBufferIndex;
-  unsigned short paintColor;
+  uint16_t paintColor;
   BOOL solidTile;
 }
 
 @property (readonly) intpair lastKnownMotorPos; // @synthesize lastKnownMotorPos;
 - (BOOL)occupiesNormalContents;
 - (BOOL)isPaintable;
-- (void)paint:(unsigned short)arg1;
+- (void)paint:(uint16_t)colorIndex;
 - (void)removeFromMacroBlock;
 - (void)open;
-- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
 - (int)staticGeometryDrawCubeCount;
-- (int)addDrawQuadData:(float*)arg1
-             fromIndex:(int)arg2
-           forMacroPos:(intpair)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
+- (int)addDrawQuadData:(float*)buffer
+             fromIndex:(int)index
+           forMacroPos:(intpair)macroPos;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
 - (void)dealloc;
 - (void)remoteUpdate:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               type:(int)arg5
-           saveDict:(id)arg6
-     placedByClient:(id)arg7;
-- (int)objectType;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
+- (ElevatorShaft*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                          cache:(CPCache*)cache_
+                        netData:(NSData*)netData;
+- (ElevatorShaft*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                       saveDict:(NSDictionary*)saveDict
+                          cache:(CPCache*)cache_;
+- (ElevatorShaft*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                     atPosition:(intpair)pos
+                          cache:(CPCache*)cache_
+                           type:(ItemType)itemType_
+                       saveDict:(NSDictionary*)saveDict
+                 placedByClient:(NSString*)clientId;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedItems;
 
 @end
