@@ -12,20 +12,20 @@
 
 - (BOOL)requiresPhysicalBlock;
 - (void)removeIfFloatingAndEmptyOfWater;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (void)removeFromMacroBlock;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4;
-- (BOOL)takeAnyWaterFromTileAtPos:(intpair)arg1 tile:(Tile*)arg2;
-- (void)subtractWater:(int)arg1
-        fromOtherTile:(Tile*)arg2
-                atPos:(intpair)arg3;
-- (int)objectType;
+- (SurfaceBlock*)initWithWorld:(World*)world_
+                  dynamicWorld:(DynamicWorld*)dynamicWorld
+                      saveDict:(NSDictionary*)saveDict
+                         cache:(CPCache*)cache_;
+- (SurfaceBlock*)initWithWorld:(World*)world_
+                  dynamicWorld:(DynamicWorld*)dynamicWorld
+                    atPosition:(intpair)pos
+                         cache:(CPCache*)cache_;
+- (BOOL)takeAnyWaterFromTileAtPos:(intpair)otherPos tile:(Tile*)tile;
+- (void)subtractWater:(int)amount
+        fromOtherTile:(Tile*)otherTile
+                atPos:(intpair)otherPos;
+- (DynamicObjectType)objectType;
 
 @end
