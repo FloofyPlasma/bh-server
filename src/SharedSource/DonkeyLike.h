@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NPC.h"
+#import "Plant.h"
 
 struct DonkeyLikeUpdateNetData {
   NPCUpdateNetData npcUpdateNetData;
@@ -49,14 +50,14 @@ struct DonkeyLikeCreationNetData {
   BOOL inWater;
   float fallTimer;
   BOOL hasHadExtraMidAirJump;
-  unsigned char jumpActionSendValue;
-  union _GLKMatrix4 bodyMatrix;
-  union _GLKMatrix4 neckMatrix;
-  union _GLKMatrix4 headMatrix;
-  union _GLKMatrix4 leftArmMatrix;
-  union _GLKMatrix4 rightArmMatrix;
-  union _GLKMatrix4 leftLegMatrix;
-  union _GLKMatrix4 rightLegMatrix;
+  uint8_t jumpActionSendValue;
+  GLKMatrix4 bodyMatrix;
+  GLKMatrix4 neckMatrix;
+  GLKMatrix4 headMatrix;
+  GLKMatrix4 leftArmMatrix;
+  GLKMatrix4 rightArmMatrix;
+  GLKMatrix4 leftLegMatrix;
+  GLKMatrix4 rightLegMatrix;
   float munchHeadDownTimer;
   float headDownFraction;
   float targetHeadDownFraction;
@@ -97,46 +98,46 @@ struct DonkeyLikeCreationNetData {
 - (void)reactToBeingHit;
 - (void)die:(id)arg1;
 - (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
-- (unsigned short)maxHealth;
-- (void)drawSubClassStuff:(float)arg1
-         projectionMatrix:(union _GLKMatrix4)arg2
-          modelViewMatrix:(union _GLKMatrix4)arg3;
-- (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)setupMatrices:(Vector2)arg1 dt:(float)arg2;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
-- (void)remoteCreationDataUpdate:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (void)doDonkeyLikeRemoteUpdate:(struct DonkeyLikeUpdateNetData)arg1;
+- (uint16_t)maxHealth;
+- (void)drawSubClassStuff:(float)dt
+         projectionMatrix:(GLKMatrix4)projectionMatrix
+          modelViewMatrix:(GLKMatrix4)modelViewMatrix;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)setupMatrices:(Vector2)renderPos dt:(float)dt;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)doDonkeyLikeRemoteUpdate:(DonkeyLikeUpdateNetData)updateNetData;
 - (void)dealloc;
-- (unsigned long long)creationDataStructSize;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (struct DonkeyLikeUpdateNetData)donkeyLikeUpdateNetDataForClient:(id)arg1;
-- (struct DonkeyLikeCreationNetData)donkeyLikeCreationNetDataForClient:(id)arg1;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-            isAdult:(BOOL)arg6
-          wasPlaced:(BOOL)arg7
-     placedByClient:(id)arg8;
-- (int)foodPlantType;
+- (uint64_t)creationDataStructSize;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (DonkeyLikeUpdateNetData)donkeyLikeUpdateNetDataForClient:(NSString*)clientIDToSendTo;
+- (DonkeyLikeCreationNetData)donkeyLikeCreationNetDataForClient:(NSString*)clientIDToSendTo;
+- (DonkeyLike*)initWithWorld:(World*)world_
+                dynamicWorld:(DynamicWorld*)dynamicWorld
+                       cache:(CPCache*)cache_
+                     netData:(NSData*)netData;
+- (DonkeyLike*)initWithWorld:(World*)world_
+                dynamicWorld:(DynamicWorld*)dynamicWorld
+                    saveDict:(NSDictionary*)saveDict
+                       cache:(CPCache*)cache_;
+- (DonkeyLike*)initWithWorld:(World*)world_
+                dynamicWorld:(DynamicWorld*)dynamicWorld_
+                  atPosition:(intpair)pos_
+                       cache:(CPCache*)cache_
+                    saveDict:(NSDictionary*)saveDict
+                     isAdult:(BOOL)isAdult
+                   wasPlaced:(BOOL)wasPlaced
+              placedByClient:(NSString*)clientId;
+- (PlantType)foodPlantType;
 - (void)loadDerivedStuff;
 
 @end
