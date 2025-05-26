@@ -13,48 +13,48 @@
 
 @property float availableFood; // @synthesize availableFood;
 - (void)removeFromMacroBlock;
-- (int)addForegroundDrawQuadData:(float*)arg1
-                       fromIndex:(int)arg2
-                     forMacroPos:(intpair)arg3;
-- (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)droppedItemType;
-- (void)setNeedsRemoved:(BOOL)arg1;
+- (int)addForegroundDrawQuadData:(float*)buffer
+                       fromIndex:(int)index
+                     forMacroPos:(intpair)macroPos;
+- (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)macroPos;
+- (ItemType)droppedItemType;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
 - (int)numberOfOccupiedTilesBelow;
-- (void)setGatherProgress:(int)arg1 forTile:(intpair)arg2;
-- (int)tileHarvested:(intpair)arg1
-          removeBlockhead:(id)arg2
-    correctToolMultiplier:(int)arg3;
-- (int)gatherProgressForTile:(intpair)arg1;
-- (BOOL)isRequiredSoilType:(int)arg1;
-- (int)plantType;
-- (BOOL)tileIsKindOfSelf:(Tile*)arg1;
+- (void)setGatherProgress:(int)newGatherProgress forTile:(intpair)tilePos;
+- (int)tileHarvested:(intpair)tilePos
+          removeBlockhead:(Blockhead*)removeBlockhead
+    correctToolMultiplier:(int)correctToolMultiplier;
+- (int)gatherProgressForTile:(intpair)tilePos;
+- (BOOL)isRequiredSoilType:(TileType)type;
+- (PlantType)plantType;
+- (BOOL)tileIsKindOfSelf:(Tile*)tile;
 - (void)dieOfOldAge;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (BOOL)isGrowingInCompost;
 - (PlantCreationNetData)plantCreationNetData;
 - (void)dealloc;
-- (void)remoteUpdate:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                     saveDict:(id)arg3
-                        cache:(id)arg4
-     treeDensityNoiseFunction:(id)arg5
-    seasonOffsetNoiseFunction:(id)arg6;
-- (id)initWithWorld:(id)arg1
-                 dynamicWorld:(id)arg2
-                   atPosition:(intpair)arg3
-                        cache:(id)arg4
-                   maxAgeGene:(unsigned short)arg5
-               growthRateGene:(unsigned short)arg6
-     treeDensityNoiseFunction:(id)arg7
-    seasonOffsetNoiseFunction:(id)arg8
-                   adultPlant:(BOOL)arg9;
+- (void)remoteUpdate:(NSData*)netData;
+- (NSMutableDictionary*)getSaveDict;
+- (VinePlant*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                      cache:(CPCache*)cache_
+                    netData:(NSData*)netData;
+- (VinePlant*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld
+                     saveDict:(NSDictionary*)saveDict
+                        cache:(CPCache*)cache_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
+- (VinePlant*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld_
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+                   maxAgeGene:(int16_t)maxHeight_
+               growthRateGene:(int16_t)growthRate_
+     treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
+    seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+                   adultPlant:(BOOL)adultPlant;
 - (void)initSubDerivedItems;
-- (int)objectType;
+- (DynamicObjectType)objectType;
 
 @end
