@@ -20,24 +20,24 @@ struct NoiseFunctionStruct {
 }
 
 - (void)dealloc;
-- (double)getX:(double)arg1 Y:(double)arg2 Z:(double)arg3 octaves:(int)arg4;
-- (double)getX:(double)arg1 Y:(double)arg2 octaves:(int)arg3;
-- (id)initWithFrequencyX:(int)arg1
-              frequencyY:(int)arg2
-              frequencyZ:(int)arg3
-               amplitude:(double)arg4
-                    seed:(int)arg5
-                tileable:(BOOL)arg6
-                    loop:(BOOL)arg7
-             persistance:(double)arg8;
-- (id)initWithFrequencyX:(int)arg1
-              frequencyY:(int)arg2
-              frequencyZ:(int)arg3
-               amplitude:(double)arg4
-                    seed:(int)arg5
-               tileableX:(BOOL)arg6
-               tileableY:(BOOL)arg7
-                    loop:(BOOL)arg8
-             persistance:(double)arg9;
+- (double)getX:(double)x Y:(double)y Z:(double)z octaves:(int)octaves;
+- (double)getX:(double)x Y:(double)y octaves:(int)octaves;
+- (NoiseFunction*)initWithFrequencyX:(int)frequencyX
+                          frequencyY:(int)frequencyY
+                          frequencyZ:(int)frequencyZ
+                           amplitude:(double)amplitude
+                                seed:(int)seed
+                            tileable:(BOOL)tileable
+                                loop:(BOOL)loop
+                         persistance:(double)persistance;
+- (NoiseFunction*)initWithFrequencyX:(int)frequencyX
+                          frequencyY:(int)frequencyY
+                          frequencyZ:(int)frequencyZ
+                           amplitude:(double)amplitude
+                                seed:(int)seed
+                           tileableX:(BOOL)tileableX
+                           tileableY:(BOOL)tileableY
+                                loop:(BOOL)loop
+                         persistance:(double)persistance;
 
 @end
