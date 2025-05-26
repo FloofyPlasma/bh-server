@@ -11,45 +11,45 @@
   int heightRadius;
 }
 
-- (void)setHeightRadius:(int)arg1;
-- (void)setWidthRadius:(int)arg1;
+- (void)setHeightRadius:(int)heightRadius_;
+- (void)setWidthRadius:(int)widthRadius_;
 - (int)heightRadius;
 - (int)widthRadius;
 - (BOOL)occupiesForegroundContents;
-- (void)setNeedsRemoved:(BOOL)arg1;
-- (BOOL)canBeUsedByBlockhead:(id)arg1;
-- (void)setLandOwnerID:(id)arg1 name:(id)arg2;
-- (id)landOwnerName;
-- (id)landOwnerID;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
+- (BOOL)canBeUsedByBlockhead:(Blockhead*)blockhead;
+- (void)setLandOwnerID:(NSString*)newID name:(NSString*)newName;
+- (NSString*)landOwnerName;
+- (NSString*)landOwnerID;
 - (BOOL)isPaintable;
-- (int)interactionRenderItemType;
-- (id)actionTitle;
-- (id)title;
-- (int)destroyItemType;
-- (void)loadRemoteUpdateDataDict:(id)arg1;
-- (id)netDataExtraDataDict;
+- (ItemType)interactionRenderItemType;
+- (NSString*)actionTitle;
+- (NSString*)title;
+- (ItemType)destroyItemType;
+- (void)loadRemoteUpdateDataDict:(NSDictionary*)remoteUpdateDataDict;
+- (NSMutableDictionary*)netDataExtraDataDict;
 - (void)dealloc;
-- (id)getSaveDict;
+- (NSMutableDictionary*)getSaveDict;
 - (BOOL)isSignSubclass;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (unsigned short)interactionObjectType;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               item:(id)arg5
-            flipped:(BOOL)arg6
-           saveDict:(id)arg7
-     placedByClient:(id)arg8
-         clientName:(id)arg9;
-- (int)objectType;
+- (OwnershipSign*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                          cache:(CPCache*)cache_
+                        netData:(NSData*)netData;
+- (OwnershipSign*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                       saveDict:(NSDictionary*)saveDict
+                          cache:(CPCache*)cache_;
+- (uint16_t)interactionObjectType;
+- (OwnershipSign*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                     atPosition:(intpair)pos_
+                          cache:(CPCache*)cache_
+                           item:(InventoryItem*)item
+                        flipped:(BOOL)flipped_
+                       saveDict:(NSDictionary*)saveDict
+                 placedByClient:(NSString*)clientId
+                     clientName:(NSString*)clientName;
+- (DynamicObjectType)objectType;
 - (void)updateText;
 
 @end
