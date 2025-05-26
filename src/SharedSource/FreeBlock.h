@@ -34,8 +34,8 @@ struct FreeblockCreationNetData {
 
 @interface FreeBlock : DynamicObject {
   int itemType;
-  unsigned short dataA;
-  unsigned short dataB;
+  uint16_t dataA;
+  uint16_t dataB;
   BOOL hovers;
   float bounceTimer;
   float fallSpeed;
@@ -60,16 +60,16 @@ struct FreeblockCreationNetData {
   int paintColor;
 }
 
-+ (id)creationNetDataForFreeblockAtPosition:(intpair)arg1
-                                     ofType:(int)arg2
-                                      dataA:(unsigned short)arg3
-                                      dataB:(unsigned short)arg4
-                                   subItems:(id)arg5
-                      dynamicObjectSaveDict:(id)arg6
-                                     hovers:(BOOL)arg7
-                          priorityBlockhead:(id)arg8
-                                  soundType:(int)arg9
-                      creationSoundPlayTime:(float)arg10;
++ (NSData*)creationNetDataForFreeblockAtPosition:(intpair)pos
+                                          ofType:(ItemType)itemType
+                                           dataA:(uint16_t)dataA
+                                           dataB:(uint16_t)dataB
+                                        subItems:(NSArray*)subItems
+                           dynamicObjectSaveDict:(NSDictionary*)dynamicObjectSaveDict
+                                          hovers:(BOOL)hovers
+                               priorityBlockhead:(Blockhead*)priorityBlockhead
+                                       soundType:(int)soundType
+                           creationSoundPlayTime:(float)creationNetDataForFreeblockAtPosition;
 @property int soundType; // @synthesize soundType;
 @property float creationSoundPlayTime; // @synthesize creationSoundPlayTime;
 @property BOOL hovers; // @synthesize hovers;
@@ -78,53 +78,53 @@ struct FreeblockCreationNetData {
 @property (readonly)
     Blockhead* priorityBlockhead; // @synthesize priorityBlockhead;
 @property (readonly) NSArray* subItems; // @synthesize subItems;
-@property unsigned short dataB; // @synthesize dataB;
-@property unsigned short dataA; // @synthesize dataA;
+@property uint16_t dataB; // @synthesize dataB;
+@property uint16_t dataA; // @synthesize dataA;
 @property int itemType; // @synthesize itemType;
 - (BOOL)shouldSaveEveryChangeInPosition;
 - (void)priorityBlockheadCannotPickup;
 - (BOOL)falling;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (void)hitLava;
-- (void)remoteUpdate:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
+- (void)remoteUpdate:(NSData*)netData;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
 - (void)removeFromMacroBlock;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-                   dynamicWorld:(id)arg2
-                          cache:(id)arg3
-                        netData:(id)arg4
-    avoidFreeblockDupeObjectIds:(std::list<unsigned long long>*)arg5;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (void)updatePosition:(intpair)arg1;
-- (id)initWithWorld:(id)arg1
-             dynamicWorld:(id)arg2
-               atPosition:(intpair)arg3
-                   ofType:(int)arg4
-                    dataA:(unsigned short)arg5
-                    dataB:(unsigned short)arg6
-                 subItems:(id)arg7
-    dynamicObjectSaveDict:(id)arg8
-                    cache:(id)arg9
-                   hovers:(BOOL)arg10
-        priorityBlockhead:(id)arg11;
-- (int)objectType;
+- (FreeBlock*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                          cache:(CPCache*)cache_
+                        netData:(NSData*)netData
+    avoidFreeblockDupeObjectIds:(std::list<uint64_t>*)avoidFreeblockDupeObjectIds;
+- (FreeBlock*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                      cache:(CPCache*)cache_
+                    netData:(NSData*)netData;
+- (FreeBlock*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                   saveDict:(NSDictionary*)saveDict
+                      cache:(CPCache*)cache_;
+- (void)updatePosition:(intpair)newPosition;
+- (FreeBlock*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                 atPosition:(intpair)pos_
+                     ofType:(ItemType)itemType_
+                      dataA:(uint16_t)dataA_
+                      dataB:(uint16_t)dataB_
+                   subItems:(NSDictionary*)subItems_
+      dynamicObjectSaveDict:(NSDictionary*)dynamicObjectSaveDict_
+                      cache:(CPCache*)cache_
+                     hovers:(BOOL)hovers_
+          priorityBlockhead:(Blockhead*)priorityBlockhead_;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedObjects;
 
 @end
