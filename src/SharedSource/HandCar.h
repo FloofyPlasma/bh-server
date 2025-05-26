@@ -21,43 +21,44 @@ struct HandCarCreationNetData {
 }
 
 - (BOOL)connectsToOtherCars;
-- (void)removeRider:(id)arg1;
+- (void)removeRider:(Blockhead*)blockhead;
 - (int)maxNumberOfRiders;
 - (BOOL)requiresFuel;
 - (int)itemType;
 - (float)riderAnimationTimer;
-- (void)setTargetVelocity:(Vector2)arg1;
-- (GLKMatrix4)riderBodyMatrixForBlockhead:(id)arg1 cameraX:(float)arg2;
-- (Vector)riderPosForBlockhead:(id)arg1;
-- (Vector2)cameraPosForBlockhead:(id)arg1;
+- (void)setTargetVelocity:(Vector2)targetVelocity;
+- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)blockhead
+                                  cameraX:(float)cameraX;
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead;
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead;
 - (Vector2)renderPos;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)remoteUpdate:(id)arg1;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)remoteUpdate:(NSData*)netData;
 - (void)dealloc;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-     placedByClient:(id)arg6;
-- (int)objectType;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
+- (HandCar*)initWithWorld:(World*)world_
+             dynamicWorld:(DynamicWorld*)dynamicWorld
+                    cache:(CPCache*)cache_
+                  netData:(NSData*)netData;
+- (HandCar*)initWithWorld:(World*)world_
+             dynamicWorld:(DynamicWorld*)dynamicWorld
+                 saveDict:(NSDictionary*)saveDict
+                    cache:(CPCache*)cache_;
+- (HandCar*)initWithWorld:(World*)world_
+             dynamicWorld:(DynamicWorld*)dynamicWorld
+               atPosition:(intpair)pos
+                    cache:(CPCache*)cache_
+                 saveDict:(NSDictionary*)saveDict
+           placedByClient:(NSString*)clientId;
+- (DynamicObjectType)objectType;
 - (void)loadDerivedStuff;
 
 @end
