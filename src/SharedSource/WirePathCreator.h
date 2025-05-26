@@ -8,7 +8,7 @@ struct WirePathTileProperties {
   int parentIndex;
 };
 
-@class World;
+@class World, DynamicObject;
 
 @interface WirePathCreator : NSObject {
   World* world;
@@ -20,9 +20,9 @@ struct WirePathTileProperties {
   std::map<int, int> derivedTileIndices;
 }
 
-- (int)findAndSubtractAllPowerUpTo:(unsigned short)arg1 forUser:(id)arg2;
-- (WirePathTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
+- (int)findAndSubtractAllPowerUpTo:(uint16_t)requiredPower forUser:(DynamicObject*)userObject;
+- (WirePathTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)worldIndex;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1;
+- (WirePathCreator*)initWithWorld:(World*)world_;
 
 @end
