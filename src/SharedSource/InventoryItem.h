@@ -525,8 +525,8 @@ struct ItemSaveData {
 
 @interface InventoryItem : NSObject {
   int itemType;
-  unsigned short dataA;
-  unsigned short dataB;
+  uint16_t dataA;
+  uint16_t dataB;
   NSArray* subItems;
   unsigned char selectedSubItemIndex;
   NSDictionary* dynamicObjectSaveDict;
@@ -534,21 +534,21 @@ struct ItemSaveData {
 
 @property (readonly)
     NSDictionary* dynamicObjectSaveDict; // @synthesize dynamicObjectSaveDict;
-@property unsigned short dataB; // @synthesize dataB;
-@property unsigned short dataA; // @synthesize dataA;
+@property uint16_t dataB; // @synthesize dataB;
+@property uint16_t dataA; // @synthesize dataA;
 @property unsigned char
     selectedSubItemIndex; // @synthesize selectedSubItemIndex;
 @property (readonly) NSArray* subItems; // @synthesize subItems;
 @property (readonly) int itemType; // @synthesize itemType;
-- (id)subItemSlotDataAtIndex:(int)arg1;
-- (void)updateSubItemSlot:(id)arg1 atIndex:(int)arg2;
-- (id)saveData;
-- (id)initWithSaveData:(id)arg1;
+- (NSArray*)subItemSlotDataAtIndex:(int)subIndex;
+- (void)updateSubItemSlot:(NSArray*)subItemSaveData atIndex:(int)subIndex;
+- (NSData*)saveData;
+- (InventoryItem*)initWithSaveData:(NSData*)saveData;
 - (void)dealloc;
-- (id)initWithType:(int)arg1
-                    dataA:(unsigned short)arg2
-                    dataB:(unsigned short)arg3
-                 subItems:(id)arg4
-    dynamicObjectSaveDict:(id)arg5;
+- (InventoryItem*)initWithType:(ItemType)itemType_
+                         dataA:(uint16_t)dataA_
+                         dataB:(uint16_t)dataB_
+                      subItems:(NSArray*)subItems_
+         dynamicObjectSaveDict:(NSDictionary*)dynamicObjectSaveDict_;
 
 @end
