@@ -61,71 +61,71 @@ struct DodoCreationNetData {
 }
 
 - (BOOL)riderRidesWithArmsDown;
-- (void)blockheadUnloaded:(id)arg1;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
 - (BOOL)jumpsOnSwipe;
-- (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
-- (void)removeRider:(id)arg1;
-- (void)addRider:(id)arg1;
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType;
+- (void)removeRider:(Blockhead*)blockhead;
+- (void)addRider:(Blockhead*)blockhead;
 - (int)rideDirection;
-- (void)setTargetVelocity:(Vector2)arg1;
-- (float)riderBodyYRotationForBlockhead:(id)arg1;
-- (Vector2)cameraPosForBlockhead:(id)arg1;
-- (Vector)riderPosForBlockhead:(id)arg1;
-- (id)cantBeCapturedTipStringForBlockhead:(id)arg1 withItemType:(int)arg2;
-- (BOOL)canBeCapturedByBlockhead:(id)arg1 withItemType:(int)arg2;
-- (id)breedString;
+- (void)setTargetVelocity:(Vector2)targetVelocity;
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead;
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead;
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead;
+- (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+- (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+- (NSString*)breedString;
 - (void)successfulTame;
 - (void)reactToBeingFed;
 - (Vector2)renderPos;
-- (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
 - (void)reactToBeingHit;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
-- (unsigned short)maxHealth;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
+- (uint16_t)maxHealth;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (void)createItemDropsForDeath;
 - (void)jumpAndCluck;
-- (void)die:(id)arg1;
-- (void)draw:(float)arg1
-    projectionMatrix:(union _GLKMatrix4)arg2
-     modelViewMatrix:(union _GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
+- (void)die:(Blockhead*)killBlockhead_;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
 - (int)getRandomDirection;
-- (unsigned long long)creationDataStructSize;
-- (void)remoteCreationDataUpdate:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (void)doRemoteUpdate:(struct DodoUpdateNetData)arg1;
+- (uint64_t)creationDataStructSize;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)doRemoteUpdate:(DodoUpdateNetData)updateNetData;
 - (void)dealloc;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (struct DodoUpdateNetData)dodoUpdateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-            isAdult:(BOOL)arg6
-          wasPlaced:(BOOL)arg7
-     placedByClient:(id)arg8;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (DodoUpdateNetData)dodoUpdateNetDataForClient:(NSString*)clientIDToSendTo;
+- (NSMutableDictionary*)getSaveDict;
+- (Dodo*)initWithWorld:(World*)world_
+          dynamicWorld:(DynamicWorld*)dynamicWorld
+                 cache:(CPCache*)cache_
+               netData:(NSData*)netData;
+- (Dodo*)initWithWorld:(World*)world_
+          dynamicWorld:(DynamicWorld*)dynamicWorld
+              saveDict:(NSDictionary*)saveDict
+                 cache:(CPCache*)cache_;
+- (Dodo*)initWithWorld:(World*)world_
+          dynamicWorld:(DynamicWorld*)dynamicWorld_
+            atPosition:(intpair)pos_
+                 cache:(CPCache*)cache_
+              saveDict:(NSDictionary*)saveDict
+               isAdult:(BOOL)isAdult
+             wasPlaced:(BOOL)wasPlaced
+        placedByClient:(NSString*)clientId;
 - (void)loadDerivedStuff;
 - (int)getNamesArrayCount;
-- (id*)getNamesArray;
-- (int)captureRequiredItemType;
-- (int)capturedItemType;
-- (int)foodItemType;
-- (id)speciesName;
+- (NSString**)getNamesArray;
+- (ItemType)captureRequiredItemType;
+- (ItemType)capturedItemType;
+- (ItemType)foodItemType;
+- (NSString*)speciesName;
 - (float)maxAge;
-- (int)npcType;
+- (NPCType)npcType;
 
 @end
