@@ -9,26 +9,26 @@
   int tileType;
 }
 
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
-                                                              yPos:(int)arg2;
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX
+                                                              yPos:(int)macroY;
 - (Vector)lightPos;
 - (int)lightGlowQuadCount;
-- (void)setNeedsRemoved:(BOOL)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
 - (void)removeFromMacroBlock;
 - (void)dealloc;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               tile:(Tile*)arg5;
+- (NSMutableDictionary*)getSaveDict;
+- (GlowBlock*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                   saveDict:(NSDictionary*)saveDict
+                      cache:(CPCache*)cache_;
+- (GlowBlock*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                   saveDict:(NSDictionary*)saveDict
+                      cache:(CPCache*)cache_
+                       tile:(Tile*)tile_;
 - (Vector)getLightRGB;
-- (int)objectType;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedItems;
 
 @end
