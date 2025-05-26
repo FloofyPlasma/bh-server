@@ -15,7 +15,7 @@ enum TipType {
   TIP_TYPE_DYING = 0x9,
 };
 
-@class World;
+@class World, Blockhead;
 
 @interface TipManager : NSObject {
   World* world;
@@ -26,18 +26,18 @@ enum TipType {
   NSString* tutorialTipText;
 }
 
-+ (id)instance;
++ (TipManager*)instance;
 - (void)displaySecondBlockheadTipIfGoodTime;
-- (void)updateTipForBlockhead:(id)arg1 severityLevel:(int)arg2;
-- (void)setTutorialTipText:(id)arg1;
+- (void)updateTipForBlockhead:(Blockhead*)blockhead severityLevel:(int)severityLevel;
+- (void)setTutorialTipText:(NSString*)tip;
 - (Vector)tipColor;
-- (id)currentTip;
-- (void)update:(float)arg1;
-- (void)displayTip:(id)arg1
-              withTimeOut:(float)arg2
-    displayEvenIfDisabled:(BOOL)arg3
-                 tipColor:(Vector)arg4;
+- (NSString*)currentTip;
+- (void)update:(float)dt;
+- (void)displayTip:(NSString*)tip
+              withTimeOut:(float)displayTip
+    displayEvenIfDisabled:(BOOL)displayEvenIfDisabled
+                 tipColor:(Vector)tipColor_;
 - (void)reset;
-- (void)setWorld:(id)arg1;
+- (void)setWorld:(World*)world_;
 
 @end
