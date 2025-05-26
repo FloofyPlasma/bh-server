@@ -1,14 +1,13 @@
-
-
 #import <Foundation/Foundation.h>
 
+#import "InventoryItem.h"
 #import "Vector2.h"
 
 @class NSString;
 
 @protocol CraftProgressCraftingObject <NSObject>
-- (int)hurryCostForCraftTimeRemaining:(int)arg1 totalCraftTime:(int)arg2;
-- (void)hurryCompletion:(int)arg1;
+- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime;
+- (void)hurryCompletion:(int)hurryCost;
 - (void)abortCraft;
 - (BOOL)isDoubleHeight;
 - (Vector2)floatPos;
@@ -17,8 +16,8 @@
 @optional
 - (void)craftProgressUICompleteButtonTapped;
 - (BOOL)craftProgressUIRequiresCollectButtonWhenCompleted;
-- (void)addToFuelForItem:(int)arg1;
-- (int*)fuelTypes;
+- (void)addToFuelForItem:(ItemType)itemType;
+- (ItemType*)fuelTypes;
 - (int)fuelCount;
 - (int)fuelTypesCount;
 - (unsigned short)availableElectricity;
