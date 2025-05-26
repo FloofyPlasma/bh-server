@@ -5,7 +5,7 @@
 
 #import "MJMath.h"
 
-@class Blockhead, CPTexture2D, ClownFish, MJSound, Shader, World;
+@class Blockhead, CPTexture2D, ClownFish, MJSound, Shader, World, CPCache;
 
 @interface FishingRod : NSObject {
   World* world;
@@ -37,24 +37,24 @@
 @property BOOL hookInAir; // @synthesize hookInAir;
 @property float castAnimationProgress; // @synthesize castAnimationProgress;
 @property BOOL isInCastingAnimation; // @synthesize isInCastingAnimation;
-- (void)blockheadUnloaded:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
-- (id)hookedFish;
-- (void)setHookedFish:(id)arg1;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
+- (void)setPaused:(BOOL)paused;
+- (ClownFish*)hookedFish;
+- (void)setHookedFish:(ClownFish*)hookedFish_;
 - (Vector2)hookedFishDirection;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)directionalSwipe:(Vector2)arg1;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)directionalSwipe:(Vector2)vec;
 - (BOOL)isCasting;
 - (Vector2)cameraPos;
 @property BOOL valid;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1 blockhead:(id)arg2 cache:(id)arg3;
+- (id)initWithWorld:(World*)world_ blockhead:(Blockhead*)blockhead_ cache:(CPCache*)cache_;
 
 @end
