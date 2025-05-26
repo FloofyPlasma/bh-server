@@ -31,85 +31,84 @@ struct ChestNetData {
   int chestType;
   BOOL inventoryNeedsToBeSentWithUpdate;
   int shelfRenderItems[4];
-  unsigned short shelfItemDataBs[4];
+  uint16_t shelfItemDataBs[4];
 }
 
 @property (readonly) BOOL inventoryChanged; // @synthesize inventoryChanged;
-- (BOOL)removeItemIfAvailable:(int)arg1;
+- (BOOL)removeItemIfAvailable:(ItemType)itemType;
 - (BOOL)occupiesNormalContents;
-- (id)inventoryItems;
+- (NSArray*)inventoryItems;
 - (void)loadInventoryItemsFromDiskIfNeeded;
 - (BOOL)isPaintable;
-- (void)paint:(unsigned short)arg1;
-- (int)interactionRenderItemType;
-- (int)addDodoEggDrawQuadData:(float*)arg1 fromIndex:(int)arg2;
+- (void)paint:(uint16_t)colorIndex;
+- (ItemType)interactionRenderItemType;
+- (int)addDodoEggDrawQuadData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDodoEggCount;
-- (int)addDrawItemQuadData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawItemQuadData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDrawItemQuadCount;
-- (int)addDrawQuadData:(float*)arg1
-             fromIndex:(int)arg2
-           forMacroPos:(intpair)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
-- (void)startInteractionWithBlockhead:(id)arg1;
+- (int)addDrawQuadData:(float*)buffer
+             fromIndex:(int)index
+           forMacroPos:(intpair)macroPos;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos;
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index;
+- (void)startInteractionWithBlockhead:(Blockhead*)blockhead;
 - (int)staticGeometryDrawCubeCount;
 - (void)removeFromMacroBlock;
-- (void)updatePosition:(intpair)arg1;
-- (BOOL)canBeUsedByBlockhead:(id)arg1;
-- (int)chestType;
+- (void)updatePosition:(intpair)newPosition;
+- (BOOL)canBeUsedByBlockhead:(Blockhead*)blockhead;
+- (ChestType)chestType;
 - (BOOL)requiresHumanInteraction;
-- (id)actionTitle;
-- (id)title;
-- (int)destroyItemType;
-- (void)setNeedsRemoved:(BOOL)arg1;
-- (void)remove:(id)arg1;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
-- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (NSString*)actionTitle;
+- (NSString*)title;
+- (ItemType)destroyItemType;
+- (void)setNeedsRemoved:(BOOL)newNeedsRemoved;
+- (void)remove:(Blockhead*)removeBlockhead;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (void)contentsDidChange;
-- (int)moveInventoryItemsFromArray:(id)arg1 toIndex:(int)arg2 count:(int)arg3;
-- (int)moveInventoryItemsFromArray:(id)arg1
-                           toIndex:(int)arg2
-                             count:(int)arg3
-                   assignedIndexes:(std::set<int>*)arg4;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)remoteUpdate:(id)arg1;
-- (unsigned short)interactionObjectType;
-- (id)getSaveDictIncludingInventory:(BOOL)arg1;
-- (id)getSaveDict;
+- (int)moveInventoryItemsFromArray:(NSMutableArray*)fromItemSlot toIndex:(int)toIndex count:(int)count;
+- (int)moveInventoryItemsFromArray:(NSMutableArray*)fromItemSlot
+                           toIndex:(int)toIndex
+                             count:(int)count
+                   assignedIndexes:(std::set<int>*)assignedIndexes;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)remoteUpdate:(NSData*)netData;
+- (uint16_t)interactionObjectType;
+- (NSMutableDictionary*)getSaveDictIncludingInventory:(BOOL)includeInventory;
+- (NSMutableDictionary*)getSaveDict;
 - (void)dealloc;
-- (id)updateNetDataForClient:(id)arg1;
-- (void)remoteInventoryDataRecieved:(id)arg1;
-- (void)updateInventoryWithData:(id)arg1;
-- (id)inventoryDataAllowingEmpty:(BOOL)arg1;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               item:(id)arg5
-            flipped:(BOOL)arg6
-           saveDict:(id)arg7
-     placedByClient:(id)arg8
-         clientName:(id)arg9;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (void)remoteInventoryDataRecieved:(NSData*)remoteInventoryData;
+- (void)updateInventoryWithData:(NSData*)inventoryData;
+- (NSData*)inventoryDataAllowingEmpty:(BOOL)allowEmptyInventory;
+- (Chest*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld
+                  cache:(CPCache*)cache_
+                netData:(NSData*)netData;
+- (Chest*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld
+               saveDict:(NSDictionary*)saveDict
+                  cache:(CPCache*)cache_;
+- (Chest*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld
+             atPosition:(intpair)pos
+                  cache:(CPCache*)cache_
+                   type:(ItemType)itemType_
+               saveDict:(NSDictionary*)saveDict
+         placedByClient:(NSString*)clientId
+             clientName:(NSString*)clientName;
 - (void)initSubDerivedItems;
-- (int)objectType;
+- (DynamicObjectType)objectType;
 
 @end
