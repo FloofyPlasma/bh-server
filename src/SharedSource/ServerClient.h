@@ -11,7 +11,7 @@
   NSString* clientID;
   BHServer* server;
   NSMutableIndexSet* requestedBlockIndices;
-  std::map<unsigned int, unsigned char> requestedBlockRequestTypes;
+  std::map<uint32_t, uint8_t> requestedBlockRequestTypes;
   NSMutableIndexSet* wiredBlocks;
   NSMutableIndexSet* wiredDynamicObjects;
   NSMutableDictionary* creationArraysToSend;
@@ -24,7 +24,7 @@
   float timeSinceLastHeartbeatRequest;
   int lightBlockIndex;
   NSMutableArray* fillIndices;
-  std::map<unsigned int, std::set<unsigned int>*>* worldIndicesContainingTamedAnimals;
+  std::map<uint32_t, std::set<uint32_t>*>* worldIndicesContainingTamedAnimals;
   BOOL paused;
   BOOL connected;
   BOOL isAdmin;
@@ -36,8 +36,8 @@
 @property (readonly) NSMutableIndexSet* allLightBlockIndices; // @synthesize allLightBlockIndices;
 @property (readonly)
     NSMutableIndexSet* foundItemsList; // @synthesize foundItemsList;
-@property std::map<unsigned int, std::set<unsigned int>*>* worldIndicesContainingTamedAnimals; // @synthesize
-                                                                                               // worldIndicesContainingTamedAnimals;
+@property std::map<uint32_t, std::set<uint32_t>*>* worldIndicesContainingTamedAnimals; // @synthesize
+                                                                                       // worldIndicesContainingTamedAnimals;
 @property (readonly) int lightBlockIndex; // @synthesize lightBlockIndex;
 @property float
     timeSinceLastHeartbeatRequest; // @synthesize timeSinceLastHeartbeatRequest;
@@ -53,34 +53,34 @@
 
 @property BOOL connected;
 - (void)saveLightBlockIndices;
-- (id)getAndRemoveAllRecieptDataForMacroPos:(intpair)arg1 world:(id)arg2;
-- (void)addFillRequest:(unsigned int)arg1;
+- (NSArray*)getAndRemoveAllRecieptDataForMacroPos:(intpair)macroPos world:(World*)world;
+- (void)addFillRequest:(uint32_t)fillIndex;
 - (void)sendAllObjectData;
-- (void)addRemovalObjectDataToSend:(id)arg1
-                            ofType:(unsigned char)arg2
-                          objectID:(unsigned long long)arg3;
-- (void)addUpdateObjectDataToSend:(id)arg1
-                           ofType:(unsigned char)arg2
-                         reliable:(BOOL)arg3;
-- (void)addCreationDataUpdateObjectDataToSend:(id)arg1
-                                       ofType:(unsigned char)arg2;
-- (void)addCreationObjectDataToSend:(id)arg1
-                             ofType:(unsigned char)arg2
-                           objectID:(unsigned long long)arg3;
-- (void)unwireDynamicObject:(unsigned long long)arg1;
-- (void)wireDynamicObject:(unsigned long long)arg1;
-- (BOOL)dynamicObjectIsWired:(unsigned long long)arg1;
-- (void)blockRemoved:(int)arg1;
-- (BOOL)createIfNotCreatedForBlockRequest:(int)arg1;
-- (void)removeBlockRequest:(int)arg1;
-- (BOOL)blockIsRequested:(int)arg1;
-- (BOOL)blockIsWired:(int)arg1;
-- (void)requestForBlock:(ClientMacroBlockRequest)arg1;
+- (void)addRemovalObjectDataToSend:(NSData*)netData
+                            ofType:(uint8_t)dynamicObjectType
+                          objectID:(uint64_t)objectID;
+- (void)addUpdateObjectDataToSend:(NSData*)netData
+                           ofType:(uint8_t)dynamicObjectType
+                         reliable:(BOOL)reliable;
+- (void)addCreationDataUpdateObjectDataToSend:(NSData*)netData
+                                       ofType:(uint8_t)dynamicObjectType;
+- (void)addCreationObjectDataToSend:(NSData*)netData
+                             ofType:(uint8_t)dynamicObjectType
+                           objectID:(uint64_t)objectID;
+- (void)unwireDynamicObject:(uint64_t)uniqueID;
+- (void)wireDynamicObject:(uint64_t)uniqueID;
+- (BOOL)dynamicObjectIsWired:(uint64_t)uniqueID;
+- (void)blockRemoved:(int)macroIndex;
+- (BOOL)createIfNotCreatedForBlockRequest:(int)macroIndex;
+- (void)removeBlockRequest:(int)macroIndex;
+- (BOOL)blockIsRequested:(int)macroIndex;
+- (BOOL)blockIsWired:(int)macroIndex;
+- (void)requestForBlock:(ClientMacroBlockRequest)request;
 - (void)dealloc;
 - (void)clientReconnected;
-- (id)initWithClientID:(id)arg1
-                server:(id)arg2
-       lightBlockIndex:(int)arg3
-    lightBlockDatabase:(id)arg4;
+- (ServerClient*)initWithClientID:(NSString*)clientID_
+                           server:(BHServer*)server_
+                  lightBlockIndex:(int)lightBlockIndex_
+               lightBlockDatabase:(Database*)lightBlockDatabase_;
 
 @end
