@@ -30,41 +30,41 @@ struct RailCreationNetData {
 
 - (BOOL)occupiesForegroundContents;
 - (void)removeFromMacroBlock;
-- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDrawCubeCount;
-- (int)currentConfiguration;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
-- (void)remoteUpdate:(id)arg1;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
+- (RailConfiguration)currentConfiguration;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               type:(int)arg5
-     ownedByStation:(BOOL)arg6;
-- (int)objectType;
+- (Rail*)initWithWorld:(World*)world_
+          dynamicWorld:(DynamicWorld*)dynamicWorld
+                 cache:(CPCache*)cache_
+               netData:(NSData*)netData;
+- (Rail*)initWithWorld:(World*)world_
+          dynamicWorld:(DynamicWorld*)dynamicWorld
+              saveDict:(NSDictionary*)saveDict
+                 cache:(CPCache*)cache_;
+- (id)initWithWorld:(World*)world_
+       dynamicWorld:(DynamicWorld*)dynamicWorld
+         atPosition:(intpair)pos_
+              cache:(CPCache*)cache_
+               type:(ItemType)itemType_
+     ownedByStation:(BOOL)ownedByStation_;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedItems;
 - (void)updateRailConfiguration;
 
