@@ -12,7 +12,7 @@ struct YakUpdateNetData {
 struct YakCreationNetData {
   DonkeyLikeCreationNetData donkeyLikeCreationNetData;
   YakUpdateNetData yakUpdateNetData;
-};
+}; 
 
 @class CPTexture2D, DrawCube;
 
@@ -33,6 +33,8 @@ struct YakCreationNetData {
   float milk;
   float hair;
 }
+
+// test commit brbrbrbrbr
 
 - (BOOL)jumpsOnSwipe;
 - (void)createItemDropsForDeath;
