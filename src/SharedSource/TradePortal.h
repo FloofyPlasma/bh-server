@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+#import "CraftableItem.h"
 #import "InteractionObject.h"
 
 struct TradePortalNetData {
@@ -31,80 +32,80 @@ struct TradePortalNetData {
 @property (readonly)
     NSDictionary* localPriceOffsets; // @synthesize localPriceOffsets;
 - (BOOL)canBeUsedInExpertModeWhenNotOwned;
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
-                                                              yPos:(int)arg2;
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX
+                                                              yPos:(int)macroY;
 - (BOOL)occupiesNormalContents;
 - (int)interactionRenderItemType;
 - (void)randomizeLocalTradeOffsets;
 - (Vector)lightPos;
 - (int)lightGlowQuadCount;
 - (BOOL)takeItemsFromBlockheadForUpgradeToNextLevel;
-- (struct CraftableItem)upgradeCraftableItem;
-- (void)buyItem:(int)arg1 atTotalPrice:(int)arg2 count:(int)arg3;
-- (void)sellItem:(int)arg1
+- (CraftableItem)upgradeCraftableItem;
+- (void)buyItem:(ItemType)itemType atTotalPrice:(int)listedPrice count:(int)count;
+- (void)sellItem:(ItemType)itemType
        atTotalPrice:(int)arg2
-              count:(int)arg3
-    usageMultiplier:(float)arg4;
+              count:(int)count
+    usageMultiplier:(float)usageMultiplier;
 - (void)upgradeToNextLevel;
 - (void)removeFromMacroBlock;
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
-- (int)addDrawQuadData:(float*)arg1
-             fromIndex:(int)arg2
-           forMacroPos:(intpair)arg3;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos;
+- (int)addDrawQuadData:(float*)buffer
+             fromIndex:(int)index
+           forMacroPos:(intpair)macroPos;
 - (int)staticGeometryDrawCubeCount;
-- (void)setPaused:(BOOL)arg1;
-- (float)currentBlockheadUsageMultiplierForFirstItemOfType:(int)arg1;
-- (int)currentBlockheadCountOfInventoryItemsOfType:(int)arg1;
+- (void)setPaused:(BOOL)paused;
+- (float)currentBlockheadUsageMultiplierForFirstItemOfType:(ItemType)type;
+- (int)currentBlockheadCountOfInventoryItemsOfType:(ItemType)type;
 - (int)currentBlockheadCash;
 - (BOOL)requiresHumanInteraction;
-- (void)setWorkbenchChoiceUIOption:(int)arg1;
-- (id)thirdOptionTitle;
-- (id)secondOptionTitle;
-- (id)actionTitle;
-- (id)title;
-- (int)destroyItemType;
-- (void)remove:(id)arg1;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
+- (void)setWorkbenchChoiceUIOption:(int)option;
+- (NSString*)thirdOptionTitle;
+- (NSString*)secondOptionTitle;
+- (NSString*)actionTitle;
+- (NSString*)title;
+- (ItemType)destroyItemType;
+- (void)remove:(Blockhead*)removeBlockhead;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
 - (int)freeblockCreationItemType;
-- (void)setNeedsRemoved:(BOOL)arg1;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
 - (BOOL)isDoubleHeight;
-- (void)worldContentsChanged:(std::vector<intpair>*)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)remoteUpdate:(id)arg1;
-- (unsigned short)interactionObjectType;
-- (id)getSaveDict;
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)remoteUpdate:(NSData*)netData;
+- (uint16_t)interactionObjectType;
+- (NSMutableDictionary*)getSaveDict;
 - (void)dealloc;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               item:(id)arg5
-            flipped:(BOOL)arg6
-           saveDict:(id)arg7
-     placedByClient:(id)arg8
-         clientName:(id)arg9;
-- (void)loadPriceOffsets:(id)arg1;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (TradePortal*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld
+                        cache:(CPCache*)cache_
+                      netData:(NSData*)netData;
+- (TradePortal*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld
+                     saveDict:(NSDictionary*)saveDict
+                        cache:(CPCache*)cache_;
+- (TradePortal*)initWithWorld:(World*)world_
+                 dynamicWorld:(DynamicWorld*)dynamicWorld
+                   atPosition:(intpair)pos_
+                        cache:(CPCache*)cache_
+                         item:(InventoryItem*)item
+                      flipped:(BOOL)flipped_
+                     saveDict:(NSDictionary*)saveDict
+               placedByClient:(NSString*)clientId
+                   clientName:(NSString*)clientName;
+- (void)loadPriceOffsets:(NSDictionary*)savedOffsets;
 - (void)updatePortalLight;
 - (Vector)getLightRGB;
-- (int)objectType;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedItems;
 
 @end
