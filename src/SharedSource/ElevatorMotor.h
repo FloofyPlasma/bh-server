@@ -15,8 +15,8 @@ struct ElevatorMotorCreationNetData {
 
 @interface ElevatorMotor : DynamicObject <PowerUser> {
   int itemType;
-  unsigned short availableElectricity;
-  unsigned short clientPowerUsage;
+  uint16_t availableElectricity;
+  uint16_t clientPowerUsage;
   int minY;
   int maxY;
   float timeUntilNextPowerCheck;
@@ -29,42 +29,42 @@ struct ElevatorMotorCreationNetData {
 - (BOOL)hasRequiredPower;
 - (BOOL)isStorageDevice;
 - (void)removeFromMacroBlock;
-- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDrawCubeCount;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (void)remoteUpdate:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (id)updateNetDataForClient:(id)arg1;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (void)remoteUpdate:(NSData*)netData;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
 - (void)dealloc;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               type:(int)arg5
-           saveDict:(id)arg6
-     placedByClient:(id)arg7;
-- (int)objectType;
+- (NSMutableDictionary*)getSaveDict;
+- (ElevatorMotor*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                          cache:(CPCache*)cache_
+                        netData:(NSData*)netData;
+- (ElevatorMotor*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                       saveDict:(NSDictionary*)saveDict
+                          cache:(CPCache*)cache_;
+- (ElevatorMotor*)initWithWorld:(World*)world_
+                   dynamicWorld:(DynamicWorld*)dynamicWorld
+                     atPosition:(intpair)pos
+                          cache:(CPCache*)cache_
+                           type:(ItemType)itemType_
+                       saveDict:(NSDictionary*)saveDict
+                 placedByClient:(NSString*)clientId;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedItems;
 
 @end
