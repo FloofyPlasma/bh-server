@@ -75,70 +75,70 @@ struct SharkCreationNetData {
 - (BOOL)riderDPadShouldAllowUpDown;
 - (BOOL)riderRidesWithArmsDown;
 - (BOOL)jumpsOnSwipe;
-- (BOOL)blockheadCanRide:(id)arg1 usingItem:(int)arg2;
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType;
 - (float)minRidableAge;
-- (void)removeRider:(id)arg1;
-- (void)addRider:(id)arg1;
+- (void)removeRider:(Blockhead*)blockhead;
+- (void)addRider:(Blockhead*)blockhead;
 - (int)rideDirection;
-- (void)setTargetVelocity:(Vector2)arg1;
-- (float)riderBodyYRotationForBlockhead:(id)arg1;
-- (Vector2)cameraPosForBlockhead:(id)arg1;
-- (Vector)riderPosForBlockhead:(id)arg1;
+- (void)setTargetVelocity:(Vector2)targetVelocity;
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead;
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead;
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead;
 - (Vector2)namePos;
 - (void)reactToBeingFed;
-- (void)blockheadUnloaded:(id)arg1;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
 - (Vector2)center;
 - (Vector2)renderPos;
-- (void)hitWithForce:(int)arg1 blockhead:(id)arg2;
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
 - (void)reactToBeingHit;
-- (BOOL)tapIsWithinBodyRadius:(Vector2)arg1;
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
 - (unsigned short)maxHealth;
 - (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
 - (BOOL)isUnderLocalControl;
-- (void)die:(id)arg1;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)remoteUpdate:(id)arg1;
-- (void)doRemoteUpdate:(SharkUpdateNetData)arg1;
-- (void)remoteCreationDataUpdate:(id)arg1;
+- (void)die:(Blockhead*)killBlockhead_;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)doRemoteUpdate:(SharkUpdateNetData)remoteUpdateData;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
 - (void)dealloc;
-- (id)updateNetDataForClient:(id)arg1;
-- (unsigned long long)creationDataStructSize;
-- (id)creationNetDataForClient:(id)arg1;
-- (SharkUpdateNetData)sharkUpdateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-            isAdult:(BOOL)arg6
-          wasPlaced:(BOOL)arg7
-     placedByClient:(id)arg8;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (uint64_t)creationDataStructSize;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (SharkUpdateNetData)sharkUpdateNetDataForClient:(NSString*)clientIDToSendTo;
+- (NSMutableDictionary*)getSaveDict;
+- (Shark*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld
+                  cache:(CPCache*)cache_
+                netData:(NSData*)netData;
+- (Shark*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld
+               saveDict:(NSDictionary*)saveDict
+                  cache:(CPCache*)cache_;
+- (Shark*)initWithWorld:(World*)world_
+           dynamicWorld:(DynamicWorld*)dynamicWorld_
+             atPosition:(intpair)pos_
+                  cache:(CPCache*)cache_
+               saveDict:(NSDictionary*)saveDict
+                isAdult:(BOOL)isAdult
+              wasPlaced:(BOOL)wasPlaced
+         placedByClient:(NSString*)clientId;
 - (void)loadDerivedStuff;
-- (id)cantBeCapturedTipStringForBlockhead:(id)arg1 withItemType:(int)arg2;
-- (BOOL)canBeCapturedByBlockhead:(id)arg1 withItemType:(int)arg2;
-- (int)captureRequiredItemType;
-- (int)capturedItemType;
+- (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)item;
+- (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+- (ItemType)captureRequiredItemType;
+- (ItemType)capturedItemType;
 - (int)getNamesArrayCount;
-- (id*)getNamesArray;
-- (int)foodItemType;
-- (id)speciesName;
+- (NSString**)getNamesArray;
+- (ItemType)foodItemType;
+- (NSString*)speciesName;
 - (float)minFullness;
 - (float)maxAge;
-- (int)npcType;
+- (NPCType)npcType;
 
 @end
