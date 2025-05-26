@@ -62,12 +62,12 @@ struct PathTestResult {
 @property (readonly) NSArray* path; // @synthesize path;
 
 - (void)abortPath;
-- (void)createPathWithDict:(id)arg1;
-- (id)calculateFallPath;
+- (void)createPathWithDict:(NSDictionary*)pathDict;
+- (NSArray*)calculateFallPath;
 - (void)calculatePath;
 - (void)updatePath;
-- (DerivedTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)arg1;
+- (DerivedTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)worldIndex;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1;
+- (PathCreator*)initWithWorld:(World*)world_;
 
 @end
