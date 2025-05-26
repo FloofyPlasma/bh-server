@@ -12,28 +12,28 @@
 }
 
 @property float partialContent; // @synthesize partialContent;
-- (void)setNeedsRemoved:(BOOL)arg1;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
 - (BOOL)removeIfFloating;
 - (void)removeAllSnow;
-- (void)updateSnowContent:(BOOL)arg1 tile:(Tile*)arg2;
-- (void)updateGroundFrozen:(Tile*)arg1 tile:(Tile*)arg2;
-- (void)spreadGrass:(Tile*)arg1 tile:(Tile*)arg2;
-- (void)updateRain:(float)arg1 dt:(float)arg2;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (void)updateSnowContent:(BOOL)forceUpdate tile:(Tile*)tile;
+- (void)updateGroundFrozen:(Tile*)belowTile tile:(Tile*)tile;
+- (void)spreadGrass:(Tile*)belowTile tile:(Tile*)tile;
+- (void)updateRain:(float)rainFraction dt:(float)dt;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (void)updateInTimeSinceSaved;
 - (void)removeFromMacroBlock;
-- (id)getSaveDict;
+- (NSMutableDictionary*)getSaveDict;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4;
-- (int)objectType;
+- (SnowSurfaceBlock*)initWithWorld:(World*)world_
+                      dynamicWorld:(DynamicWorld*)dynamicWorld
+                          saveDict:(NSDictionary*)saveDict
+                             cache:(CPCache*)cache_;
+- (SnowSurfaceBlock*)initWithWorld:(World*)world_
+                      dynamicWorld:(DynamicWorld*)dynamicWorld
+                        atPosition:(intpair)pos
+                             cache:(CPCache*)cache_;
+- (DynamicObjectType)objectType;
 - (void)initSubDerivedItems;
 
 @end
