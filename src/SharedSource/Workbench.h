@@ -48,7 +48,7 @@ struct WorkbenchNetData {
   float fuelCounter;
   BOOL hasFuel;
   BOOL requiresFuel;
-  unsigned short availableElectricity;
+  uint16_t availableElectricity;
   BOOL requiresElectricity;
   int count;
   int countLeft;
@@ -58,7 +58,7 @@ struct WorkbenchNetData {
   float rotationAnimationTimer;
   double lastWorldTime;
   float fractionComplete;
-  unsigned long long remoteFuelBlockheadInUseUniqueID;
+  uint64_t remoteFuelBlockheadInUseUniqueID;
   float particleCreateTimerSteamEngine;
   float particleCreateTimerRefinery;
   MJSound* sound;
@@ -87,114 +87,114 @@ struct WorkbenchNetData {
                                             // numberOfCraftableItemsUpToCurrentLevel;
 @property (readonly)
     int numberOfCraftableItems; // @synthesize numberOfCraftableItems;
-- (int)hurryCostForCraftTimeRemaining:(int)arg1 totalCraftTime:(int)arg2;
-- (id)upgradeNameForCraftProgressUI;
-- (id)titleForCraftProgressUI;
+- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime;
+- (NSString*)upgradeNameForCraftProgressUI;
+- (NSString*)titleForCraftProgressUI;
 - (int*)fuelTypes;
 - (int)fuelTypesCount;
-- (id)upgradeName;
+- (NSString*)upgradeName;
 - (BOOL)requiresElectricty;
 - (BOOL)requiresFuel;
 - (BOOL)canBeUsedInExpertModeWhenNotOwned;
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)arg1
-                                                              yPos:(int)arg2;
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX
+                                                              yPos:(int)macroY;
 - (BOOL)occupiesNormalContents;
 - (Vector)lightPos;
 - (int)lightGlowQuadCount;
-- (void)blockheadUnloaded:(id)arg1;
+- (void)blockheadUnloaded:(Blockhead*)blockhead;
 - (void)removeFromMacroBlock;
 - (BOOL)rendersDynamicObjectCubes;
 - (BOOL)rendersDynamicObjectQuad;
-- (int)addDrawCubeData:(float*)arg1 fromIndex:(int)arg2;
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index;
 - (int)staticGeometryDrawCubeCount;
-- (int)addDrawQuadData:(float*)arg1
-             fromIndex:(int)arg2
-           forMacroPos:(intpair)arg3;
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)arg1;
+- (int)addDrawQuadData:(float*)buffer
+             fromIndex:(int)index
+           forMacroPos:(intpair)macroPos;
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos;
 - (Vector2)fuelUIPos;
-- (int)destroyItemType;
+- (ItemType)destroyItemType;
 - (BOOL)canDismissFuelUI;
-- (void)setPaused:(BOOL)arg1;
+- (void)setPaused:(BOOL)newPaused;
 - (float)energyFraction;
 - (BOOL)usesStoresConductsOrProducesElectricity;
 - (BOOL)generatesElectricity;
 - (BOOL)isStorageDevice;
-- (void)addToFuelForItem:(int)arg1;
+- (void)addToFuelForItem:(ItemType)itemType;
 - (int*)fuelItems;
 - (int)fuelItemCount;
-- (id)actionTitle;
-- (BOOL)subtractElectricty:(unsigned short)arg1;
+- (NSString*)actionTitle;
+- (BOOL)subtractElectricty:(uint16_t)amountToSubtract;
 - (BOOL)conductsElectricity;
-- (unsigned short)availableElectricity;
-- (void)remoteBlockheadRemovedWithID:(unsigned long long)arg1;
-- (void)remoteUpdate:(id)arg1;
+- (uint16_t)availableElectricity;
+- (void)remoteBlockheadRemovedWithID:(uint64_t)blockheadID;
+- (void)remoteUpdate:(NSData*)netData;
 - (void)upgradeToNextLevel;
-- (void)setLevelSilently:(int)arg1;
+- (void)setLevelSilently:(int)level_;
 - (BOOL)requiresPhysicalBlock;
 - (float)fractionComplete;
-- (void)setNeedsRemoved:(BOOL)arg1;
+- (void)setNeedsRemoved:(BOOL)needsRemoved;
 - (BOOL)isDoubleHeight;
 - (BOOL)hasRequiredFuel;
-- (void)addToFuel:(int)arg1;
+- (void)addToFuel:(int)fuelToAdd;
 - (int)fuelCount;
-- (void)remove:(id)arg1;
-- (unsigned short)freeBlockCreationDataB;
-- (unsigned short)freeBlockCreationDataA;
-- (id)freeBlockCreationSaveDict;
-- (int)freeblockCreationItemType;
-- (void)worldChanged:(std::vector<intpair>*)arg1;
+- (void)remove:(Blockhead*)removeBlockhead;
+- (uint16_t)freeBlockCreationDataB;
+- (uint16_t)freeBlockCreationDataA;
+- (NSMutableDictionary*)freeBlockCreationSaveDict;
+- (ItemType)freeblockCreationItemType;
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
 - (BOOL)requiresHumanInteraction;
-- (void)startManagingFuelWithBlockhead:(id)arg1;
-- (BOOL)craftItem:(id)arg1
-      withBlockhead:(id)arg2
-    craftProgressUI:(id)arg3
-              count:(int)arg4;
-- (struct CraftableItem**)craftableItems;
-- (id)title;
-- (void)draw:(float)arg1
-    projectionMatrix:(GLKMatrix4)arg2
-     modelViewMatrix:(GLKMatrix4)arg3
-     cameraMinXWorld:(int)arg4
-     cameraMaxXWorld:(int)arg5
-     cameraMinYWorld:(int)arg6
-     cameraMaxYWorld:(int)arg7;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
+- (void)startManagingFuelWithBlockhead:(Blockhead*)blockhead;
+- (BOOL)craftItem:(CraftableItemObject*)craftingItemObject_
+      withBlockhead:(Blockhead*)blockhead
+    craftProgressUI:(CraftProgressUI*)craftProgressUI_
+              count:(int)count_;
+- (CraftableItem**)craftableItems;
+- (NSString*)title;
+- (void)draw:(float)dt
+    projectionMatrix:(GLKMatrix4)projectionMatrix
+     modelViewMatrix:(GLKMatrix4)modelViewMatrix
+     cameraMinXWorld:(int)cameraMinXWorld
+     cameraMaxXWorld:(int)cameraMaxXWorld
+     cameraMinYWorld:(int)cameraMinYWorld
+     cameraMaxYWorld:(int)cameraMaxYWorld;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 - (float)combinedLightForSolarPanel;
 - (float)combinedLightForSolarPanelWithFullSunlight;
 - (void)updateHasFuel;
-- (void)hurryCompletion:(int)arg1;
-- (int)currentlyCraftingItemType;
+- (void)hurryCompletion:(int)hurryCost;
+- (ItemType)currentlyCraftingItemType;
 - (int)totalItemsLeftToCraft;
 - (void)craftCompleted;
 - (void)abortImmediatelyAndRestoreBlockheadItems;
 - (void)abortCraft;
-- (unsigned short)interactionObjectType;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (void)blockheadWouldLikeToTakeOwnership:(id)arg1 withSaveDict:(id)arg2;
+- (uint16_t)interactionObjectType;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSMutableDictionary*)getSaveDict;
+- (void)blockheadWouldLikeToTakeOwnership:(Blockhead*)blockhead withSaveDict:(NSDictionary*)saveDict;
 - (void)blockheadsLoaded;
 - (void)dealloc;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-              cache:(id)arg3
-            netData:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-               type:(int)arg5
-            flipped:(BOOL)arg6
-           saveDict:(id)arg7
-     placedByClient:(id)arg8
-         clientName:(id)arg9;
+- (Workbench*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                      cache:(CPCache*)cache_
+                    netData:(NSData*)netData;
+- (Workbench*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                   saveDict:(NSDictionary*)saveDict
+                      cache:(CPCache*)cache_;
+- (Workbench*)initWithWorld:(World*)world_
+               dynamicWorld:(DynamicWorld*)dynamicWorld
+                 atPosition:(intpair)pos
+                      cache:(CPCache*)cache_
+                       type:(WorkbenchType)type_
+                    flipped:(BOOL)flipped_
+                   saveDict:(NSDictionary*)saveDict
+             placedByClient:(NSString*)clientId
+                 clientName:(NSString*)clientName;
 - (void)updatePortalLight;
 - (Vector)getLightRGB;
 - (void)initSubDerivedItems;
 - (void)initLevelStuff;
-- (int)objectType;
+- (DynamicObjectType)objectType;
 
 @end
