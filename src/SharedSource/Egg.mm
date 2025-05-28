@@ -2,67 +2,88 @@
 
 @implementation Egg
 
-- (int)addDodoEggDrawQuadData:(float *)buffer fromIndex:(int)index {
+- (int)addDodoEggDrawQuadData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (uint16_t)breed {
+- (uint16_t)breed
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (uint16_t)freeBlockCreationDataA {
+- (uint16_t)freeBlockCreationDataA
+{
 }
 
-- (uint16_t)freeBlockCreationDataB {
+- (uint16_t)freeBlockCreationDataB
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationSaveDict {
+- (NSMutableDictionary*)freeBlockCreationSaveDict
+{
 }
 
-- (ItemType)freeblockCreationItemType {
+- (ItemType)freeblockCreationItemType
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (BOOL)hatch:(BOOL)playSound {
+- (BOOL)hatch:(BOOL)playSound
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (Egg *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ saveDict:(NSDictionary *)saveDict {
+- (Egg*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ saveDict:(NSDictionary*)saveDict
+{
 }
 
-- (Egg *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (Egg*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (Egg *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (Egg*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)occupiesForegroundContents {
+- (BOOL)occupiesForegroundContents
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (int)staticGeometryDodoEggCount {
+- (int)staticGeometryDodoEggCount
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
 @end

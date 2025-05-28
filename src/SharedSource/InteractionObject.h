@@ -76,13 +76,13 @@ struct InteractionObjectCreationNetData {
                            saveDict:(NSDictionary*)saveDict
                               cache:(CPCache*)cache_;
 - (InteractionObject*)initWithWorld:(World*)world_
-                   dynamicWorld:(DynamicWorld*)dynamicWorld
-                     atPosition:(intpair)pos
-                          cache:(CPCache*)cache_
-                           type:(ItemType)itemType_
-                       saveDict:(NSDictionary*)saveDict
-                 placedByClient:(NSString*)clientId
-                     clientName:(NSString*)clientName;
+                       dynamicWorld:(DynamicWorld*)dynamicWorld
+                         atPosition:(intpair)pos
+                              cache:(CPCache*)cache_
+                               type:(ItemType)itemType_
+                           saveDict:(NSDictionary*)saveDict
+                     placedByClient:(NSString*)clientId
+                         clientName:(NSString*)clientName;
 - (DynamicObjectType)objectType;
 
 @end

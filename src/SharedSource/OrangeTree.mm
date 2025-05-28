@@ -2,37 +2,48 @@
 
 @implementation OrangeTree
 
-- (ItemType)fruitItemType {
+- (ItemType)fruitItemType
+{
 }
 
-- (BOOL)fruitShouldFallInSeason:(int)season {
+- (BOOL)fruitShouldFallInSeason:(int)season
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (OrangeTree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ maxHeight:(int16_t)maxHeight_ growthRate:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge {
+- (OrangeTree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ maxHeight:(int16_t)maxHeight_ growthRate:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_ adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge
+{
 }
 
-- (OrangeTree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ saveDict:(NSMutableDictionary *)saveDict cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ {
+- (OrangeTree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ saveDict:(NSMutableDictionary*)saveDict cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+{
 }
 
-- (void)makeTileDead:(Tile *)tile {
+- (void)makeTileDead:(Tile*)tile
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)tileIsKindOfSelf:(Tile *)tile {
+- (BOOL)tileIsKindOfSelf:(Tile*)tile
+{
 }
 
-- (TreeType)treeType {
+- (TreeType)treeType
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateGrowth:(BOOL)addNewBranchBlocks {
+- (void)updateGrowth:(BOOL)addNewBranchBlocks
+{
 }
 
 @end

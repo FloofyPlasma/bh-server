@@ -2,85 +2,112 @@
 
 @implementation Painting
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (uint16_t)freeBlockCreationDataA {
+- (uint16_t)freeBlockCreationDataA
+{
 }
 
-- (uint16_t)freeBlockCreationDataB {
+- (uint16_t)freeBlockCreationDataB
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationSaveDict {
+- (NSMutableDictionary*)freeBlockCreationSaveDict
+{
 }
 
-- (ItemType)freeblockCreationItemType {
+- (ItemType)freeblockCreationItemType
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)imageDataRecieved:(NSData *)remoteImageData {
+- (void)imageDataRecieved:(NSData*)remoteImageData
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (Painting *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId clientName:(NSString *)clientName {
+- (Painting*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId clientName:(NSString*)clientName
+{
 }
 
-- (Painting *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (Painting*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (Painting *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (Painting*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)occupiesForegroundContents {
+- (BOOL)occupiesForegroundContents
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updateTexture {
+- (void)updateTexture
+{
 }
 
-- (void)userBanChanged:(NSString *)playerID isBanned:(BOOL)isBanned {
+- (void)userBanChanged:(NSString*)playerID isBanned:(BOOL)isBanned
+{
 }
 
-- (void)userMuteChanged:(NSString *)playerID {
+- (void)userMuteChanged:(NSString*)playerID
+{
 }
 
-- (BOOL)verifyImageServerSide:(NSData *)imageData_ {
+- (BOOL)verifyImageServerSide:(NSData*)imageData_
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
 @end

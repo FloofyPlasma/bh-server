@@ -2,34 +2,44 @@
 
 @implementation FlaxPlant
 
-- (BOOL)canDieSeason:(int)season {
+- (BOOL)canDieSeason:(int)season
+{
 }
 
-- (BOOL)floweringSeason:(int)season {
+- (BOOL)floweringSeason:(int)season
+{
 }
 
-- (ItemType)folliageItemType {
+- (ItemType)folliageItemType
+{
 }
 
-- (BOOL)isRequiredSoilType:(int)type {
+- (BOOL)isRequiredSoilType:(int)type
+{
 }
 
-- (float)maxAgeBase {
+- (float)maxAgeBase
+{
 }
 
-- (int)minAllowedTemperature {
+- (int)minAllowedTemperature
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (PlantType)plantType {
+- (PlantType)plantType
+{
 }
 
-- (ImageType)renderImageType {
+- (ImageType)renderImageType
+{
 }
 
-- (ItemType)seedItemType {
+- (ItemType)seedItemType
+{
 }
 
 @end

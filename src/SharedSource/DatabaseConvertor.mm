@@ -2,37 +2,48 @@
 
 @implementation DatabaseConvertor
 
-- (void)convertLightBlocks {
+- (void)convertLightBlocks
+{
 }
 
-- (void)convertWorld {
+- (void)convertWorld
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)getNewLightBlockFiles {
+- (void)getNewLightBlockFiles
+{
 }
 
-- (void)getNewServerFiles {
+- (void)getNewServerFiles
+{
 }
 
-- (DatabaseConvertor *)initWithWorld:(World *)world_ worldDatabase:(Database *)worldDatabase_ dynamicObjectDatabase:(Database *)dynamicObjectDatabase_ blockDatabase:(Database *)blockDatabase_ lightBlockDatabase:(Database *)lightBlockDatabase_ serverDatabase:(Database *)lightBlockDatabase_ {
+- (DatabaseConvertor*)initWithWorld:(World*)world_ worldDatabase:(Database*)worldDatabase_ dynamicObjectDatabase:(Database*)dynamicObjectDatabase_ blockDatabase:(Database*)blockDatabase_ lightBlockDatabase:(Database*)lightBlockDatabase_ serverDatabase:(Database*)lightBlockDatabase_
+{
 }
 
-- (void)lightBlockMainThreadOperationReturned:(NSDictionary *)resultDict {
+- (void)lightBlockMainThreadOperationReturned:(NSDictionary*)resultDict
+{
 }
 
-- (BOOL)migrationComplete {
+- (BOOL)migrationComplete
+{
 }
 
-- (void)removeLightBlockFiles {
+- (void)removeLightBlockFiles
+{
 }
 
-- (void)removeWorldFiles {
+- (void)removeWorldFiles
+{
 }
 
-- (NSData *)safeDataWithContentsOfFile:(NSString *)fileName {
+- (NSData*)safeDataWithContentsOfFile:(NSString*)fileName
+{
 }
 
 @end

@@ -2,19 +2,24 @@
 
 @implementation PaintingCraftableItemObject
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationItemSaveDict {
+- (NSMutableDictionary*)freeBlockCreationItemSaveDict
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (PaintingCraftableItemObject *)initWithCraftableItem:(CraftableItem)craftableItem_ imageData:(NSData *)imageData_ outputImageData:(NSData *)outputImageData_ {
+- (PaintingCraftableItemObject*)initWithCraftableItem:(CraftableItem)craftableItem_ imageData:(NSData*)imageData_ outputImageData:(NSData*)outputImageData_
+{
 }
 
-- (PaintingCraftableItemObject *)initWithSaveDict:(NSDictionary *)saveDict {
+- (PaintingCraftableItemObject*)initWithSaveDict:(NSDictionary*)saveDict
+{
 }
 
 @end

@@ -14,7 +14,7 @@
 - (NSMutableDictionary*)getSaveDict;
 - (BlockheadCraftableItemObject*)initWithSaveDict:(NSDictionary*)saveDict;
 - (BlockheadCraftableItemObject*)initWithCraftableItem:(CraftableItem)craftableItem_
-                       name:(NSString*)name_
-                skinOptions:(BlockheadSkinOptions)skinOptions_;
+                                                  name:(NSString*)name_
+                                           skinOptions:(BlockheadSkinOptions)skinOptions_;
 
 @end

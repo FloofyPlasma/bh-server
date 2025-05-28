@@ -2,76 +2,100 @@
 
 @implementation Donkey
 
-- (BOOL)blockheadCanRide:(Blockhead *)blockhead usingItem:(ItemType)itemType {
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
+{
 }
 
-- (NSString *)breedString {
+- (NSString*)breedString
+{
 }
 
-- (BOOL)canJumpMultipleTilesWhileFlying {
+- (BOOL)canJumpMultipleTilesWhileFlying
+{
 }
 
-- (ItemType)captureRequiredItemType {
+- (ItemType)captureRequiredItemType
+{
 }
 
-- (ItemType)capturedItemType {
+- (ItemType)capturedItemType
+{
 }
 
-- (void)createItemDropsForDeath {
+- (void)createItemDropsForDeath
+{
 }
 
-- (uint64_t)creationDataStructSize {
+- (uint64_t)creationDataStructSize
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)drawSubClassStuff:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix {
+- (void)drawSubClassStuff:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix
+{
 }
 
-- (BOOL)flies {
+- (BOOL)flies
+{
 }
 
-- (ItemType)foodItemType {
+- (ItemType)foodItemType
+{
 }
 
-- (PlantType)foodPlantType {
+- (PlantType)foodPlantType
+{
 }
 
-- (BOOL)galloping {
+- (BOOL)galloping
+{
 }
 
-- (int)generateBreedForChild {
+- (int)generateBreedForChild
+{
 }
 
-- (NSString **)getNamesArray {
+- (NSString**)getNamesArray
+{
 }
 
-- (int)getNamesArrayCount {
+- (int)getNamesArrayCount
+{
 }
 
-- (void)loadDerivedStuff {
+- (void)loadDerivedStuff
+{
 }
 
-- (float)maxAge {
+- (float)maxAge
+{
 }
 
-- (uint16_t)maxHealth {
+- (uint16_t)maxHealth
+{
 }
 
-- (float)maxVelocity {
+- (float)maxVelocity
+{
 }
 
-- (float)minFullness {
+- (float)minFullness
+{
 }
 
-- (NPCType)npcType {
+- (NPCType)npcType
+{
 }
 
-- (void)setupMatrices:(Vector2)renderPos dt:(float)dt {
+- (void)setupMatrices:(Vector2)renderPos dt:(float)dt
+{
 }
 
-- (NSString *)speciesName {
+- (NSString*)speciesName
+{
 }
 
 @end

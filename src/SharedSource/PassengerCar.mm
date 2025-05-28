@@ -2,70 +2,92 @@
 
 @implementation PassengerCar
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (void)addRider:(Blockhead *)blockhead {
+- (void)addRider:(Blockhead*)blockhead
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (PassengerCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId {
+- (PassengerCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
+{
 }
 
-- (PassengerCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (PassengerCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (PassengerCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (PassengerCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (ItemType)itemType {
+- (ItemType)itemType
+{
 }
 
-- (void)loadDerivedStuff {
+- (void)loadDerivedStuff
+{
 }
 
-- (int)maxNumberOfRiders {
+- (int)maxNumberOfRiders
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (Vector2)renderPos {
+- (Vector2)renderPos
+{
 }
 
-- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead *)blockhead cameraX:(float)cameraX {
+- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)blockhead cameraX:(float)cameraX
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation {
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
 @end

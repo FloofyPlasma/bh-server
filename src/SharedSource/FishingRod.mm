@@ -2,40 +2,52 @@
 
 @implementation FishingRod
 
-- (void)blockheadUnloaded:(Blockhead *)blockhead {
+- (void)blockheadUnloaded:(Blockhead*)blockhead
+{
 }
 
-- (Vector2)cameraPos {
+- (Vector2)cameraPos
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)directionalSwipe:(Vector2)vec {
+- (void)directionalSwipe:(Vector2)vec
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (ClownFish *)hookedFish {
+- (ClownFish*)hookedFish
+{
 }
 
-- (Vector2)hookedFishDirection {
+- (Vector2)hookedFishDirection
+{
 }
 
-- (id)initWithWorld:(World *)world_ blockhead:(Blockhead *)blockhead_ cache:(CPCache *)cache_ {
+- (id)initWithWorld:(World*)world_ blockhead:(Blockhead*)blockhead_ cache:(CPCache*)cache_
+{
 }
 
-- (BOOL)isCasting {
+- (BOOL)isCasting
+{
 }
 
-- (void)setHookedFish:(ClownFish *)hookedFish_ {
+- (void)setHookedFish:(ClownFish*)hookedFish_
+{
 }
 
-- (void)setPaused:(BOOL)paused {
+- (void)setPaused:(BOOL)paused
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
 @end

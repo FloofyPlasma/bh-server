@@ -2,76 +2,100 @@
 
 @implementation VinePlant
 
-- (int)addForegroundDrawQuadData:(float *)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos {
+- (int)addForegroundDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)dieOfOldAge {
+- (void)dieOfOldAge
+{
 }
 
-- (ItemType)droppedItemType {
+- (ItemType)droppedItemType
+{
 }
 
-- (int)gatherProgressForTile:(intpair)tilePos {
+- (int)gatherProgressForTile:(intpair)tilePos
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (VinePlant *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ maxAgeGene:(int16_t)maxHeight_ growthRateGene:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ adultPlant:(BOOL)adultPlant {
+- (VinePlant*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ maxAgeGene:(int16_t)maxHeight_ growthRateGene:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_ adultPlant:(BOOL)adultPlant
+{
 }
 
-- (VinePlant *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (VinePlant*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (VinePlant *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ {
+- (VinePlant*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+{
 }
 
-- (BOOL)isGrowingInCompost {
+- (BOOL)isGrowingInCompost
+{
 }
 
-- (BOOL)isRequiredSoilType:(TileType)type {
+- (BOOL)isRequiredSoilType:(TileType)type
+{
 }
 
-- (int)numberOfOccupiedTilesBelow {
+- (int)numberOfOccupiedTilesBelow
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (PlantCreationNetData)plantCreationNetData {
+- (PlantCreationNetData)plantCreationNetData
+{
 }
 
-- (PlantType)plantType {
+- (PlantType)plantType
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (void)setGatherProgress:(int)newGatherProgress forTile:(intpair)tilePos {
+- (void)setGatherProgress:(int)newGatherProgress forTile:(intpair)tilePos
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved {
+- (void)setNeedsRemoved:(BOOL)needsRemoved
+{
 }
 
-- (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)macroPos {
+- (int)staticGeometryForegroundDrawQuadCountForMacroPos:(intpair)macroPos
+{
 }
 
-- (int)tileHarvested:(intpair)tilePos removeBlockhead:(Blockhead *)removeBlockhead correctToolMultiplier:(int)correctToolMultiplier {
+- (int)tileHarvested:(intpair)tilePos removeBlockhead:(Blockhead*)removeBlockhead correctToolMultiplier:(int)correctToolMultiplier
+{
 }
 
-- (BOOL)tileIsKindOfSelf:(Tile *)tile {
+- (BOOL)tileIsKindOfSelf:(Tile*)tile
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
 @end

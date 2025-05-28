@@ -2,157 +2,208 @@
 
 @implementation Chest
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (int)addDodoEggDrawQuadData:(float *)buffer fromIndex:(int)index {
+- (int)addDodoEggDrawQuadData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (int)addDrawCubeData:(float *)buffer fromIndex:(int)index {
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (int)addDrawItemQuadData:(float *)buffer fromIndex:(int)index {
+- (int)addDrawItemQuadData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (int)addDrawQuadData:(float *)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos {
+- (int)addDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
+{
 }
 
-- (BOOL)canBeUsedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)canBeUsedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (ChestType)chestType {
+- (ChestType)chestType
+{
 }
 
-- (void)contentsDidChange {
+- (void)contentsDidChange
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (ItemType)destroyItemType {
+- (ItemType)destroyItemType
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (uint16_t)freeBlockCreationDataA {
+- (uint16_t)freeBlockCreationDataA
+{
 }
 
-- (uint16_t)freeBlockCreationDataB {
+- (uint16_t)freeBlockCreationDataB
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationSaveDict {
+- (NSMutableDictionary*)freeBlockCreationSaveDict
+{
 }
 
-- (ItemType)freeblockCreationItemType {
+- (ItemType)freeblockCreationItemType
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (NSMutableDictionary *)getSaveDictIncludingInventory:(BOOL)includeInventory {
+- (NSMutableDictionary*)getSaveDictIncludingInventory:(BOOL)includeInventory
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (Chest *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId clientName:(NSString *)clientName {
+- (Chest*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId clientName:(NSString*)clientName
+{
 }
 
-- (Chest *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (Chest*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (Chest *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (Chest*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (uint16_t)interactionObjectType {
+- (uint16_t)interactionObjectType
+{
 }
 
-- (ItemType)interactionRenderItemType {
+- (ItemType)interactionRenderItemType
+{
 }
 
-- (NSData *)inventoryDataAllowingEmpty:(BOOL)allowEmptyInventory {
+- (NSData*)inventoryDataAllowingEmpty:(BOOL)allowEmptyInventory
+{
 }
 
-- (NSArray *)inventoryItems {
+- (NSArray*)inventoryItems
+{
 }
 
-- (BOOL)isPaintable {
+- (BOOL)isPaintable
+{
 }
 
-- (void)loadInventoryItemsFromDiskIfNeeded {
+- (void)loadInventoryItemsFromDiskIfNeeded
+{
 }
 
-- (int)moveInventoryItemsFromArray:(NSMutableArray *)fromItemSlot toIndex:(int)toIndex count:(int)count {
+- (int)moveInventoryItemsFromArray:(NSMutableArray*)fromItemSlot toIndex:(int)toIndex count:(int)count
+{
 }
 
-- (int)moveInventoryItemsFromArray:(NSMutableArray *)fromItemSlot toIndex:(int)toIndex count:(int)count assignedIndexes:(std::set<int> *)assignedIndexes {
+- (int)moveInventoryItemsFromArray:(NSMutableArray*)fromItemSlot toIndex:(int)toIndex count:(int)count assignedIndexes:(std::set<int>*)assignedIndexes
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)occupiesNormalContents {
+- (BOOL)occupiesNormalContents
+{
 }
 
-- (void)paint:(uint16_t)colorIndex {
+- (void)paint:(uint16_t)colorIndex
+{
 }
 
-- (void)remoteInventoryDataRecieved:(NSData *)remoteInventoryData {
+- (void)remoteInventoryDataRecieved:(NSData*)remoteInventoryData
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)remove:(Blockhead *)removeBlockhead {
+- (void)remove:(Blockhead*)removeBlockhead
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (BOOL)removeItemIfAvailable:(ItemType)itemType {
+- (BOOL)removeItemIfAvailable:(ItemType)itemType
+{
 }
 
-- (BOOL)requiresHumanInteraction {
+- (BOOL)requiresHumanInteraction
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)newNeedsRemoved {
+- (void)setNeedsRemoved:(BOOL)newNeedsRemoved
+{
 }
 
-- (void)startInteractionWithBlockhead:(Blockhead *)blockhead {
+- (void)startInteractionWithBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (int)staticGeometryDodoEggCount {
+- (int)staticGeometryDodoEggCount
+{
 }
 
-- (int)staticGeometryDrawCubeCount {
+- (int)staticGeometryDrawCubeCount
+{
 }
 
-- (int)staticGeometryDrawItemQuadCount {
+- (int)staticGeometryDrawItemQuadCount
+{
 }
 
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos {
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos
+{
 }
 
-- (NSString *)title {
+- (NSString*)title
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateInventoryWithData:(NSData *)inventoryData {
+- (void)updateInventoryWithData:(NSData*)inventoryData
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updatePosition:(intpair)newPosition {
+- (void)updatePosition:(intpair)newPosition
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
-- (void)worldContentsChanged:(std::vector<intpair> *)worldContentsChangedPositions {
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions
+{
 }
 
 @end

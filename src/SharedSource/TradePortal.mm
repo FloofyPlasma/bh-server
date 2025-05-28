@@ -2,154 +2,204 @@
 
 @implementation TradePortal
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY {
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY
+{
 }
 
-- (int)addDrawQuadData:(float *)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos {
+- (int)addDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
+{
 }
 
-- (void)buyItem:(ItemType)itemType atTotalPrice:(int)listedPrice count:(int)count {
+- (void)buyItem:(ItemType)itemType atTotalPrice:(int)listedPrice count:(int)count
+{
 }
 
-- (BOOL)canBeUsedInExpertModeWhenNotOwned {
+- (BOOL)canBeUsedInExpertModeWhenNotOwned
+{
 }
 
-- (int)currentBlockheadCash {
+- (int)currentBlockheadCash
+{
 }
 
-- (int)currentBlockheadCountOfInventoryItemsOfType:(ItemType)type {
+- (int)currentBlockheadCountOfInventoryItemsOfType:(ItemType)type
+{
 }
 
-- (float)currentBlockheadUsageMultiplierForFirstItemOfType:(ItemType)type {
+- (float)currentBlockheadUsageMultiplierForFirstItemOfType:(ItemType)type
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (ItemType)destroyItemType {
+- (ItemType)destroyItemType
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (uint16_t)freeBlockCreationDataA {
+- (uint16_t)freeBlockCreationDataA
+{
 }
 
-- (uint16_t)freeBlockCreationDataB {
+- (uint16_t)freeBlockCreationDataB
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationSaveDict {
+- (NSMutableDictionary*)freeBlockCreationSaveDict
+{
 }
 
-- (int)freeblockCreationItemType {
+- (int)freeblockCreationItemType
+{
 }
 
-- (Vector)getLightRGB {
+- (Vector)getLightRGB
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (TradePortal *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos_ cache:(CPCache *)cache_ item:(InventoryItem *)item flipped:(BOOL)flipped_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId clientName:(NSString *)clientName {
+- (TradePortal*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos_ cache:(CPCache*)cache_ item:(InventoryItem*)item flipped:(BOOL)flipped_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId clientName:(NSString*)clientName
+{
 }
 
-- (TradePortal *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (TradePortal*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (TradePortal *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (TradePortal*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (uint16_t)interactionObjectType {
+- (uint16_t)interactionObjectType
+{
 }
 
-- (int)interactionRenderItemType {
+- (int)interactionRenderItemType
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (int)lightGlowQuadCount {
+- (int)lightGlowQuadCount
+{
 }
 
-- (Vector)lightPos {
+- (Vector)lightPos
+{
 }
 
-- (void)loadPriceOffsets:(NSDictionary *)savedOffsets {
+- (void)loadPriceOffsets:(NSDictionary*)savedOffsets
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)occupiesNormalContents {
+- (BOOL)occupiesNormalContents
+{
 }
 
-- (void)randomizeLocalTradeOffsets {
+- (void)randomizeLocalTradeOffsets
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)remove:(Blockhead *)removeBlockhead {
+- (void)remove:(Blockhead*)removeBlockhead
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (BOOL)requiresHumanInteraction {
+- (BOOL)requiresHumanInteraction
+{
 }
 
-- (NSString *)secondOptionTitle {
+- (NSString*)secondOptionTitle
+{
 }
 
-- (void)sellItem:(ItemType)itemType atTotalPrice:(int)arg2 count:(int)count usageMultiplier:(float)usageMultiplier {
+- (void)sellItem:(ItemType)itemType atTotalPrice:(int)arg2 count:(int)count usageMultiplier:(float)usageMultiplier
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved {
+- (void)setNeedsRemoved:(BOOL)needsRemoved
+{
 }
 
-- (void)setPaused:(BOOL)paused {
+- (void)setPaused:(BOOL)paused
+{
 }
 
-- (void)setWorkbenchChoiceUIOption:(int)option {
+- (void)setWorkbenchChoiceUIOption:(int)option
+{
 }
 
-- (int)staticGeometryDrawCubeCount {
+- (int)staticGeometryDrawCubeCount
+{
 }
 
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos {
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos
+{
 }
 
-- (BOOL)takeItemsFromBlockheadForUpgradeToNextLevel {
+- (BOOL)takeItemsFromBlockheadForUpgradeToNextLevel
+{
 }
 
-- (NSString *)thirdOptionTitle {
+- (NSString*)thirdOptionTitle
+{
 }
 
-- (NSString *)title {
+- (NSString*)title
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updatePortalLight {
+- (void)updatePortalLight
+{
 }
 
-- (CraftableItem)upgradeCraftableItem {
+- (CraftableItem)upgradeCraftableItem
+{
 }
 
-- (void)upgradeToNextLevel {
+- (void)upgradeToNextLevel
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
-- (void)worldContentsChanged:(std::vector<intpair> *)worldContentsChangedPositions {
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions
+{
 }
 
 @end

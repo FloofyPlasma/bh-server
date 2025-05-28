@@ -2,88 +2,116 @@
 
 @implementation BHNetServerMatch
 
-- (void)clientApprovedWithInfo:(NSMutableDictionary *)dictionary {
+- (void)clientApprovedWithInfo:(NSMutableDictionary*)dictionary
+{
 }
 
-- (BOOL)isCloudMatch {
+- (BOOL)isCloudMatch
+{
 }
 
-- (BOOL)owned {
+- (BOOL)owned
+{
 }
 
-- (BOOL)requiresPlayerAuthentication {
+- (BOOL)requiresPlayerAuthentication
+{
 }
 
-- (BOOL)sendData:(NSData *)data toPlayers:(NSArray *)playerIDs withDataMode:(BHMatchSendDataMode)mode error:(NSError **)error {
+- (BOOL)sendData:(NSData*)data toPlayers:(NSArray*)playerIDs withDataMode:(BHMatchSendDataMode)mode error:(NSError**)error
+{
 }
 
-- (BOOL)startServer {
+- (BOOL)startServer
+{
 }
 
-- (NSArray *)playerIDs {
+- (NSArray*)playerIDs
+{
 }
 
-- (NSMutableDictionary *)clientPlayerInformationRecieved:(NSDictionary *)clientDict fromPeer:(NSString *)enetOrPlayerID {
+- (NSMutableDictionary*)clientPlayerInformationRecieved:(NSDictionary*)clientDict fromPeer:(NSString*)enetOrPlayerID
+{
 }
 
-- (NSMutableDictionary *)loadInfoForPlayer:(NSString *)playerID {
+- (NSMutableDictionary*)loadInfoForPlayer:(NSString*)playerID
+{
 }
 
-- (NSString *)cloudSalt {
+- (NSString*)cloudSalt
+{
 }
 
-- (NSString *)localPlayerID {
+- (NSString*)localPlayerID
+{
 }
 
-- (NSString *)localPlayerName {
+- (NSString*)localPlayerName
+{
 }
 
-- (NSString *)ownerName {
+- (NSString*)ownerName
+{
 }
 
-- (NSString *)persistentIDForNetID:(NSString *)netID {
+- (NSString*)persistentIDForNetID:(NSString*)netID
+{
 }
 
-- (float)credit {
+- (float)credit
+{
 }
 
-- (id)initWithPort:(NSString *)port_ userName:(NSString *)port_ photo:(id)photo hasLocalPLayer:(BOOL)photo worldName:(NSString *)worldName_ credit:(float)credit_ cloudSalt:(NSString *)credit_ ownerName:(NSString *)ownerName_ privacy:(NSString *)ownerName_ {
+- (id)initWithPort:(NSString*)port_ userName:(NSString*)port_ photo:(id)photo hasLocalPLayer:(BOOL)photo worldName:(NSString*)worldName_ credit:(float)credit_ cloudSalt:(NSString*)credit_ ownerName:(NSString*)ownerName_ privacy:(NSString*)ownerName_
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)disconnect {
+- (void)disconnect
+{
 }
 
-- (void)disconnectPlayer:(NSString *)playerID {
+- (void)disconnectPlayer:(NSString*)playerID
+{
 }
 
-- (void)netService:(NSNetService *)sender didNotPublish:(NSDictionary *)errorDict {
+- (void)netService:(NSNetService*)sender didNotPublish:(NSDictionary*)errorDict
+{
 }
 
-- (void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict {
+- (void)netService:(NSNetService*)sender didNotResolve:(NSDictionary*)errorDict
+{
 }
 
-- (void)netServiceDidResolveAddress:(NSNetService *)sender {
+- (void)netServiceDidResolveAddress:(NSNetService*)sender
+{
 }
 
-- (void)pollNetEvents {
+- (void)pollNetEvents
+{
 }
 
-- (void)removeClient:(NSString *)clientID {
+- (void)removeClient:(NSString*)clientID
+{
 }
 
-- (void)setCloudSalt:(NSString *)newSalt {
+- (void)setCloudSalt:(NSString*)newSalt
+{
 }
 
-- (void)setCredit:(float)newCredit {
+- (void)setCredit:(float)newCredit
+{
 }
 
-- (void)setOwner:(NSString *)newOwnerName {
+- (void)setOwner:(NSString*)newOwnerName
+{
 }
 
-- (void)setPrivacyByString:(NSString *)privacyString {
+- (void)setPrivacyByString:(NSString*)privacyString
+{
 }
 
 @end

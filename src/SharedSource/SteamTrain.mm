@@ -2,136 +2,180 @@
 
 @implementation SteamTrain
 
-- (void)addToFuelForItem:(ItemType)itemType {
+- (void)addToFuelForItem:(ItemType)itemType
+{
 }
 
-- (BOOL)canDismissFuelUI {
+- (BOOL)canDismissFuelUI
+{
 }
 
-- (int)fuelCount {
+- (int)fuelCount
+{
 }
 
-- (int)fuelItemCount {
+- (int)fuelItemCount
+{
 }
 
-- (int *)fuelItems {
+- (int*)fuelItems
+{
 }
 
-- (Vector2)fuelUIPos {
+- (Vector2)fuelUIPos
+{
 }
 
-- (NSString *)title {
+- (NSString*)title
+{
 }
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (void)addToFuelForItem:(ItemType)itemType {
+- (void)addToFuelForItem:(ItemType)itemType
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canDismissFuelUI {
+- (BOOL)canDismissFuelUI
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (int)fuelCount {
+- (int)fuelCount
+{
 }
 
-- (int)fuelItemCount {
+- (int)fuelItemCount
+{
 }
 
-- (int *)fuelItems {
+- (int*)fuelItems
+{
 }
 
-- (Vector2)fuelUIPos {
+- (Vector2)fuelUIPos
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (SteamTrain *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId {
+- (SteamTrain*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
+{
 }
 
-- (SteamTrain *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (SteamTrain*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (SteamTrain *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (SteamTrain*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (BOOL)isEngine {
+- (BOOL)isEngine
+{
 }
 
-- (ItemType)itemType {
+- (ItemType)itemType
+{
 }
 
-- (void)loadDerivedStuff {
+- (void)loadDerivedStuff
+{
 }
 
-- (int)maxNumberOfRiders {
+- (int)maxNumberOfRiders
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)railOrStationNameChanged {
+- (void)railOrStationNameChanged
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeRider:(Blockhead *)blockhead {
+- (void)removeRider:(Blockhead*)blockhead
+{
 }
 
-- (Vector2)renderPos {
+- (Vector2)renderPos
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead *)blockhead cameraX:(float)cameraX {
+- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)blockhead cameraX:(float)cameraX
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (NSString *)secondOptionTitle {
+- (NSString*)secondOptionTitle
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved {
+- (void)setNeedsRemoved:(BOOL)needsRemoved
+{
 }
 
-- (void)setPaused:(BOOL)paused {
+- (void)setPaused:(BOOL)paused
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (void)setWorkbenchChoiceUIOption:(int)option {
+- (void)setWorkbenchChoiceUIOption:(int)option
+{
 }
 
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation {
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
+{
 }
 
-- (NSString *)title {
+- (NSString*)title
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateHasFuel {
+- (void)updateHasFuel
+{
 }
 
-- (void)updateSearchForStations {
+- (void)updateSearchForStations
+{
 }
 
 @end

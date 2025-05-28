@@ -2,373 +2,496 @@
 
 @implementation NPC
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (InteractionObject *)actsAsInteractionObject {
+- (InteractionObject*)actsAsInteractionObject
+{
 }
 
-- (void)addRider:(Blockhead *)blockhead {
+- (void)addRider:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)blockheadCanRide:(Blockhead *)blockhead usingItem:(ItemType)itemType {
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (Vector2)center {
+- (Vector2)center
+{
 }
 
-- (void)hitWithForce:(int)force blockhead:(Blockhead *)blockhead {
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (BOOL)isVisible {
+- (BOOL)isVisible
+{
 }
 
-- (BOOL)jumpsOnSwipe {
+- (BOOL)jumpsOnSwipe
+{
 }
 
-- (void)removeRider:(Blockhead *)blockhead {
+- (void)removeRider:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (int)rideDirection {
+- (int)rideDirection
+{
 }
 
-- (float)riderBodyYRotationForBlockhead:(Blockhead *)blockhead {
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)riderDPadShouldAllowUpDown {
+- (BOOL)riderDPadShouldAllowUpDown
+{
 }
 
-- (BOOL)riderDPadShouldGiveDiscreteValues {
+- (BOOL)riderDPadShouldGiveDiscreteValues
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (void)swipeUpGesture {
+- (void)swipeUpGesture
+{
 }
 
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation {
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
+{
 }
 
-- (BOOL)willDieIfHitByForce:(int)force {
+- (BOOL)willDieIfHitByForce:(int)force
+{
 }
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (InteractionObject *)actsAsInteractionObject {
+- (InteractionObject*)actsAsInteractionObject
+{
 }
 
-- (void)addRider:(Blockhead *)rider_ {
+- (void)addRider:(Blockhead*)rider_
+{
 }
 
-- (NSData *)appendNPCCreationDataToData:(NSData *)subclassData {
+- (NSData*)appendNPCCreationDataToData:(NSData*)subclassData
+{
 }
 
-- (void)beginBlockheadInspection:(Blockhead *)blockhead {
+- (void)beginBlockheadInspection:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)belongsToLocalPlayer {
+- (BOOL)belongsToLocalPlayer
+{
 }
 
-- (BOOL)belongsToPlayerWithBlockhead:(Blockhead *)blockhead {
+- (BOOL)belongsToPlayerWithBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)blockheadCanRide:(Blockhead *)blockhead usingItem:(ItemType)itemType {
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
+{
 }
 
-- (void)blockheadIsComingToInspect:(Blockhead *)blockhead {
+- (void)blockheadIsComingToInspect:(Blockhead*)blockhead
+{
 }
 
-- (void)blockheadUnloaded:(Blockhead *)blockhead {
+- (void)blockheadUnloaded:(Blockhead*)blockhead
+{
 }
 
-- (void)blockheadsLoaded {
+- (void)blockheadsLoaded
+{
 }
 
-- (NSString *)breedString {
+- (NSString*)breedString
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canBeCapturedByBlockhead:(Blockhead *)blockhead withItemType:(ItemType)itemType {
+- (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType
+{
 }
 
-- (BOOL)canBeFedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)canBeFedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canBeMilkedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)canBeMilkedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canBeRemovedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)canBeRemovedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canBeShavedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)canBeShavedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canMate {
+- (BOOL)canMate
+{
 }
 
-- (NSString *)cantBeCapturedTipStringForBlockhead:(Blockhead *)blockhead withItemType:(ItemType)itemType {
+- (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType
+{
 }
 
-- (NSString *)cantBeFedTipStringForBlockhead:(Blockhead *)blockhead {
+- (NSString*)cantBeFedTipStringForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (NSString *)cantBeMilkedTipStringForBlockhead:(Blockhead *)blockhead {
+- (NSString*)cantBeMilkedTipStringForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (NSString *)cantBeShavedTipStringForBlockhead:(Blockhead *)blockhead {
+- (NSString*)cantBeShavedTipStringForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)captureByBlockhead:(Blockhead *)blockhead withItemType:(ItemType)itemType {
+- (BOOL)captureByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType
+{
 }
 
-- (int)captureRequiredItemType {
+- (int)captureRequiredItemType
+{
 }
 
-- (int)capturedItemType {
+- (int)capturedItemType
+{
 }
 
-- (Vector2)center {
+- (Vector2)center
+{
 }
 
-- (void)changeName:(NSString *)newName {
+- (void)changeName:(NSString*)newName
+{
 }
 
-- (void)checkCurrentPositionForFood {
+- (void)checkCurrentPositionForFood
+{
 }
 
-- (NSString *)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline {
+- (NSString*)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline
+{
 }
 
-- (void)createItemDropsForDeath {
+- (void)createItemDropsForDeath
+{
 }
 
-- (uint64_t)creationDataStructSize {
+- (uint64_t)creationDataStructSize
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)die:(Blockhead *)killBlockhead_ {
+- (void)die:(Blockhead*)killBlockhead_
+{
 }
 
-- (BOOL)diesOfLowFullness {
+- (BOOL)diesOfLowFullness
+{
 }
 
-- (BOOL)diesOfOldAge {
+- (BOOL)diesOfOldAge
+{
 }
 
-- (void)drawName:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)drawName:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (BOOL)feedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)feedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (int)foodItemType {
+- (int)foodItemType
+{
 }
 
-- (float)fullnessFraction {
+- (float)fullnessFraction
+{
 }
 
-- (void)generateNewName {
+- (void)generateNewName
+{
 }
 
-- (NSString **)getNamesArray {
+- (NSString**)getNamesArray
+{
 }
 
-- (int)getNamesArrayCount {
+- (int)getNamesArrayCount
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (float)healthFraction {
+- (float)healthFraction
+{
 }
 
-- (void)hitWithForce:(int)force blockhead:(Blockhead *)blockhead {
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead
+{
 }
 
-- (NPC *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId {
+- (NPC*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
+{
 }
 
-- (NPC *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (NPC*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (NPC *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (NPC*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (void)inspectionStopped {
+- (void)inspectionStopped
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (BOOL)isVisible {
+- (BOOL)isVisible
+{
 }
 
-- (BOOL)jumpsOnSwipe {
+- (BOOL)jumpsOnSwipe
+{
 }
 
-- (void)loadValuesFromSaveDict:(NSDictionary *)saveDict {
+- (void)loadValuesFromSaveDict:(NSDictionary*)saveDict
+{
 }
 
-- (BOOL)mateWithNPC:(NPC *)otherNPC {
+- (BOOL)mateWithNPC:(NPC*)otherNPC
+{
 }
 
-- (float)maxAge {
+- (float)maxAge
+{
 }
 
-- (uint16_t)maxHealth {
+- (uint16_t)maxHealth
+{
 }
 
-- (BOOL)milkByBlockhead:(Blockhead *)blockhead {
+- (BOOL)milkByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (float)minFullness {
+- (float)minFullness
+{
 }
 
-- (float)minRidableAge {
+- (float)minRidableAge
+{
 }
 
-- (NSString *)name {
+- (NSString*)name
+{
 }
 
-- (Vector2)namePos {
+- (Vector2)namePos
+{
 }
 
-- (NPCCreationNetData)npcCreationNetDataForClient:(NSString *)clientIDToSendTo {
+- (NPCCreationNetData)npcCreationNetDataForClient:(NSString*)clientIDToSendTo
+{
 }
 
-- (NPCType)npcType {
+- (NPCType)npcType
+{
 }
 
-- (NPCUpdateNetData)npcUpdateNetDataForClient:(NSString *)clientIDToSendTo {
+- (NPCUpdateNetData)npcUpdateNetDataForClient:(NSString*)clientIDToSendTo
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)reactToBeingFed {
+- (void)reactToBeingFed
+{
 }
 
-- (void)reactToBeingHit {
+- (void)reactToBeingHit
+{
 }
 
-- (void)remoteCreationDataUpdate:(NSData *)netData {
+- (void)remoteCreationDataUpdate:(NSData*)netData
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (BOOL)removeIsRed {
+- (BOOL)removeIsRed
+{
 }
 
-- (void)removeRider:(Blockhead *)rider_ {
+- (void)removeRider:(Blockhead*)rider_
+{
 }
 
-- (NSString *)removeTitle {
+- (NSString*)removeTitle
+{
 }
 
-- (Vector2)renderPos {
+- (Vector2)renderPos
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (BOOL)requiresPhysicalBlock {
+- (BOOL)requiresPhysicalBlock
+{
 }
 
-- (BOOL)ridableWhenTamed {
+- (BOOL)ridableWhenTamed
+{
 }
 
-- (int)rideDirection {
+- (int)rideDirection
+{
 }
 
-- (float)riderBodyYRotationForBlockhead:(Blockhead *)blockhead {
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (float)riderBodyZRotationForBlockhead:(Blockhead *)blockhead {
+- (float)riderBodyZRotationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)riderDPadShouldAllowUpDown {
+- (BOOL)riderDPadShouldAllowUpDown
+{
 }
 
-- (BOOL)riderDPadShouldGiveDiscreteValues {
+- (BOOL)riderDPadShouldGiveDiscreteValues
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)secondChoiceIsBlue {
+- (BOOL)secondChoiceIsBlue
+{
 }
 
-- (NSString *)secondOptionTitle {
+- (NSString*)secondOptionTitle
+{
 }
 
-- (void)setAdultCreationStartValues {
+- (void)setAdultCreationStartValues
+{
 }
 
-- (void)setBabyCreationStartValues {
+- (void)setBabyCreationStartValues
+{
 }
 
-- (void)setFreeByBlockhead:(Blockhead *)blockhead {
+- (void)setFreeByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (BOOL)shaveByBlockhead:(Blockhead *)blockhead {
+- (BOOL)shaveByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)shouldSaveEveryChangeInPosition {
+- (BOOL)shouldSaveEveryChangeInPosition
+{
 }
 
-- (NSString *)speciesName {
+- (NSString*)speciesName
+{
 }
 
-- (void)successfulTame {
+- (void)successfulTame
+{
 }
 
-- (BOOL)suffersDamageAtHighTemperatures {
+- (BOOL)suffersDamageAtHighTemperatures
+{
 }
 
-- (void)swipeUpGesture {
+- (void)swipeUpGesture
+{
 }
 
-- (BOOL)tamed {
+- (BOOL)tamed
+{
 }
 
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation {
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updatePosition:(intpair)newPosition {
+- (void)updatePosition:(intpair)newPosition
+{
 }
 
-- (BOOL)willDieIfHitByForce:(int)force {
+- (BOOL)willDieIfHitByForce:(int)force
+{
 }
 
 @end

@@ -2,70 +2,92 @@
 
 @implementation HandCar
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)connectsToOtherCars {
+- (BOOL)connectsToOtherCars
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (HandCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId {
+- (HandCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
+{
 }
 
-- (HandCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (HandCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (HandCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (HandCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (int)itemType {
+- (int)itemType
+{
 }
 
-- (void)loadDerivedStuff {
+- (void)loadDerivedStuff
+{
 }
 
-- (int)maxNumberOfRiders {
+- (int)maxNumberOfRiders
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeRider:(Blockhead *)blockhead {
+- (void)removeRider:(Blockhead*)blockhead
+{
 }
 
-- (Vector2)renderPos {
+- (Vector2)renderPos
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (float)riderAnimationTimer {
+- (float)riderAnimationTimer
+{
 }
 
-- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead *)blockhead cameraX:(float)cameraX {
+- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)blockhead cameraX:(float)cameraX
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
 @end

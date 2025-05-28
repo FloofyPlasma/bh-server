@@ -2,73 +2,96 @@
 
 @implementation ClientTileLoader
 
-- (void)blockDataNotLoadedOnServer:(uint32_t)macroIndex {
+- (void)blockDataNotLoadedOnServer:(uint32_t)macroIndex
+{
 }
 
-- (void)blockDataRecievedFromServer:(NSData *)blockData {
+- (void)blockDataRecievedFromServer:(NSData*)blockData
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)deleteTimers {
+- (void)deleteTimers
+{
 }
 
-- (FoodType *)distanceOrderedFoodTypes {
+- (FoodType*)distanceOrderedFoodTypes
+{
 }
 
-- (int)faultOffsetForX:(int)x y:(int)y {
+- (int)faultOffsetForX:(int)x y:(int)y
+{
 }
 
-- (void)getInitialRockAndDirtHeightforX:(int)x rockHeight:(float *)rockHeight dirtHeight:(float *)dirtHeight {
+- (void)getInitialRockAndDirtHeightforX:(int)x rockHeight:(float*)rockHeight dirtHeight:(float*)dirtHeight
+{
 }
 
-- (void)getRockAndDirtHeightforX:(int)x rockHeight:(int *)rockHeight dirtHeight:(int *)dirtHeight {
+- (void)getRockAndDirtHeightforX:(int)x rockHeight:(int*)rockHeight dirtHeight:(int*)dirtHeight
+{
 }
 
-- (id)initWithWorld:(World *)world_ client:(BHClient *)client_ saveID:(NSString *)saveID_ randomSeed:(int)randomSeed cameraPos:(intpair)cameraPos {
+- (id)initWithWorld:(World*)world_ client:(BHClient*)client_ saveID:(NSString*)saveID_ randomSeed:(int)randomSeed cameraPos:(intpair)cameraPos
+{
 }
 
-- (void)initialDataRecievedFromServer:(NSData *)initialData {
+- (void)initialDataRecievedFromServer:(NSData*)initialData
+{
 }
 
-- (BOOL)isCaveForX:(int)x y:(int)y faultOffset:(int)faultOffset {
+- (BOOL)isCaveForX:(int)x y:(int)y faultOffset:(int)faultOffset
+{
 }
 
-- (void)lightBlockDataRecievedFromServer:(NSData *)blockData {
+- (void)lightBlockDataRecievedFromServer:(NSData*)blockData
+{
 }
 
-- (void)loadPhysicalBlock:(PhysicalBlock *)physicalBlock atPos:(intpair)pos withTilesData:(NSData *)tilesData lightData:(NSData *)lightData extraDataDict:(NSDictionary *)extraDataDict {
+- (void)loadPhysicalBlock:(PhysicalBlock*)physicalBlock atPos:(intpair)pos withTilesData:(NSData*)tilesData lightData:(NSData*)lightData extraDataDict:(NSDictionary*)extraDataDict
+{
 }
 
-- (int)maxOfRockAndDirtHeightForX:(int)x {
+- (int)maxOfRockAndDirtHeightForX:(int)x
+{
 }
 
-- (void)requestBlockFromServerAtPos:(intpair)createIfNotCreated createIfNotCreated:(BOOL)createIfNotCreated {
+- (void)requestBlockFromServerAtPos:(intpair)createIfNotCreated createIfNotCreated:(BOOL)createIfNotCreated
+{
 }
 
-- (float)sandFractionForPos:(intpair)worldPos height:(int)height highRes:(BOOL)highRes {
+- (float)sandFractionForPos:(intpair)worldPos height:(int)height highRes:(BOOL)highRes
+{
 }
 
-- (float)sandFractionForPos:(intpair)worldPos highRes:(BOOL)highRes {
+- (float)sandFractionForPos:(intpair)worldPos highRes:(BOOL)highRes
+{
 }
 
-- (BOOL)shouldBeCrystalBlockAtX:(int)x y:(int)y {
+- (BOOL)shouldBeCrystalBlockAtX:(int)x y:(int)y
+{
 }
 
-- (int)unmodifiedGroundLevelForX:(int)x {
+- (int)unmodifiedGroundLevelForX:(int)x
+{
 }
 
-- (void)updateQueue {
+- (void)updateQueue
+{
 }
 
-- (BOOL)waitingForBlocks {
+- (BOOL)waitingForBlocks
+{
 }
 
-- (int)waitingForBlocksCount {
+- (int)waitingForBlocksCount
+{
 }
 
-- (BOOL)waitingForFoodTypes {
+- (BOOL)waitingForFoodTypes
+{
 }
 
 @end

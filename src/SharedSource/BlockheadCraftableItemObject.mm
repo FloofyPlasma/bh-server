@@ -2,16 +2,20 @@
 
 @implementation BlockheadCraftableItemObject
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (BlockheadCraftableItemObject *)initWithCraftableItem:(CraftableItem)craftableItem_ name:(NSString *)name_ skinOptions:(BlockheadSkinOptions)skinOptions_ {
+- (BlockheadCraftableItemObject*)initWithCraftableItem:(CraftableItem)craftableItem_ name:(NSString*)name_ skinOptions:(BlockheadSkinOptions)skinOptions_
+{
 }
 
-- (BlockheadCraftableItemObject *)initWithSaveDict:(NSDictionary *)saveDict {
+- (BlockheadCraftableItemObject*)initWithSaveDict:(NSDictionary*)saveDict
+{
 }
 
 @end

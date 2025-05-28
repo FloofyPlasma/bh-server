@@ -2,286 +2,380 @@
 
 @implementation Workbench
 
-- (void)abortCraft {
+- (void)abortCraft
+{
 }
 
-- (void)addToFuelForItem:(ItemType)itemType {
+- (void)addToFuelForItem:(ItemType)itemType
+{
 }
 
-- (BOOL)canDismissFuelUI {
+- (BOOL)canDismissFuelUI
+{
 }
 
-- (int)fuelCount {
+- (int)fuelCount
+{
 }
 
-- (int)fuelItemCount {
+- (int)fuelItemCount
+{
 }
 
-- (int *)fuelItems {
+- (int*)fuelItems
+{
 }
 
-- (Vector2)fuelUIPos {
+- (Vector2)fuelUIPos
+{
 }
 
-- (void)hurryCompletion:(int)hurryCost {
+- (void)hurryCompletion:(int)hurryCost
+{
 }
 
-- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime {
+- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime
+{
 }
 
-- (BOOL)isStorageDevice {
+- (BOOL)isStorageDevice
+{
 }
 
-- (NSString *)titleForCraftProgressUI {
+- (NSString*)titleForCraftProgressUI
+{
 }
 
-- (void)abortCraft {
+- (void)abortCraft
+{
 }
 
-- (void)abortImmediatelyAndRestoreBlockheadItems {
+- (void)abortImmediatelyAndRestoreBlockheadItems
+{
 }
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY {
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY
+{
 }
 
-- (int)addDrawCubeData:(float *)buffer fromIndex:(int)index {
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (int)addDrawQuadData:(float *)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos {
+- (int)addDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
+{
 }
 
-- (void)addToFuel:(int)fuelToAdd {
+- (void)addToFuel:(int)fuelToAdd
+{
 }
 
-- (void)addToFuelForItem:(ItemType)itemType {
+- (void)addToFuelForItem:(ItemType)itemType
+{
 }
 
-- (uint16_t)availableElectricity {
+- (uint16_t)availableElectricity
+{
 }
 
-- (void)blockheadUnloaded:(Blockhead *)blockhead {
+- (void)blockheadUnloaded:(Blockhead*)blockhead
+{
 }
 
-- (void)blockheadWouldLikeToTakeOwnership:(Blockhead *)blockhead withSaveDict:(NSDictionary *)saveDict {
+- (void)blockheadWouldLikeToTakeOwnership:(Blockhead*)blockhead withSaveDict:(NSDictionary*)saveDict
+{
 }
 
-- (void)blockheadsLoaded {
+- (void)blockheadsLoaded
+{
 }
 
-- (BOOL)canBeUsedInExpertModeWhenNotOwned {
+- (BOOL)canBeUsedInExpertModeWhenNotOwned
+{
 }
 
-- (BOOL)canDismissFuelUI {
+- (BOOL)canDismissFuelUI
+{
 }
 
-- (float)combinedLightForSolarPanel {
+- (float)combinedLightForSolarPanel
+{
 }
 
-- (float)combinedLightForSolarPanelWithFullSunlight {
+- (float)combinedLightForSolarPanelWithFullSunlight
+{
 }
 
-- (BOOL)conductsElectricity {
+- (BOOL)conductsElectricity
+{
 }
 
-- (void)craftCompleted {
+- (void)craftCompleted
+{
 }
 
-- (BOOL)craftItem:(CraftableItemObject *)craftingItemObject_ withBlockhead:(Blockhead *)blockhead craftProgressUI:(CraftProgressUI *)craftProgressUI_ count:(int)count_ {
+- (BOOL)craftItem:(CraftableItemObject*)craftingItemObject_ withBlockhead:(Blockhead*)blockhead craftProgressUI:(CraftProgressUI*)craftProgressUI_ count:(int)count_
+{
 }
 
-- (CraftableItem **)craftableItems {
+- (CraftableItem**)craftableItems
+{
 }
 
-- (ItemType)currentlyCraftingItemType {
+- (ItemType)currentlyCraftingItemType
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (ItemType)destroyItemType {
+- (ItemType)destroyItemType
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (float)energyFraction {
+- (float)energyFraction
+{
 }
 
-- (float)fractionComplete {
+- (float)fractionComplete
+{
 }
 
-- (uint16_t)freeBlockCreationDataA {
+- (uint16_t)freeBlockCreationDataA
+{
 }
 
-- (uint16_t)freeBlockCreationDataB {
+- (uint16_t)freeBlockCreationDataB
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationSaveDict {
+- (NSMutableDictionary*)freeBlockCreationSaveDict
+{
 }
 
-- (ItemType)freeblockCreationItemType {
+- (ItemType)freeblockCreationItemType
+{
 }
 
-- (int)fuelCount {
+- (int)fuelCount
+{
 }
 
-- (int)fuelItemCount {
+- (int)fuelItemCount
+{
 }
 
-- (int *)fuelItems {
+- (int*)fuelItems
+{
 }
 
-- (int *)fuelTypes {
+- (int*)fuelTypes
+{
 }
 
-- (int)fuelTypesCount {
+- (int)fuelTypesCount
+{
 }
 
-- (Vector2)fuelUIPos {
+- (Vector2)fuelUIPos
+{
 }
 
-- (BOOL)generatesElectricity {
+- (BOOL)generatesElectricity
+{
 }
 
-- (Vector)getLightRGB {
+- (Vector)getLightRGB
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (BOOL)hasRequiredFuel {
+- (BOOL)hasRequiredFuel
+{
 }
 
-- (void)hurryCompletion:(int)hurryCost {
+- (void)hurryCompletion:(int)hurryCost
+{
 }
 
-- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime {
+- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime
+{
 }
 
-- (void)initLevelStuff {
+- (void)initLevelStuff
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (Workbench *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ type:(WorkbenchType)type_ flipped:(BOOL)flipped_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId clientName:(NSString *)clientName {
+- (Workbench*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(WorkbenchType)type_ flipped:(BOOL)flipped_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId clientName:(NSString*)clientName
+{
 }
 
-- (Workbench *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (Workbench*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (Workbench *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (Workbench*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (uint16_t)interactionObjectType {
+- (uint16_t)interactionObjectType
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (BOOL)isStorageDevice {
+- (BOOL)isStorageDevice
+{
 }
 
-- (int)lightGlowQuadCount {
+- (int)lightGlowQuadCount
+{
 }
 
-- (Vector)lightPos {
+- (Vector)lightPos
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)occupiesNormalContents {
+- (BOOL)occupiesNormalContents
+{
 }
 
-- (void)remoteBlockheadRemovedWithID:(uint64_t)blockheadID {
+- (void)remoteBlockheadRemovedWithID:(uint64_t)blockheadID
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)remove:(Blockhead *)removeBlockhead {
+- (void)remove:(Blockhead*)removeBlockhead
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (BOOL)rendersDynamicObjectCubes {
+- (BOOL)rendersDynamicObjectCubes
+{
 }
 
-- (BOOL)rendersDynamicObjectQuad {
+- (BOOL)rendersDynamicObjectQuad
+{
 }
 
-- (BOOL)requiresElectricty {
+- (BOOL)requiresElectricty
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (BOOL)requiresHumanInteraction {
+- (BOOL)requiresHumanInteraction
+{
 }
 
-- (BOOL)requiresPhysicalBlock {
+- (BOOL)requiresPhysicalBlock
+{
 }
 
-- (void)setLevelSilently:(int)level_ {
+- (void)setLevelSilently:(int)level_
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved {
+- (void)setNeedsRemoved:(BOOL)needsRemoved
+{
 }
 
-- (void)setPaused:(BOOL)newPaused {
+- (void)setPaused:(BOOL)newPaused
+{
 }
 
-- (void)startManagingFuelWithBlockhead:(Blockhead *)blockhead {
+- (void)startManagingFuelWithBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (int)staticGeometryDrawCubeCount {
+- (int)staticGeometryDrawCubeCount
+{
 }
 
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos {
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos
+{
 }
 
-- (BOOL)subtractElectricty:(uint16_t)amountToSubtract {
+- (BOOL)subtractElectricty:(uint16_t)amountToSubtract
+{
 }
 
-- (NSString *)title {
+- (NSString*)title
+{
 }
 
-- (NSString *)titleForCraftProgressUI {
+- (NSString*)titleForCraftProgressUI
+{
 }
 
-- (int)totalItemsLeftToCraft {
+- (int)totalItemsLeftToCraft
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateHasFuel {
+- (void)updateHasFuel
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updatePortalLight {
+- (void)updatePortalLight
+{
 }
 
-- (NSString *)upgradeName {
+- (NSString*)upgradeName
+{
 }
 
-- (NSString *)upgradeNameForCraftProgressUI {
+- (NSString*)upgradeNameForCraftProgressUI
+{
 }
 
-- (void)upgradeToNextLevel {
+- (void)upgradeToNextLevel
+{
 }
 
-- (BOOL)usesStoresConductsOrProducesElectricity {
+- (BOOL)usesStoresConductsOrProducesElectricity
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
 @end

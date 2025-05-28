@@ -2,109 +2,144 @@
 
 @implementation InteractionObject
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (void)blockheadUnloaded:(Blockhead *)blockhead {
+- (void)blockheadUnloaded:(Blockhead*)blockhead
+{
 }
 
-- (void)blockheadWouldLikeToTakeOwnership:(Blockhead *)blockhead withSaveDict:(NSDictionary *)saveDict {
+- (void)blockheadWouldLikeToTakeOwnership:(Blockhead*)blockhead withSaveDict:(NSDictionary*)saveDict
+{
 }
 
-- (void)blockheadsLoaded {
+- (void)blockheadsLoaded
+{
 }
 
-- (BOOL)canBeUsedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)canBeUsedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canBeUsedInExpertModeWhenNotOwned {
+- (BOOL)canBeUsedInExpertModeWhenNotOwned
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (ItemType)destroyItemType {
+- (ItemType)destroyItemType
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (InteractionObject *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId clientName:(NSString *)clientName {
+- (InteractionObject*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId clientName:(NSString*)clientName
+{
 }
 
-- (InteractionObject *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (InteractionObject*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (InteractionObject *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (InteractionObject*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (InteractionObjectCreationNetData)interactionObjectCreationNetData {
+- (InteractionObjectCreationNetData)interactionObjectCreationNetData
+{
 }
 
-- (uint16_t)interactionObjectType {
+- (uint16_t)interactionObjectType
+{
 }
 
-- (ItemType)interactionRenderItemType {
+- (ItemType)interactionRenderItemType
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (BOOL)isPaintable {
+- (BOOL)isPaintable
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)paint:(uint16_t)colorIndex {
+- (void)paint:(uint16_t)colorIndex
+{
 }
 
-- (void)remoteBlockheadRemovedWithID:(uint64_t)blockheadID {
+- (void)remoteBlockheadRemovedWithID:(uint64_t)blockheadID
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)remove:(Blockhead *)removeBlockhead {
+- (void)remove:(Blockhead*)removeBlockhead
+{
 }
 
-- (BOOL)requiresHumanInteraction {
+- (BOOL)requiresHumanInteraction
+{
 }
 
-- (BOOL)requiresPhysicalBlock {
+- (BOOL)requiresPhysicalBlock
+{
 }
 
-- (void)setPaused:(BOOL)paused {
+- (void)setPaused:(BOOL)paused
+{
 }
 
-- (void)setProxyObjectOwner:(DynamicObject *)proxyObjectOwner_ {
+- (void)setProxyObjectOwner:(DynamicObject*)proxyObjectOwner_
+{
 }
 
-- (BOOL)shouldAddToMacroBlock {
+- (BOOL)shouldAddToMacroBlock
+{
 }
 
-- (void)startInteractionWithBlockhead:(Blockhead *)blockhead {
+- (void)startInteractionWithBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (NSString *)title {
+- (NSString*)title
+{
 }
 
-- (BOOL)twoBlocksWide {
+- (BOOL)twoBlocksWide
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
 @end

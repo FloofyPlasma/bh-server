@@ -2,94 +2,124 @@
 
 @implementation Torch
 
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY {
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY
+{
 }
 
-- (int)addDrawQuadData:(float *)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos {
+- (int)addDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (uint16_t)freeBlockCreationDataA {
+- (uint16_t)freeBlockCreationDataA
+{
 }
 
-- (uint16_t)freeBlockCreationDataB {
+- (uint16_t)freeBlockCreationDataB
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationSaveDict {
+- (NSMutableDictionary*)freeBlockCreationSaveDict
+{
 }
 
-- (ItemType)freeblockCreationItemType {
+- (ItemType)freeblockCreationItemType
+{
 }
 
-- (Vector)getLightRGB {
+- (Vector)getLightRGB
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (Torch *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos cache:(CPCache *)cache_ type:(ItemType)itemType_ dataA:(uint16_t)dataA_ dataB:(uint16_t)dataB_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (Torch*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ dataA:(uint16_t)dataA_ dataB:(uint16_t)dataB_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (Torch *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (Torch*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (Torch *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (Torch*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (BOOL)isDownlight {
+- (BOOL)isDownlight
+{
 }
 
-- (BOOL)isUplight {
+- (BOOL)isUplight
+{
 }
 
-- (int)lightGlowQuadCount {
+- (int)lightGlowQuadCount
+{
 }
 
-- (Vector)lightPos {
+- (Vector)lightPos
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)occupiesForegroundContents {
+- (BOOL)occupiesForegroundContents
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (int)renderImageIndex {
+- (int)renderImageIndex
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved {
+- (void)setNeedsRemoved:(BOOL)needsRemoved
+{
 }
 
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos {
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)waterContentChanged:(std::vector<intpair> *)waterContentChangedPositions {
+- (void)waterContentChanged:(std::vector<intpair>*)waterContentChangedPositions
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
-- (void)worldContentsChanged:(std::vector<intpair> *)worldContentsChangedPositions {
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions
+{
 }
 
 @end

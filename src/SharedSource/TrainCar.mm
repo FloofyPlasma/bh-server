@@ -2,226 +2,300 @@
 
 @implementation TrainCar
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (InteractionObject *)actsAsInteractionObject {
+- (InteractionObject*)actsAsInteractionObject
+{
 }
 
-- (void)addRider:(Blockhead *)blockhead {
+- (void)addRider:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)blockheadCanRide:(Blockhead *)blockhead usingItem:(ItemType)itemType {
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (BOOL)jumpsOnSwipe {
+- (BOOL)jumpsOnSwipe
+{
 }
 
-- (void)removeRider:(Blockhead *)blockhead {
+- (void)removeRider:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (int)rideDirection {
+- (int)rideDirection
+{
 }
 
-- (float)riderBodyYRotationForBlockhead:(Blockhead *)blockhead {
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)riderDPadShouldAllowUpDown {
+- (BOOL)riderDPadShouldAllowUpDown
+{
 }
 
-- (BOOL)riderDPadShouldGiveDiscreteValues {
+- (BOOL)riderDPadShouldGiveDiscreteValues
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (void)swipeUpGesture {
+- (void)swipeUpGesture
+{
 }
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (InteractionObject *)actsAsInteractionObject {
+- (InteractionObject*)actsAsInteractionObject
+{
 }
 
-- (void)addRider:(Blockhead *)blockhead {
+- (void)addRider:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)blockheadCanRide:(Blockhead *)blockhead usingItem:(ItemType)itemType {
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
+{
 }
 
-- (void)blockheadUnloaded:(Blockhead *)blockhead {
+- (void)blockheadUnloaded:(Blockhead*)blockhead
+{
 }
 
-- (void)blockheadsLoaded {
+- (void)blockheadsLoaded
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)cleanup {
+- (void)cleanup
+{
 }
 
-- (BOOL)connectsToOtherCars {
+- (BOOL)connectsToOtherCars
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (TrainCar *)engineCar {
+- (TrainCar*)engineCar
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationSaveDict {
+- (NSMutableDictionary*)freeBlockCreationSaveDict
+{
 }
 
-- (ItemType)freeblockCreationItemType {
+- (ItemType)freeblockCreationItemType
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (TrainCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId {
+- (TrainCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
+{
 }
 
-- (TrainCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (TrainCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (TrainCar *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (TrainCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (BOOL)isEngine {
+- (BOOL)isEngine
+{
 }
 
-- (ItemType)itemType {
+- (ItemType)itemType
+{
 }
 
-- (BOOL)jumpsOnSwipe {
+- (BOOL)jumpsOnSwipe
+{
 }
 
-- (TrainCar *)leftCar {
+- (TrainCar*)leftCar
+{
 }
 
-- (Vector2)leftWheelPos {
+- (Vector2)leftWheelPos
+{
 }
 
-- (void)loadDerivedStuff {
+- (void)loadDerivedStuff
+{
 }
 
-- (uint16_t)maxHealth {
+- (uint16_t)maxHealth
+{
 }
 
-- (int)maxNumberOfRiders {
+- (int)maxNumberOfRiders
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)railOrStationNameChanged {
+- (void)railOrStationNameChanged
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (void)removeRider:(Blockhead *)blockhead {
+- (void)removeRider:(Blockhead*)blockhead
+{
 }
 
-- (Vector2)renderPos {
+- (Vector2)renderPos
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (int)rideDirection {
+- (int)rideDirection
+{
 }
 
-- (float)riderAnimationTimer {
+- (float)riderAnimationTimer
+{
 }
 
-- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead *)blockhead cameraX:(float)cameraX {
+- (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)blockhead cameraX:(float)cameraX
+{
 }
 
-- (float)riderBodyYRotationForBlockhead:(Blockhead *)blockhead {
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (float)riderBodyZRotation {
+- (float)riderBodyZRotation
+{
 }
 
-- (BOOL)riderDPadShouldAllowUpDown {
+- (BOOL)riderDPadShouldAllowUpDown
+{
 }
 
-- (BOOL)riderDPadShouldGiveDiscreteValues {
+- (BOOL)riderDPadShouldGiveDiscreteValues
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (TrainCar *)rightCar {
+- (TrainCar*)rightCar
+{
 }
 
-- (Vector2)rightWheelPos {
+- (Vector2)rightWheelPos
+{
 }
 
-- (void)setEngineCar:(TrainCar *)engineCar_ {
+- (void)setEngineCar:(TrainCar*)engineCar_
+{
 }
 
-- (void)setLeftCar:(TrainCar *)leftCar_ {
+- (void)setLeftCar:(TrainCar*)leftCar_
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved {
+- (void)setNeedsRemoved:(BOOL)needsRemoved
+{
 }
 
-- (void)setPaused:(BOOL)paused {
+- (void)setPaused:(BOOL)paused
+{
 }
 
-- (void)setRightCar:(TrainCar *)rightCar_ {
+- (void)setRightCar:(TrainCar*)rightCar_
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (void)swipeUpGesture {
+- (void)swipeUpGesture
+{
 }
 
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation {
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
+{
 }
 
-- (TrainCarCreationNetData)trainCarCreationNetData {
+- (TrainCarCreationNetData)trainCarCreationNetData
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updatePosition:(intpair)newPosition {
+- (void)updatePosition:(intpair)newPosition
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
 @end

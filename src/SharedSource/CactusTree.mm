@@ -2,43 +2,56 @@
 
 @implementation CactusTree
 
-- (ItemType)fruitItemType {
+- (ItemType)fruitItemType
+{
 }
 
-- (BOOL)fruitShouldFallInSeason:(int)season {
+- (BOOL)fruitShouldFallInSeason:(int)season
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (CactusTree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ maxHeight:(int16_t)maxHeight_ growthRate:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge {
+- (CactusTree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ maxHeight:(int16_t)maxHeight_ growthRate:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_ adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge
+{
 }
 
-- (CactusTree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ {
+- (CactusTree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+{
 }
 
-- (BOOL)isRequiredSoilType:(TileType)type {
+- (BOOL)isRequiredSoilType:(TileType)type
+{
 }
 
-- (void)loadSaveDictValues:(NSDictionary *)saveDict {
+- (void)loadSaveDictValues:(NSDictionary*)saveDict
+{
 }
 
-- (void)makeTileDead:(Tile *)tile {
+- (void)makeTileDead:(Tile*)tile
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)tileIsKindOfSelf:(Tile *)tile {
+- (BOOL)tileIsKindOfSelf:(Tile*)tile
+{
 }
 
-- (TreeType)treeType {
+- (TreeType)treeType
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateGrowth:(BOOL)addNewBranchBlocks {
+- (void)updateGrowth:(BOOL)addNewBranchBlocks
+{
 }
 
 @end

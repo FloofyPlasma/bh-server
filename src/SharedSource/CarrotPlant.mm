@@ -2,37 +2,48 @@
 
 @implementation CarrotPlant
 
-- (BOOL)canDieSeason:(int)season {
+- (BOOL)canDieSeason:(int)season
+{
 }
 
-- (BOOL)floweringSeason:(int)season {
+- (BOOL)floweringSeason:(int)season
+{
 }
 
-- (float)foodToRemoveWhenSpawningNPC {
+- (float)foodToRemoveWhenSpawningNPC
+{
 }
 
-- (BOOL)isRequiredSoilType:(TileType)type {
+- (BOOL)isRequiredSoilType:(TileType)type
+{
 }
 
-- (float)maxAgeBase {
+- (float)maxAgeBase
+{
 }
 
-- (int)minAllowedTemperature {
+- (int)minAllowedTemperature
+{
 }
 
-- (NPCType)npcSpawnType {
+- (NPCType)npcSpawnType
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (PlantType)plantType {
+- (PlantType)plantType
+{
 }
 
-- (ImageType)renderImageType {
+- (ImageType)renderImageType
+{
 }
 
-- (ItemType)seedItemType {
+- (ItemType)seedItemType
+{
 }
 
 @end

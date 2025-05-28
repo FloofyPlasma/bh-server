@@ -2,166 +2,220 @@
 
 @implementation Boat
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (InteractionObject *)actsAsInteractionObject {
+- (InteractionObject*)actsAsInteractionObject
+{
 }
 
-- (void)addRider:(Blockhead *)blockhead {
+- (void)addRider:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)blockheadCanRide:(Blockhead *)blockhead usingItem:(ItemType)itemType {
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (BOOL)jumpsOnSwipe {
+- (BOOL)jumpsOnSwipe
+{
 }
 
-- (void)removeRider:(Blockhead *)blockhead {
+- (void)removeRider:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (int)rideDirection {
+- (int)rideDirection
+{
 }
 
-- (float)riderBodyYRotationForBlockhead:(Blockhead *)blockhead {
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)riderDPadShouldAllowUpDown {
+- (BOOL)riderDPadShouldAllowUpDown
+{
 }
 
-- (BOOL)riderDPadShouldGiveDiscreteValues {
+- (BOOL)riderDPadShouldGiveDiscreteValues
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (void)swipeUpGesture {
+- (void)swipeUpGesture
+{
 }
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (InteractionObject *)actsAsInteractionObject {
+- (InteractionObject*)actsAsInteractionObject
+{
 }
 
-- (void)addRider:(Blockhead *)rider_ {
+- (void)addRider:(Blockhead*)rider_
+{
 }
 
-- (BOOL)blockheadCanRide:(Blockhead *)blockhead usingItem:(ItemType)itemType {
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
+{
 }
 
-- (void)blockheadUnloaded:(Blockhead *)blockhead {
+- (void)blockheadUnloaded:(Blockhead*)blockhead
+{
 }
 
-- (void)blockheadsLoaded {
+- (void)blockheadsLoaded
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (ItemType)freeblockCreationItemType {
+- (ItemType)freeblockCreationItemType
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (Boat *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId {
+- (Boat*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
+{
 }
 
-- (Boat *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (Boat*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (Boat *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (Boat*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
 }
 
-- (BOOL)jumpsOnSwipe {
+- (BOOL)jumpsOnSwipe
+{
 }
 
-- (void)loadDerivedStuff {
+- (void)loadDerivedStuff
+{
 }
 
-- (uint16_t)maxHealth {
+- (uint16_t)maxHealth
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeRider:(Blockhead *)rider_ {
+- (void)removeRider:(Blockhead*)rider_
+{
 }
 
-- (Vector2)renderPos {
+- (Vector2)renderPos
+{
 }
 
-- (BOOL)requiresFuel {
+- (BOOL)requiresFuel
+{
 }
 
-- (int)rideDirection {
+- (int)rideDirection
+{
 }
 
-- (float)riderBodyYRotationForBlockhead:(Blockhead *)blockhead {
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (float)riderBodyZRotation {
+- (float)riderBodyZRotation
+{
 }
 
-- (BOOL)riderDPadShouldAllowUpDown {
+- (BOOL)riderDPadShouldAllowUpDown
+{
 }
 
-- (BOOL)riderDPadShouldGiveDiscreteValues {
+- (BOOL)riderDPadShouldGiveDiscreteValues
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved_ {
+- (void)setNeedsRemoved:(BOOL)needsRemoved_
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (void)swipeUpGesture {
+- (void)swipeUpGesture
+{
 }
 
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation {
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updatePosition:(intpair)newPosition {
+- (void)updatePosition:(intpair)newPosition
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
 @end

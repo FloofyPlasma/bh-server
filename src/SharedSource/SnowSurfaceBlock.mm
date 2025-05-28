@@ -2,55 +2,72 @@
 
 @implementation SnowSurfaceBlock
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (SnowSurfaceBlock *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ {
+- (SnowSurfaceBlock*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_
+{
 }
 
-- (SnowSurfaceBlock *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (SnowSurfaceBlock*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)removeAllSnow {
+- (void)removeAllSnow
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (BOOL)removeIfFloating {
+- (BOOL)removeIfFloating
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved {
+- (void)setNeedsRemoved:(BOOL)needsRemoved
+{
 }
 
-- (void)spreadGrass:(Tile *)belowTile tile:(Tile *)tile {
+- (void)spreadGrass:(Tile*)belowTile tile:(Tile*)tile
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateGroundFrozen:(Tile *)belowTile tile:(Tile *)tile {
+- (void)updateGroundFrozen:(Tile*)belowTile tile:(Tile*)tile
+{
 }
 
-- (void)updateInTimeSinceSaved {
+- (void)updateInTimeSinceSaved
+{
 }
 
-- (void)updateRain:(float)rainFraction dt:(float)dt {
+- (void)updateRain:(float)rainFraction dt:(float)dt
+{
 }
 
-- (void)updateSnowContent:(BOOL)forceUpdate tile:(Tile *)tile {
+- (void)updateSnowContent:(BOOL)forceUpdate tile:(Tile*)tile
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
 @end

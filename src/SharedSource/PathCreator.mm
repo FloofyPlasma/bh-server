@@ -2,28 +2,36 @@
 
 @implementation PathCreator
 
-- (void)abortPath {
+- (void)abortPath
+{
 }
 
-- (NSArray *)calculateFallPath {
+- (NSArray*)calculateFallPath
+{
 }
 
-- (void)calculatePath {
+- (void)calculatePath
+{
 }
 
-- (void)createPathWithDict:(NSDictionary *)pathDict {
+- (void)createPathWithDict:(NSDictionary*)pathDict
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (PathCreator *)initWithWorld:(World *)world_ {
+- (PathCreator*)initWithWorld:(World*)world_
+{
 }
 
-- (DerivedTileProperties *)tileDerivedPropertiesAtWorldIndex:(int)worldIndex {
+- (DerivedTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)worldIndex
+{
 }
 
-- (void)updatePath {
+- (void)updatePath
+{
 }
 
 @end

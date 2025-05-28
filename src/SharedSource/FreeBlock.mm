@@ -2,64 +2,84 @@
 
 @implementation FreeBlock
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-+ (NSData *)creationNetDataForFreeblockAtPosition:(intpair)pos ofType:(ItemType)itemType dataA:(uint16_t)dataA dataB:(uint16_t)dataB subItems:(NSArray *)subItems dynamicObjectSaveDict:(NSDictionary *)dynamicObjectSaveDict hovers:(BOOL)hovers priorityBlockhead:(Blockhead *)priorityBlockhead soundType:(int)soundType creationSoundPlayTime:(float)creationNetDataForFreeblockAtPosition {
++ (NSData*)creationNetDataForFreeblockAtPosition:(intpair)pos ofType:(ItemType)itemType dataA:(uint16_t)dataA dataB:(uint16_t)dataB subItems:(NSArray*)subItems dynamicObjectSaveDict:(NSDictionary*)dynamicObjectSaveDict hovers:(BOOL)hovers priorityBlockhead:(Blockhead*)priorityBlockhead soundType:(int)soundType creationSoundPlayTime:(float)creationNetDataForFreeblockAtPosition
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (BOOL)falling {
+- (BOOL)falling
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)hitLava {
+- (void)hitLava
+{
 }
 
-- (void)initSubDerivedObjects {
+- (void)initSubDerivedObjects
+{
 }
 
-- (FreeBlock *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos_ ofType:(ItemType)itemType_ dataA:(uint16_t)dataA_ dataB:(uint16_t)dataB_ subItems:(NSDictionary *)subItems_ dynamicObjectSaveDict:(NSDictionary *)dynamicObjectSaveDict_ cache:(CPCache *)cache_ hovers:(BOOL)hovers_ priorityBlockhead:(Blockhead *)priorityBlockhead_ {
+- (FreeBlock*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos_ ofType:(ItemType)itemType_ dataA:(uint16_t)dataA_ dataB:(uint16_t)dataB_ subItems:(NSDictionary*)subItems_ dynamicObjectSaveDict:(NSDictionary*)dynamicObjectSaveDict_ cache:(CPCache*)cache_ hovers:(BOOL)hovers_ priorityBlockhead:(Blockhead*)priorityBlockhead_
+{
 }
 
-- (FreeBlock *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (FreeBlock*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (FreeBlock *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData avoidFreeblockDupeObjectIds:(std::list<uint64_t> *)avoidFreeblockDupeObjectIds {
+- (FreeBlock*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData avoidFreeblockDupeObjectIds:(std::list<uint64_t>*)avoidFreeblockDupeObjectIds
+{
 }
 
-- (FreeBlock *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (FreeBlock*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)priorityBlockheadCannotPickup {
+- (void)priorityBlockheadCannotPickup
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (BOOL)shouldSaveEveryChangeInPosition {
+- (BOOL)shouldSaveEveryChangeInPosition
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updatePosition:(intpair)newPosition {
+- (void)updatePosition:(intpair)newPosition
+{
 }
 
 @end

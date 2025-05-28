@@ -2,151 +2,200 @@
 
 @implementation Shark
 
-- (void)addRider:(Blockhead *)blockhead {
+- (void)addRider:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)blockheadCanRide:(Blockhead *)blockhead usingItem:(ItemType)itemType {
+- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
+{
 }
 
-- (void)blockheadUnloaded:(Blockhead *)blockhead {
+- (void)blockheadUnloaded:(Blockhead*)blockhead
+{
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead *)blockhead {
+- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canBeCapturedByBlockhead:(Blockhead *)blockhead withItemType:(ItemType)itemType {
+- (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType
+{
 }
 
-- (NSString *)cantBeCapturedTipStringForBlockhead:(Blockhead *)blockhead withItemType:(ItemType)item {
+- (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)item
+{
 }
 
-- (ItemType)captureRequiredItemType {
+- (ItemType)captureRequiredItemType
+{
 }
 
-- (ItemType)capturedItemType {
+- (ItemType)capturedItemType
+{
 }
 
-- (Vector2)center {
+- (Vector2)center
+{
 }
 
-- (uint64_t)creationDataStructSize {
+- (uint64_t)creationDataStructSize
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)die:(Blockhead *)killBlockhead_ {
+- (void)die:(Blockhead*)killBlockhead_
+{
 }
 
-- (void)doRemoteUpdate:(SharkUpdateNetData)remoteUpdateData {
+- (void)doRemoteUpdate:(SharkUpdateNetData)remoteUpdateData
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (ItemType)foodItemType {
+- (ItemType)foodItemType
+{
 }
 
-- (NSString **)getNamesArray {
+- (NSString**)getNamesArray
+{
 }
 
-- (int)getNamesArrayCount {
+- (int)getNamesArrayCount
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)hitWithForce:(int)force blockhead:(Blockhead *)blockhead {
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead
+{
 }
 
-- (Shark *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ saveDict:(NSDictionary *)saveDict isAdult:(BOOL)isAdult wasPlaced:(BOOL)wasPlaced placedByClient:(NSString *)clientId {
+- (Shark*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ saveDict:(NSDictionary*)saveDict isAdult:(BOOL)isAdult wasPlaced:(BOOL)wasPlaced placedByClient:(NSString*)clientId
+{
 }
 
-- (Shark *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (Shark*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (Shark *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (Shark*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (BOOL)isUnderLocalControl {
+- (BOOL)isUnderLocalControl
+{
 }
 
-- (BOOL)jumpsOnSwipe {
+- (BOOL)jumpsOnSwipe
+{
 }
 
-- (void)loadDerivedStuff {
+- (void)loadDerivedStuff
+{
 }
 
-- (float)maxAge {
+- (float)maxAge
+{
 }
 
-- (unsigned short)maxHealth {
+- (unsigned short)maxHealth
+{
 }
 
-- (float)minFullness {
+- (float)minFullness
+{
 }
 
-- (float)minRidableAge {
+- (float)minRidableAge
+{
 }
 
-- (Vector2)namePos {
+- (Vector2)namePos
+{
 }
 
-- (NPCType)npcType {
+- (NPCType)npcType
+{
 }
 
-- (void)reactToBeingFed {
+- (void)reactToBeingFed
+{
 }
 
-- (void)reactToBeingHit {
+- (void)reactToBeingHit
+{
 }
 
-- (void)remoteCreationDataUpdate:(NSData *)netData {
+- (void)remoteCreationDataUpdate:(NSData*)netData
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeRider:(Blockhead *)blockhead {
+- (void)removeRider:(Blockhead*)blockhead
+{
 }
 
-- (Vector2)renderPos {
+- (Vector2)renderPos
+{
 }
 
-- (int)rideDirection {
+- (int)rideDirection
+{
 }
 
-- (float)riderBodyYRotationForBlockhead:(Blockhead *)blockhead {
+- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)riderDPadShouldAllowUpDown {
+- (BOOL)riderDPadShouldAllowUpDown
+{
 }
 
-- (Vector)riderPosForBlockhead:(Blockhead *)blockhead {
+- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)riderRidesWithArmsDown {
+- (BOOL)riderRidesWithArmsDown
+{
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity {
+- (void)setTargetVelocity:(Vector2)targetVelocity
+{
 }
 
-- (SharkUpdateNetData)sharkUpdateNetDataForClient:(NSString *)clientIDToSendTo {
+- (SharkUpdateNetData)sharkUpdateNetDataForClient:(NSString*)clientIDToSendTo
+{
 }
 
-- (NSString *)speciesName {
+- (NSString*)speciesName
+{
 }
 
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation {
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
+{
 }
 
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3 {
+- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
 @end

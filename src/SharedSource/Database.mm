@@ -2,34 +2,44 @@
 
 @implementation Database
 
-- (NSData *)dataForKey:(NSString *)key {
+- (NSData*)dataForKey:(NSString*)key
+{
 }
 
-- (NSData *)dataForKey:(NSString *)key mutableData:(BOOL)mutableData {
+- (NSData*)dataForKey:(NSString*)key mutableData:(BOOL)mutableData
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (BOOL)finishTransaction:(struct MDB_txn *)transaction {
+- (BOOL)finishTransaction:(struct MDB_txn*)transaction
+{
 }
 
-- (struct MDB_txn *)getTransaction {
+- (struct MDB_txn*)getTransaction
+{
 }
 
-- (BOOL)hasKey:(NSString *)key {
+- (BOOL)hasKey:(NSString*)key
+{
 }
 
-- (Database *)initWithEnvironment:(DatabaseEnvironment *)databaseEnvironment_ name:(NSString *)databaseName {
+- (Database*)initWithEnvironment:(DatabaseEnvironment*)databaseEnvironment_ name:(NSString*)databaseName
+{
 }
 
-- (NSMutableData *)mutableDataForKey:(NSString *)key {
+- (NSMutableData*)mutableDataForKey:(NSString*)key
+{
 }
 
-- (BOOL)removeDataForKey:(NSString *)key {
+- (BOOL)removeDataForKey:(NSString*)key
+{
 }
 
-- (BOOL)setData:(NSData *)data forKey:(NSString *)key {
+- (BOOL)setData:(NSData*)data forKey:(NSString*)key
+{
 }
 
 @end

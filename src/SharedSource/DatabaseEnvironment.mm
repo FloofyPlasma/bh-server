@@ -2,16 +2,20 @@
 
 @implementation DatabaseEnvironment
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (BOOL)finishBulkTransaction {
+- (BOOL)finishBulkTransaction
+{
 }
 
-- (DatabaseEnvironment *)initWithPath:(NSString *)environmentDirectoryPath_ maxDatabases:(int)maxDatabases maxMapSizeInMB:(size_t)maxMapSize {
+- (DatabaseEnvironment*)initWithPath:(NSString*)environmentDirectoryPath_ maxDatabases:(int)maxDatabases maxMapSizeInMB:(size_t)maxMapSize
+{
 }
 
-- (BOOL)startBulkTransaction {
+- (BOOL)startBulkTransaction
+{
 }
 
 @end

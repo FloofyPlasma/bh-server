@@ -2,784 +2,1044 @@
 
 @implementation World
 
-- (void)abortInProgressPathIfForBlockhead:(Blockhead *)blockhead {
+- (void)abortInProgressPathIfForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)achievementsButtonTapped {
+- (void)achievementsButtonTapped
+{
 }
 
-- (intpair)activeBlockheadPos {
+- (intpair)activeBlockheadPos
+{
 }
 
-- (void)addChestItemsToFoundList:(NSArray *)slots {
+- (void)addChestItemsToFoundList:(NSArray*)slots
+{
 }
 
-- (void)addDodoEggToFoundListWithBreed:(int)breed {
+- (void)addDodoEggToFoundListWithBreed:(int)breed
+{
 }
 
-- (void)addFuelTappedAtInteractionObject:(InteractionObject *)interactionobject withBlockhead:(Blockhead *)blockhead {
+- (void)addFuelTappedAtInteractionObject:(InteractionObject*)interactionobject withBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)addItemToFoundList:(InventoryItem *)item {
+- (void)addItemToFoundList:(InventoryItem*)item
+{
 }
 
-- (void)addItemsFromServerFoundItemsList:(NSIndexSet *)incomingList {
+- (void)addItemsFromServerFoundItemsList:(NSIndexSet*)incomingList
+{
 }
 
-- (void)addSimulationEventOfType:(SimulationEvent)type forBlockhead:(Blockhead *)blockhead extraData:(id)extraData {
+- (void)addSimulationEventOfType:(SimulationEvent)type forBlockhead:(Blockhead*)blockhead extraData:(id)extraData
+{
 }
 
-- (BOOL)allowsPanning {
+- (BOOL)allowsPanning
+{
 }
 
-- (BOOL)allowsRotation {
+- (BOOL)allowsRotation
+{
 }
 
-- (Database *)appDatabase {
+- (Database*)appDatabase
+{
 }
 
-- (void)appendDebugLog:(NSMutableString *)log {
+- (void)appendDebugLog:(NSMutableString*)log
+{
 }
 
-- (void)archiveLightBlocksForClient:(NSString *)clientID {
+- (void)archiveLightBlocksForClient:(NSString*)clientID
+{
 }
 
-- (void)banPlayerWithNameFromPlayerButton:(NSString *)playerName {
+- (void)banPlayerWithNameFromPlayerButton:(NSString*)playerName
+{
 }
 
-- (void)blockheadAvailablePromptDismissedWithToThePortal {
+- (void)blockheadAvailablePromptDismissedWithToThePortal
+{
 }
 
-- (void)blockheadFilesReturnedFromServer:(NSDictionary *)blockheadFiles {
+- (void)blockheadFilesReturnedFromServer:(NSDictionary*)blockheadFiles
+{
 }
 
-- (void)blockheadReachedInteractionObjectDestination:(Blockhead *)blockhead pathExtraData:(NSDictionary *)pathExtraData {
+- (void)blockheadReachedInteractionObjectDestination:(Blockhead*)blockhead pathExtraData:(NSDictionary*)pathExtraData
+{
 }
 
-- (BOOL)canAddWorldCredit {
+- (BOOL)canAddWorldCredit
+{
 }
 
-- (void)cancelAllActionsAtPos:(intpair)pos orWithInteractionObjectID:(uint64_t)uniqueID {
+- (void)cancelAllActionsAtPos:(intpair)pos orWithInteractionObjectID:(uint64_t)uniqueID
+{
 }
 
-- (void)cancelTakePhotoButtonTapped {
+- (void)cancelTakePhotoButtonTapped
+{
 }
 
-- (void)cancelTouch:(CGPoint)location index:(int)index {
+- (void)cancelTouch:(CGPoint)location index:(int)index
+{
 }
 
-- (void)chatButton {
+- (void)chatButton
+{
 }
 
-- (BOOL)clientConnected:(NSString *)clientID {
+- (BOOL)clientConnected:(NSString*)clientID
+{
 }
 
-- (void)clientDisconnected:(NSString *)clientID wasKick:(BOOL)wasKick {
+- (void)clientDisconnected:(NSString*)clientID wasKick:(BOOL)wasKick
+{
 }
 
-- (NSString *)clientPassword {
+- (NSString*)clientPassword
+{
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+- (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
+{
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+- (void)connection:(NSURLConnection*)connection didReceiveData:(NSData*)data
+{
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+- (void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse*)response
+{
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+- (void)connectionDidFinishLoading:(NSURLConnection*)connection
+{
 }
 
-- (void)connectionToServerLost {
+- (void)connectionToServerLost
+{
 }
 
-- (BOOL)continueSimulate {
+- (BOOL)continueSimulate
+{
 }
 
-- (void)craftAbortedForWorkbench:(Workbench *)workbench withBlockhead:(Blockhead *)blockhead {
+- (void)craftAbortedForWorkbench:(Workbench*)workbench withBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)craftItem:(CraftableItemObject *)craftableItemObject atWorkbench:(Workbench *)workbench withBlockhead:(Blockhead *)blockhead count:(int)count {
+- (void)craftItem:(CraftableItemObject*)craftableItemObject atWorkbench:(Workbench*)workbench withBlockhead:(Blockhead*)blockhead count:(int)count
+{
 }
 
-- (void)craftItemFinished:(CraftableItemObject *)craftedItemObject atWorkbench:(Workbench *)workbench allFinished:(BOOL)allFinished blockhead:(Blockhead *)blockhead {
+- (void)craftItemFinished:(CraftableItemObject*)craftedItemObject atWorkbench:(Workbench*)workbench allFinished:(BOOL)allFinished blockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)craftOrConfigureItem:(CraftableItemObject *)craftableItemObject atWorkbench:(Workbench *)workbench withBlockhead:(Blockhead *)blockhead count:(int)count {
+- (void)craftOrConfigureItem:(CraftableItemObject*)craftableItemObject atWorkbench:(Workbench*)workbench withBlockhead:(Blockhead*)blockhead count:(int)count
+{
 }
 
-- (void)crystalsPurchased {
+- (void)crystalsPurchased
+{
 }
 
-- (Vector)currentTipColor {
+- (Vector)currentTipColor
+{
 }
 
-- (NSString *)currentTipText {
+- (NSString*)currentTipText
+{
 }
 
-- (int)currentTotalBlockheadCountIncludingNet {
+- (int)currentTotalBlockheadCountIncludingNet
+{
 }
 
-- (void)customRuleDictRecievedFromNet:(NSDictionary *)ruleDict {
+- (void)customRuleDictRecievedFromNet:(NSDictionary*)ruleDict
+{
 }
 
-- (NSString *)customRuleForOptionNamed:(NSString *)optionName {
+- (NSString*)customRuleForOptionNamed:(NSString*)optionName
+{
 }
 
-- (CustomRules)customRules {
+- (CustomRules)customRules
+{
 }
 
-- (void)customRulesChanged {
+- (void)customRulesChanged
+{
 }
 
-- (NSDictionary *)customRulesDict {
+- (NSDictionary*)customRulesDict
+{
 }
 
-- (Vector)dayColorForPosition:(intpair)pos {
+- (Vector)dayColorForPosition:(intpair)pos
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)decommisionAllBlocksBlockToSavePhyscialBlock:(BOOL)blockToSavePhysicalBlock {
+- (void)decommisionAllBlocksBlockToSavePhyscialBlock:(BOOL)blockToSavePhysicalBlock
+{
 }
 
-- (void)decommisionBlock:(MacroTile *)macroTile blockToSavePhyscialBlock:(BOOL)blockToSavePhysicalBlock {
+- (void)decommisionBlock:(MacroTile*)macroTile blockToSavePhyscialBlock:(BOOL)blockToSavePhysicalBlock
+{
 }
 
-- (void)decommissionOldBlocks {
+- (void)decommissionOldBlocks
+{
 }
 
-- (void)deleteTimers {
+- (void)deleteTimers
+{
 }
 
-- (void)dieConfirmationConfirmed:(Blockhead *)blockhead {
+- (void)dieConfirmationConfirmed:(Blockhead*)blockhead
+{
 }
 
-- (void)directionalSwipe:(Vector2)vec {
+- (void)directionalSwipe:(Vector2)vec
+{
 }
 
-- (void)displayOwnershipAreas {
+- (void)displayOwnershipAreas
+{
 }
 
-- (FoodType *)distanceOrderedFoodTypes {
+- (FoodType*)distanceOrderedFoodTypes
+{
 }
 
-- (void)doCameraScreenshot {
+- (void)doCameraScreenshot
+{
 }
 
-- (void)doEndTouch:(CGPoint)location wasCancelled:(BOOL)wasCancelled index:(int)index {
+- (void)doEndTouch:(CGPoint)location wasCancelled:(BOOL)wasCancelled index:(int)index
+{
 }
 
-- (void)doPortalScreenshot {
+- (void)doPortalScreenshot
+{
 }
 
-- (void)doPortalShotNextFrame {
+- (void)doPortalShotNextFrame
+{
 }
 
-- (void)doRepairForTileAtPos:(intpair)pos {
+- (void)doRepairForTileAtPos:(intpair)pos
+{
 }
 
-- (void)doubleTimePurchaseTapped {
+- (void)doubleTimePurchaseTapped
+{
 }
 
-- (void)doubleTimeRestoreTapped {
+- (void)doubleTimeRestoreTapped
+{
 }
 
-- (void)electricityPathDataRecieved:(NSData *)data fromClient:(NSString *)fromClient {
+- (void)electricityPathDataRecieved:(NSData*)data fromClient:(NSString*)fromClient
+{
 }
 
-- (void)endTouch:(CGPoint)location index:(int)index {
+- (void)endTouch:(CGPoint)location index:(int)index
+{
 }
 
-- (void)exportCurrentFrame {
+- (void)exportCurrentFrame
+{
 }
 
-- (void)fileWriteFailed:(NSString *)savePath {
+- (void)fileWriteFailed:(NSString*)savePath
+{
 }
 
-- (void)fillTile:(Tile *)tile atPos:(intpair)pos withType:(ItemType)type {
+- (void)fillTile:(Tile*)tile atPos:(intpair)pos withType:(ItemType)type
+{
 }
 
-- (void)fillTile:(Tile *)tile atPos:(intpair)pos withType:(ItemType)type dataA:(uint16_t)dataA dataB:(uint16_t)dataB placedByClient:(NSString *)clientID saveDict:(NSDictionary *)saveDict placedByBlockhead:(Blockhead *)placeBlockhead placedByClientName:(NSString *)clientName {
+- (void)fillTile:(Tile*)tile atPos:(intpair)pos withType:(ItemType)type dataA:(uint16_t)dataA dataB:(uint16_t)dataB placedByClient:(NSString*)clientID saveDict:(NSDictionary*)saveDict placedByBlockhead:(Blockhead*)placeBlockhead placedByClientName:(NSString*)clientName
+{
 }
 
-- (void)fillTile:(Tile *)tile atPos:(intpair)pos withType:(ItemType)type dataA:(uint16_t)dataA dataB:(uint16_t)dataB placedByClient:(NSString *)clientID saveDict:(NSDictionary *)saveDict placedByClientName:(NSString *)clientName {
+- (void)fillTile:(Tile*)tile atPos:(intpair)pos withType:(ItemType)type dataA:(uint16_t)dataA dataB:(uint16_t)dataB placedByClient:(NSString*)clientID saveDict:(NSDictionary*)saveDict placedByClientName:(NSString*)clientName
+{
 }
 
-- (BOOL)finishBulkDatabaseUpdate {
+- (BOOL)finishBulkDatabaseUpdate
+{
 }
 
-- (void)finishSimulating {
+- (void)finishSimulating
+{
 }
 
-- (void)fireProjectileFrom:(Vector2)fromPos to:(Vector2)toPos at:(DynamicObject *)atObject fireItemType:(ItemType)itemType firer:(Blockhead *)firer {
+- (void)fireProjectileFrom:(Vector2)fromPos to:(Vector2)toPos at:(DynamicObject*)atObject fireItemType:(ItemType)itemType firer:(Blockhead*)firer
+{
 }
 
-- (BOOL)foundListContainsEggWithDodoBreed:(int)arg1 {
+- (BOOL)foundListContainsEggWithDodoBreed:(int)arg1
+{
 }
 
-- (void)fullyLoadAndUpdateIfNeededForMacroBlock:(MacroTile *)macroTile includingPos:(intpair)pos clientLightBlockIndex:(int)clientLightBlockIndex forBlockhead:(Blockhead *)blockhead {
+- (void)fullyLoadAndUpdateIfNeededForMacroBlock:(MacroTile*)macroTile includingPos:(intpair)pos clientLightBlockIndex:(int)clientLightBlockIndex forBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)fullyLoadIfNeededAroundPos:(intpair)pos clientLightBlockIndex:(int)clientLightBlockIndex forBlockhead:(Blockhead *)blockhead {
+- (void)fullyLoadIfNeededAroundPos:(intpair)pos clientLightBlockIndex:(int)clientLightBlockIndex forBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (intpair)getBlockheadZoomPosForClient:(NSString *)playerID requesterClient:(NSString *)requesterClient cycleIndex:(int)cycleIndex {
+- (intpair)getBlockheadZoomPosForClient:(NSString*)playerID requesterClient:(NSString*)requesterClient cycleIndex:(int)cycleIndex
+{
 }
 
-- (NSString *)getCurrentCreditTimeString {
+- (NSString*)getCurrentCreditTimeString
+{
 }
 
-- (float)getDayNightFractionForX:(float)x atWorldTime:(NSTimeInterval)time {
+- (float)getDayNightFractionForX:(float)x atWorldTime:(NSTimeInterval)time
+{
 }
 
-- (float)getWeatherFractionForPos:(intpair)pos {
+- (float)getWeatherFractionForPos:(intpair)pos
+{
 }
 
-- (float)getWeatherFractionForPos:(intpair)pos atWorldTime:(NSTimeInterval)time {
+- (float)getWeatherFractionForPos:(intpair)pos atWorldTime:(NSTimeInterval)time
+{
 }
 
-- (float)getWeatherFractionForPos:(intpair)pos atWorldTime:(NSTimeInterval)time ignoreSandFraction:(BOOL)ignoreSandFraction {
+- (float)getWeatherFractionForPos:(intpair)pos atWorldTime:(NSTimeInterval)time ignoreSandFraction:(BOOL)ignoreSandFraction
+{
 }
 
-- (BOOL)hasFinishedDatabaseMigrationTo17 {
+- (BOOL)hasFinishedDatabaseMigrationTo17
+{
 }
 
-- (BOOL)hasRewardedVideoAvailable {
+- (BOOL)hasRewardedVideoAvailable
+{
 }
 
-- (NSData *)heartbeatData {
+- (NSData*)heartbeatData
+{
 }
 
-- (void)heartbeatDataRecieved:(NSData *)heartbeatData fromPeer:(NSString *)peerID {
+- (void)heartbeatDataRecieved:(NSData*)heartbeatData fromPeer:(NSString*)peerID
+{
 }
 
-- (void)hideChatView {
+- (void)hideChatView
+{
 }
 
-- (intpair)highestPoint {
+- (intpair)highestPoint
+{
 }
 
-- (void)iapStarted {
+- (void)iapStarted
+{
 }
 
-- (void)incentivizedVideoViewComplete:(BOOL)didWatch {
+- (void)incentivizedVideoViewComplete:(BOOL)didWatch
+{
 }
 
-- (void)incrementalLoad {
+- (void)incrementalLoad
+{
 }
 
-- (void)initMuteList {
+- (void)initMuteList
+{
 }
 
-- (World *)initWithWindowInfo:(WindowInfo *)windowInfo_ cache:(CPCache *)cache_ delegate:(id)delegate_ saveID:(NSString *)saveID_ name:(NSString *)worldName_ client:(BHClient *)client_ server:(BHServer *)server_ multiplayerWorldData:(NSData *)multiplayerWorldData serverHostData:(NSDictionary *)serverHostData saveDelay:(int)saveDelay_ worldWidthMacro:(int)worldWidthMacro_ customRules:(NSDictionary *)customRulesDict_ expertMode:(BOOL)expertMode_ {
+- (World*)initWithWindowInfo:(WindowInfo*)windowInfo_ cache:(CPCache*)cache_ delegate:(id)delegate_ saveID:(NSString*)saveID_ name:(NSString*)worldName_ client:(BHClient*)client_ server:(BHServer*)server_ multiplayerWorldData:(NSData*)multiplayerWorldData serverHostData:(NSDictionary*)serverHostData saveDelay:(int)saveDelay_ worldWidthMacro:(int)worldWidthMacro_ customRules:(NSDictionary*)customRulesDict_ expertMode:(BOOL)expertMode_
+{
 }
 
-- (void)initializeDatabases {
+- (void)initializeDatabases
+{
 }
 
-- (void)instructionsButtonTapped {
+- (void)instructionsButtonTapped
+{
 }
 
-- (BOOL)isCloudGame {
+- (BOOL)isCloudGame
+{
 }
 
-- (BOOL)isControllingBlockheadsForClientPlayer:(NSString *)playerID {
+- (BOOL)isControllingBlockheadsForClientPlayer:(NSString*)playerID
+{
 }
 
-- (BOOL)isSimulating {
+- (BOOL)isSimulating
+{
 }
 
-- (void)kickOrBanPlayerFromButtonIsBan:(BOOL)isBan withName:(NSString *)playerName {
+- (void)kickOrBanPlayerFromButtonIsBan:(BOOL)isBan withName:(NSString*)playerName
+{
 }
 
-- (void)kickPlayerWithNameFromPlayerButton:(NSString *)playerName {
+- (void)kickPlayerWithNameFromPlayerButton:(NSString*)playerName
+{
 }
 
-- (Vector)lightPositionFront {
+- (Vector)lightPositionFront
+{
 }
 
-- (Vector)lightPositionLeft {
+- (Vector)lightPositionLeft
+{
 }
 
-- (Vector)lightPositionRight {
+- (Vector)lightPositionRight
+{
 }
 
-- (Vector)lightPositionTop {
+- (Vector)lightPositionTop
+{
 }
 
-- (void)loadDefaultGame {
+- (void)loadDefaultGame
+{
 }
 
-- (void)loadDynamicObjectsIfNotAlreadyLoadedForMacroTile:(MacroTile *)macroTile includeSurfaceBlocks:(BOOL)includeSurfaceBlocks {
+- (void)loadDynamicObjectsIfNotAlreadyLoadedForMacroTile:(MacroTile*)macroTile includeSurfaceBlocks:(BOOL)includeSurfaceBlocks
+{
 }
 
-- (BOOL)loadGame {
+- (BOOL)loadGame
+{
 }
 
-- (void)loadLightBlockForClientLightBlockIndex:(int)clientLightBlockIndex intoPhysicalBlock:(PhysicalBlock *)physicalBlock {
+- (void)loadLightBlockForClientLightBlockIndex:(int)clientLightBlockIndex intoPhysicalBlock:(PhysicalBlock*)physicalBlock
+{
 }
 
-- (void)loadPhysicalBlockForMacroTile:(MacroTile *)macroTile atX:(int)x y:(int)y loadSurroundingBlocks:(BOOL)loadSurroundingBlocks createIfNotCreated:(BOOL)createIfNotCreated {
+- (void)loadPhysicalBlockForMacroTile:(MacroTile*)macroTile atX:(int)x y:(int)y loadSurroundingBlocks:(BOOL)loadSurroundingBlocks createIfNotCreated:(BOOL)createIfNotCreated
+{
 }
 
-- (BOOL)mapVisible {
+- (BOOL)mapVisible
+{
 }
 
-- (void)markCircumNavigateX:(int)x {
+- (void)markCircumNavigateX:(int)x
+{
 }
 
-- (void)moveTouch:(CGPoint)location index:(int)index {
+- (void)moveTouch:(CGPoint)location index:(int)index
+{
 }
 
-- (void)newServerPasswordSet:(NSString *)newPassword {
+- (void)newServerPasswordSet:(NSString*)newPassword
+{
 }
 
-- (void)openOwnerPortal {
+- (void)openOwnerPortal
+{
 }
 
-- (void)ownershipSignWasPlacedOrChangedAtPos:(intpair)tilePos withLandOwner:(NSString *)landOwnerID widthRadius:(int)widthRadius heightRadius:(int)heightRadius wasRemoved:(BOOL)wasRemoved {
+- (void)ownershipSignWasPlacedOrChangedAtPos:(intpair)tilePos withLandOwner:(NSString*)landOwnerID widthRadius:(int)widthRadius heightRadius:(int)heightRadius wasRemoved:(BOOL)wasRemoved
+{
 }
 
-- (void)paintTile:(Tile *)tile atPos:(intpair)pos colorIndex:(uint16_t)colorIndex faceIndex:(uint8_t)faceIndex paintBlockhead:(Blockhead *)paintBlockhead {
+- (void)paintTile:(Tile*)tile atPos:(intpair)pos colorIndex:(uint16_t)colorIndex faceIndex:(uint8_t)faceIndex paintBlockhead:(Blockhead*)paintBlockhead
+{
 }
 
-- (void)pauseButtonTapped {
+- (void)pauseButtonTapped
+{
 }
 
-- (void)pauseExitToMenuButtonTapped {
+- (void)pauseExitToMenuButtonTapped
+{
 }
 
-- (void)pauseResumeButtonTapped {
+- (void)pauseResumeButtonTapped
+{
 }
 
-- (void)pauseUpdates {
+- (void)pauseUpdates
+{
 }
 
-- (NSArray *)peersInterestedInMacroIndex:(int)macroIndex {
+- (NSArray*)peersInterestedInMacroIndex:(int)macroIndex
+{
 }
 
-- (PhysicalBlock *)physicalBlockToLoadByClientTileLoaderForMacroTile:(MacroTile *)macroTile {
+- (PhysicalBlock*)physicalBlockToLoadByClientTileLoaderForMacroTile:(MacroTile*)macroTile
+{
 }
 
-- (InteractionObject *)placeInteractionObjectWithItem:(InventoryItem *)item atPos:(intpair)pos saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID placedByBlockhead:(Blockhead *)placeBlockhead placedByClientName:(NSString *)clientName {
+- (InteractionObject*)placeInteractionObjectWithItem:(InventoryItem*)item atPos:(intpair)pos saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID placedByBlockhead:(Blockhead*)placeBlockhead placedByClientName:(NSString*)clientName
+{
 }
 
-- (void)placeWorkbenchOfType:(WorkbenchType)workbenchType atPos:(intpair)pos saveDict:(NSDictionary *)saveDIct placedByClient:(NSString *)clientID placedByBlockhead:(Blockhead *)placeBlockhead placedByClientName:(NSString *)clientName {
+- (void)placeWorkbenchOfType:(WorkbenchType)workbenchType atPos:(intpair)pos saveDict:(NSDictionary*)saveDIct placedByClient:(NSString*)clientID placedByBlockhead:(Blockhead*)placeBlockhead placedByClientName:(NSString*)clientName
+{
 }
 
-- (BOOL)playerIsMuted:(NSString *)playerID {
+- (BOOL)playerIsMuted:(NSString*)playerID
+{
 }
 
-- (void)playersChanged {
+- (void)playersChanged
+{
 }
 
-- (void)preRenderUpdate:(float)dt fastSlowDT:(float)fastSlowDT cameraZ:(float)cameraZ projectionMatrix:(GLKMatrix4)projectionMatrix {
+- (void)preRenderUpdate:(float)dt fastSlowDT:(float)fastSlowDT cameraZ:(float)cameraZ projectionMatrix:(GLKMatrix4)projectionMatrix
+{
 }
 
-- (void)preUpdate:(float)dt {
+- (void)preUpdate:(float)dt
+{
 }
 
-- (BOOL)privateAddItemToFoundList:(InventoryItem *)item addBasketContents:(BOOL)addBasketContents {
+- (BOOL)privateAddItemToFoundList:(InventoryItem*)item addBasketContents:(BOOL)addBasketContents
+{
 }
 
-- (void)purchaseDoubleTime {
+- (void)purchaseDoubleTime
+{
 }
 
-- (BOOL)pvpEnabled {
+- (BOOL)pvpEnabled
+{
 }
 
-- (void)queueBlockheadAIActionToTile:(Tile *)tile atPos:(intpair)tilePos forBlockhead:(Blockhead *)blockhead {
+- (void)queueBlockheadAIActionToTile:(Tile*)tile atPos:(intpair)tilePos forBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)remoteBlockRemoved:(int)macroIndex byClient:(NSString *)clientID {
+- (void)remoteBlockRemoved:(int)macroIndex byClient:(NSString*)clientID
+{
 }
 
-- (void)remoteBlockheadDamageRequest:(NSData *)remoteData requestedByClientName:(NSString *)requestedByClientName {
+- (void)remoteBlockheadDamageRequest:(NSData*)remoteData requestedByClientName:(NSString*)requestedByClientName
+{
 }
 
-- (void)remoteCreate:(NSArray *)creationArray forObjectsOfType:(DynamicObjectType)objectType clientID:(NSString *)clientID {
+- (void)remoteCreate:(NSArray*)creationArray forObjectsOfType:(DynamicObjectType)objectType clientID:(NSString*)clientID
+{
 }
 
-- (void)remoteCreationDataUpdate:(NSArray *)updateArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString *)clientID {
+- (void)remoteCreationDataUpdate:(NSArray*)updateArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID
+{
 }
 
-- (uint32_t)remoteFillRequest:(NSData *)fillData placedByClient:(NSString *)clientID {
+- (uint32_t)remoteFillRequest:(NSData*)fillData placedByClient:(NSString*)clientID
+{
 }
 
-- (void)remoteGatherRequest:(NSData *)data {
+- (void)remoteGatherRequest:(NSData*)data
+{
 }
 
-- (void)remotePaintRequest:(NSData *)fillData fromClient:(NSString *)clientID {
+- (void)remotePaintRequest:(NSData*)fillData fromClient:(NSString*)clientID
+{
 }
 
-- (void)remotePlaceInteractionObjectRequest:(NSData *)netData fromPeer:(NSString *)clientID {
+- (void)remotePlaceInteractionObjectRequest:(NSData*)netData fromPeer:(NSString*)clientID
+{
 }
 
-- (void)remotePlaceWorkbenchRequest:(NSData *)netData fromPeer:(NSString *)clientID {
+- (void)remotePlaceWorkbenchRequest:(NSData*)netData fromPeer:(NSString*)clientID
+{
 }
 
-- (void)remoteProjectileRequest:(NSData *)remoteData {
+- (void)remoteProjectileRequest:(NSData*)remoteData
+{
 }
 
-- (void)remoteRemove:(NSArray *)removeArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString *)clientID {
+- (void)remoteRemove:(NSArray*)removeArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID
+{
 }
 
-- (uint32_t)remoteRemoveBackWallRequest:(NSData *)removeData fromClient:(NSString *)clientID {
+- (uint32_t)remoteRemoveBackWallRequest:(NSData*)removeData fromClient:(NSString*)clientID
+{
 }
 
-- (uint32_t)remoteRemoveRequest:(NSData *)removeData fromClient:(NSString *)clientID {
+- (uint32_t)remoteRemoveRequest:(NSData*)removeData fromClient:(NSString*)clientID
+{
 }
 
-- (void)remoteTipNotification:(NSData *)remoteTipData {
+- (void)remoteTipNotification:(NSData*)remoteTipData
+{
 }
 
-- (void)remoteUpdate:(NSArray *)creationArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString *)clientID {
+- (void)remoteUpdate:(NSArray*)creationArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID
+{
 }
 
-- (void)remoteZoomRequestReturnedWithSuccess:(BOOL)success point:(intpair)point {
+- (void)remoteZoomRequestReturnedWithSuccess:(BOOL)success point:(intpair)point
+{
 }
 
-- (void)removeAnyBackgroundContentsForTile:(Tile *)tile atPos:(intpair)pos removeBlockhead:(Blockhead *)blockhead {
+- (void)removeAnyBackgroundContentsForTile:(Tile*)tile atPos:(intpair)pos removeBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)removeBackWallAtPos:(intpair)pos removeBlockhead:(Blockhead *)removeBlockhead {
+- (void)removeBackWallAtPos:(intpair)pos removeBlockhead:(Blockhead*)removeBlockhead
+{
 }
 
-- (void)removeDynamicObjectTappedAtDynamicObject:(DynamicObject *)dynamicObject withBlockhead:(Blockhead *)blockhead {
+- (void)removeDynamicObjectTappedAtDynamicObject:(DynamicObject*)dynamicObject withBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)removePaintAtTile:(Tile *)tile atPos:(intpair)pos faceIndex:(uint8_t)faceIndex paintBlockhead:(Blockhead *)paintBlockhead {
+- (void)removePaintAtTile:(Tile*)tile atPos:(intpair)pos faceIndex:(uint8_t)faceIndex paintBlockhead:(Blockhead*)paintBlockhead
+{
 }
 
-- (void)removeTileAtWorldX:(int)worldX worldY:(int)worldY createContentsFreeblockCount:(int)createContentsFreeblockCount createForegroundContentsFreeblockCount:(int)createForegroundContentsFreeblockCount removeBlockhead:(Blockhead *)removeBlockhead {
+- (void)removeTileAtWorldX:(int)worldX worldY:(int)worldY createContentsFreeblockCount:(int)createContentsFreeblockCount createForegroundContentsFreeblockCount:(int)createForegroundContentsFreeblockCount removeBlockhead:(Blockhead*)removeBlockhead
+{
 }
 
-- (void)removeTileAtWorldX:(int)worldX worldY:(int)worldY createContentsFreeblockCount:(int)createContentsFreeblockCount createForegroundContentsFreeblockCount:(int)createForegroundContentsFreeblockCount removeBlockhead:(Blockhead *)removeBlockhead onlyRemoveCOntents:(BOOL)onlyRemoveContents onlyRemoveForegroundContents:(BOOL)onlyRemoveForegroundContents {
+- (void)removeTileAtWorldX:(int)worldX worldY:(int)worldY createContentsFreeblockCount:(int)createContentsFreeblockCount createForegroundContentsFreeblockCount:(int)createForegroundContentsFreeblockCount removeBlockhead:(Blockhead*)removeBlockhead onlyRemoveCOntents:(BOOL)onlyRemoveContents onlyRemoveForegroundContents:(BOOL)onlyRemoveForegroundContents
+{
 }
 
-- (void)removeTileAtWorldX:(int)worldX worldY:(int)worldY createContentsFreeblockCount:(int)createContentsFreeblockCount createForegroundContentsFreeblockCount:(int)createForegroundContentsFreeblockCount removeBlockhead:(Blockhead *)removeBlockhead onlyRemoveCOntents:(BOOL)onlyRemoveContents onlyRemoveForegroundContents:(BOOL)onlyRemoveForegroundContents sendWorldChangedNotifcation:(BOOL)sendWorldChangedNotifcation dontRemoveContents:(BOOL)dontRemoveContents {
+- (void)removeTileAtWorldX:(int)worldX worldY:(int)worldY createContentsFreeblockCount:(int)createContentsFreeblockCount createForegroundContentsFreeblockCount:(int)createForegroundContentsFreeblockCount removeBlockhead:(Blockhead*)removeBlockhead onlyRemoveCOntents:(BOOL)onlyRemoveContents onlyRemoveForegroundContents:(BOOL)onlyRemoveForegroundContents sendWorldChangedNotifcation:(BOOL)sendWorldChangedNotifcation dontRemoveContents:(BOOL)dontRemoveContents
+{
 }
 
-- (void)removeWaterTileAtPos:(intpair)pos {
+- (void)removeWaterTileAtPos:(intpair)pos
+{
 }
 
-- (void)render:(float)dt cameraZ:(float)cameraZ projectionMatrix:(GLKMatrix4)projectionMatrix pinchScale:(float)pinchScale_ {
+- (void)render:(float)dt cameraZ:(float)cameraZ projectionMatrix:(GLKMatrix4)projectionMatrix pinchScale:(float)pinchScale_
+{
 }
 
-- (BOOL)renderingTeaserFrames {
+- (BOOL)renderingTeaserFrames
+{
 }
 
-- (void)reportAchievementWithIdentifier:(NSString *)identifier {
+- (void)reportAchievementWithIdentifier:(NSString*)identifier
+{
 }
 
-- (void)reportUserWithName:(NSString *)playerName reporterName:(NSString *)reporterName reporterMessage:(NSString *)reporterMessage reportedAvatarImagePath:(NSString *)reportedAvatarImagePath {
+- (void)reportUserWithName:(NSString*)playerName reporterName:(NSString*)reporterName reporterMessage:(NSString*)reporterMessage reportedAvatarImagePath:(NSString*)reportedAvatarImagePath
+{
 }
 
-- (void)requestForBlock:(ClientMacroBlockRequest)request fromClient:(NSString *)clientID {
+- (void)requestForBlock:(ClientMacroBlockRequest)request fromClient:(NSString*)clientID
+{
 }
 
-- (void)requestUniqueIDFromServerWithDict:(NSDictionary *)infoDict {
+- (void)requestUniqueIDFromServerWithDict:(NSDictionary*)infoDict
+{
 }
 
-- (BOOL)requiresDirectionalSwipes {
+- (BOOL)requiresDirectionalSwipes
+{
 }
 
-- (BOOL)requiresSwipeEvents {
+- (BOOL)requiresSwipeEvents
+{
 }
 
-- (void)resetPauseIdleTimer {
+- (void)resetPauseIdleTimer
+{
 }
 
-- (float)sandFractionForPos:(intpair)pos {
+- (float)sandFractionForPos:(intpair)pos
+{
 }
 
-- (void)saveAll {
+- (void)saveAll
+{
 }
 
-- (void)saveLightBlockForClientLightBlockIndex:(int)clientLightBlockIndex physicalBlock:(PhysicalBlock *)physicalBlock sendNow:(BOOL)sendNow {
+- (void)saveLightBlockForClientLightBlockIndex:(int)clientLightBlockIndex physicalBlock:(PhysicalBlock*)physicalBlock sendNow:(BOOL)sendNow
+{
 }
 
-- (BOOL)savePhysicalBlockForMacroTile:(MacroTile *)macroTile sendReliably:(BOOL)sendReliably dontSend:(BOOL)dontSend onlySaveIfClientsNeedIt:(BOOL)onlySaveIfClientsNeedIt {
+- (BOOL)savePhysicalBlockForMacroTile:(MacroTile*)macroTile sendReliably:(BOOL)sendReliably dontSend:(BOOL)dontSend onlySaveIfClientsNeedIt:(BOOL)onlySaveIfClientsNeedIt
+{
 }
 
-- (void)saveSunlightChangedAtPos:(intpair)worldPos {
+- (void)saveSunlightChangedAtPos:(intpair)worldPos
+{
 }
 
-- (void)scrollToTap:(CGPoint)where {
+- (void)scrollToTap:(CGPoint)where
+{
 }
 
-- (void)sendAndDisplayAirTimeTipWithDistance:(float)distance {
+- (void)sendAndDisplayAirTimeTipWithDistance:(float)distance
+{
 }
 
-- (void)sendDamage:(float)damage forNetBlockhead:(Blockhead *)blockhead recoil:(BOOL)recoil {
+- (void)sendDamage:(float)damage forNetBlockhead:(Blockhead*)blockhead recoil:(BOOL)recoil
+{
 }
 
-- (void)sendGatherNotificationForTile:(Tile *)tile atPos:(intpair)pos {
+- (void)sendGatherNotificationForTile:(Tile*)tile atPos:(intpair)pos
+{
 }
 
-- (void)sendHeartbeatData {
+- (void)sendHeartbeatData
+{
 }
 
-- (void)sendNetDataForElectricityParticlePathIfRequired:(std::vector<ElectricityParticlePathIndex>)a4 size:(float)size ignoreClient:(NSString *)ignoreClient {
+- (void)sendNetDataForElectricityParticlePathIfRequired:(std::vector<ElectricityParticlePathIndex>)a4 size:(float)size ignoreClient:(NSString*)ignoreClient
+{
 }
 
-- (void)sendNewPasswordToServer:(NSString *)newServerPassword {
+- (void)sendNewPasswordToServer:(NSString*)newServerPassword
+{
 }
 
-- (void)sendNewPrivacySettingToServer:(BHNetPrivacy)newPrivacy {
+- (void)sendNewPrivacySettingToServer:(BHNetPrivacy)newPrivacy
+{
 }
 
-- (void)sendSetPVPEnabledToServer:(BOOL)newEnabled {
+- (void)sendSetPVPEnabledToServer:(BOOL)newEnabled
+{
 }
 
-- (void)sendUpdatedCustomSlots {
+- (void)sendUpdatedCustomSlots
+{
 }
 
-- (void)sendUpdatedFoundItemsListToServer {
+- (void)sendUpdatedFoundItemsListToServer
+{
 }
 
-- (void)sendUpdatedSunColor {
+- (void)sendUpdatedSunColor
+{
 }
 
-- (void)serverFillReply:(NSArray *)fillReplyReciepts {
+- (void)serverFillReply:(NSArray*)fillReplyReciepts
+{
 }
 
-- (NSString *)serverPassword {
+- (NSString*)serverPassword
+{
 }
 
-- (uint64_t)serverPrivacySetting {
+- (uint64_t)serverPrivacySetting
+{
 }
 
-- (void)setCustomRule:(NSString *)rule forOptionNamed:(NSString *)option {
+- (void)setCustomRule:(NSString*)rule forOptionNamed:(NSString*)option
+{
 }
 
-- (void)setCustomSlotAtIndex:(int)configureSlot toItemType:(int)itemType count:(int)count {
+- (void)setCustomSlotAtIndex:(int)configureSlot toItemType:(int)itemType count:(int)count
+{
 }
 
-- (void)setNetEventsMessageToDisplayOnceLoaded:(NSString *)welcomeBackMessage {
+- (void)setNetEventsMessageToDisplayOnceLoaded:(NSString*)welcomeBackMessage
+{
 }
 
-- (void)setNewWelcomeMessage:(NSString *)newWelcomeMessage {
+- (void)setNewWelcomeMessage:(NSString*)newWelcomeMessage
+{
 }
 
-- (void)setPVPEnabled:(BOOL)pvpEnabled_ displayNotifciation:(BOOL)displayNotifciation {
+- (void)setPVPEnabled:(BOOL)pvpEnabled_ displayNotifciation:(BOOL)displayNotifciation
+{
 }
 
-- (void)setPlayerMuted:(BOOL)muted withID:(NSString *)playerID {
+- (void)setPlayerMuted:(BOOL)muted withID:(NSString*)playerID
+{
 }
 
-- (void)setServer:(BHServer *)server_ {
+- (void)setServer:(BHServer*)server_
+{
 }
 
-- (void)setSunColorRule:(MJColor)newColor {
+- (void)setSunColorRule:(MJColor)newColor
+{
 }
 
-- (void)setTranslation:(Vector2)translation {
+- (void)setTranslation:(Vector2)translation
+{
 }
 
-- (void)setWindowInfo:(WindowInfo *)windowInfo_ {
+- (void)setWindowInfo:(WindowInfo*)windowInfo_
+{
 }
 
-- (void)sharePhotoFinished {
+- (void)sharePhotoFinished
+{
 }
 
-- (BOOL)shouldBeCrystalBlockAtPos:(intpair)pos {
+- (BOOL)shouldBeCrystalBlockAtPos:(intpair)pos
+{
 }
 
-- (void)showBlockheadAvailablePrompt:(int)nextBlockheadIndex forBlockhead:(Blockhead *)blockhead {
+- (void)showBlockheadAvailablePrompt:(int)nextBlockheadIndex forBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)showDieConfirmationForBlockhead:(Blockhead *)blockhead {
+- (void)showDieConfirmationForBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)showDoubleTimePromptIfGoodTime {
+- (void)showDoubleTimePromptIfGoodTime
+{
 }
 
-- (void)showTutorialPopupWithTitle:(NSString *)title message:(NSString *)message {
+- (void)showTutorialPopupWithTitle:(NSString*)title message:(NSString*)message
+{
 }
 
-- (void)showWorldCreditUI {
+- (void)showWorldCreditUI
+{
 }
 
-- (void)signOwnershipModificationRecievedFromServer:(NSDictionary *)modificationDict {
+- (void)signOwnershipModificationRecievedFromServer:(NSDictionary*)modificationDict
+{
 }
 
-- (void)signOwnershipPlayerListRecievedFromServer:(NSArray *)playerList {
+- (void)signOwnershipPlayerListRecievedFromServer:(NSArray*)playerList
+{
 }
 
-- (float)simulationProgress {
+- (float)simulationProgress
+{
 }
 
-- (void)startBulkDatabaseUpdate {
+- (void)startBulkDatabaseUpdate
+{
 }
 
-- (void)startIncentivizedVideo {
+- (void)startIncentivizedVideo
+{
 }
 
-- (void)startObservingMotionEvents {
+- (void)startObservingMotionEvents
+{
 }
 
-- (void)startPinchOrPan {
+- (void)startPinchOrPan
+{
 }
 
-- (BOOL)startSimulatingIfNeeded {
+- (BOOL)startSimulatingIfNeeded
+{
 }
 
-- (BOOL)startTouch:(CGPoint)location tapCount:(int)tapCount index:(int)index {
+- (BOOL)startTouch:(CGPoint)location tapCount:(int)tapCount index:(int)index
+{
 }
 
-- (void)startUsingCamera {
+- (void)startUsingCamera
+{
 }
 
-- (void)stopFollowingOrTranslatingToGoal {
+- (void)stopFollowingOrTranslatingToGoal
+{
 }
 
-- (void)stopObservingMotionEvents {
+- (void)stopObservingMotionEvents
+{
 }
 
-- (NSData *)summaryNetDataForAdmin:(BOOL)isAdmin_ mod:(BOOL)isMod_ owner:(BOOL)isOwner_ cloudMode:(int)cloudMode_ {
+- (NSData*)summaryNetDataForAdmin:(BOOL)isAdmin_ mod:(BOOL)isMod_ owner:(BOOL)isOwner_ cloudMode:(int)cloudMode_
+{
 }
 
-- (void)swipeGesture {
+- (void)swipeGesture
+{
 }
 
-- (void)takePhotoButtonTapped {
+- (void)takePhotoButtonTapped
+{
 }
 
-- (BOOL)takingPhoto {
+- (BOOL)takingPhoto
+{
 }
 
-- (void)tap:(CGPoint)where {
+- (void)tap:(CGPoint)where
+{
 }
 
-- (void)teleportToWorkbench:(Workbench *)workbench withBlockhead:(Blockhead *)blockhead craftableItemObject:(CraftableItemObject *)craftableItemObject {
+- (void)teleportToWorkbench:(Workbench*)workbench withBlockhead:(Blockhead*)blockhead craftableItemObject:(CraftableItemObject*)craftableItemObject
+{
 }
 
-- (BOOL)tileIsLitForClient:(NSString *)clientID atPos:(intpair)tilePos tile:(Tile *)tile {
+- (BOOL)tileIsLitForClient:(NSString*)clientID atPos:(intpair)tilePos tile:(Tile*)tile
+{
 }
 
-- (BOOL)tileIsProtectedAtPos:(intpair)tilePos againstBlockhead:(Blockhead *)blockhead {
+- (BOOL)tileIsProtectedAtPos:(intpair)tilePos againstBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)tileIsProtectedAtPos:(intpair)tilePos againstClient:(NSString *)blockheadOwnerID {
+- (BOOL)tileIsProtectedAtPos:(intpair)tilePos againstClient:(NSString*)blockheadOwnerID
+{
 }
 
-- (void)timeCrystalButtonTapped {
+- (void)timeCrystalButtonTapped
+{
 }
 
-- (void)timeCrystalCloseButtonTapped {
+- (void)timeCrystalCloseButtonTapped
+{
 }
 
-- (BOOL)touchIsInUI:(CGPoint)location {
+- (BOOL)touchIsInUI:(CGPoint)location
+{
 }
 
-- (void)transactionDataRecieved:(NSDictionary *)transactionData fromClient:(NSString *)clientID {
+- (void)transactionDataRecieved:(NSDictionary*)transactionData fromClient:(NSString*)clientID
+{
 }
 
-- (Vector2)translation {
+- (Vector2)translation
+{
 }
 
-- (BOOL)tutorialActive {
+- (BOOL)tutorialActive
+{
 }
 
-- (void)tutorialAlertDismissedWithContinue:(BOOL)shouldContinue {
+- (void)tutorialAlertDismissedWithContinue:(BOOL)shouldContinue
+{
 }
 
-- (void)uniqueIDReturnedFromServer:(uint64_t)uniqueID {
+- (void)uniqueIDReturnedFromServer:(uint64_t)uniqueID
+{
 }
 
-- (int)unmodifiedGroundLevelForX:(int)worldX {
+- (int)unmodifiedGroundLevelForX:(int)worldX
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT pinchScale:(double)pinchScale_ dragInProgress:(BOOL)dragInProgress_ {
+- (void)update:(float)dt accurateDT:(float)accurateDT pinchScale:(double)pinchScale_ dragInProgress:(BOOL)dragInProgress_
+{
 }
 
-- (void)updateIdleTimerDisabled {
+- (void)updateIdleTimerDisabled
+{
 }
 
-- (void)updateLocalOwnershipSignsDueToSignPlacedOrChangedAtPos:(intpair)tilePos withLandOwner:(NSString *)landOwnerID widthRadius:(int)widthRadius heightRadius:(int)heightRadius wasRemoved:(BOOL)wasRemoved {
+- (void)updateLocalOwnershipSignsDueToSignPlacedOrChangedAtPos:(intpair)tilePos withLandOwner:(NSString*)landOwnerID widthRadius:(int)widthRadius heightRadius:(int)heightRadius wasRemoved:(BOOL)wasRemoved
+{
 }
 
-- (void)updatePhysicalBlockToLatestVersion:(PhysicalBlock *)physicalBlock {
+- (void)updatePhysicalBlockToLatestVersion:(PhysicalBlock*)physicalBlock
+{
 }
 
-- (void)updatePriceForItemBoughtOrSoldOfTypeKey:(NSString *)key soldCount:(float)count {
+- (void)updatePriceForItemBoughtOrSoldOfTypeKey:(NSString*)key soldCount:(float)count
+{
 }
 
-- (void)updateTileGraphicForWorkbenchOfType:(WorkbenchType)workbenchType atPos:(intpair)pos level:(int)level {
+- (void)updateTileGraphicForWorkbenchOfType:(WorkbenchType)workbenchType atPos:(intpair)pos level:(int)level
+{
 }
 
-- (void)updateTradePricesIfNeeded {
+- (void)updateTradePricesIfNeeded
+{
 }
 
-- (void)updateTranslationDueToPinchOrPan:(Vector2)incomingTranslation {
+- (void)updateTranslationDueToPinchOrPan:(Vector2)incomingTranslation
+{
 }
 
-- (void)useDynamicObjectTappedAtDynamicObject:(DynamicObject *)dynamicObject selectedOption:(int)selectedOption {
+- (void)useDynamicObjectTappedAtDynamicObject:(DynamicObject*)dynamicObject selectedOption:(int)selectedOption
+{
 }
 
-- (std::unordered_set<PhysicalBlock> *)usedPhysicalBlocks {
+- (std::unordered_set<PhysicalBlock>*)usedPhysicalBlocks
+{
 }
 
-- (BOOL)verifyClientCustomRulesData:(NSData *)customRulesData {
+- (BOOL)verifyClientCustomRulesData:(NSData*)customRulesData
+{
 }
 
-- (void)viewOrEditWelcomeMessage {
+- (void)viewOrEditWelcomeMessage
+{
 }
 
-- (void)warpInBlockhead:(BlockheadCraftableItemObject *)craftableItemObject atWorkbench:(Workbench *)workbench withBlockhead:(Blockhead *)blockhead {
+- (void)warpInBlockhead:(BlockheadCraftableItemObject*)craftableItemObject atWorkbench:(Workbench*)workbench withBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (void)waterMovedFrom:(intpair)from fromTile:(Tile *)fromTile to:(intpair)to toTile:(Tile *)toTile amount:(int)amount {
+- (void)waterMovedFrom:(intpair)from fromTile:(Tile*)fromTile to:(intpair)to toTile:(Tile*)toTile amount:(int)amount
+{
 }
 
-- (NSString *)welcomeBackEventsMessageForClientID:(NSString *)clientID {
+- (NSString*)welcomeBackEventsMessageForClientID:(NSString*)clientID
+{
 }
 
-- (NSString *)welcomeBackMessageForInfoDict:(NSDictionary *)simulationEvents_ {
+- (NSString*)welcomeBackMessageForInfoDict:(NSDictionary*)simulationEvents_
+{
 }
 
-- (NSString *)welcomeMessage {
+- (NSString*)welcomeMessage
+{
 }
 
-- (void)welcomeMessageDictRecieved:(NSDictionary *)messageDict fromClient:(NSString *)peer {
+- (void)welcomeMessageDictRecieved:(NSDictionary*)messageDict fromClient:(NSString*)peer
+{
 }
 
-- (void)welcomeMessageRecievedFromServer:(NSDictionary *)welcomeMessageDict {
+- (void)welcomeMessageRecievedFromServer:(NSDictionary*)welcomeMessageDict
+{
 }
 
-- (float)windStrength {
+- (float)windStrength
+{
 }
 
-- (NSDictionary *)worldInfoForiCloudSave {
+- (NSDictionary*)worldInfoForiCloudSave
+{
 }
 
-- (void)worldPriceOffsetsRecievedFromServer:(NSData *)priceData {
+- (void)worldPriceOffsetsRecievedFromServer:(NSData*)priceData
+{
 }
 
-- (WorldUI *)worldUI {
+- (WorldUI*)worldUI
+{
 }
 
-- (BOOL)worldUIDragging {
+- (BOOL)worldUIDragging
+{
 }
 
-- (void)zoomToActiveNetBlockheadForPlayer:(NSString *)playerID {
+- (void)zoomToActiveNetBlockheadForPlayer:(NSString*)playerID
+{
 }
 
-- (void)zoomToPoint:(Vector2)point {
+- (void)zoomToPoint:(Vector2)point
+{
 }
 
-- (void)zoomToPortalAtPosition:(intpair)pos {
+- (void)zoomToPortalAtPosition:(intpair)pos
+{
 }
 
-- (void)zoomToPos:(intpair)pos pinchZoom:(BOOL)pinchZoom {
+- (void)zoomToPos:(intpair)pos pinchZoom:(BOOL)pinchZoom
+{
 }
 
-- (void)zoomUIToOnscreen:(Vector2)center dimensions:(Vector2)dimensions {
+- (void)zoomUIToOnscreen:(Vector2)center dimensions:(Vector2)dimensions
+{
 }
 
 @end

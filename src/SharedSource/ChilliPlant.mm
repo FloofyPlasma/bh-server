@@ -2,40 +2,52 @@
 
 @implementation ChilliPlant
 
-- (BOOL)canDieSeason:(int)season {
+- (BOOL)canDieSeason:(int)season
+{
 }
 
-- (BOOL)emitsLight {
+- (BOOL)emitsLight
+{
 }
 
-- (BOOL)floweringSeason:(int)season {
+- (BOOL)floweringSeason:(int)season
+{
 }
 
-- (BOOL)isRequiredSoilType:(TileType)type {
+- (BOOL)isRequiredSoilType:(TileType)type
+{
 }
 
-- (Vector)lightColor {
+- (Vector)lightColor
+{
 }
 
-- (float)lightFactor {
+- (float)lightFactor
+{
 }
 
-- (float)maxAgeBase {
+- (float)maxAgeBase
+{
 }
 
-- (int)minAllowedTemperature {
+- (int)minAllowedTemperature
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (PlantType)plantType {
+- (PlantType)plantType
+{
 }
 
-- (ImageType)renderImageType {
+- (ImageType)renderImageType
+{
 }
 
-- (ItemType)seedItemType {
+- (ItemType)seedItemType
+{
 }
 
 @end

@@ -2,16 +2,20 @@
 
 @implementation CraftableItemObject
 
-- (NSMutableDictionary *)freeBlockCreationItemSaveDict {
+- (NSMutableDictionary*)freeBlockCreationItemSaveDict
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (CraftableItemObject *)initWithCraftableItem:(CraftableItem)craftableItem_ {
+- (CraftableItemObject*)initWithCraftableItem:(CraftableItem)craftableItem_
+{
 }
 
-- (CraftableItemObject *)initWithSaveDict:(NSDictionary *)saveDict {
+- (CraftableItemObject*)initWithSaveDict:(NSDictionary*)saveDict
+{
 }
 
 @end

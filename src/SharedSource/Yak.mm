@@ -2,106 +2,140 @@
 
 @implementation Yak
 
-- (BOOL)canBeMilkedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)canBeMilkedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (BOOL)canBeShavedByBlockhead:(Blockhead *)blockhead {
+- (BOOL)canBeShavedByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (ItemType)captureRequiredItemType {
+- (ItemType)captureRequiredItemType
+{
 }
 
-- (ItemType)capturedItemType {
+- (ItemType)capturedItemType
+{
 }
 
-- (void)createItemDropsForDeath {
+- (void)createItemDropsForDeath
+{
 }
 
-- (uint64_t)creationDataStructSize {
+- (uint64_t)creationDataStructSize
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)doYakRemoteUpdate:(YakUpdateNetData)remoteData {
+- (void)doYakRemoteUpdate:(YakUpdateNetData)remoteData
+{
 }
 
-- (void)drawSubClassStuff:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix {
+- (void)drawSubClassStuff:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix
+{
 }
 
-- (ItemType)foodItemType {
+- (ItemType)foodItemType
+{
 }
 
-- (PlantType)foodPlantType {
+- (PlantType)foodPlantType
+{
 }
 
-- (float)foodToRemoveWhenSpawningNPC {
+- (float)foodToRemoveWhenSpawningNPC
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (Yak *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ saveDict:(NSDictionary *)saveDict isAdult:(BOOL)isAdult wasPlaced:(BOOL)wasPlaced placedByClient:(NSString *)clientId {
+- (Yak*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ saveDict:(NSDictionary*)saveDict isAdult:(BOOL)isAdult wasPlaced:(BOOL)wasPlaced placedByClient:(NSString*)clientId
+{
 }
 
-- (Yak *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (Yak*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (BOOL)jumps {
+- (BOOL)jumps
+{
 }
 
-- (BOOL)jumpsOnSwipe {
+- (BOOL)jumpsOnSwipe
+{
 }
 
-- (void)loadDerivedStuff {
+- (void)loadDerivedStuff
+{
 }
 
-- (float)maxAge {
+- (float)maxAge
+{
 }
 
-- (uint16_t)maxHealth {
+- (uint16_t)maxHealth
+{
 }
 
-- (BOOL)milkByBlockhead:(Blockhead *)blockhead {
+- (BOOL)milkByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (float)minFullness {
+- (float)minFullness
+{
 }
 
-- (NPCType)npcType {
+- (NPCType)npcType
+{
 }
 
-- (void)remoteCreationDataUpdate:(NSData *)netData {
+- (void)remoteCreationDataUpdate:(NSData*)netData
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)setAdultCreationStartValues {
+- (void)setAdultCreationStartValues
+{
 }
 
-- (void)setupMatrices:(Vector2)renderPos dt:(float)dt {
+- (void)setupMatrices:(Vector2)renderPos dt:(float)dt
+{
 }
 
-- (BOOL)shaveByBlockhead:(Blockhead *)blockhead {
+- (BOOL)shaveByBlockhead:(Blockhead*)blockhead
+{
 }
 
-- (NSString *)speciesName {
+- (NSString*)speciesName
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)updateTextures {
+- (void)updateTextures
+{
 }
 
-- (YakUpdateNetData)yakUpdateNetDataForClient:(NSString *)clientIDToSendTo {
+- (YakUpdateNetData)yakUpdateNetDataForClient:(NSString*)clientIDToSendTo
+{
 }
 
 @end

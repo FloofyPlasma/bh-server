@@ -2,148 +2,196 @@
 
 @implementation TradingPost
 
-- (NSString *)actionTitle {
+- (NSString*)actionTitle
+{
 }
 
-- (int)addDodoEggDrawQuadData:(float *)buffer fromIndex:(int)index {
+- (int)addDodoEggDrawQuadData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (int)addDrawCubeData:(float *)buffer fromIndex:(int)index {
+- (int)addDrawCubeData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (int)addDrawItemQuadData:(float *)buffer fromIndex:(int)index {
+- (int)addDrawItemQuadData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (int)addDrawQuadData:(float *)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos {
+- (int)addDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
+{
 }
 
-- (BOOL)blockheadIsSeller:(Blockhead *)blockhead {
+- (BOOL)blockheadIsSeller:(Blockhead*)blockhead
+{
 }
 
-- (void)buyButtonTappedWithQuantity:(int)quantity {
+- (void)buyButtonTappedWithQuantity:(int)quantity
+{
 }
 
-- (void)contentsDidChange {
+- (void)contentsDidChange
+{
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
 }
 
-- (int)currentBlockheadCash {
+- (int)currentBlockheadCash
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (ItemType)destroyItemType {
+- (ItemType)destroyItemType
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (uint16_t)freeBlockCreationDataA {
+- (uint16_t)freeBlockCreationDataA
+{
 }
 
-- (uint16_t)freeBlockCreationDataB {
+- (uint16_t)freeBlockCreationDataB
+{
 }
 
-- (NSMutableDictionary *)freeBlockCreationSaveDict {
+- (NSMutableDictionary*)freeBlockCreationSaveDict
+{
 }
 
-- (ItemType)freeblockCreationItemType {
+- (ItemType)freeblockCreationItemType
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)initSlotsWithSaveDict:(NSDictionary *)saveDict {
+- (void)initSlotsWithSaveDict:(NSDictionary*)saveDict
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (TradingPost *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos_ cache:(CPCache *)cache_ item:(InventoryItem *)item flipped:(BOOL)flipped_ saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientId clientName:(NSString *)clientName {
+- (TradingPost*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos_ cache:(CPCache*)cache_ item:(InventoryItem*)item flipped:(BOOL)flipped_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId clientName:(NSString*)clientName
+{
 }
 
-- (TradingPost *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (TradingPost*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (TradingPost *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ {
+- (TradingPost*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
 }
 
-- (uint16_t)interactionObjectType {
+- (uint16_t)interactionObjectType
+{
 }
 
-- (ItemType)interactionRenderItemType {
+- (ItemType)interactionRenderItemType
+{
 }
 
-- (BOOL)isPaintable {
+- (BOOL)isPaintable
+{
 }
 
-- (int)moveInventoryItemsToSellSlotFromArray:(NSMutableArray *)fromItemSlot count:(int)count {
+- (int)moveInventoryItemsToSellSlotFromArray:(NSMutableArray*)fromItemSlot count:(int)count
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (BOOL)occupiesNormalContents {
+- (BOOL)occupiesNormalContents
+{
 }
 
-- (void)paint:(uint16_t)colorIndex {
+- (void)paint:(uint16_t)colorIndex
+{
 }
 
-- (int)price {
+- (int)price
+{
 }
 
-- (int)priceTier {
+- (int)priceTier
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)remove:(Blockhead *)removeBlockhead {
+- (void)remove:(Blockhead*)removeBlockhead
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (BOOL)requiresHumanInteraction {
+- (BOOL)requiresHumanInteraction
+{
 }
 
-- (NSString *)sellTitle {
+- (NSString*)sellTitle
+{
 }
 
-- (void)setPriceTier:(int)priceTier_ {
+- (void)setPriceTier:(int)priceTier_
+{
 }
 
-- (int)staticGeometryDodoEggCount {
+- (int)staticGeometryDodoEggCount
+{
 }
 
-- (int)staticGeometryDrawCubeCount {
+- (int)staticGeometryDrawCubeCount
+{
 }
 
-- (int)staticGeometryDrawItemQuadCount {
+- (int)staticGeometryDrawItemQuadCount
+{
 }
 
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos {
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos
+{
 }
 
-- (NSString *)title {
+- (NSString*)title
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateBitmapString {
+- (void)updateBitmapString
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
-- (void)worldContentsChanged:(std::vector<intpair> *)worldContentsChangedPositions {
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions
+{
 }
 
 @end

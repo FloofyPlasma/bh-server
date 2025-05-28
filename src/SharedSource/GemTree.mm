@@ -2,64 +2,84 @@
 
 @implementation GemTree
 
-- (int)bushContentsType {
+- (int)bushContentsType
+{
 }
 
-- (ItemType)fruitItemType {
+- (ItemType)fruitItemType
+{
 }
 
-- (BOOL)fruitShouldFallInSeason:(int)season {
+- (BOOL)fruitShouldFallInSeason:(int)season
+{
 }
 
-- (ItemType)gemItemType {
+- (ItemType)gemItemType
+{
 }
 
-- (id)getSaveDict {
+- (id)getSaveDict
+{
 }
 
-- (GemTree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ gemTreeType:(TreeType)gemTreeType_ {
+- (GemTree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_ gemTreeType:(TreeType)gemTreeType_
+{
 }
 
-- (GemTree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ {
+- (GemTree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+{
 }
 
-- (BOOL)isStaticTree {
+- (BOOL)isStaticTree
+{
 }
 
-- (void)loadSaveDictValues:(NSDictionary *)saveDict {
+- (void)loadSaveDictValues:(NSDictionary*)saveDict
+{
 }
 
-- (void)makeTileDead:(Tile *)tile {
+- (void)makeTileDead:(Tile*)tile
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)recursivelyAddOwnedTile:(intpair)tilePos toPositions:(std::unordered_set<int> *)ownedTilePositions {
+- (void)recursivelyAddOwnedTile:(intpair)tilePos toPositions:(std::unordered_set<int>*)ownedTilePositions
+{
 }
 
-- (BOOL)shouldAddFallenFruits {
+- (BOOL)shouldAddFallenFruits
+{
 }
 
-- (BOOL)tileIsKindOfSelf:(Tile *)tile {
+- (BOOL)tileIsKindOfSelf:(Tile*)tile
+{
 }
 
-- (TreeType)treeType {
+- (TreeType)treeType
+{
 }
 
-- (int)trunkBushContentsType {
+- (int)trunkBushContentsType
+{
 }
 
-- (int)trunkContentsType {
+- (int)trunkContentsType
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateGrowth:(BOOL)addNewBranchBlocks {
+- (void)updateGrowth:(BOOL)addNewBranchBlocks
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
 @end

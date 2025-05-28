@@ -2,628 +2,836 @@
 
 @implementation DynamicWorld
 
-- (Blockhead *)activeBlockhead {
+- (Blockhead*)activeBlockhead
+{
 }
 
-- (int)activeBlockheadIndex {
+- (int)activeBlockheadIndex
+{
 }
 
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY {
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY
+{
 }
 
-- (void)addColumnAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addColumnAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)addDoorAtPos:(intpair)arg1 ofType:(int)arg2 saveDict:(id)arg3 placedByClient:(id)arg4 {
+- (void)addDoorAtPos:(intpair)arg1 ofType:(int)arg2 saveDict:(id)arg3 placedByClient:(id)arg4
+{
 }
 
-- (void)addEggAtPos:(intpair)pos saveDict:(NSDictionary *)saveDict {
+- (void)addEggAtPos:(intpair)pos saveDict:(NSDictionary*)saveDict
+{
 }
 
-- (void)addElevatorMotorAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addElevatorMotorAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)addElevatorShaftAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addElevatorShaftAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)addLadderAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addLadderAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)addPaintingAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID clientName:(NSString *)clientName {
+- (void)addPaintingAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID clientName:(NSString*)clientName
+{
 }
 
-- (void)addRailAtPos:(intpair)pos ofType:(ItemType)type ownedByStation:(BOOL)ownedByStation {
+- (void)addRailAtPos:(intpair)pos ofType:(ItemType)type ownedByStation:(BOOL)ownedByStation
+{
 }
 
-- (void)addStairsAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addStairsAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)addStandardObjectAtPos:(intpair)pos objectType:(ItemType)type itemType:(DynamicObjectType *)objectType saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addStandardObjectAtPos:(intpair)pos objectType:(ItemType)type itemType:(DynamicObjectType*)objectType saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)addTorchAtPos:(intpair)pos ofType:(ItemType)type dataA:(uint16_t)dataA dataB:(uint16_t)dataB saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addTorchAtPos:(intpair)pos ofType:(ItemType)type dataA:(uint16_t)dataA dataB:(uint16_t)dataB saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)addWindowAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addWindowAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)addWireAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)addWireAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (NSArray *)allBlockheadsIncludingNet {
+- (NSArray*)allBlockheadsIncludingNet
+{
 }
 
-- (void)appendDebugLog:(NSMutableString *)log {
+- (void)appendDebugLog:(NSMutableString*)log
+{
 }
 
-- (void)assignCraftProgressUIToLoadedWorkbenches:(CraftProgressUI *)craftProgressUI {
+- (void)assignCraftProgressUIToLoadedWorkbenches:(CraftProgressUI*)craftProgressUI
+{
 }
 
-- (Blockhead *)blockheadAtPos:(intpair)pos {
+- (Blockhead*)blockheadAtPos:(intpair)pos
+{
 }
 
-- (BOOL)blockheadOccupiesTileAtPos:(intpair)pos ignoreBlockhead:(Blockhead *)ignoreBlockhead {
+- (BOOL)blockheadOccupiesTileAtPos:(intpair)pos ignoreBlockhead:(Blockhead*)ignoreBlockhead
+{
 }
 
-- (void)blockheadWillBeUnloaded:(Blockhead *)blockhead {
+- (void)blockheadWillBeUnloaded:(Blockhead*)blockhead
+{
 }
 
-- (Blockhead *)blockheadWithIDIncludingNet:(uint64_t)uniqueID {
+- (Blockhead*)blockheadWithIDIncludingNet:(uint64_t)uniqueID
+{
 }
 
-- (Blockhead *)blockheadWithUniqueID:(uint64_t)uniqueID {
+- (Blockhead*)blockheadWithUniqueID:(uint64_t)uniqueID
+{
 }
 
-- (NSMutableArray *)blockheads {
+- (NSMutableArray*)blockheads
+{
 }
 
-- (Boat *)boatWithID:(uint64_t)uniqueID {
+- (Boat*)boatWithID:(uint64_t)uniqueID
+{
 }
 
-- (void)checkAndRestorePoleItems:(float)dt {
+- (void)checkAndRestorePoleItems:(float)dt
+{
 }
 
-- (Boat *)checkForBoatUnderTap:(Vector2)tapPos {
+- (Boat*)checkForBoatUnderTap:(Vector2)tapPos
+{
 }
 
-- (DynamicObject *)checkForHarmableDynamicObjectUnderTap:(Vector2)tapPos ignoreLocalBlockheads:(BOOL)ignoreLocalBlockheads ignoreAllBlockheads:(BOOL)ignoreAllBlockheads {
+- (DynamicObject*)checkForHarmableDynamicObjectUnderTap:(Vector2)tapPos ignoreLocalBlockheads:(BOOL)ignoreLocalBlockheads ignoreAllBlockheads:(BOOL)ignoreAllBlockheads
+{
 }
 
-- (TrainCar *)checkForTrainCarUnderTap:(Vector2)tapPos {
+- (TrainCar*)checkForTrainCarUnderTap:(Vector2)tapPos
+{
 }
 
-- (void)chestInventoryDataRecievedFromServer:(NSData *)chestData {
+- (void)chestInventoryDataRecievedFromServer:(NSData*)chestData
+{
 }
 
-- (void)clientBlockheadInventoryRecievedForPlayerID:(NSString *)playerID blockheadID:(uint64_t)blockheadID data:(NSData *)data {
+- (void)clientBlockheadInventoryRecievedForPlayerID:(NSString*)playerID blockheadID:(uint64_t)blockheadID data:(NSData*)data
+{
 }
 
-- (void)clientBlockheadWithID:(uint64_t)blockheadID fromClient:(NSString *)clientID requestsDyamicObjectRemovalWithID:(uint64_t)objectID {
+- (void)clientBlockheadWithID:(uint64_t)blockheadID fromClient:(NSString*)clientID requestsDyamicObjectRemovalWithID:(uint64_t)objectID
+{
 }
 
-- (void)clientBlockheadsRecievedForPlayerID:(NSString *)playerID data:(NSData *)data {
+- (void)clientBlockheadsRecievedForPlayerID:(NSString*)playerID data:(NSData*)data
+{
 }
 
-- (void)clientConnected:(NSString *)clientID {
+- (void)clientConnected:(NSString*)clientID
+{
 }
 
-- (void)clientDisconnected:(NSString *)clientID simulate:(BOOL)simulate {
+- (void)clientDisconnected:(NSString*)clientID simulate:(BOOL)simulate
+{
 }
 
-- (void)clientPickupRequest:(uint64_t *)pickupIDs count:(int)count clientID:(NSString *)clientID blockheadRequesterUniqueID:(uint64_t)blockheadRequesterUniqueID {
+- (void)clientPickupRequest:(uint64_t*)pickupIDs count:(int)count clientID:(NSString*)clientID blockheadRequesterUniqueID:(uint64_t)blockheadRequesterUniqueID
+{
 }
 
-- (Column *)columnAtPos:(intpair)pos {
+- (Column*)columnAtPos:(intpair)pos
+{
 }
 
-- (void)connectionToServerLost {
+- (void)connectionToServerLost
+{
 }
 
-- (void)conversionThread:(NSDictionary *)localVersionOneToTwoConversionList {
+- (void)conversionThread:(NSDictionary*)localVersionOneToTwoConversionList
+{
 }
 
-- (void)createBackgroundContentFreeBlockAtPosition:(intpair)position forTile:(Tile *)tile removeBlockhead:(Blockhead *)removeBlockhead {
+- (void)createBackgroundContentFreeBlockAtPosition:(intpair)position forTile:(Tile*)tile removeBlockhead:(Blockhead*)removeBlockhead
+{
 }
 
-- (void)createClientFreeblocksWithData:(NSData *)netData {
+- (void)createClientFreeblocksWithData:(NSData*)netData
+{
 }
 
-- (void)createFreeBlockAtPosition:(intpair)position forForegroundContents:(BOOL)foregroundContents forTile:(Tile *)tile priorityBlockhead:(Blockhead *)priorityBlockhead {
+- (void)createFreeBlockAtPosition:(intpair)position forForegroundContents:(BOOL)foregroundContents forTile:(Tile*)tile priorityBlockhead:(Blockhead*)priorityBlockhead
+{
 }
 
-- (void)createFreeBlockAtPosition:(intpair)position ofType:(ItemType)itemType dataA:(uint16_t)dataA dataB:(uint16_t)dataB subItems:(NSArray *)subItems dynamicObjectSaveDict:(NSDictionary *)dynamicObjectSaveDict hovers:(BOOL)hovers playSound:(int)playSound priorityBlockhead:(Blockhead *)priorityBlockhead {
+- (void)createFreeBlockAtPosition:(intpair)position ofType:(ItemType)itemType dataA:(uint16_t)dataA dataB:(uint16_t)dataB subItems:(NSArray*)subItems dynamicObjectSaveDict:(NSDictionary*)dynamicObjectSaveDict hovers:(BOOL)hovers playSound:(int)playSound priorityBlockhead:(Blockhead*)priorityBlockhead
+{
 }
 
-- (void)createTreasureChestOrTrollAtTile:(Tile *)tile atPos:(intpair)pos loadTroll:(BOOL)loadTroll loadTreasure:(BOOL)loadTreasure {
+- (void)createTreasureChestOrTrollAtTile:(Tile*)tile atPos:(intpair)pos loadTroll:(BOOL)loadTroll loadTreasure:(BOOL)loadTreasure
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)doRepairForTileAtPos:(intpair)pos {
+- (void)doRepairForTileAtPos:(intpair)pos
+{
 }
 
-- (Door *)doorAtPos:(intpair)pos {
+- (Door*)doorAtPos:(intpair)pos
+{
 }
 
-- (BOOL)doorCanBeUsedByPathUser:(DynamicObject *)pathUser atPos:(intpair)pos {
+- (BOOL)doorCanBeUsedByPathUser:(DynamicObject*)pathUser atPos:(intpair)pos
+{
 }
 
-- (BOOL)doorIsOpenAtPos:(intpair)pos {
+- (BOOL)doorIsOpenAtPos:(intpair)pos
+{
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType
+{
 }
 
-- (void)drawBlockheadBoxes:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)drawBlockheadBoxes:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (void)drawFreeBlocks:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType {
+- (void)drawFreeBlocks:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType
+{
 }
 
-- (void)drawInFrontOfBlocksObjects:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType {
+- (void)drawInFrontOfBlocksObjects:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType
+{
 }
 
-- (void)drawNames:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld drawLocalNames:(BOOL)drawLocalNames {
+- (void)drawNames:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld drawLocalNames:(BOOL)drawLocalNames
+{
 }
 
-- (void)drawOpaqueObjects:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType {
+- (void)drawOpaqueObjects:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType
+{
 }
 
-- (void)dynamicWorldChangedAtPos:(intpair)posWorld objectType:(DynamicObjectType)objectType {
+- (void)dynamicWorldChangedAtPos:(intpair)posWorld objectType:(DynamicObjectType)objectType
+{
 }
 
-- (Egg *)eggAtPos:(intpair)pos {
+- (Egg*)eggAtPos:(intpair)pos
+{
 }
 
-- (ElevatorMotor *)elevatorMotorAtPos:(intpair)pos {
+- (ElevatorMotor*)elevatorMotorAtPos:(intpair)pos
+{
 }
 
-- (ElevatorMotor *)elevatorMotorForShaftAtPos:(intpair)pos {
+- (ElevatorMotor*)elevatorMotorForShaftAtPos:(intpair)pos
+{
 }
 
-- (ElevatorShaft *)elevatorShaftAtPos:(intpair)pos {
+- (ElevatorShaft*)elevatorShaftAtPos:(intpair)pos
+{
 }
 
-- (void)exploreLightChangedAtMacroPos:(intpair)macroPos clientLightBlockIndex:(int)ElevatorMotor {
+- (void)exploreLightChangedAtMacroPos:(intpair)macroPos clientLightBlockIndex:(int)ElevatorMotor
+{
 }
 
-- (int)findAndSubtractAllPowerUpTo:(uint16_t)requiredPower forUser:(DynamicObject *)userObject {
+- (int)findAndSubtractAllPowerUpTo:(uint16_t)requiredPower forUser:(DynamicObject*)userObject
+{
 }
 
-- (Plant *)findBreedingPlantNearPlant:(Plant *)plant {
+- (Plant*)findBreedingPlantNearPlant:(Plant*)plant
+{
 }
 
-- (void)finishSimulating {
+- (void)finishSimulating
+{
 }
 
-- (NSArray *)freeBlocksAtPos:(intpair)pos {
+- (NSArray*)freeBlocksAtPos:(intpair)pos
+{
 }
 
-- (BOOL)freeBlocksExistAtPos:(intpair)pos {
+- (BOOL)freeBlocksExistAtPos:(intpair)pos
+{
 }
 
-- (void)freeblockPositionChanged:(DynamicObject *)object oldPos:(intpair)oldPos {
+- (void)freeblockPositionChanged:(DynamicObject*)object oldPos:(intpair)oldPos
+{
 }
 
-- (FreeBlock *)freeblockWithUniqueID:(uint64_t)uniqueID {
+- (FreeBlock*)freeblockWithUniqueID:(uint64_t)uniqueID
+{
 }
 
-- (GatherBlock *)gatherBlockAtPos:(intpair)pos {
+- (GatherBlock*)gatherBlockAtPos:(intpair)pos
+{
 }
 
-- (uint64_t)getNextDynamicObjectID {
+- (uint64_t)getNextDynamicObjectID
+{
 }
 
-- (NSString *)getOwnerNameForObjectOwnerID:(NSString *)ownerID {
+- (NSString*)getOwnerNameForObjectOwnerID:(NSString*)ownerID
+{
 }
 
-- (Plant *)getPlantAtPos:(intpair)pos {
+- (Plant*)getPlantAtPos:(intpair)pos
+{
 }
 
-- (Rail *)getRailAtPos:(intpair)pos {
+- (Rail*)getRailAtPos:(intpair)pos
+{
 }
 
-- (Vector)getTreeLifeFractionForPos:(intpair)pos {
+- (Vector)getTreeLifeFractionForPos:(intpair)pos
+{
 }
 
-- (DynamicObject *)harmableDynamicObjectWithID:(uint64_t)uniqueID {
+- (DynamicObject*)harmableDynamicObjectWithID:(uint64_t)uniqueID
+{
 }
 
-- (BOOL)hasDynamicObjectsToSaveInMacroPos:(intpair)macroPos {
+- (BOOL)hasDynamicObjectsToSaveInMacroPos:(intpair)macroPos
+{
 }
 
-- (BOOL)hasLightsToAdd {
+- (BOOL)hasLightsToAdd
+{
 }
 
-- (DynamicWorld *)initWithWorld:(World *)world_ worldTileLoader:(WorldTileLoader *)worldTileLoader_ clientTileLoader:(ClientTileLoader *)worldTileLoader_ server:(BHServer *)server_ client:(BHClient *)client_ serverClients:(NSDictionary *)serverClients_ cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ appDatabase:(Database *)appDatabase_ worldDatabase:(Database *)worldDatabase_ dynamicObjectDatabase:(Database *)dynamicObjectDatabase_ {
+- (DynamicWorld*)initWithWorld:(World*)world_ worldTileLoader:(WorldTileLoader*)worldTileLoader_ clientTileLoader:(ClientTileLoader*)worldTileLoader_ server:(BHServer*)server_ client:(BHClient*)client_ serverClients:(NSDictionary*)serverClients_ cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ appDatabase:(Database*)appDatabase_ worldDatabase:(Database*)worldDatabase_ dynamicObjectDatabase:(Database*)dynamicObjectDatabase_
+{
 }
 
-- (id)initialDynamicObjectsNetDataForMacroTileIndex:(int)macroTileIndex wireForClient:(NSString *)clientToSend {
+- (id)initialDynamicObjectsNetDataForMacroTileIndex:(int)macroTileIndex wireForClient:(NSString*)clientToSend
+{
 }
 
-- (InteractionObject *)interactionObjectAtPos:(intpair)pos {
+- (InteractionObject*)interactionObjectAtPos:(intpair)pos
+{
 }
 
-- (id)interactionObjectPlacedAtPosition:(intpair)pos withItem:(InventoryItem *)item flipped:(BOOL)flipped saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID clientName:(NSString *)clientName {
+- (id)interactionObjectPlacedAtPosition:(intpair)pos withItem:(InventoryItem*)item flipped:(BOOL)flipped saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID clientName:(NSString*)clientName
+{
 }
 
-- (uint16_t)interactionObjectTypeForObjectAtPos:(intpair)pos {
+- (uint16_t)interactionObjectTypeForObjectAtPos:(intpair)pos
+{
 }
 
-- (InteractionObject *)interactionObjectWithID:(uint64_t)uniqueID {
+- (InteractionObject*)interactionObjectWithID:(uint64_t)uniqueID
+{
 }
 
-- (BOOL)isClient {
+- (BOOL)isClient
+{
 }
 
-- (BOOL)isControllingBlockheadsForClientPlayer:(NSString *)playerID {
+- (BOOL)isControllingBlockheadsForClientPlayer:(NSString*)playerID
+{
 }
 
-- (BOOL)isServer {
+- (BOOL)isServer
+{
 }
 
-- (Ladder *)ladderAtPos:(intpair)pos {
+- (Ladder*)ladderAtPos:(intpair)pos
+{
 }
 
-- (void)lightChangedAtMacroPos:(intpair)macroPos sendReliably:(BOOL)sendReliably {
+- (void)lightChangedAtMacroPos:(intpair)macroPos sendReliably:(BOOL)sendReliably
+{
 }
 
-- (void)lightChangedAtMacroPos:(intpair)macroPos sendReliably:(BOOL)sendReliably sendAtAll:(BOOL)sendAtAll {
+- (void)lightChangedAtMacroPos:(intpair)macroPos sendReliably:(BOOL)sendReliably sendAtAll:(BOOL)sendAtAll
+{
 }
 
-- (void)loadAnyBlockheadsForDisconnectedClients {
+- (void)loadAnyBlockheadsForDisconnectedClients
+{
 }
 
-- (NSData *)loadClientBlockheadsDataForPlayerID:(NSString *)playerID {
+- (NSData*)loadClientBlockheadsDataForPlayerID:(NSString*)playerID
+{
 }
 
-- (void)loadClientOwnedDynamicObjectsForClient:(NSString *)clientID physicalBlock:(PhysicalBlock *)physicalBlock {
+- (void)loadClientOwnedDynamicObjectsForClient:(NSString*)clientID physicalBlock:(PhysicalBlock*)physicalBlock
+{
 }
 
-- (void)loadDebugChestAtPos:(intpair)pos chest:(Chest *)chest {
+- (void)loadDebugChestAtPos:(intpair)pos chest:(Chest*)chest
+{
 }
 
-- (BOOL)loadDynamicObjects:(BOOL)loadSuccessSoFar repositionBlockheadLoadFailures:(BOOL)repositionBlockheadLoadFailures {
+- (BOOL)loadDynamicObjects:(BOOL)loadSuccessSoFar repositionBlockheadLoadFailures:(BOOL)repositionBlockheadLoadFailures
+{
 }
 
-- (void)loadDynamicObjectsForMacroTile:(MacroTile *)macroTile includeSurfaceBlocks:(BOOL)includeSurfaceBlocks {
+- (void)loadDynamicObjectsForMacroTile:(MacroTile*)macroTile includeSurfaceBlocks:(BOOL)includeSurfaceBlocks
+{
 }
 
-- (void)loadDynamicObjectsOfType:(int)objectType fromData:(NSData *)unCompressedData physicalBlock:(PhysicalBlock *)physicalBlock loadedPortal:(BOOL *)loadedPortal clientOwnedID:(NSString *)clientOwnedID {
+- (void)loadDynamicObjectsOfType:(int)objectType fromData:(NSData*)unCompressedData physicalBlock:(PhysicalBlock*)physicalBlock loadedPortal:(BOOL*)loadedPortal clientOwnedID:(NSString*)clientOwnedID
+{
 }
 
-- (void)loadGatherBlockAtPos:(intpair)pos {
+- (void)loadGatherBlockAtPos:(intpair)pos
+{
 }
 
-- (void)loadGlowBlockIfNeededAtPos:(intpair)pos tile:(Tile *)tile {
+- (void)loadGlowBlockIfNeededAtPos:(intpair)pos tile:(Tile*)tile
+{
 }
 
-- (NSData *)loadLocalInventoryDataForChest:(Chest *)chest {
+- (NSData*)loadLocalInventoryDataForChest:(Chest*)chest
+{
 }
 
-- (BOOL)loadNPCAtPosition:(intpair)pos type:(NPCType)npcType saveDict:(NSDictionary *)saveDict isAdult:(BOOL)isAdult wasPlaced:(BOOL)wasPlaced placedByClient:(NSString *)clientID {
+- (BOOL)loadNPCAtPosition:(intpair)pos type:(NPCType)npcType saveDict:(NSDictionary*)saveDict isAdult:(BOOL)isAdult wasPlaced:(BOOL)wasPlaced placedByClient:(NSString*)clientID
+{
 }
 
-- (void)loadNewBlockheadAtPos:(intpair)pos craftableItemObject:(CraftableItemObject *)craftableItemObject uniqueID:(uint64_t)uniqueID {
+- (void)loadNewBlockheadAtPos:(intpair)pos craftableItemObject:(CraftableItemObject*)craftableItemObject uniqueID:(uint64_t)uniqueID
+{
 }
 
-- (void)loadPlantAtPosition:(intpair)pos type:(PlantType)plantType maxAgeGene:(short)maxAgeGene growthRateGene:(short)growthRateGene adult:(BOOL)adult {
+- (void)loadPlantAtPosition:(intpair)pos type:(PlantType)plantType maxAgeGene:(short)maxAgeGene growthRateGene:(short)growthRateGene adult:(BOOL)adult
+{
 }
 
-- (void)loadSnowSurfaceBlockAtPos:(intpair)pos loadSnow:(BOOL)loadSnow {
+- (void)loadSnowSurfaceBlockAtPos:(intpair)pos loadSnow:(BOOL)loadSnow
+{
 }
 
-- (id)loadStandardDynamicObjectOfType:(int)type atPos:(intpair)pos {
+- (id)loadStandardDynamicObjectOfType:(int)type atPos:(intpair)pos
+{
 }
 
-- (void)loadSurfaceBlockAtPos:(intpair)pos {
+- (void)loadSurfaceBlockAtPos:(intpair)pos
+{
 }
 
-- (void)loadTreeAtPosition:(intpair)pos type:(TreeType)treeType maxHeight:(short)maxHeight growthRate:(short)growthRate adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge {
+- (void)loadTreeAtPosition:(intpair)pos type:(TreeType)treeType maxHeight:(short)maxHeight growthRate:(short)growthRate adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge
+{
 }
 
-- (int)loadedCountOfObjectsOfType:(DynamicObjectType)type {
+- (int)loadedCountOfObjectsOfType:(DynamicObjectType)type
+{
 }
 
-- (NSArray *)localAndDisconnectedClientBlockheads {
+- (NSArray*)localAndDisconnectedClientBlockheads
+{
 }
 
-- (NSString *)localNetID {
+- (NSString*)localNetID
+{
 }
 
-- (void)mainThreadRemoveDirFromConversionList:(NSString *)dirName {
+- (void)mainThreadRemoveDirFromConversionList:(NSString*)dirName
+{
 }
 
-- (NSArray *)netBlockheads {
+- (NSArray*)netBlockheads
+{
 }
 
-- (void)newFoundListRecievedFromClient:(NSString *)playerID list:(NSIndexSet *)incoming {
+- (void)newFoundListRecievedFromClient:(NSString*)playerID list:(NSIndexSet*)incoming
+{
 }
 
-- (NPC *)npcCloseEnoughToBreedWithNPC:(NPC *)npc {
+- (NPC*)npcCloseEnoughToBreedWithNPC:(NPC*)npc
+{
 }
 
-- (BOOL)npcExistsAtPos:(intpair)pos ignoreNPC:(NPC *)ignoreNPC {
+- (BOOL)npcExistsAtPos:(intpair)pos ignoreNPC:(NPC*)ignoreNPC
+{
 }
 
-- (NPC *)npcWithID:(uint64_t)uniqueID {
+- (NPC*)npcWithID:(uint64_t)uniqueID
+{
 }
 
-- (DynamicObject *)objectOfType:(DynamicObjectType)type atPos:(intpair)pos {
+- (DynamicObject*)objectOfType:(DynamicObjectType)type atPos:(intpair)pos
+{
 }
 
-- (void)openElevatorAtPos:(intpair)pos {
+- (void)openElevatorAtPos:(intpair)pos
+{
 }
 
-- (Painting *)paintingAtPos:(intpair)pos {
+- (Painting*)paintingAtPos:(intpair)pos
+{
 }
 
-- (void)paintingDataRecievedFromServer:(NSData *)paintingData {
+- (void)paintingDataRecievedFromServer:(NSData*)paintingData
+{
 }
 
-- (Painting *)paintingWithID:(uint64_t)paintingID {
+- (Painting*)paintingWithID:(uint64_t)paintingID
+{
 }
 
-- (NSArray *)pathUsers {
+- (NSArray*)pathUsers
+{
 }
 
-- (void)placeBoatInWaterAtPos:(intpair)pos saveDict:(NSDictionary *)saveDict_ placedByClient:(NSString *)clientID {
+- (void)placeBoatInWaterAtPos:(intpair)pos saveDict:(NSDictionary*)saveDict_ placedByClient:(NSString*)clientID
+{
 }
 
-- (FireObject *)placeFireAtPosition:(intpair)pos {
+- (FireObject*)placeFireAtPosition:(intpair)pos
+{
 }
 
-- (void)placeTrainCarAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID {
+- (void)placeTrainCarAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
+{
 }
 
-- (void)playTimeCrystalReceivedSoundAtPos:(intpair)position {
+- (void)playTimeCrystalReceivedSoundAtPos:(intpair)position
+{
 }
 
-- (BOOL)playerIsBannedWithID:(NSString *)playerID {
+- (BOOL)playerIsBannedWithID:(NSString*)playerID
+{
 }
 
-- (void)playersChanged {
+- (void)playersChanged
+{
 }
 
-- (void)poleItemTaken:(ItemType)poleItemType {
+- (void)poleItemTaken:(ItemType)poleItemType
+{
 }
 
-- (Workbench *)portal {
+- (Workbench*)portal
+{
 }
 
-- (void)portalIsBeingRemovedAtPos:(intpair)pos {
+- (void)portalIsBeingRemovedAtPos:(intpair)pos
+{
 }
 
-- (NSIndexSet *)portalPositions {
+- (NSIndexSet*)portalPositions
+{
 }
 
-- (intpair)posOfDoorsOtherBlockAtPos:(intpair)pos {
+- (intpair)posOfDoorsOtherBlockAtPos:(intpair)pos
+{
 }
 
-- (void)preDrawUpdate:(float)dt cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)preDrawUpdate:(float)dt cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (void)railOrStationNameChanged {
+- (void)railOrStationNameChanged
+{
 }
 
-- (void)reloadDodoEggQuadsForMacroTile:(MacroTile *)macroTile {
+- (void)reloadDodoEggQuadsForMacroTile:(MacroTile*)macroTile
+{
 }
 
-- (void)reloadDynamicObjectItemQuadsForMacroTile:(MacroTile *)macroTile {
+- (void)reloadDynamicObjectItemQuadsForMacroTile:(MacroTile*)macroTile
+{
 }
 
-- (void)reloadDynamicObjectQuadsForMacroTile:(MacroTile *)macroTile {
+- (void)reloadDynamicObjectQuadsForMacroTile:(MacroTile*)macroTile
+{
 }
 
-- (void)reloadDynamicObjectStaticCylindersForMacroTile:(MacroTile *)macroTile {
+- (void)reloadDynamicObjectStaticCylindersForMacroTile:(MacroTile*)macroTile
+{
 }
 
-- (void)reloadDynamicObjectStaticGemometryForMacroTile:(MacroTile *)macroTile {
+- (void)reloadDynamicObjectStaticGemometryForMacroTile:(MacroTile*)macroTile
+{
 }
 
-- (void)reloadLightGlowQuadsForMacroTile:(MacroTile *)macroTile {
+- (void)reloadLightGlowQuadsForMacroTile:(MacroTile*)macroTile
+{
 }
 
-- (void)remoteCreate:(NSArray *)creationArray forObjectsOfType:(DynamicObjectType)objectType clientID:(NSString *)clientID {
+- (void)remoteCreate:(NSArray*)creationArray forObjectsOfType:(DynamicObjectType)objectType clientID:(NSString*)clientID
+{
 }
 
-- (void)remoteCreationDataUpdate:(NSArray *)updateArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString *)clientID {
+- (void)remoteCreationDataUpdate:(NSArray*)updateArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID
+{
 }
 
-- (void)remotePickupRequestReply:(NSData *)rawData {
+- (void)remotePickupRequestReply:(NSData*)rawData
+{
 }
 
-- (void)remoteRemove:(NSArray *)removeArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString *)clientID {
+- (void)remoteRemove:(NSArray*)removeArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID
+{
 }
 
-- (void)remoteUpdate:(NSArray *)updateArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString *)clientID {
+- (void)remoteUpdate:(NSArray*)updateArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID
+{
 }
 
-- (Column *)removeColumnAtPos:(intpair)pos {
+- (Column*)removeColumnAtPos:(intpair)pos
+{
 }
 
-- (Door *)removeDoorAtPos:(intpair)pos {
+- (Door*)removeDoorAtPos:(intpair)pos
+{
 }
 
-- (void)removeDynamicObjectsBelongingToClient:(NSString *)clientID {
+- (void)removeDynamicObjectsBelongingToClient:(NSString*)clientID
+{
 }
 
-- (void)removeDynamicObjectsForMacroTile:(MacroTile *)macroTile {
+- (void)removeDynamicObjectsForMacroTile:(MacroTile*)macroTile
+{
 }
 
-- (Egg *)removeEggAtPos:(intpair)pos {
+- (Egg*)removeEggAtPos:(intpair)pos
+{
 }
 
-- (ElevatorMotor *)removeElevatorMotorAtPos:(intpair)pos {
+- (ElevatorMotor*)removeElevatorMotorAtPos:(intpair)pos
+{
 }
 
-- (ElevatorShaft *)removeElevatorShaftAtPos:(intpair)pos {
+- (ElevatorShaft*)removeElevatorShaftAtPos:(intpair)pos
+{
 }
 
-- (InteractionObject *)removeInteractionObjectAtPos:(intpair)pos removeBlockhead:(Blockhead *)removeBlockhead {
+- (InteractionObject*)removeInteractionObjectAtPos:(intpair)pos removeBlockhead:(Blockhead*)removeBlockhead
+{
 }
 
-- (Ladder *)removeLadderAtPos:(intpair)pos {
+- (Ladder*)removeLadderAtPos:(intpair)pos
+{
 }
 
-- (void)removeObjectDueToRepair:(DynamicObject *)object {
+- (void)removeObjectDueToRepair:(DynamicObject*)object
+{
 }
 
-- (Painting *)removePaintingAtPos:(intpair)pos {
+- (Painting*)removePaintingAtPos:(intpair)pos
+{
 }
 
-- (void)removePortalFromListAtPos:(intpair)pos {
+- (void)removePortalFromListAtPos:(intpair)pos
+{
 }
 
-- (Rail *)removeRailAtPos:(intpair)pos {
+- (Rail*)removeRailAtPos:(intpair)pos
+{
 }
 
-- (void)removeSavedInventoryForChest:(Chest *)chest {
+- (void)removeSavedInventoryForChest:(Chest*)chest
+{
 }
 
-- (Stairs *)removeStairsAtPos:(intpair)pos {
+- (Stairs*)removeStairsAtPos:(intpair)pos
+{
 }
 
-- (void)removeStandardObject:(DynamicObject *)object {
+- (void)removeStandardObject:(DynamicObject*)object
+{
 }
 
-- (Torch *)removeTorchAtPos:(intpair)pos {
+- (Torch*)removeTorchAtPos:(intpair)pos
+{
 }
 
-- (Window *)removeWindowAtPos:(intpair)pos {
+- (Window*)removeWindowAtPos:(intpair)pos
+{
 }
 
-- (Wire *)removeWireAtPos:(intpair)pos {
+- (Wire*)removeWireAtPos:(intpair)pos
+{
 }
 
-- (Workbench *)removeWorkbenchAtPos:(intpair)pos removeBlockhead:(Blockhead *)removeBlockhead {
+- (Workbench*)removeWorkbenchAtPos:(intpair)pos removeBlockhead:(Blockhead*)removeBlockhead
+{
 }
 
-- (void)requestPaintingDataForPainting:(Painting *)painting {
+- (void)requestPaintingDataForPainting:(Painting*)painting
+{
 }
 
-- (DynamicObject *)ridableObjectWithID:(uint64_t)uniqueID {
+- (DynamicObject*)ridableObjectWithID:(uint64_t)uniqueID
+{
 }
 
-- (void)safeRemoveFromDynamicObjectDatabase:(NSString *)key {
+- (void)safeRemoveFromDynamicObjectDatabase:(NSString*)key
+{
 }
 
-- (void)saveAndSendOnlyBlocksThatNeedToBeSent {
+- (void)saveAndSendOnlyBlocksThatNeedToBeSent
+{
 }
 
-- (void)saveBlockheadInventory:(Blockhead *)blockhead {
+- (void)saveBlockheadInventory:(Blockhead*)blockhead
+{
 }
 
-- (void)saveBlockheads {
+- (void)saveBlockheads
+{
 }
 
-- (void)saveDynamicObjects {
+- (void)saveDynamicObjects
+{
 }
 
-- (void)saveDynamicObjectsForMacroTile:(MacroTile *)macroTile objectType:(DynamicObjectType)objectType xPos:(int)xPos yPos:(int)yPos {
+- (void)saveDynamicObjectsForMacroTile:(MacroTile*)macroTile objectType:(DynamicObjectType)objectType xPos:(int)xPos yPos:(int)yPos
+{
 }
 
-- (void)saveGameWithWorldData:(NSData *)worlSaveData signOwnershipData:(NSData *)signOwnershipData {
+- (void)saveGameWithWorldData:(NSData*)worlSaveData signOwnershipData:(NSData*)signOwnershipData
+{
 }
 
-- (void)selectedBlockheadChanged:(int)newIndex {
+- (void)selectedBlockheadChanged:(int)newIndex
+{
 }
 
-- (void)sendChestInventoryForChest:(Chest *)chest toClientOwningBlockheadWithID:(uint64_t)remoteBlockheadID {
+- (void)sendChestInventoryForChest:(Chest*)chest toClientOwningBlockheadWithID:(uint64_t)remoteBlockheadID
+{
 }
 
-- (void)sendLightblocksToClients {
+- (void)sendLightblocksToClients
+{
 }
 
-- (void)sendNetDataIfNeededForObject:(DynamicObject *)arg1 isCreation:(BOOL)isCreation {
+- (void)sendNetDataIfNeededForObject:(DynamicObject*)arg1 isCreation:(BOOL)isCreation
+{
 }
 
-- (void)sendPaintingDataForPaintingWithID:(uint64_t)paintingUniqueID toClient:(NSString *)clientID {
+- (void)sendPaintingDataForPaintingWithID:(uint64_t)paintingUniqueID toClient:(NSString*)clientID
+{
 }
 
-- (void)setDoorAtPos:(intpair)pos toOpen:(BOOL)open direction:(int)openDirection {
+- (void)setDoorAtPos:(intpair)pos toOpen:(BOOL)open direction:(int)openDirection
+{
 }
 
-- (void)setPaused:(BOOL)paused {
+- (void)setPaused:(BOOL)paused
+{
 }
 
-- (void)setServer:(BHServer *)server_ serverClients:(NSDictionary *)serverClients_ {
+- (void)setServer:(BHServer*)server_ serverClients:(NSDictionary*)serverClients_
+{
 }
 
-- (void)simulate:(float)dt {
+- (void)simulate:(float)dt
+{
 }
 
-- (void)snowChangedAtMacroPos:(intpair)macroPos {
+- (void)snowChangedAtMacroPos:(intpair)macroPos
+{
 }
 
-- (void)sowPlantNearParent:(Plant *)parentPlant {
+- (void)sowPlantNearParent:(Plant*)parentPlant
+{
 }
 
-- (void)sowTreeNearParent:(Tree *)parentTree adult:(BOOL)adult adultMaxAge:(float)adultMaxAge {
+- (void)sowTreeNearParent:(Tree*)parentTree adult:(BOOL)adult adultMaxAge:(float)adultMaxAge
+{
 }
 
-- (void)sowTreeOrPlantAtPosition:(intpair)pos itemType:(ItemType)itemType maxHeight:(short)maxHeight growthRate:(short)growthRate {
+- (void)sowTreeOrPlantAtPosition:(intpair)pos itemType:(ItemType)itemType maxHeight:(short)maxHeight growthRate:(short)growthRate
+{
 }
 
-- (Stairs *)stairsAtPos:(intpair)pos {
+- (Stairs*)stairsAtPos:(intpair)pos
+{
 }
 
-- (void)stopAllBlockheadActionsForClientDueToKick:(NSString *)clientID {
+- (void)stopAllBlockheadActionsForClientDueToKick:(NSString*)clientID
+{
 }
 
-- (BOOL)teleportBlockhead:(Blockhead *)blockhead toWorkbench:(Workbench *)workbench {
+- (BOOL)teleportBlockhead:(Blockhead*)blockhead toWorkbench:(Workbench*)workbench
+{
 }
 
-- (BOOL)tooManyNPCsToSpawnMoreNearPos:(intpair)pos {
+- (BOOL)tooManyNPCsToSpawnMoreNearPos:(intpair)pos
+{
 }
 
-- (Torch *)torchAtPos:(intpair)pos {
+- (Torch*)torchAtPos:(intpair)pos
+{
 }
 
-- (TrainCar *)trainCarWithID:(uint64_t)uniqueID {
+- (TrainCar*)trainCarWithID:(uint64_t)uniqueID
+{
 }
 
-- (Tree *)treeAtPos:(intpair)pos {
+- (Tree*)treeAtPos:(intpair)pos
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT {
+- (void)update:(float)dt accurateDT:(float)accurateDT
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateNetObjects {
+- (void)updateNetObjects
+{
 }
 
-- (void)userBanChanged:(NSString *)playerID isBanned:(BOOL)isBanned {
+- (void)userBanChanged:(NSString*)playerID isBanned:(BOOL)isBanned
+{
 }
 
-- (void)userMuteChanged:(NSString *)playerID {
+- (void)userMuteChanged:(NSString*)playerID
+{
 }
 
-- (void)waterChangedAtPos:(intpair)pos fullBlock:(BOOL)fullBlock {
+- (void)waterChangedAtPos:(intpair)pos fullBlock:(BOOL)fullBlock
+{
 }
 
-- (Window *)windowAtPos:(intpair)pos {
+- (Window*)windowAtPos:(intpair)pos
+{
 }
 
-- (Wire *)wireAtPos:(intpair)pos {
+- (Wire*)wireAtPos:(intpair)pos
+{
 }
 
-- (Workbench *)workbenchAtPos:(intpair)pos {
+- (Workbench*)workbenchAtPos:(intpair)pos
+{
 }
 
-- (BOOL)workbenchHasBeenCrafted {
+- (BOOL)workbenchHasBeenCrafted
+{
 }
 
-- (Workbench *)workbenchPlacedAtPosition:(intpair)pos ofType:(WorkbenchType)type saveDict:(NSDictionary *)saveDict placedByClient:(NSString *)clientID clientName:(NSString *)clientName {
+- (Workbench*)workbenchPlacedAtPosition:(intpair)pos ofType:(WorkbenchType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID clientName:(NSString*)clientName
+{
 }
 
-- (void)worldChangedAtPos:(intpair)pos sendReliably:(BOOL)sendReliably {
+- (void)worldChangedAtPos:(intpair)pos sendReliably:(BOOL)sendReliably
+{
 }
 
-- (void)worldContentsChangedAtPos:(intpair)pos {
+- (void)worldContentsChangedAtPos:(intpair)pos
+{
 }
 
 @end

@@ -2,109 +2,144 @@
 
 @implementation NormalPlant
 
-- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY {
+- (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY
+{
 }
 
-- (int)addDrawQuadData:(float *)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos {
+- (int)addDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
+{
 }
 
-- (int)addLightGlowQuadData:(float *)buffer fromIndex:(int)index {
+- (int)addLightGlowQuadData:(float*)buffer fromIndex:(int)index
+{
 }
 
-- (BOOL)canDieSeason:(int)season {
+- (BOOL)canDieSeason:(int)season
+{
 }
 
-- (TileContents)contentsType {
+- (TileContents)contentsType
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (ItemType)droppedItemType {
+- (ItemType)droppedItemType
+{
 }
 
-- (BOOL)emitsLight {
+- (BOOL)emitsLight
+{
 }
 
-- (TileContents)flowerContentsType {
+- (TileContents)flowerContentsType
+{
 }
 
-- (BOOL)floweringSeason:(int)season {
+- (BOOL)floweringSeason:(int)season
+{
 }
 
-- (ItemType)folliageItemType {
+- (ItemType)folliageItemType
+{
 }
 
-- (float)foodToRemoveWhenSpawningNPC {
+- (float)foodToRemoveWhenSpawningNPC
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)initSubDerivedItems {
+- (void)initSubDerivedItems
+{
 }
 
-- (NormalPlant *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ maxHeightGene:(int16_t)maxHeight_ growthRateGene:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ adultPlant:(BOOL)adultPlant {
+- (NormalPlant*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ maxHeightGene:(int16_t)maxHeight_ growthRateGene:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_ adultPlant:(BOOL)adultPlant
+{
 }
 
-- (NormalPlant *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (NormalPlant*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
 }
 
-- (NormalPlant *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ {
+- (NormalPlant*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+{
 }
 
-- (Vector)lightColor {
+- (Vector)lightColor
+{
 }
 
-- (float)lightFactor {
+- (float)lightFactor
+{
 }
 
-- (int)lightGlowQuadCount {
+- (int)lightGlowQuadCount
+{
 }
 
-- (float)maxAgeBase {
+- (float)maxAgeBase
+{
 }
 
-- (int)minAllowedTemperature {
+- (int)minAllowedTemperature
+{
 }
 
-- (NPCType)npcSpawnType {
+- (NPCType)npcSpawnType
+{
 }
 
-- (int)numberOfOccupiedTilesAbove {
+- (int)numberOfOccupiedTilesAbove
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (ImageType)renderImageType {
+- (ImageType)renderImageType
+{
 }
 
-- (ItemType)seedItemType {
+- (ItemType)seedItemType
+{
 }
 
-- (void)setFlowering:(BOOL)newFlowering {
+- (void)setFlowering:(BOOL)newFlowering
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved {
+- (void)setNeedsRemoved:(BOOL)needsRemoved
+{
 }
 
-- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos {
+- (int)staticGeometryDrawQuadCountForMacroPos:(intpair)macroPos
+{
 }
 
-- (int)tileHarvested:(intpair)tilePos removeBlockhead:(Blockhead *)removeBlockhead correctToolMultiplier:(int)correctToolMultiplier {
+- (int)tileHarvested:(intpair)tilePos removeBlockhead:(Blockhead*)removeBlockhead correctToolMultiplier:(int)correctToolMultiplier
+{
 }
 
-- (BOOL)tileIsKindOfSelf:(Tile *)tile {
+- (BOOL)tileIsKindOfSelf:(Tile*)tile
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
 @end

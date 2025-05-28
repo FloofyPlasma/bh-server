@@ -2,88 +2,116 @@
 
 @implementation MJSound
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (void)fadeOut:(float)duration {
+- (void)fadeOut:(float)duration
+{
 }
 
-- (NSString *)fileName {
+- (NSString*)fileName
+{
 }
 
-- (float)getLegacyVolume {
+- (float)getLegacyVolume
+{
 }
 
-- (BOOL)hasFinishedPlaying {
+- (BOOL)hasFinishedPlaying
+{
 }
 
-- (MJSound *)initWithFile:(NSString *)file {
+- (MJSound*)initWithFile:(NSString*)file
+{
 }
 
-- (MJSound *)initWithSound:(MJSound *)sound {
+- (MJSound*)initWithSound:(MJSound*)sound
+{
 }
 
-- (BOOL)isInUse {
+- (BOOL)isInUse
+{
 }
 
-- (BOOL)isPlaying {
+- (BOOL)isPlaying
+{
 }
 
-- (void)pause {
+- (void)pause
+{
 }
 
-- (BOOL)paused {
+- (BOOL)paused
+{
 }
 
-- (void)play {
+- (void)play
+{
 }
 
-- (void)playAfterDelay:(float)delay {
+- (void)playAfterDelay:(float)delay
+{
 }
 
-- (void)playAtPosition:(Vector2)pos {
+- (void)playAtPosition:(Vector2)pos
+{
 }
 
-- (BOOL)randomNumberWithinMultiPlaybackFrequency {
+- (BOOL)randomNumberWithinMultiPlaybackFrequency
+{
 }
 
-- (void)setInUse:(BOOL)inUse {
+- (void)setInUse:(BOOL)inUse
+{
 }
 
-- (void)setLegacyVolume:(float)volume {
+- (void)setLegacyVolume:(float)volume
+{
 }
 
-- (void)setLooping:(BOOL)looping {
+- (void)setLooping:(BOOL)looping
+{
 }
 
-- (void)setMasterVolumeMultiplier:(float)multiplier {
+- (void)setMasterVolumeMultiplier:(float)multiplier
+{
 }
 
-- (void)setPaused:(BOOL)paused {
+- (void)setPaused:(BOOL)paused
+{
 }
 
-- (void)setPitch:(float)pitch {
+- (void)setPitch:(float)pitch
+{
 }
 
-- (void)setPlaybackFrequencyInMultiSound:(float)multiSoundPlayBackFrequency_ {
+- (void)setPlaybackFrequencyInMultiSound:(float)multiSoundPlayBackFrequency_
+{
 }
 
-- (void)setPosition:(Vector2)pos {
+- (void)setPosition:(Vector2)pos
+{
 }
 
-- (void)setVolume:(float)volume {
+- (void)setVolume:(float)volume
+{
 }
 
-- (void)setXOffset:(float)xOffset {
+- (void)setXOffset:(float)xOffset
+{
 }
 
-- (MJSound *)sound {
+- (MJSound*)sound
+{
 }
 
-- (void)stop {
+- (void)stop
+{
 }
 
-- (void)update:(float)dt {
+- (void)update:(float)dt
+{
 }
 
 @end

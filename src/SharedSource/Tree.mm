@@ -2,97 +2,128 @@
 
 @implementation Tree
 
-- (void)addFallenFruits {
+- (void)addFallenFruits
+{
 }
 
-- (void)checkIfDeadTilesNeedRemoved {
+- (void)checkIfDeadTilesNeedRemoved
+{
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (ItemType)fruitItemType {
+- (ItemType)fruitItemType
+{
 }
 
-- (BOOL)fruitShouldFallInSeason:(int)season {
+- (BOOL)fruitShouldFallInSeason:(int)season
+{
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
 }
 
-- (void)growInTimeSinceSaved:(NSTimeInterval)saveTime {
+- (void)growInTimeSinceSaved:(NSTimeInterval)saveTime
+{
 }
 
-- (uint16_t)growthRateGeneVariation {
+- (uint16_t)growthRateGeneVariation
+{
 }
 
-- (int)height {
+- (int)height
+{
 }
 
-- (void)incrementHeight {
+- (void)incrementHeight
+{
 }
 
-- (Tree *)initStaticTreeWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ {
+- (Tree*)initStaticTreeWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+{
 }
 
-- (Tree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ maxHeight:(int16_t)maxHeight_ growthRate:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge {
+- (Tree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ maxHeight:(int16_t)maxHeight_ growthRate:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_ adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge
+{
 }
 
-- (Tree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ {
+- (Tree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
+{
 }
 
-- (BOOL)isGrowingInCompost {
+- (BOOL)isGrowingInCompost
+{
 }
 
-- (BOOL)isRequiredSoilType:(TileType)type {
+- (BOOL)isRequiredSoilType:(TileType)type
+{
 }
 
-- (BOOL)isStaticTree {
+- (BOOL)isStaticTree
+{
 }
 
-- (void)killAllOwnedTiles {
+- (void)killAllOwnedTiles
+{
 }
 
-- (void)killAllOwnedTilesAboveY:(int)yMin {
+- (void)killAllOwnedTilesAboveY:(int)yMin
+{
 }
 
-- (void)loadSaveDictValues:(NSDictionary *)saveDict {
+- (void)loadSaveDictValues:(NSDictionary*)saveDict
+{
 }
 
-- (void)makeTileDead:(Tile *)tile {
+- (void)makeTileDead:(Tile*)tile
+{
 }
 
-- (uint16_t)maxHeightGeneVariation {
+- (uint16_t)maxHeightGeneVariation
+{
 }
 
-- (BOOL)occupiesNormalContents {
+- (BOOL)occupiesNormalContents
+{
 }
 
-- (void)removeAllOwnedTiles:(BOOL)createFreeBlocks {
+- (void)removeAllOwnedTiles:(BOOL)createFreeBlocks
+{
 }
 
-- (void)removeFromMacroBlock {
+- (void)removeFromMacroBlock
+{
 }
 
-- (BOOL)shouldAddFallenFruits {
+- (BOOL)shouldAddFallenFruits
+{
 }
 
-- (BOOL)tileIsKindOfSelf:(Tile *)tile {
+- (BOOL)tileIsKindOfSelf:(Tile*)tile
+{
 }
 
-- (TreeType)treeType {
+- (TreeType)treeType
+{
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateAllOwnedTilesToNewIDSize {
+- (void)updateAllOwnedTilesToNewIDSize
+{
 }
 
-- (void)updateGrowth:(BOOL)addNewBranchBlocks {
+- (void)updateGrowth:(BOOL)addNewBranchBlocks
+{
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
 @end
