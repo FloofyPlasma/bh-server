@@ -19,6 +19,10 @@ struct StairsCreationNetData {
   uint8_t padding[2];
 };
 
+/**
+ * @class Stairs
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface Stairs : DynamicObject {
   int itemType;
   int currentConfiguration;
@@ -29,22 +33,74 @@ struct StairsCreationNetData {
   int animationIndex;
 }
 
+/**
+ * @property itemType
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) int itemType; // @synthesize itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)occupiesNormalContents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)paint:(uint16_t)colorIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeFromMacroBlock;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)addDrawCubeDataTrans:(float*)buffer fromIndex:(int)index;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)staticGeometryDrawCubeCountTrans;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)addDrawCubeData:(float*)buffer fromIndex:(int)index;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)staticGeometryDrawCubeCount;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)addDrawCubeDataLocal:(float*)buffer fromIndex:(int)index;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)imageIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint16_t)freeBlockCreationDataB;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint16_t)freeBlockCreationDataA;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)freeBlockCreationSaveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (ItemType)freeblockCreationItemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)draw:(float)dt
     projectionMatrix:(GLKMatrix4)projectionMatrix
      modelViewMatrix:(GLKMatrix4)modelViewMatrix
@@ -52,19 +108,43 @@ struct StairsCreationNetData {
      cameraMaxXWorld:(int)cameraMaxXWorld
      cameraMinYWorld:(int)cameraMinYWorld
      cameraMaxYWorld:(int)cameraMaxYWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)creationNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteUpdate:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)updateNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)getSaveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Stairs*)initWithWorld:(World*)world_
             dynamicWorld:(DynamicWorld*)dynamicWorld
                    cache:(CPCache*)cache_
                  netData:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Stairs*)initWithWorld:(World*)world_
             dynamicWorld:(DynamicWorld*)dynamicWorld
                 saveDict:(NSDictionary*)saveDict
                    cache:(CPCache*)cache_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Stairs*)initWithWorld:(World*)world_
             dynamicWorld:(DynamicWorld*)dynamicWorld
               atPosition:(intpair)pos
@@ -72,9 +152,21 @@ struct StairsCreationNetData {
                     type:(ItemType)itemType_
                 saveDict:(NSDictionary*)saveDict
           placedByClient:(NSString*)clientId;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (DynamicObjectType)objectType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)initSubDerivedItems;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateConfiguration;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isTransparent;
 
 @end

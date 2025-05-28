@@ -29,6 +29,10 @@ struct PlantCreationNetData {
 
 @class NoiseFunction;
 
+/**
+ * @class Plant
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface Plant : DynamicObject {
   uint16_t maxAgeGene;
   uint16_t growthRateGene;
@@ -45,46 +49,139 @@ struct PlantCreationNetData {
   float ageCounter;
 }
 
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)numberOfOccupiedTilesBelow;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)numberOfOccupiedTilesAbove;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)occupiesForegroundContents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canBreed;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setNeedsRemoved:(BOOL)needsRemoved;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)clearAllTileContents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tileIsKindOfSelf:(Tile*)tile;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (ItemType)droppedItemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isFlowering;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint16_t)growthRateGeneVariation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint16_t)maxAgeGeneVariation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removePlantWithoutCreatingFreeblocks;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setGatherProgress:(int)newGatherProgress forTile:(intpair)tilePos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)tileHarvested:(intpair)tilePos
           removeBlockhead:(Blockhead*)removeBlockhead
     correctToolMultiplier:(int)correctToolMultiplier;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)gatherProgressForTile:(intpair)tilePos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)plantType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isRequiredSoilType:(TileType)type;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isGrowingInCompost;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setFlowering:(BOOL)newFlowering;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteUpdate:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)creationNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (PlantCreationNetData)plantCreationNetData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)updateNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)getSaveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Plant*)initWithWorld:(World*)world_
            dynamicWorld:(DynamicWorld*)dynamicWorld
                   cache:(CPCache*)cache_
                 netData:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Plant*)initWithWorld:(World*)world_
                  dynamicWorld:(DynamicWorld*)dynamicWorld
                      saveDict:(NSDictionary*)saveDict
                         cache:(CPCache*)cache_
      treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
     seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)loadSaveDictValues:(NSDictionary*)saveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Plant*)initWithWorld:(World*)world_
                  dynamicWorld:(DynamicWorld*)dynamicWorld_
                    atPosition:(intpair)pos_
@@ -94,6 +191,9 @@ struct PlantCreationNetData {
      treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
     seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
                    adultPlant:(BOOL)adultPlant;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeFromMacroBlock;
 
 @end

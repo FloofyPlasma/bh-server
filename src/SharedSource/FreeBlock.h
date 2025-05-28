@@ -32,6 +32,10 @@ struct FreeblockCreationNetData {
 
 @class Blockhead, DrawCube;
 
+/**
+ * @class FreeBlock
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface FreeBlock : DynamicObject {
   int itemType;
   uint16_t dataA;
@@ -60,6 +64,9 @@ struct FreeblockCreationNetData {
   int paintColor;
 }
 
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 + (NSData*)creationNetDataForFreeblockAtPosition:(intpair)pos
                                           ofType:(ItemType)itemType
                                            dataA:(uint16_t)dataA
@@ -77,13 +84,29 @@ struct FreeblockCreationNetData {
     NSDictionary* dynamicObjectSaveDict; // @synthesize dynamicObjectSaveDict;
 @property (readonly)
     Blockhead* priorityBlockhead; // @synthesize priorityBlockhead;
+/**
+ * @property subItems
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSArray* subItems; // @synthesize subItems;
 @property uint16_t dataB; // @synthesize dataB;
 @property uint16_t dataA; // @synthesize dataA;
 @property int itemType; // @synthesize itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)shouldSaveEveryChangeInPosition;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)priorityBlockheadCannotPickup;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)falling;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)draw:(float)dt
     projectionMatrix:(GLKMatrix4)projectionMatrix
      modelViewMatrix:(GLKMatrix4)modelViewMatrix
@@ -91,28 +114,67 @@ struct FreeblockCreationNetData {
      cameraMaxXWorld:(int)cameraMaxXWorld
      cameraMinYWorld:(int)cameraMinYWorld
      cameraMaxYWorld:(int)cameraMaxYWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)hitLava;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteUpdate:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)creationNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)updateNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)getSaveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeFromMacroBlock;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (FreeBlock*)initWithWorld:(World*)world_
                    dynamicWorld:(DynamicWorld*)dynamicWorld
                           cache:(CPCache*)cache_
                         netData:(NSData*)netData
     avoidFreeblockDupeObjectIds:(std::list<uint64_t>*)avoidFreeblockDupeObjectIds;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (FreeBlock*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld
                       cache:(CPCache*)cache_
                     netData:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (FreeBlock*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld
                    saveDict:(NSDictionary*)saveDict
                       cache:(CPCache*)cache_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updatePosition:(intpair)newPosition;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (FreeBlock*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld
                  atPosition:(intpair)pos_
@@ -124,7 +186,13 @@ struct FreeblockCreationNetData {
                       cache:(CPCache*)cache_
                      hovers:(BOOL)hovers_
           priorityBlockhead:(Blockhead*)priorityBlockhead_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (DynamicObjectType)objectType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)initSubDerivedObjects;
 
 @end

@@ -3,6 +3,10 @@
 
 #import "Tree.h"
 
+/**
+ * @class CactusTree
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface CactusTree : Tree {
   int splitHeightA;
   int splitHeightB;
@@ -11,20 +15,50 @@
 }
 
 @property float availableFood; // @synthesize availableFood;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isRequiredSoilType:(TileType)type;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (TreeType)treeType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tileIsKindOfSelf:(Tile*)tile;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)makeTileDead:(Tile*)tile;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateGrowth:(BOOL)addNewBranchBlocks;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)getSaveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)loadSaveDictValues:(NSDictionary*)saveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (CactusTree*)initWithWorld:(World*)world_
                  dynamicWorld:(DynamicWorld*)dynamicWorld_
                    atPosition:(intpair)pos_
                         cache:(CPCache*)cache_
      treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_
     seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (CactusTree*)initWithWorld:(World*)world_
                  dynamicWorld:(DynamicWorld*)dynamicWorld_
                    atPosition:(intpair)pos_
@@ -35,8 +69,17 @@
     seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_
                     adultTree:(BOOL)adultTree
                   adultMaxAge:(float)adultMaxAge;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)fruitShouldFallInSeason:(int)season;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (ItemType)fruitItemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (DynamicObjectType)objectType;
 
 @end

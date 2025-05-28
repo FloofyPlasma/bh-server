@@ -523,6 +523,10 @@ struct ItemSaveData {
   uint8_t padding;
 };
 
+/**
+ * @class InventoryItem
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface InventoryItem : NSObject {
   int itemType;
   uint16_t dataA;
@@ -538,13 +542,39 @@ struct ItemSaveData {
 @property uint16_t dataA; // @synthesize dataA;
 @property unsigned char
     selectedSubItemIndex; // @synthesize selectedSubItemIndex;
+/**
+ * @property subItems
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSArray* subItems; // @synthesize subItems;
+/**
+ * @property itemType
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) int itemType; // @synthesize itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSArray*)subItemSlotDataAtIndex:(int)subIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateSubItemSlot:(NSArray*)subItemSaveData atIndex:(int)subIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)saveData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (InventoryItem*)initWithSaveData:(NSData*)saveData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (InventoryItem*)initWithType:(ItemType)itemType_
                          dataA:(uint16_t)dataA_
                          dataB:(uint16_t)dataB_

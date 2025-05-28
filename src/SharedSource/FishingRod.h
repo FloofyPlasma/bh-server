@@ -7,6 +7,10 @@
 
 @class Blockhead, CPTexture2D, ClownFish, MJSound, Shader, World, CPCache;
 
+/**
+ * @class FishingRod
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface FishingRod : NSObject {
   World* world;
   Blockhead* blockhead;
@@ -31,17 +35,39 @@
   BOOL isNet;
 }
 
+/**
+ * @property blockhead
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) Blockhead* blockhead; // @synthesize blockhead;
 @property Vector2 hookPos; // @synthesize hookPos;
 @property BOOL castingRight; // @synthesize castingRight;
 @property BOOL hookInAir; // @synthesize hookInAir;
 @property float castAnimationProgress; // @synthesize castAnimationProgress;
 @property BOOL isInCastingAnimation; // @synthesize isInCastingAnimation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)blockheadUnloaded:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setPaused:(BOOL)paused;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (ClownFish*)hookedFish;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setHookedFish:(ClownFish*)hookedFish_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector2)hookedFishDirection;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)draw:(float)dt
     projectionMatrix:(GLKMatrix4)projectionMatrix
      modelViewMatrix:(GLKMatrix4)modelViewMatrix
@@ -49,12 +75,30 @@
      cameraMaxXWorld:(int)cameraMaxXWorld
      cameraMinYWorld:(int)cameraMinYWorld
      cameraMaxYWorld:(int)cameraMaxYWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)directionalSwipe:(Vector2)vec;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isCasting;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector2)cameraPos;
 @property BOOL valid;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (id)initWithWorld:(World*)world_ blockhead:(Blockhead*)blockhead_ cache:(CPCache*)cache_;
 
 @end

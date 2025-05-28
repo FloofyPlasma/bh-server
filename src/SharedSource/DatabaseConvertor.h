@@ -4,6 +4,10 @@
 
 @class Database, NSDictionary, NSMutableArray, NSString, World;
 
+/**
+ * @class DatabaseConvertor
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface DatabaseConvertor : NSObject {
   World* world;
   Database* worldDatabase;
@@ -32,16 +36,49 @@
     lightBlockMigrationComplete; // @synthesize lightBlockMigrationComplete;
 @property (readonly)
     BOOL worldMigrationComplete; // @synthesize worldMigrationComplete;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)migrationComplete;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeLightBlockFiles;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeWorldFiles;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)convertWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)lightBlockMainThreadOperationReturned:(NSDictionary*)resultDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)convertLightBlocks;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)safeDataWithContentsOfFile:(NSString*)fileName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)getNewServerFiles;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)getNewLightBlockFiles;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (DatabaseConvertor*)initWithWorld:(World*)world_
                       worldDatabase:(Database*)worldDatabase_
               dynamicObjectDatabase:(Database*)dynamicObjectDatabase_

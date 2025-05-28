@@ -57,6 +57,10 @@ struct Particle {
 
 @class CPTexture2D, NoiseFunction, Shader, World;
 
+/**
+ * @class ParticleEmitter
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface ParticleEmitter : NSObject {
   World* world;
   struct Particle* particles;
@@ -86,9 +90,15 @@ struct Particle {
   float timer;
 }
 
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 + (id)instance;
 @property int worldWidthMacro; // @synthesize worldWidthMacro;
 @property BOOL stopAllParticles; // @synthesize stopAllParticles;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)renderAndUpdate:(float)dt
              pinchScale:(float)pinchScale
        projectionMatrix:(GLKMatrix4)projectionMatrix
@@ -98,9 +108,15 @@ struct Particle {
         cameraMinYWorld:(int)cameraMinYWorld_
         cameraMaxYWorld:(int)cameraMaxYWorld_
            windMovement:(float)windMovement;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addBonusParticleAtPos:(Vector)pos
                         color:(Vector)color
               bonusMultiplier:(int)bonusMultiplier;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addParticleAtPos:(Vector)dt
                 velocity:(Vector)velocity
                    color:(Vector)color
@@ -109,8 +125,17 @@ struct Particle {
                    scale:(float)scale
                   center:(Vector)center
           connectionGoal:(Vector)connectionGoal;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doAddElectricityParticleWithPath:(std::vector<ElectricityParticlePathIndex>*)arg1 size:(float)size;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addElectricityParticleWithPath:(std::vector<ElectricityParticlePathIndex>*)arg1 size:(float)size;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addParticleAtPos:(Vector)dt
                 velocity:(Vector)velocity
                    color:(Vector)color
@@ -118,14 +143,26 @@ struct Particle {
                     life:(float)life
                    scale:(float)scale
                   center:(Vector)center;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addParticleAtPos:(Vector)dt
                 velocity:(Vector)velocity
                    color:(Vector)color
              gravityType:(ParticleGravityType)arg4
                     life:(float)life
                    scale:(float)scale;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)reset;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setWorld:(World*)world_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (ParticleEmitter*)init;
 
 @end

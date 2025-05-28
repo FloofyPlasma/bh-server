@@ -86,6 +86,10 @@ struct CaveTrollCreationData {
 
 @class Blockhead, CPTexture2D, DrawCube, Shader;
 
+/**
+ * @class CaveTroll
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface CaveTroll : NPC <PathUserDynamicObject> {
   CaveTrollState state;
   Shader* shader;
@@ -174,44 +178,154 @@ struct CaveTrollCreationData {
 @property int
     selectedToolIndex; // @synthesize selectedToolIndex=_selectedToolIndex;
 @property BOOL pathNeedsRecalculated; // @synthesize pathNeedsRecalculated;
+/**
+ * @property nextPos
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) intpair nextPos; // @synthesize nextPos=toSquare;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)riderDPadShouldGiveDiscreteValues;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)suffersDamageAtHighTemperatures;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)riderDPadShouldAllowUpDown;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)riderRidesWithArmsDown;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)jumpsOnSwipe;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeRider:(Blockhead*)rider_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addRider:(Blockhead*)rider_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)rideDirection;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setTargetVelocity:(Vector2)targetVelocity;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)riderPosForBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)reactToBeingFed;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector2)namePos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canFly;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)blockheadUnloaded:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)reactToBeingHit;
+/**
+ * @property renderPos
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) Vector2 renderPos; // @synthesize renderPos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canCrawl;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint16_t)maxHealth;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)falling;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)crouching;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)waitingForPath;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setNoLongerWaitingForPath;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setWaitingForPathToPos:(intpair)goalPos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (id)infoForPathRecalculation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setPath:(NSArray*)path_
                type:(PathType)pathType
     goalInteraction:(InteractionType)goalInteraction
           extraData:(NSDictionary*)goalInteraction;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)draw:(float)dt
     projectionMatrix:(GLKMatrix4)projectionMatrix
      modelViewMatrix:(GLKMatrix4)modelViewMatrix
@@ -219,40 +333,109 @@ struct CaveTrollCreationData {
      cameraMaxXWorld:(int)cameraMaxXWorld
      cameraMinYWorld:(int)cameraMinYWorld
      cameraMaxYWorld:(int)cameraMaxYWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)preDrawUpdate:(float)dt
       cameraMinXWorld:(int)cameraMinXWorld
       cameraMaxXWorld:(int)cameraMaxXWorld
       cameraMinYWorld:(int)cameraMinYWorld
       cameraMaxYWorld:(int)cameraMaxYWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)controlIsLocal;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)die:(Blockhead*)killBlockhead_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tileIsLitForSelf:(Tile*)tile atPos:(intpair)tilePos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateGatherSpeedAndAnimationForCurrentInterationAndItem;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteCreationDataUpdate:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteUpdate:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doRemoteUpdate:(CaveTrollUpdateData)remoteUpdateData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)stopInteracting;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)startInteractingWithTileAtIndex:(int)tileIndex
                                    tile:(Tile*)tile
                         interactionType:(InteractionType)interactionType_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (TileTraverseKeyFrameType)currentTraverseToKeyFrame;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isHeadingForSquare:(intpair)squarePos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (InteractionType)currentInteractionType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)getSaveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (unsigned long long)creationDataStructSize;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)updateNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)creationNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (CaveTrollUpdateData)caveTrollUpdateDataForClient:(NSString*)clientIDToSendTo;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (CaveTroll*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld
                       cache:(CPCache*)cache_
                     netData:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (CaveTroll*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld
                    saveDict:(NSDictionary*)saveDict
                       cache:(CPCache*)cache_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (CaveTroll*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld_
                  atPosition:(intpair)pos_
@@ -261,16 +444,49 @@ struct CaveTrollCreationData {
                     isAdult:(BOOL)isAdult
                   wasPlaced:(BOOL)wasPlaced
              placedByClient:(NSString*)clientId;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NPCType)npcType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)initSubDerivedStuffStuff;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (ItemType)captureRequiredItemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)getNamesArrayCount;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString**)getNamesArray;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (ItemType)foodItemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)speciesName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)diesOfLowFullness;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)diesOfOldAge;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)maxAge;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (CaveTrollAnimationType)currentAnimationType;
 
 @end

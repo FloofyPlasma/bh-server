@@ -17,6 +17,10 @@ enum TipType {
 
 @class World, Blockhead;
 
+/**
+ * @class TipManager
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface TipManager : NSObject {
   World* world;
   NSString* currentTipText;
@@ -26,18 +30,48 @@ enum TipType {
   NSString* tutorialTipText;
 }
 
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 + (TipManager*)instance;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)displaySecondBlockheadTipIfGoodTime;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateTipForBlockhead:(Blockhead*)blockhead severityLevel:(int)severityLevel;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setTutorialTipText:(NSString*)tip;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)tipColor;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)currentTip;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)displayTip:(NSString*)tip
               withTimeOut:(float)displayTip
     displayEvenIfDisabled:(BOOL)displayEvenIfDisabled
                  tipColor:(Vector)tipColor_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)reset;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setWorld:(World*)world_;
 
 @end

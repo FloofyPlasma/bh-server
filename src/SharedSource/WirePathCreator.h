@@ -10,6 +10,10 @@ struct WirePathTileProperties {
 
 @class World, DynamicObject;
 
+/**
+ * @class WirePathCreator
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface WirePathCreator : NSObject {
   World* world;
   NSMutableIndexSet* openList;
@@ -20,9 +24,21 @@ struct WirePathTileProperties {
   std::map<int, int> derivedTileIndices;
 }
 
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)findAndSubtractAllPowerUpTo:(uint16_t)requiredPower forUser:(DynamicObject*)userObject;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (WirePathTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)worldIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (WirePathCreator*)initWithWorld:(World*)world_;
 
 @end
