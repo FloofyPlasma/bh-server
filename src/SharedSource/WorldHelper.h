@@ -6,31 +6,31 @@
 @interface WorldHelper : NSObject {
 }
 
-+ (BOOL)clientMacroTileRequestCanBeCancelledAtMacroPos:(intpair)arg1
-                                                 world:(id)arg2;
-+ (BOOL)checkIfMacroTileCanBeDecommissioned:(MacroTile*)arg1
-                                      world:(id)arg2
-                                     minAge:(double)arg3
-                   blockToSavePhyscialBlock:(BOOL)arg4;
-+ (void)recalculateLightingForPhysicalBlockIfNeeded:(PhysicalBlock*)arg1
-                                              world:(id)arg2
-                              clientLightBlockIndex:(int)arg3
-                                       forBlockhead:(id)arg4;
-+ (void)updateSunLightRemovedForTile:(Tile*)arg1
-                               atPos:(intpair)arg2
-                               world:(id)arg3;
-+ (void)recursivelyRemoveAllSunLightWithList:(id)arg1
-                                 openIndices:(id)arg2
-                         lightWasRemovedList:(id)arg3
-                               removeIndices:(id)arg4
-                                       world:(id)arg5
-                                        minx:(int)arg6
-                                        maxX:(int)arg7;
-+ (void)updateSunLightForTile:(Tile*)arg1
-                        atPos:(intpair)arg2
-                        world:(id)arg3;
-+ (void)recursivelyUpdateSunLightWithList:(id)arg1
-                              openIndices:(id)arg2
-                                    world:(id)arg3;
++ (BOOL)clientMacroTileRequestCanBeCancelledAtMacroPos:(intpair)macroPos
+                                                 world:(World*)world;
++ (BOOL)checkIfMacroTileCanBeDecommissioned:(MacroTile*)macroTile
+                                      world:(World*)world
+                                     minAge:(NSTimeInterval)minAge
+                   blockToSavePhyscialBlock:(BOOL)blockToSavePhyscialBlock;
++ (void)recalculateLightingForPhysicalBlockIfNeeded:(PhysicalBlock*)physicalBlock
+                                              world:(World*)world
+                              clientLightBlockIndex:(int)clientLightBlockIndex
+                                       forBlockhead:(Blockhead*)blockhead;
++ (void)updateSunLightRemovedForTile:(Tile*)tile
+                               atPos:(intpair)pos
+                               world:(World*)world;
++ (void)recursivelyRemoveAllSunLightWithList:(NSMutableArray*)openList
+                                 openIndices:(NSMutableIndexSet*)openIndices
+                         lightWasRemovedList:(NSMutableArray*)lightWasRemovedList
+                               removeIndices:(NSMutableIndexSet*)removeIndices
+                                       world:(World*)world
+                                        minx:(int)minX
+                                        maxX:(int)maxX;
++ (void)updateSunLightForTile:(Tile*)tile
+                        atPos:(intpair)pos
+                        world:(World*)world;
++ (void)recursivelyUpdateSunLightWithList:(NSMutableArray*)openList
+                              openIndices:(NSMutableIndexSet*)openIndices
+                                    world:(World*)world;
 
 @end
