@@ -59,6 +59,7 @@ set(SOURCE_FILES
     src/Mac/BlockheadsServer/blockheads_server/main.mm
     src/SharedSource/BHNetNode.mm
     src/SharedSource/BHMatch.mm
+    src/SharedSource/DynamicObject.mm
     )
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
