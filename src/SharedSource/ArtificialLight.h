@@ -40,9 +40,9 @@ enum LightDirectionType {
                      parentObject:(DynamicObject*)parentObject
                            colorR:(int)colorR_
                            colorG:(int)colorG_
-                           colorB:(int)colorG_
+                           colorB:(int)colorB_
                              heat:(int)heat_
-                           radius:(int)heat_
+                           radius:(int)radius_
                    lightDirection:(LightDirectionType)lightDirection;
 - (DynamicObjectType)objectType;
 - (void)removeFromTiles;

@@ -1,0 +1,44 @@
+#import "CactusTree.h"
+
+@implementation CactusTree
+
+- (ItemType)fruitItemType {
+}
+
+- (BOOL)fruitShouldFallInSeason:(int)season {
+}
+
+- (NSMutableDictionary *)getSaveDict {
+}
+
+- (CactusTree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ maxHeight:(int16_t)maxHeight_ growthRate:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge {
+}
+
+- (CactusTree *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache *)cache_ treeDensityNoiseFunction:(NoiseFunction *)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction *)seasonOffsetNoiseFunction_ {
+}
+
+- (BOOL)isRequiredSoilType:(TileType)type {
+}
+
+- (void)loadSaveDictValues:(NSDictionary *)saveDict {
+}
+
+- (void)makeTileDead:(Tile *)tile {
+}
+
+- (DynamicObjectType)objectType {
+}
+
+- (BOOL)tileIsKindOfSelf:(Tile *)tile {
+}
+
+- (TreeType)treeType {
+}
+
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+}
+
+- (void)updateGrowth:(BOOL)addNewBranchBlocks {
+}
+
+@end
