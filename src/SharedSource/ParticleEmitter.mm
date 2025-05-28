@@ -28,10 +28,12 @@
 
 - (ParticleEmitter*)init
 {
+  return nil;
 }
 
 + (id)instance
 {
+  return nil;
 }
 
 - (void)renderAndUpdate:(float)dt pinchScale:(float)pinchScale projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld_ cameraMaxXWorld:(int)cameraMaxXWorld_ cameraMinYWorld:(int)cameraMinYWorld_ cameraMaxYWorld:(int)cameraMaxYWorld_ windMovement:(float)windMovement

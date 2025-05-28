@@ -8,62 +8,77 @@
 
 - (BOOL)isCloudMatch
 {
+  return NO;
 }
 
 - (BOOL)owned
 {
+  return NO;
 }
 
 - (BOOL)requiresPlayerAuthentication
 {
+  return NO;
 }
 
 - (BOOL)sendData:(NSData*)data toPlayers:(NSArray*)playerIDs withDataMode:(BHMatchSendDataMode)mode error:(NSError**)error
 {
+  return NO;
 }
 
 - (BOOL)startServer
 {
+  return NO;
 }
 
 - (NSArray*)playerIDs
 {
+  return nil;
 }
 
 - (NSMutableDictionary*)clientPlayerInformationRecieved:(NSDictionary*)clientDict fromPeer:(NSString*)enetOrPlayerID
 {
+  return nil;
 }
 
 - (NSMutableDictionary*)loadInfoForPlayer:(NSString*)playerID
 {
+  return nil;
 }
 
 - (NSString*)cloudSalt
 {
+  return nil;
 }
 
 - (NSString*)localPlayerID
 {
+  return nil;
 }
 
 - (NSString*)localPlayerName
 {
+  return nil;
 }
 
 - (NSString*)ownerName
 {
+  return nil;
 }
 
 - (NSString*)persistentIDForNetID:(NSString*)netID
 {
+  return nil;
 }
 
 - (float)credit
 {
+  return 0;
 }
 
 - (id)initWithPort:(NSString*)port_ userName:(NSString*)userName_ photo:(id)photo hasLocalPLayer:(BOOL)hasLocalPlayer worldName:(NSString*)worldName_ credit:(float)credit_ cloudSalt:(NSString*)cloudSalt_ ownerName:(NSString*)ownerName_ privacy:(NSString*)privacy
 {
+  return nil;
 }
 
 - (void)dealloc

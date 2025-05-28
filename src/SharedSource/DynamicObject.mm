@@ -56,6 +56,7 @@
 
 - (int)addLightGlowQuadData:(float*)buffer fromIndex:(int)index
 {
+  return 0;
 }
 
 - (void)blockheadUnloaded:(Blockhead*)blockhead

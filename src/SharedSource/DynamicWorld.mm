@@ -4,10 +4,12 @@
 
 - (Blockhead*)activeBlockhead
 {
+  return nil;
 }
 
 - (int)activeBlockheadIndex
 {
+  return 0;
 }
 
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY
@@ -68,6 +70,7 @@
 
 - (NSArray*)allBlockheadsIncludingNet
 {
+  return nil;
 }
 
 - (void)appendDebugLog:(NSMutableString*)log
@@ -80,10 +83,12 @@
 
 - (Blockhead*)blockheadAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (BOOL)blockheadOccupiesTileAtPos:(intpair)pos ignoreBlockhead:(Blockhead*)ignoreBlockhead
 {
+  return NO;
 }
 
 - (void)blockheadWillBeUnloaded:(Blockhead*)blockhead
@@ -92,18 +97,22 @@
 
 - (Blockhead*)blockheadWithIDIncludingNet:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (Blockhead*)blockheadWithUniqueID:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (NSMutableArray*)blockheads
 {
+  return nil;
 }
 
 - (Boat*)boatWithID:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (void)checkAndRestorePoleItems:(float)dt
@@ -112,14 +121,17 @@
 
 - (Boat*)checkForBoatUnderTap:(Vector2)tapPos
 {
+  return nil;
 }
 
 - (DynamicObject*)checkForHarmableDynamicObjectUnderTap:(Vector2)tapPos ignoreLocalBlockheads:(BOOL)ignoreLocalBlockheads ignoreAllBlockheads:(BOOL)ignoreAllBlockheads
 {
+  return nil;
 }
 
 - (TrainCar*)checkForTrainCarUnderTap:(Vector2)tapPos
 {
+  return nil;
 }
 
 - (void)chestInventoryDataRecievedFromServer:(NSData*)chestData
@@ -152,6 +164,7 @@
 
 - (Column*)columnAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)connectionToServerLost
@@ -192,14 +205,17 @@
 
 - (Door*)doorAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (BOOL)doorCanBeUsedByPathUser:(DynamicObject*)pathUser atPos:(intpair)pos
 {
+  return NO;
 }
 
 - (BOOL)doorIsOpenAtPos:(intpair)pos
 {
+  return NO;
 }
 
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld hideUIType:(HideUIType)hideUIType
@@ -232,18 +248,22 @@
 
 - (Egg*)eggAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (ElevatorMotor*)elevatorMotorAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (ElevatorMotor*)elevatorMotorForShaftAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (ElevatorShaft*)elevatorShaftAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)exploreLightChangedAtMacroPos:(intpair)macroPos clientLightBlockIndex:(int)ElevatorMotor
@@ -252,10 +272,12 @@
 
 - (int)findAndSubtractAllPowerUpTo:(uint16_t)requiredPower forUser:(DynamicObject*)userObject
 {
+  return 0;
 }
 
 - (Plant*)findBreedingPlantNearPlant:(Plant*)plant
 {
+  return nil;
 }
 
 - (void)finishSimulating
@@ -264,10 +286,12 @@
 
 - (NSArray*)freeBlocksAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (BOOL)freeBlocksExistAtPos:(intpair)pos
 {
+  return NO;
 }
 
 - (void)freeblockPositionChanged:(DynamicObject*)object oldPos:(intpair)oldPos
@@ -276,82 +300,102 @@
 
 - (FreeBlock*)freeblockWithUniqueID:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (GatherBlock*)gatherBlockAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (uint64_t)getNextDynamicObjectID
 {
+  return 0;
 }
 
 - (NSString*)getOwnerNameForObjectOwnerID:(NSString*)ownerID
 {
+  return nil;
 }
 
 - (Plant*)getPlantAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (Rail*)getRailAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (Vector)getTreeLifeFractionForPos:(intpair)pos
 {
+  return Vector();
 }
 
 - (DynamicObject*)harmableDynamicObjectWithID:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (BOOL)hasDynamicObjectsToSaveInMacroPos:(intpair)macroPos
 {
+  return NO;
 }
 
 - (BOOL)hasLightsToAdd
 {
+  return NO;
 }
 
 - (DynamicWorld*)initWithWorld:(World*)world_ worldTileLoader:(WorldTileLoader*)worldTileLoader_ clientTileLoader:(ClientTileLoader*)worldTileLoader_ server:(BHServer*)server_ client:(BHClient*)client_ serverClients:(NSDictionary*)serverClients_ cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ appDatabase:(Database*)appDatabase_ worldDatabase:(Database*)worldDatabase_ dynamicObjectDatabase:(Database*)dynamicObjectDatabase_
 {
+  return nil;
 }
 
 - (id)initialDynamicObjectsNetDataForMacroTileIndex:(int)macroTileIndex wireForClient:(NSString*)clientToSend
 {
+  return nil;
 }
 
 - (InteractionObject*)interactionObjectAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (id)interactionObjectPlacedAtPosition:(intpair)pos withItem:(InventoryItem*)item flipped:(BOOL)flipped saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID clientName:(NSString*)clientName
 {
+  return nil;
 }
 
 - (uint16_t)interactionObjectTypeForObjectAtPos:(intpair)pos
 {
+  return 0;
 }
 
 - (InteractionObject*)interactionObjectWithID:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (BOOL)isClient
 {
+  return NO;
 }
 
 - (BOOL)isControllingBlockheadsForClientPlayer:(NSString*)playerID
 {
+  return NO;
 }
 
 - (BOOL)isServer
 {
+  return NO;
 }
 
 - (Ladder*)ladderAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)lightChangedAtMacroPos:(intpair)macroPos sendReliably:(BOOL)sendReliably
@@ -368,6 +412,7 @@
 
 - (NSData*)loadClientBlockheadsDataForPlayerID:(NSString*)playerID
 {
+  return nil;
 }
 
 - (void)loadClientOwnedDynamicObjectsForClient:(NSString*)clientID physicalBlock:(PhysicalBlock*)physicalBlock
@@ -380,6 +425,7 @@
 
 - (BOOL)loadDynamicObjects:(BOOL)loadSuccessSoFar repositionBlockheadLoadFailures:(BOOL)repositionBlockheadLoadFailures
 {
+  return NO;
 }
 
 - (void)loadDynamicObjectsForMacroTile:(MacroTile*)macroTile includeSurfaceBlocks:(BOOL)includeSurfaceBlocks
@@ -400,10 +446,12 @@
 
 - (NSData*)loadLocalInventoryDataForChest:(Chest*)chest
 {
+  return nil;
 }
 
 - (BOOL)loadNPCAtPosition:(intpair)pos type:(NPCType)npcType saveDict:(NSDictionary*)saveDict isAdult:(BOOL)isAdult wasPlaced:(BOOL)wasPlaced placedByClient:(NSString*)clientID
 {
+  return NO;
 }
 
 - (void)loadNewBlockheadAtPos:(intpair)pos craftableItemObject:(CraftableItemObject*)craftableItemObject uniqueID:(uint64_t)uniqueID
@@ -420,6 +468,7 @@
 
 - (id)loadStandardDynamicObjectOfType:(int)type atPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)loadSurfaceBlockAtPos:(intpair)pos
@@ -432,14 +481,17 @@
 
 - (int)loadedCountOfObjectsOfType:(DynamicObjectType)type
 {
+  return 0;
 }
 
 - (NSArray*)localAndDisconnectedClientBlockheads
 {
+  return nil;
 }
 
 - (NSString*)localNetID
 {
+  return nil;
 }
 
 - (void)mainThreadRemoveDirFromConversionList:(NSString*)dirName
@@ -448,6 +500,7 @@
 
 - (NSArray*)netBlockheads
 {
+  return nil;
 }
 
 - (void)newFoundListRecievedFromClient:(NSString*)playerID list:(NSIndexSet*)incoming
@@ -456,18 +509,22 @@
 
 - (NPC*)npcCloseEnoughToBreedWithNPC:(NPC*)npc
 {
+  return nil;
 }
 
 - (BOOL)npcExistsAtPos:(intpair)pos ignoreNPC:(NPC*)ignoreNPC
 {
+  return NO;
 }
 
 - (NPC*)npcWithID:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (DynamicObject*)objectOfType:(DynamicObjectType)type atPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)openElevatorAtPos:(intpair)pos
@@ -476,6 +533,7 @@
 
 - (Painting*)paintingAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)paintingDataRecievedFromServer:(NSData*)paintingData
@@ -484,10 +542,12 @@
 
 - (Painting*)paintingWithID:(uint64_t)paintingID
 {
+  return nil;
 }
 
 - (NSArray*)pathUsers
 {
+  return nil;
 }
 
 - (void)placeBoatInWaterAtPos:(intpair)pos saveDict:(NSDictionary*)saveDict_ placedByClient:(NSString*)clientID
@@ -496,6 +556,7 @@
 
 - (FireObject*)placeFireAtPosition:(intpair)pos
 {
+  return nil;
 }
 
 - (void)placeTrainCarAtPos:(intpair)pos ofType:(ItemType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID
@@ -508,6 +569,7 @@
 
 - (BOOL)playerIsBannedWithID:(NSString*)playerID
 {
+  return NO;
 }
 
 - (void)playersChanged
@@ -520,6 +582,7 @@
 
 - (Workbench*)portal
 {
+  return nil;
 }
 
 - (void)portalIsBeingRemovedAtPos:(intpair)pos
@@ -528,10 +591,12 @@
 
 - (NSIndexSet*)portalPositions
 {
+  return nil;
 }
 
 - (intpair)posOfDoorsOtherBlockAtPos:(intpair)pos
 {
+  return intpair();
 }
 
 - (void)preDrawUpdate:(float)dt cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
@@ -588,10 +653,12 @@
 
 - (Column*)removeColumnAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (Door*)removeDoorAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)removeDynamicObjectsBelongingToClient:(NSString*)clientID
@@ -604,22 +671,27 @@
 
 - (Egg*)removeEggAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (ElevatorMotor*)removeElevatorMotorAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (ElevatorShaft*)removeElevatorShaftAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (InteractionObject*)removeInteractionObjectAtPos:(intpair)pos removeBlockhead:(Blockhead*)removeBlockhead
 {
+  return nil;
 }
 
 - (Ladder*)removeLadderAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)removeObjectDueToRepair:(DynamicObject*)object
@@ -628,6 +700,7 @@
 
 - (Painting*)removePaintingAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)removePortalFromListAtPos:(intpair)pos
@@ -636,6 +709,7 @@
 
 - (Rail*)removeRailAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)removeSavedInventoryForChest:(Chest*)chest
@@ -644,6 +718,7 @@
 
 - (Stairs*)removeStairsAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)removeStandardObject:(DynamicObject*)object
@@ -652,18 +727,22 @@
 
 - (Torch*)removeTorchAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (Window*)removeWindowAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (Wire*)removeWireAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (Workbench*)removeWorkbenchAtPos:(intpair)pos removeBlockhead:(Blockhead*)removeBlockhead
 {
+  return nil;
 }
 
 - (void)requestPaintingDataForPainting:(Painting*)painting
@@ -672,6 +751,7 @@
 
 - (DynamicObject*)ridableObjectWithID:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (void)safeRemoveFromDynamicObjectDatabase:(NSString*)key
@@ -756,6 +836,7 @@
 
 - (Stairs*)stairsAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)stopAllBlockheadActionsForClientDueToKick:(NSString*)clientID
@@ -764,22 +845,27 @@
 
 - (BOOL)teleportBlockhead:(Blockhead*)blockhead toWorkbench:(Workbench*)workbench
 {
+  return NO;
 }
 
 - (BOOL)tooManyNPCsToSpawnMoreNearPos:(intpair)pos
 {
+  return NO;
 }
 
 - (Torch*)torchAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (TrainCar*)trainCarWithID:(uint64_t)uniqueID
 {
+  return nil;
 }
 
 - (Tree*)treeAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (void)update:(float)dt accurateDT:(float)accurateDT
@@ -808,22 +894,27 @@
 
 - (Window*)windowAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (Wire*)wireAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (Workbench*)workbenchAtPos:(intpair)pos
 {
+  return nil;
 }
 
 - (BOOL)workbenchHasBeenCrafted
 {
+  return NO;
 }
 
 - (Workbench*)workbenchPlacedAtPosition:(intpair)pos ofType:(WorkbenchType)type saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID clientName:(NSString*)clientName
 {
+  return nil;
 }
 
 - (void)worldChangedAtPos:(intpair)pos sendReliably:(BOOL)sendReliably

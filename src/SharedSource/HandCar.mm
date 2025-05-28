@@ -4,14 +4,17 @@
 
 - (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
 {
+  return Vector2();
 }
 
 - (BOOL)connectsToOtherCars
 {
+  return NO;
 }
 
 - (NSData*)creationNetDataForClient:(NSString*)clientID
 {
+  return nil;
 }
 
 - (void)dealloc
@@ -24,22 +27,27 @@
 
 - (NSMutableDictionary*)getSaveDict
 {
+  return nil;
 }
 
 - (HandCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
 {
+  return nil;
 }
 
 - (HandCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
 {
+  return nil;
 }
 
 - (HandCar*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
 {
+  return nil;
 }
 
 - (int)itemType
 {
+  return 0;
 }
 
 - (void)loadDerivedStuff
@@ -48,10 +56,12 @@
 
 - (int)maxNumberOfRiders
 {
+  return 0;
 }
 
 - (DynamicObjectType)objectType
 {
+  return DYNAMIC_OBJECT_TYPE_CHILLI_PLANT;
 }
 
 - (void)remoteUpdate:(NSData*)netData
@@ -64,22 +74,27 @@
 
 - (Vector2)renderPos
 {
+  return Vector2();
 }
 
 - (BOOL)requiresFuel
 {
+  return NO;
 }
 
 - (float)riderAnimationTimer
 {
+  return 0;
 }
 
 - (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)blockhead cameraX:(float)cameraX
 {
+  return result;
 }
 
 - (Vector)riderPosForBlockhead:(Blockhead*)blockhead
 {
+  return Vector();
 }
 
 - (void)setTargetVelocity:(Vector2)targetVelocity

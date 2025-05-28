@@ -8,6 +8,7 @@
 
 - (NSMutableDictionary*)getSaveDict
 {
+  return nil;
 }
 
 - (void)initSubDerivedItems
@@ -16,14 +17,17 @@
 
 - (SnowSurfaceBlock*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_
 {
+  return nil;
 }
 
 - (SnowSurfaceBlock*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
 {
+  return nil;
 }
 
 - (DynamicObjectType)objectType
 {
+  return DYNAMIC_OBJECT_TYPE_CHILLI_PLANT;
 }
 
 - (void)removeAllSnow
@@ -36,6 +40,7 @@
 
 - (BOOL)removeIfFloating
 {
+  return NO;
 }
 
 - (void)setNeedsRemoved:(BOOL)needsRemoved

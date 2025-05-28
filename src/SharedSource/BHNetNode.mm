@@ -10,7 +10,7 @@
 
 - (void)notifyPlayersChanged
 {
-  if ([self->delegate respondsToSelector:@selector(playersChanged)] != NULL) {
+  if ([self->delegate respondsToSelector:@selector(playersChanged)]) {
     [self->delegate playersChanged];
   }
 }
@@ -151,7 +151,7 @@
 - (void)cleanup
 {
   if ([self->match usesGameCenterPlayerInformation]) {
-    if ([self->delegate respondsToSelector:@selector(postGCMatchInvitePlayers:)] != NULL) {
+    if ([self->delegate respondsToSelector:@selector(postGCMatchInvitePlayers:)]) {
       [self->delegate postGCMatchInvitePlayers:[self->match connectedPlayerIDs]];
     }
   }

@@ -4,6 +4,7 @@
 
 - (Vector)cloudColorForWeatherFraction:(float)isBackground timeOfDayFraction:(float)timeOfDayFraction isBackground:(BOOL)isBackground
 {
+  return Vector();
 }
 
 - (void)dealloc
@@ -12,6 +13,7 @@
 
 - (id)initWithCache:(CPCache*)cache_ world:(World*)cache_ worldTime:(float)worldTime
 {
+  return nil;
 }
 
 - (void)loadCricketSounds
@@ -52,6 +54,7 @@
 
 - (float)windStrength
 {
+  return 0;
 }
 
 @end

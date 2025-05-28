@@ -8,6 +8,7 @@
 
 - (NSArray*)calculateFallPath
 {
+  return nil;
 }
 
 - (void)calculatePath
@@ -24,10 +25,12 @@
 
 - (PathCreator*)initWithWorld:(World*)world_
 {
+  return nil;
 }
 
 - (DerivedTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)worldIndex
 {
+  return nullptr;
 }
 
 - (void)updatePath

@@ -24,6 +24,7 @@
 
 - (DatabaseConvertor*)initWithWorld:(World*)world_ worldDatabase:(Database*)worldDatabase_ dynamicObjectDatabase:(Database*)dynamicObjectDatabase_ blockDatabase:(Database*)blockDatabase_ lightBlockDatabase:(Database*)lightBlockDatabase_ serverDatabase:(Database*)lightBlockDatabase_
 {
+  return nil;
 }
 
 - (void)lightBlockMainThreadOperationReturned:(NSDictionary*)resultDict
@@ -32,6 +33,7 @@
 
 - (BOOL)migrationComplete
 {
+  return NO;
 }
 
 - (void)removeLightBlockFiles
@@ -44,6 +46,7 @@
 
 - (NSData*)safeDataWithContentsOfFile:(NSString*)fileName
 {
+  return nil;
 }
 
 @end

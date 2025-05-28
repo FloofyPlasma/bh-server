@@ -68,6 +68,7 @@
 - (NSArray*)getRecentPlayerNamesForOwnershipSign
 {
   //! TODO: Implement this
+  return nil;
 }
 
 - (void)sendPlayerChangedNotifcationToDelegate
@@ -83,7 +84,7 @@
 - (NSString*)privacyString
 {
   if ([self isCloudMatch]) {
-    if ([self->match isKindOfClass:[BHNetServerMatch class]] != NULL) {
+    if ([self->match isKindOfClass:[BHNetServerMatch class]]) {
       switch ([(BHNetServerMatch*)self->match privacy]) // Cross cast, but its safe because we know the type
       {
       case BHNetPrivacyPublic:
@@ -125,12 +126,13 @@
       }
     }
   }
+  return nil;
 }
 
 - (void)updateCredit:(float)dt
 {
   if ([self isCloudMatch]) {
-    if ([self->match isKindOfClass:[BHNetServerMatch class]] != NULL) {
+    if ([self->match isKindOfClass:[BHNetServerMatch class]]) {
       [(BHNetServerMatch*)self->match setCredit:[self credit]];
     }
   }
@@ -139,12 +141,13 @@
 - (float)credit
 {
   if ([self isCloudMatch]) {
-    if ([self->match isKindOfClass:[BHNetServerMatch class]] != NULL) {
+    if ([self->match isKindOfClass:[BHNetServerMatch class]]) {
       return [(BHNetServerMatch*)self->match credit];
     }
   } else {
     return 0;
   }
+  return 0;
 }
 
 - (BOOL)isCloudMatch
@@ -156,7 +159,7 @@
 {
   NSMutableString* debugLog = [NSMutableString string];
   [debugLog appendFormat:@"server version:%@\n", @"1.7.3"];
-  [debugLog appendFormat:@"connectedClients:%llu\n", [self->connectedClients count]];
+  [debugLog appendFormat:@"connectedClients:%lu\n", [self->connectedClients count]];
   [self->world appendDebugLog:debugLog];
 
   return debugLog;
@@ -183,22 +186,26 @@
 - (NSString*)removeCurseWordsFromBlockheadName:(NSString*)blockheadName
 {
   //! TODO: Implement
+  return nil;
 }
 
 - (NSString*)replaceCurseWordsForMessage:(NSString*)message client:(NSString*)playerID
 {
   //! TODO: Implement
+  return nil;
 }
 
 - (NSString*)modifyListForPlayerOrIP:(NSString*)nameOrIP isAdded:(BOOL)isAdded listType:(ListType)listType banUDID:(BOOL)banUDID
 {
   //! TODO: Implement.
   //* I don't want to mess with these files at this time.
+  return nil;
 }
 
 - (NSString*)modifyListForPlayerOrIP:(NSString*)nameOrIP isAdded:(BOOL)isAdded listType:(ListType)listType
 {
   [self modifyListForPlayerOrIP:nameOrIP isAdded:isAdded listType:listType banUDID:NO];
+  return nil;
 }
 
 - (void)clearList:(ListType)listType
@@ -223,7 +230,7 @@
     break;
   }
 
-  NSString* filePath = [NSString stringWithFormat:@"%@/saves/%@/%@.txt", [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:NULL] stringByAppendingPathComponent:@"TheBlockheads"], self->saveID, typeString];
+  NSString* filePath = [NSString stringWithFormat:@"%@/saves/%@/%@.txt", [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"], self->saveID, typeString];
   NSString* fileContents;
 
   switch (listType) {
@@ -259,7 +266,7 @@
   self->modList = NULL;
   self->curseList = NULL;
 
-  NSString* filePath = [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:NULL] stringByAppendingPathComponent:@"TheBlockheads"];
+  NSString* filePath = [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"];
 
   // Load blacklist
   NSFileManager* fileManager = [NSFileManager defaultManager];
@@ -376,6 +383,7 @@
 - (NSArray*)playerListToSendIncludingPhotosForClients:(NSArray*)includingClients sendClient:(NSString*)sendClient
 {
   //! TODO: Implement
+  return nil;
 }
 
 - (void)clientFinishedAwaySimulation:(NSString*)clientID
@@ -443,7 +451,7 @@
 - (BOOL)playerIsConnectedWithInfo:(NSDictionary*)playerInfo
 {
   if ([[playerInfo objectForKey:@"local"] boolValue]) {
-    return [self->connectedClients containsObject:[playerInfo objectForKey:@"playerID"]] != NULL ? YES : NO;
+    return [self->connectedClients containsObject:[playerInfo objectForKey:@"playerID"]] ? YES : NO;
   }
 
   return NO;
@@ -474,41 +482,49 @@
 - (BOOL)playerIsModWithAlias:(NSString*)alias
 {
   // TODO
+  return NO;
 }
 
 - (BOOL)playerIsAdminWithAlias:(NSString*)alias
 {
   // TODO
+  return NO;
 }
 
 - (BOOL)playerIsAdminWithID:(NSString*)playerID
 {
   // TODO
+  return NO;
 }
 
 - (BOOL)playerIsCloudWideInvisibleAdminWithAlias:(NSString*)alias
 {
   // TODO
+  return NO;
 }
 
 - (BOOL)playerIsCloudWideAdminWithAlias:(NSString*)alias
 {
   // TODO
+  return NO;
 }
 
 - (BOOL)playerIsOwnerWithAlias:(NSString*)alias
 {
   // TODO
+  return NO;
 }
 
 - (BOOL)playerIsWhiteListedWithInfo:(NSDictionary*)playerInfo
 {
   // TODO
+  return NO;
 }
 
 - (BOOL)playerIsBannedWithID:(NSString*)playerID
 {
   // TODO
+  return NO;
 }
 
 - (NSData*)savedPlayerInfoDataForPlayer:(NSString*)playerID
@@ -521,6 +537,7 @@
 - (BOOL)playerIsBlackListedWithInfo:(NSDictionary*)playerInfo
 {
   // TODO
+  return NO;
 }
 
 - (void)infoArrived:(NSMutableDictionary*)dict forPlayer:(NSString*)playerID
@@ -611,7 +628,7 @@
 
 - (void)saveResetList
 {
-  NSString* filePath = [NSString stringWithFormat:@"%@/saves/%@/resetList.plist", [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:NULL] stringByAppendingPathComponent:@"TheBlockheads"], self->saveID];
+  NSString* filePath = [NSString stringWithFormat:@"%@/saves/%@/resetList.plist", [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"], self->saveID];
 
   if (self->resetList != NULL) {
     NSData* serialized = [NSPropertyListSerialization dataWithPropertyList:self->resetList format:NSPropertyListBinaryFormat_v1_0 options:0x0 error:NULL];
@@ -669,6 +686,7 @@
 - (BHServer*)initWithDelegate:(id)delegate_ match:(BHMatch*)match_ netNodeType:(BHNetNodeType)netNodeType_ saveID:(NSString*)saveID_ maxPlayers:(int)maxPlayers_
 {
   // TODO
+  return nil;
 }
 
 @end
