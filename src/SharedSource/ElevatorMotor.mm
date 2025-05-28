@@ -62,10 +62,6 @@
 {
 }
 
-- (BOOL)isStorageDevice
-{
-}
-
 - (DynamicObjectType)objectType
 {
 }

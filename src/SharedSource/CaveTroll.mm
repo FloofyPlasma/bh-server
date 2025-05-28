@@ -10,7 +10,7 @@
 {
 }
 
-- (int)currentTraverseToKeyFrame
+- (TileTraverseKeyFrameType)currentTraverseToKeyFrame
 {
 }
 
@@ -58,14 +58,6 @@
 {
 }
 
-- (BOOL)canCrawl
-{
-}
-
-- (BOOL)canFly
-{
-}
-
 - (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType
 {
 }
@@ -99,10 +91,6 @@
 }
 
 - (InteractionType)currentInteractionType
-{
-}
-
-- (TileTraverseKeyFrameType)currentTraverseToKeyFrame
 {
 }
 
@@ -151,10 +139,6 @@
 }
 
 - (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead
-{
-}
-
-- (id)infoForPathRecalculation
 {
 }
 
@@ -246,19 +230,7 @@
 {
 }
 
-- (void)setNoLongerWaitingForPath
-{
-}
-
-- (void)setPath:(NSArray*)path_ type:(PathType)pathType goalInteraction:(InteractionType)goalInteraction extraData:(NSDictionary*)goalInteraction
-{
-}
-
 - (void)setTargetVelocity:(Vector2)targetVelocity
-{
-}
-
-- (void)setWaitingForPathToPos:(intpair)goalPos
 {
 }
 
@@ -282,10 +254,6 @@
 {
 }
 
-- (BOOL)tileIsLitForSelf:(Tile*)tile atPos:(intpair)tilePos
-{
-}
-
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
 {
 }
@@ -295,10 +263,6 @@
 }
 
 - (NSData*)updateNetDataForClient:(NSString*)clientID
-{
-}
-
-- (BOOL)waitingForPath
 {
 }
 

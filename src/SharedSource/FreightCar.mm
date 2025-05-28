@@ -26,10 +26,6 @@
 {
 }
 
-- (void)childNeedsSaving:(DynamicObject*)child
-{
-}
-
 - (NSData*)creationNetDataForClient:(NSString*)clientID
 {
 }

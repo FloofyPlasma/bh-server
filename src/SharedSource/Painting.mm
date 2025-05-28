@@ -10,10 +10,6 @@
 {
 }
 
-- (NSString*)actionTitle
-{
-}
-
 - (NSData*)creationNetDataForClient:(NSString*)clientID
 {
 }
@@ -63,10 +59,6 @@
 }
 
 - (Painting*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
-{
-}
-
-- (BOOL)isDoubleHeight
 {
 }
 

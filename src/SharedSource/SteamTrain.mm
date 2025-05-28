@@ -34,15 +34,7 @@
 {
 }
 
-- (void)addToFuelForItem:(ItemType)itemType
-{
-}
-
 - (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
-{
-}
-
-- (BOOL)canDismissFuelUI
 {
 }
 
@@ -57,23 +49,6 @@
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
 {
 }
-
-- (int)fuelCount
-{
-}
-
-- (int)fuelItemCount
-{
-}
-
-- (int*)fuelItems
-{
-}
-
-- (Vector2)fuelUIPos
-{
-}
-
 - (NSMutableDictionary*)getSaveDict
 {
 }
@@ -159,10 +134,6 @@
 }
 
 - (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
-{
-}
-
-- (NSString*)title
 {
 }
 

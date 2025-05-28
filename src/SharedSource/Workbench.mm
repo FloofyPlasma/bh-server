@@ -46,10 +46,6 @@
 {
 }
 
-- (void)abortCraft
-{
-}
-
 - (void)abortImmediatelyAndRestoreBlockheadItems
 {
 }
@@ -74,10 +70,6 @@
 {
 }
 
-- (void)addToFuelForItem:(ItemType)itemType
-{
-}
-
 - (uint16_t)availableElectricity
 {
 }
@@ -95,10 +87,6 @@
 }
 
 - (BOOL)canBeUsedInExpertModeWhenNotOwned
-{
-}
-
-- (BOOL)canDismissFuelUI
 {
 }
 
@@ -166,27 +154,11 @@
 {
 }
 
-- (int)fuelCount
-{
-}
-
-- (int)fuelItemCount
-{
-}
-
-- (int*)fuelItems
-{
-}
-
 - (int*)fuelTypes
 {
 }
 
 - (int)fuelTypesCount
-{
-}
-
-- (Vector2)fuelUIPos
 {
 }
 
@@ -203,14 +175,6 @@
 }
 
 - (BOOL)hasRequiredFuel
-{
-}
-
-- (void)hurryCompletion:(int)hurryCost
-{
-}
-
-- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime
 {
 }
 
@@ -239,10 +203,6 @@
 }
 
 - (BOOL)isDoubleHeight
-{
-}
-
-- (BOOL)isStorageDevice
 {
 }
 
@@ -331,10 +291,6 @@
 }
 
 - (NSString*)title
-{
-}
-
-- (NSString*)titleForCraftProgressUI
 {
 }
 

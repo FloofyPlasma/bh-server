@@ -126,19 +126,7 @@
 {
 }
 
-- (BOOL)requiresSingleLineTextEditing
-{
-}
-
 - (void)setNeedsRemoved:(BOOL)needsRemoved
-{
-}
-
-- (void)setText:(NSString*)newText
-{
-}
-
-- (NSString*)text
 {
 }
 

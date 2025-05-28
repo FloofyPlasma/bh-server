@@ -62,7 +62,7 @@
 {
 }
 
-- (id)initWithPort:(NSString*)port_ userName:(NSString*)port_ photo:(id)photo hasLocalPLayer:(BOOL)photo worldName:(NSString*)worldName_ credit:(float)credit_ cloudSalt:(NSString*)credit_ ownerName:(NSString*)ownerName_ privacy:(NSString*)ownerName_
+- (id)initWithPort:(NSString*)port_ userName:(NSString*)userName_ photo:(id)photo hasLocalPLayer:(BOOL)hasLocalPlayer worldName:(NSString*)worldName_ credit:(float)credit_ cloudSalt:(NSString*)cloudSalt_ ownerName:(NSString*)ownerName_ privacy:(NSString*)privacy
 {
 }
 

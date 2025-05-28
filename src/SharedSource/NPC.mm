@@ -86,18 +86,6 @@
 {
 }
 
-- (NSString*)actionTitle
-{
-}
-
-- (InteractionObject*)actsAsInteractionObject
-{
-}
-
-- (void)addRider:(Blockhead*)rider_
-{
-}
-
 - (NSData*)appendNPCCreationDataToData:(NSData*)subclassData
 {
 }
@@ -114,10 +102,6 @@
 {
 }
 
-- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
-{
-}
-
 - (void)blockheadIsComingToInspect:(Blockhead*)blockhead
 {
 }
@@ -131,10 +115,6 @@
 }
 
 - (NSString*)breedString
-{
-}
-
-- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
 {
 }
 
@@ -187,10 +167,6 @@
 }
 
 - (int)capturedItemType
-{
-}
-
-- (Vector2)center
 {
 }
 
@@ -270,10 +246,6 @@
 {
 }
 
-- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead
-{
-}
-
 - (NPC*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
 {
 }
@@ -289,19 +261,6 @@
 - (void)inspectionStopped
 {
 }
-
-- (BOOL)isDoubleHeight
-{
-}
-
-- (BOOL)isVisible
-{
-}
-
-- (BOOL)jumpsOnSwipe
-{
-}
-
 - (void)loadValuesFromSaveDict:(NSDictionary*)saveDict
 {
 }
@@ -374,19 +333,11 @@
 {
 }
 
-- (void)removeRider:(Blockhead*)rider_
-{
-}
-
 - (NSString*)removeTitle
 {
 }
 
 - (Vector2)renderPos
-{
-}
-
-- (BOOL)requiresFuel
 {
 }
 
@@ -398,27 +349,7 @@
 {
 }
 
-- (int)rideDirection
-{
-}
-
-- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
-{
-}
-
 - (float)riderBodyZRotationForBlockhead:(Blockhead*)blockhead
-{
-}
-
-- (BOOL)riderDPadShouldAllowUpDown
-{
-}
-
-- (BOOL)riderDPadShouldGiveDiscreteValues
-{
-}
-
-- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
 {
 }
 
@@ -442,10 +373,6 @@
 {
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity
-{
-}
-
 - (BOOL)shaveByBlockhead:(Blockhead*)blockhead
 {
 }
@@ -466,15 +393,7 @@
 {
 }
 
-- (void)swipeUpGesture
-{
-}
-
 - (BOOL)tamed
-{
-}
-
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
 {
 }
 
@@ -487,10 +406,6 @@
 }
 
 - (void)updatePosition:(intpair)newPosition
-{
-}
-
-- (BOOL)willDieIfHitByForce:(int)force
 {
 }
 

@@ -66,31 +66,11 @@
 {
 }
 
-- (NSString*)actionTitle
-{
-}
-
-- (InteractionObject*)actsAsInteractionObject
-{
-}
-
-- (void)addRider:(Blockhead*)rider_
-{
-}
-
-- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
-{
-}
-
 - (void)blockheadUnloaded:(Blockhead*)blockhead
 {
 }
 
 - (void)blockheadsLoaded
-{
-}
-
-- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
 {
 }
 
@@ -126,14 +106,6 @@
 {
 }
 
-- (BOOL)isDoubleHeight
-{
-}
-
-- (BOOL)jumpsOnSwipe
-{
-}
-
 - (void)loadDerivedStuff
 {
 }
@@ -150,23 +122,7 @@
 {
 }
 
-- (void)removeRider:(Blockhead*)rider_
-{
-}
-
 - (Vector2)renderPos
-{
-}
-
-- (BOOL)requiresFuel
-{
-}
-
-- (int)rideDirection
-{
-}
-
-- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
 {
 }
 
@@ -174,27 +130,7 @@
 {
 }
 
-- (BOOL)riderDPadShouldAllowUpDown
-{
-}
-
-- (BOOL)riderDPadShouldGiveDiscreteValues
-{
-}
-
-- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
-{
-}
-
 - (void)setNeedsRemoved:(BOOL)needsRemoved_
-{
-}
-
-- (void)setTargetVelocity:(Vector2)targetVelocity
-{
-}
-
-- (void)swipeUpGesture
 {
 }
 

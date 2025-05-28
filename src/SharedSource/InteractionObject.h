@@ -20,14 +20,14 @@ struct InteractionObjectCreationNetData {
 @class Blockhead, CPTexture2D, Shader;
 
 @interface InteractionObject : DynamicObject <TapChoiceDynamicObject> {
-  Blockhead* currentBlockhead;
+  Blockhead* _currentBlockhead;
   Shader* shader;
   CPTexture2D* texture;
-  BOOL isInUse;
-  BOOL flipped;
+  BOOL _isInUse;
+  BOOL _flipped;
   uint64_t remoteBlockheadInUseUniqueID;
   int savedBlockheadIndex;
-  NSString* ownerName;
+  NSString* _ownerName;
   uint16_t paintColor;
   DynamicObject<ProxyObjectOwner>* proxyObjectOwner;
   BOOL needsToBeRemovedWhenInteractionEnds;

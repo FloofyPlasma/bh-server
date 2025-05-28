@@ -4,13 +4,10 @@
 
 - (NSString*)actionTitle
 {
+  return [self title];
 }
 
 - (BOOL)isDoubleHeight
-{
-}
-
-- (NSString*)actionTitle
 {
 }
 
@@ -73,11 +70,6 @@
 - (ItemType)interactionRenderItemType
 {
 }
-
-- (BOOL)isDoubleHeight
-{
-}
-
 - (BOOL)isPaintable
 {
 }

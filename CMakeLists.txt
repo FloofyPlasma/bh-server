@@ -19,7 +19,7 @@ elseif(APPLE)
 elseif(UNIX AND NOT APPLE)
     message(WARNING "Support for Linux is currently in beta, and isn't stable yet. Use at your own risk.")
 
-   find_program(GNUSTEP_CONFIG_EXECUTABLE gnustep-config)
+    find_program(GNUSTEP_CONFIG_EXECUTABLE gnustep-config)
 
     if(NOT GNUSTEP_CONFIG_EXECUTABLE)
         message(FATAL_ERROR "gnustep-config not found. Please install GNUstep development packages.")
@@ -55,12 +55,119 @@ if(WIN32)
     )
 endif()
 
-set(SOURCE_FILES 
+set(SOURCE_FILES
+    src/Mac/BlockheadsServer/BlockheadsServer/Flurry.mm
+    src/Mac/BlockheadsServer/BlockheadsServer/GameController.mm
+    src/Mac/BlockheadsServer/blockheads_server/CommandLineDelegate.mm
     src/Mac/BlockheadsServer/blockheads_server/main.mm
-    src/SharedSource/BHNetNode.mm
+    src/SharedSource/Action.mm
+    src/SharedSource/AppleTree.mm
+    src/SharedSource/ArtificialLight.mm
     src/SharedSource/BHMatch.mm
+    src/SharedSource/BHNetNode.mm
+    src/SharedSource/BHNetServerMatch.mm
+    src/SharedSource/BHServer.mm
+    src/SharedSource/Bed.mm
+    src/SharedSource/Blockhead.mm
+    src/SharedSource/BlockheadAI.mm
+    src/SharedSource/BlockheadCraftableItemObject.mm
+    src/SharedSource/Boat.mm
+    src/SharedSource/CactusTree.mm
+    src/SharedSource/CarrotPlant.mm
+    src/SharedSource/CaveTroll.mm
+    src/SharedSource/CherryTree.mm
+    src/SharedSource/Chest.mm
+    src/SharedSource/ChilliPlant.mm
+    src/SharedSource/ClientTileLoader.mm
+    src/SharedSource/ClownFish.mm
+    src/SharedSource/CoconutTree.mm
+    src/SharedSource/CoffeeTree.mm
+    src/SharedSource/Column.mm
+    src/SharedSource/CornPlant.mm
+    src/SharedSource/CraftableItemObject.mm
+    src/SharedSource/CrystalManager.mm
+    src/SharedSource/Database.mm
+    src/SharedSource/DatabaseConvertor.mm
+    src/SharedSource/DatabaseEnvironment.mm
+    src/SharedSource/Dodo.mm
+    src/SharedSource/Donkey.mm
+    src/SharedSource/DonkeyLike.mm
+    src/SharedSource/Door.mm
+    src/SharedSource/DrawCube.mm
+    src/SharedSource/DrawCube_RenderItemAdditions.mm
+    src/SharedSource/DropBear.mm
     src/SharedSource/DynamicObject.mm
-    )
+    src/SharedSource/DynamicObjectType.mm
+    src/SharedSource/DynamicWorld.mm
+    src/SharedSource/Egg.mm
+    src/SharedSource/ElevatorMotor.mm
+    src/SharedSource/ElevatorShaft.mm
+    src/SharedSource/FireObject.mm
+    src/SharedSource/FishingRod.mm
+    src/SharedSource/FlaxPlant.mm
+    src/SharedSource/FreeBlock.mm
+    src/SharedSource/FreightCar.mm
+    src/SharedSource/GatherBlock.mm
+    src/SharedSource/GemTree.mm
+    src/SharedSource/GlowBlock.mm
+    src/SharedSource/HandCar.mm
+    src/SharedSource/InteractionObject.mm
+    src/SharedSource/InventoryItem.mm
+    src/SharedSource/KelpPlant.mm
+    src/SharedSource/Ladder.mm
+    src/SharedSource/LimeTree.mm
+    src/SharedSource/MJMultiSound.mm
+    src/SharedSource/MJSound.mm
+    src/SharedSource/MJSoundManager.mm
+    src/SharedSource/MangoTree.mm
+    src/SharedSource/MapleTree.mm
+    src/SharedSource/Mirror.mm
+    src/SharedSource/NPC.mm
+    src/SharedSource/NSIndexSet+Serialization.mm
+    src/SharedSource/NoiseFunction.mm
+    src/SharedSource/NormalPlant.mm
+    src/SharedSource/OrangeTree.mm
+    src/SharedSource/OwnershipSign.mm
+    src/SharedSource/Painting.mm
+    src/SharedSource/PaintingCraftableItemObject.mm
+    src/SharedSource/ParticleEmitter.mm
+    src/SharedSource/PassengerCar.mm
+    src/SharedSource/PathCreator.mm
+    src/SharedSource/PineTree.mm
+    src/SharedSource/Plant.mm
+    src/SharedSource/ProjectileManager.mm
+    src/SharedSource/Rail.mm
+    src/SharedSource/Scorpion.mm
+    src/SharedSource/ServerClient.mm
+    src/SharedSource/Shark.mm
+    src/SharedSource/Sign.mm
+    src/SharedSource/SnowSurfaceBlock.mm
+    src/SharedSource/Stairs.mm
+    src/SharedSource/SteamTrain.mm
+    src/SharedSource/SunflowerPlant.mm
+    src/SharedSource/SurfaceBlock.mm
+    src/SharedSource/TipManager.mm
+    src/SharedSource/TomatoPlant.mm
+    src/SharedSource/Torch.mm
+    src/SharedSource/TradePortal.mm
+    src/SharedSource/TradingPost.mm
+    src/SharedSource/TrainCar.mm
+    src/SharedSource/TrainStation.mm
+    src/SharedSource/Tree.mm
+    src/SharedSource/TulipPlant.mm
+    src/SharedSource/VinePlant.mm
+    src/SharedSource/Weather.mm
+    src/SharedSource/WheatPlant.mm
+    src/SharedSource/Window.mm
+    src/SharedSource/Wire.mm
+    src/SharedSource/WirePathCreator.mm
+    src/SharedSource/Workbench.mm
+    src/SharedSource/World.mm
+    src/SharedSource/WorldHelper.mm
+    src/SharedSource/WorldTileLoader.mm
+    src/SharedSource/Yak.mm
+    src/SharedSource/fn_random.c
+)
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
@@ -128,7 +235,7 @@ if(WIN32)
     )
 elseif(APPLE)
     message(STATUS "Using native macOS Objective-C runtime.")
-    
+
     target_link_libraries(${PROJECT_NAME}
         "-framework Foundation"
         "-framework Cocoa"
