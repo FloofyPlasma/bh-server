@@ -4,6 +4,7 @@
 
 - (NSString*)currentTip
 {
+  return nil;
 }
 
 - (void)displaySecondBlockheadTipIfGoodTime
@@ -16,6 +17,7 @@
 
 + (TipManager*)instance
 {
+  return nil;
 }
 
 - (void)reset
@@ -32,6 +34,7 @@
 
 - (Vector)tipColor
 {
+  return Vector();
 }
 
 - (void)update:(float)dt

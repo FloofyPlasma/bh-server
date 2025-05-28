@@ -196,8 +196,8 @@ struct InteractionTestResult {
 @interface Blockhead
     : DynamicObject <PathUserDynamicObject, HarmableDynamicObject> {
   BlockheadState state;
-  NSString* clientID;
-  NSString* clientName;
+  NSString* _clientID;
+  NSString* _clientName;
   MJTextView* netTextView;
   BlockheadAI* blockheadAI;
   Shader* shader;
@@ -289,17 +289,17 @@ struct InteractionTestResult {
   DynamicObject<RidableDynamicObject>* tappedRideObject;
   BOOL chasingRideObject;
   intpair lastKnownRideObjectPosition;
-  DynamicObject<RidableDynamicObject>* rideObject;
+  DynamicObject<RidableDynamicObject>* _rideObject;
   FishingRod* fishingRod;
-  float currentTemperature;
+  float _currentTemperature;
   float damageDelayTimer;
   float travelFraction;
   float travelFractionNormalized;
   float soundTimer;
   float cogTimer;
-  int selectedToolIndex;
+  int _selectedToolIndex;
   NSMutableArray* inventoryItems;
-  BOOL pathNeedsRecalculated;
+  BOOL _pathNeedsRecalculated;
   BOOL pathRecalculationIsFallPath;
   BOOL debugBOOL;
   int brightestInventoryItem;
@@ -309,7 +309,7 @@ struct InteractionTestResult {
   int lightRadius;
   BOOL ignoringFreeblocksDueToDrop;
   intpair ignoringFreeblocksDueToDropLocation;
-  NSString* name;
+  NSString* _name;
   float idleTimer;
   float randomIdleWait;
   float randomAnimationValueA;
@@ -335,8 +335,8 @@ struct InteractionTestResult {
   BOOL useItem;
   BOOL usingItem;
   BOOL footstepPingPong;
-  NSMutableArray* saveItemSlotsArray;
-  Vector2 renderPos;
+  NSMutableArray* _saveItemSlotsArray;
+  Vector2 _renderPos;
   char inventoryChangedThisFrameSlots[8];
   char subInventoryChangedThisFrameSlots[8][4];
   char inventoryUsageChangedThisFrameSlots[8];
@@ -349,11 +349,11 @@ struct InteractionTestResult {
   NSMutableDictionary* unconfirmedPickups;
   NSMutableIndexSet* thisFramePickupRequests;
   NSDictionary* pathExtraData;
-  int viewRadius;
-  NSMutableArray* actionQueue;
+  int _viewRadius;
+  NSMutableArray* _actionQueue;
   float nextActionDelay;
-  BOOL needsHarmFlash;
-  BOOL paused;
+  BOOL _needsHarmFlash;
+  BOOL _paused;
   float steamEmitTimer;
   double lastDigSoundTime;
   float debugTimer;
@@ -363,15 +363,15 @@ struct InteractionTestResult {
   float passiveItemUsageIncrementTimer;
   float recoilTimer;
   float recoilDirection;
-  BOOL cancelSimulateDueToCollapse;
+  BOOL _cancelSimulateDueToCollapse;
   int16_t fishingRodCastX;
   int16_t fishingRodCastY;
   float tinFoilHatParticleCounter;
-  BOOL isClientBlockheadBeingControlledByServer;
+  BOOL _isClientBlockheadBeingControlledByServer;
   float controlledByServerInactivityTimeout;
   float controlledByServerSanityCheckTimeout;
   int controlledByServerCrystalDiscrepency;
-  NSString* clientSaveDir;
+  NSString* _clientSaveDir;
   NSDictionary* interactionObjectDictToRestoreWhenObjectLoaded;
   int prevGoalRotationType;
   float netRotationDelayTimer;
@@ -379,7 +379,7 @@ struct InteractionTestResult {
   BOOL visible;
   BOOL onScreenForDPad;
   MJSound* regenerationSound;
-  int tipType;
+  int _tipType;
   int elevatorPowerUseCounter;
   BOOL isInJetPackFreeFlightMode;
   Vector2 jetPackIncomingAcceleration;
@@ -391,7 +391,7 @@ struct InteractionTestResult {
   float jetFuelUsage;
   float clampedYAccelerationForFuelUsageWhenInFreeFlight;
   int zIndex;
-  TradeMission currentTradeMission;
+  TradeMission _currentTradeMission;
   int currentNetQueueSize;
   intpair netNextToSquare[4];
   int nextTerrainDifficulty[4];
@@ -403,7 +403,7 @@ struct InteractionTestResult {
   int nextAnimationType[4];
   int nextSubAnimationType[4];
   int remoteInteractionItemType;
-  BOOL isCurrentlyActiveBlockheadAccordingToNetData;
+  BOOL _isCurrentlyActiveBlockheadAccordingToNetData;
   BOOL waitingForFillResponse;
   unsigned int waitingForFillResponseIndex;
   float waitingForFillResponseTimer;

@@ -12,10 +12,12 @@
 
 - (NSTimeInterval)currentMP3time
 {
+  return 0;
 }
 
 - (NSTimeInterval)currentMP3timeToNearestBeat
 {
+  return 0;
 }
 
 - (void)dealloc
@@ -28,6 +30,7 @@
 
 - (MJMultiSound*)externalMultiSoundWithKey:(NSString*)name
 {
+  return nil;
 }
 
 - (void)fadeInMP3Playback
@@ -56,6 +59,7 @@
 
 - (float)getTimeUntilNextBeat
 {
+  return 0;
 }
 
 - (void)handleInterruption:(NSNotification*)notification
@@ -64,10 +68,12 @@
 
 - (MJSoundManager*)initWithMasterVolume:(float)mv
 {
+  return nil;
 }
 
 + (MJSoundManager*)instance
 {
+  return nil;
 }
 
 - (void)interruptionBegan
@@ -80,14 +86,17 @@
 
 - (BOOL)isFadingOut
 {
+  return NO;
 }
 
 - (BOOL)isPlayingMP3
 {
+  return NO;
 }
 
 - (Vector2)listenerPos
 {
+  return Vector2();
 }
 
 - (void)loadMP3IfSafe:(NSString*)path withTimeOffset:(NSTimeInterval)timeOffset
@@ -100,14 +109,17 @@
 
 - (MJMultiSound*)multiSoundNamed:(NSString*)name
 {
+  return nil;
 }
 
 - (MJMultiSound*)multiSoundWithSounds:(NSArray*)names
 {
+  return nil;
 }
 
 - (float)musicVolume
 {
+  return 0;
 }
 
 - (void)playMP3IfSafe:(NSString*)path
@@ -124,6 +136,7 @@
 
 - (BOOL)reinitialize
 {
+  return NO;
 }
 
 - (void)resignActive
@@ -140,6 +153,7 @@
 
 - (BOOL)safeToPlayMP3s
 {
+  return NO;
 }
 
 - (void)setListenerPosition:(Vector2)listenerPos_ zoom:(float)zoom
@@ -168,10 +182,12 @@
 
 - (MJSound*)soundNamed:(NSString*)name
 {
+  return nil;
 }
 
 - (float)soundVolume
 {
+  return 0;
 }
 
 - (void)stopMP3Playback

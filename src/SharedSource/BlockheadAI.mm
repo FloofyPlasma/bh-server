@@ -21,6 +21,7 @@
 - (BOOL)testTileAtPos:(intpair)arg1
 {
   //! TODO: Ghidra doesn't like this...
+  return NO;
 }
 
 - (BlockheadAI*)initWithBlockhead:(Blockhead*)blockhead_ world:(World*)world_

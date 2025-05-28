@@ -25,7 +25,7 @@
   float noCreditBootTimer;
   double credit;
   double pollTimerLastTime;
-  BHNetPrivacy privacy;
+  BHNetPrivacy _privacy;
 }
 
 @property BHNetPrivacy privacy; // @synthesize privacy;

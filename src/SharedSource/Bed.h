@@ -10,7 +10,7 @@ struct BedNetData {
 @class CPTexture2D, DrawCube, Shader;
 
 @interface Bed : InteractionObject {
-  int itemType;
+  ItemType _itemType;
   uint16_t beddingColor;
   CPTexture2D* tileDestructTexture;
   DrawCube* pillowDrawCube;
@@ -18,7 +18,7 @@ struct BedNetData {
   Shader* cubeShader;
 }
 
-@property (readonly) int itemType; // @synthesize itemType;
+@property (readonly) ItemType itemType; // @synthesize itemType;
 - (BOOL)occupiesNormalContents;
 - (BOOL)isPaintable;
 - (void)paint:(uint16_t)colorIndex;
@@ -26,7 +26,7 @@ struct BedNetData {
 - (NSString*)actionTitle;
 - (NSString*)title;
 - (BOOL)twoBlocksWide;
-- (int)destroyItemType;
+- (ItemType)destroyItemType;
 - (void)remove:(Blockhead*)removeBlockhead;
 - (uint16_t)freeBlockCreationDataB;
 - (uint16_t)freeBlockCreationDataA;

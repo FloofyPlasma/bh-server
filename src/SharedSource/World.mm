@@ -12,6 +12,7 @@
 
 - (intpair)activeBlockheadPos
 {
+  return intpair();
 }
 
 - (void)addChestItemsToFoundList:(NSArray*)slots
@@ -40,14 +41,17 @@
 
 - (BOOL)allowsPanning
 {
+  return NO;
 }
 
 - (BOOL)allowsRotation
 {
+  return NO;
 }
 
 - (Database*)appDatabase
 {
+  return nil;
 }
 
 - (void)appendDebugLog:(NSMutableString*)log
@@ -76,6 +80,7 @@
 
 - (BOOL)canAddWorldCredit
 {
+  return NO;
 }
 
 - (void)cancelAllActionsAtPos:(intpair)pos orWithInteractionObjectID:(uint64_t)uniqueID
@@ -96,6 +101,7 @@
 
 - (BOOL)clientConnected:(NSString*)clientID
 {
+  return NO;
 }
 
 - (void)clientDisconnected:(NSString*)clientID wasKick:(BOOL)wasKick
@@ -104,6 +110,7 @@
 
 - (NSString*)clientPassword
 {
+  return nil;
 }
 
 - (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
@@ -128,6 +135,7 @@
 
 - (BOOL)continueSimulate
 {
+  return NO;
 }
 
 - (void)craftAbortedForWorkbench:(Workbench*)workbench withBlockhead:(Blockhead*)blockhead
@@ -152,14 +160,17 @@
 
 - (Vector)currentTipColor
 {
+  return Vector();
 }
 
 - (NSString*)currentTipText
 {
+  return nil;
 }
 
 - (int)currentTotalBlockheadCountIncludingNet
 {
+  return 0;
 }
 
 - (void)customRuleDictRecievedFromNet:(NSDictionary*)ruleDict
@@ -168,10 +179,12 @@
 
 - (NSString*)customRuleForOptionNamed:(NSString*)optionName
 {
+  return nil;
 }
 
 - (CustomRules)customRules
 {
+  return CustomRules();
 }
 
 - (void)customRulesChanged
@@ -180,10 +193,12 @@
 
 - (NSDictionary*)customRulesDict
 {
+  return nil;
 }
 
 - (Vector)dayColorForPosition:(intpair)pos
 {
+  return Vector();
 }
 
 - (void)dealloc
@@ -220,6 +235,7 @@
 
 - (FoodType*)distanceOrderedFoodTypes
 {
+  return nullptr;
 }
 
 - (void)doCameraScreenshot
@@ -280,6 +296,7 @@
 
 - (BOOL)finishBulkDatabaseUpdate
 {
+  return NO;
 }
 
 - (void)finishSimulating
@@ -292,6 +309,7 @@
 
 - (BOOL)foundListContainsEggWithDodoBreed:(int)arg1
 {
+  return NO;
 }
 
 - (void)fullyLoadAndUpdateIfNeededForMacroBlock:(MacroTile*)macroTile includingPos:(intpair)pos clientLightBlockIndex:(int)clientLightBlockIndex forBlockhead:(Blockhead*)blockhead
@@ -304,38 +322,47 @@
 
 - (intpair)getBlockheadZoomPosForClient:(NSString*)playerID requesterClient:(NSString*)requesterClient cycleIndex:(int)cycleIndex
 {
+  return intpair();
 }
 
 - (NSString*)getCurrentCreditTimeString
 {
+  return nil;
 }
 
 - (float)getDayNightFractionForX:(float)x atWorldTime:(NSTimeInterval)time
 {
+  return 0;
 }
 
 - (float)getWeatherFractionForPos:(intpair)pos
 {
+  return 0;
 }
 
 - (float)getWeatherFractionForPos:(intpair)pos atWorldTime:(NSTimeInterval)time
 {
+  return 0;
 }
 
 - (float)getWeatherFractionForPos:(intpair)pos atWorldTime:(NSTimeInterval)time ignoreSandFraction:(BOOL)ignoreSandFraction
 {
+  return 0;
 }
 
 - (BOOL)hasFinishedDatabaseMigrationTo17
 {
+  return NO;
 }
 
 - (BOOL)hasRewardedVideoAvailable
 {
+  return NO;
 }
 
 - (NSData*)heartbeatData
 {
+  return nil;
 }
 
 - (void)heartbeatDataRecieved:(NSData*)heartbeatData fromPeer:(NSString*)peerID
@@ -348,6 +375,7 @@
 
 - (intpair)highestPoint
 {
+  return intpair();
 }
 
 - (void)iapStarted
@@ -368,6 +396,7 @@
 
 - (World*)initWithWindowInfo:(WindowInfo*)windowInfo_ cache:(CPCache*)cache_ delegate:(id)delegate_ saveID:(NSString*)saveID_ name:(NSString*)worldName_ client:(BHClient*)client_ server:(BHServer*)server_ multiplayerWorldData:(NSData*)multiplayerWorldData serverHostData:(NSDictionary*)serverHostData saveDelay:(int)saveDelay_ worldWidthMacro:(int)worldWidthMacro_ customRules:(NSDictionary*)customRulesDict_ expertMode:(BOOL)expertMode_
 {
+  return nil;
 }
 
 - (void)initializeDatabases
@@ -380,14 +409,17 @@
 
 - (BOOL)isCloudGame
 {
+  return NO;
 }
 
 - (BOOL)isControllingBlockheadsForClientPlayer:(NSString*)playerID
 {
+  return NO;
 }
 
 - (BOOL)isSimulating
 {
+  return NO;
 }
 
 - (void)kickOrBanPlayerFromButtonIsBan:(BOOL)isBan withName:(NSString*)playerName
@@ -400,18 +432,22 @@
 
 - (Vector)lightPositionFront
 {
+  return Vector();
 }
 
 - (Vector)lightPositionLeft
 {
+  return Vector();
 }
 
 - (Vector)lightPositionRight
 {
+  return Vector();
 }
 
 - (Vector)lightPositionTop
 {
+  return Vector();
 }
 
 - (void)loadDefaultGame
@@ -424,6 +460,7 @@
 
 - (BOOL)loadGame
 {
+  return NO;
 }
 
 - (void)loadLightBlockForClientLightBlockIndex:(int)clientLightBlockIndex intoPhysicalBlock:(PhysicalBlock*)physicalBlock
@@ -436,6 +473,7 @@
 
 - (BOOL)mapVisible
 {
+  return NO;
 }
 
 - (void)markCircumNavigateX:(int)x
@@ -480,14 +518,17 @@
 
 - (NSArray*)peersInterestedInMacroIndex:(int)macroIndex
 {
+  return nil;
 }
 
 - (PhysicalBlock*)physicalBlockToLoadByClientTileLoaderForMacroTile:(MacroTile*)macroTile
 {
+  return nullptr;
 }
 
 - (InteractionObject*)placeInteractionObjectWithItem:(InventoryItem*)item atPos:(intpair)pos saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientID placedByBlockhead:(Blockhead*)placeBlockhead placedByClientName:(NSString*)clientName
 {
+  return nil;
 }
 
 - (void)placeWorkbenchOfType:(WorkbenchType)workbenchType atPos:(intpair)pos saveDict:(NSDictionary*)saveDIct placedByClient:(NSString*)clientID placedByBlockhead:(Blockhead*)placeBlockhead placedByClientName:(NSString*)clientName
@@ -496,6 +537,7 @@
 
 - (BOOL)playerIsMuted:(NSString*)playerID
 {
+  return NO;
 }
 
 - (void)playersChanged
@@ -512,6 +554,7 @@
 
 - (BOOL)privateAddItemToFoundList:(InventoryItem*)item addBasketContents:(BOOL)addBasketContents
 {
+  return NO;
 }
 
 - (void)purchaseDoubleTime
@@ -520,6 +563,7 @@
 
 - (BOOL)pvpEnabled
 {
+  return NO;
 }
 
 - (void)queueBlockheadAIActionToTile:(Tile*)tile atPos:(intpair)tilePos forBlockhead:(Blockhead*)blockhead
@@ -544,6 +588,7 @@
 
 - (uint32_t)remoteFillRequest:(NSData*)fillData placedByClient:(NSString*)clientID
 {
+  return 0;
 }
 
 - (void)remoteGatherRequest:(NSData*)data
@@ -572,10 +617,12 @@
 
 - (uint32_t)remoteRemoveBackWallRequest:(NSData*)removeData fromClient:(NSString*)clientID
 {
+  return 0;
 }
 
 - (uint32_t)remoteRemoveRequest:(NSData*)removeData fromClient:(NSString*)clientID
 {
+  return 0;
 }
 
 - (void)remoteTipNotification:(NSData*)remoteTipData
@@ -628,6 +675,7 @@
 
 - (BOOL)renderingTeaserFrames
 {
+  return NO;
 }
 
 - (void)reportAchievementWithIdentifier:(NSString*)identifier
@@ -648,10 +696,12 @@
 
 - (BOOL)requiresDirectionalSwipes
 {
+  return NO;
 }
 
 - (BOOL)requiresSwipeEvents
 {
+  return NO;
 }
 
 - (void)resetPauseIdleTimer
@@ -660,6 +710,7 @@
 
 - (float)sandFractionForPos:(intpair)pos
 {
+  return 0;
 }
 
 - (void)saveAll
@@ -672,6 +723,7 @@
 
 - (BOOL)savePhysicalBlockForMacroTile:(MacroTile*)macroTile sendReliably:(BOOL)sendReliably dontSend:(BOOL)dontSend onlySaveIfClientsNeedIt:(BOOL)onlySaveIfClientsNeedIt
 {
+  return NO;
 }
 
 - (void)saveSunlightChangedAtPos:(intpair)worldPos
@@ -732,10 +784,12 @@
 
 - (NSString*)serverPassword
 {
+  return nil;
 }
 
 - (uint64_t)serverPrivacySetting
 {
+  return 0;
 }
 
 - (void)setCustomRule:(NSString*)rule forOptionNamed:(NSString*)option
@@ -784,6 +838,7 @@
 
 - (BOOL)shouldBeCrystalBlockAtPos:(intpair)pos
 {
+  return NO;
 }
 
 - (void)showBlockheadAvailablePrompt:(int)nextBlockheadIndex forBlockhead:(Blockhead*)blockhead
@@ -816,6 +871,7 @@
 
 - (float)simulationProgress
 {
+  return 0;
 }
 
 - (void)startBulkDatabaseUpdate
@@ -836,10 +892,12 @@
 
 - (BOOL)startSimulatingIfNeeded
 {
+  return NO;
 }
 
 - (BOOL)startTouch:(CGPoint)location tapCount:(int)tapCount index:(int)index
 {
+  return NO;
 }
 
 - (void)startUsingCamera
@@ -856,6 +914,7 @@
 
 - (NSData*)summaryNetDataForAdmin:(BOOL)isAdmin_ mod:(BOOL)isMod_ owner:(BOOL)isOwner_ cloudMode:(int)cloudMode_
 {
+  return nil;
 }
 
 - (void)swipeGesture
@@ -868,6 +927,7 @@
 
 - (BOOL)takingPhoto
 {
+  return NO;
 }
 
 - (void)tap:(CGPoint)where
@@ -880,14 +940,17 @@
 
 - (BOOL)tileIsLitForClient:(NSString*)clientID atPos:(intpair)tilePos tile:(Tile*)tile
 {
+  return NO;
 }
 
 - (BOOL)tileIsProtectedAtPos:(intpair)tilePos againstBlockhead:(Blockhead*)blockhead
 {
+  return NO;
 }
 
 - (BOOL)tileIsProtectedAtPos:(intpair)tilePos againstClient:(NSString*)blockheadOwnerID
 {
+  return NO;
 }
 
 - (void)timeCrystalButtonTapped
@@ -900,6 +963,7 @@
 
 - (BOOL)touchIsInUI:(CGPoint)location
 {
+  return NO;
 }
 
 - (void)transactionDataRecieved:(NSDictionary*)transactionData fromClient:(NSString*)clientID
@@ -908,10 +972,12 @@
 
 - (Vector2)translation
 {
+  return Vector2();
 }
 
 - (BOOL)tutorialActive
 {
+  return NO;
 }
 
 - (void)tutorialAlertDismissedWithContinue:(BOOL)shouldContinue
@@ -924,6 +990,7 @@
 
 - (int)unmodifiedGroundLevelForX:(int)worldX
 {
+  return 0;
 }
 
 - (void)update:(float)dt accurateDT:(float)accurateDT pinchScale:(double)pinchScale_ dragInProgress:(BOOL)dragInProgress_
@@ -964,10 +1031,12 @@
 
 - (std::unordered_set<PhysicalBlock>*)usedPhysicalBlocks
 {
+  return nullptr;
 }
 
 - (BOOL)verifyClientCustomRulesData:(NSData*)customRulesData
 {
+  return NO;
 }
 
 - (void)viewOrEditWelcomeMessage
@@ -984,14 +1053,17 @@
 
 - (NSString*)welcomeBackEventsMessageForClientID:(NSString*)clientID
 {
+  return nil;
 }
 
 - (NSString*)welcomeBackMessageForInfoDict:(NSDictionary*)simulationEvents_
 {
+  return nil;
 }
 
 - (NSString*)welcomeMessage
 {
+  return nil;
 }
 
 - (void)welcomeMessageDictRecieved:(NSDictionary*)messageDict fromClient:(NSString*)peer
@@ -1004,10 +1076,12 @@
 
 - (float)windStrength
 {
+  return 0;
 }
 
 - (NSDictionary*)worldInfoForiCloudSave
 {
+  return nil;
 }
 
 - (void)worldPriceOffsetsRecievedFromServer:(NSData*)priceData
@@ -1016,10 +1090,12 @@
 
 - (WorldUI*)worldUI
 {
+  return nil;
 }
 
 - (BOOL)worldUIDragging
 {
+  return NO;
 }
 
 - (void)zoomToActiveNetBlockheadForPlayer:(NSString*)playerID

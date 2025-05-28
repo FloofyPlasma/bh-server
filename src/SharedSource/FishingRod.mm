@@ -8,6 +8,7 @@
 
 - (Vector2)cameraPos
 {
+  return Vector2();
 }
 
 - (void)dealloc
@@ -24,18 +25,22 @@
 
 - (ClownFish*)hookedFish
 {
+  return nil;
 }
 
 - (Vector2)hookedFishDirection
 {
+  return Vector2();
 }
 
 - (id)initWithWorld:(World*)world_ blockhead:(Blockhead*)blockhead_ cache:(CPCache*)cache_
 {
+  return nil;
 }
 
 - (BOOL)isCasting
 {
+  return NO;
 }
 
 - (void)setHookedFish:(ClownFish*)hookedFish_

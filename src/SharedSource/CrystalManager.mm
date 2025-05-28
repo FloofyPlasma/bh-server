@@ -62,6 +62,7 @@
 + (CrystalManager*)instance
 {
   //! TODO: Some singleton stuff I can't implement right now. (References a global variable);
+  return nil;
 }
 
 @end

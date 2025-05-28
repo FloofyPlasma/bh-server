@@ -12,30 +12,37 @@
 
 - (NSString*)fileName
 {
+  return nil;
 }
 
 - (float)getLegacyVolume
 {
+  return 0;
 }
 
 - (BOOL)hasFinishedPlaying
 {
+  return NO;
 }
 
 - (MJSound*)initWithFile:(NSString*)file
 {
+  return nil;
 }
 
 - (MJSound*)initWithSound:(MJSound*)sound
 {
+  return nil;
 }
 
 - (BOOL)isInUse
 {
+  return NO;
 }
 
 - (BOOL)isPlaying
 {
+  return NO;
 }
 
 - (void)pause
@@ -44,6 +51,7 @@
 
 - (BOOL)paused
 {
+  return NO;
 }
 
 - (void)play
@@ -60,6 +68,7 @@
 
 - (BOOL)randomNumberWithinMultiPlaybackFrequency
 {
+  return NO;
 }
 
 - (void)setInUse:(BOOL)inUse
@@ -104,6 +113,7 @@
 
 - (MJSound*)sound
 {
+  return nil;
 }
 
 - (void)stop

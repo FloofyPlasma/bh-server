@@ -937,7 +937,7 @@ struct WindowInfo {
   float paddingBottom;
 };
 
-CustomRules defaultCustomRules(BOOL expertMode)
+inline CustomRules defaultCustomRules(BOOL expertMode)
 {
   CustomRules returnValue = CustomRules();
 
@@ -986,25 +986,25 @@ CustomRules defaultCustomRules(BOOL expertMode)
   return returnValue;
 }
 
-CustomRules customRulesFromDict(NSDictionary* incomingDict, BOOL expertMode)
+inline CustomRules customRulesFromDict(NSDictionary* incomingDict, BOOL expertMode)
 {
   //! TODO: Ghidra doesn't like this...
   return defaultCustomRules(expertMode);
 }
 
-void GENERATE_CUSTOM_RULE_GAME_OPTIONS(void)
+inline void GENERATE_CUSTOM_RULE_GAME_OPTIONS(void)
 {
   //! TODO: Ghidra doesn't like this...
   //* I believe it is setting a global variable somwhere...
 }
 
-void GENERATE_CUSTOM_RULE_WORLD_GEN_OPTIONS(void)
+inline void GENERATE_CUSTOM_RULE_WORLD_GEN_OPTIONS(void)
 {
   //! TODO: Ghidra doesn't like this...
   //* I believe it is setting a global variable somwhere...
 }
 
-NSString* getCreditTimeString(float seconds)
+inline NSString* getCreditTimeString(float seconds)
 {
   if (seconds <= 0.001f) {
     return @"NO CREDIT";
@@ -1036,7 +1036,7 @@ NSString* getCreditTimeString(float seconds)
   }
 }
 
-BOOL interactionTypeDisallowedOnProtectedTiles(InteractionType type)
+inline BOOL interactionTypeDisallowedOnProtectedTiles(InteractionType type)
 {
   switch (type) {
   case INTERACTION_DIG:

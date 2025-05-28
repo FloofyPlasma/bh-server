@@ -19,17 +19,17 @@ struct DynamicObjectNetData {
 @interface DynamicObject : NSObject {
   World* world;
   DynamicWorld* dynamicWorld;
-  MacroTile* macroTileOwner;
-  intpair pos;
-  Vector2 floatPos;
+  MacroTile* _macroTileOwner;
+  intpair _pos;
+  Vector2 _floatPos;
   CPCache* cache;
   NSString* ownerID;
-  uint64_t uniqueID;
-  BOOL needsRemoved;
-  BOOL updateNeedsToBeSent;
-  BOOL creationDataNeedsToBeSent;
-  BOOL unreliableUpdateNeedsToBeSent;
-  BOOL isNet;
+  uint64_t _uniqueID;
+  BOOL _needsRemoved;
+  BOOL _updateNeedsToBeSent;
+  BOOL _creationDataNeedsToBeSent;
+  BOOL _unreliableUpdateNeedsToBeSent;
+  BOOL _isNet;
 }
 
 @property (readonly)

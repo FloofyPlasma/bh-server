@@ -4,10 +4,12 @@
 
 - (NSString*)actionTitle
 {
+  return nil;
 }
 
 - (InteractionObject*)actsAsInteractionObject
 {
+  return nil;
 }
 
 - (void)addRider:(Blockhead*)blockhead
@@ -16,18 +18,22 @@
 
 - (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
 {
+  return NO;
 }
 
 - (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
 {
+  return Vector2();
 }
 
 - (BOOL)isDoubleHeight
 {
+  return NO;
 }
 
 - (BOOL)jumpsOnSwipe
 {
+  return NO;
 }
 
 - (void)removeRider:(Blockhead*)blockhead
@@ -36,26 +42,32 @@
 
 - (BOOL)requiresFuel
 {
+  return NO;
 }
 
 - (int)rideDirection
 {
+  return 0;
 }
 
 - (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
 {
+  return 0;
 }
 
 - (BOOL)riderDPadShouldAllowUpDown
 {
+  return NO;
 }
 
 - (BOOL)riderDPadShouldGiveDiscreteValues
 {
+  return NO;
 }
 
 - (Vector)riderPosForBlockhead:(Blockhead*)blockhead
 {
+  return Vector();
 }
 
 - (void)setTargetVelocity:(Vector2)targetVelocity
@@ -63,22 +75,6 @@
 }
 
 - (void)swipeUpGesture
-{
-}
-
-- (NSString*)actionTitle
-{
-}
-
-- (InteractionObject*)actsAsInteractionObject
-{
-}
-
-- (void)addRider:(Blockhead*)rider_
-{
-}
-
-- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
 {
 }
 
@@ -90,12 +86,9 @@
 {
 }
 
-- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
-{
-}
-
 - (NSData*)creationNetDataForClient:(NSString*)clientID
 {
+  return nil;
 }
 
 - (void)dealloc
@@ -108,30 +101,27 @@
 
 - (ItemType)freeblockCreationItemType
 {
+  return ITEM_FLAX_MAT;
 }
 
 - (NSMutableDictionary*)getSaveDict
 {
+  return nil;
 }
 
 - (Boat*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
 {
+  return nil;
 }
 
 - (Boat*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
 {
+  return nil;
 }
 
 - (Boat*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
 {
-}
-
-- (BOOL)isDoubleHeight
-{
-}
-
-- (BOOL)jumpsOnSwipe
-{
+  return nil;
 }
 
 - (void)loadDerivedStuff
@@ -140,66 +130,35 @@
 
 - (uint16_t)maxHealth
 {
+  return 0;
 }
 
 - (DynamicObjectType)objectType
 {
+  return DYNAMIC_OBJECT_TYPE_CHILLI_PLANT;
 }
 
 - (void)remoteUpdate:(NSData*)netData
 {
 }
 
-- (void)removeRider:(Blockhead*)rider_
-{
-}
-
 - (Vector2)renderPos
 {
-}
-
-- (BOOL)requiresFuel
-{
-}
-
-- (int)rideDirection
-{
-}
-
-- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
-{
+  return Vector2();
 }
 
 - (float)riderBodyZRotation
 {
-}
-
-- (BOOL)riderDPadShouldAllowUpDown
-{
-}
-
-- (BOOL)riderDPadShouldGiveDiscreteValues
-{
-}
-
-- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
-{
+  return 0;
 }
 
 - (void)setNeedsRemoved:(BOOL)needsRemoved_
 {
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity
-{
-}
-
-- (void)swipeUpGesture
-{
-}
-
 - (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
 {
+  return NO;
 }
 
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
@@ -208,6 +167,7 @@
 
 - (NSData*)updateNetDataForClient:(NSString*)clientID
 {
+  return nil;
 }
 
 - (void)updatePosition:(intpair)newPosition

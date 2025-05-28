@@ -4,18 +4,17 @@
 
 - (NSString*)actionTitle
 {
+  return nil;
 }
 
 - (BOOL)isDoubleHeight
 {
-}
-
-- (NSString*)actionTitle
-{
+  return NO;
 }
 
 - (NSData*)creationNetDataForClient:(NSString*)clientID
 {
+  return nil;
 }
 
 - (void)dealloc
@@ -28,22 +27,27 @@
 
 - (uint16_t)freeBlockCreationDataA
 {
+  return 0;
 }
 
 - (uint16_t)freeBlockCreationDataB
 {
+  return 0;
 }
 
 - (NSMutableDictionary*)freeBlockCreationSaveDict
 {
+  return nil;
 }
 
 - (ItemType)freeblockCreationItemType
 {
+  return ITEM_FLAX_MAT;
 }
 
 - (NSMutableDictionary*)getSaveDict
 {
+  return nil;
 }
 
 - (void)imageDataRecieved:(NSData*)remoteImageData
@@ -56,26 +60,27 @@
 
 - (Painting*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId clientName:(NSString*)clientName
 {
+  return nil;
 }
 
 - (Painting*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
 {
+  return nil;
 }
 
 - (Painting*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
 {
-}
-
-- (BOOL)isDoubleHeight
-{
+  return nil;
 }
 
 - (DynamicObjectType)objectType
 {
+  return DYNAMIC_OBJECT_TYPE_CHILLI_PLANT;
 }
 
 - (BOOL)occupiesForegroundContents
 {
+  return NO;
 }
 
 - (void)remoteUpdate:(NSData*)netData
@@ -88,6 +93,7 @@
 
 - (NSData*)updateNetDataForClient:(NSString*)clientID
 {
+  return nil;
 }
 
 - (void)updateTexture
@@ -104,6 +110,7 @@
 
 - (BOOL)verifyImageServerSide:(NSData*)imageData_
 {
+  return NO;
 }
 
 - (void)worldChanged:(std::vector<intpair>*)worldChangedPositions

@@ -4,10 +4,12 @@
 
 + (BOOL)checkIfMacroTileCanBeDecommissioned:(MacroTile*)macroTile world:(World*)world minAge:(NSTimeInterval)minAge blockToSavePhyscialBlock:(BOOL)blockToSavePhyscialBlock
 {
+  return NO;
 }
 
 + (BOOL)clientMacroTileRequestCanBeCancelledAtMacroPos:(intpair)macroPos world:(World*)world
 {
+  return NO;
 }
 
 + (void)recalculateLightingForPhysicalBlockIfNeeded:(PhysicalBlock*)physicalBlock world:(World*)world clientLightBlockIndex:(int)clientLightBlockIndex forBlockhead:(Blockhead*)blockhead

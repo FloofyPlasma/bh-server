@@ -16,6 +16,7 @@
 
 - (ProjectileManager*)initWithWorld:(World*)world_ cache:(CPCache*)cache_
 {
+  return nil;
 }
 
 - (void)update:(float)dt

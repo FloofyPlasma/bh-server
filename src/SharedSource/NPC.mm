@@ -4,10 +4,12 @@
 
 - (NSString*)actionTitle
 {
+  return nil;
 }
 
 - (InteractionObject*)actsAsInteractionObject
 {
+  return nil;
 }
 
 - (void)addRider:(Blockhead*)blockhead
@@ -16,14 +18,17 @@
 
 - (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
 {
+  return NO;
 }
 
 - (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
 {
+  return Vector2();
 }
 
 - (Vector2)center
 {
+  return Vector2();
 }
 
 - (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead
@@ -32,14 +37,17 @@
 
 - (BOOL)isDoubleHeight
 {
+  return NO;
 }
 
 - (BOOL)isVisible
 {
+  return NO;
 }
 
 - (BOOL)jumpsOnSwipe
 {
+  return NO;
 }
 
 - (void)removeRider:(Blockhead*)blockhead
@@ -48,26 +56,32 @@
 
 - (BOOL)requiresFuel
 {
+  return NO;
 }
 
 - (int)rideDirection
 {
+  return 0;
 }
 
 - (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
 {
+  return 0;
 }
 
 - (BOOL)riderDPadShouldAllowUpDown
 {
+  return NO;
 }
 
 - (BOOL)riderDPadShouldGiveDiscreteValues
 {
+  return NO;
 }
 
 - (Vector)riderPosForBlockhead:(Blockhead*)blockhead
 {
+  return Vector();
 }
 
 - (void)setTargetVelocity:(Vector2)targetVelocity
@@ -80,26 +94,17 @@
 
 - (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
 {
+  return NO;
 }
 
 - (BOOL)willDieIfHitByForce:(int)force
 {
-}
-
-- (NSString*)actionTitle
-{
-}
-
-- (InteractionObject*)actsAsInteractionObject
-{
-}
-
-- (void)addRider:(Blockhead*)rider_
-{
+  return NO;
 }
 
 - (NSData*)appendNPCCreationDataToData:(NSData*)subclassData
 {
+  return nil;
 }
 
 - (void)beginBlockheadInspection:(Blockhead*)blockhead
@@ -108,14 +113,12 @@
 
 - (BOOL)belongsToLocalPlayer
 {
+  return NO;
 }
 
 - (BOOL)belongsToPlayerWithBlockhead:(Blockhead*)blockhead
 {
-}
-
-- (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType
-{
+  return NO;
 }
 
 - (void)blockheadIsComingToInspect:(Blockhead*)blockhead
@@ -132,66 +135,72 @@
 
 - (NSString*)breedString
 {
-}
-
-- (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead
-{
+  return nil;
 }
 
 - (BOOL)canBeCapturedByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType
 {
+  return NO;
 }
 
 - (BOOL)canBeFedByBlockhead:(Blockhead*)blockhead
 {
+  return NO;
 }
 
 - (BOOL)canBeMilkedByBlockhead:(Blockhead*)blockhead
 {
+  return NO;
 }
 
 - (BOOL)canBeRemovedByBlockhead:(Blockhead*)blockhead
 {
+  return NO;
 }
 
 - (BOOL)canBeShavedByBlockhead:(Blockhead*)blockhead
 {
+  return NO;
 }
 
 - (BOOL)canMate
 {
+  return NO;
 }
 
 - (NSString*)cantBeCapturedTipStringForBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType
 {
+  return nil;
 }
 
 - (NSString*)cantBeFedTipStringForBlockhead:(Blockhead*)blockhead
 {
+  return nil;
 }
 
 - (NSString*)cantBeMilkedTipStringForBlockhead:(Blockhead*)blockhead
 {
+  return nil;
 }
 
 - (NSString*)cantBeShavedTipStringForBlockhead:(Blockhead*)blockhead
 {
+  return nil;
 }
 
 - (BOOL)captureByBlockhead:(Blockhead*)blockhead withItemType:(ItemType)itemType
 {
+  return NO;
 }
 
 - (int)captureRequiredItemType
 {
+  return 0;
 }
 
 - (int)capturedItemType
 {
-}
-
-- (Vector2)center
-{
+  return 0;
 }
 
 - (void)changeName:(NSString*)newName
@@ -204,6 +213,7 @@
 
 - (NSString*)clientIDForSavingSeperatelyAndOnlyLoadingWhilePlayerOnline
 {
+  return nil;
 }
 
 - (void)createItemDropsForDeath
@@ -212,10 +222,12 @@
 
 - (uint64_t)creationDataStructSize
 {
+  return 0;
 }
 
 - (NSData*)creationNetDataForClient:(NSString*)clientID
 {
+  return nil;
 }
 
 - (void)dealloc
@@ -228,10 +240,12 @@
 
 - (BOOL)diesOfLowFullness
 {
+  return NO;
 }
 
 - (BOOL)diesOfOldAge
 {
+  return NO;
 }
 
 - (void)drawName:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
@@ -240,14 +254,17 @@
 
 - (BOOL)feedByBlockhead:(Blockhead*)blockhead
 {
+  return NO;
 }
 
 - (int)foodItemType
 {
+  return 0;
 }
 
 - (float)fullnessFraction
 {
+  return 0;
 }
 
 - (void)generateNewName
@@ -256,102 +273,104 @@
 
 - (NSString**)getNamesArray
 {
+  return nullptr;
 }
 
 - (int)getNamesArrayCount
 {
+  return 0;
 }
 
 - (NSMutableDictionary*)getSaveDict
 {
+  return nil;
 }
 
 - (float)healthFraction
 {
-}
-
-- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead
-{
+  return 0;
 }
 
 - (NPC*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId
 {
+  return nil;
 }
 
 - (NPC*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
 {
+  return nil;
 }
 
 - (NPC*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
 {
+  return nil;
 }
 
 - (void)inspectionStopped
 {
 }
-
-- (BOOL)isDoubleHeight
-{
-}
-
-- (BOOL)isVisible
-{
-}
-
-- (BOOL)jumpsOnSwipe
-{
-}
-
 - (void)loadValuesFromSaveDict:(NSDictionary*)saveDict
 {
 }
 
 - (BOOL)mateWithNPC:(NPC*)otherNPC
 {
+  return NO;
 }
 
 - (float)maxAge
 {
+  return 0;
 }
 
 - (uint16_t)maxHealth
 {
+  return 0;
 }
 
 - (BOOL)milkByBlockhead:(Blockhead*)blockhead
 {
+  return NO;
 }
 
 - (float)minFullness
 {
+  return 0;
 }
 
 - (float)minRidableAge
 {
+  return 0;
 }
 
 - (NSString*)name
 {
+  return nil;
 }
 
 - (Vector2)namePos
 {
+  return Vector2();
 }
 
 - (NPCCreationNetData)npcCreationNetDataForClient:(NSString*)clientIDToSendTo
 {
+  return NPCCreationNetData();
 }
 
 - (NPCType)npcType
 {
+  return NPC_SHARK;
 }
 
 - (NPCUpdateNetData)npcUpdateNetDataForClient:(NSString*)clientIDToSendTo
 {
+  return NPCUpdateNetData();
 }
 
 - (DynamicObjectType)objectType
 {
+  return DYNAMIC_OBJECT_TYPE_CHILLI_PLANT;
 }
 
 - (void)reactToBeingFed
@@ -372,62 +391,42 @@
 
 - (BOOL)removeIsRed
 {
-}
-
-- (void)removeRider:(Blockhead*)rider_
-{
+  return NO;
 }
 
 - (NSString*)removeTitle
 {
+  return nil;
 }
 
 - (Vector2)renderPos
 {
-}
-
-- (BOOL)requiresFuel
-{
+  return Vector2();
 }
 
 - (BOOL)requiresPhysicalBlock
 {
+  return NO;
 }
 
 - (BOOL)ridableWhenTamed
 {
-}
-
-- (int)rideDirection
-{
-}
-
-- (float)riderBodyYRotationForBlockhead:(Blockhead*)blockhead
-{
+  return NO;
 }
 
 - (float)riderBodyZRotationForBlockhead:(Blockhead*)blockhead
 {
-}
-
-- (BOOL)riderDPadShouldAllowUpDown
-{
-}
-
-- (BOOL)riderDPadShouldGiveDiscreteValues
-{
-}
-
-- (Vector)riderPosForBlockhead:(Blockhead*)blockhead
-{
+  return 0;
 }
 
 - (BOOL)secondChoiceIsBlue
 {
+  return NO;
 }
 
 - (NSString*)secondOptionTitle
 {
+  return nil;
 }
 
 - (void)setAdultCreationStartValues
@@ -442,20 +441,19 @@
 {
 }
 
-- (void)setTargetVelocity:(Vector2)targetVelocity
-{
-}
-
 - (BOOL)shaveByBlockhead:(Blockhead*)blockhead
 {
+  return NO;
 }
 
 - (BOOL)shouldSaveEveryChangeInPosition
 {
+  return NO;
 }
 
 - (NSString*)speciesName
 {
+  return nil;
 }
 
 - (void)successfulTame
@@ -464,18 +462,12 @@
 
 - (BOOL)suffersDamageAtHighTemperatures
 {
-}
-
-- (void)swipeUpGesture
-{
+  return NO;
 }
 
 - (BOOL)tamed
 {
-}
-
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
-{
+  return NO;
 }
 
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
@@ -484,13 +476,10 @@
 
 - (NSData*)updateNetDataForClient:(NSString*)clientID
 {
+  return nil;
 }
 
 - (void)updatePosition:(intpair)newPosition
-{
-}
-
-- (BOOL)willDieIfHitByForce:(int)force
 {
 }
 

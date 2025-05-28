@@ -4,6 +4,7 @@
 
 - (NSString*)cubeDebugDescription
 {
+  return nil;
 }
 
 - (void)dealloc
@@ -32,34 +33,42 @@
 
 - (DrawCube*)initItemBlockOfType:(ItemType)ItemType level:(int)level paint:(BOOL)paint size:(float)size world:(World*)world
 {
+  return nil;
 }
 
 - (DrawCube*)initMultiTextureWithWidth:(float)width height:(float)height depth:(float)depth centerX:(float)centerX centerY:(float)centerY centerZ:(float)centerZ topTexCoords:(CGRect)topTexCoords sideTexCoords:(CGRect)sideTexCoords topTexCoordsB:(CGRect)topTexCoordsB sideTexCoordsB:(CGRect)sideTexCoordsB calculateNormals:(BOOL)calculateNormals useBoxTexCoordsForB:(BOOL)useBoxTexCoordsForB
 {
+  return nil;
 }
 
 - (DrawCube*)initPyramidWithWidth:(float)width height:(float)height depth:(float)depth centerX:(float)centerX centerY:(float)centerY centerZ:(float)centerZ topMinS:(float)topMinS topMaxS:(float)topMaxS topMinT:(float)topMinT topMaxT:(float)topMaxT sideMinS:(float)sideMinS sideMaxS:(float)sideMaxS sideMinT:(float)sideMinT sideMaxT:(float)sideMaxT calculateNormals:(BOOL)calculateNormals topScale:(float)topScale rightScale:(float)rightScale
 {
+  return nil;
 }
 
 - (DrawCube*)initWithWidth:(float)width height:(float)height depth:(float)depth calculateNormals:(BOOL)calculateNormals
 {
+  return nil;
 }
 
 - (DrawCube*)initWithWidth:(float)width height:(float)height depth:(float)depth centerX:(float)centerX centerY:(float)centerY centerZ:(float)centerZ calculateNormals:(BOOL)calculateNormals
 {
+  return nil;
 }
 
 - (DrawCube*)initWithWidth:(float)width height:(float)height depth:(float)depth centerX:(float)centerX centerY:(float)centerY centerZ:(float)centerZ topMinS:(float)topMinS topMaxS:(float)topMaxS topMinT:(float)topMinT topMaxT:(float)topMaxT sideMinS:(float)sideMinS sideMaxS:(float)sideMaxS sideMinT:(float)sideMinT sideMaxT:(float)sideMaxT calculateNormals:(BOOL)calculateNormals
 {
+  return nil;
 }
 
 - (DrawCube*)initWithWidth:(float)width height:(float)height depth:(float)depth imageIndex:(ImageType)imageIndex calculateNormals:(BOOL)calculateNormals
 {
+  return nil;
 }
 
 - (DrawCube*)initWithWidth:(float)width height:(float)height depth:(float)depth topMinS:(float)topMinS topMaxS:(float)topMaxS topMinT:(float)topMinT topMaxT:(float)topMaxT sideMinS:(float)sideMinS sideMaxS:(float)sideMaxS sideMinT:(float)sideMinT sideMaxT:(float)sideMaxT calculateNormals:(BOOL)calculateNormals
 {
+  return nil;
 }
 
 @end

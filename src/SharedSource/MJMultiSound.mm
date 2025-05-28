@@ -12,14 +12,17 @@
 
 - (float)getLegacyVolume
 {
+  return 0;
 }
 
 - (MJMultiSound*)initWithFile:(NSString*)file
 {
+  return nil;
 }
 
 - (MJMultiSound*)initWithFileNames:(NSArray*)fileNames
 {
+  return nil;
 }
 
 - (void)play
@@ -80,6 +83,7 @@
 
 - (MJSound*)sound
 {
+  return nil;
 }
 
 - (void)stopAll
