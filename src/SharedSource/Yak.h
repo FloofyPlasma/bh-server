@@ -36,49 +36,49 @@ struct YakCreationNetData {
 
 - (BOOL)jumpsOnSwipe;
 - (void)createItemDropsForDeath;
-- (BOOL)shaveByBlockhead:(id)arg1;
-- (BOOL)canBeShavedByBlockhead:(id)arg1;
-- (BOOL)milkByBlockhead:(id)arg1;
-- (BOOL)canBeMilkedByBlockhead:(id)arg1;
+- (BOOL)shaveByBlockhead:(Blockhead*)blockhead;
+- (BOOL)canBeShavedByBlockhead:(Blockhead*)blockhead;
+- (BOOL)milkByBlockhead:(Blockhead*)blockhead;
+- (BOOL)canBeMilkedByBlockhead:(Blockhead*)blockhead;
 - (BOOL)jumps;
-- (void)drawSubClassStuff:(float)arg1
-         projectionMatrix:(GLKMatrix4)arg2
-          modelViewMatrix:(GLKMatrix4)arg3;
-- (void)setupMatrices:(Vector2)arg1 dt:(float)arg2;
-- (unsigned long long)creationDataStructSize;
-- (void)remoteCreationDataUpdate:(id)arg1;
-- (void)remoteUpdate:(id)arg1;
-- (void)doYakRemoteUpdate:(YakUpdateNetData)arg1;
-- (id)updateNetDataForClient:(id)arg1;
-- (id)creationNetDataForClient:(id)arg1;
-- (YakUpdateNetData)yakUpdateNetDataForClient:(id)arg1;
-- (id)getSaveDict;
-- (void)update:(float)arg1 accurateDT:(float)arg2 isSimulation:(BOOL)arg3;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-           saveDict:(id)arg3
-              cache:(id)arg4;
-- (id)initWithWorld:(id)arg1
-       dynamicWorld:(id)arg2
-         atPosition:(intpair)arg3
-              cache:(id)arg4
-           saveDict:(id)arg5
-            isAdult:(BOOL)arg6
-          wasPlaced:(BOOL)arg7
-     placedByClient:(id)arg8;
+- (void)drawSubClassStuff:(float)dt
+         projectionMatrix:(GLKMatrix4)projectionMatrix
+          modelViewMatrix:(GLKMatrix4)modelViewMatrix;
+- (void)setupMatrices:(Vector2)renderPos dt:(float)dt;
+- (uint64_t)creationDataStructSize;
+- (void)remoteCreationDataUpdate:(NSData*)netData;
+- (void)remoteUpdate:(NSData*)netData;
+- (void)doYakRemoteUpdate:(YakUpdateNetData)remoteData;
+- (NSData*)updateNetDataForClient:(NSString*)clientID;
+- (NSData*)creationNetDataForClient:(NSString*)clientID;
+- (YakUpdateNetData)yakUpdateNetDataForClient:(NSString*)clientIDToSendTo;
+- (NSMutableDictionary*)getSaveDict;
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+- (Yak*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld
+             saveDict:(NSDictionary*)saveDict
+                cache:(CPCache*)cache_;
+- (Yak*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld_
+           atPosition:(intpair)pos_
+                cache:(CPCache*)cache_
+             saveDict:(NSDictionary*)saveDict
+              isAdult:(BOOL)isAdult
+            wasPlaced:(BOOL)wasPlaced
+       placedByClient:(NSString*)clientId;
 - (void)dealloc;
-- (unsigned short)maxHealth;
+- (uint16_t)maxHealth;
 - (void)loadDerivedStuff;
 - (void)updateTextures;
 - (void)setAdultCreationStartValues;
-- (int)captureRequiredItemType;
-- (int)capturedItemType;
-- (int)foodItemType;
-- (id)speciesName;
-- (int)foodPlantType;
+- (ItemType)captureRequiredItemType;
+- (ItemType)capturedItemType;
+- (ItemType)foodItemType;
+- (NSString*)speciesName;
+- (PlantType)foodPlantType;
 - (float)foodToRemoveWhenSpawningNPC;
 - (float)minFullness;
 - (float)maxAge;
-- (int)npcType;
+- (NPCType)npcType;
 
 @end
