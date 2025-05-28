@@ -1,8 +1,8 @@
 #import "Bed.h"
 
+#import "DrawCube.h"
 #import "DynamicObjectType.h"
 #import "DynamicWorld.h"
-#import "DrawCube.h"
 
 @implementation Bed
 
@@ -79,83 +79,83 @@
 // TODO: Implement
 - (NSData*)updateNetDataForClient:(NSString*)clientID
 {
-    return nil;
+  return nil;
 }
 
 - (NSMutableDictionary*)freeBlockCreationSaveDict
 {
-    return [self getSaveDict];
+  return [self getSaveDict];
 }
 
 - (NSMutableDictionary*)getSaveDict
 {
-    NSMutableDictionary* saveDict = [super getSaveDict];
+  NSMutableDictionary* saveDict = [super getSaveDict];
 
-    saveDict[@"itemType"] = @(self->_itemType);
-    saveDict[@"beddingColor"] = @(self->beddingColor);
+  saveDict[@"itemType"] = @(self->_itemType);
+  saveDict[@"beddingColor"] = @(self->beddingColor);
 
-    return saveDict;
+  return saveDict;
 }
 
 - (NSString*)title
 {
-    if ([self itemType] == ITEM_GOLD_BED) {
-        return @"GOLDEN BED";
-    } else if ([self itemType] == ITEM_SOFT_BED) {
-        return @"SOFT BED";
-    } else {
-        return @"BED";
-    }
+  if ([self itemType] == ITEM_GOLD_BED) {
+    return @"GOLDEN BED";
+  } else if ([self itemType] == ITEM_SOFT_BED) {
+    return @"SOFT BED";
+  } else {
+    return @"BED";
+  }
 }
 
 - (ItemType)destroyItemType
 {
-    return [self itemType];
+  return [self itemType];
 }
 
 - (uint16_t)freeBlockCreationDataA
 {
-    return 0;
+  return 0;
 }
 
 - (uint16_t)freeBlockCreationDataB
 {
-    return self->beddingColor;
+  return self->beddingColor;
 }
 
 - (uint16_t)interactionObjectType
 {
-    return 3;
+  return 3;
 }
 
 - (void)dealloc
 {
-    [self->pillowDrawCube release];
-    [self->beddingDrawCube release];
-    
-    [super dealloc];
+  [self->pillowDrawCube release];
+  [self->beddingDrawCube release];
+
+  [super dealloc];
 }
 
 // TODO: Implement on platforms with rendering, omit for now.
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
 {
-    return;
+  return;
 }
 
 // TODO: Implement on platforms with rendering, omit for now.
 - (void)initSubDerivedItems
 {
-    return;
+  return;
 }
 
 - (void)paint:(uint16_t)colorIndex
 {
-    self->paintColor = colorIndex;
+  self->paintColor = colorIndex;
 
-    if ([self isNet]) {
-        self->_updateNeedsToBeSent = YES;
-        [self->dynamicWorld dynamicWorldChangedAtPos:self->_pos objectType:[self objectType]];
-    }
+  if ([self isNet]) {
+    self->_updateNeedsToBeSent = YES;
+    [self->dynamicWorld dynamicWorldChangedAtPos:self->_pos objectType:[self objectType]];
+  }
 }
 
 // TODO: Implement
@@ -170,9 +170,9 @@
 
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
 {
-    if (!self->_needsRemoved) {
-        [super update:dt accurateDT:accurateDT isSimulation:isSimulation];
-    }
+  if (!self->_needsRemoved) {
+    [super update:dt accurateDT:accurateDT isSimulation:isSimulation];
+  }
 }
 
 // TODO: Implement
@@ -182,7 +182,7 @@
 
 - (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions
 {
-    return;
+  return;
 }
 
 @end

@@ -4,837 +4,1066 @@
 
 @synthesize nextPos = toSquare;
 
-- (BOOL)canCrawl {
+- (BOOL)canCrawl
+{
   return NO;
 }
 
-- (BOOL)canFly {
+- (BOOL)canFly
+{
   return NO;
 }
 
-- (Vector2)center {
+- (Vector2)center
+{
   return Vector2();
 }
 
-- (int)currentTraverseToKeyFrame {
+- (int)currentTraverseToKeyFrame
+{
   return 0;
 }
 
-- (void)hitWithForce:(int)force blockhead:(Blockhead *)blockhead {
+- (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead
+{
 }
 
-- (NSDictionary *)infoForPathRecalculation {
+- (NSDictionary*)infoForPathRecalculation
+{
   return nil;
 }
 
-- (BOOL)isVisible {
+- (BOOL)isVisible
+{
   return NO;
 }
 
-- (void)setNoLongerWaitingForPath {
+- (void)setNoLongerWaitingForPath
+{
 }
 
-- (void)setPath:(NSArray *)path_ type:(PathType)pathType goalInteraction:(InteractionType)goalInteraction extraData:(NSDictionary *)pathExtraData_ {
+- (void)setPath:(NSArray*)path_ type:(PathType)pathType goalInteraction:(InteractionType)goalInteraction extraData:(NSDictionary*)pathExtraData_
+{
 }
 
-- (void)setWaitingForPathToPos:(intpair)goalPos {
+- (void)setWaitingForPathToPos:(intpair)goalPos
+{
 }
 
-- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation {
+- (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation
+{
   return NO;
 }
 
-- (BOOL)tileIsLitForSelf:(Tile *)tile atPos:(intpair)tilePos {
+- (BOOL)tileIsLitForSelf:(Tile*)tile atPos:(intpair)tilePos
+{
   return NO;
 }
 
-- (BOOL)waitingForPath {
+- (BOOL)waitingForPath
+{
   return NO;
 }
 
-- (BOOL)willDieIfHitByForce:(int)force {
+- (BOOL)willDieIfHitByForce:(int)force
+{
   return NO;
 }
 
-- (void)abortCraft {
+- (void)abortCraft
+{
 }
 
-- (int)actionCount {
+- (int)actionCount
+{
   return 0;
 }
 
-- (void)addExpectedCraftItem:(ItemType)itemType {
+- (void)addExpectedCraftItem:(ItemType)itemType
+{
 }
 
-- (int)addItemToInventory:(InventoryItem *)item {
+- (int)addItemToInventory:(InventoryItem*)item
+{
   return 0;
 }
 
-- (int)addItemToInventory:(InventoryItem *)item flash:(BOOL)flash {
+- (int)addItemToInventory:(InventoryItem*)item flash:(BOOL)flash
+{
   return 0;
 }
 
-- (int)addItemToInventory:(InventoryItem *)item flash:(BOOL)flash disableWarpCheck:(BOOL)forceSlotIndex {
+- (int)addItemToInventory:(InventoryItem*)item flash:(BOOL)flash disableWarpCheck:(BOOL)forceSlotIndex
+{
   return 0;
 }
 
-- (int)addItemToInventory:(InventoryItem *)item flash:(BOOL)flash disableWarpCheck:(BOOL)disableWarpCheck forceSlotIndex:(int)forceSlotIndex {
+- (int)addItemToInventory:(InventoryItem*)item flash:(BOOL)flash disableWarpCheck:(BOOL)disableWarpCheck forceSlotIndex:(int)forceSlotIndex
+{
   return 0;
 }
 
-- (void)addToCrystalDiscrepency:(int)amountToAdd {
+- (void)addToCrystalDiscrepency:(int)amountToAdd
+{
 }
 
-- (BOOL)addToJetFuel {
+- (BOOL)addToJetFuel
+{
   return NO;
 }
 
-- (BOOL)allowsPanning {
+- (BOOL)allowsPanning
+{
   return NO;
 }
 
-- (BOOL)asleep {
+- (BOOL)asleep
+{
   return NO;
 }
 
-- (BOOL)beingControlledByDPad {
+- (BOOL)beingControlledByDPad
+{
   return NO;
 }
 
-- (Vector2)cameraPos {
+- (Vector2)cameraPos
+{
   return Vector2();
 }
 
-- (float)cameraZOffset {
+- (float)cameraZOffset
+{
   return 0;
 }
 
-- (BOOL)canCollapse {
+- (BOOL)canCollapse
+{
   return NO;
 }
 
-- (BOOL)canDigBackWallforTile:(Tile *)tile atPos:(intpair)tilePos withItem:(InventoryItem *)item includeActions:(BOOL)includeActions {
+- (BOOL)canDigBackWallforTile:(Tile*)tile atPos:(intpair)tilePos withItem:(InventoryItem*)item includeActions:(BOOL)includeActions
+{
   return NO;
 }
 
-- (BOOL)canEat {
+- (BOOL)canEat
+{
   return NO;
 }
 
-- (BOOL)canEnterFreeFlightMode {
+- (BOOL)canEnterFreeFlightMode
+{
   return NO;
 }
 
-- (BOOL)canFish {
+- (BOOL)canFish
+{
   return NO;
 }
 
-- (BOOL)canMeditate {
+- (BOOL)canMeditate
+{
   return NO;
 }
 
-- (int)canPickUpItemOfType:(ItemType)itemType subItems:(NSArray *)subItems {
+- (int)canPickUpItemOfType:(ItemType)itemType subItems:(NSArray*)subItems
+{
   return 0;
 }
 
-- (int)canPickUpItemOfType:(ItemType)itemType subItems:(NSArray *)subItems dataA:(uint16_t)dataA dataB:(uint16_t)dataB {
+- (int)canPickUpItemOfType:(ItemType)itemType subItems:(NSArray*)subItems dataA:(uint16_t)dataA dataB:(uint16_t)dataB
+{
   return 0;
 }
 
-- (BOOL)canSleepOnSpot {
+- (BOOL)canSleepOnSpot
+{
   return NO;
 }
 
-- (BOOL)canTeleportToPos:(intpair)teleportPos {
+- (BOOL)canTeleportToPos:(intpair)teleportPos
+{
   return NO;
 }
 
-- (BOOL)canUseDynamicObject:(DynamicObject *)dynamicObject {
+- (BOOL)canUseDynamicObject:(DynamicObject*)dynamicObject
+{
   return NO;
 }
 
-- (BOOL)cancelAnyActionAtGoalPos:(intpair)tapPos orWithInteractionObjectID:(uint64_t)interactionObjectID goalInteraction:(InteractionType)goalInteraction craftCountOrExtraData:(int16_t)craftCountOrExtraData {
+- (BOOL)cancelAnyActionAtGoalPos:(intpair)tapPos orWithInteractionObjectID:(uint64_t)interactionObjectID goalInteraction:(InteractionType)goalInteraction craftCountOrExtraData:(int16_t)craftCountOrExtraData
+{
   return NO;
 }
 
-- (void)changeName:(NSString *)newName {
+- (void)changeName:(NSString*)newName
+{
 }
 
-- (BOOL)checkIfCanWarpInSecondBlockheadAfterItemAdded:(ItemType)itemType dataB:(int)dataB {
+- (BOOL)checkIfCanWarpInSecondBlockheadAfterItemAdded:(ItemType)itemType dataB:(int)dataB
+{
   return NO;
 }
 
-- (InventoryItem *)clothingItemAtIndex:(int)clothingIndex {
+- (InventoryItem*)clothingItemAtIndex:(int)clothingIndex
+{
   return nil;
 }
 
-- (void)collapseIfPossible {
+- (void)collapseIfPossible
+{
 }
 
-- (int)countOfInventoryItemsOfType:(ItemType)itemType includeActions:(BOOL)arg2 {
+- (int)countOfInventoryItemsOfType:(ItemType)itemType includeActions:(BOOL)arg2
+{
   return 0;
 }
 
-- (int)countOfInventoryItemsWithSpecificDataBOfType:(ItemType)itemType dataB:(int)dataB includeActions:(BOOL)includeActions {
+- (int)countOfInventoryItemsWithSpecificDataBOfType:(ItemType)itemType dataB:(int)dataB includeActions:(BOOL)includeActions
+{
   return 0;
 }
 
-- (void)craftItemFinished:(BOOL)completed atWorkbench:(Workbench *)workbench {
+- (void)craftItemFinished:(BOOL)completed atWorkbench:(Workbench*)workbench
+{
 }
 
-- (void)craftProgressUICompleteButtonTapped {
+- (void)craftProgressUICompleteButtonTapped
+{
 }
 
-- (BOOL)craftProgressUIRequiresCollectButtonWhenCompleted {
+- (BOOL)craftProgressUIRequiresCollectButtonWhenCompleted
+{
   return NO;
 }
 
-- (NSData *)creationNetDataForClient:(NSString *)clientID {
+- (NSData*)creationNetDataForClient:(NSString*)clientID
+{
   return nil;
 }
 
-- (BOOL)crouching {
+- (BOOL)crouching
+{
   return NO;
 }
 
-- (BlockheadAnimationType)currentAnimationType {
+- (BlockheadAnimationType)currentAnimationType
+{
   return VA_RIDE_LOCOMOTIVE;
 }
 
-- (BOOL)currentCraftIsOutOfFuel {
+- (BOOL)currentCraftIsOutOfFuel
+{
   return NO;
 }
 
-- (int)currentInteractionIsGoodOrBad {
+- (int)currentInteractionIsGoodOrBad
+{
   return 0;
 }
 
-- (BOOL)currentInteractionRequiresHumanInput {
+- (BOOL)currentInteractionRequiresHumanInput
+{
   return NO;
 }
 
-- (int)currentInteractionType {
+- (int)currentInteractionType
+{
   return 0;
 }
 
-- (int)currentInteractionTypeForTile:(Tile *)tile atPos:(intpair)atPos pickupRejectedDueToInventoryFull:(BOOL *)pickupRejectedDueToInventoryFull includeActions:(BOOL)includeActions faceIndex:(int)faceIndex allowProtectedActions:(BOOL)allowProtectedActions {
+- (int)currentInteractionTypeForTile:(Tile*)tile atPos:(intpair)atPos pickupRejectedDueToInventoryFull:(BOOL*)pickupRejectedDueToInventoryFull includeActions:(BOOL)includeActions faceIndex:(int)faceIndex allowProtectedActions:(BOOL)allowProtectedActions
+{
   return 0;
 }
 
-- (InventoryItem *)currentItem {
+- (InventoryItem*)currentItem
+{
   return nil;
 }
 
-- (NSArray *)currentItemSlot {
+- (NSArray*)currentItemSlot
+{
   return nil;
 }
 
-- (int)currentItemSubIndex {
+- (int)currentItemSubIndex
+{
   return 0;
 }
 
-- (NSString *)currentTipText {
+- (NSString*)currentTipText
+{
   return nil;
 }
 
-- (void)customizationChanged:(BlockheadSkinOptions)skinOptions_ {
+- (void)customizationChanged:(BlockheadSkinOptions)skinOptions_
+{
 }
 
-- (void)customizationComplete:(BlockheadSkinOptions)skinOptions_ {
+- (void)customizationComplete:(BlockheadSkinOptions)skinOptions_
+{
 }
 
-- (BOOL)customizeBlockheadUIShouldHaveOKButton {
+- (BOOL)customizeBlockheadUIShouldHaveOKButton
+{
   return NO;
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 }
 
-- (float)death {
+- (float)death
+{
   return 0;
 }
 
-- (void)die {
+- (void)die
+{
 }
 
-- (void)dieForGood {
+- (void)dieForGood
+{
 }
 
-- (Vector2)distanceTravelledThisDPadMovementSinceLastRequest {
+- (Vector2)distanceTravelledThisDPadMovementSinceLastRequest
+{
   return Vector2();
 }
 
-- (BOOL)doubleTimeUnlocked {
+- (BOOL)doubleTimeUnlocked
+{
   return NO;
 }
 
-- (BOOL)dpadShouldAllowUpDown {
+- (BOOL)dpadShouldAllowUpDown
+{
   return NO;
 }
 
-- (BOOL)dpadShouldBeDisplayed {
+- (BOOL)dpadShouldBeDisplayed
+{
   return NO;
 }
 
-- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (void)drawBoxes:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)argcameraMaxYWorld8 {
+- (void)drawBoxes:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)argcameraMaxYWorld8
+{
 }
 
-- (void)drawForButtonProjectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix {
+- (void)drawForButtonProjectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix
+{
 }
 
-- (void)drawName:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)drawName:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (void)drawTransparentInventoryItem:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)argcameraMaxYWorld8 {
+- (void)drawTransparentInventoryItem:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix pinchScale:(float)pinchScale cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)argcameraMaxYWorld8
+{
 }
 
-- (void)dropInventoryItemsAtIndex:(int)index subIndex:(int)fromSubIndex count:(int)count ignoreFreeblocks:(BOOL)ignoreFreeblocks {
+- (void)dropInventoryItemsAtIndex:(int)index subIndex:(int)fromSubIndex count:(int)count ignoreFreeblocks:(BOOL)ignoreFreeblocks
+{
 }
 
-- (float)drownFraction {
+- (float)drownFraction
+{
   return 0;
 }
 
-- (float)energy {
+- (float)energy
+{
   return 0;
 }
 
-- (float)environment {
+- (float)environment
+{
   return 0;
 }
 
-- (float)environmentExposure {
+- (float)environmentExposure
+{
   return 0;
 }
 
-- (float)environmentLight {
+- (float)environmentLight
+{
   return 0;
 }
 
-- (float)environmentTemperature {
+- (float)environmentTemperature
+{
   return 0;
 }
 
-- (BOOL)falling {
+- (BOOL)falling
+{
   return NO;
 }
 
-- (void)fillReceiptsReturned:(NSArray *)reciepts {
+- (void)fillReceiptsReturned:(NSArray*)reciepts
+{
 }
 
-- (FishingRod *)fishingRod {
+- (FishingRod*)fishingRod
+{
   return nil;
 }
 
-- (void)fishingRodCast:(Vector2)vec {
+- (void)fishingRodCast:(Vector2)vec
+{
 }
 
-- (int)freeBlockBonusCreationCount {
+- (int)freeBlockBonusCreationCount
+{
   return 0;
 }
 
-- (FreeBlockCreationCount)freeBlockCreationCountForTile:(Tile *)arg1 withItem:(id)arg2 {
+- (FreeBlockCreationCount)freeBlockCreationCountForTile:(Tile*)arg1 withItem:(id)arg2
+{
   return FreeBlockCreationCount();
 }
 
-- (float)freeBlockPickupRadius {
+- (float)freeBlockPickupRadius
+{
   return 0;
 }
 
-- (void)freeFlightButtonTapped {
+- (void)freeFlightButtonTapped
+{
 }
 
-- (float)fullness {
+- (float)fullness
+{
   return 0;
 }
 
-- (float)getCurrentCraftProgress {
+- (float)getCurrentCraftProgress
+{
   return 0;
 }
 
-- (NSMutableDictionary *)getSaveDict {
+- (NSMutableDictionary*)getSaveDict
+{
   return nil;
 }
 
-- (NSMutableDictionary *)getSaveDictIncludingWorkbenchOrInterationObject:(BOOL)includeWorkbenchOrInterationObject {
+- (NSMutableDictionary*)getSaveDictIncludingWorkbenchOrInterationObject:(BOOL)includeWorkbenchOrInterationObject
+{
   return nil;
 }
 
-- (int)goalInteractionForNPCChaseForNPC:(DynamicObject *)npc withItemType:(ItemType)itemType {
+- (int)goalInteractionForNPCChaseForNPC:(DynamicObject*)npc withItemType:(ItemType)itemType
+{
   return 0;
 }
 
-- (InteractionTestResult)goodOrBadInteractionForAction:(Action *)action {
+- (InteractionTestResult)goodOrBadInteractionForAction:(Action*)action
+{
   return InteractionTestResult();
 }
 
-- (float)happiness {
+- (float)happiness
+{
   return 0;
 }
 
-- (BOOL)hasActions {
+- (BOOL)hasActions
+{
   return NO;
 }
 
-- (BOOL)hasCancelableActionAtGoalPos:(intpair)tapPos orWithInteractionObjectID:(uint64_t)interactionObjectID goalInteraction:(InteractionType)goalInteraction craftCountOrExtraData:(int16_t)craftCountOrExtraData {
+- (BOOL)hasCancelableActionAtGoalPos:(intpair)tapPos orWithInteractionObjectID:(uint64_t)interactionObjectID goalInteraction:(InteractionType)goalInteraction craftCountOrExtraData:(int16_t)craftCountOrExtraData
+{
   return NO;
 }
 
-- (BOOL)hasCoffeeEnergy {
+- (BOOL)hasCoffeeEnergy
+{
   return NO;
 }
 
-- (BOOL)hasInteractionInventoryItemAvailable {
+- (BOOL)hasInteractionInventoryItemAvailable
+{
   return NO;
 }
 
-- (BOOL)hasJetPackEquipped {
+- (BOOL)hasJetPackEquipped
+{
   return NO;
 }
 
-- (float)health {
+- (float)health
+{
   return 0;
 }
 
-- (ItemType)heldItemType {
+- (ItemType)heldItemType
+{
   return ITEM_FLAX_MAT;
 }
 
-- (BOOL)hungerPaused {
+- (BOOL)hungerPaused
+{
   return NO;
 }
 
-- (void)hurryCompletion:(int)hurryCost {
+- (void)hurryCompletion:(int)hurryCost
+{
 }
 
-- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime {
+- (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime
+{
   return 0;
 }
 
-- (BOOL)idle {
+- (BOOL)idle
+{
   return NO;
 }
 
-- (void)incrementDamageOfArmorClothing:(float)damage {
+- (void)incrementDamageOfArmorClothing:(float)damage
+{
 }
 
-- (void)incrementFuelUsage {
+- (void)incrementFuelUsage
+{
 }
 
-- (void)incrementPassiveItemUsage {
+- (void)incrementPassiveItemUsage
+{
 }
 
-- (void)incrementUsageOfClothing {
+- (void)incrementUsageOfClothing
+{
 }
 
-- (void)incrementUsageOfIceClothing {
+- (void)incrementUsageOfIceClothing
+{
 }
 
-- (void)incrementUsageOfInteractionItem:(BOOL)wasAttack {
+- (void)incrementUsageOfInteractionItem:(BOOL)wasAttack
+{
 }
 
-- (void)incrementUsageOfItem:(InventoryItem *)itemToUse indexToUse:(int)indexToUse wasAttack:(BOOL)wasAttack {
+- (void)incrementUsageOfItem:(InventoryItem*)itemToUse indexToUse:(int)indexToUse wasAttack:(BOOL)wasAttack
+{
 }
 
-- (void)incrementUsageOfItem:(InventoryItem *)itemToUse indexToUse:(int)indexToUse wasAttack:(BOOL)wasAttack multiplier:(int)multiplier {
+- (void)incrementUsageOfItem:(InventoryItem*)itemToUse indexToUse:(int)indexToUse wasAttack:(BOOL)wasAttack multiplier:(int)multiplier
+{
 }
 
-- (void)initSubDerivedStuffStuff {
+- (void)initSubDerivedStuffStuff
+{
 }
 
-- (Blockhead *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld atPosition:(intpair)pos cache:(CPCache *)cache_ blockheadNumber:(int)blockheadNumber craftableItemObject:(BlockheadCraftableItemObject *)craftableItemObject uniqueID:(uint64_t)uniqueID_ {
+- (Blockhead*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld atPosition:(intpair)pos cache:(CPCache*)cache_ blockheadNumber:(int)blockheadNumber craftableItemObject:(BlockheadCraftableItemObject*)craftableItemObject uniqueID:(uint64_t)uniqueID_
+{
   return nil;
 }
 
-- (Blockhead *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld cache:(CPCache *)cache_ netData:(NSData *)netData {
+- (Blockhead*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
+{
   return nil;
 }
 
-- (Blockhead *)initWithWorld:(World *)world_ dynamicWorld:(DynamicWorld *)dynamicWorld saveDict:(NSDictionary *)saveDict savedInventorySlots:(NSArray *)savedInventorySlots cache:(CPCache *)cache_ repositionOnLoadFailure:(BOOL)repositionOnLoadFailure clientSaveDir:(NSString *)clientSaveDir_ clientLocallySavedDict:(NSDictionary *)clientLocallySavedDict {
+- (Blockhead*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict savedInventorySlots:(NSArray*)savedInventorySlots cache:(CPCache*)cache_ repositionOnLoadFailure:(BOOL)repositionOnLoadFailure clientSaveDir:(NSString*)clientSaveDir_ clientLocallySavedDict:(NSDictionary*)clientLocallySavedDict
+{
   return nil;
 }
 
-- (BOOL)interacting {
+- (BOOL)interacting
+{
   return NO;
 }
 
-- (InteractionObject *)interactionObject {
+- (InteractionObject*)interactionObject
+{
   return nil;
 }
 
-- (int)interactionTypeForTile:(Tile *)tile atPos:(intpair)tilePos item:(InventoryItem *)item pickupRejectedDueToInventoryFull:(BOOL *)pickupRejectedDueToInventoryFull includeActions:(BOOL)includeActions faceIndex:(int)faceIndex allowProtectedActions:(BOOL)allowProtectedActions {
+- (int)interactionTypeForTile:(Tile*)tile atPos:(intpair)tilePos item:(InventoryItem*)item pickupRejectedDueToInventoryFull:(BOOL*)pickupRejectedDueToInventoryFull includeActions:(BOOL)includeActions faceIndex:(int)faceIndex allowProtectedActions:(BOOL)allowProtectedActions
+{
   return 0;
 }
 
-- (Workbench *)interactionWorkbench {
+- (Workbench*)interactionWorkbench
+{
   return nil;
 }
 
-- (NSArray *)inventoryItems {
+- (NSArray*)inventoryItems
+{
   return nil;
 }
 
-- (intpair)inventoryLocationOfFirstInstanceOfItemType:(ItemType)itemType {
+- (intpair)inventoryLocationOfFirstInstanceOfItemType:(ItemType)itemType
+{
   return intpair();
 }
 
-- (BOOL)inventoryNeedsSaving {
+- (BOOL)inventoryNeedsSaving
+{
   return NO;
 }
 
-- (void)inventoryWasChanged:(int)inventoryIndex subIndex:(int)subIndex wasUsage:(BOOL)wasUsage {
+- (void)inventoryWasChanged:(int)inventoryIndex subIndex:(int)subIndex wasUsage:(BOOL)wasUsage
+{
 }
 
-- (BOOL)isAddingFuelToAnyWorkbench {
+- (BOOL)isAddingFuelToAnyWorkbench
+{
   return NO;
 }
 
-- (BOOL)isCorrectToolForBackWallOfType:(int)tileType forItem:(ItemType)interactionItemType {
+- (BOOL)isCorrectToolForBackWallOfType:(int)tileType forItem:(ItemType)interactionItemType
+{
   return NO;
 }
 
-- (BOOL)isCraftingAtAnyWorkbench {
+- (BOOL)isCraftingAtAnyWorkbench
+{
   return NO;
 }
 
-- (BOOL)isDoubleHeight {
+- (BOOL)isDoubleHeight
+{
   return NO;
 }
 
-- (BOOL)isHeadingForSquare:(intpair)sqarePos {
+- (BOOL)isHeadingForSquare:(intpair)sqarePos
+{
   return NO;
 }
 
-- (BOOL)isIdle {
+- (BOOL)isIdle
+{
   return NO;
 }
 
-- (BOOL)isInJetPackFreeFlightMode {
+- (BOOL)isInJetPackFreeFlightMode
+{
   return NO;
 }
 
-- (BOOL)isInteractingWithAnyInteractionObject {
+- (BOOL)isInteractingWithAnyInteractionObject
+{
   return NO;
 }
 
-- (BOOL)isMale {
+- (BOOL)isMale
+{
   return NO;
 }
 
-- (BOOL)isRunByAI {
+- (BOOL)isRunByAI
+{
   return NO;
 }
 
-- (intpair)itemIndexWithGoodInteractionTypeForTile:(Tile *)tile {
+- (intpair)itemIndexWithGoodInteractionTypeForTile:(Tile*)tile
+{
   return intpair();
 }
 
-- (void)itemWillBeRemovedFromInventory:(InventoryItem *)inventoryItem {
+- (void)itemWillBeRemovedFromInventory:(InventoryItem*)inventoryItem
+{
 }
 
-- (BOOL)jetPackIsLowOnFuel {
+- (BOOL)jetPackIsLowOnFuel
+{
   return NO;
 }
 
-- (int)jetpackFuelCount {
+- (int)jetpackFuelCount
+{
   return 0;
 }
 
-- (NSString *)localNetID {
+- (NSString*)localNetID
+{
   return nil;
 }
 
-- (void)meditateIfPossible {
+- (void)meditateIfPossible
+{
 }
 
-- (BOOL)meditating {
+- (BOOL)meditating
+{
   return NO;
 }
 
-- (float)meditationProgress {
+- (float)meditationProgress
+{
   return 0;
 }
 
-- (intpair)mostCommonFoodTypeIndex {
+- (intpair)mostCommonFoodTypeIndex
+{
   return intpair();
 }
 
-- (BOOL)motionShouldBeDiscreteValues {
+- (BOOL)motionShouldBeDiscreteValues
+{
   return NO;
 }
 
-- (int)moveInventoryItemsFromArray:(NSMutableArray *)moveInventoryItemsFromArray fromIndex:(int)fromIndex fromSubIndex:(int)fromSubIndex toIndex:(int)toIndex toSubIndex:(int)toSubIndex count:(int)count movedItems:(NSMutableArray *)movedItems {
+- (int)moveInventoryItemsFromArray:(NSMutableArray*)moveInventoryItemsFromArray fromIndex:(int)fromIndex fromSubIndex:(int)fromSubIndex toIndex:(int)toIndex toSubIndex:(int)toSubIndex count:(int)count movedItems:(NSMutableArray*)movedItems
+{
   return 0;
 }
 
-- (int)moveInventoryItemsFromIndex:(int)fromIndex fromSubIndex:(int)fromSubIndex toIndex:(int)toIndex toSubIndex:(int)toSubIndex count:(int)count {
+- (int)moveInventoryItemsFromIndex:(int)fromIndex fromSubIndex:(int)fromSubIndex toIndex:(int)toIndex toSubIndex:(int)toSubIndex count:(int)count
+{
   return 0;
 }
 
-- (BOOL)moving {
+- (BOOL)moving
+{
   return NO;
 }
 
-- (void)netInteractionObjectWasLoaded:(InteractionObject *)interactionObject_ {
+- (void)netInteractionObjectWasLoaded:(InteractionObject*)interactionObject_
+{
 }
 
-- (DynamicObjectType)objectType {
+- (DynamicObjectType)objectType
+{
   return DYNAMIC_OBJECT_TYPE_CHILLI_PLANT;
 }
 
-- (BOOL)onTradeMission {
+- (BOOL)onTradeMission
+{
   return NO;
 }
 
-- (void)pickUpItemIfPossibleInTile:(Tile *)arg1 atPos:(intpair)arg2 {
+- (void)pickUpItemIfPossibleInTile:(Tile*)arg1 atPos:(intpair)arg2
+{
 }
 
-- (void)pickupDynamicObject:(DynamicObject *)dynamicObject {
+- (void)pickupDynamicObject:(DynamicObject*)dynamicObject
+{
 }
 
-- (BOOL)pickupFreeblockIfPossible:(FreeBlock *)freeBlock inTile:(Tile *)inTile intentional:(BOOL)intentional {
+- (BOOL)pickupFreeblockIfPossible:(FreeBlock*)freeBlock inTile:(Tile*)inTile intentional:(BOOL)intentional
+{
   return NO;
 }
 
-- (id)pickupItemForTile:(Tile *)arg1 astPos:(intpair)arg2 {
+- (id)pickupItemForTile:(Tile*)arg1 astPos:(intpair)arg2
+{
   return nil;
 }
 
-- (intpair)placableLightForAIItemIndex {
+- (intpair)placableLightForAIItemIndex
+{
   return intpair();
 }
 
-- (int)placableLightForAIItemType {
+- (int)placableLightForAIItemType
+{
   return 0;
 }
 
-- (void)preDrawUpdate:(float)dt cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld {
+- (void)preDrawUpdate:(float)dt cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld
+{
 }
 
-- (void)prepareInventoryForSaving {
+- (void)prepareInventoryForSaving
+{
 }
 
-- (NSData *)previewData {
+- (NSData*)previewData
+{
   return nil;
 }
 
-- (BOOL)queueActionWithGoalPos:(intpair)goalPos goalInteraction:(InteractionType)goalInteraction pathType:(PathType)pathType interactionObjectID:(uint64_t)interactionObjectID craftableItemObject:(CraftableItemObject *)craftableItemObject craftCountOrExtraData:(int16_t)craftCountOrExtraData disableCancelCheck:(BOOL)disableCancelCheck isAI:(BOOL)isAI {
+- (BOOL)queueActionWithGoalPos:(intpair)goalPos goalInteraction:(InteractionType)goalInteraction pathType:(PathType)pathType interactionObjectID:(uint64_t)interactionObjectID craftableItemObject:(CraftableItemObject*)craftableItemObject craftCountOrExtraData:(int16_t)craftCountOrExtraData disableCancelCheck:(BOOL)disableCancelCheck isAI:(BOOL)isAI
+{
   return NO;
 }
 
-- (BOOL)queueActionWithGoalPos:(intpair)goalPos goalInteraction:(InteractionType)goalInteraction pathType:(PathType)pathType interactionObjectID:(uint64_t)interactionObjectID craftableItemObject:(CraftableItemObject *)craftableItemObject craftCountOrExtraData:(int16_t)craftCountOrExtraData isAI:(BOOL)isAI {
+- (BOOL)queueActionWithGoalPos:(intpair)goalPos goalInteraction:(InteractionType)goalInteraction pathType:(PathType)pathType interactionObjectID:(uint64_t)interactionObjectID craftableItemObject:(CraftableItemObject*)craftableItemObject craftCountOrExtraData:(int16_t)craftCountOrExtraData isAI:(BOOL)isAI
+{
   return NO;
 }
 
-- (void)regenerateRushed {
+- (void)regenerateRushed
+{
 }
 
-- (BOOL)regenerating {
+- (BOOL)regenerating
+{
   return NO;
 }
 
-- (float)regenerationProgress {
+- (float)regenerationProgress
+{
   return 0;
 }
 
-- (void)remoteCreationDataUpdate:(NSData *)netData {
+- (void)remoteCreationDataUpdate:(NSData*)netData
+{
 }
 
-- (void)remotePickupRequestResponse:(BOOL)accepted uniqueIDs:(uint64_t *)uniqueIDs count:(int)count {
+- (void)remotePickupRequestResponse:(BOOL)accepted uniqueIDs:(uint64_t*)uniqueIDs count:(int)count
+{
 }
 
-- (void)remoteUpdate:(NSData *)netData {
+- (void)remoteUpdate:(NSData*)netData
+{
 }
 
-- (void)removeCurrentItem {
+- (void)removeCurrentItem
+{
 }
 
-- (void)removeInteractionItem:(BOOL)wasUsedUp {
+- (void)removeInteractionItem:(BOOL)wasUsedUp
+{
 }
 
-- (void)removeInventoryItemIdenticalTo:(InventoryItem *)item {
+- (void)removeInventoryItemIdenticalTo:(InventoryItem*)item
+{
 }
 
-- (void)removeInventoryItemsFromIndex:(int)fromIndex fromSubIndex:(int)fromSubIndex count:(int)count {
+- (void)removeInventoryItemsFromIndex:(int)fromIndex fromSubIndex:(int)fromSubIndex count:(int)count
+{
 }
 
-- (void)removeItem:(InventoryItem *)itemToUse index:(int)index wasUsedUp:(BOOL)wasUsedUp {
+- (void)removeItem:(InventoryItem*)itemToUse index:(int)index wasUsedUp:(BOOL)wasUsedUp
+{
 }
 
-- (BOOL)requiresMotionEvents {
+- (BOOL)requiresMotionEvents
+{
   return NO;
 }
 
-- (BOOL)requiresPhysicalBlock {
+- (BOOL)requiresPhysicalBlock
+{
   return NO;
 }
 
-- (BOOL)requiresSwipeEvents {
+- (BOOL)requiresSwipeEvents
+{
   return NO;
 }
 
-- (void)setCurrentItemToItemAtIndex:(intpair)arg1 {
+- (void)setCurrentItemToItemAtIndex:(intpair)arg1
+{
 }
 
-- (void)setInteractionObject:(InteractionObject *)interactionObject_ {
+- (void)setInteractionObject:(InteractionObject*)interactionObject_
+{
 }
 
-- (void)setInteractionWorkbench:(Workbench *)workbench_ {
+- (void)setInteractionWorkbench:(Workbench*)workbench_
+{
 }
 
-- (void)setInventoryNeedsSaving:(BOOL)inventoryNeedsSaving_ {
+- (void)setInventoryNeedsSaving:(BOOL)inventoryNeedsSaving_
+{
 }
 
-- (void)setMotion:(Vector2)motion {
+- (void)setMotion:(Vector2)motion
+{
 }
 
-- (void)setNeedsRemoved:(BOOL)needsRemoved_ {
+- (void)setNeedsRemoved:(BOOL)needsRemoved_
+{
 }
 
-- (void)setRidingObject:(DynamicObject *)rideObject_ {
+- (void)setRidingObject:(DynamicObject*)rideObject_
+{
 }
 
-- (void)setupFromNetCreationData:(NSData *)netData {
+- (void)setupFromNetCreationData:(NSData*)netData
+{
 }
 
-- (BOOL)shouldContinueSimulating {
+- (BOOL)shouldContinueSimulating
+{
   return NO;
 }
 
-- (BlockheadSkinOptions)skinOptions {
+- (BlockheadSkinOptions)skinOptions
+{
   return BlockheadSkinOptions();
 }
 
-- (void)sleepOnSpotIfPossible {
+- (void)sleepOnSpotIfPossible
+{
 }
 
-- (void)sleepOnSpotIfPossibleOtherwiseCancelActions {
+- (void)sleepOnSpotIfPossibleOtherwiseCancelActions
+{
 }
 
-- (void)sleepRushed {
+- (void)sleepRushed
+{
 }
 
-- (intpair)sowableItemForAIItemIndex {
+- (intpair)sowableItemForAIItemIndex
+{
   return intpair();
 }
 
-- (int)sowableItemForAIItemType {
+- (int)sowableItemForAIItemType
+{
   return 0;
 }
 
-- (void)startInteractingWithTileAtIndex:(int)tileIndex tile:(Tile *)tile interactionType:(InteractionType)interactionType_ {
+- (void)startInteractingWithTileAtIndex:(int)tileIndex tile:(Tile*)tile interactionType:(InteractionType)interactionType_
+{
 }
 
-- (void)stopAllActions {
+- (void)stopAllActions
+{
 }
 
-- (void)stopFishing {
+- (void)stopFishing
+{
 }
 
-- (void)stopInteracting {
+- (void)stopInteracting
+{
 }
 
-- (void)stopInteractingWithInteractionObjectsIfNoInteractionObject {
+- (void)stopInteractingWithInteractionObjectsIfNoInteractionObject
+{
 }
 
-- (void)stopRiding {
+- (void)stopRiding
+{
 }
 
-- (void)subtractCash:(int)amount {
+- (void)subtractCash:(int)amount
+{
 }
 
-- (NSMutableArray *)subtractItemsFromInventoryOfType:(ItemType)type count:(int)count {
+- (NSMutableArray*)subtractItemsFromInventoryOfType:(ItemType)type count:(int)count
+{
   return nil;
 }
 
-- (NSMutableArray *)subtractItemsFromInventoryOfType:(ItemType)type count:(int)count dataB:(int)dataB {
+- (NSMutableArray*)subtractItemsFromInventoryOfType:(ItemType)type count:(int)count dataB:(int)dataB
+{
   return nil;
 }
 
-- (void)sufferDamage:(float)damage isSimulation:(BOOL)isSimulation recoil:(BOOL)recoil {
+- (void)sufferDamage:(float)damage isSimulation:(BOOL)isSimulation recoil:(BOOL)recoil
+{
 }
 
-- (void)swipeUpGesture {
+- (void)swipeUpGesture
+{
 }
 
-- (BOOL)teleportToPos:(intpair)teleportPos {
+- (BOOL)teleportToPos:(intpair)teleportPos
+{
   return NO;
 }
 
-- (NSString *)titleForCraftProgressUI {
+- (NSString*)titleForCraftProgressUI
+{
   return nil;
 }
 
-- (int)totalCash {
+- (int)totalCash
+{
   return 0;
 }
 
-- (BlockheadUnableToWorkReason)unableToWorkReason {
+- (BlockheadUnableToWorkReason)unableToWorkReason
+{
   return WBBH_STARVING;
 }
 
-- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation {
+- (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
+{
 }
 
-- (void)updateAnimation {
+- (void)updateAnimation
+{
 }
 
-- (void)updateClothingCubes {
+- (void)updateClothingCubes
+{
 }
 
-- (void)updateGatherSpeedAndAnimationForCurrentInterationAndItem {
+- (void)updateGatherSpeedAndAnimationForCurrentInterationAndItem
+{
 }
 
-- (void)updateJetMotion:(float)dt {
+- (void)updateJetMotion:(float)dt
+{
 }
 
-- (void)updateNameTextView {
+- (void)updateNameTextView
+{
 }
 
-- (NSData *)updateNetDataForClient:(NSString *)clientID {
+- (NSData*)updateNetDataForClient:(NSString*)clientID
+{
   return nil;
 }
 
-- (void)updatePosition:(intpair)newPosition {
+- (void)updatePosition:(intpair)newPosition
+{
 }
 
-- (void)updateSkin {
+- (void)updateSkin
+{
 }
 
-- (float)usageMultiplierForFirstItemOfType:(ItemType)itemType {
+- (float)usageMultiplierForFirstItemOfType:(ItemType)itemType
+{
   return 0;
 }
 
-- (BOOL)useCurrentItemIfPossible {
+- (BOOL)useCurrentItemIfPossible
+{
   return NO;
 }
 
-- (BOOL)waitingForFillRequestAtPos:(intpair)pos_ {
+- (BOOL)waitingForFillRequestAtPos:(intpair)pos_
+{
   return NO;
 }
 
-- (void)wakeUp {
+- (void)wakeUp
+{
 }
 
-- (BOOL)willBeAddingFuelAtWorkbench:(Workbench *)workbench {
+- (BOOL)willBeAddingFuelAtWorkbench:(Workbench*)workbench
+{
   return NO;
 }
 
-- (BOOL)willBeCraftingAtWorkbench:(Workbench *)workbench {
+- (BOOL)willBeCraftingAtWorkbench:(Workbench*)workbench
+{
   return NO;
 }
 
-- (BOOL)willBeInteractingWithInteractionObject:(InteractionObject *)interactionObject_ {
+- (BOOL)willBeInteractingWithInteractionObject:(InteractionObject*)interactionObject_
+{
   return NO;
 }
 
-- (void)worldChanged:(std::vector<intpair> *)worldChangedPositions {
+- (void)worldChanged:(std::vector<intpair>*)worldChangedPositions
+{
 }
 
-- (void)worldContentsChanged:(std::vector<intpair> *)worldContentsChangedPositions {
+- (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions
+{
 }
 
 @end
