@@ -4,7 +4,6 @@
 
 /**
  * @class AppleTree
- * @brief Placeholder! Please remember to fill this in.
  */
 @interface AppleTree : Tree {
   float availableFood;

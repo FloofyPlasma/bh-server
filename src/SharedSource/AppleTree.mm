@@ -19,7 +19,16 @@
 
 - (BOOL)tileIsKindOfSelf:(Tile*)tile
 {
-  return NO;
+  switch (tile->contents) {
+  case CONTENTS_APPLE_TREE_BUSH_DEAD:
+  case CONTENTS_APPLE_TREE_BUSH:
+  case CONTENTS_APPLE_TREE_TRUNK:
+  case CONTENTS_APPLE_TREE_TRUNK_BUSH:
+  case CONTENTS_APPLE_TREE_TRUNK_DEAD:
+    return YES;
+  default:
+    return NO;
+  }
 }
 
 - (DynamicObjectType)objectType
@@ -39,7 +48,7 @@
 
 - (TreeType)treeType
 {
-  return TREE_CACTUS;
+  return TREE_APPLE;
 }
 
 - (float)availableFood
@@ -47,7 +56,8 @@
   return 0;
 }
 
-- (void)makeTileDead:(Tile*)tile
+- (void)makeTileDead:
+    (Tile*)tile
 {
 }
 

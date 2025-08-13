@@ -114,7 +114,7 @@ struct Tile {
   uint8_t typeIndex;
   uint8_t backWallTypeIndex;
   uint8_t zoneTypeIndex;
-  uint8_t contents;
+  TileContents contents;
   uint8_t partialContentLeft;
   uint8_t gatherProgress;
   uint8_t light;
