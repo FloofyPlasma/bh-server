@@ -2,6 +2,16 @@
 
 @implementation FreeBlock
 
+@synthesize soundType;
+@synthesize creationSoundPlayTime;
+@synthesize hovers;
+@synthesize dynamicObjectSaveDict;
+@synthesize priorityBlockhead;
+@synthesize subItems;
+@synthesize dataB;
+@synthesize dataA;
+@synthesize itemType;
+
 - (NSData*)creationNetDataForClient:(NSString*)clientID
 {
   return nil;
@@ -14,6 +24,12 @@
 
 - (void)dealloc
 {
+  [self->priorityBlockhead release];
+  [self->subItems release];
+  [self->dynamicObjectSaveDict release];
+  [self->blockCube release];
+
+  [super dealloc];
 }
 
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld

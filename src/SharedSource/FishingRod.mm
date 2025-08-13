@@ -1,6 +1,16 @@
 #import "FishingRod.h"
 
+#import "MJSound.h"
+
 @implementation FishingRod
+
+@synthesize blockhead;
+@synthesize hookPos;
+@synthesize castingRight;
+@synthesize hookInAir;
+@synthesize castAnimationProgress;
+@synthesize isInCastingAnimation;
+@synthesize valid;
 
 - (void)blockheadUnloaded:(Blockhead*)blockhead
 {
@@ -13,6 +23,13 @@
 
 - (void)dealloc
 {
+  if (self->verts) {
+    free(self->verts);
+  }
+
+  [self->reelInSound stop];
+
+  [super dealloc];
 }
 
 - (void)directionalSwipe:(Vector2)vec

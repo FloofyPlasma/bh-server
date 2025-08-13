@@ -130,9 +130,6 @@ struct YakCreationNetData {
               isAdult:(BOOL)isAdult
             wasPlaced:(BOOL)wasPlaced
        placedByClient:(NSString*)clientId;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

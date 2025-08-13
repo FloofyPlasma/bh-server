@@ -24,7 +24,7 @@ struct NoiseFunctionStruct {
 }
 
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this NoiseFunction, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

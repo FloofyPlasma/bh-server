@@ -2,6 +2,9 @@
 
 @implementation Sign
 
+@synthesize connectionType;
+@synthesize offsetType;
+
 - (BOOL)requiresSingleLineTextEditing
 {
   return NO;
@@ -33,6 +36,10 @@
 
 - (void)dealloc
 {
+  [self->text release];
+  [self->bitmapString release];
+
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

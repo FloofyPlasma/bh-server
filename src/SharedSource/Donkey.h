@@ -77,9 +77,6 @@
  * @brief Placeholder! Please remember to fill this in.
  */
 - (uint16_t)maxHealth;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

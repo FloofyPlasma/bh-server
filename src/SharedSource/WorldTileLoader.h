@@ -287,7 +287,7 @@ enum IslandType {
  */
 - (void)refineTerrain;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this WorldTileLoader, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

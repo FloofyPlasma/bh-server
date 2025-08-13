@@ -2,8 +2,15 @@
 
 @implementation PaintingCraftableItemObject
 
+@synthesize outputImageData;
+@synthesize imageData;
+
 - (void)dealloc
 {
+  [self->imageData release];
+  [self->outputImageData release];
+
+  [super dealloc];
 }
 
 - (NSMutableDictionary*)freeBlockCreationItemSaveDict

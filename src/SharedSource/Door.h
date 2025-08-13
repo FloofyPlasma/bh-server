@@ -120,9 +120,6 @@ struct DoorCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (NSMutableDictionary*)getSaveDict;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

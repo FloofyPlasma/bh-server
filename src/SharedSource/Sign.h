@@ -149,9 +149,6 @@ struct SignCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)removeFromMacroBlock;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

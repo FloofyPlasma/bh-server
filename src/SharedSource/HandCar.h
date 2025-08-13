@@ -87,9 +87,6 @@ struct HandCarCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)remoteUpdate:(NSData*)netData;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

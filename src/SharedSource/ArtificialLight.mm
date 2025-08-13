@@ -17,6 +17,11 @@
 
 - (void)dealloc
 {
+  [self removeFromTiles];
+  free(self->contributionGrid);
+  free(self->addedGrid);
+
+  [super dealloc];
 }
 
 - (NSMutableDictionary*)getSaveDict

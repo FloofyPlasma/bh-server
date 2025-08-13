@@ -4,6 +4,9 @@
 
 - (void)dealloc
 {
+  free(self->_structPtr);
+
+  [super dealloc];
 }
 
 - (double)getX:(double)x Y:(double)y Z:(double)z octaves:(int)octaves

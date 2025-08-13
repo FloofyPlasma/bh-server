@@ -38,9 +38,6 @@ enum LightDirectionType {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

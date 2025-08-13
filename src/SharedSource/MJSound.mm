@@ -2,8 +2,14 @@
 
 @implementation MJSound
 
+@synthesize multiSoundPlayBackFrequency;
+@synthesize hasMultiSoundPlayBackFrequency;
+
 - (void)dealloc
 {
+  [self->_file release];
+
+  [super dealloc];
 }
 
 - (void)fadeOut:(float)duration

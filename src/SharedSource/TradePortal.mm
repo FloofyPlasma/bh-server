@@ -2,6 +2,11 @@
 
 @implementation TradePortal
 
+@synthesize isMissionInteraction;
+@synthesize isSellInteraction;
+@synthesize level;
+@synthesize localPriceOffsets;
+
 - (NSString*)actionTitle
 {
   return nil;
@@ -42,6 +47,10 @@
 
 - (void)dealloc
 {
+  [self->localPriceOffsets release];
+  [self->light release];
+
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

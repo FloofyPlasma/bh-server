@@ -156,7 +156,7 @@ struct PlantCreationNetData {
  */
 - (NSMutableDictionary*)getSaveDict;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this Plant, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

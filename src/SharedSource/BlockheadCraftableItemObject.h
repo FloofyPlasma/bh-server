@@ -18,9 +18,6 @@
  * @brief Placeholder! Please remember to fill this in.
  */
 @property (retain) NSString* name; // @synthesize name;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

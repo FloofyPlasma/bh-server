@@ -14,6 +14,10 @@
 
 - (void)dealloc
 {
+  [self->landOwnerID release];
+  [self->landOwnerName release];
+
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

@@ -1,6 +1,10 @@
 #import "Database.h"
 
+#import "DatabaseEnvironment.h"
+
 @implementation Database
+
+@synthesize dbi;
 
 - (NSData*)dataForKey:(NSString*)key
 {
@@ -14,6 +18,11 @@
 
 - (void)dealloc
 {
+  [self->databaseEnvironment finishBulkTransaction];
+  // TODO: mdb_dbi_close(self->env, self->dbi);
+  [self->name release];
+
+  [super dealloc];
 }
 
 - (BOOL)finishTransaction:(struct MDB_txn*)transaction

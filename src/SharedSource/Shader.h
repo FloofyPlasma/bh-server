@@ -34,7 +34,7 @@
                  type:(unsigned int)arg2
                  file:(id)arg3;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this Shader, along with any memory it may have allocated.
  */
 - (void)dealloc;
 /**

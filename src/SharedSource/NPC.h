@@ -453,7 +453,7 @@ struct NPCUpdateNetData {
  */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this NPC, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

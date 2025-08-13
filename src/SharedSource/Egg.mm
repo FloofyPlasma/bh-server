@@ -2,6 +2,8 @@
 
 @implementation Egg
 
+@synthesize hatchTimer;
+
 - (int)addDodoEggDrawQuadData:(float*)buffer fromIndex:(int)index
 {
   return 0;
@@ -19,6 +21,9 @@
 
 - (void)dealloc
 {
+  [self->genesDict release];
+
+  [super dealloc];
 }
 
 - (uint16_t)freeBlockCreationDataA

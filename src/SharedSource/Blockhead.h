@@ -1380,9 +1380,6 @@ struct InteractionTestResult {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (int)goalInteractionForNPCChaseForNPC:(DynamicObject*)npc withItemType:(ItemType)itemType;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

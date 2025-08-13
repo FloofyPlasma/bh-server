@@ -109,7 +109,7 @@
  */
 - (void)play;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this MJMultiSound, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

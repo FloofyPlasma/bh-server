@@ -2,6 +2,16 @@
 
 @implementation PathCreator
 
+@synthesize extraData;
+@synthesize hasPath;
+@synthesize pathType;
+@synthesize goalInteraction;
+@synthesize goalY;
+@synthesize goalX;
+@synthesize pathUser;
+@synthesize inProgress;
+@synthesize path;
+
 - (void)abortPath
 {
 }
@@ -21,6 +31,14 @@
 
 - (void)dealloc
 {
+  [self->arrayPathsToRelease release];
+  [self->pathUser release];
+  [self->openList release];
+  [self->closedList release];
+  [self->path release];
+  [self->extraData release];
+
+  [super dealloc];
 }
 
 - (PathCreator*)initWithWorld:(World*)world_

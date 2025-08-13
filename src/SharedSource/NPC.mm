@@ -2,6 +2,9 @@
 
 @implementation NPC
 
+@synthesize age;
+@synthesize breed;
+
 - (NSString*)actionTitle
 {
   return nil;
@@ -232,6 +235,12 @@
 
 - (void)dealloc
 {
+  [self->name autorelease];
+  [self->tameCountsByClientID release];
+  [self->tamedClientID release];
+  [self->killBlockhead release];
+
+  [super dealloc];
 }
 
 - (void)die:(Blockhead*)killBlockhead_

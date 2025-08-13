@@ -2,8 +2,13 @@
 
 @implementation SnowSurfaceBlock
 
+@synthesize partialContent;
+
 - (void)dealloc
 {
+  [self->saveDictCached release];
+
+  [super dealloc];
 }
 
 - (NSMutableDictionary*)getSaveDict

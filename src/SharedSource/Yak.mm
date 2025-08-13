@@ -38,6 +38,15 @@
 
 - (void)dealloc
 {
+  [self->bodyCubeHairy release];
+  [self->bodyCubeShaved release];
+  [self->neckCube release];
+  [self->headCube release];
+  [self->legCube release];
+  [self->hornCubeA release];
+  [self->hornCubeB release];
+
+  [super dealloc];
 }
 
 - (void)doYakRemoteUpdate:(YakUpdateNetData)remoteData

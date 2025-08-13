@@ -53,7 +53,7 @@ struct Projectile {
  */
 - (void)update:(float)dt;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this ProjectileManager, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

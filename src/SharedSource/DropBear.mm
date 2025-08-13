@@ -38,6 +38,16 @@
 
 - (void)dealloc
 {
+  [self->frontBodyCube release];
+  [self->backBodyCube release];
+  [self->headCube release];
+  [self->snoutCube release];
+  [self->eyeCube release];
+  [self->legCube release];
+  [self->armCube release];
+  [self->attackBlockhead release];
+
+  [super dealloc];
 }
 
 - (void)doRemoteUpdate:(DropBearUpdateNetData)updateNetData

@@ -2,6 +2,8 @@
 
 @implementation Chest
 
+@synthesize inventoryChanged;
+
 - (NSString*)actionTitle
 {
   return nil;
@@ -43,6 +45,9 @@
 
 - (void)dealloc
 {
+  [self->inventoryItems release];
+
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

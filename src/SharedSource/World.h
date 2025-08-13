@@ -1670,7 +1670,7 @@ enum SimulationEvent {
  */
 - (void)startObservingMotionEvents;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this World, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

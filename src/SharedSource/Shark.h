@@ -194,9 +194,6 @@ struct SharkCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)remoteCreationDataUpdate:(NSData*)netData;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

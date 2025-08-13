@@ -135,6 +135,9 @@ struct TreeFruit {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (NSMutableDictionary*)getSaveDict;
+/**
+ * @brief Deallocates this Tree, and frees any memory it may have allocated.
+ */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

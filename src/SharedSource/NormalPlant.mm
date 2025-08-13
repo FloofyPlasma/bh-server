@@ -2,6 +2,8 @@
 
 @implementation NormalPlant
 
+@synthesize availableFood;
+
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY
 {
 }
@@ -28,6 +30,9 @@
 
 - (void)dealloc
 {
+  [self->light release];
+
+  [super dealloc];
 }
 
 - (ItemType)droppedItemType

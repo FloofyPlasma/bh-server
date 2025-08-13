@@ -415,9 +415,6 @@ struct WorkbenchNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)blockheadsLoaded;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

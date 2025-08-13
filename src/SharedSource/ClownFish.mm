@@ -1,5 +1,7 @@
 #import "ClownFish.h"
 
+#import "FishingRod.h"
+
 @implementation ClownFish
 
 - (void)blockheadUnloaded:(Blockhead*)blockhead
@@ -43,6 +45,13 @@
 
 - (void)dealloc
 {
+  [self->bodyCube release];
+  [self->tailCube release];
+  [self->sideFinCube release];
+  [self->hookedFishingRod setHookedFish:nil];
+  [self->hookedFishingRod autorelease];
+
+  [super dealloc];
 }
 
 - (void)die:(Blockhead*)killBlockhead_

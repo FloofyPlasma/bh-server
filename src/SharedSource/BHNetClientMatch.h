@@ -108,9 +108,6 @@
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)startSearchForServers;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

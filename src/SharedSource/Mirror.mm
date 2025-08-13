@@ -19,6 +19,7 @@
 
 - (void)dealloc
 {
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

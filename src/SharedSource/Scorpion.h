@@ -178,9 +178,6 @@ struct ScorpionCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (uint64_t)creationDataStructSize;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

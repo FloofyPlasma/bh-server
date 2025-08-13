@@ -26,7 +26,7 @@
  */
 - (BOOL)startBulkTransaction;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this DatabaseEnvironment, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

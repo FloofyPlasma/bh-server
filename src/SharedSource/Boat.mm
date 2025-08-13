@@ -93,6 +93,13 @@
 
 - (void)dealloc
 {
+  [self->frontBackCube release];
+  [self->sideCube release];
+  [self->bottomCube release];
+  [self->ownerID release];
+  [self->rider autorelease];
+
+  [super dealloc];
 }
 
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld

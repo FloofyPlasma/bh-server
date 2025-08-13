@@ -2,6 +2,8 @@
 
 @implementation SteamTrain
 
+@synthesize needsToUpdateChoiceUI;
+
 - (void)addToFuelForItem:(ItemType)itemType
 {
 }
@@ -53,6 +55,19 @@
 
 - (void)dealloc
 {
+  [self->boilerCube release];
+  [self->wheelRodCube release];
+  [self->frontGrillCube release];
+  [self->driverCabCube release];
+  [self->chimneyCube release];
+  [self->backWallCube release];
+  [self->roofCube release];
+  [self->roofPoleCube release];
+  [self->doorCube release];
+  [self->steamSound stop];
+  [self->railSound stop];
+
+  [super dealloc];
 }
 
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld

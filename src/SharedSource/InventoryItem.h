@@ -569,7 +569,7 @@ struct ItemSaveData {
  */
 - (InventoryItem*)initWithSaveData:(NSData*)saveData;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this InventoryItem, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

@@ -2,6 +2,20 @@
 
 @implementation ServerClient
 
+@synthesize allLightBlockIndices;
+@synthesize foundItemsList;
+@synthesize worldIndicesContainingTamedAnimals;
+@synthesize lightBlockIndex;
+@synthesize timeSinceLastHeartbeatRequest;
+@synthesize hasEverRequestedHeartbeat;
+@synthesize requestsHeartBeat;
+@synthesize wiredDynamicObjects;
+@synthesize isAdmin;
+@synthesize clientID;
+@synthesize paused;
+@synthesize requestedBlockIndices;
+@synthesize connected;
+
 - (void)addCreationDataUpdateObjectDataToSend:(NSData*)netData ofType:(uint8_t)dynamicObjectType
 {
 }
@@ -47,6 +61,21 @@
 
 - (void)dealloc
 {
+  // TODO: dealloc worldIndicesContainingTamedAnimals
+
+  [self->clientID release];
+  [self->wiredBlocks release];
+  [self->requestedBlockIndices release];
+  [self->wiredDynamicObjects release];
+  [self->creationArraysToSend release];
+  [self->updateArraysToSend release];
+  [self->creationDataUpdateArraysToSend release];
+  [self->updateUnreliableArraysToSend release];
+  [self->removalArraysToSend release];
+  [self->fillIndices release];
+  [self->allLightBlockIndices release];
+
+  [super dealloc];
 }
 
 - (BOOL)dynamicObjectIsWired:(uint64_t)uniqueID

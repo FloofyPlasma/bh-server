@@ -52,6 +52,15 @@
 
 - (void)dealloc
 {
+  [self->bodyCube release];
+  [self->tailCubeA release];
+  [self->tailCubeB release];
+  [self->tailCubeC release];
+  [self->tailCubeD release];
+  [self->legCube release];
+  [self->armCube release];
+
+  [super dealloc];
 }
 
 - (void)die:(Blockhead*)killBlockhead_

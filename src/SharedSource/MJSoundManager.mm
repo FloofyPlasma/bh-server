@@ -2,6 +2,10 @@
 
 @implementation MJSoundManager
 
+@synthesize dontPlayAnySounds;
+@synthesize worldWidthMacro;
+@synthesize silentSwitchWasOnDuringLaunch;
+
 - (void)attemptToReinitializeAudio
 {
 }
@@ -22,6 +26,12 @@
 
 - (void)dealloc
 {
+  [self->loadedSounds release];
+  [self->loadedMultiSounds release];
+  [self->loadedSoundsArray release];
+  [self->externalMultiSounds release];
+
+  [super dealloc];
 }
 
 - (void)doLoadTrack:(NSURL*)url

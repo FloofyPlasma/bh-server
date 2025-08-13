@@ -83,6 +83,23 @@
 
 - (void)dealloc
 {
+  if (self->reliableServerListeningSocket) {
+#ifdef __APPLE__ // TODO: Fix on linux.
+    CFSocketInvalidate(self->reliableServerListeningSocket);
+    CFRelease(self->reliableServerListeningSocket);
+#endif
+  }
+
+  [self->reliableServerService stop];
+  [self->reliableServerService setDelegate:nil];
+  [self->reliableServerService removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+  [self->reliableServerService release];
+
+  [self->userName release];
+  [self->ownerName release];
+  [self->cloudSalt release];
+
+  [super dealloc];
 }
 
 - (void)disconnect

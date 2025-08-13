@@ -2,12 +2,21 @@
 
 @implementation MJMultiSound
 
+@synthesize incrementalPitchOffset;
+@synthesize randomPitchOffset;
+@synthesize lastPlayTime;
+
 - (void)backgroundThreadPlayWithDelay:(NSDictionary*)delayDict
 {
 }
 
 - (void)dealloc
 {
+  [self->_sounds release];
+  [self->_fileName release];
+  [self->_fileNames release];
+
+  [super dealloc];
 }
 
 - (float)getLegacyVolume

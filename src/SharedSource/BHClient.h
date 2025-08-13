@@ -102,9 +102,6 @@
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)setWorld:(id)arg1 clientTileLoader:(id)arg2;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

@@ -52,9 +52,6 @@ struct EggCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (BOOL)hatch:(BOOL)playSound;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.
