@@ -1,0 +1,31 @@
+name: Generate and Deploy Doxygen Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Run Doxygen Action
+        uses: mattnotmitt/doxygen-action@edge
+        with:
+          doxyfile-path: ./Doxyfile
+
+      - name: Deploy to GitHub Pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+          publish_branch: pages
+          force_orphan: true

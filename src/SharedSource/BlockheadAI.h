@@ -24,6 +24,10 @@ enum ActionFoundType {
 
 @class Blockhead, NoiseFunction, World;
 
+/**
+ * @class BlockheadAI
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface BlockheadAI : NSObject {
   Blockhead* blockhead;
   World* world;
@@ -46,9 +50,21 @@ enum ActionFoundType {
   float mustSleepTimer;
 }
 
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)noPathToAction;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt isSimulation:(BOOL)isSimulation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)testTileAtPos:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BlockheadAI*)initWithBlockhead:(Blockhead*)blockhead_ world:(World*)world_;
 
 @end

@@ -193,6 +193,10 @@ struct InteractionTestResult {
   uint16_t renderItemDataB;
 };
 
+/**
+ * @class Blockhead
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface Blockhead
     : DynamicObject <PathUserDynamicObject, HarmableDynamicObject> {
   BlockheadState state;
@@ -420,10 +424,18 @@ struct InteractionTestResult {
 
 @property (readonly)
     TradeMission currentTradeMission; // @synthesize currentTradeMission;
+/**
+ * @property actionQueue
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSArray* actionQueue; // @synthesize actionQueue;
 @property int tipType; // @synthesize tipType;
 @property (readonly) BOOL
     cancelSimulateDueToCollapse; // @synthesize cancelSimulateDueToCollapse;
+/**
+ * @property currentTemperature
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) float currentTemperature; // @synthesize currentTemperature;
 @property BOOL
     isClientBlockheadBeingControlledByServer; // @synthesize
@@ -434,73 +446,272 @@ struct InteractionTestResult {
 @property (readonly)
     DynamicObject<RidableDynamicObject>* rideObject; // @synthesize rideObject;
 @property BOOL needsHarmFlash; // @synthesize needsHarmFlash;
+/**
+ * @property viewRadius
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) int viewRadius; // @synthesize viewRadius;
+/**
+ * @property clientSaveDir
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (retain) NSString* clientSaveDir; // @synthesize clientSaveDir;
+/**
+ * @property clientName
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (retain) NSString* clientName; // @synthesize clientName;
+/**
+ * @property clientID
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (retain) NSString* clientID; // @synthesize clientID;
 @property (readonly)
     NSArray* saveItemSlotsArray; // @synthesize saveItemSlotsArray;
+/**
+ * @property renderPos
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) Vector2 renderPos; // @synthesize renderPos;
 @property BOOL pathNeedsRecalculated; // @synthesize pathNeedsRecalculated;
+/**
+ * @property name
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSString* name; // @synthesize name;
+/**
+ * @property nextPos
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) intpair nextPos; // @synthesize nextPos=toSquare;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)customizeBlockheadUIShouldHaveOKButton;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)customizationComplete:(BlockheadSkinOptions)skinOptions_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)customizationChanged:(BlockheadSkinOptions)skinOptions_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BlockheadSkinOptions)skinOptions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)hurryCostForCraftTimeRemaining:(int)secondsLeft totalCraftTime:(int)totalCraftTime;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)craftProgressUIRequiresCollectButtonWhenCompleted;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)craftProgressUICompleteButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)hurryCompletion:(int)hurryCost;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)abortCraft;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isDoubleHeight;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)titleForCraftProgressUI;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BlockheadUnableToWorkReason)unableToWorkReason;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector2)distanceTravelledThisDPadMovementSinceLastRequest;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)beingControlledByDPad;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)dpadShouldBeDisplayed;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)moving;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (ItemType)heldItemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)changeName:(NSString*)newName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isMale;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)freeBlockPickupRadius;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)hasJetPackEquipped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateJetMotion:(float)dt;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isInJetPackFreeFlightMode;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)freeFlightButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)jetPackIsLowOnFuel;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)addToJetFuel;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)jetpackFuelCount;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canFly;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateNameTextView;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dieForGood;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)interacting;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)willDieIfHitByForce:(int)force;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector2)center;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isVisible;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)hitWithForce:(int)force blockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tapIsWithinBodyRadius:(Vector2)tapLocation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)hungerPaused;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canCrawl;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addExpectedCraftItem:(ItemType)itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)localNetID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)waitingForFillRequestAtPos:(intpair)pos_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)doubleTimeUnlocked;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canEnterFreeFlightMode;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)teleportToPos:(intpair)teleportPos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canTeleportToPos:(intpair)teleportPos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addToCrystalDiscrepency:(int)amountToAdd;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canFish;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (FishingRod*)fishingRod;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)stopFishing;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isRunByAI;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fillReceiptsReturned:(NSArray*)reciepts;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)stopAllActions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)currentTipText;
 @property BOOL paused; // @synthesize paused;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)actionCount;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)currentInteractionRequiresHumanInput;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)hasActions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)queueActionWithGoalPos:(intpair)goalPos
                goalInteraction:(InteractionType)goalInteraction
                       pathType:(PathType)pathType
@@ -509,6 +720,9 @@ struct InteractionTestResult {
          craftCountOrExtraData:(int16_t)craftCountOrExtraData
             disableCancelCheck:(BOOL)disableCancelCheck
                           isAI:(BOOL)isAI;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)queueActionWithGoalPos:(intpair)goalPos
                goalInteraction:(InteractionType)goalInteraction
                       pathType:(PathType)pathType
@@ -516,58 +730,190 @@ struct InteractionTestResult {
            craftableItemObject:(CraftableItemObject*)craftableItemObject
          craftCountOrExtraData:(int16_t)craftCountOrExtraData
                           isAI:(BOOL)isAI;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)hasCancelableActionAtGoalPos:(intpair)tapPos
            orWithInteractionObjectID:(uint64_t)interactionObjectID
                      goalInteraction:(InteractionType)craftCountOrExtraData
                craftCountOrExtraData:(int16_t)craftCountOrExtraData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)cancelAnyActionAtGoalPos:(intpair)tapPos
        orWithInteractionObjectID:(uint64_t)interactionObjectID
                  goalInteraction:(InteractionType)craftCountOrExtraData
            craftCountOrExtraData:(int16_t)craftCountOrExtraData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remotePickupRequestResponse:(BOOL)accepted
                           uniqueIDs:(uint64_t*)uniqueIDs
                               count:(int)count;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeInventoryItemIdenticalTo:(InventoryItem*)item;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canUseDynamicObject:(DynamicObject*)dynamicObject;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)stopInteractingWithInteractionObjectsIfNoInteractionObject;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)requiresSwipeEvents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)dpadShouldAllowUpDown;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)requiresMotionEvents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setRidingObject:(DynamicObject*)rideObject_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fishingRodCast:(Vector2)vec;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)allowsPanning;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)cameraZOffset;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector2)cameraPos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)swipeUpGesture;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)motionShouldBeDiscreteValues;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setMotion:(Vector2)motion;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)regenerateRushed;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sleepRushed;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)falling;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)wakeUp;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)regenerating;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)meditating;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)asleep;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)idle;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)useCurrentItemIfPossible;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)crouching;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)waitingForPath;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setNoLongerWaitingForPath;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setWaitingForPathToPos:(intpair)goalPos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (id)infoForPathRecalculation;
 @property int selectedToolIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)hasInteractionInventoryItemAvailable;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeInteractionItem:(BOOL)wasUsedUp;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeCurrentItem;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeItem:(InventoryItem*)itemToUse index:(int)index wasUsedUp:(BOOL)wasUsedUp;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)currentItemSubIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (InventoryItem*)currentItem;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setCurrentItemToItemAtIndex:(intpair)arg1;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSArray*)currentItemSlot;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)requiresPhysicalBlock;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)craftItemFinished:(BOOL)completed atWorkbench:(Workbench*)workbench;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)worldContentsChanged:(std::vector<intpair>*)worldContentsChangedPositions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)worldChanged:(std::vector<intpair>*)worldChangedPositions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)moveInventoryItemsFromArray:(NSMutableArray*)moveInventoryItemsFromArray
                          fromIndex:(int)fromIndex
                       fromSubIndex:(int)fromSubIndex
@@ -575,72 +921,192 @@ struct InteractionTestResult {
                         toSubIndex:(int)toIndex
                              count:(int)count
                         movedItems:(NSMutableArray*)movedItems;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeInventoryItemsFromIndex:(int)fromIndex
                          fromSubIndex:(int)fromSubIndex
                                 count:(int)count;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)moveInventoryItemsFromIndex:(int)fromIndex
                       fromSubIndex:(int)fromSubIndex
                            toIndex:(int)toIndex
                         toSubIndex:(int)toIndex
                              count:(int)count;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dropInventoryItemsAtIndex:(int)index
                          subIndex:(int)fromSubIndex
                             count:(int)count
                  ignoreFreeblocks:(BOOL)ignoreFreeblocks;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setInventoryNeedsSaving:(BOOL)inventoryNeedsSaving_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)inventoryNeedsSaving;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)inventoryWasChanged:(int)inventoryIndex subIndex:(int)subIndex wasUsage:(BOOL)wasUsage;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementFuelUsage;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementDamageOfArmorClothing:(float)damage;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementUsageOfIceClothing;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementUsageOfClothing;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementUsageOfInteractionItem:(BOOL)wasAttack;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementPassiveItemUsage;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementUsageOfItem:(InventoryItem*)itemToUse
                   indexToUse:(int)indexToUse
                    wasAttack:(BOOL)wasAttack
                   multiplier:(int)multiplier;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementUsageOfItem:(InventoryItem*)itemToUse indexToUse:(int)indexToUse wasAttack:(BOOL)wasAttack;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableArray*)subtractItemsFromInventoryOfType:(ItemType)type
                                               count:(int)count
                                               dataB:(int)dataB;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableArray*)subtractItemsFromInventoryOfType:(ItemType)type count:(int)count;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)itemWillBeRemovedFromInventory:(InventoryItem*)inventoryItem;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (intpair)mostCommonFoodTypeIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (intpair)placableLightForAIItemIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)placableLightForAIItemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (intpair)sowableItemForAIItemIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)sowableItemForAIItemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (intpair)itemIndexWithGoodInteractionTypeForTile:(Tile*)tile;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)subtractCash:(int)amount;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)totalCash;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (intpair)inventoryLocationOfFirstInstanceOfItemType:(ItemType)itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)usageMultiplierForFirstItemOfType:(ItemType)itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)countOfInventoryItemsOfType:(ItemType)itemType includeActions:(BOOL)arg2;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)countOfInventoryItemsWithSpecificDataBOfType:(ItemType)itemType
                                               dataB:(int)dataB
                                      includeActions:(BOOL)includeActions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSArray*)inventoryItems;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)pickupFreeblockIfPossible:(FreeBlock*)freeBlock
                            inTile:(Tile*)intentional
                       intentional:(BOOL)intentional;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)addItemToInventory:(InventoryItem*)item
                     flash:(BOOL)flash
          disableWarpCheck:(BOOL)forceSlotIndex
            forceSlotIndex:(int)forceSlotIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)addItemToInventory:(InventoryItem*)item flash:(BOOL)flash disableWarpCheck:(BOOL)forceSlotIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)addItemToInventory:(InventoryItem*)item flash:(BOOL)flash;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)addItemToInventory:(InventoryItem*)item;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)checkIfCanWarpInSecondBlockheadAfterItemAdded:(ItemType)itemType dataB:(int)dataB;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)canPickUpItemOfType:(ItemType)itemType
                   subItems:(NSArray*)subItems
                      dataA:(uint16_t)dataA
                      dataB:(uint16_t)dataB;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)canPickUpItemOfType:(ItemType)itemType subItems:(NSArray*)subItems;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setPath:(NSArray*)path_
                type:(PathType)pathType
     goalInteraction:(InteractionType)goalInteraction
           extraData:(NSDictionary*)goalInteraction;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)drawBoxes:(float)dt
     projectionMatrix:(GLKMatrix4)projectionMatrix
      modelViewMatrix:(GLKMatrix4)projectionMatrix
@@ -649,6 +1115,9 @@ struct InteractionTestResult {
      cameraMaxXWorld:(int)cameraMaxXWorld
      cameraMinYWorld:(int)cameraMinYWorld
      cameraMaxYWorld:(int)argcameraMaxYWorld8;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)drawName:(GLKMatrix4)projectionMatrix
     modelViewMatrix:(GLKMatrix4)modelViewMatrix
          pinchScale:(float)pinchScale
@@ -656,6 +1125,9 @@ struct InteractionTestResult {
     cameraMaxXWorld:(int)cameraMaxXWorld
     cameraMinYWorld:(int)cameraMinYWorld
     cameraMaxYWorld:(int)cameraMaxYWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)drawTransparentInventoryItem:(float)dt
                     projectionMatrix:(GLKMatrix4)projectionMatrix
                      modelViewMatrix:(GLKMatrix4)projectionMatrix
@@ -664,6 +1136,9 @@ struct InteractionTestResult {
                      cameraMaxXWorld:(int)cameraMaxXWorld
                      cameraMinYWorld:(int)cameraMinYWorld
                      cameraMaxYWorld:(int)argcameraMaxYWorld8;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)draw:(float)dt
     projectionMatrix:(GLKMatrix4)projectionMatrix
      modelViewMatrix:(GLKMatrix4)modelViewMatrix
@@ -671,72 +1146,225 @@ struct InteractionTestResult {
      cameraMaxXWorld:(int)cameraMaxXWorld
      cameraMinYWorld:(int)cameraMinYWorld
      cameraMaxYWorld:(int)cameraMaxYWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)preDrawUpdate:(float)dt
       cameraMinXWorld:(int)cameraMinXWorld
       cameraMaxXWorld:(int)cameraMaxXWorld
       cameraMinYWorld:(int)cameraMinYWorld
       cameraMaxYWorld:(int)cameraMaxYWorld;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)drawForButtonProjectionMatrix:(GLKMatrix4)projectionMatrix
                       modelViewMatrix:(GLKMatrix4)modelViewMatrix;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sufferDamage:(float)damage isSimulation:(BOOL)isSimulation recoil:(BOOL)recoil;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)pickUpItemIfPossibleInTile:(Tile*)arg1 atPos:(intpair)arg2;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (id)pickupItemForTile:(Tile*)arg1 astPos:(intpair)arg2;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)prepareInventoryForSaving;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setNeedsRemoved:(BOOL)needsRemoved_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)shouldContinueSimulating;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)onTradeMission;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isIdle;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteCreationDataUpdate:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteUpdate:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sleepOnSpotIfPossibleOtherwiseCancelActions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)meditateIfPossible;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sleepOnSpotIfPossible;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)collapseIfPossible;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)die;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canEat;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canMeditate;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canSleepOnSpot;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canCollapse;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (FreeBlockCreationCount)freeBlockCreationCountForTile:(Tile*)arg1
                                                withItem:(id)arg2;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)freeBlockBonusCreationCount;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)stopInteracting;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)startInteractingWithTileAtIndex:(int)tileIndex
                                    tile:(Tile*)tile
                         interactionType:(InteractionType)interactionType_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)pickupDynamicObject:(DynamicObject*)dynamicObject;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)stopRiding;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateGatherSpeedAndAnimationForCurrentInterationAndItem;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (InteractionTestResult)goodOrBadInteractionForAction:(Action*)action;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isCorrectToolForBackWallOfType:(int)tileType forItem:(ItemType)interactionItemType; // TODO: TileType?
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)currentTraverseToKeyFrame;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isHeadingForSquare:(intpair)sqarePos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (InteractionObject*)interactionObject;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setInteractionObject:(InteractionObject*)interactionObject_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isInteractingWithAnyInteractionObject;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)currentCraftIsOutOfFuel;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)getCurrentCraftProgress;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Workbench*)interactionWorkbench;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setInteractionWorkbench:(Workbench*)workbench_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isAddingFuelToAnyWorkbench;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isCraftingAtAnyWorkbench;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)willBeInteractingWithInteractionObject:(InteractionObject*)interactionObject_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)willBeAddingFuelAtWorkbench:(Workbench*)workbench;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)willBeCraftingAtWorkbench:(Workbench*)workbench;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updatePosition:(intpair)newPosition;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)currentInteractionTypeForTile:(Tile*)tile
                                atPos:(intpair)atPos
     pickupRejectedDueToInventoryFull:(BOOL*)pickupRejectedDueToInventoryFull
                       includeActions:(BOOL)includeActions
                            faceIndex:(int)faceIndex
                allowProtectedActions:(BOOL)allowProtectedActions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)currentInteractionType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)currentInteractionIsGoodOrBad;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canDigBackWallforTile:(Tile*)tile
                         atPos:(intpair)tilePos
                      withItem:(InventoryItem*)item
                includeActions:(BOOL)includeActions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)interactionTypeForTile:(Tile*)tile
                                atPos:(intpair)tilePos
                                 item:(InventoryItem*)item
@@ -744,22 +1372,64 @@ struct InteractionTestResult {
                       includeActions:(BOOL)includeActions
                            faceIndex:(int)faceIndex
                allowProtectedActions:(BOOL)allowProtectedActions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tileIsLitForSelf:(Tile*)tile atPos:(intpair)tilePos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)goalInteractionForNPCChaseForNPC:(DynamicObject*)npc withItemType:(ItemType)itemType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)getSaveDictIncludingWorkbenchOrInterationObject:(BOOL)includeWorkbenchOrInterationObject;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)getSaveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)updateNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)creationNetDataForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)previewData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Blockhead*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld
                       cache:(CPCache*)cache_
                     netData:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setupFromNetCreationData:(NSData*)netData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateAnimation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (InventoryItem*)clothingItemAtIndex:(int)clothingIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)netInteractionObjectWasLoaded:(InteractionObject*)interactionObject_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Blockhead*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld
                    saveDict:(NSDictionary*)saveDict
@@ -768,6 +1438,9 @@ struct InteractionTestResult {
     repositionOnLoadFailure:(BOOL)repositionOnLoadFailure
               clientSaveDir:(NSString*)clientSaveDir_
      clientLocallySavedDict:(NSDictionary*)clientLocallySavedDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Blockhead*)initWithWorld:(World*)world_
                dynamicWorld:(DynamicWorld*)dynamicWorld
                  atPosition:(intpair)pos
@@ -775,23 +1448,77 @@ struct InteractionTestResult {
             blockheadNumber:(int)blockheadNumber
         craftableItemObject:(BlockheadCraftableItemObject*)craftableItemObject
                    uniqueID:(uint64_t)uniqueID_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (DynamicObjectType)objectType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)initSubDerivedStuffStuff;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateSkin;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateClothingCubes;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BlockheadAnimationType)currentAnimationType;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)regenerationProgress;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)hasCoffeeEnergy;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)drownFraction;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)environmentLight;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)environmentExposure;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)environmentTemperature;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)environment;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)meditationProgress;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)energy;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)fullness;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)happiness;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)death;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)health;
 
 @end

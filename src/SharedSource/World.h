@@ -174,6 +174,10 @@ enum SimulationEvent {
 @class BHClient, Blockhead, DynamicObject, InteractionObject, BlockheadCraftableItemObject, Workbench, CraftableItemObject, WorldUI, BHServer, CPCache, CPTexture2D, ClientTileLoader, CloudInterface, Database, DatabaseConvertor, DatabaseEnvironment, DynamicWorld, FNImageData, NoiseFunction, OwnershipAreaRenderer, PathCreator, PortalChestManager, ProjectileManager, Shader, Tutorial, UIManager, Weather, WorldTileLoader;
 @protocol WorldDelegate;
 
+/**
+ * @class World
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface World : NSObject {
   id<WorldDelegate> delegate;
   int worldWidthMacro;
@@ -397,10 +401,30 @@ enum SimulationEvent {
   intpair repairModeConfirmPos;
 }
 
+/**
+ * @property foundItemsList
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSIndexSet* foundItemsList; // @synthesize foundItemsList;
+/**
+ * @property uiManager
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) UIManager* uiManager; // @synthesize uiManager;
+/**
+ * @property hasJustTakenPhoto
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) BOOL hasJustTakenPhoto; // @synthesize hasJustTakenPhoto;
+/**
+ * @property waterAnimationIndex
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) int waterAnimationIndex; // @synthesize waterAnimationIndex;
+/**
+ * @property slowAnimationIndex
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) int slowAnimationIndex; // @synthesize slowAnimationIndex;
 @property BOOL saveDisabled; // @synthesize saveDisabled;
 @property CloudInterface* cloudInterface; // @synthesize cloudInterface;
@@ -408,336 +432,1066 @@ enum SimulationEvent {
     BOOL isHeadingTowardsMIdday; // @synthesize isHeadingTowardsMIdday;
 @property (readonly)
     Vector2 roundedTranslation; // @synthesize roundedTranslation;
+/**
+ * @property dragInProgress
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) BOOL dragInProgress; // @synthesize dragInProgress;
 @property double pinchScale; // @synthesize pinchScale;
+/**
+ * @property tutorial
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) Tutorial* tutorial; // @synthesize tutorial;
 @property BOOL followingBlockhead; // @synthesize followingBlockhead;
 @property (readonly)
     PortalChestManager* portalChestManager; // @synthesize portalChestManager;
+/**
+ * @property serverMinorVersion
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) int serverMinorVersion; // @synthesize serverMinorVersion;
+/**
+ * @property worldPriceMultipliers
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSMutableDictionary* worldPriceMultipliers; // @synthesize worldPriceMultipliers;
+/**
+ * @property globalPrices
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSDictionary* globalPrices; // @synthesize globalPrices;
 @property int cloudMode; // @synthesize cloudMode;
 @property BOOL isOwner; // @synthesize isOwner;
 @property BOOL isMod; // @synthesize isMod;
 @property BOOL isAdmin; // @synthesize isAdmin;
+/**
+ * @property worldName
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSString* worldName; // @synthesize worldName;
+/**
+ * @property doubleTimeUnlocked
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) BOOL doubleTimeUnlocked; // @synthesize doubleTimeUnlocked;
+/**
+ * @property fastForward
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) BOOL fastForward; // @synthesize fastForward;
+/**
+ * @property client
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) BHClient* client; // @synthesize client;
+/**
+ * @property server
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) BHServer* server; // @synthesize server;
 @property (readonly)
     NSMutableDictionary* serverClients; // @synthesize serverClients;
+/**
+ * @property startPortalPos
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) intpair startPortalPos; // @synthesize startPortalPos;
+/**
+ * @property windowInfo
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) struct WindowInfo* windowInfo; // @synthesize windowInfo;
 @property (readonly)
     int incrementalLoadCount; // @synthesize incrementalLoadCount;
+/**
+ * @property loadComplete
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) BOOL loadComplete; // @synthesize loadComplete;
 @property BOOL translatingToGoal; // @synthesize translatingToGoal;
+/**
+ * @property dayColor
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) Vector dayColor; // @synthesize dayColor;
 @property (readonly) float
     rainFractionNotIncludingSnow; // @synthesize rainFractionNotIncludingSnow;
+/**
+ * @property rainFraction
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) float rainFraction; // @synthesize rainFraction;
+/**
+ * @property weatherFraction
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) float weatherFraction; // @synthesize weatherFraction;
+/**
+ * @property timeOfDayFraction
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) float timeOfDayFraction; // @synthesize timeOfDayFraction;
+/**
+ * @property sunDirection
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) Vector sunDirection; // @synthesize sunDirection;
+/**
+ * @property worldTime
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSTimeInterval worldTime; // @synthesize worldTime;
+/**
+ * @property randomSeed
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) uint32_t randomSeed; // @synthesize randomSeed;
+/**
+ * @property saveID
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) NSString* saveID; // @synthesize saveID;
+/**
+ * @property dynamicWorld
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) DynamicWorld* dynamicWorld; // @synthesize dynamicWorld;
+/**
+ * @property macroTiles
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) MacroTile* macroTiles; // @synthesize macroTiles;
+/**
+ * @property expertMode
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) BOOL expertMode; // @synthesize expertMode;
+/**
+ * @property worldWidthMacro
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (readonly) int worldWidthMacro; // @synthesize worldWidthMacro;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Database*)appDatabase;
 @property BOOL repairMode;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doRepairForTileAtPos:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)archiveLightBlocksForClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)hasFinishedDatabaseMigrationTo17;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doPortalShotNextFrame;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (std::unordered_set<PhysicalBlock>*)usedPhysicalBlocks;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)finishBulkDatabaseUpdate;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)startBulkDatabaseUpdate;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)blockheadFilesReturnedFromServer:(NSDictionary*)blockheadFiles;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)hideChatView;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)foundListContainsEggWithDodoBreed:(int)arg1;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addDodoEggToFoundListWithBreed:(int)breed;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addChestItemsToFoundList:(NSArray*)slots;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addItemToFoundList:(InventoryItem*)item;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)privateAddItemToFoundList:(InventoryItem*)item addBasketContents:(BOOL)addBasketContents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendUpdatedFoundItemsListToServer;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addItemsFromServerFoundItemsList:(NSIndexSet*)incomingList;
 @property BOOL dpadDirectControlDisabled;
 @property BOOL dpadControl;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)windStrength;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)timeCrystalCloseButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)verifyClientCustomRulesData:(NSData*)customRulesData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)hasRewardedVideoAvailable;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)sandFractionForPos:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendUpdatedCustomSlots;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendUpdatedSunColor;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setSunColorRule:(MJColor)newColor;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setCustomSlotAtIndex:(int)configureSlot toItemType:(int)itemType count:(int)count;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)customRuleDictRecievedFromNet:(NSDictionary*)ruleDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setCustomRule:(NSString*)rule forOptionNamed:(NSString*)option;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)customRulesChanged;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)customRuleForOptionNamed:(NSString*)optionName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSDictionary*)customRulesDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (CustomRules)customRules;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)renderingTeaserFrames;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)displayOwnershipAreas;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tileIsProtectedAtPos:(intpair)tilePos againstBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tileIsProtectedAtPos:(intpair)tilePos againstClient:(NSString*)blockheadOwnerID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)ownershipSignWasPlacedOrChangedAtPos:(intpair)tilePos
                                withLandOwner:(NSString*)landOwnerID
                                  widthRadius:(int)widthRadius
                                 heightRadius:(int)heightRadius
                                   wasRemoved:(BOOL)wasRemoved;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)signOwnershipModificationRecievedFromServer:(NSDictionary*)modificationDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateLocalOwnershipSignsDueToSignPlacedOrChangedAtPos:(intpair)tilePos
                                                  withLandOwner:(NSString*)landOwnerID
                                                    widthRadius:(int)widthRadius
                                                   heightRadius:(int)heightRadius
                                                     wasRemoved:(BOOL)wasRemoved;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)signOwnershipPlayerListRecievedFromServer:(NSArray*)playerList;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)openOwnerPortal;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (WorldUI*)worldUI;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)getCurrentCreditTimeString;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)showWorldCreditUI;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)canAddWorldCredit;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint64_t)serverPrivacySetting;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendNewPrivacySettingToServer:(BHNetPrivacy)newPrivacy;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)clientPassword;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)serverPassword;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendNewPasswordToServer:(NSString*)newServerPassword;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)newServerPasswordSet:(NSString*)newPassword;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)reportUserWithName:(NSString*)playerName
                reporterName:(NSString*)reporterName
             reporterMessage:(NSString*)reporterMessage
     reportedAvatarImagePath:(NSString*)reportedAvatarImagePath;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isCloudGame;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)kickPlayerWithNameFromPlayerButton:(NSString*)playerName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)banPlayerWithNameFromPlayerButton:(NSString*)playerName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)kickOrBanPlayerFromButtonIsBan:(BOOL)isBan withName:(NSString*)playerName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setPlayerMuted:(BOOL)muted withID:(NSString*)playerID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)playerIsMuted:(NSString*)playerID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)initMuteList;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)welcomeMessage;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)welcomeMessageRecievedFromServer:(NSDictionary*)welcomeMessageDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setNewWelcomeMessage:(NSString*)newWelcomeMessage;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)viewOrEditWelcomeMessage;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)welcomeMessageDictRecieved:(NSDictionary*)messageDict fromClient:(NSString*)peer;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)pvpEnabled;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)appendDebugLog:(NSMutableString*)log;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dieConfirmationConfirmed:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)showDieConfirmationForBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tutorialActive;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)worldPriceOffsetsRecievedFromServer:(NSData*)priceData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)transactionDataRecieved:(NSDictionary*)transactionData fromClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)showTutorialPopupWithTitle:(NSString*)title message:(NSString*)message;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)tutorialAlertDismissedWithContinue:(BOOL)shouldContinue;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updatePriceForItemBoughtOrSoldOfTypeKey:(NSString*)key soldCount:(float)count;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)connectionDidFinishLoading:(NSURLConnection*)connection;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)connection:(NSURLConnection*)connection didReceiveData:(NSData*)data;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse*)response;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateTradePricesIfNeeded;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteTipNotification:(NSData*)remoteTipData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendSetPVPEnabledToServer:(BOOL)newEnabled;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setPVPEnabled:(BOOL)pvpEnabled_ displayNotifciation:(BOOL)displayNotifciation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendAndDisplayAirTimeTipWithDistance:(float)distance;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)electricityPathDataRecieved:(NSData*)data fromClient:(NSString*)fromClient;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendNetDataForElectricityParticlePathIfRequired:(std::vector<ElectricityParticlePathIndex>)a4
                                                    size:(float)size
                                            ignoreClient:(NSString*)ignoreClient;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteBlockheadDamageRequest:(NSData*)remoteData requestedByClientName:(NSString*)requestedByClientName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendDamage:(float)damage forNetBlockhead:(Blockhead*)blockhead recoil:(BOOL)recoil;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteProjectileRequest:(NSData*)remoteData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fireProjectileFrom:(Vector2)fromPos
                         to:(Vector2)toPos
                         at:(DynamicObject*)atObject
               fireItemType:(ItemType)itemType
                      firer:(Blockhead*)firer;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)zoomToPortalAtPosition:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incentivizedVideoViewComplete:(BOOL)didWatch;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)mapVisible;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)tileIsLitForClient:(NSString*)clientID
                      atPos:(intpair)tilePos
                       tile:(Tile*)tile;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updatePhysicalBlockToLatestVersion:(PhysicalBlock*)physicalBlock;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)playersChanged;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isControllingBlockheadsForClientPlayer:(NSString*)playerID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)currentTotalBlockheadCountIncludingNet;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)chatButton;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)blockheadAvailablePromptDismissedWithToThePortal;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)showBlockheadAvailablePrompt:(int)nextBlockheadIndex forBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)preUpdate:(float)dt;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)decommissionOldBlocks;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (intpair)highestPoint;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)showDoubleTimePromptIfGoodTime;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)markCircumNavigateX:(int)x;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)serverFillReply:(NSArray*)fillReplyReciepts;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (intpair)activeBlockheadPos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)zoomToPos:(intpair)pos pinchZoom:(BOOL)pinchZoom;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)zoomToPoint:(Vector2)point;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteZoomRequestReturnedWithSuccess:(BOOL)success point:(intpair)point;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (intpair)getBlockheadZoomPosForClient:(NSString*)playerID
                         requesterClient:(NSString*)requesterClient
                              cycleIndex:(int)cycleIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)zoomToActiveNetBlockheadForPlayer:(NSString*)playerID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)instructionsButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)achievementsButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)reportAchievementWithIdentifier:(NSString*)identifier;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)crystalsPurchased;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)purchaseDoubleTime;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sharePhotoFinished;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)takingPhoto;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)cancelTakePhotoButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)takePhotoButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)startUsingCamera;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)exportCurrentFrame;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doCameraScreenshot;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doPortalScreenshot;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doubleTimeRestoreTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doubleTimePurchaseTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)startIncentivizedVideo;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)iapStarted;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)waterMovedFrom:(intpair)from
               fromTile:(Tile*)fromTile
                     to:(intpair)to
                 toTile:(Tile*)toTile
                 amount:(int)amount;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)abortInProgressPathIfForBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)currentTipColor;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)currentTipText;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)connectionToServerLost;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteRemove:(NSArray*)removeArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteCreationDataUpdate:(NSArray*)updateArray
                 forObjectsOfType:(DynamicObjectType)objectType
                       fromClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteUpdate:(NSArray*)creationArray forObjectsOfType:(DynamicObjectType)objectType fromClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteCreate:(NSArray*)creationArray forObjectsOfType:(DynamicObjectType)objectType clientID:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSArray*)peersInterestedInMacroIndex:(int)macroIndex;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteBlockRemoved:(int)macroIndex byClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)requestForBlock:(ClientMacroBlockRequest)request
              fromClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)clientDisconnected:(NSString*)clientID wasKick:(BOOL)wasKick;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)clientConnected:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)directionalSwipe:(Vector2)vec;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)requiresDirectionalSwipes;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)allowsPanning;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)requiresSwipeEvents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)allowsRotation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)saveSunlightChangedAtPos:(intpair)worldPos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateIdleTimerDisabled;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)stopFollowingOrTranslatingToGoal;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)worldUIDragging;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (FoodType*)distanceOrderedFoodTypes;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addFuelTappedAtInteractionObject:(InteractionObject*)interactionobject withBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeDynamicObjectTappedAtDynamicObject:(DynamicObject*)dynamicObject
                                    withBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)warpInBlockhead:(BlockheadCraftableItemObject*)craftableItemObject atWorkbench:(Workbench*)workbench withBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)teleportToWorkbench:(Workbench*)workbench
               withBlockhead:(Blockhead*)blockhead
         craftableItemObject:(CraftableItemObject*)craftableItemObject;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)uniqueIDReturnedFromServer:(uint64_t)uniqueID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)requestUniqueIDFromServerWithDict:(NSDictionary*)infoDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)useDynamicObjectTappedAtDynamicObject:(DynamicObject*)dynamicObject selectedOption:(int)selectedOption;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)blockheadReachedInteractionObjectDestination:(Blockhead*)blockhead
                                        pathExtraData:(NSDictionary*)pathExtraData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)craftOrConfigureItem:(CraftableItemObject*)craftableItemObject
                  atWorkbench:(Workbench*)workbench
                withBlockhead:(Blockhead*)blockhead
                        count:(int)count;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)craftItem:(CraftableItemObject*)craftableItemObject
       atWorkbench:(Workbench*)workbench
     withBlockhead:(Blockhead*)blockhead
             count:(int)count;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)craftAbortedForWorkbench:(Workbench*)workbench withBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)craftItemFinished:(CraftableItemObject*)craftedItemObject
               atWorkbench:(Workbench*)workbench
               allFinished:(BOOL)allFinished
                 blockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fullyLoadIfNeededAroundPos:(intpair)pos
              clientLightBlockIndex:(int)clientLightBlockIndex
                       forBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fullyLoadAndUpdateIfNeededForMacroBlock:(MacroTile*)macroTile
                                    includingPos:(intpair)pos
                           clientLightBlockIndex:(int)clientLightBlockIndex
                                    forBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)pauseExitToMenuButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)pauseResumeButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)pauseButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)timeCrystalButtonTapped;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setWindowInfo:(WindowInfo*)windowInfo_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)loadPhysicalBlockForMacroTile:(MacroTile*)macroTile
                                   atX:(int)x
                                     y:(int)y
                 loadSurroundingBlocks:(BOOL)loadSurroundingBlocks
                    createIfNotCreated:(BOOL)createIfNotCreated;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (PhysicalBlock*)physicalBlockToLoadByClientTileLoaderForMacroTile:
     (MacroTile*)macroTile;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)saveLightBlockForClientLightBlockIndex:(int)clientLightBlockIndex
                                  physicalBlock:(PhysicalBlock*)physicalBlock
                                        sendNow:(BOOL)sendNow;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)loadLightBlockForClientLightBlockIndex:(int)clientLightBlockIndex
                              intoPhysicalBlock:(PhysicalBlock*)physicalBlock;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)loadDynamicObjectsIfNotAlreadyLoadedForMacroTile:
             (MacroTile*)macroTile
                                     includeSurfaceBlocks:(BOOL)includeSurfaceBlocks;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)decommisionBlock:(MacroTile*)macroTile
     blockToSavePhyscialBlock:(BOOL)blockToSavePhysicalBlock;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)savePhysicalBlockForMacroTile:(MacroTile*)macroTile
                          sendReliably:(BOOL)sendReliably
                              dontSend:(BOOL)dontSend
               onlySaveIfClientsNeedIt:(BOOL)onlySaveIfClientsNeedIt;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (int)unmodifiedGroundLevelForX:(int)worldX;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)swipeGesture;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)endTouch:(CGPoint)location index:(int)index;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)cancelTouch:(CGPoint)location index:(int)index;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)doEndTouch:(CGPoint)location wasCancelled:(BOOL)wasCancelled index:(int)index;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)moveTouch:(CGPoint)location index:(int)index;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)startTouch:(CGPoint)location tapCount:(int)tapCount index:(int)index;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)touchIsInUI:(CGPoint)location;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)tap:(CGPoint)where;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)resetPauseIdleTimer;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)pauseUpdates;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)scrollToTap:(CGPoint)where;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)queueBlockheadAIActionToTile:(Tile*)tile
                                atPos:(intpair)tilePos
                         forBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)cancelAllActionsAtPos:(intpair)pos
     orWithInteractionObjectID:(uint64_t)uniqueID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)zoomUIToOnscreen:(Vector2)center dimensions:(Vector2)dimensions;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)render:(float)dt
              cameraZ:(float)cameraZ
     projectionMatrix:(GLKMatrix4)projectionMatrix
           pinchScale:(float)pinchScale_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)lightPositionLeft;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)lightPositionRight;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)lightPositionFront;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)lightPositionTop;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)preRenderUpdate:(float)dt
              fastSlowDT:(float)fastSlowDT
                 cameraZ:(float)cameraZ
        projectionMatrix:(GLKMatrix4)projectionMatrix;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)dayColorForPosition:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)getDayNightFractionForX:(float)x atWorldTime:(NSTimeInterval)time;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)getWeatherFractionForPos:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)getWeatherFractionForPos:(intpair)pos
                       atWorldTime:(NSTimeInterval)time
                ignoreSandFraction:(BOOL)ignoreSandFraction;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)getWeatherFractionForPos:(intpair)pos atWorldTime:(NSTimeInterval)time;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removePaintAtTile:(Tile*)tile
                     atPos:(intpair)pos
                 faceIndex:(uint8_t)faceIndex
            paintBlockhead:(Blockhead*)paintBlockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)paintTile:(Tile*)tile
              atPos:(intpair)pos
         colorIndex:(uint16_t)colorIndex
          faceIndex:(uint8_t)faceIndex
     paintBlockhead:(Blockhead*)paintBlockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remoteGatherRequest:(NSData*)data;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendGatherNotificationForTile:(Tile*)tile atPos:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fillTile:(Tile*)tile
                  atPos:(intpair)pos
               withType:(ItemType)type
@@ -747,6 +1501,9 @@ enum SimulationEvent {
               saveDict:(NSDictionary*)saveDict
      placedByBlockhead:(Blockhead*)placeBlockhead
     placedByClientName:(NSString*)clientName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fillTile:(Tile*)tile
                  atPos:(intpair)pos
               withType:(ItemType)type
@@ -755,27 +1512,57 @@ enum SimulationEvent {
         placedByClient:(NSString*)clientID
               saveDict:(NSDictionary*)saveDict
     placedByClientName:(NSString*)clientName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fillTile:(Tile*)tile atPos:(intpair)pos withType:(ItemType)type;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remotePaintRequest:(NSData*)fillData fromClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint32_t)remoteFillRequest:(NSData*)fillData placedByClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (InteractionObject*)placeInteractionObjectWithItem:(InventoryItem*)item
                                                atPos:(intpair)pos
                                             saveDict:(NSDictionary*)saveDict
                                       placedByClient:(NSString*)clientID
                                    placedByBlockhead:(Blockhead*)placeBlockhead
                                   placedByClientName:(NSString*)clientName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remotePlaceInteractionObjectRequest:(NSData*)netData fromPeer:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)placeWorkbenchOfType:(WorkbenchType)workbenchType
                        atPos:(intpair)pos
                     saveDict:(NSDictionary*)saveDIct
               placedByClient:(NSString*)clientID
            placedByBlockhead:(Blockhead*)placeBlockhead
           placedByClientName:(NSString*)clientName;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)remotePlaceWorkbenchRequest:(NSData*)netData fromPeer:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateTileGraphicForWorkbenchOfType:(WorkbenchType)workbenchType
                                       atPos:(intpair)pos
                                       level:(int)level;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeWaterTileAtPos:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeTileAtWorldX:(int)worldX
                                     worldY:(int)worldY
               createContentsFreeblockCount:(int)createContentsFreeblockCount
@@ -785,8 +1572,17 @@ enum SimulationEvent {
               onlyRemoveForegroundContents:(BOOL)onlyRemoveForegroundContents
                sendWorldChangedNotifcation:(BOOL)sendWorldChangedNotifcation
                         dontRemoveContents:(BOOL)dontRemoveContents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeBackWallAtPos:(intpair)pos removeBlockhead:(Blockhead*)removeBlockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)shouldBeCrystalBlockAtPos:(intpair)pos;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeTileAtWorldX:(int)worldX
                                     worldY:(int)worldY
               createContentsFreeblockCount:(int)createContentsFreeblockCount
@@ -794,37 +1590,100 @@ enum SimulationEvent {
                            removeBlockhead:(Blockhead*)removeBlockhead
                         onlyRemoveCOntents:(BOOL)onlyRemoveContents
               onlyRemoveForegroundContents:(BOOL)onlyRemoveForegroundContents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeTileAtWorldX:(int)worldX
                                     worldY:(int)worldY
               createContentsFreeblockCount:(int)createContentsFreeblockCount
     createForegroundContentsFreeblockCount:(int)createForegroundContentsFreeblockCount
                            removeBlockhead:(Blockhead*)removeBlockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint32_t)remoteRemoveRequest:(NSData*)removeData fromClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (uint32_t)remoteRemoveBackWallRequest:(NSData*)removeData fromClient:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)removeAnyBackgroundContentsForTile:(Tile*)tile
                                      atPos:(intpair)pos
                            removeBlockhead:(Blockhead*)blockhead;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)decommisionAllBlocksBlockToSavePhyscialBlock:(BOOL)blockToSavePhysicalBlock;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt
         accurateDT:(float)accurateDT
         pinchScale:(double)pinchScale_
     dragInProgress:(BOOL)dragInProgress_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)simulationProgress;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setNetEventsMessageToDisplayOnceLoaded:(NSString*)welcomeBackMessage;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)welcomeBackEventsMessageForClientID:(NSString*)clientID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSString*)welcomeBackMessageForInfoDict:(NSDictionary*)simulationEvents_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)finishSimulating;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)continueSimulate;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)addSimulationEventOfType:(SimulationEvent)type
                     forBlockhead:(Blockhead*)blockhead
                        extraData:(id)extraData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)isSimulating;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)startSimulatingIfNeeded;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)stopObservingMotionEvents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)startObservingMotionEvents;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)deleteTimers;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setServer:(BHServer*)server_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (World*)initWithWindowInfo:(WindowInfo*)windowInfo_
                        cache:(CPCache*)cache_
                     delegate:(id)delegate_ // TODO: What is this mysterious delegate?
@@ -838,23 +1697,68 @@ enum SimulationEvent {
              worldWidthMacro:(int)worldWidthMacro_
                  customRules:(NSDictionary*)customRulesDict_
                   expertMode:(BOOL)expertMode_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)incrementalLoad;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)initializeDatabases;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)loadDefaultGame;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (BOOL)loadGame;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)fileWriteFailed:(NSString*)savePath;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)saveAll;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSDictionary*)worldInfoForiCloudSave;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)heartbeatDataRecieved:(NSData*)heartbeatData fromPeer:(NSString*)peerID;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)sendHeartbeatData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)heartbeatData;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSData*)summaryNetDataForAdmin:(BOOL)isAdmin_
                               mod:(BOOL)isMod_
                             owner:(BOOL)isOwner_
                         cloudMode:(int)cloudMode_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector2)translation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setTranslation:(Vector2)translation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateTranslationDueToPinchOrPan:(Vector2)incomingTranslation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)startPinchOrPan;
 
 @end

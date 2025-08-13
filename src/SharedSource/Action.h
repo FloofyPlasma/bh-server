@@ -6,6 +6,10 @@
 
 @class CraftableItemObject, DrawCube, InventoryItem, NSDictionary, NSMutableDictionary;
 
+/**
+ * @class Action
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface Action : NSObject {
   BOOL inProgress;
   BOOL complete;
@@ -26,8 +30,16 @@
 }
 
 @property InteractionTestResult interactionTestResult;
+/**
+ * @property blockCube
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (retain) DrawCube* blockCube;
 @property uint16_t craftCountOrExtraData;
+/**
+ * @property craftableItemObject
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (retain) CraftableItemObject* craftableItemObject;
 @property float animationTimer;
 @property BOOL isAI;
@@ -36,14 +48,31 @@
 @property uint64_t interactionObjectID;
 @property uint16_t interactionItemSubIndex;
 @property uint16_t interactionItemIndex;
+/**
+ * @property interactionItem
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (retain) InventoryItem* interactionItem;
+/**
+ * @property inventoryChange
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @property (retain) NSDictionary* inventoryChange;
 @property intpair goalTilePos;
 @property BOOL complete;
 @property BOOL inProgress;
 
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NSMutableDictionary*)getSaveDict;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Action*)initWithSaveDict:(NSDictionary*)saveDict inventoryItems:(NSArray*)inventoryItems;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Action*)initWithGoalPos:(intpair)goalTilePos_
            goalInteraction:(InteractionType)goalInteraction_
                   pathType:(PathType)pathType_

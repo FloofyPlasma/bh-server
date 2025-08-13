@@ -17,6 +17,10 @@ struct Cloud {
 @class CPCache, CPTexture2D, FNImageData, MJMultiSound, MJSound, NoiseFunction,
     Shader, World;
 
+/**
+ * @class Weather
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface Weather : NSObject {
   CPCache* cache;
   World* world;
@@ -64,36 +68,75 @@ struct Cloud {
 }
 
 @property float windMovement; // @synthesize windMovement;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (float)windStrength;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (Vector)cloudColorForWeatherFraction:(float)isBackground
                      timeOfDayFraction:(float)timeOfDayFraction
                           isBackground:(BOOL)isBackground;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)setSoundPaused:(BOOL)soundPaused_;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)renderWithMatrix:(GLKMatrix4)matrix
               pinchScale:(float)pinchScale
             withDayColor:(Vector)dayColor
             rainFraction:(float)rainFraction
             snowFraction:(float)snowFraction
                snowLevel:(float)snowLevel;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)renderCloudWithMatrix:(GLKMatrix4)matrix
                   translation:(Vector2)translation
                            dt:(float)dt
               weatherFraction:(float)weatherFraction
         futureWeatherFraction:(float)futureWeatherFraction
             timeOfDayFraction:(float)timeOfDayFraction;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateCloudsWithTranslation:(float)roundedTranslation;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateRainSoundWithRainFraction:(float)rainFraction
                          undergroundMix:(float)undergroundMix
                                position:(Vector2)position;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateBirdSoundWithBirdFraction:(float)birdFraction
                             dayNightMix:(float)dayNightMix
                          undergroundMix:(float)undergroundMix
                                      dt:(float)dt
                            playPosition:(Vector2)playPosition;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)update:(float)dt rainFraction:(float)rainFraction snowFraction:(float)snowFraction;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)loadCricketSounds;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)updateCloudsForLoadOrHDTeturesChange;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (id)initWithCache:(CPCache*)cache_ world:(World*)cache_ worldTime:(float)worldTime;
 
 @end

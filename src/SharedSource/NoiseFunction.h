@@ -14,14 +14,30 @@ struct NoiseFunctionStruct {
   BOOL loop;
 };
 
+/**
+ * @class NoiseFunction
+ * @brief Placeholder! Please remember to fill this in.
+ */
 @interface NoiseFunction : NSObject {
   BOOL _tileable;
   NoiseFunctionStruct* _structPtr;
 }
 
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (void)dealloc;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (double)getX:(double)x Y:(double)y Z:(double)z octaves:(int)octaves;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (double)getX:(double)x Y:(double)y octaves:(int)octaves;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NoiseFunction*)initWithFrequencyX:(int)frequencyX
                           frequencyY:(int)frequencyY
                           frequencyZ:(int)frequencyZ
@@ -30,6 +46,9 @@ struct NoiseFunctionStruct {
                             tileable:(BOOL)tileable
                                 loop:(BOOL)loop
                          persistance:(double)persistance;
+/**
+ * @brief Placeholder! Please remember to fill this in.
+ */
 - (NoiseFunction*)initWithFrequencyX:(int)frequencyX
                           frequencyY:(int)frequencyY
                           frequencyZ:(int)frequencyZ
