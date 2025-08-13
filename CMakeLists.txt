@@ -1,16 +1,21 @@
 cmake_minimum_required(VERSION 3.29)
-project(BlockheadsServer LANGUAGES C CXX OBJC OBJCXX)
 include(FetchContent)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(USE_CCACHE OFF) # Currently not working.
+
+project(BlockheadsServer
+    VERSION 0.0.1
+    DESCRIPTION "Blockheads Server Decompilation Project"
+    HOMEPAGE_URL "https://floofyplasma.github.io/bh-server/"
+    LANGUAGES C CXX OBJC OBJCXX
+)
 
 # Dependencies
-FetchContent_Declare(
-    enet
-    GIT_REPOSITORY https://github.com/lsalzman/enet.git
-    GIT_TAG v1.3.18
-)
-FetchContent_MakeAvailable(enet)
+include(Dependencies.cmake)
+bhServer_setup_dependencies()
 
 # GNUstep configuration (non-Apple UNIX)
 if(UNIX AND NOT APPLE)
@@ -186,6 +191,7 @@ if(WIN32)
         objc
         dispatch
         enet
+        lmdb
     )
 
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fobjc-runtime=gnustep-2.2")
@@ -210,6 +216,7 @@ elseif(APPLE)
         "-framework Foundation"
         "-framework Cocoa"
         enet
+        lmdb
     )
 
     target_compile_options(${PROJECT_NAME} PRIVATE
@@ -223,6 +230,7 @@ elseif(UNIX AND NOT APPLE)
         objc
         dispatch
         enet
+        lmdb
     )
     set(CMAKE_C_COMPILER clang)
     set(CMAKE_CXX_COMPILER clang++)
