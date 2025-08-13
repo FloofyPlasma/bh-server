@@ -15,3 +15,10 @@ CPMDeclarePackage(enet
 #  DOWNLOAD_ONLY YES
 #  GITHUB_REPOSITORY LMDB/lmdb
 #)
+# Ccache.cmake
+CPMDeclarePackage(Ccache.cmake
+  VERSION 1.2.5
+  GITHUB_REPOSITORY TheLartians/Ccache.cmake
+  SYSTEM YES
+  EXCLUDE_FROM_ALL YES
+)

@@ -25,4 +25,6 @@ function(bhServer_setup_dependencies)
         )
     endif()
 
+    cpmaddpackage("gh:TheLartians/Ccache.cmake@1.2.5")
+
 endfunction()

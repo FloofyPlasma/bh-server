@@ -1,8 +1,17 @@
 cmake_minimum_required(VERSION 3.29)
-project(BlockheadsServer LANGUAGES C CXX OBJC OBJCXX)
 include(FetchContent)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(USE_CCACHE OFF) # Currently not working.
+
+project(BlockheadsServer
+    VERSION 0.0.1
+    DESCRIPTION "Blockheads Server Decompilation Project"
+    HOMEPAGE_URL "https://floofyplasma.github.io/bh-server/"
+    LANGUAGES C CXX OBJC OBJCXX
+)
 
 # Dependencies
 include(Dependencies.cmake)
