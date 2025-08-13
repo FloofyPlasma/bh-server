@@ -2,8 +2,19 @@
 
 @implementation InventoryItem
 
+@synthesize dynamicObjectSaveDict;
+@synthesize dataB;
+@synthesize dataA;
+@synthesize selectedSubItemIndex;
+@synthesize subItems;
+@synthesize itemType;
+
 - (void)dealloc
 {
+  [self->subItems release];
+  [self->dynamicObjectSaveDict release];
+
+  [super dealloc];
 }
 
 - (InventoryItem*)initWithSaveData:(NSData*)saveData

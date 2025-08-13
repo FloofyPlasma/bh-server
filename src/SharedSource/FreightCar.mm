@@ -1,6 +1,10 @@
 #import "FreightCar.h"
 
+#import "Chest.h"
+
 @implementation FreightCar
+
+@synthesize needsChestSave;
 
 - (void)childNeedsSaving:(DynamicObject*)child
 {
@@ -37,6 +41,14 @@
 
 - (void)dealloc
 {
+  [self->platformCube release];
+  [self->chestCube release];
+  [self->poleCube release];
+
+  [self->chest setProxyObjectOwner:nil];
+  [self->chest release];
+
+  [super dealloc];
 }
 
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld

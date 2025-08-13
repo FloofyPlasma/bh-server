@@ -2,8 +2,14 @@
 
 @implementation BlockheadCraftableItemObject
 
+@synthesize skinOptions;
+@synthesize name;
+
 - (void)dealloc
 {
+  [self->name release];
+
+  [super dealloc];
 }
 
 - (NSMutableDictionary*)getSaveDict

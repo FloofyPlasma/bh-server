@@ -1,6 +1,10 @@
 #import "Weather.h"
 
+#import "MJSound.h"
+
 @implementation Weather
+
+@synthesize windMovement;
 
 - (Vector)cloudColorForWeatherFraction:(float)isBackground timeOfDayFraction:(float)timeOfDayFraction isBackground:(BOOL)isBackground
 {
@@ -9,6 +13,25 @@
 
 - (void)dealloc
 {
+  free(self->snowPoints);
+  free(self->rainPoints);
+  free(self->randomNumbers);
+
+  if (self->cloudPoints) {
+    free(self->cloudPoints);
+  }
+
+  [self->cloudNoiseFunction release];
+  [self->lightRainSound setPaused:YES];
+  [self->windSound setPaused:YES];
+  [self->heavyRainSound setPaused:YES];
+  [self->undergroundSound setPaused:YES];
+  [self->cloudColorForegroundImageData release];
+  [self->cloudColorForegroundCloudyImageData release];
+  [self->cloudColorBackgroundImageData release];
+  [self->cloudColorBackgroundCloudyImageData release];
+
+  [super dealloc];
 }
 
 - (id)initWithCache:(CPCache*)cache_ world:(World*)cache_ worldTime:(float)worldTime

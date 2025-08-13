@@ -118,7 +118,7 @@ struct PathTestResult {
  */
 - (DerivedTileProperties*)tileDerivedPropertiesAtWorldIndex:(int)worldIndex;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this PathCreator and any memory it allocated.
  */
 - (void)dealloc;
 /**

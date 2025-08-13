@@ -2,6 +2,17 @@
 
 @implementation Workbench
 
+@synthesize xScroll;
+@synthesize craftProgressUI;
+@synthesize countLeft;
+@synthesize count;
+@synthesize craftingItemObject;
+@synthesize selectedIndex;
+@synthesize level;
+@synthesize type;
+@synthesize numberOfCraftableItemsUpToCurrentLevel;
+@synthesize numberOfCraftableItems;
+
 - (void)abortCraft
 {
 }
@@ -139,6 +150,14 @@
 
 - (void)dealloc
 {
+  free(self->craftableItems);
+  [self->light release];
+  [self->craftingItemObject release];
+  [self->currentFuelBlockhead release];
+  [self->sound stop];
+  // TODO: Source items release
+
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

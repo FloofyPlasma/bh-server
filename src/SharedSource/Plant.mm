@@ -18,6 +18,7 @@
 
 - (void)dealloc
 {
+  [super dealloc];
 }
 
 - (ItemType)droppedItemType

@@ -194,9 +194,6 @@ struct DodoCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)doRemoteUpdate:(DodoUpdateNetData)updateNetData;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

@@ -126,7 +126,7 @@
  */
 - (BOOL)shouldBeCrystalBlockAtX:(int)x y:(int)y;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this ClientTileLoader, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

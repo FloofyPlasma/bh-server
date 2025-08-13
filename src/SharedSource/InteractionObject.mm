@@ -1,5 +1,7 @@
 #import "InteractionObject.h"
 
+#import "Blockhead.h"
+
 @implementation InteractionObject
 
 - (NSString*)actionTitle
@@ -41,6 +43,12 @@
 
 - (void)dealloc
 {
+  [self->ownerID release];
+  [self->_ownerName release];
+  [self->_currentBlockhead setInteractionObject:nil];
+  [self->_currentBlockhead release];
+
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

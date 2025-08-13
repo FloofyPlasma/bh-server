@@ -143,9 +143,6 @@ struct DropBearCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)doRemoteUpdate:(DropBearUpdateNetData)updateNetData;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

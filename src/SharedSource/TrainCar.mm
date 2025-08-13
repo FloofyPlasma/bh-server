@@ -102,6 +102,18 @@
 
 - (void)dealloc
 {
+  [self->leftWheelRail autorelease];
+  [self->rightWheelRail autorelease];
+  [self->ownerID release];
+
+  if ([self maxNumberOfRiders] > 0) {
+    for (int i = 0; i < [self maxNumberOfRiders]; i++) {
+      [self->riders[i] autorelease];
+      self->riders[i] = nil;
+    }
+  }
+
+  [super dealloc];
 }
 
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld

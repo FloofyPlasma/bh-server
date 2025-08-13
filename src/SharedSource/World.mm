@@ -1,6 +1,57 @@
 #import "World.h"
 
+#import "WorldTileLoader.h"
+
 @implementation World
+
+@synthesize foundItemsList;
+@synthesize uiManager;
+@synthesize hasJustTakenPhoto;
+@synthesize waterAnimationIndex;
+@synthesize slowAnimationIndex;
+@synthesize saveDisabled;
+@synthesize cloudInterface;
+@synthesize isHeadingTowardsMIdday;
+@synthesize roundedTranslation;
+@synthesize dragInProgress;
+@synthesize pinchScale;
+@synthesize tutorial;
+@synthesize followingBlockhead;
+@synthesize portalChestManager;
+@synthesize serverMinorVersion;
+@synthesize worldPriceMultipliers;
+@synthesize globalPrices;
+@synthesize cloudMode;
+@synthesize isOwner;
+@synthesize isMod;
+@synthesize isAdmin;
+@synthesize worldName;
+@synthesize doubleTimeUnlocked;
+@synthesize fastForward;
+@synthesize client;
+@synthesize server;
+@synthesize serverClients;
+@synthesize startPortalPos;
+@synthesize windowInfo;
+@synthesize incrementalLoadCount;
+@synthesize loadComplete;
+@synthesize translatingToGoal;
+@synthesize dayColor;
+@synthesize rainFractionNotIncludingSnow;
+@synthesize rainFraction;
+@synthesize weatherFraction;
+@synthesize timeOfDayFraction;
+@synthesize sunDirection;
+@synthesize worldTime;
+@synthesize randomSeed;
+@synthesize saveID;
+@synthesize dynamicWorld;
+@synthesize macroTiles;
+@synthesize expertMode;
+@synthesize worldWidthMacro;
+@synthesize repairMode;
+@synthesize dpadDirectControlDisabled;
+@synthesize dpadControl;
 
 - (void)abortInProgressPathIfForBlockhead:(Blockhead*)blockhead
 {
@@ -203,6 +254,75 @@
 
 - (void)dealloc
 {
+  [self finishBulkDatabaseUpdate];
+  NSLog(@"Exiting World.");
+  [self stopObservingMotionEvents];
+  [self->saveQueue release];
+  [self->mutedPlayers release];
+  [self->zoomPlayerCycleCounts release];
+  [self->hostPort release];
+  [self->maxPlayers release];
+  [self->creationDate release];
+  [self->serverPassword release];
+  [self->clientPassword release];
+  [self->client release];
+  [self->server release];
+  [self->serverClients release];
+  [self->freeClientLightBlockIndices release];
+  [self->portalChestManager release];
+  [self->weather release];
+  [self->uiManager deleteTimers];
+  [self->uiManager release];
+  [self->tutorial release];
+  [self->foundItemsList release];
+  // TODO: World macro release
+  [self->worldTileLoader setNeedsToExit:YES];
+  [self->worldTileLoader release];
+  [self->clientTileLoader release];
+  [self->pathCreator release];
+  [self->pathQueue release];
+  [self->projectileManager release];
+  [self->dynamicWorld release];
+  [self->worldName release];
+  [self->mapPixelData release];
+  [self->skyPixelData release];
+  [self->awayClientSimulationEvents release];
+  [self->netEventsMessageToDisplayOnceLoaded release];
+  free(self->macroTiles);
+  // TODO: Used physical blocks release
+  [self->tileButtonIndices release];
+  [self->skyTexture release];
+  [self->buttonTexture release];
+  [self->skyShader release];
+  [self->blockShader release];
+  [self->blockTransparentShader release];
+  [self->buttonShader release];
+  [self->blackTileShader release];
+  [self->blackCubeShader release];
+  [self->starShader release];
+  [self->lightsShader release];
+  [self->weatherNoiseFunction release];
+  [self->dayColorImageData release];
+  [self->dayColorCloudyImageData release];
+  [self->portalScreenshotData release];
+  [self->circumNavigateBooleans release];
+  [self->clientTCMinedIndices release];
+  free(self->distanceOrderedFoodTypes);
+  [self->multiplayerLoadDict release];
+  [self->saveID release];
+  [self->sendPricesConnection cancel];
+  [self->sendPricesConnection release];
+  [self->globalPrices release];
+  [self->worldPriceMultipliers release];
+  [self->ownershipSignPositions release];
+  [self->ownershipAreaRenderer release];
+  [self->customRulesDict release];
+  [self->mainDatabase release];
+  [self->dynamicObjectDatabase release];
+  [self->blockDatabase release];
+  [self->databaseEnvironment release];
+
+  [super dealloc];
 }
 
 - (void)decommisionAllBlocksBlockToSavePhyscialBlock:(BOOL)blockToSavePhysicalBlock

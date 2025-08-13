@@ -84,9 +84,6 @@
  * @brief Placeholder! Please remember to fill this in.
  */
 - (PlantCreationNetData)plantCreationNetData;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

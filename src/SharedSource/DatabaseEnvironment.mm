@@ -2,8 +2,16 @@
 
 @implementation DatabaseEnvironment
 
+@synthesize bulkTransaction;
+@synthesize env;
+
 - (void)dealloc
 {
+  [self finishBulkTransaction];
+  // TODO: mdb_env_close(self->env);
+  [self->environmentDirectoryPath release];
+
+  [super dealloc];
 }
 
 - (BOOL)finishBulkTransaction

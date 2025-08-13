@@ -2,6 +2,19 @@
 
 @implementation WorldTileLoader
 
+@synthesize lightBlockDatabase;
+@synthesize yHeightDivider;
+@synthesize xFrequencyMultiplier;
+@synthesize needsToExit;
+@synthesize highestPoint;
+@synthesize plantPositions;
+@synthesize npcPositions;
+@synthesize treePositions;
+@synthesize seasonOffsetNoiseFunction;
+@synthesize treeDensityNoiseFunction;
+@synthesize bestStartPosition;
+@synthesize randomSeed;
+
 - (void)archiveLightBlocksForClient:(NSString*)clientID
 {
 }
@@ -12,6 +25,29 @@
 
 - (void)dealloc
 {
+  [self->blockDirectory release];
+  [self->heightNoiseFunctionA release];
+  [self->heightNoiseFunctionB release];
+  [self->faultNoiseFunction release];
+  [self->treeDensityNoiseFunction release];
+  [self->rockTypeNoiseFunction release];
+  [self->flintDensityNoiseFunction release];
+  [self->tinDensityNoiseFunction release];
+  [self->sandNoiseFunction release];
+  [self->seasonOffsetNoiseFunction release];
+  [self->caveNoiseFunctionA release];
+  [self->caveNoiseFunctionB release];
+  [self->gemNoiseFunction release];
+  free(self->treePositions);
+  free(self->npcPositions);
+  free(self->plantPositions);
+  free(self->dirtHeights);
+  free(self->rockHeights);
+  free(self->lakeHeights);
+  [self->lightBlockDatabase release];
+  [self->lightBlockDatabaseEnvironment release];
+
+  [super dealloc];
 }
 
 - (FoodType*)distanceOrderedFoodTypes

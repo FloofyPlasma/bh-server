@@ -102,9 +102,6 @@ struct ElevatorMotorCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (NSData*)updateNetDataForClient:(NSString*)clientID;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

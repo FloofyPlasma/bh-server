@@ -147,7 +147,7 @@ struct InteractionObjectCreationNetData {
  */
 - (BOOL)requiresPhysicalBlock;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this InteractionObject, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

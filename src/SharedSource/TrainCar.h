@@ -252,7 +252,7 @@ struct TrainCarCreationNetData {
  */
 - (void)remoteUpdate:(NSData*)netData;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this TrainCar, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

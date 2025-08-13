@@ -2,6 +2,9 @@
 
 @implementation CaveTroll
 
+@synthesize pathNeedsRecalculated;
+@synthesize renderPos;
+
 - (BOOL)canCrawl
 {
   return NO;
@@ -114,6 +117,15 @@
 
 - (void)dealloc
 {
+  [self->headCube release];
+  [self->bodyCube release];
+  [self->armCube release];
+  [self->legCube release];
+  [self->path release];
+  [self->pathExtraData release];
+  [self->tappedNPC release];
+
+  [super dealloc];
 }
 
 - (void)die:(Blockhead*)killBlockhead_

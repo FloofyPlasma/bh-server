@@ -168,7 +168,7 @@
                 imageIndex:(ImageType)imageIndex
           calculateNormals:(BOOL)calculateNormals;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this DrawCube, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

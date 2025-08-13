@@ -2,6 +2,8 @@
 
 @implementation DrawCube
 
+@synthesize luminous;
+
 - (NSString*)cubeDebugDescription
 {
   return nil;
@@ -9,6 +11,14 @@
 
 - (void)dealloc
 {
+  free(self->vertices);
+  free(self->texCoords);
+
+  if (self->normals) {
+    free(self->normals);
+  }
+
+  [super dealloc];
 }
 
 - (void)draw

@@ -28,6 +28,12 @@
 
 - (void)dealloc
 {
+  [self->platformBlock release];
+  [self->poleDrawCube release];
+  [self->bitmapString release];
+  [self->text release];
+
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

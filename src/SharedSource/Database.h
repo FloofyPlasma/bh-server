@@ -51,7 +51,7 @@
  */
 - (struct MDB_txn*)getTransaction;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this Database, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

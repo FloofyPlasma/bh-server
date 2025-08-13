@@ -2,6 +2,8 @@
 
 @implementation KelpPlant
 
+@synthesize availableFood;
+
 - (int)addDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
 {
   return 0;
@@ -9,6 +11,7 @@
 
 - (void)dealloc
 {
+  [super dealloc];
 }
 
 - (void)dieOfOldAge

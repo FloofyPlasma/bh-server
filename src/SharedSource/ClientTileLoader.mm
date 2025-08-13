@@ -12,6 +12,22 @@
 
 - (void)dealloc
 {
+
+  [self->heightNoiseFunctionA release];
+  [self->heightNoiseFunctionB release];
+  [self->sandNoiseFunction release];
+  [self->faultNoiseFunction release];
+  [self->caveNoiseFunctionA release];
+  [self->caveNoiseFunctionB release];
+  [self->flintDensityNoiseFunction release];
+  [self->flintDensityNoiseFunctionLegacy release];
+  free(self->dirtHeights);
+  free(self->rockHeights);
+  [self->blockRequestDates release];
+  [self deleteTimers];
+  [self->blockDirectory release];
+
+  [super dealloc];
 }
 
 - (void)deleteTimers

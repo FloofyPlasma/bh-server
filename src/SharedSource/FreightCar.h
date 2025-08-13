@@ -101,9 +101,6 @@ struct FreightCarCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)updatePosition:(intpair)newPosition;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

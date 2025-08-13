@@ -2,6 +2,10 @@
 
 @implementation Painting
 
+@synthesize ownerName;
+@synthesize imageData;
+@synthesize itemType;
+
 - (NSString*)actionTitle
 {
   return nil;
@@ -19,6 +23,12 @@
 
 - (void)dealloc
 {
+  [self->texture release];
+  [self->imageData release];
+  [self->ownerID release];
+  [self->ownerName release];
+
+  [super dealloc];
 }
 
 - (void)draw:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix cameraMinXWorld:(int)cameraMinXWorld cameraMaxXWorld:(int)cameraMaxXWorld cameraMinYWorld:(int)cameraMinYWorld cameraMaxYWorld:(int)cameraMaxYWorld

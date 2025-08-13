@@ -132,9 +132,6 @@ struct ColumnCreationNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

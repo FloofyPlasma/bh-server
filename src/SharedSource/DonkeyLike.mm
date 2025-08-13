@@ -52,6 +52,9 @@
 
 - (void)dealloc
 {
+  [self->rider autorelease];
+
+  [super dealloc];
 }
 
 - (void)die:(id)arg1

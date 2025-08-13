@@ -2,6 +2,10 @@
 
 @implementation DatabaseConvertor
 
+@synthesize serverMigrationComplete;
+@synthesize lightBlockMigrationComplete;
+@synthesize worldMigrationComplete;
+
 - (void)convertLightBlocks
 {
 }
@@ -12,6 +16,14 @@
 
 - (void)dealloc
 {
+  [self->worldBlockDirsToCheck release];
+  [self->worldDir release];
+  [self->blocksDir release];
+  [self->filesToRemove release];
+  [self->lightBlockFiles release];
+  [self->lightBlockFilesToRemove release];
+
+  [super dealloc];
 }
 
 - (void)getNewLightBlockFiles

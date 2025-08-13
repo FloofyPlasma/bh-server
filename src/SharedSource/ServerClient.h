@@ -148,7 +148,7 @@
  */
 - (void)requestForBlock:(ClientMacroBlockRequest)request;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this ServerClient, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

@@ -4,6 +4,11 @@
 
 - (void)dealloc
 {
+  free(self->derivedTilePropertiesArray);
+  [self->openList release];
+  [self->closedList release];
+
+  [super dealloc];
 }
 
 - (int)findAndSubtractAllPowerUpTo:(uint16_t)requiredPower forUser:(DynamicObject*)userObject

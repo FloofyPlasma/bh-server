@@ -123,7 +123,7 @@ struct Cloud {
  */
 - (void)update:(float)dt rainFraction:(float)rainFraction snowFraction:(float)snowFraction;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this Weather, and frees any memory it may have allocated.
  */
 - (void)dealloc;
 /**

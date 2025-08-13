@@ -313,6 +313,48 @@
 
 - (void)dealloc
 {
+  [self->regenerationSound stop];
+  [self->headCube release];
+  [self->hairCubeA release];
+  [self->hairCubeB release];
+  [self->bodyCube release];
+  [self->bodyCube release];
+  [self->armCube release];
+  [self->legCube release];
+  [self->pantsCube release];
+  [self->shirtBodyCube release];
+  [self->shirtArmCube release];
+  [self->hatCube release];
+  [self->hatRimCube release];
+  [self->shoesCube release];
+  [self->shoesToeCube release];
+  // TODO: Hat pom pom cubes release
+  // TODO: Jetpack cubes release
+  if (self->jetSound) {
+    [self->jetSound stop];
+    [self->jetSound release];
+  }
+  [self->_name release];
+  [self->itemDrawCube release];
+  [self->inventoryItems release];
+  [self->path release];
+  [self->_actionQueue release];
+  [self->pathExtraData release];
+  [self->_saveItemSlotsArray release];
+  [self->thisFramePickupRequests release];
+  [self->unconfirmedPickups release];
+  [self->_rideObject autorelease];
+  [self->tappedRideObject release];
+  [self->tappedNPC release];
+  [self->interactionObject release];
+  [self->interactionWorkbench release];
+  [self->interactionItem release];
+  [self->netTextView release];
+  [self->_clientID release];
+  [self->_clientName release];
+  [self->_clientSaveDir release];
+
+  [super dealloc];
 }
 
 - (float)death

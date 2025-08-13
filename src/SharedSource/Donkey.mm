@@ -38,6 +38,18 @@
 
 - (void)dealloc
 {
+
+  [self->bodyCube release];
+  [self->neckCube release];
+  [self->headCube release];
+  [self->legCube release];
+  [self->earCube release];
+  [self->hornCube release];
+  [self->tailCubeA release];
+  [self->tailCubeB release];
+  [self->tailCubeC release];
+
+  [super dealloc];
 }
 
 - (void)drawSubClassStuff:(float)dt projectionMatrix:(GLKMatrix4)projectionMatrix modelViewMatrix:(GLKMatrix4)modelViewMatrix

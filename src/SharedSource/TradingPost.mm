@@ -2,6 +2,9 @@
 
 @implementation TradingPost
 
+@synthesize coinCount;
+@synthesize sellSlot;
+
 - (NSString*)actionTitle
 {
   return nil;
@@ -52,6 +55,11 @@
 
 - (void)dealloc
 {
+  [self->sellerClientName release];
+  [self->sellSlot release];
+  [self->bitmapString release];
+
+  [super dealloc];
 }
 
 - (ItemType)destroyItemType

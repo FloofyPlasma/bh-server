@@ -27,9 +27,6 @@
  * @brief Placeholder! Please remember to fill this in.
  */
 - (NSMutableDictionary*)freeBlockCreationItemSaveDict;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

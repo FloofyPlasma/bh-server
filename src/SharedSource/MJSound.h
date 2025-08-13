@@ -136,7 +136,7 @@
  */
 - (void)setXOffset:(float)xOffset;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this MJSound, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

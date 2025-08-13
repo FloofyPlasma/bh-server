@@ -8,6 +8,9 @@
 
 - (void)dealloc
 {
+  [self->light release];
+
+  [super dealloc];
 }
 
 - (Vector)getLightRGB
