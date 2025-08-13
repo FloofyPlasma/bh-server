@@ -230,7 +230,7 @@
     break;
   }
 
-  NSString* filePath = [NSString stringWithFormat:@"%@/saves/%@/%@.txt", [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"], self->saveID, typeString];
+  NSString* filePath = [NSString stringWithFormat:@"%@/saves/%@/%@.txt", [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"], self->saveID, typeString];
   NSString* fileContents;
 
   switch (listType) {
@@ -266,7 +266,7 @@
   self->modList = NULL;
   self->curseList = NULL;
 
-  NSString* filePath = [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"];
+  NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"];
 
   // Load blacklist
   NSFileManager* fileManager = [NSFileManager defaultManager];
@@ -628,7 +628,7 @@
 
 - (void)saveResetList
 {
-  NSString* filePath = [NSString stringWithFormat:@"%@/saves/%@/resetList.plist", [[NSSearchPathForDirectoriesInDomains(0xe, 0x1, 0x1) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"], self->saveID];
+  NSString* filePath = [NSString stringWithFormat:@"%@/saves/%@/resetList.plist", [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"TheBlockheads"], self->saveID];
 
   if (self->resetList != NULL) {
     NSData* serialized = [NSPropertyListSerialization dataWithPropertyList:self->resetList format:NSPropertyListBinaryFormat_v1_0 options:0x0 error:NULL];
