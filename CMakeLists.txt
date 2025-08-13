@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.29)
-project(BlockheadsServer)
+project(BlockheadsServer LANGUAGES C CXX OBJC OBJCXX)
 include(FetchContent)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -151,7 +151,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     src/Linux/GLKit
     src/Linux/blockheads
     src/Mac/BlockheadsServer/blockheads_server
-    src/Mac/blockheadsServer/BlockheadsServer
+    src/Mac/BlockheadsServer/BlockheadsServer
     src/SharedSource
     ${enet_SOURCE_DIR}/include
 )
@@ -209,11 +209,12 @@ elseif(APPLE)
     target_link_libraries(${PROJECT_NAME}
         "-framework Foundation"
         "-framework Cocoa"
+        enet
     )
-    set(CMAKE_C_COMPILER clang)
-    set(CMAKE_CXX_COMPILER clang++)
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fobjc-runtime=macosx")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fobjc-runtime=macosx")
+
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        $<$<COMPILE_LANGUAGE:OBJC,OBJCXX>:-fobjc-runtime=macosx>
+    )
 
 elseif(UNIX AND NOT APPLE)
     target_compile_options(${PROJECT_NAME} PRIVATE ${GNUSTEP_OBJC_FLAGS_LIST})
