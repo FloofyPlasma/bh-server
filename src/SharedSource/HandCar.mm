@@ -89,7 +89,6 @@
 
 - (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)blockhead cameraX:(float)cameraX
 {
-  return result;
 }
 
 - (Vector)riderPosForBlockhead:(Blockhead*)blockhead

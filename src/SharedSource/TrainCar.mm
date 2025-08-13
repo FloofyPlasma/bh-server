@@ -206,7 +206,6 @@
 
 - (GLKMatrix4)riderBodyMatrixForBlockhead:(Blockhead*)blockhead cameraX:(float)cameraX
 {
-  return result;
 }
 
 - (float)riderBodyZRotation
