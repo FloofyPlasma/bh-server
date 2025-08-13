@@ -293,7 +293,7 @@ struct DynamicObjectNetData {
  */
 - (NSMutableDictionary*)getSaveDict;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deallocates this DynamicObject, and any memory it may have allocated.
  */
 - (void)dealloc;
 /**

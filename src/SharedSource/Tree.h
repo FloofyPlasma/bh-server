@@ -31,7 +31,6 @@ struct TreeFruit {
 
 /**
  * @class Tree
- * @brief Placeholder! Please remember to fill this in.
  */
 @interface Tree : DynamicObject {
   uint16_t maxHeightGene;
@@ -60,11 +59,13 @@ struct TreeFruit {
  */
 - (BOOL)occupiesNormalContents;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Defines if this tree is static. (Meaning it does not grow larger)
+ * @returns NO
  */
 - (BOOL)isStaticTree;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Returns the height of this tree.
+ * @returns #height
  */
 - (int)height;
 /**
@@ -76,23 +77,26 @@ struct TreeFruit {
  */
 - (uint16_t)maxHeightGeneVariation;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Defines what type of tree this is.
+ * @returns TREE_NOTHING
  */
 - (TreeType)treeType;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Checks if a TileType is valid for this tree.
+ * @returns YES if TileType is dirt or compost, otherwise NO
  */
 - (BOOL)isRequiredSoilType:(TileType)type;
 /**
  * @brief Placeholder! Please remember to fill this in.
+ * @note I believe this is a leftover function that would migrate this Tree to a new save version. I do not think it is currently used. \n-FloofyPlasma, August 13th, 2025
  */
 - (void)updateAllOwnedTilesToNewIDSize;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Deletes all tiles owned by this Tree.
  */
 - (void)removeAllOwnedTiles:(BOOL)createFreeBlocks;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Changes all tiles owned by this Tree above a certain Y value to a dead variant of this TreeType.
  */
 - (void)killAllOwnedTilesAboveY:(int)yMin;
 /**
@@ -100,15 +104,15 @@ struct TreeFruit {
  */
 - (void)checkIfDeadTilesNeedRemoved;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Changes all tiles owned by this Tree to a dead variant of this TreeType.
  */
 - (void)killAllOwnedTiles;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Changes a tile to a dead variant of this TreeType.
  */
 - (void)makeTileDead:(Tile*)tile;
 /**
- * @brief Placeholder! Please remember to fill this in.
+ * @brief Returns whether a tile is a part of this Tree.
  */
 - (BOOL)tileIsKindOfSelf:(Tile*)tile;
 /**
@@ -131,9 +135,6 @@ struct TreeFruit {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (NSMutableDictionary*)getSaveDict;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)dealloc;
 /**
  * @brief Placeholder! Please remember to fill this in.

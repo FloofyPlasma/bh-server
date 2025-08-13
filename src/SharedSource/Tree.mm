@@ -12,11 +12,16 @@
 
 - (void)dealloc
 {
+  if (self->treeFruits) {
+    free(self->treeFruits);
+  }
+
+  [super dealloc];
 }
 
 - (ItemType)fruitItemType
 {
-  return ITEM_FLAX_MAT;
+  return ITEM_NONE;
 }
 
 - (BOOL)fruitShouldFallInSeason:(int)season
@@ -26,7 +31,42 @@
 
 - (NSMutableDictionary*)getSaveDict
 {
-  return nil;
+  NSMutableDictionary* dict = [[super getSaveDict] mutableCopy];
+
+  dict[@"height"] = @(self->height);
+  dict[@"saveTime"] = @([self->world worldTime]);
+  dict[@"treeSeasonOffset"] = @(self->treeSeasonOffset);
+  dict[@"age"] = @(self->age);
+  dict[@"dead"] = @(self->dead);
+  dict[@"timeDied"] = @(self->timeDied);
+  dict[@"removeCheckCount"] = @(self->removeCheckCount);
+
+  NSMutableArray* fruitArray = [NSMutableArray array];
+  if (self->fruitCount > 0) {
+    for (int i = 0; i < self->fruitCount; i++) {
+      NSMutableDictionary* fruitDict = [NSMutableDictionary dictionary];
+
+      TreeFruit* fruit = &self->treeFruits[i];
+      fruitDict[@"pos.x"] = @(fruit->pos.x);
+      fruitDict[@"pos.y"] = @(fruit->pos.y);
+      fruitDict[@"hasCreatedFreeBlockThisSeason"] = @(fruit->hasCreatedFreeBlockThisSeason);
+
+      [fruitArray addObject:fruitDict];
+    }
+  }
+  dict[@"treeFruit"] = fruitArray;
+
+  if (![self isStaticTree]) {
+    dict[@"maxHeightGene"] = @(self->maxHeightGene);
+    dict[@"growthRateGene"] = @(self->growthRateGene);
+    dict[@"maxHeightReached"] = @(self->maxHeightReached);
+    dict[@"growthCounter"] = @(self->growthCounter);
+    dict[@"growthRate"] = @(self->growthRate);
+    dict[@"maxHeight"] = @(self->maxHeight);
+    dict[@"maxAge"] = @(self->maxAge);
+  }
+
+  return dict;
 }
 
 - (void)growInTimeSinceSaved:(NSTimeInterval)saveTime
@@ -40,7 +80,7 @@
 
 - (int)height
 {
-  return 0;
+  return self->height;
 }
 
 - (void)incrementHeight
@@ -69,7 +109,17 @@
 
 - (BOOL)isRequiredSoilType:(TileType)type
 {
-  return NO;
+  switch (type) {
+  case TILE_DIRT:
+  case TILE_DIRT_GRASS:
+  case TILE_DIRT_GRASS_FROZEN:
+  case TILE_COMPOST:
+  case TILE_COMPOST_GRASS:
+  case TILE_COMPOST_GRASS_FROZEN:
+    return YES;
+  default:
+    return NO;
+  }
 }
 
 - (BOOL)isStaticTree
@@ -113,7 +163,7 @@
 
 - (BOOL)shouldAddFallenFruits
 {
-  return NO;
+  return YES;
 }
 
 - (BOOL)tileIsKindOfSelf:(Tile*)tile
@@ -123,7 +173,7 @@
 
 - (TreeType)treeType
 {
-  return TREE_CACTUS;
+  return TREE_NOTHING;
 }
 
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
