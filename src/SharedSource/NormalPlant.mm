@@ -1,5 +1,8 @@
 #import "NormalPlant.h"
 
+#import "ArtificialLight.h"
+#import "Shader.h"
+
 @implementation NormalPlant
 
 @synthesize availableFood;

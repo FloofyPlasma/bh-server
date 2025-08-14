@@ -1,5 +1,7 @@
 #import "MJMultiSound.h"
 
+#import "MJSound.h"
+
 @implementation MJMultiSound
 
 @synthesize incrementalPitchOffset;

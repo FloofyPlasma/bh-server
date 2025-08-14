@@ -1,5 +1,9 @@
 #import "Shark.h"
 
+#import "Blockhead.h"
+#import "DrawCube.h"
+#import "Shader.h"
+
 @implementation Shark
 
 - (void)addRider:(Blockhead*)blockhead

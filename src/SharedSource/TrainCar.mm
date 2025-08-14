@@ -1,5 +1,9 @@
 #import "TrainCar.h"
 
+#import "Blockhead.h"
+#import "Rail.h"
+#import "Shader.h"
+
 @implementation TrainCar
 
 - (NSString*)actionTitle

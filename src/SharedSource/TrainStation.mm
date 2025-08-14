@@ -1,5 +1,8 @@
 #import "TrainStation.h"
 
+#import "DrawCube.h"
+#import "Shader.h"
+
 @implementation TrainStation
 
 - (BOOL)requiresSingleLineTextEditing

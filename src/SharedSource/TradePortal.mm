@@ -1,5 +1,8 @@
 #import "TradePortal.h"
 
+#import "ArtificialLight.h"
+#import "MJSound.h"
+
 @implementation TradePortal
 
 @synthesize isMissionInteraction;

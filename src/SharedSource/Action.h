@@ -4,7 +4,7 @@
 #import "GameConstants.h"
 #import "MJMath.h"
 
-@class CraftableItemObject, DrawCube, InventoryItem, NSDictionary, NSMutableDictionary;
+@class CraftableItemObject, DrawCube, InventoryItem;
 
 /**
  * @class Action

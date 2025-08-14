@@ -1,5 +1,8 @@
 #import "DatabaseConvertor.h"
 
+#import "Database.h"
+#import "World.h"
+
 @implementation DatabaseConvertor
 
 @synthesize serverMigrationComplete;

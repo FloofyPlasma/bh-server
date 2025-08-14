@@ -1,5 +1,8 @@
 #import "NPC.h"
 
+#import "Blockhead.h"
+#import "Shader.h"
+
 @implementation NPC
 
 @synthesize age;

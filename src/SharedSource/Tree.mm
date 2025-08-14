@@ -1,5 +1,7 @@
 #import "Tree.h"
 
+#import "NoiseFunction.h"
+
 @implementation Tree
 
 - (void)addFallenFruits

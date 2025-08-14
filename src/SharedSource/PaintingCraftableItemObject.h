@@ -2,8 +2,6 @@
 
 #import "CraftableItemObject.h"
 
-@class NSData;
-
 /**
  * @class PaintingCraftableItemObject
  * @brief Placeholder! Please remember to fill this in.

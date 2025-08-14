@@ -1,6 +1,13 @@
 #import "ParticleEmitter.h"
 
+#import "NoiseFunction.h"
+#import "Shader.h"
+#import "World.h"
+
 @implementation ParticleEmitter
+
+@synthesize worldWidthMacro;
+@synthesize stopAllParticles;
 
 - (void)addBonusParticleAtPos:(Vector)pos color:(Vector)color bonusMultiplier:(int)bonusMultiplier
 {

@@ -1,5 +1,7 @@
 #import "GlowBlock.h"
 
+#import "ArtificialLight.h"
+
 @implementation GlowBlock
 
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY

@@ -1,5 +1,9 @@
 #import "DonkeyLike.h"
 
+#import "DrawCube.h"
+#import "MJMultiSound.h"
+#import "Shader.h"
+
 @implementation DonkeyLike
 
 - (id)actsAsInteractionObject

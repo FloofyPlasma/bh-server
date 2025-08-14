@@ -1,6 +1,8 @@
 #import "ClownFish.h"
 
+#import "DrawCube.h"
 #import "FishingRod.h"
+#import "Shader.h"
 
 @implementation ClownFish
 

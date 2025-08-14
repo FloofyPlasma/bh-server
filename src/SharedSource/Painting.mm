@@ -1,5 +1,7 @@
 #import "Painting.h"
 
+#import "Shader.h"
+
 @implementation Painting
 
 @synthesize ownerName;

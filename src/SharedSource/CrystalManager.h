@@ -1,8 +1,5 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class NSOperationQueue, NSString;
 @protocol CrystalManagerWatcher;
 
 /**

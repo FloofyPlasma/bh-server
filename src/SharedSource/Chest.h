@@ -23,8 +23,6 @@ struct ChestNetData {
   uint8_t padding[7];
 };
 
-@class NSMutableArray;
-
 /**
  * @class Chest
  * @brief Placeholder! Please remember to fill this in.

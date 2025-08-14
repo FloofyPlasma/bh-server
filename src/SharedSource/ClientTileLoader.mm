@@ -1,5 +1,8 @@
 #import "ClientTileLoader.h"
 
+#import "BHClient.h"
+#import "NoiseFunction.h"
+
 @implementation ClientTileLoader
 
 - (void)blockDataNotLoadedOnServer:(uint32_t)macroIndex

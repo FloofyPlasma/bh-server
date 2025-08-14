@@ -1,5 +1,7 @@
 #import "Plant.h"
 
+#import "NoiseFunction.h"
+
 @implementation Plant
 
 - (BOOL)canBreed

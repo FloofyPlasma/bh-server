@@ -1,5 +1,7 @@
 #import "Yak.h"
 
+#import "DrawCube.h"
+
 @implementation Yak
 
 - (BOOL)canBeMilkedByBlockhead:(Blockhead*)blockhead

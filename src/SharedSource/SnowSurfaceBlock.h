@@ -2,8 +2,6 @@
 
 #import "DynamicObject.h"
 
-@class NSMutableDictionary;
-
 /**
  * @class SnowSurfaceBlock
  * @brief Placeholder! Please remember to fill this in.

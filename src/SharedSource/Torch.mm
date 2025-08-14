@@ -1,5 +1,7 @@
 #import "Torch.h"
 
+#import "ArtificialLight.h"
+
 @implementation Torch
 
 @synthesize dataB;

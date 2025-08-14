@@ -1,6 +1,7 @@
 #import "FreightCar.h"
 
 #import "Chest.h"
+#import "DrawCube.h"
 
 @implementation FreightCar
 

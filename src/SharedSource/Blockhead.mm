@@ -1,5 +1,17 @@
 #import "Blockhead.h"
 
+#import "Action.h"
+#import "BlockheadAI.h"
+#import "BlockheadCraftableItemObject.h"
+#import "CraftableItemObject.h"
+#import "DrawCube.h"
+#import "FishingRod.h"
+#import "FreeBlock.h"
+#import "InteractionObject.h"
+#import "MJSound.h"
+#import "Shader.h"
+#import "Workbench.h"
+
 @implementation Blockhead
 
 @synthesize nextPos = toSquare;

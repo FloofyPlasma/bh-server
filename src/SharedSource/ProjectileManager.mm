@@ -1,5 +1,8 @@
 #import "ProjectileManager.h"
 
+#import "Shader.h"
+#import "World.h"
+
 @implementation ProjectileManager
 
 - (void)dealloc

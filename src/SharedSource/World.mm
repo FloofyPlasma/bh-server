@@ -1,6 +1,27 @@
 #import "World.h"
 
+#import "BHClient.h"
+#import "BHServer.h"
+#import "Blockhead.h"
+#import "BlockheadCraftableItemObject.h"
+#import "ClientTileLoader.h"
+#import "CraftableItemObject.h"
+#import "Database.h"
+#import "DatabaseConvertor.h"
+#import "DatabaseEnvironment.h"
+#import "DynamicObject.h"
+#import "DynamicWorld.h"
+#import "InteractionObject.h"
+#import "NoiseFunction.h"
+#import "PathCreator.h"
+#import "PortalChestManager.h"
+#import "ProjectileManager.h"
+#import "Shader.h"
+#import "UIManager.h"
+#import "Weather.h"
+#import "Workbench.h"
 #import "WorldTileLoader.h"
+#import "WorldUI.h"
 
 @implementation World
 

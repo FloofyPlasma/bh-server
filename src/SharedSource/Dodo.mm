@@ -1,5 +1,8 @@
 #import "Dodo.h"
 
+#import "DrawCube.h"
+#import "Shader.h"
+
 @implementation Dodo
 
 - (void)addRider:(Blockhead*)blockhead

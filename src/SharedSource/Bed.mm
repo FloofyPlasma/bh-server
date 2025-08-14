@@ -3,6 +3,7 @@
 #import "DrawCube.h"
 #import "DynamicObjectType.h"
 #import "DynamicWorld.h"
+#import "Shader.h"
 
 @implementation Bed
 
