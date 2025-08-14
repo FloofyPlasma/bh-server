@@ -20,6 +20,16 @@
 @synthesize complete;
 @synthesize inProgress;
 
+- (void)dealloc
+{
+  [self->interactionItem release];
+  [self->craftableItemObject release];
+  [self->blockCube release];
+  [self->inventoryChange release];
+
+  [super dealloc];
+}
+
 //* I belive this is correct, but it's all speculation.
 - (NSMutableDictionary*)getSaveDict
 {

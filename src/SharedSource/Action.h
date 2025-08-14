@@ -63,6 +63,11 @@
 @property BOOL inProgress;
 
 /**
+ * @brief Deallocates this Action, and any memory it may have allocated.
+ */
+- (void)dealloc;
+
+/**
  * @brief Placeholder! Please remember to fill this in.
  */
 - (NSMutableDictionary*)getSaveDict;
