@@ -1,5 +1,9 @@
 #import "CaveTroll.h"
 
+#import "Blockhead.h"
+#import "DrawCube.h"
+#import "Shader.h"
+
 @implementation CaveTroll
 
 @synthesize pathNeedsRecalculated;

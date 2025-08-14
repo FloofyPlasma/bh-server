@@ -1,5 +1,9 @@
 #import "Boat.h"
 
+#import "Blockhead.h"
+#import "DrawCube.h"
+#import "Shader.h"
+
 @implementation Boat
 
 - (NSString*)actionTitle

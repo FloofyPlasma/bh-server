@@ -1,5 +1,8 @@
 #import "SteamTrain.h"
 
+#import "DrawCube.h"
+#import "MJSound.h"
+
 @implementation SteamTrain
 
 @synthesize needsToUpdateChoiceUI;

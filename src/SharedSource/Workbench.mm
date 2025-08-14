@@ -1,5 +1,12 @@
 #import "Workbench.h"
 
+#import "ArtificialLight.h"
+#import "Blockhead.h"
+#import "CraftProgressUI.h"
+#import "CraftableItemObject.h"
+#import "MJSound.h"
+#import "Shader.h"
+
 @implementation Workbench
 
 @synthesize xScroll;

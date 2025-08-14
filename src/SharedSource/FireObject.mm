@@ -1,5 +1,8 @@
 #import "FireObject.h"
 
+#import "ArtificialLight.h"
+#import "Shader.h"
+
 @implementation FireObject
 
 - (void)addArtificialLightContributionForPhysicalBlockLoadedAtXPos:(int)macroX yPos:(int)macroY

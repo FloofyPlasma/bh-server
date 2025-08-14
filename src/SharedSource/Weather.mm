@@ -1,6 +1,10 @@
 #import "Weather.h"
 
+#import "MJMultiSound.h"
 #import "MJSound.h"
+#import "NoiseFunction.h"
+#import "Shader.h"
+#import "World.h"
 
 @implementation Weather
 

@@ -1,5 +1,8 @@
 #import "WirePathCreator.h"
 
+#import "DynamicObject.h"
+#import "World.h"
+
 @implementation WirePathCreator
 
 - (void)dealloc

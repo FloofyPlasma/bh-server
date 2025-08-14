@@ -1,6 +1,11 @@
 #import "TulipPlant.h"
 
+#import "Shader.h"
+
 @implementation TulipPlant
+
+@synthesize colorGenes;
+@synthesize availableFood;
 
 - (int)addDrawQuadData:(float*)buffer fromIndex:(int)index forMacroPos:(intpair)macroPos
 {

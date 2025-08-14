@@ -1,5 +1,7 @@
 #import "TradingPost.h"
 
+#import "Shader.h"
+
 @implementation TradingPost
 
 @synthesize coinCount;

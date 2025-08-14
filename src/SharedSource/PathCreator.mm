@@ -1,5 +1,8 @@
 #import "PathCreator.h"
 
+#import "DynamicObject.h"
+#import "World.h"
+
 @implementation PathCreator
 
 @synthesize extraData;

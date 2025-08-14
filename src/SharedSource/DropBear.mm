@@ -1,5 +1,9 @@
 #import "DropBear.h"
 
+#import "Blockhead.h"
+#import "DrawCube.h"
+#import "Shader.h"
+
 @implementation DropBear
 
 - (void)blockheadUnloaded:(Blockhead*)blockhead

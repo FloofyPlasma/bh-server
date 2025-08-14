@@ -1,5 +1,8 @@
 #import "ServerClient.h"
 
+#import "BHServer.h"
+#import "Database.h"
+
 @implementation ServerClient
 
 @synthesize allLightBlockIndices;

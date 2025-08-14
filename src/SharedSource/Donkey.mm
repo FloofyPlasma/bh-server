@@ -1,5 +1,7 @@
 #import "Donkey.h"
 
+#import "DrawCube.h"
+
 @implementation Donkey
 
 - (BOOL)blockheadCanRide:(Blockhead*)blockhead usingItem:(ItemType)itemType

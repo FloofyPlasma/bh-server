@@ -1,5 +1,8 @@
 #import "HandCar.h"
 
+#import "DrawCube.h"
+#import "MJMultiSound.h"
+
 @implementation HandCar
 
 - (Vector2)cameraPosForBlockhead:(Blockhead*)blockhead

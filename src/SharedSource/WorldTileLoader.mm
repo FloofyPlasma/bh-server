@@ -1,5 +1,10 @@
 #import "WorldTileLoader.h"
 
+#import "Database.h"
+#import "DatabaseEnvironment.h"
+#import "NoiseFunction.h"
+#import "World.h"
+
 @implementation WorldTileLoader
 
 @synthesize lightBlockDatabase;

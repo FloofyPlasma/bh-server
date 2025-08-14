@@ -1,8 +1,6 @@
-
-
 #import <Foundation/Foundation.h>
 
-@class Database, NSDictionary, NSMutableArray, NSString, World;
+@class Database, World;
 
 /**
  * @class DatabaseConvertor

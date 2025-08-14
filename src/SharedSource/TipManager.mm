@@ -1,5 +1,8 @@
 #import "TipManager.h"
 
+#import "Blockhead.h"
+#import "World.h"
+
 @implementation TipManager
 
 - (NSString*)currentTip

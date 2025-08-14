@@ -1,5 +1,7 @@
 #import "PassengerCar.h"
 
+#import "DrawCube.h"
+
 @implementation PassengerCar
 
 - (NSString*)actionTitle

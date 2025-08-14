@@ -1,5 +1,8 @@
 #import "FreeBlock.h"
 
+#import "Blockhead.h"
+#import "DrawCube.h"
+
 @implementation FreeBlock
 
 @synthesize soundType;

@@ -1,6 +1,7 @@
 #import "InteractionObject.h"
 
 #import "Blockhead.h"
+#import "Shader.h"
 
 @implementation InteractionObject
 

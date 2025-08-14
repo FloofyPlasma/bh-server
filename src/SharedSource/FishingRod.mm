@@ -1,6 +1,10 @@
 #import "FishingRod.h"
 
+#import "Blockhead.h"
+#import "ClownFish.h"
 #import "MJSound.h"
+#import "Shader.h"
+#import "World.h"
 
 @implementation FishingRod
 
