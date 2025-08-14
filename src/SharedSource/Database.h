@@ -14,8 +14,13 @@
  */
 @interface Database : NSObject {
   DatabaseEnvironment* databaseEnvironment;
+  /** @brief Opaque structure for a database environment.
+   *
+   * A DB environment supports multiple databases, all residing in the same
+   * shared-memory map.
+   */
   MDB_env* env;
-  uint32_t dbi;
+  MDB_dbi dbi;
   NSString* name;
 }
 
