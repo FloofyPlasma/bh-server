@@ -68,12 +68,12 @@
  * @returns YES if the transaction commit succeeds or is a bulk transaction, NO otherwise.
  */
 - (BOOL)finishTransaction:(MDB_txn*)transaction;
-a /**
-   * @brief Obtain an LMDB transaction.
-   * @returns MDB_txn* active bulk transaction if available, otherwise a new transaction.
-   *          Returns nil if transaction creation fails.
-   */
-    - (MDB_txn*)getTransaction;
+/**
+ * @brief Obtain an LMDB transaction.
+ * @returns MDB_txn* active bulk transaction if available, otherwise a new transaction.
+ *          Returns nil if transaction creation fails.
+ */
+- (MDB_txn*)getTransaction;
 /**
  * @brief Deallocates this Database, and any memory it may have allocated.
  */
