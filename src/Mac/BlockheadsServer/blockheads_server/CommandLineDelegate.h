@@ -2,8 +2,6 @@
 
 #import "GameControllerDelegate-Protocol.h"
 
-@class GameController, NSFileHandle, NSString;
-
 /**
  * @class CommandLineDelegate
  * @brief Placeholder! Please remember to fill this in.
@@ -17,42 +15,28 @@
  * @brief Placeholder! Please remember to fill this in.
  */
 - (BOOL)done;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
-- (void)chatMessageRecievedFromGameController:(id)arg1 messageDict:(id)arg2;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
+- (void)chatMessageRecievedFromGameController:(GameController*)gameController
+                                  messageDict:(NSDictionary*)messageDict;
 - (void)clearChat;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
 - (void)playersChanged;
+- (void)loadCompleteForGameController:(GameController*)gameController_;
+- (void)removeGameController:(GameController*)gameController_;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)loadCompleteForGameController:(id)arg1;
+- (NSMutableArray*)gameSaves;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)removeGameController:(id)arg1;
+- (NSDictionary*)loadSaveDictForWorldWithID:(NSString*)worldId;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)gameSaves;
+- (NSString*)createNewWorldWithName:(NSString*)name worldWidthMacro:(int)worldWidthMacro worldID:(NSString*)worldId customRulesJSON:(NSString*)customRulesJSON expertMode:(BOOL)expertMode;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)loadSaveDictForWorldWithID:(id)arg1;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
-- (id)createNewWorldWithName:(id)arg1 worldWidthMacro:(int)arg2 worldID:(id)arg3 customRulesJSON:(id)arg4 expertMode:(BOOL)arg5;
-/**
- * @brief Placeholder! Please remember to fill this in.
- */
-- (void)updateSaveGameValue:(id)arg1 forKey:(id)arg2 save:(id)arg3;
+- (void)updateSaveGameValue:(id)value forKey:(NSString*)key save:(NSString*)saveId;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
