@@ -226,7 +226,7 @@ elseif (APPLE)
     )
 
 elseif (UNIX AND NOT APPLE)
-    target_compile_options(${PROJECT_NAME} PRIVATE ${GNUSTEP_OBJC_FLAGS_LIST})
+    target_compile_options(${PROJECT_NAME} PRIVATE $<$<COMPILE_LANGUAGE:OBJC,OBJCXX>:${GNUSTEP_OBJC_FLAGS_LIST}>)
     target_link_libraries(${PROJECT_NAME}
             ${GNUSTEP_BASE_LIBS}
             objc
