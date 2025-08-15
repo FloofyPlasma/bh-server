@@ -179,7 +179,7 @@ if (WIN32)
             -Xclang -fexceptions
             -Xclang -fobjc-exceptions
             -fblocks
-            -Xclang -fobjc-arc
+            -Xclang
             -DGNUSTEP
             -DGNUSTEP_WITH_DLL
             -DGNUSTEP_RUNTIME=1
