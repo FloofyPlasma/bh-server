@@ -203,33 +203,33 @@ int main(int argc, char** argv)
       return 0;
     }
 
-    CommandLineDelegate* delegate = [[CommandLineDelegate alloc]
-        initWithNewWorldName:newName
-                    loadName:loadName
-                     worldID:worldID
-                        port:port
-                  maxPlayers:maxPlayers
-              renameFromName:from
-                renameToName:[to uppercaseString]
-             deleteWorldName:delName
-                  listWorlds:list
-                 forceDelete:force
-                   saveDelay:saveDelay
-             widthMultiplier:widthMult
-                      credit:credit
-                   cloudSalt:cloudSalt
-                   ownerName:owner
-                     privacy:@(pk)
-             customRulesJSON:rulesJSON
-        convertToCustomRules:convert
-                  expertMode:expert
-                      noExit:noExit];
+    //    CommandLineDelegate* delegate = [[CommandLineDelegate alloc]
+    //        initWithNewWorldName:newName
+    //                    loadName:loadName
+    //                     worldID:worldID
+    //                        port:port
+    //                  maxPlayers:maxPlayers
+    //              renameFromName:from
+    //                renameToName:[to uppercaseString]
+    //             deleteWorldName:delName
+    //                  listWorlds:list
+    //                 forceDelete:force
+    //                   saveDelay:saveDelay
+    //             widthMultiplier:widthMult
+    //                      credit:credit
+    //                   cloudSalt:cloudSalt
+    //                   ownerName:owner
+    //                     privacy:@(pk)
+    //             customRulesJSON:rulesJSON
+    //        convertToCustomRules:convert
+    //                  expertMode:expert
+    //                      noExit:noExit];
 
     NSRunLoop* rl = [NSRunLoop currentRunLoop];
-    while (delegate && ![delegate done]) {
-      if (![rl runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]])
-        break;
-    }
+    //    while (delegate && ![delegate done]) {
+    //      if (![rl runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]])
+    //        break;
+    //    }
 
     return 0;
   }
