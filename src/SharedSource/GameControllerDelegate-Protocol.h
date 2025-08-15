@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@class GameController;
+#import "GameController.h"
 
 @protocol GameControllerDelegate <NSObject>
 /**
