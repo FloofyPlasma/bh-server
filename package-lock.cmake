@@ -15,6 +15,13 @@ CPMDeclarePackage(enet
 #  DOWNLOAD_ONLY YES
 #  GITHUB_REPOSITORY LMDB/lmdb
 #)
+# yaGetopt (unversioned)
+# CPMDeclarePackage(yaGetopt
+#  NAME yaGetopt
+#  GIT_TAG 6ce431085b81d9bb8639ed2f858c4f4fbc3ab988
+#  DOWNLOAD_ONLY YES
+#  GITHUB_REPOSITORY kubo/ya_getopt
+#)
 # Ccache.cmake
 CPMDeclarePackage(Ccache.cmake
   VERSION 1.2.5
