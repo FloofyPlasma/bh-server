@@ -57,16 +57,22 @@ if(WIN32)
     )
 
     target_compile_options(${PROJECT_NAME} PRIVATE
-        -fobjc-runtime=gnustep-2.2
-        -Xclang -fexceptions
-        -Xclang -fobjc-exceptions
-        -fblocks
-        -DGNUSTEP
-        -DGNUSTEP_WITH_DLL
-        -DGNUSTEP_RUNTIME=1
-        -D_NONFRAGILE_ABI=1
-        -D_NATIVE_OBJC_EXCEPTIONS
+        $<$<COMPILE_LANGUAGE:OBJC,OBJCXX>:
+            -fobjc-runtime=gnustep-2.2
+            -Xclang -fexceptions
+            -Xclang -fobjc-exceptions
+            -fblocks
+            -D_NATIVE_OBJC_EXCEPTIONS
+        >
     )
+    
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        GNUSTEP
+        GNUSTEP_WITH_DLL
+        GNUSTEP_RUNTIME=1
+        _NONFRAGILE_ABI=1
+    )
+
     target_link_libraries(${PROJECT_NAME}
         gnustep-base
         objc
@@ -84,7 +90,7 @@ if(WIN32)
         libiconv.dll
         libcurl$<$<CONFIG:Debug>:-d>.dll
     )
-    
+
     foreach(DLL IN ITEMS
         objc.dll
         gnustep-base-1_31.dll
