@@ -5,6 +5,10 @@ function(bhServer_setup_dependencies)
 
     if (NOT TARGET enet)
         cpmaddpackage("gh:lsalzman/enet@1.3.18")
+
+        target_include_directories(enet PUBLIC
+                ${enet_SOURCE_DIR}/include
+        )
     endif ()
 
     if (NOT TARGET lmdb)
