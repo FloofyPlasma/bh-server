@@ -1,0 +1,47 @@
+var CaveTroll_8h =
+[
+    [ "CaveTroll", "d4/dc5/interfaceCaveTroll.html", "d4/dc5/interfaceCaveTroll" ],
+    [ "CaveTrollCreationData", "d4/da1/structCaveTrollCreationData.html", "d4/da1/structCaveTrollCreationData" ],
+    [ "CaveTrollState", "dd/d32/structCaveTrollState.html", "dd/d32/structCaveTrollState" ],
+    [ "CaveTrollUpdateData", "de/d0e/structCaveTrollUpdateData.html", "de/d0e/structCaveTrollUpdateData" ],
+    [ "CaveTrollAnimationType", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1", [
+      [ "CTA_STAND", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a50cab646fbb834a089faf5826dea188f", null ],
+      [ "CTA_WALK", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1ab735bfb0e1d1559ad21f2f2a92708c5e", null ],
+      [ "CTA_STAND_TO_HANG_JUMP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1abd123f24180af547443c23b0ae2ba4e4", null ],
+      [ "CTA_HANG_TO_STAND_JUMP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a117c16c77572b8baa46275641a745641", null ],
+      [ "CTA_CLIMB", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a64406afaffe9b0e9ecbcc031699d8da0", null ],
+      [ "CTA_SWIM", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a37c589072b3f5d5b6d48e7ea070feb13", null ],
+      [ "CTA_CRAWL", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1af0f3100a72c4fc6c0669b34582e33bbe", null ],
+      [ "CTA_HANG", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a5b3777362f4f476342e31c5c27ca5f35", null ],
+      [ "CTA_HANG_FALL_BALANCE", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1ad5492d440d17efd059a6657cf2422da1", null ],
+      [ "CTA_CROUCH_UP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a9833877174d0f7922a5fd5e04265eee1", null ],
+      [ "CTA_CROUCH_DOWN", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a71ff9160bffdaaf468effd55eac996af", null ],
+      [ "CTA_CROUCH_CRAWL_UP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1af9a6b61d9e94bbf1c13b1d8b6881f73e", null ],
+      [ "CTA_CROUCH_CRAWL_DOWN", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a187d491e2cb8c6f141c0e1d6339596b5", null ],
+      [ "CTA_MONKEY_SWING", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a85386da5cd1f1f0e5619d09f44c42d6f", null ],
+      [ "CTA_MONKEY_HANG", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a3ea207da64a39563e5bae670c0ae72b3", null ],
+      [ "CTA_STAND_TO_HANG_DOUBLE_JUMP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a54b922b9802a40d73fb03902fb5b0066", null ],
+      [ "CTA_STAND_TO_MONKEY_HANG_JUMP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a677a47bc54a5db0734420c4b1b2af352", null ],
+      [ "CTA_MONKEY_HANG_TO_STAND_JUMP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1acfe2f27122d9051284cdc1ef8f407644", null ],
+      [ "CTA_CLIMB_DOWN_TO_MONKEY_SWING", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a7395a6f98170f71f74656c1b3c9e5c63", null ],
+      [ "CTA_MONKEY_SWING_UP_TO_CLIMB", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a611571d34c950edbaea41ea12fe759ec", null ],
+      [ "CTA_HANG_TO_MONKEY_SWING_DIAGONAL_JUMP_UP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a70e114ac4c6f2be9196b5b6d4d061772", null ],
+      [ "CTA_MONKEY_SWING_TO_HANG_DIAGONAL_JUMP_DOWN", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1aac8451fd2e740daecfcc14301c49dd68", null ],
+      [ "CTA_HANG_TO_HANG_JUMP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a53c46df024e006733446df72eba19b80", null ],
+      [ "CTA_LIE", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1ad24aea39055810c76b3c0101350454b0", null ],
+      [ "CTA_BOB", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a5ec78d055d75a5c5498b1a233fa99490", null ],
+      [ "CTA_FALL", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a85f7a933d0d574b7c3b1a085b666e2a6", null ],
+      [ "CTA_JUMP_OVER_GAP", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a7da7ed935b98ccae62630cfb34ee82ad", null ],
+      [ "CTA_RIDE", "df/d07/CaveTroll_8h.html#a235377fa3ab0e33fa7af6f8b8aebaba1a394940a26ae32555a9046792baab75dd", null ]
+    ] ],
+    [ "CaveTrollSubAnimationType", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7", [
+      [ "CTSA_NONE", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7ab184b3172add0ec6f43aba9bb3572e44", null ],
+      [ "CTSA_DIG", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7ab5be3093fa00faa9777eecc3a7cee30c", null ],
+      [ "CTSA_CRAFT", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7a7b0a19ba6e86ab7cd2a010cd11b74cb5", null ],
+      [ "CTSA_STAB", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7ad26e76cba222e79b55c09e71a8ff6d1c", null ],
+      [ "CTSA_LOOK_LEFT_RIGHT_UP", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7a69bf7975fdca41b5d38767576decd1be", null ],
+      [ "CTSA_LIE_ON_BED", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7adf1e462c80f5676a347e0fd46957bad7", null ],
+      [ "CTSA_LIE_ON_GROUND", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7aafa716e0b2598d16f1a3b6792ffc1804", null ],
+      [ "CTSA_MEDITATING", "df/d07/CaveTroll_8h.html#a616382a4af0eade6e4fcad18961b3bc7a32c5d1d7f4f468871dd18a9e30ad6d2b", null ]
+    ] ]
+];
