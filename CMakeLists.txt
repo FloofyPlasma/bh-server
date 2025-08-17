@@ -50,10 +50,10 @@ if(WIN32)
     set(GNUSTEP_ROOT "C:/GNUstep" CACHE PATH "Path to GNUstep root")
 
     target_include_directories(${PROJECT_NAME} PRIVATE
-        $<IF:$<CONFIG:Debug>,${GNUSTEP_ROOT}/x64/Debug/include,${GNUSTEP_ROOT}/x64/Release/include>
+        ${GNUSTEP_ROOT}/x64/$<CONFIG>/include
     )
     target_link_directories(${PROJECT_NAME} PRIVATE
-        $<IF:$<CONFIG:Debug>,${GNUSTEP_ROOT}/x64/Debug/lib,${GNUSTEP_ROOT}/x64/Release/lib>
+        ${GNUSTEP_ROOT}/x64/$<CONFIG>/lib
     )
 
     target_compile_options(${PROJECT_NAME} PRIVATE
@@ -65,7 +65,7 @@ if(WIN32)
             -D_NATIVE_OBJC_EXCEPTIONS
         >
     )
-    
+
     target_compile_definitions(${PROJECT_NAME} PRIVATE
         GNUSTEP
         GNUSTEP_WITH_DLL
@@ -73,7 +73,7 @@ if(WIN32)
         _NONFRAGILE_ABI=1
     )
 
-    target_link_libraries(${PROJECT_NAME}
+    target_link_libraries(${PROJECT_NAME} PRIVATE
         gnustep-base
         objc
         dispatch
@@ -91,15 +91,8 @@ if(WIN32)
         libcurl$<$<CONFIG:Debug>:-d>.dll
     )
 
-    foreach(DLL IN ITEMS
-        objc.dll
-        gnustep-base-1_31.dll
-        dispatch.dll
-        libiconv.dll
-        libcurl$<$<CONFIG:Debug>:-d>.dll
-    )
-
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    foreach(DLL IN LISTS GNUSTEP_DLLS)
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
                 ${GNUSTEP_ROOT}/x64/$<CONFIG>/bin/${DLL}
                 $<TARGET_FILE_DIR:${PROJECT_NAME}>
@@ -109,7 +102,7 @@ endif()
 
 # macOS
 if(APPLE)
-    target_link_libraries(${PROJECT_NAME}
+    target_link_libraries(${PROJECT_NAME} PRIVATE
         "-framework Foundation"
         "-framework Cocoa"
         enet
