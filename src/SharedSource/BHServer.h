@@ -336,7 +336,7 @@ enum ListType {
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BHServer*)initWithDelegate:(GameController)delegate_
+- (BHServer*)initWithDelegate:(GameController*)delegate_
                         match:(BHMatch*)match_
                   netNodeType:(BHNetNodeType)netNodeType_
                        saveID:(NSString*)saveID_

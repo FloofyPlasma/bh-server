@@ -2,6 +2,8 @@
 
 @implementation CactusTree
 
+@synthesize availableFood;
+
 - (ItemType)fruitItemType
 {
   return ITEM_FLAX_MAT;

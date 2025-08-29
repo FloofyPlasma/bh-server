@@ -1,12 +1,12 @@
+#include "Foundation/NSDictionary.h"
 #import <Foundation/Foundation.h>
 
 #import "BHNetNodeDelegate-Protocol.h"
 #import "GameConstants.h"
 #import "WorldDelegate-Protocol.h"
 
-@class BHServer, CPCache, Database, DatabaseEnvironment, NSMutableArray, NSString, NSTimer, World;
-@protocol GameControllerDelegate
-, NSObject;
+@class BHServer, CPCache, Database, DatabaseEnvironment, World;
+@protocol GameControllerDelegate;
 
 /**
  * @class GameController
@@ -36,11 +36,11 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)appDatabaseEnvironment;
+- (DatabaseEnvironment*)appDatabaseEnvironment;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)appDatabase;
+- (Database*)appDatabase;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -48,39 +48,39 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BOOL)playerIsConnectedWithInfo:(id)arg1;
+- (BOOL)playerIsConnectedWithInfo:(NSDictionary*)playerInfo;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BOOL)playerIsModWithInfo:(id)arg1;
+- (BOOL)playerIsModWithInfo:(NSDictionary*)playerInfo;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BOOL)playerIsAdminWithInfo:(id)arg1;
+- (BOOL)playerIsAdminWithInfo:(NSDictionary*)playerInfo;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BOOL)playerIsWhiteListedWithInfo:(id)arg1;
+- (BOOL)playerIsWhiteListedWithInfo:(NSDictionary*)playerInfo;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BOOL)playerIsBlackListedWithInfo:(id)arg1;
+- (BOOL)playerIsBlackListedWithInfo:(NSDictionary*)playerInfo;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)modList;
+- (NSArray*)modList;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)adminList;
+- (NSArray*)adminList;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)blackList;
+- (NSArray*)blackList;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)whiteList;
+- (NSArray*)whiteList;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -88,11 +88,11 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)handleCommand:(id)arg1 issueClient:(id)arg2;
+- (void)handleCommand:(NSString*)command issueClient:(NSString*)issueClient;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BOOL)isControllingBlockheadsForClientPlayer:(id)arg1;
+- (BOOL)isControllingBlockheadsForClientPlayer:(NSString*)playerID;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -100,23 +100,23 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)presentMessageUIForMessageToPlayer:(id)arg1;
+- (void)presentMessageUIForMessageToPlayer:(NSString*)playerId;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)fileWriteFailed:(id)arg1;
+- (void)fileWriteFailed:(NSString*)savePath;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)viewServerWelcomeMessage:(id)arg1 customRules:(id)arg2 allowEdit:(BOOL)arg3;
+- (void)viewServerWelcomeMessage:(NSString*)message customRules:(NSDictionary*)customRulesToUse allowEdit:(BOOL)allowEdit;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)showBlockheadAvailablePrompt:(int)arg1;
+- (void)showBlockheadAvailablePrompt:(int)nextBlockheadIndex;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BOOL)showDoubleTimePromptIfGoodTime:(id)arg1;
+- (BOOL)showDoubleTimePromptIfGoodTime:(NSString*)priceString;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -140,7 +140,7 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)messageForAchivementWithIdentifier:(id)arg1;
+- (NSString*)messageForAchivementWithIdentifier:(NSString*)identifier;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -148,7 +148,7 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)showDieConfirmationForBlockhead:(id)arg1;
+- (void)showDieConfirmationForBlockhead:(Blockhead*)dieBlockhead;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -160,7 +160,7 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)pinchZoomToScale:(float)arg1;
+- (void)pinchZoomToScale:(float)scale;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -176,7 +176,7 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)render:(float)arg1;
+- (void)render:(float)dt;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -212,7 +212,7 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)showWelcomeBackPopupWithMessage:(id)arg1;
+- (void)showWelcomeBackPopupWithMessage:(NSString*)simulationEventsMessage;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -224,11 +224,11 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)sendChatMessage:(id)arg1 sendToClients:(id)arg2;
+- (void)sendChatMessage:(NSString*)messageText sendToClients:(NSArray*)clientsToSend;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)chatMessages;
+- (NSArray*)chatMessages;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -236,7 +236,7 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)chatMessageRecieved:(id)arg1 displayNotification:(BOOL)arg2;
+- (void)chatMessageRecieved:(NSDictionary*)messageDict displayNotification:(BOOL)displayNotification;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -244,11 +244,11 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)worldName;
+- (NSString*)worldName;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)port;
+- (NSString*)port;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -260,11 +260,11 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)connectedClientIDs;
+- (NSArray*)connectedClientIDs;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)recentPlayers;
+- (NSArray*)recentPlayers;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -276,7 +276,7 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (void)update:(float)arg1 accurateDT:(float)arg2;
+- (void)update:(float)dtf accurateDT:(float)accurateDT;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -292,10 +292,25 @@
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)getDefaultGameSaveForWorldWithID:(id)arg1;
+- (NSDictionary*)getDefaultGameSaveForWorldWithID:(NSString*)saveID;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (id)initWithWorldNamed:(id)arg1 saveID:(id)arg2 appDelegate:(id)arg3 port:(id)arg4 maxPlayers:(int)arg5 saveDelay:(int)arg6 worldWidthMacro:(int)arg7 credit:(int)arg8 cloudSalt:(id)arg9 ownerName:(id)arg10 privacy:(id)arg11 convertToCustomRules:(BOOL)arg12 expertMode:(BOOL)arg13 appDatabase:(id)arg14 appDatabaseEnvironment:(id)arg15 noExit:(BOOL)arg16;
+- (GameController*)initWithWorldNamed:(NSString*)name
+                               saveID:(NSString*)saveID_
+                          appDelegate:(id)appDelegate_ // TODO: Find correct type
+                                 port:(NSString*)port_
+                           maxPlayers:(int)maxPlayers
+                            saveDelay:(int)saveDelay
+                      worldWidthMacro:(int)worldWidthMacro
+                               credit:(int)credit
+                            cloudSalt:(NSString*)cloudSalt
+                            ownerName:(NSString*)ownerName
+                              privacy:(NSString*)privacy
+                 convertToCustomRules:(BOOL)convertToCustomRules
+                           expertMode:(BOOL)expertMode
+                          appDatabase:(Database*)appDatabase_
+               appDatabaseEnvironment:(DatabaseEnvironment*)appDatabaseEnvironment_
+                               noExit:(BOOL)noExit_;
 
 @end

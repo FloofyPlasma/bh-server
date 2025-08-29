@@ -38,7 +38,7 @@
   [super dealloc];
 }
 
-- (id)initWithCache:(CPCache*)cache_ world:(World*)cache_ worldTime:(float)worldTime
+- (id)initWithCache:(CPCache*)cache_ world:(World*)world_ worldTime:(float)worldTime
 {
   return nil;
 }
