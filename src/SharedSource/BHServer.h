@@ -11,7 +11,7 @@ enum ListType {
   LIST_TYPE_MOD = 0x3,
 };
 
-@class Database, DatabaseEnvironment, World;
+@class Database, DatabaseEnvironment, GameController, World;
 
 /**
  * @class BHServer
@@ -336,7 +336,7 @@ enum ListType {
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (BHServer*)initWithDelegate:(id)delegate_ //* TODO: Figure out what this delegate is...
+- (BHServer*)initWithDelegate:(GameController)delegate_
                         match:(BHMatch*)match_
                   netNodeType:(BHNetNodeType)netNodeType_
                        saveID:(NSString*)saveID_
