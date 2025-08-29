@@ -1,4 +1,3 @@
-#include "Foundation/NSDictionary.h"
 #import <Foundation/Foundation.h>
 
 #import "BHNetNodeDelegate-Protocol.h"
