@@ -5,10 +5,14 @@ GLKVector3 GLKMathProject(GLKVector3 object, GLKMatrix4 model, GLKMatrix4 projec
 {
   [NSException raise:NSRangeException
               format:@"Not implemented."];
+
+  return GLKVector3();
 }
 
 GLKVector3 GLKMathUnproject(GLKVector3 window, GLKMatrix4 model, GLKMatrix4 projection, int* viewport, BOOL* success)
 {
   [NSException raise:NSRangeException
               format:@"Not implemented."];
+
+  return GLKVector3();
 }

@@ -272,7 +272,7 @@
   NSFileManager* fileManager = [NSFileManager defaultManager];
   NSString* listFile = [NSString stringWithFormat:@"%@/saves/%@/blacklist.txt", filePath, self->saveID];
   if ([fileManager fileExistsAtPath:listFile]) {
-    NSString* fileContents = [fileContents initWithContentsOfFile:listFile encoding:NSUTF8StringEncoding error:NULL];
+    NSString* fileContents = [[NSString alloc] initWithContentsOfFile:listFile encoding:NSUTF8StringEncoding error:NULL];
 
     if ([fileContents length] != 0) {
       NSMutableArray* lines = [[fileContents componentsSeparatedByString:@"\n"] mutableCopy];
@@ -295,7 +295,7 @@
   fileManager = [NSFileManager defaultManager];
   listFile = [NSString stringWithFormat:@"%@/saves/%@/whitelist.txt", filePath, self->saveID];
   if ([fileManager fileExistsAtPath:listFile]) {
-    NSString* fileContents = [fileContents initWithContentsOfFile:listFile encoding:NSUTF8StringEncoding error:NULL];
+    NSString* fileContents = [[NSString alloc] initWithContentsOfFile:listFile encoding:NSUTF8StringEncoding error:NULL];
 
     if ([fileContents length] != 0) {
       NSMutableArray* lines = [[fileContents componentsSeparatedByString:@"\n"] mutableCopy];
@@ -318,7 +318,7 @@
   fileManager = [NSFileManager defaultManager];
   listFile = [NSString stringWithFormat:@"%@/saves/%@/modlist.txt", filePath, self->saveID];
   if ([fileManager fileExistsAtPath:listFile]) {
-    NSString* fileContents = [fileContents initWithContentsOfFile:listFile encoding:NSUTF8StringEncoding error:NULL];
+    NSString* fileContents = [[NSString alloc] initWithContentsOfFile:listFile encoding:NSUTF8StringEncoding error:NULL];
 
     if ([fileContents length] != 0) {
       NSMutableArray* lines = [[fileContents componentsSeparatedByString:@"\n"] mutableCopy];
@@ -341,7 +341,7 @@
   fileManager = [NSFileManager defaultManager];
   listFile = [NSString stringWithFormat:@"%@/saves/%@/adminlsit.txt", filePath, self->saveID];
   if ([fileManager fileExistsAtPath:listFile]) {
-    NSString* fileContents = [fileContents initWithContentsOfFile:listFile encoding:NSUTF8StringEncoding error:NULL];
+    NSString* fileContents = [[NSString alloc] initWithContentsOfFile:listFile encoding:NSUTF8StringEncoding error:NULL];
 
     if ([fileContents length] != 0) {
       NSMutableArray* lines = [[fileContents componentsSeparatedByString:@"\n"] mutableCopy];

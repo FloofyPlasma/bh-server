@@ -2,6 +2,8 @@
 
 @implementation CraftableItemObject
 
+@synthesize craftableItem;
+
 - (NSMutableDictionary*)freeBlockCreationItemSaveDict
 {
   return nil;

@@ -381,7 +381,7 @@
   return NO;
 }
 
-- (DynamicWorld*)initWithWorld:(World*)world_ worldTileLoader:(WorldTileLoader*)worldTileLoader_ clientTileLoader:(ClientTileLoader*)worldTileLoader_ server:(BHServer*)server_ client:(BHClient*)client_ serverClients:(NSDictionary*)serverClients_ cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ appDatabase:(Database*)appDatabase_ worldDatabase:(Database*)worldDatabase_ dynamicObjectDatabase:(Database*)dynamicObjectDatabase_
+- (DynamicWorld*)initWithWorld:(World*)world_ worldTileLoader:(WorldTileLoader*)worldTileLoader_ clientTileLoader:(ClientTileLoader*)clientTileLoader_ server:(BHServer*)server_ client:(BHClient*)client_ serverClients:(NSDictionary*)serverClients_ cache:(CPCache*)cache_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_ appDatabase:(Database*)appDatabase_ worldDatabase:(Database*)worldDatabase_ dynamicObjectDatabase:(Database*)dynamicObjectDatabase_
 {
   return nil;
 }

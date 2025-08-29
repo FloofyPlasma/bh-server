@@ -37,7 +37,7 @@
 {
 }
 
-- (DatabaseConvertor*)initWithWorld:(World*)world_ worldDatabase:(Database*)worldDatabase_ dynamicObjectDatabase:(Database*)dynamicObjectDatabase_ blockDatabase:(Database*)blockDatabase_ lightBlockDatabase:(Database*)lightBlockDatabase_ serverDatabase:(Database*)lightBlockDatabase_
+- (DatabaseConvertor*)initWithWorld:(World*)world_ worldDatabase:(Database*)worldDatabase_ dynamicObjectDatabase:(Database*)dynamicObjectDatabase_ blockDatabase:(Database*)blockDatabase_ lightBlockDatabase:(Database*)lightBlockDatabase_ serverDatabase:(Database*)serverDatabase_
 {
   return nil;
 }

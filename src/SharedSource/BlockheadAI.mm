@@ -43,8 +43,8 @@
       mod = 1;
     }
     self->currentSearchLevelCount = rand() % mod;
-    self->randomInactivityTimer = (((float)rand() / RAND_MAX) * 16) + 2;
-    self->onlyMoveThisTime = (((float)rand() / RAND_MAX) > 0.5);
+    self->randomInactivityTimer = (((float)rand() / (float)RAND_MAX) * 16) + 2;
+    self->onlyMoveThisTime = (((float)rand() / (float)RAND_MAX) > 0.5);
     self->goalDigTile = makeIntpair(-1, -1);
   }
 

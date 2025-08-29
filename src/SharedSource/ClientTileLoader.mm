@@ -82,7 +82,7 @@
   return 0;
 }
 
-- (void)requestBlockFromServerAtPos:(intpair)createIfNotCreated createIfNotCreated:(BOOL)createIfNotCreated
+- (void)requestBlockFromServerAtPos:(intpair)pos createIfNotCreated:(BOOL)createIfNotCreated
 {
 }
 
