@@ -1,5 +1,7 @@
 #import "AppleTree.h"
 
+#import "DynamicWorld.h"
+
 @implementation AppleTree
 
 - (AppleTree*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos_ cache:(CPCache*)cache_ maxHeight:(int16_t)maxHeight_ growthRate:(int16_t)growthRate_ treeDensityNoiseFunction:(NoiseFunction*)treeDensityNoiseFunction_ seasonOffsetNoiseFunction:(NoiseFunction*)seasonOffsetNoiseFunction_ adultTree:(BOOL)adultTree adultMaxAge:(float)adultMaxAge
@@ -12,9 +14,9 @@
   return nil;
 }
 
-- (BOOL)fruitShouldFallInSeason:(int)arg1
+- (BOOL)fruitShouldFallInSeason:(int)season
 {
-  return NO;
+  return season == 3;
 }
 
 - (BOOL)tileIsKindOfSelf:(Tile*)tile
@@ -33,17 +35,21 @@
 
 - (DynamicObjectType)objectType
 {
-  return DYNAMIC_OBJECT_TYPE_CHILLI_PLANT;
+  return DYNAMIC_OBJECT_TYPE_APPLE_TREE;
 }
 
 - (ItemType)fruitItemType
 {
-  return ITEM_FLAX_MAT;
+  return ITEM_APPLE;
 }
 
 - (NSMutableDictionary*)getSaveDict
 {
-  return nil;
+  NSMutableDictionary* dict = [super getSaveDict];
+
+  dict[@"availableFood"] = @(self->availableFood);
+
+  return dict;
 }
 
 - (TreeType)treeType
@@ -53,20 +59,31 @@
 
 - (float)availableFood
 {
-  return 0;
+  return self->availableFood;
 }
 
-- (void)makeTileDead:
-    (Tile*)tile
+- (void)makeTileDead:(Tile*)tile
 {
+  if (tile->contents == CONTENTS_APPLE_TREE_BUSH) {
+    tile->contents = CONTENTS_APPLE_TREE_BUSH_DEAD;
+  } else if (tile->contents == CONTENTS_APPLE_TREE_TRUNK || tile->contents == CONTENTS_APPLE_TREE_TRUNK_BUSH) {
+    tile->contents = CONTENTS_APPLE_TREE_TRUNK_DEAD;
+  }
 }
 
 - (void)setAvailableFood:(float)food
 {
+  self->availableFood = food;
+  [self->dynamicWorld dynamicWorldChangedAtPos:[self pos] objectType:[self objectType]];
 }
 
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
 {
+  [super update:dt accurateDT:accurateDT isSimulation:isSimulation];
+
+  if (!self->dead) {
+    // TODO:
+  }
 }
 
 - (void)updateGrowth:(BOOL)addNewBranchBlocks
