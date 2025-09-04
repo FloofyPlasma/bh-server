@@ -207,7 +207,7 @@ struct ChestNetData {
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (uint16_t)interactionObjectType;
+- (InteractionObjectType)interactionObjectType;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */

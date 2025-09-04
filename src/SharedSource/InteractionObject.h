@@ -10,7 +10,7 @@ typedef uint16_t InteractionObjectType;
 struct InteractionObjectCreationNetData {
   DynamicObjectNetData dynamicObjectNetData;
   uint64_t isInUseBlockheadUniqueID;
-  uint16_t interactionObjectType;
+  InteractionObjectType interactionObjectType;
   uint8_t isInUse;
   uint8_t flipped;
   uint16_t paintColor;
@@ -113,7 +113,7 @@ struct InteractionObjectCreationNetData {
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (uint16_t)interactionObjectType;
+- (InteractionObjectType)interactionObjectType;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -191,7 +191,8 @@ struct InteractionObjectCreationNetData {
                        dynamicWorld:(DynamicWorld*)dynamicWorld
                          atPosition:(intpair)pos
                               cache:(CPCache*)cache_
-                               type:(ItemType)itemType_
+                               item:(InventoryItem*)item_
+                            flipped:(BOOL)flipped_
                            saveDict:(NSDictionary*)saveDict
                      placedByClient:(NSString*)clientId
                          clientName:(NSString*)clientName;

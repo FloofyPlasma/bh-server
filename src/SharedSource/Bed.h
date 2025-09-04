@@ -104,7 +104,7 @@ struct BedNetData {
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
-- (uint16_t)interactionObjectType;
+- (InteractionObjectType)interactionObjectType;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -133,7 +133,7 @@ struct BedNetData {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (Bed*)initWithWorld:(World*)world_
-         dynamicWorld:(DynamicWorld*)dynamicWorld
+         dynamicWorld:(DynamicWorld*)dynamicWorld_
              saveDict:(NSDictionary*)saveDict
                 cache:(CPCache*)cache_;
 /**
@@ -143,7 +143,8 @@ struct BedNetData {
          dynamicWorld:(DynamicWorld*)dynamicWorld
            atPosition:(intpair)pos
                 cache:(CPCache*)cache_
-                 type:(ItemType)itemType_
+                 item:(InventoryItem*)item_
+              flipped:(BOOL)flipped_
              saveDict:(NSDictionary*)saveDict
        placedByClient:(NSString*)clientId
            clientName:(NSString*)clientName;

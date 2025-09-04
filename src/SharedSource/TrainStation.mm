@@ -92,7 +92,7 @@
   return nil;
 }
 
-- (uint16_t)interactionObjectType
+- (InteractionObjectType)interactionObjectType
 {
   return 0;
 }
