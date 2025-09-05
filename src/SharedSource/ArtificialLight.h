@@ -22,7 +22,7 @@ enum LightDirectionType {
   int radius;
   intpair contributionGridOrigin;
   int diameter;
-  int lightDirection;
+  LightDirectionType lightDirection;
   DynamicObject* parentObject;
 }
 
@@ -47,10 +47,10 @@ enum LightDirectionType {
  * @brief Placeholder! Please remember to fill this in.
  */
 - (ArtificialLight*)initWithWorld:(World*)world_
-                     dynamicWorld:(DynamicWorld*)dynamicWorld
-                         saveDict:(NSDictionary*)saveDict
+                     dynamicWorld:(DynamicWorld*)dynamicWorld_
+                         saveDict:(NSDictionary*)saveDict_
                             cache:(CPCache*)cache_
-                     parentObject:(DynamicObject*)parentObject;
+                     parentObject:(DynamicObject*)parentObject_;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */
@@ -60,15 +60,15 @@ enum LightDirectionType {
  */
 - (ArtificialLight*)initWithWorld:(World*)world_
                      dynamicWorld:(DynamicWorld*)dynamicWorld
-                       atPosition:(intpair)pos
+                       atPosition:(intpair)pos_
                             cache:(CPCache*)cache_
-                     parentObject:(DynamicObject*)parentObject
+                     parentObject:(DynamicObject*)parentObject_
                            colorR:(int)colorR_
                            colorG:(int)colorG_
                            colorB:(int)colorB_
                              heat:(int)heat_
                            radius:(int)radius_
-                   lightDirection:(LightDirectionType)lightDirection;
+                   lightDirection:(LightDirectionType)lightDirection_;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */

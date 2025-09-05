@@ -528,7 +528,7 @@ struct ItemSaveData {
  * @brief Placeholder! Please remember to fill this in.
  */
 @interface InventoryItem : NSObject {
-  int itemType;
+  ItemType itemType;
   uint16_t dataA;
   uint16_t dataB;
   NSArray* subItems;
@@ -551,7 +551,7 @@ struct ItemSaveData {
  * @property itemType
  * @brief Placeholder! Please remember to fill this in.
  */
-@property (readonly) int itemType; // @synthesize itemType;
+@property (readonly) ItemType itemType; // @synthesize itemType;
 /**
  * @brief Placeholder! Please remember to fill this in.
  */

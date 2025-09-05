@@ -2,59 +2,68 @@
 
 @implementation CarrotPlant
 
-- (BOOL)canDieSeason:(int)season
-{
-  return NO;
+- (BOOL)canDieSeason:(int)season {
+    return season == 0;
 }
 
-- (BOOL)floweringSeason:(int)season
-{
-  return NO;
+- (BOOL)floweringSeason:(int)season {
+    switch (season) {
+        case 6:
+        case 7:
+            return YES;
+        default:
+            return NO;
+    }
 }
 
-- (float)foodToRemoveWhenSpawningNPC
-{
-  return 0;
+- (float)foodToRemoveWhenSpawningNPC {
+    return 1800.0f;
 }
 
-- (BOOL)isRequiredSoilType:(TileType)type
-{
-  return NO;
+- (BOOL)isRequiredSoilType:(TileType)type {
+    switch (type) {
+        case TILE_DIRT:
+        case TILE_DIRT_GRASS:
+        case TILE_DIRT_GRASS_FROZEN:
+        case TILE_COMPOST:
+        case TILE_COMPOST_GRASS:
+        case TILE_COMPOST_GRASS_FROZEN:
+            return YES;
+        default:
+            return NO;
+    }
 }
 
-- (float)maxAgeBase
-{
-  return 0;
+- (float)maxAgeBase {
+    return 7200.0f;
 }
 
-- (int)minAllowedTemperature
-{
-  return 0;
+- (int)minAllowedTemperature {
+    return -20;
 }
 
-- (NPCType)npcSpawnType
-{
-  return NPC_SHARK;
+- (NPCType)npcSpawnType {
+    return NPC_DONKEY;
 }
 
-- (DynamicObjectType)objectType
-{
-  return DYNAMIC_OBJECT_TYPE_CHILLI_PLANT;
+- (DynamicObjectType)objectType {
+    return DYNAMIC_OBJECT_TYPE_CARROT_PLANT;
 }
 
-- (PlantType)plantType
-{
-  return PLANT_KELP;
+- (PlantType)plantType {
+    return PLANT_CARROT;
 }
 
-- (ImageType)renderImageType
-{
-  return IMAGE_STEAM_LOCO_RIGHT;
+- (ImageType)renderImageType {
+    if (self->flowering) {
+        return IMAGE_CARROT_FLOWER;
+    } else {
+        return IMAGE_CARROT_PLANT;
+    }
 }
 
-- (ItemType)seedItemType
-{
-  return ITEM_FLAX_MAT;
+- (ItemType)seedItemType {
+    return ITEM_CARROT;
 }
 
 @end

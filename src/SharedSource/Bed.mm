@@ -1,9 +1,13 @@
 #import "Bed.h"
 
+#import "Blockhead.h"
 #import "DrawCube.h"
 #import "DynamicObjectType.h"
 #import "DynamicWorld.h"
+#import "InteractionObject.h"
+#import "InventoryItem.h"
 #import "Shader.h"
+#import "World.h"
 
 @implementation Bed
 
@@ -27,25 +31,50 @@
   return YES;
 }
 
-- (Bed*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ atPosition:(intpair)pos cache:(CPCache*)cache_ type:(ItemType)itemType_ saveDict:(NSDictionary*)saveDict placedByClient:(NSString*)clientId clientName:(NSString*)clientName
+- (Bed*)initWithWorld:(World*)world_
+         dynamicWorld:(DynamicWorld*)dynamicWorld_
+           atPosition:(intpair)pos
+                cache:(CPCache*)cache_
+                 item:(InventoryItem*)item_
+              flipped:(BOOL)flipped_
+             saveDict:(NSDictionary*)saveDict
+       placedByClient:(NSString*)clientId
+           clientName:(NSString*)clientName
 {
+  self = [super initWithWorld:world_ dynamicWorld:dynamicWorld_ atPosition:pos cache:cache_ item:item_ flipped:flipped_ saveDict:saveDict placedByClient:clientId clientName:clientName];
 
-  return nil;
+  if (!self) {
+    return nil;
+  }
+
+  self->_itemType = [item_ itemType];
+  self->beddingColor = [item_ dataB];
+
+  [self initSubDerivedItems];
+
+  return self;
 }
 
 - (Bed*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld cache:(CPCache*)cache_ netData:(NSData*)netData
-{
-  return nil;
-}
-
-- (Bed*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
 {
   self = [super init];
   if (!self) {
     return nil;
   }
 
-  self->_itemType = (ItemType)[saveDict[@"itemType"] intValue];
+  // TODO: Something related to the bytes in the net data.
+
+  return self;
+}
+
+- (Bed*)initWithWorld:(World*)world_ dynamicWorld:(DynamicWorld*)dynamicWorld_ saveDict:(NSDictionary*)saveDict cache:(CPCache*)cache_
+{
+  self = [super initWithWorld:world_ dynamicWorld:dynamicWorld_ saveDict:saveDict cache:cache_];
+  if (!self) {
+    return nil;
+  }
+
+  self->_itemType = static_cast<ItemType>([saveDict[@"itemType"] intValue]);
   self->beddingColor = [saveDict[@"beddingColor"] intValue];
 
   if (self->_itemType == ITEM_NONE) {
@@ -64,12 +93,12 @@
 
 - (ItemType)freeblockCreationItemType
 {
-  return self.itemType;
+  return self->_itemType;
 }
 
 - (ItemType)interactionRenderItemType
 {
-  return self.itemType;
+  return self->_itemType;
 }
 
 - (NSData*)creationNetDataForClient:(NSString*)clientID
@@ -111,7 +140,7 @@
 
 - (ItemType)destroyItemType
 {
-  return [self itemType];
+  return self->_itemType;
 }
 
 - (uint16_t)freeBlockCreationDataA
@@ -124,7 +153,7 @@
   return self->beddingColor;
 }
 
-- (uint16_t)interactionObjectType
+- (InteractionObjectType)interactionObjectType
 {
   return 3;
 }
@@ -164,9 +193,57 @@
 {
 }
 
-// TODO: Implement
 - (void)remove:(Blockhead*)removeBlockhead
 {
+  if ([self needsRemoved] || [self isNet]) {
+    return;
+  }
+
+  if ([self isInUse]) {
+    if ([[self currentBlockhead] isNet] || self->remoteBlockheadInUseUniqueID) {
+      self->needsToBeRemovedWhenInteractionEnds = YES;
+
+      return;
+    }
+
+    [[self currentBlockhead] stopInteracting];
+  }
+
+  [self->dynamicWorld
+      createFreeBlockAtPosition:[self pos]
+                         ofType:[self itemType]
+                          dataA:self->beddingColor
+                          dataB:0
+                       subItems:nil
+          dynamicObjectSaveDict:[self getSaveDict]
+                         hovers:NO
+                      playSound:1
+              priorityBlockhead:removeBlockhead];
+
+  [self->world
+                          removeTileAtWorldX:[self pos].x
+                                      worldY:[self pos].y
+                createContentsFreeblockCount:0
+      createForegroundContentsFreeblockCount:0
+                             removeBlockhead:removeBlockhead];
+
+  if ([self flipped]) {
+    [self->world
+                            removeTileAtWorldX:[self pos].x - 1
+                                        worldY:[self pos].y
+                  createContentsFreeblockCount:0
+        createForegroundContentsFreeblockCount:0
+                               removeBlockhead:removeBlockhead];
+  } else {
+    [self->world
+                            removeTileAtWorldX:[self pos].x + 1
+                                        worldY:[self pos].y
+                  createContentsFreeblockCount:0
+        createForegroundContentsFreeblockCount:0
+                               removeBlockhead:removeBlockhead];
+  }
+
+  [self setNeedsRemoved:YES];
 }
 
 - (void)update:(float)dt accurateDT:(float)accurateDT isSimulation:(BOOL)isSimulation
