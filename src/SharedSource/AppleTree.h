@@ -56,7 +56,7 @@
                  adultMaxAge:(float)adultMaxAge;
 
 /**
- * @copydoc Tree::objectType
+ * @copydoc DynamicObject::objectType
  * @returns DYNAMIC_OBJECT_TYPE_APPLE_TREE
  */
 - (DynamicObjectType)objectType;
